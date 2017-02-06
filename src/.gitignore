@@ -1,0 +1,25 @@
+
+# Laravel
+######################
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+
+# Application
+######################
+app/config/database.php
+public/*
+public/**
+vendor/
+node_modules/
+composer.lock
+.env.local.php
+.env.production.php
+.env.php
+
+# Laravel 4 specific
+######################
+bootstrap/compiled.php
