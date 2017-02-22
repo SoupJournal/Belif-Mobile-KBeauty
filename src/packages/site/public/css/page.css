@@ -1,0 +1,40 @@
+
+
+/********************************/
+/* 			IMAGES	 			*/
+/********************************/
+
+.page-image {
+	display: inline-block;
+	position: relative;
+  	width: 100%;
+	height: auto;
+}
+
+
+
+/********************************/
+/* 			BUTTONS 			*/
+/********************************/
+
+.button-answer {
+	display: inline-block;
+	position: relative;
+	width: 20%;
+	padding-bottom: 20%;
+	background-color: blue;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 5%;
+}
+
+
+.answer-reject {
+	background-color: red;		
+}
+
+
+.answer-accept {
+	background-color: green;
+}
+

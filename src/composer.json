@@ -20,7 +20,10 @@
             "database"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Soup\\CMS\\" : "packages/soup/cms/src/",
+            "Soup\\Mobile\\" : "packages/site/src/",
+            "Collective\\Html\\": "packages/soup/cms/vendor/laravelcollective/html/src/"
         }
     },
     "autoload-dev": {

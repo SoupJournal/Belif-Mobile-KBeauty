@@ -36,6 +36,12 @@ return [
     */
 
     'guards' => [
+    
+        'cms' => [
+            'driver' => 'session',
+            'provider' => 'CMSUser',
+        ],
+    
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -68,6 +74,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        
+        'CMSUser' => [
+            'driver' => 'eloquent',
+            'model' => Soup\CMS\Models\CMSUser::class,
         ],
 
         // 'users' => [

@@ -1,0 +1,238 @@
+
+
+body {
+	background-color: #000000;	
+}
+
+
+/********************************/
+/* 			PAGE STYLING		*/
+/********************************/
+
+
+/* main page */
+.main-page {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.main-page-full {
+	margin: 0 auto;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.header {
+	margin: 0;	
+	border: none;
+	border-radius: 0;
+	padding: 0.8% 0 0.8% 0;	
+}
+
+.main-page-full .header {
+	max-height: 100px;
+}
+
+.main-body {
+	border: none;	
+	/*padding-bottom: 162.6%;*/
+}
+
+.main-page-full .main-body {
+	display: table;
+    height: 100%;
+    width: 100%;
+	/*padding-bottom: 10%;*/
+}
+
+
+
+.page-container {
+	position: relative;
+	width: 100%;
+	height: 100%;	
+}
+
+
+.page-padding-small {
+	padding-left: 4%;	
+	padding-right: 4%;
+}
+
+
+.page-padding-large {
+	padding-left: 15%;	
+	padding-right: 15%;
+}
+
+
+/********************************/
+/* 			ALIGNMENT	 		*/
+/********************************/
+
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+
+
+.row-centered {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	transform: translateY(-50%);
+}
+
+
+
+
+/********************************/
+/* 			IMAGES	 			*/
+/********************************/
+
+
+.background-proportional {
+	background: no-repeat;
+  	background-size: cover;
+  	background-position: center center;
+  	width: 100%;
+}
+
+
+
+
+/********************************/
+/* 			SIZING	 			*/
+/********************************/
+
+
+.shrink-to-fit {
+	display: inline-block;
+	position: relative;
+}
+
+
+.stretch-to-fit {
+	display: block;
+	position:absolute;
+	height:auto;
+	bottom:0;
+	top:0;
+	left:0;
+	right:0;
+}
+
+.stretch-to-width {
+	position:absolute;
+  	left:0;
+  	right:0;
+}
+
+
+.clear-padding {
+	padding: 0;	
+}
+
+
+
+/********************************/
+/* 			  DISPLAY	 		*/
+/********************************/
+
+
+.clear {
+	display: hidden;
+	opacity: 0;	
+}
+
+
+/********************************/
+/* 				GUI	 			*/
+/********************************/
+
+
+.container-top {
+	position: absolute;
+	top: 0;
+	width: 100%;	
+}
+
+
+.container-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;	
+}
+
+
+.bg-danger {
+	background-color: transparent;
+	color: #882222;
+}
+
+button:hover {
+	color: rgb(35, 82, 124);	
+}
+
+
+.form-group {
+	margin-bottom: 1%;	
+}
+
+
+/********************************/
+/* 			LOADING	 			*/
+/********************************/
+
+
+/* hidden element - used for preloading */
+.preload {
+	position: absolute;
+	width: 0;
+	height: 0;	
+	opacity: 0;
+}
+
+
+/********************************/
+/* 			TRANSFORMS	 		*/
+/********************************/
+
+
+.flip-horizontal {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";	
+}
+
+.flip-vertical {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";		
+}

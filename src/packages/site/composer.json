@@ -1,0 +1,29 @@
+{
+    "name": "soup/mobile",
+    "description": "Soup mobile site",
+    "authors": [
+        {
+            "name": "Daniel Welsh",
+            "email": "x@x.x"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.0",
+        "illuminate/support": "5.2.*",
+        "laravelcollective/html": "5.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/controllers",
+            "src/models",
+            "src/views",
+            "src/lib"
+        ],
+        "psr-4": {
+            "Soup\\Mobile\\": "src/",
+            "Collective\\Html\\": "vendor/laravelcollective/html/src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

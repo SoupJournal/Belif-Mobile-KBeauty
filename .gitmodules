@@ -1,0 +1,3 @@
+[submodule "src/workbench/soup"]
+	path = src/packages/soup
+	url = https://github.com/SoupJournal/CMS-Package.git
