@@ -1,6 +1,8 @@
 <?php
 
+	//get header styling
 	$useAlternateStyle = isset($alternateHeader) && $alternateHeader;
+	$hideHeaderTitle = isset($hideHeaderTitle) ? $hideHeaderTitle : false;
 
 	//header colours
 	$backgroundColor = "bg-color-1";
@@ -21,12 +23,12 @@
 	@endif
 
 
-
 	{{-- title --}}
-	<div class="text-center">
-		<h1 class="font-header {{ $textColour }}">Soup</h1>
-	</div>
-
+	@if (!$hideHeaderTitle)	
+		<div class="text-center">
+			<h1 class="font-header {{ $textColour }}">Soup</h1>
+		</div>
+	@endif
    	
    	
 	{{-- next button --}}

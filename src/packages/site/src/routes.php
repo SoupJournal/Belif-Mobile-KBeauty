@@ -28,6 +28,21 @@
 	
 	
 		Route::get('/', ['as' => 'soup.welcome', /*'middleware' => 'CMSAuth',*/ 'uses' => 'SiteController@getIndex']);
+		
+		//login
+		Route::get('/login', ['as' => 'soup.login', 'uses' => 'SiteController@getLogin']);
+		Route::post('/login', ['as' => 'soup.login', 'uses' => 'SiteController@postLogin']);
+		
+		//sign up
+		Route::get('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@getSignup']);
+		Route::post('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@postSignup']);
+		Route::get('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@getSignupData']);
+		Route::post('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@postSignupData']);
+		Route::get('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@getSignupCode']);
+		Route::post('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@postSignupCode']);
+		
+		//quiz
+		Route::get('/quiz', ['as' => 'soup.quiz', 'uses' => 'SiteController@getQuiz']);
 		Route::get('/question', ['as' => 'soup.question', 'uses' => 'SiteController@getQuestion']);
 	
 	

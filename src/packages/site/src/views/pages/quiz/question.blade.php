@@ -26,7 +26,7 @@
 		$backgroundImage = safeArrayValue('background_image', $pageData, "");
 		$theme = safeArrayValue('theme', $pageData, 0);
 	
-		//question submit URL
+		//form submit URL
 		$formURL = isset($formURL) ? $formURL : "";
 		
 	

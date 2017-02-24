@@ -93,7 +93,7 @@
 			(function() {
 		        
 				//load modules
-				var app = angular.module('soup', ['ngResource', 'ui.bootstrap', 'soup-core', 'soup-gui', 'swipe-gesture']);   
+				var app = angular.module('soup', ['ngResource', 'ui.bootstrap', 'soup-core', 'soup-gui', 'swipe-gesture', 'forms']);   
 			
 			})();
 			//end anonymous function

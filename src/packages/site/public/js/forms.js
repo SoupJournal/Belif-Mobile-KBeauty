@@ -6,14 +6,127 @@
 	
 	
 	
-	
 	/**
-	* 	Auto Next Focus - focus on next tab elment if enter pressed
+	* 	checkbox-limit - limits number of checkboxes selected
 	**/
-	module.directive('autoNextFocus', function() {
+	module.directive('checkboxLimit', function() {
+		
 		return {
 			restrict: 'A',
-			link: function($scope,elem,attrs) {
+			link: function(scope, elem, attrs) {
+
+				//set attributes
+				if (attrs) {
+					scope.checkboxLimit = attrs.checkboxLimit;
+					scope.checkboxGroup = attrs.checkboxGroup;
+				}
+
+
+				//create counter
+				if (!scope.checkCounter) {
+					scope.checkCounter = {};	
+				}
+
+				//setup counter
+				if (scope.checkboxGroup && scope.checkboxGroup.length>0) {
+					
+					//create group counter
+					if (!(scope.checkCounter[scope.checkboxGroup]>0)) {
+						scope.checkCounter[scope.checkboxGroup] = 0;	
+					}
+						
+				}
+				//no group - create base counter
+				else if (!(scope.checkCount>0)) {
+					scope.checkCount = 0;	
+				}
+			
+			
+				//update count
+				scope.updateCount = function(checkbox, checkValue) {
+					
+					//valid checkbox
+					if (checkbox) {
+						
+						//update count
+						if (scope.checkboxGroup && scope.checkboxGroup.length>0) {
+
+							//update value
+							scope.checkCounter[scope.checkboxGroup] += checkbox.checked ? 1 : -1;
+							
+							//bounds check
+							if (scope.checkCounter[scope.checkboxGroup]<0) {
+								scope.checkCounter[scope.checkboxGroup] = 0;	
+							}
+							
+							//enforce limit
+							if (scope.checkboxLimit>=0 && scope.checkCounter[scope.checkboxGroup]>scope.checkboxLimit) {
+
+								checkbox.checked = false;
+								--scope.checkCounter[scope.checkboxGroup];
+							}
+
+						}
+						//no group
+						else {
+							
+							//update value
+							scope.checkCount += checkbox.checked ? 1 : -1;
+							
+							//bounds check
+							if (scope.checkCount<0) {
+								scope.checkCount = 0;	
+							}
+							
+							//enforce limit
+							if (scope.checkboxLimit>=0 && scope.checkCount>scope.checkboxLimit) {
+								checkbox.checked = false;
+								--scope.checkCount;
+							}
+						}
+					
+					} //end if (valid checkbox)
+					
+				};
+			
+			
+				//element already checked
+				if (elem[0].checked) {
+
+					//update count
+					scope.updateCount(elem[0]);
+
+				}
+			
+
+				//listen for change events
+				elem.bind('change', function(e) {
+					
+					//update count
+					scope.updateCount(elem[0]);
+	
+				}); //end listener
+				
+
+				
+			}
+		}
+		
+	}); //end directive
+	
+	
+	
+	
+	
+	
+	/**
+	* 	auto-next-focus - focus on next tab elment if enter pressed
+	**/
+	module.directive('autoNextFocus', function() {
+		
+		return {
+			restrict: 'A',
+			link: function($scope, elem, attrs) {
 
 				//listen for keyboard events
 				elem.bind('keydown', function(e) {
@@ -83,7 +196,8 @@
 				
 			} //end link()
 		}
-	});
+		
+	}); //end directive
 	
 	
 		

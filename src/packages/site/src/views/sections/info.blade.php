@@ -26,7 +26,12 @@
 				
 					<h4 class="color-2">{{ $subtitle }}</h4>
 				
-		
+				
+				{{-- TODO: handle URL --}}
+					@if (isset($button))
+						<a href="{{ route('soup.signup') }}" class="button-page">{{ $button }}</a>
+					@endif
+					
 			</div>
 			
 		</div>
