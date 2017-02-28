@@ -14,12 +14,12 @@
 
 
 .color-3 {
-	color: #48B6E4;
+	color: #6FD9E9;
 }
 
 
 .color-4 {
-	color: #3069AD;
+	color: #322D31;
 }
 
 
@@ -46,12 +46,40 @@
 
 
 .bg-color-3 {
-	background-color: #48B6E4;	
+	background-color: #6FD9E9;	
 }
 
 
 .bg-color-4 {
-	background-color: #3069AD;	
+	background-color: #322D31;	
+}
+
+
+
+
+
+/********************************/
+/* 		BORDER COLOURS 			*/
+/********************************/
+
+
+.border-color-1 {
+	border-color: #000000;	
+}
+
+
+.border-color-2 {
+	border-color: #FFFFFF;	
+}
+
+
+.border-color-3 {
+	border-color: #6FD9E9; /*48B6E4;*/
+}
+
+
+.border-color-4 {
+	border-color: #322D31; /*3069AD; */
 }
 
 
@@ -62,5 +90,10 @@
 
 
 .bg-color-opacity-1 {
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.bg-color-opacity-2 {
+	background-color: rgba(255, 255, 255, 0.5);
 }

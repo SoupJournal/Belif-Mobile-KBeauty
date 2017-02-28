@@ -39,15 +39,19 @@
 	$subtext = safeArrayValue('subtext', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 //	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
+	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	
 ?>
 
-<div class="text-center">
+{{-- background image --}}
+<img class="page-image" src="{{ $backgroundImage }}" load-style="fade">
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm')) }}
+<div class="page-overlay bg-color-opacity-2">
+
+	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
 		{{-- login page --}}
-		<div class="page-container">
+		<div class="page-container page-padding-large">
 
 
 			{{-- title --}}
@@ -55,7 +59,7 @@
 			
 			
 			{{-- description --}}
-			<h4>{{ $subtitle }}</h4>
+			<h4>{!! $subtitle !!}</h4>
 			
 
 
@@ -67,16 +71,24 @@
 				
 			</div>
 				
+				
+			<div class="spacer-medium"></div>
+				
 			
 			{{-- membership --}}
 			<div class="form-group">
 	
-				<h4>{{ $text }}</div>
+				<h4>{!! $text !!}</div>
 		
-				<button class="button-page">{{ $button }}</button>
+				<div class="spacer-medium"></div>
+		
+				<button class="button-page-round bg-color-4 color-2">{{ $button }}</button>
 
 			</div>
 
+
+			<div class="spacer-large"></div>
+			
 
 			{{-- footer --}}
 			<div>{{ $subtext }}</div>

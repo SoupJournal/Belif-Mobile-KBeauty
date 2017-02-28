@@ -34,37 +34,46 @@
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
-//	$subtitle = safeArrayValue('subtitle', $pageData, "");
+	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
-	$button = safeArrayValue('button', $pageData, "");
+	//$subtext = safeArrayValue('subtext', $pageData, "");
+	//$button = safeArrayValue('button', $pageData, "");
+//	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
-
+	
 ?>
-
 
 {{-- background image --}}
 <img class="page-image" src="{{ $backgroundImage }}" load-style="fade">
 
+<div class="page-overlay bg-color-opacity-2">
 
-{{-- page --}}
-<div class="stretch-to-fit text-center">
-
-	<div class="page-container row-centered page-padding-small">
-
-
-		{{-- title --}}
-		<h1 class="color-2">{{ $title }}</h1>
-		
-		
-
-		{{-- start button --}}
-		@if (isset($nextURL))
-			<a href="{{ $nextURL }}" class="button-page-border bg-color-clear color-3 border-color-3">{{ $button }}</a>
-		@endif
-
+	<div class="">
 	
+		{{-- login page --}}
+		<div class="page-container page-padding-large">
+
+
+			<div class="spacer-large"></div>
+			
+
+			{{-- title --}}
+			<h1>{!! $title !!}</h1>
+			
+			
+			{{-- subtitle --}}
+			<h5>{!! $subtitle !!}</h5>
+			
+			
+			{{-- text --}}
+			<h4>{!! $text !!}</h4>
+			
+
+		
+		</div>
+		
 	</div>
-	
+
 </div>
 
 @stop

@@ -29,6 +29,9 @@
 		//form submit URL
 		$formURL = isset($formURL) ? $formURL : "";
 		
+		//answer images
+		$image_yes = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/answer_yes.png";
+		$image_no = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/answer_no.png";
 	
 	?>
 	
@@ -111,11 +114,15 @@
 				
 				<div class="row">
 				
-					<div class="button-answer pull-left">
-						<button class="answer-reject stretch-to-fit"></button>
+					<div class="button-answer-container pull-left">
+						<button class="button-answer answer-reject stretch-to-fit">
+							<img src="{{ $image_no }}" class="answer_image" load-style="fade">
+						</button>
 					</div>
-					<div class="button-answer pull-right">
-						<button class="answer-accept stretch-to-fit"></button>
+					<div class="button-answer-container pull-right">
+						<button class="button-answer answer-accept stretch-to-fit">
+							<img src="{{ $image_yes }}" class="answer_image" load-style="fade">
+						</button>
 					</div>
 				
 				</div>

@@ -12,30 +12,71 @@
 }
 
 
+.logo-title-image {
+  	width: 40%;
+	height: auto;
+	display: block;
+    margin: 0 auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.answer_image {
+	width: 100%;
+}
+
 
 /********************************/
 /* 			BUTTONS 			*/
 /********************************/
 
-.button-answer {
+.button-page {
+	display: inline-block;
+	width: 60%;
+	padding-top: 4.5%;	
+	padding-bottom: 4.5%;
+}
+
+.button-page-border {
+	display: inline-block;
+	width: 55%;
+	padding-top: 4%;	
+	padding-bottom: 4%;
+	border: 2px solid;
+	border-radius: 1px;
+}
+
+.button-page-round {
+	display: inline-block;
+	width: 100%;
+	padding-top: 4.5%;	
+	padding-bottom: 4.5%;
+	border-radius: 5px;
+	border: none;
+}
+
+
+.button-answer-container {
 	display: inline-block;
 	position: relative;
 	width: 20%;
 	padding-bottom: 20%;
-	background-color: blue;
 	margin-left: 5%;
 	margin-right: 5%;
 	margin-bottom: 5%;
 }
 
-
-.answer-reject {
-	background-color: red;		
+.button-answer {
+	background-color: transparent;
+	border: none;
 }
 
+.answer-reject {
+	
+}
 
 .answer-accept {
-	background-color: green;
+
 }
 
 
@@ -92,13 +133,37 @@
     padding-bottom: 3.6%;
     margin-top: 4%;
 	min-width: 150px;
-	width: 84%;
+	width: 100%;
 	text-align: center;
-	background-color: rgba(255,255,255,0.7);
-	border: none;
+	background-color: #FFFFFF;
+	border-color: #322D31;
+	border: 1px solid;
+	border-radius: 10px;
 }
 
 .page-input-text.large {
 	padding-top: 4.6%;
     padding-bottom: 4.6%;
 }
+
+
+/********************************/
+/* 			SPACER 				*/
+/********************************/
+
+.spacer-small {
+	padding-top: 5%;	
+}
+
+.spacer-small-2 {
+	padding-top: 7.5%;	
+}
+
+.spacer-medium {
+	padding-top: 10%;	
+}
+
+.spacer-large {
+	padding-top: 20%;	
+}
+

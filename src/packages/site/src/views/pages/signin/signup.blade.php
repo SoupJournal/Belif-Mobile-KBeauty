@@ -33,28 +33,31 @@
 	$pageData = isset($pageData) ? $pageData : null;
 
 	//get page variables
-//	$title = safeArrayValue('title', $pageData, "");
+	$title = safeArrayValue('title', $pageData, "");
 //	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
+	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	
 	//form submit URL
 	$formURL = isset($formURL) ? $formURL : "";
 	
 ?>
 
-<div class="text-center">
+{{-- background image --}}
+<img class="page-image" src="{{ $backgroundImage }}" load-style="fade">
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm')) }}
+<div class="page-overlay bg-color-opacity-2">
+
+	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
 		{{-- login page --}}
-		<div class="page-container">
+		<div class="page-container page-padding-large" style="background-color: transparent;">
 
-
-			{{-- Facebook signup --}}
-			<button class="button-page">{{ $button }}</button>
-
+			{{-- title --}}
+			<h1 class="color-1">{{ $title }}</h1>
+			
 
 			{{-- enter email --}}
 			<div class="form-group"> 
@@ -72,14 +75,45 @@
 			</div>
 			
 			
+			<div class="spacer-small"></div>
 
 		
-			{{-- log in buttons --}}
-			<button class="button-page">{{ $secondaryButton }}</button>
+			{{-- sign up button --}}
+			<button class="button-page-round bg-color-4 color-2">{{ $button }}</button>
 
+
+			<div class="spacer-medium"></div>
+
+			
+			{{-- log in button --}}
+			<div>
+				<a href="{{ route('soup.login') }}">{{ $secondaryButton }}</a>
+			</div>
+
+			
+			
+			{{-- display form errors --}}
+		    @if ($errors->has())
+		    
+			    <div class="spacer-small-2"></div>
+		    
+		        @foreach ($errors->all() as $error)
+		            <div class='bg-danger alert'>{{ $error }}</div>
+		        @endforeach
+		        
+		        <div class="spacer-small-2"></div>
+		        
+		    @else
+				
+				<div class="spacer-large"></div>
+				
+			@endif
+			
 
 			{{-- footer --}}
 			<div>{{ $text }}</div>
+			
+
 		
 		</div>
 		

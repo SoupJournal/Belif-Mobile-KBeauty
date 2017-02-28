@@ -4,6 +4,8 @@
 	$fullScreen = (!isset($fullScreen) ? false : $fullScreen);
 
 
+$pageData = isset($pageData) ? $pageData : null;
+$backgroundImage = safeArrayValue('background_image', $pageData, "");
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -30,54 +32,29 @@
    
     
 		{{-- controller --}}
-		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text" ng-controller="SoupController">
+		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit" ng-controller="SoupController">
 			
-
-	   		{{----------------- HEADER -------------------}}
-	    	@include('soup::layouts.header')
-	   		
-	
-
-			<div class="item top-margin-small">
-			
-			
-				<div class="text-center">
+			<div class="main-page-container fill-height">
 				
-					{{-- section start --}}
-					<div class="page-container">
+	
+		   		{{----------------- HEADER -------------------}}
+		    	@include('soup::layouts.header')
+		   		
+
+	
 			
-			    <!-- div class="row" -->
-			    
-			   <!-- 	
-			    	<div class="col-md-12" style="padding:0">
-					
-			            <div class="background-proportional content main-body">
-					    	
-					    	<div id="page-content-wrapper">
-					        	<div class='stretch-to-fit'>
--->
-					        		{{----------------- CONTENT ------------------}}
-					        		@yield('content')
-					        		{{--------------- END CONTENT ----------------}}
-			<!--		        		
-					       	 	</div>
-					        </div>
-			        
-						</div>
-	           
-	        		</div>
-	        -->
-	        	<!-- /div -->
-	        	
-					</div>
-					{{-- section end --}}
+				<div class="page-body text-center">
+
+
+	        		{{----------------- CONTENT ------------------}}
+	        		@yield('content')
+	        		{{--------------- END CONTENT ----------------}}
+
 				
 				</div>
-	        	
-	        	
-	        </div>
-	        
-	        
+				
+			</div>	        	
+	
 	        
         {{-- end controller --}}
         </div>

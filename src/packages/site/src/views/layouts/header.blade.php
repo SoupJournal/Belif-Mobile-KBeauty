@@ -7,35 +7,56 @@
 	//header colours
 	$backgroundColor = "bg-color-1";
 	$textColour = "color-2";
+	$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-white.png";
 	if ($useAlternateStyle) {
 		$backgroundColor = "bg-color-2";
 		$textColour = "color-1";
+		$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-black.png";
 	}
 	
 ?>
 {{-- header --}}
 <div id="page-header" class="header navbar navbar-top {{ $backgroundColor }} {{ $textColour }}">
 
+	<div class="table-parent">
 
-	{{-- back button --}}
-	@if (isset($backURL))
-		<a href="{{ $backURL }}" class="button-back pull-left {{ $textColour }}">BACK</a>
-	@endif
-
-
-	{{-- title --}}
-	@if (!$hideHeaderTitle)	
-		<div class="text-center">
-			<h1 class="font-header {{ $textColour }}">Soup</h1>
+		<div class="table-center-row">
+		
+			<div class="table-center-cell header-column-left">
+			
+				{{-- back button --}}
+				@if (isset($backURL))
+					<a href="{{ $backURL }}" class="button-back {{ $textColour }}">BACK</a>
+				@endif
+		
+			</div>
+		
+		
+			<div class="table-center-cell header-column-center text-center">
+		
+				{{-- title --}}
+				@if (!$hideHeaderTitle)	
+						<!-- h1 class="font-header {{ $textColour }}">Soup</h1 -->
+						<img class="logo-title-image" alt="Soup" src="{{ $headerImage }}" load-style="fade">
+				@endif
+			
+			</div>
+		   	
+		   	
+		   	
+		   	<div class="table-center-cell header-column-right">
+		   	
+				{{-- next button --}}
+				@if (isset($nextURL) && isset($nextLabel))
+					<a href="{{ $nextURL }}" class="button-next color-1">{{ $nextLabel }}</a>
+				@endif
+			
+			</div>
+		
+		
 		</div>
-	@endif
-   	
-   	
-	{{-- next button --}}
-	@if (isset($nextURL) && isset($nextLabel))
-		<a href="{{ $nextURL }}" class="button-next pull-right color-3">{{ $nextLabel }}</a>
-	@endif
 
+	</div>
 
 </div>
 

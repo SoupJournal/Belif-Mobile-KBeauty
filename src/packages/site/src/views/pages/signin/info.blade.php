@@ -38,18 +38,22 @@
 	$text = safeArrayValue('text', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 //	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
+	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	
 	//form submit URL
 	$formURL = isset($formURL) ? $formURL : "";
 	
 ?>
 
-<div class="text-center">
+{{-- background image --}}
+<img class="page-image" src="{{ $backgroundImage }}" load-style="fade">
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm')) }}
+<div class="page-overlay bg-color-opacity-2">
+
+	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
 		{{-- login page --}}
-		<div class="page-container">
+		<div class="page-container page-padding-large">
 
 
 			{{-- title --}}
@@ -89,10 +93,15 @@
 			</div>
 			
 
+			<div class="spacer-large"></div>
+
 		
 			{{-- join buttons --}}
-			<button class="button-page">{{ $button }}</button>
+			<button class="button-page-round bg-color-4 color-2">{{ $button }}</button>
 
+
+			<div class="spacer-large"></div>
+			
 
 			{{-- footer --}}
 			<div>{{ $text }}</div>

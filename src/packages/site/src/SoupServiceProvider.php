@@ -48,7 +48,7 @@ class SoupServiceProvider extends ServiceProvider {
 		include __DIR__.'/composers.php';
 		
 		//include package helpers
-//		include __DIR__.'/helpers/JSHelper.php';
+		include __DIR__.'/helpers/DataHelper.php';
 
 		
 		
