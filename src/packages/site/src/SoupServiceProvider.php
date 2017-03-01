@@ -34,10 +34,11 @@ class SoupServiceProvider extends ServiceProvider {
 		
 		
 		//register middleware
-//		$router = $this->app['router'];
-//		if ($router) {
-//			$router->middleware('HTTPS', 'Soup\CMS\Middleware\HTTPSMiddleware');	
-//		}
+		$router = $this->app['router'];
+		if ($router) {
+			$router->middleware('AppHTTPS', 'Soup\Mobile\Middleware\HTTPSMiddleware');	
+			$router->middleware('AppAuth', 'Soup\Mobile\Middleware\AuthMiddleware');	
+		}
 		
 
 		

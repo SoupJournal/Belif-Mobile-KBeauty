@@ -70,7 +70,15 @@
 			{{-- enter password --}}
 			<div class="form-group"> 
 			
-				{{ Form::password('password', Array ('placeholder' => 'Create a password', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::password('password', Array ('placeholder' => 'Create a password', 'class' => 'page-input-text', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
+				
+			</div>
+			
+			
+			{{-- confirm password --}}
+			<div class="form-group"> 
+			
+				{{ Form::password('confirm_password', Array ('placeholder' => 'Confirm password', 'class' => 'page-input-text', 'tabindex' => '3', 'required' => '')) }}
 				
 			</div>
 			

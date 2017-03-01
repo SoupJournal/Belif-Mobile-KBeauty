@@ -2,15 +2,14 @@
 
 	namespace Soup\Mobile\Controllers;
 
-	//use Soup\CMS\Lib\BaseCMSController;
+	use Soup\Mobile\Lib\BaseController;
 	
 	use View;
 	use Redirect;
-	use App\Http\Controllers\Controller;
 
-	class SiteController extends Controller {
+	class SiteController extends BaseController {
 		
-
+/*
 		//page constants
 		const FORM_WELCOME = 'page_home';
 		const FORM_HOME = 'page_home';
@@ -23,7 +22,7 @@
 		const FORM_QUESTION_1 = 'page_question_1';
 		const FORM_QUESTION_2 = 'page_question_2';
 		const FORM_QUESTION = 'page_question_';
-		
+	*/	
 
 
 		//public function __construct() {
@@ -106,13 +105,13 @@
 			
 			//get form values
 			$email = safeArrayValue('email', $_POST);
-			//$confirmEmail = safeArrayValue('confirm-email', $_POST);
 			$password = safeArrayValue('password', $_POST);
+			$confirmPassword = safeArrayValue('confirm_password', $_POST);
 			
 			
 			//email exists
 			if (!$email || strlen(trim($email))<=0) {
-				$errors = 'Please specify a email address.';
+				$errors = 'Please specify an email address.';
 				$valid = false;
 			}
 			
@@ -129,13 +128,25 @@
 			}
 			
 			//invalid password length
-			else if (strlen(trim($password))<=5) {
+			else if (strlen(trim($password))<5) {
 				$errors = 'Passwords must be at least 5 characters.';
 				$valid = false;
 			}
 			
+			//confirm password exists
+			else if (!$confirmPassword || strlen(trim($confirmPassword))<=0) {
+				$errors = 'Please confirm your password.';
+				$valid = false;
+			}
+			
+			//passwords dont match
+			else if (strcmp(trim($password), trim($confirmPassword))!=0) {
+				$errors = 'Your passwords do not match.';
+				$valid = false;
+			}
+			
 			//check if email used already
-//			$user = User::where('email', '=', $email)->where('email_verified', '=', true)->first();
+//			$user = SoupUser::where('email', '=', $email)->where('email_verified', '=', true)->first();
 //			if ($user) {
 //				$errors = 'Sorry, looks like you\'ve already registered with that email';
 //				$valid = false;
@@ -182,7 +193,46 @@
 	
 		public function postSignupData() {
 			
-			return Redirect::route('soup.signup.code');
+			$valid = true;
+			$errors = null;
+			
+			//get form values
+			$name = safeArrayValue('name', $_POST);
+			$birthDate = safeArrayValue('birth_date', $_POST);
+			$gender = safeArrayValue('gender', $_POST);
+			
+			
+			//name exists
+			if (!$name || strlen(trim($name))<=0) {
+				$errors = 'Please specify your name.';
+				$valid = false;
+			}
+			
+			//valid birth date
+			else if (!$birthDate || strlen($birthDate)<=0) {
+				$errors = 'Please specify a valid birth date.';
+				$valid = false;
+			}
+			
+			//valid gender
+			else if (!$gender || strlen($gender)<=0) {
+				$errors = 'Please make a gender selection.';
+				$valid = false;
+			}
+			
+			
+			//valid form
+			if ($valid) {
+			
+				return Redirect::route('soup.signup.code');
+			
+			}
+			//invalid form
+			else {
+				return Redirect::back()
+							->withInput()
+							->withErrors($errors);
+			}
 			
 		} //end postSignupData()
 	
@@ -322,7 +372,7 @@
 		//====					DATA METHODS					====//
 		//==========================================================//	
 		
-			
+		/*	
 		private function dataForFormId($pageId) {
 			
 			//retrieve data from database
@@ -461,7 +511,7 @@
 			return $pageData;
 			
 		} //end dataForPageId()
-			
+			*/
 					
 	} //end class SiteController
 

@@ -82,13 +82,13 @@
 			
 			{{-- enter gender --}}
 			<div class="form-group"> 
-				{{ Form::radio('gender', 'Female', false, Array ('class' => 'page-input-radio')) }}
+				{{ Form::radio('gender', 'Female', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
 				{{ Form::label('female', 'Female', Array('class' => 'color-2')) }}
 				
-				{{ Form::radio('gender', 'Male', false, Array ('class' => 'page-input-radio')) }}
+				{{ Form::radio('gender', 'Male', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
 				{{ Form::label('male', 'Male', Array('class' => 'color-2')) }}
 				
-				{{ Form::radio('gender', 'Other', false, Array ('class' => 'page-input-radio')) }}
+				{{ Form::radio('gender', 'Other', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
 				{{ Form::label('other', 'Other', Array('class' => 'color-2')) }}
 			</div>
 			

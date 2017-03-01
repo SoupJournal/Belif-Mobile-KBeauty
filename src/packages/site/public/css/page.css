@@ -13,12 +13,12 @@
 
 
 .logo-title-image {
-  	width: 40%;
+  	width: 108px; /*40%;*/
 	height: auto;
 	display: block;
     margin: 0 auto;
-	margin-top: 5%;
-	margin-bottom: 5%;
+	margin-top: 7px; /* 5%; */
+	margin-bottom: 7px; /* 5%; */
 }
 
 .answer_image {

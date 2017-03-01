@@ -41,6 +41,11 @@ return [
             'driver' => 'session',
             'provider' => 'CMSUser',
         ],
+        
+        'soup' => [
+            'driver' => 'session',
+            'provider' => 'SoupUser',
+        ],
     
         'web' => [
             'driver' => 'session',
@@ -79,6 +84,11 @@ return [
         'CMSUser' => [
             'driver' => 'eloquent',
             'model' => Soup\CMS\Models\CMSUser::class,
+        ],
+
+        'SoupUser' => [
+            'driver' => 'eloquent',
+            'model' => Soup\Mobile\Models\SoupUser::class,
         ],
 
         // 'users' => [
