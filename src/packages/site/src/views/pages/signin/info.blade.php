@@ -46,9 +46,9 @@
 ?>
 
 {{-- background image --}}
-<img class="page-image" src="{{ $backgroundImage }}" load-style="fade">
+<img class="page-image" src="{{ $backgroundImage }}" load-style="fade" load-group="main">
 
-<div class="page-overlay bg-color-opacity-2">
+<div class="page-overlay bg-color-opacity-2" load-style="fade" load-group="main">
 
 	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
@@ -93,7 +93,24 @@
 			</div>
 			
 
-			<div class="spacer-large"></div>
+
+			{{-- display form errors --}}
+		    @if ($errors->has())
+		    
+			    <div class="spacer-small-2"></div>
+		    
+		        @foreach ($errors->all() as $error)
+		            <div class='bg-danger alert'>{{ $error }}</div>
+		        @endforeach
+		        
+		        <div class="spacer-small-2"></div>
+		        
+		    @else
+				
+				<div class="spacer-large"></div>
+				
+			@endif
+
 
 		
 			{{-- join buttons --}}

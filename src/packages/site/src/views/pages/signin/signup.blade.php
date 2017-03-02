@@ -46,9 +46,9 @@
 ?>
 
 {{-- background image --}}
-<img class="page-image" src="{{ $backgroundImage }}" load-style="fade">
+<img class="page-image" src="{{ $backgroundImage }}" load-style="fade" load-group="main">
 
-<div class="page-overlay bg-color-opacity-2">
+<div class="page-overlay bg-color-opacity-2" load-style="fade" load-group="main">
 
 	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
