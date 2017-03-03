@@ -12,7 +12,7 @@
 }
 
 
-.logo-title-image {
+.logo-header-image {
   	width: 108px; /*40%;*/
 	height: auto;
 	display: block;
@@ -21,8 +21,20 @@
 	margin-bottom: 7px; /* 5%; */
 }
 
+.logo-title-image {
+  	width: 60%;
+	height: auto;
+	display: block;
+    margin: 0 auto;
+}
+
 .answer_image {
 	width: 100%;
+}
+
+.section-image {
+	width: 100%;
+	height: auto;	
 }
 
 
@@ -35,6 +47,7 @@
 	width: 60%;
 	padding-top: 4.5%;	
 	padding-bottom: 4.5%;
+	border: none;
 }
 
 .button-page-border {
@@ -141,6 +154,14 @@
 	border-radius: 10px;
 }
 
+.page-input-text.square {
+	border-radius: 0;
+}
+
+.page-input-text.no-border {
+	border: none;
+}
+
 .page-input-text.large {
 	padding-top: 4.6%;
     padding-bottom: 4.6%;
@@ -150,6 +171,10 @@
 /********************************/
 /* 			SPACER 				*/
 /********************************/
+
+.spacer-tiny {
+	padding-top: 2%;	
+}
 
 .spacer-small {
 	padding-top: 5%;	

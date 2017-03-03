@@ -27,7 +27,7 @@
 			return View::make('soup::pages.home')->with([
 				'pageData' => $pageData,
 				'nextURL' => route('soup.login'),
-				'nextLabel' => safeArrayValue('secondary_button', $pageData, null),
+				'nextLabel' => 'LOG IN',
 				'alternateHeader' => true
 			]);
 			
@@ -52,7 +52,7 @@
 				'pageData'=> $pageData,
 				'nextURL' => route('soup.question'),
 				'backURL' => route('soup.welcome'),
-				//'hideHeaderTitle' => true
+				'hideHeaderTitle' => true
 			]);
 			
 		} //end getLogin()

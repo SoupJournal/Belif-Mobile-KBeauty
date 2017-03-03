@@ -48,13 +48,28 @@
 				case self::FORM_WELCOME:
 				{
 					$pageData = Array (
-						"title" => "YOUR MEMBERSHIP TO BREAKFAST, LUNCH, DINNER AND DRINKS FROM YOUR FAVOURITE CAFES AND RESTAURANTS EVERY MONTH.",
-						//"title" => "DISCOVER BETTER BREAKFASTS, LUNCH, DINNER AND DRINKS FROM YOUR NEW FAVOURITE CAFES, RESTAURANTS AND NIGHTLIFE EVERY MONTH.",
-						//"subtitle" => "MOISTURIZING BOMB OR AQUA BOMB?",
-						//"text" => "Take our quiz and claim a free sample",
-						"button" => "SIGN UP",
-						"secondary_button" => "LOG IN",
-						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background001.jpg"
+						"welcome" => Array (
+							"title" => "YOUR MEMBERSHIP TO BREAKFAST, LUNCH, DINNER AND DRINKS FROM YOUR FAVOURITE CAFES AND RESTAURANTS EVERY MONTH.",
+							//"title" => "DISCOVER BETTER BREAKFASTS, LUNCH, DINNER AND DRINKS FROM YOUR NEW FAVOURITE CAFES, RESTAURANTS AND NIGHTLIFE EVERY MONTH.",
+							//"subtitle" => "MOISTURIZING BOMB OR AQUA BOMB?",
+							//"text" => "Take our quiz and claim a free sample",
+							"button" => "SIGN UP",
+							"secondary_button" => "LOG IN",
+							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background001.jpg",
+						),
+						"guide" => Array (
+							"title" => "HOW IT WORKS",
+							"steps" => [
+								[
+								"text" => "Place holder copy goes here.<br>\nPeople having a good time.",
+								"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background002.jpg"	
+								],
+								[
+								"text" => "Place holder copy goes here.<br>\nPeople having a good time.",
+								"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background003.jpg"	
+								]
+							]
+						)
 					);
 				}
 				break;
@@ -64,11 +79,11 @@
 				{
 					$pageData = Array (
 						"title" => "SOUP",
-						"subtitle" => "LOG INTO YOUR ACCOUNT",
+						"subtitle" => "Log into your Soup account:",
 						"text" => "Forgot your password?",
 						"button" => "LOG IN",
 						"secondary_button" => "Log in with Facebook",
-						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background001.jpg"
+						//"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background001.jpg"
 					);
 				}
 				break;

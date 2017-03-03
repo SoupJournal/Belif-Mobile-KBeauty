@@ -5,7 +5,7 @@
 	$hideHeaderTitle = isset($hideHeaderTitle) ? $hideHeaderTitle : false;
 
 	//header colours
-	$backgroundColor = "bg-color-1";
+	$backgroundColor = "bg-color-5";
 	$textColour = "color-2";
 	$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-white.png";
 	if ($useAlternateStyle) {
@@ -37,7 +37,7 @@
 				{{-- title --}}
 				@if (!$hideHeaderTitle)	
 						<!-- h1 class="font-header {{ $textColour }}">Soup</h1 -->
-						<img class="logo-title-image" alt="Soup" src="{{ $headerImage }}" load-style="fade">
+						<img class="logo-header-image" alt="Soup" src="{{ $headerImage }}" load-style="fade">
 				@endif
 			
 			</div>

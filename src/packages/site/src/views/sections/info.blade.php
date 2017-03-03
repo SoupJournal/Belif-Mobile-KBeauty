@@ -1,6 +1,7 @@
 <?php
 
-	//ensure page data is set
+	//ensure page variables are set
+	$sectionId = isset($sectionId) ? $sectionId : "";
 	$pageData = isset($pageData) ? $pageData : null;
 
 	//get page variables
@@ -15,11 +16,9 @@
 
 
 {{-- background image --}}
-<img class="page-image" src="{{ $backgroundImage }}" load-style="fade">
+<img class="page-image" src="{{ $backgroundImage }}" load-style="fade" load-group="{{ $sectionId }}">
 
-
-	
-<div class="page-overlay bg-color-opacity-1">
+<div class="page-overlay bg-color-opacity-1" load-style="fade" load-group="{{ $sectionId }}">
 
 	<div class="text-center row-centered page-padding-large">
 		

@@ -7,23 +7,24 @@
 	
 	
 	//pageButton directive - standard page button 
-	module.directive('loadStyle', function($parse) {
+	module.directive('loadStyle', ['$rootScope', '$timeout', function($rootScope, $timeout) {
+		
+		//shared group data
+		var groupData = {};
+		
 	    return {
 	    	restrict: 'A',
-	 	    replace: false,
-//	        scope: {
-//	            loadStyle: '@'
-//	        },
+	 	    replace: true,
+	        scope: {
+	            loadStyle: '@',
+	            loadGroup: '@'
+	        },
 	        link: function (scope, element, attrs) {
 	        	
 	        	//styles
 	        	var STYLE_FADE = 0;
 	        	var STYLE_BLUR = 1;
 	        	
-	        	//setup group data
-	        	if (!scope.groupData) {
-					scope.groupData = {};	
-				}
 	        	
 	        	//set defaults
 	        	var loadStyle = null;
@@ -42,7 +43,7 @@
 	        		loadStyle = attrs.loadStyle;
 	        		duration = (attrs.duration>0) ? attrs.duration : duration;
 	        		group = attrs.loadGroup && attrs.loadGroup.length>0 ? attrs.loadGroup : null;
-	        		
+
 	        	} //end if (valid attributes)
 	        	
 	        	
@@ -63,14 +64,14 @@
 	        	//check if image loaded
 	        	scope.imageLoaded = function(target) {
 
-	        		return target && (target.complete || (typeof(target.naturalWidth)!=="undefined" && target.naturalWidth >= 0));
+	        		return target && (target.complete || (typeof(target.naturalWidth)!=="undefined" && target.naturalWidth > 0));
 	        		
 	        	} //end imageLoaded()
 	        	
 	        	
 	        	//update element transition
 	        	scope.updateElement = function(target) {
-	        		
+
 	        		if (target) {
 	        			
 	        			//apply final configuration
@@ -104,7 +105,7 @@
 	        		if (group && group.length>0) {
 	        		
 	        			//has group data
-	        			var data = scope.groupData[group];
+	        			var data = groupData[group];
 	        			if (data && data.length>0) {
 	        				
 	        				//check if all other group elements loaded
@@ -129,15 +130,15 @@
 	        			triggerUpdate = true;	
 	        		}
 	        		
-	        		
+
 	        		//trigger update
 	        		if (triggerUpdate) {
-	        		
+
 		        		//update element
 				        scope.updateElement(target);
 				        
 				        //broadcast event
-	     				scope.$broadcast('load-group-updated', eventData);
+	     				$rootScope.$broadcast('load-group-updated', eventData);
 			        
 	        		}
 			        
@@ -175,7 +176,7 @@
 	        			if (group && group.length) {
 	        				
 	        				//get data
-	        				var data = scope.groupData[group];
+	        				var data = groupData[group];
 	        				if (!data) data = [];
 	        				
 	        				//check if element already added
@@ -187,13 +188,39 @@
 	        				}
 	        				
 	        				//store data
-	        				scope.groupData[group] = data;
+	        				groupData[group] = data;
 	        					
 	        			} //end if (valid group)
-	        			
+
 	        			
 		        		//listen for load event
 			        	element.bind("load" , function(e){ 
+
+							//update element
+			        		scope.elementLoaded(element[0]);
+			        		
+			        	});
+			        	
+			        	element.bind("error" , function(e){ 
+
+							//valid group
+			        		if (group && group.length>0) {
+			        		
+			        			//has group data
+			        			var data = groupData[group];
+			        			if (data && data.length>0) {
+			        				
+			        				//remove element from group
+			        				for (var i=data.length-1; i>=0; --i) {
+			        					if (data[i]==element[0]) {
+			        						data[i].splice(i, 1);
+			        						break;
+			        					}
+			        				} //end for()
+			        				
+			        			}
+
+			        		} //end if (has group)
 
 							//update element
 			        		scope.elementLoaded(element[0]);
@@ -208,14 +235,13 @@
 	        		}
 	        		//non image element 
 	        		else {
-	        			
-	        				
+
         				//add load listener
 						scope.$on('load-group-updated', function (event, data) {
-							
+
 							//valid group
 							if (data && data.group==group) {
-								
+
 								//update element
 								scope.updateElement(element[0]);
 								
@@ -223,17 +249,22 @@
 							
 						});
 	        				
-	        			
+
+	        			//check elements at page load ($timeout runs after link functions)
+	        			scope.timeout = $timeout(function() {
+
+						    //ensure elements are visible if no image is associated with group
+			        		scope.elementLoaded(element[0]);
+			        		
+						}); 
 	        		}
 		
 
-		        	//if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0
-	        		
 	        	} //end if (valid element)
 
 	        }
 	    }
-	}); //end directive
+	}]); //end directive
 	
 		
 })();

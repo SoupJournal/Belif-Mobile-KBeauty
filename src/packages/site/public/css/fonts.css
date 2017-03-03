@@ -1,0 +1,238 @@
+
+/********************************/
+/* 			FONT FACES			*/
+/********************************/
+
+
+@font-face {
+    font-family: SansaNormal;
+    src: url(../fonts/SansaPro-Normal.otf);
+}
+
+@font-face {
+    font-family: SansaSemiBold;
+    src: url(../fonts/SansaPro-SemiBold.otf);
+}
+
+@font-face {
+    font-family: SansaBold;
+    src: url(../fonts/SansaPro-Bold.otf);
+}
+
+@font-face {
+    font-family: SansaItalic;
+    src: url(../fonts/SansaPro-NormalItalic.otf);
+}
+
+
+
+
+
+/********************************/
+/* 			FONT SIZING			*/
+/********************************/
+
+
+h1 {
+	font-size: 8.2vw;
+	font-family: SansaBold;
+}
+
+
+h1.font-header {
+	font-size: 5vw;
+}
+
+
+h2 {
+	font-size: 4.8vw;
+	font-family: SansaSemiBold;
+}
+
+h2.bold {
+	font-size: 5.7vw;
+	line-height: 8vw;
+}
+
+
+h3 {
+	font-size: 4.2vw;
+	font-family: SansaItalic;
+}
+
+
+h4 {
+	font-size: 3.5vw;
+	line-height: 5vw;
+	font-family: SansaItalic;
+}
+
+
+h5.font-header {
+	font-size: 2vw;
+	font-family: SansaNormal;
+}
+
+
+
+.page-text {
+	font-size: 2.5vw;
+}
+
+
+.button-page {
+	font-size: 4vw;
+	font-family: SansaSemiBold;
+}
+
+
+.button-back {
+	font-size: 3vw;
+	font-family: SansaSemiBold;
+}
+
+
+.button-question {
+	font-size: 4.5vw;
+	font-family: SansaItalic;	
+}
+
+.button-question.small {
+	font-size: 3.45vw;
+}
+
+
+.page-input-text {
+	font-size: 4vw;
+	font-family: SansaItalic;
+}
+
+.page-input-select {
+	height: 11vw;
+}
+
+
+.bg-danger {
+	font-family: SansaNormal;
+	font-size: 4vw;	
+}
+
+
+/********************************/
+/* 			FONT STYLES			*/
+/********************************/
+
+.title-1 {
+	font-family: SansaBold;
+}
+
+.title-2 {
+	font-family: SansaSemiBold;	
+}
+
+.title-3 {
+	font-family: SansaItalic;
+}
+
+.title-4 {
+	font-family: SansaNormal;
+}
+
+
+.underline {
+	text-decoration: underline;	
+}
+
+/********************************/
+/* 			MAX SIZE 			*/
+/********************************/
+
+
+@media all and (min-width: 960px) {
+	
+	h1 {
+		font-size: 80px;
+	}
+	
+	
+	h1.font-header {
+		font-size: 49px;
+	}
+	
+	
+	h2 {
+		font-size: 49px;
+	}
+	
+	
+	h2.bold {
+		font-size: 56px;
+		line-height: 80px;
+	}
+	
+	
+	h3 {
+		font-size: 40px;
+	}
+	
+	
+	h4 {
+		font-size: 34.1px;
+		line-height: 48.75px;
+	}
+
+	
+	h5.font-header {
+		font-size: 29.5px;
+	}
+	
+	
+	.page-text {
+		font-size: 20px;
+	}
+	
+	
+	.button-page {
+		font-size: 39px;
+	}
+	
+	
+	.button-back {
+		font-size: 29.5px;
+	}
+	
+/*		
+	.button-question {
+		font-size: 25px;	
+	}
+*/	
+	
+	.page-input-text {
+		font-size: 30px;
+	}
+	
+	
+	.page-input-text {
+		font-size: 39px;
+	}
+	
+	.page-input-select {
+		height: 107px;
+	}
+	
+	
+	.bg-danger {
+		font-size: 39px;
+	}
+	
+	
+	.button-question {
+		font-size: 44px;
+	}
+	
+	.button-question.small {
+		font-size: 34px;
+	}
+	
+	
+}

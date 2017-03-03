@@ -1,7 +1,7 @@
 
 
 body {
-	background-color: #000000;	
+	/*background-color: #000000;	*/
 }
 
 
@@ -94,8 +94,24 @@ body {
 	left: 0;
 	right: 0;	
 	z-index: 0;
+	min-height: 400px;
 }
 
+
+.page-section {
+	position: relative;
+	display: block;
+}
+
+
+.background-fill {
+	padding-bottom: 160%;	
+}
+
+
+/********************************/
+/* 			PADDING		 		*/
+/********************************/
 
 .page-padding-small {
 	padding-left: 4%;	

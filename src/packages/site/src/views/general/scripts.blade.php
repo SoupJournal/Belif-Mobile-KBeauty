@@ -66,7 +66,7 @@
 	<!-- add style -->
     {{ HTML::style($assetPath . '/css/theme.css') }} 
     {{ HTML::style($assetPath . '/css/colours.css') }} 
-    {{-- HTML::style($assetPath . '/css/fonts.css') --}} 
+    {{ HTML::style($assetPath . '/css/fonts.css') }} 
     {{ HTML::style($assetPath . '/css/page.css') }} 
 	
 	

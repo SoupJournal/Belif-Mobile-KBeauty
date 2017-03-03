@@ -3,9 +3,6 @@
 	//define variables
 	$fullScreen = (!isset($fullScreen) ? false : $fullScreen);
 
-
-$pageData = isset($pageData) ? $pageData : null;
-$backgroundImage = safeArrayValue('background_image', $pageData, "");
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -27,14 +24,14 @@ $backgroundImage = safeArrayValue('background_image', $pageData, "");
     </head>
     
     
-    <body ng-app="soup"> 
+    <body ng-app="soup" class="bg-color-1"> 
    
    
     
 		{{-- controller --}}
 		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit" ng-controller="SoupController">
 			
-			<div class="main-page-container fill-height">
+			<div class="main-page-container fill-height bg-color-5">
 				
 	
 		   		{{----------------- HEADER -------------------}}
