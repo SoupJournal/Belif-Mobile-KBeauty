@@ -213,7 +213,7 @@
 			        				//remove element from group
 			        				for (var i=data.length-1; i>=0; --i) {
 			        					if (data[i]==element[0]) {
-			        						data[i].splice(i, 1);
+			        						data.splice(i, 1);
 			        						break;
 			        					}
 			        				} //end for()

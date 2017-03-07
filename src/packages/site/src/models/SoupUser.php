@@ -2,6 +2,9 @@
 
 namespace Soup\Mobile\Models;
 
+
+use Soup\Mobile\Models\UserProfile;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Authenticatable;
@@ -16,6 +19,24 @@ class SoupUser extends Model implements AuthenticatableContract {
 
 	//set model table name
     protected $table = 'user';
+
+
+
+
+		//==========================================================//
+		//====				RELATIONSHIP METHODS				====//
+		//==========================================================//	
+			
+
+	/**
+     * Get the profile data associated with this user.
+     */
+	public function profile() {
+    
+        return $this->hasMany(UserProfile::class, 'question', 'key');
+        
+    } //end profile()
+
 
 
 

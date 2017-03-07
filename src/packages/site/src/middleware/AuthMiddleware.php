@@ -32,7 +32,7 @@
 		    
 		    //get user
 		    $user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
-		    if ($user && $user->status!=AppGlobals::USER_STATUS_MEMBER) {
+		    if (!$user || $user->status!=AppGlobals::USER_STATUS_MEMBER) {
 		    	return Redirect::route('soup.login');
 		    }
 	

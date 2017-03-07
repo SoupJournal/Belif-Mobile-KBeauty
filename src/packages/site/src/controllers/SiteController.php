@@ -565,27 +565,83 @@
 		
 		public function getQuestion() {
 			
-			$questionId = safeArrayValue('id', $_GET, 1);
+			//$questionId = safeArrayValue('id', $_GET, 1);
+			
+			//find user
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_QUESTION . $questionId);
+			//$pageData = $this->dataForFormId(self::FORM_QUESTION . $questionId);
+			$pageData = $this->dataForFormId(self::FORM_QUESTION);
 			
+			
+			//get question Data
+			$questionData = $this->activeQuestionData($user, $pageData);
+
 			//get question type
-			$questionType = safeArrayValue('type', $pageData, 0);
-			$view = 'soup::pages.quiz.question';
-			if ($questionType>0) {
-				$view = 'soup::pages.quiz.multichoice';
-			}
+			$questionType = safeArrayValue('type', $questionData, 0);
 			
-			//draw page
-			return View::make($view)->with([
-				'pageData'=> $pageData,
-				'backURL' => route('soup.quiz')
-			]);
+			//create view
+			$view = null;
+			switch ($questionType) {
+				
+				case AppGlobals::QUESTION_TYPE_DROP_DOWN:
+					$view = 'soup::pages.quiz.question';
+				break;
+				
+				case AppGlobals::QUESTION_TYPE_MULTIPLE:
+					$view = 'soup::pages.quiz.multichoice';;
+				break;
+					
+				//case AppGlobals::QUESTION_TYPE_BINARY:
+				default:
+					$view = 'soup::pages.quiz.question';
+				break;
+					
+			} //end switch (question type)
+
+
+			//valid view
+			if ($view) {
+			
+				//draw page
+				return View::make($view)->with([
+					'pageData'=> $questionData,
+					'backURL' => route('soup.quiz')
+				]);
+			
+			}
+			//no valid view
+			else {
+				return redirect(route('soup.quiz'));
+			}
 			
 		} //end getQuestion()
 		
 		
+		
+		public function postQuestion() {
+			
+			$valid = true;
+			
+			//get form values
+			$key = safeArrayValue('key', $_POST);
+			$type = safeArrayValue('key', $_POST);
+
+			//valid form
+			if ($key && strlen($key)>0) {
+				
+				switch ($type) {
+					
+					
+				} //end switch (type)
+				
+				
+			} //end if (valid form)
+			
+			return "post question";
+			
+		} //end postQuestion()
 		
 			
 			
@@ -596,6 +652,71 @@
 		//==========================================================//
 		//====					DATA METHODS					====//
 		//==========================================================//	
+						
+		private function setQuestionResult($questionKey, $type, $value) {
+			
+		} //end setQuestionResult()
+					
+					
+					
+						
+		private function activeQuestionData($user, $questionsData) {
+			
+			$questionData = null;
+
+
+			//valid data
+			if ($user && $questionsData && count($questionsData)>0) { 
+				
+				//get profile data
+				$profiles = $user->profile()->groupby('question')->get();
+				
+				//found profile data
+				if ($profiles && count($profiles)>0) {
+
+					//find question data
+					$foundAnswer = false;
+					foreach ($questionsData as $question) {
+		
+						//store question data
+						$questionData = $question;
+
+	
+						//reset answer state
+						$foundAnswer = false;
+						
+						//check if question answered
+						foreach ($profiles as $profile) {
+
+							//question was answered
+							if (strcmp($question['key'], $profile['question'])==0) {
+								$foundAnswer = true;
+								break;
+								break;
+							}
+							
+						} //end for()
+						
+					} //end for()
+					
+					//all questions answered
+					if ($foundAnswer) {
+						$questionData = null;
+					}
+				
+				}
+				//no profile data
+				else {
+					$questionData = $questionsData[0];
+				}
+				
+			} //end if (valid data)
+
+			
+			return $questionData;
+			
+		} //end activeQuestionData()
+						
 							
 	} //end class SiteController
 

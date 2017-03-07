@@ -47,10 +47,15 @@
 			Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
 		});
 		
-		//quiz
-		Route::get('/quiz', ['as' => 'soup.quiz', 'uses' => 'SiteController@getQuiz']);
-		Route::get('/question', ['as' => 'soup.question', 'uses' => 'SiteController@getQuestion']);
-	
+		//authicated routes
+		Route::group(array('middleware' => 'AppAuth'), function() {
+			
+			//quiz
+			Route::get('/quiz', ['as' => 'soup.quiz', 'uses' => 'SiteController@getQuiz']);
+			Route::get('/question', ['as' => 'soup.question', 'uses' => 'SiteController@getQuestion']);
+			Route::post('/question', ['as' => 'soup.question', 'uses' => 'SiteController@postQuestion']);
+		
+		});
 	
 	
 		/*
