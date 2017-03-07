@@ -67,7 +67,11 @@
 			{{-- enter name --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('code', null, Array ('placeholder' => 'Enter Invitation Code', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				<div class="page-input-text input-container">
+					{{ Form::text('code', null, Array ('placeholder' => 'Enter Invitation Code', 'class' => 'page-input-text input-clear', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+					{{-- <span class="input-line border-color-1"></span> --}}
+					<button class="button-input border-color-1">Enter</button>
+				</div>
 				
 			</div>
 				
@@ -82,12 +86,27 @@
 		
 				<div class="spacer-medium"></div>
 		
-				<button class="button-page-round bg-color-4 color-2">{{ $button }}</button>
+				<a href="{{ route('soup.signup.request') }}" class="button-page-round bg-color-4 color-2">{{ $button }}</a>
 
 			</div>
 
 
-			<div class="spacer-large"></div>
+			{{-- display form errors --}}
+		    @if ($errors->has())
+		    
+			    <div class="spacer-small-2"></div>
+		    
+		        @foreach ($errors->all() as $error)
+		            <div class='bg-danger alert'>{{ $error }}</div>
+		        @endforeach
+		        
+		        <div class="spacer-small-2"></div>
+		        
+		    @else
+				
+				<div class="spacer-large"></div>
+				
+			@endif
 			
 
 			{{-- footer --}}

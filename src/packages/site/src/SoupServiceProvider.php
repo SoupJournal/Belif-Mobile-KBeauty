@@ -38,6 +38,7 @@ class SoupServiceProvider extends ServiceProvider {
 		if ($router) {
 			$router->middleware('AppHTTPS', 'Soup\Mobile\Middleware\HTTPSMiddleware');	
 			$router->middleware('AppAuth', 'Soup\Mobile\Middleware\AuthMiddleware');	
+			$router->middleware('AppSignUp', 'Soup\Mobile\Middleware\SignUpMiddleware');
 		}
 		
 

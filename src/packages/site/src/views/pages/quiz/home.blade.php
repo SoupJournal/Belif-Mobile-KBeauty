@@ -43,11 +43,11 @@
 
 
 {{-- background image --}}
-<img class="page-image" src="{{ $backgroundImage }}" load-style="fade">
+@include('soup::sections.background', ['backgroundImage' => $backgroundImage, 'loadGroup' => 'main'])
 
 
 {{-- page --}}
-<div class="stretch-to-fit text-center">
+<div class="page-overlay" load-style="fade" load-group="main">
 
 	<div class="page-container row-centered page-padding-small">
 

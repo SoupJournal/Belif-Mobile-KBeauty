@@ -31,6 +31,7 @@
 
 	//ensure page data is set
 	$pageData = isset($pageData) ? $pageData : null;
+	$user = isset($user) ? $user : null;
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
@@ -46,11 +47,11 @@
 ?>
 
 {{-- background image --}}
-<img class="page-image" src="{{ $backgroundImage }}" load-style="fade" load-group="main">
+@include('soup::sections.background', ['backgroundImage' => $backgroundImage, 'loadGroup' => 'main'])
 
 <div class="page-overlay bg-color-opacity-2" load-style="fade" load-group="main">
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
+	{{ Form::model($user, Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
 		{{-- login page --}}
 		<div class="page-container page-padding-large">
@@ -66,7 +67,7 @@
 			{{-- enter name --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('name', null, Array ('placeholder' => 'Full Name', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('first_name', null, Array ('placeholder' => 'Full Name', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 				
@@ -121,7 +122,7 @@
 			
 
 			{{-- footer --}}
-			<div>{{ $text }}</div>
+			<div>{!! $text !!}</div>
 		
 		</div>
 		

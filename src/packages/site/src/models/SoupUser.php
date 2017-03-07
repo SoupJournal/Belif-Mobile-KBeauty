@@ -2,11 +2,14 @@
 
 namespace Soup\Mobile\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
-class SoupUser extends Eloquent implements AuthenticatableContract {
+use Carbon\Carbon;
+
+class SoupUser extends Model implements AuthenticatableContract {
 
 	//set model connection 
 	protected $connection = 'Soup';
@@ -15,6 +18,19 @@ class SoupUser extends Eloquent implements AuthenticatableContract {
     protected $table = 'user';
 
 
+
+		//==========================================================//
+		//====				ACCESSOR METHODS					====//
+		//==========================================================//	
+			
+
+
+
+	public function getBirthDateAttribute($date) {
+	
+	    return (new Carbon($date))->format('m/d/Y');
+	    
+	} //end getBirthDateAttribute()
 
 
 	

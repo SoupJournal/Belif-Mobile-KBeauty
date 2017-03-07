@@ -34,10 +34,10 @@
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
-//	$subtitle = safeArrayValue('subtitle', $pageData, "");
+	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
-	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
+	//$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	
 	//form submit URL
@@ -46,7 +46,7 @@
 ?>
 
 {{-- background image --}}
-<img class="page-image" src="{{ $backgroundImage }}" load-style="fade" load-group="main">
+@include('soup::sections.background', ['backgroundImage' => $backgroundImage, 'loadGroup' => 'main'])
 
 <div class="page-overlay bg-color-opacity-2" load-style="fade" load-group="main">
 
@@ -57,47 +57,34 @@
 
 			{{-- title --}}
 			<h1 class="color-1">{{ $title }}</h1>
+			<h4 class="color-1">{{ $subtitle }}</h4>
+			<h3 class="color-1">{{ $text }}</h3>
 			
 
-			{{-- enter email --}}
+			{{-- instagram --}}
 			<div class="form-group"> 
 			
-				{{ Form::email('email', null, Array ('placeholder' => 'Email', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('instagram', null, Array ('placeholder' => '@Instagram', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 				
 				
-			{{-- enter password --}}
+			{{-- snapchat --}}
 			<div class="form-group"> 
 			
-				{{ Form::password('password', Array ('placeholder' => 'Create a password', 'class' => 'page-input-text', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('snapchat', null, Array ('placeholder' => '@Snapchat', 'class' => 'page-input-text', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 			
 			
-			{{-- confirm password --}}
+			{{-- zip code --}}
 			<div class="form-group"> 
 			
-				{{ Form::password('confirm_password', Array ('placeholder' => 'Confirm password', 'class' => 'page-input-text', 'tabindex' => '3', 'required' => '')) }}
+				{{ Form::number('zip_code', null, Array ('placeholder' => 'Zipcode*', 'class' => 'page-input-text', 'tabindex' => '3', 'required' => '')) }}
 				
 			</div>
 			
-			
-			<div class="spacer-small"></div>
-
 		
-			{{-- sign up button --}}
-			<button class="button-page-round bg-color-4 color-2">{{ $button }}</button>
-
-
-			<div class="spacer-medium"></div>
-
-			
-			{{-- log in button --}}
-			<div>
-				<a href="{{ route('soup.login') }}">{{ $secondaryButton }}</a>
-			</div>
-
 			
 			
 			{{-- display form errors --}}
@@ -118,8 +105,10 @@
 			@endif
 			
 
-			{{-- footer --}}
-			<div>{{ $text }}</div>
+			{{-- sign up button --}}
+			<button class="button-page-round bg-color-6 color-2">{{ $button }}</button>
+
+
 			
 
 		

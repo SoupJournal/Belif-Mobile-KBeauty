@@ -2,7 +2,7 @@
 
 	namespace Soup\Mobile\Middleware; 
 
-	use Soup\CMS\Lib\CMSAccess;
+	use Soup\Mobile\Lib\AppGlobals;
 
 	use Closure;
 	use Redirect;
@@ -19,15 +19,21 @@
 	     */
 	    public function handle($request, Closure $next)
 	    {
-	
-		    //ensure user is logged in
-			if (!Auth::guard(AppGlobals::$AUTH_GUARD)->check()) {
-		        return Redirect::route('soup.login');
-		    }
 		   
 		   	//ensure https connection 
 		    if (!$request->secure()) {
 		    	return Redirect::secure( $request->path('/toSecureURL') );
+		    }
+		    
+		    //ensure user is logged in
+			if (!Auth::guard(AppGlobals::$AUTH_GUARD)->check()) {
+		        return Redirect::route('soup.login');
+		    }
+		    
+		    //get user
+		    $user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+		    if ($user && $user->status!=AppGlobals::USER_STATUS_MEMBER) {
+		    	return Redirect::route('soup.login');
 		    }
 	
 			//process request

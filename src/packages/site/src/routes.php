@@ -24,7 +24,7 @@
 	
 	
 	//group controllers into namespace
-	Route::group(array('namespace' => 'Soup\Mobile\Controllers', 'middleware' => 'web'), function() use (&$basePath) {
+	Route::group(array('namespace' => 'Soup\Mobile\Controllers', 'middleware' => 'web'), function() {
 	
 	
 		Route::get('/', ['as' => 'soup.welcome', /*'middleware' => 'CMSAuth',*/ 'uses' => 'SiteController@getIndex']);
@@ -36,11 +36,16 @@
 		//sign up
 		Route::get('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@getSignup']);
 		Route::post('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@postSignup']);
-		Route::get('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@getSignupData']);
-		Route::post('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@postSignupData']);
-		Route::get('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@getSignupCode']);
-		Route::post('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@postSignupCode']);
-		Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
+		//post signup
+		Route::group(array('middleware' => 'AppSignUp'), function() {
+			Route::get('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@getSignupData']);
+			Route::post('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@postSignupData']);
+			Route::get('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@getSignupCode']);
+			Route::post('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@postSignupCode']);
+			Route::get('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@getSignupRequest']);
+			Route::post('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@postSignupRequest']);
+			Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
+		});
 		
 		//quiz
 		Route::get('/quiz', ['as' => 'soup.quiz', 'uses' => 'SiteController@getQuiz']);

@@ -1,6 +1,6 @@
 <?php
 
-	namespace Soup\Mobile\Lib;
+	namespace Soup\Mobile\Controllers;
 
 	
 	use App\Http\Controllers\Controller;
@@ -15,6 +15,7 @@
 		const FORM_SIGNUP = 'page_signup';
 		const FORM_SIGNUP_DATA = 'page_signup_data';
 		const FORM_SIGNUP_CODE = 'page_signup_code';
+		const FORM_SIGNUP_REQUEST = 'page_signup_request';
 		const FORM_SIGNUP_THANKS = 'page_signup_thanks';
 		const FORM_QUIZ = 'page_quiz';
 		const FORM_QUESTION_1 = 'page_question_1';
@@ -123,6 +124,19 @@
 						"subtext" => "by signing up you agree with our terms and conditions",
 						"button" => "APPLY FOR MEMBERSHIP",
 						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background004.jpg"
+					);
+				}
+				break;
+				
+				
+				case self::FORM_SIGNUP_REQUEST:
+				{
+					$pageData = Array (
+						"title" => "Interested in becoming a member?",
+						"subtitle" => "Submit your details and we'll be in touch.",
+						"text" => "We look forward to seeing you soon!",
+						"button" => "APPLY FOR MEMBERSHIP",
+						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background005.jpg"
 					);
 				}
 				break;

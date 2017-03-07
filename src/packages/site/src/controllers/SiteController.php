@@ -2,10 +2,15 @@
 
 	namespace Soup\Mobile\Controllers;
 
-	use Soup\Mobile\Lib\BaseController;
+	use Soup\Mobile\Controllers\BaseController;
+	use Soup\Mobile\Models\SoupUser;
+	use Soup\Mobile\Lib\AppGlobals;
 	
 	use View;
 	use Redirect;
+	use Illuminate\Support\Facades\Auth;
+	
+	use Carbon\Carbon;
 
 	class SiteController extends BaseController {
 		
@@ -48,7 +53,7 @@
 			$pageData = $this->dataForFormId(self::FORM_LOGIN);
 			
 			//draw page
-			return View::make('soup::pages.signin.login')->with([
+			return View::make('soup::pages.signup.login')->with([
 				'pageData'=> $pageData,
 				'nextURL' => route('soup.question'),
 				'backURL' => route('soup.welcome'),
@@ -61,10 +66,86 @@
 	
 		public function postLogin() {
 			
+			$valid = true;
+			$errors = null;
+			
+			//get form values
+			$email = safeArrayValue('email', $_POST);
+			$password = safeArrayValue('password', $_POST);
+			
+	
+			//valid email
+			if (!validEmail($email)) {
+				$errors = 'Please specify a valid email address.';
+				$valid = false;
+			}
+			
+			//password exists
+			else if (!$password || strlen(trim($password))<=0) {
+				$errors = 'Please specify a password.';
+				$valid = false;
+			}
+	
+	
+			//valid form
+			if ($valid) {
+			
+				//authorise user
+				if (Auth::guard(AppGlobals::$AUTH_GUARD)->attempt(['email' => $email, 'password' => $password])) {
+					
+					//get user
+					$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+					
+					//new sign up
+					if (!$user || $user->status==AppGlobals::USER_STATUS_INQUIRY) {
+						
+						//direct to next page
+						return Redirect::route('soup.signup.info');
+							
+					}
+					//user has registered (but not yet a member)
+					else if ($user->status==AppGlobals::USER_STATUS_REGISTERED || $user->status==AppGlobals::USER_STATUS_REQUESTED) {
+						
+						//direct to next page
+						return Redirect::route('soup.signup.code');
+							
+					}
+					//valid user
+					else if ($user->status==AppGlobals::USER_STATUS_MEMBER) {
+					
+						//direct to next page
+						return Redirect::route('soup.quiz');
+					
+					}
+					//other user types
+					else {
+						$errors = 'Sorry, you do not have member status.';
+						$valid = false;
+					}
+				
+				}
+				//unauthorised
+				else {
+					$errors = 'Your credentials appear invalid.';
+					$valid = false;
+				}
+				
+			}
+			
+			
+			//invalid form
+			if (!$valid) {
+				return Redirect::back()
+							->withInput()
+							->withErrors($errors);
+			}
+			
 			return Redirect::route('soup.quiz');
 			
 		} //end postLogin()
 		
+	
+	
 	
 	
 	
@@ -74,7 +155,7 @@
 			$pageData = $this->dataForFormId(self::FORM_SIGNUP);
 			
 			//draw page
-			return View::make('soup::pages.signin.signup')->with([
+			return View::make('soup::pages.signup.signup')->with([
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.welcome')
@@ -131,23 +212,45 @@
 			}
 			
 			//check if email used already
-//			$user = SoupUser::where('email', '=', $email)->where('email_verified', '=', true)->first();
-//			if ($user) {
-//				$errors = 'Sorry, looks like you\'ve already registered with that email';
-//				$valid = false;
-//			}
+			$user = SoupUser::where('email', '=', $email)->first();
+			if ($user) { // && $user->status!=AppGlobals::USER_STATUS_INQUIRY) {
+				$errors = 'Sorry, looks like you\'ve already registered with that email';
+				$valid = false;
+			}
 			
 			
 			
 			//valid form
 			if ($valid) {
 				
-				//direct to next page
-				return Redirect::route('soup.signup.info');
+				//encrypt password
+				$cryptedPassword = bcrypt($password);
+				
+				//create user
+				$user = new SoupUser();
+				$user->email = $email;
+				$user->password = $cryptedPassword;
+				$user->status = AppGlobals::USER_STATUS_INQUIRY;
+				$user->save();
+				
+				//authorise user
+				if (Auth::guard(AppGlobals::$AUTH_GUARD)->attempt(['email' => $email, 'password' => $password])) {
+					
+					//direct to next page
+					return Redirect::route('soup.signup.info');
+				
+				}
+				//unable to authenticate
+				else {
+					$errors = 'Sorry, looks like we had a problem processing your user details';
+					$valid = false;
+				}
 				
 			}
+			
+			
 			//invalid form
-			else {
+			if (!$valid) {
 				return Redirect::back()
 							->withInput()
 							->withErrors($errors);
@@ -166,11 +269,15 @@
 			//get page data
 			$pageData = $this->dataForFormId(self::FORM_SIGNUP_DATA);
 			
+			//find user
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+			
 			//draw page
-			return View::make('soup::pages.signin.info')->with([
+			return View::make('soup::pages.signup.info')->with([
+				'user' => $user,
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
-				'backURL' => route('soup.signup')
+				//'backURL' => route('soup.signup')
 			]);
 			
 		} //end getSignupData()
@@ -182,22 +289,71 @@
 			$errors = null;
 			
 			//get form values
-			$name = safeArrayValue('name', $_POST);
+			$name = safeArrayValue('first_name', $_POST);
 			$birthDate = safeArrayValue('birth_date', $_POST);
 			$gender = safeArrayValue('gender', $_POST);
 			
+			//find birth year
+			$birthYear = $birthDate ? substr($birthDate, strrpos($birthDate, '/') + 1) : null;
+			
+			//convert date
+			$date = null;
+			try {
+				$date = Carbon::createFromFormat('m/d/Y', $birthDate);
+			}
+			catch (\Exception $ex) {
+				try {
+					$date = Carbon::createFromFormat('m\\d\\Y', $birthDate);
+				}
+				catch (\Exception $ex) {
+					try {
+						$date = Carbon::createFromFormat('m-d-Y', $birthDate);
+					}
+					catch (\Exception $ex) {
+				echo "Exception: " . $ex;
+				exit(0);
+					}
+				}	
+			}
+			
+			
+			//find user
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+			
+			//valid user
+			if (!$user || !($user->status==AppGlobals::USER_STATUS_INQUIRY || $user->status==AppGlobals::USER_STATUS_REGISTERED)) {
+				$errors = 'Sorry, missing or invalid user credentials. Please login or restart the signup proccess';
+				$valid = false;
+			}
 			
 			//name exists
-			if (!$name || strlen(trim($name))<=0) {
+			else if (!$name || strlen(trim($name))<=0) {
 				$errors = 'Please specify your name.';
 				$valid = false;
 			}
 			
-			//valid birth date
+			//birth date exists
 			else if (!$birthDate || strlen($birthDate)<=0) {
 				$errors = 'Please specify a valid birth date.';
 				$valid = false;
 			}
+			//birth date exists
+			else if (!$birthDate || strlen($birthDate)<=0) {
+				$errors = 'Please specify a valid birth date.';
+				$valid = false;
+			}
+			//valid year
+			else if (!$birthYear || strlen(trim($birthYear))<4) {
+				$errors = 'Please specify your birth year in full (4 digits).';
+				$valid = false;
+			}
+			//valid birth date
+			else if (!$date) {
+				$errors = 'Please specify a valid birth date.';
+				$valid = false;
+			}
+			//TODO: check date range (1900+)?
+
 			
 			//valid gender
 			else if (!$gender || strlen($gender)<=0) {
@@ -208,7 +364,14 @@
 			
 			//valid form
 			if ($valid) {
-			
+				
+				//update user details
+				$user->first_name = trim($name);
+				$user->birth_date = trim($date);
+				$user->gender = trim($gender);
+				$user->status = AppGlobals::USER_STATUS_REGISTERED;
+				$user->save();
+				
 				return Redirect::route('soup.signup.code');
 			
 			}
@@ -231,10 +394,10 @@
 			$pageData = $this->dataForFormId(self::FORM_SIGNUP_CODE);
 			
 			//draw page
-			return View::make('soup::pages.signin.code')->with([
+			return View::make('soup::pages.signup.code')->with([
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
-				'backURL' => route('soup.signup.info')
+				//'backURL' => route('soup.signup.info')
 			]);
 			
 		} //end getSignupCode()
@@ -243,11 +406,116 @@
 	
 		public function postSignupCode() {
 			
-			return Redirect::route('soup.signup.thanks');
+			$valid = true;
+			$errors = null;
+			
+			//get form values
+			$code = safeArrayValue('code', $_POST);
+			
+			//code exist
+			if (!$code || strlen(trim($code))<=0) {
+				$errors = 'Please specify the registration code you received.';
+				$valid = false;
+			}
+			//valid code
+			else if (strcmp($code, 'AMS478')!=0) {
+				$errors = 'Sorry, your registration code appears invalid.';
+				$valid = false;
+			}
+			
+			if ($valid) {
+			
+				//redirect to main site
+				return Redirect::route('soup.quiz');
+				
+			}
+			
+			//invalid form
+			else {
+				return Redirect::back()
+							->withInput()
+							->withErrors($errors);
+			}
 			
 		} //end postSignupCode()
 	
 	
+	
+	
+		public function getSignupRequest() {
+			
+			//get page data
+			$pageData = $this->dataForFormId(self::FORM_SIGNUP_REQUEST);
+			
+			//draw page
+			return View::make('soup::pages.signup.request')->with([
+				'pageData'=> $pageData,
+				//'nextURL' => route('soup.question'),
+				'backURL' => route('soup.signup.code')
+			]);
+			
+		} //end getSignupRequest()
+	
+	
+	
+		public function postSignupRequest() {
+			
+			$valid = true;
+			$errors = null;
+			
+			//get form values
+			$instagram = safeArrayValue('instagram', $_POST);
+			$snapchat = safeArrayValue('snapchat', $_POST);
+			$zipCode = safeArrayValue('zip_code', $_POST);
+			
+			//find user
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+			
+			//valid user
+			if (!$user || !($user->status==AppGlobals::USER_STATUS_INQUIRY || $user->status==AppGlobals::USER_STATUS_REGISTERED || $user->status==AppGlobals::USER_STATUS_REQUESTED)) {
+				$errors = 'Sorry, missing or invalid user credentials. Please login or restart the signup proccess';
+				$valid = false;
+			}
+			//already requested
+			else if ($user->status==AppGlobals::USER_STATUS_REQUESTED) {
+				$errors = 'Your request has already been sent, please allow some time for us to process your request.';
+				$valid = false;
+			}
+			//valid zip code
+			else if (!$zipCode || strlen(trim($zipCode))<=0) {
+				$errors = 'Please specify your zip code.';
+				$valid = false;
+			}
+			else if (strlen(trim($zipCode))!=5 || intval($zipCode)<=0) {
+				$errors = 'Please specify a vaild zip code.';
+				$valid = false;
+			}
+			
+			
+			//valid form
+			if ($valid) {
+			
+				//store user details
+				$user->instagram = $instagram;
+				$user->snapchat = $snapchat;
+				$user->zip_code = $zipCode;
+				$user->status = AppGlobals::USER_STATUS_REQUESTED;
+				$user->save();
+			
+				//show thanks page
+				return Redirect::route('soup.signup.thanks');
+				
+			}
+			
+			//invalid form
+			else {
+				return Redirect::back()
+							->withInput()
+							->withErrors($errors);
+			}
+			
+		} //end postSignupRequest()
+		
 	
 	
 	
@@ -257,13 +525,15 @@
 			$pageData = $this->dataForFormId(self::FORM_SIGNUP_THANKS);
 			
 			//draw page
-			return View::make('soup::pages.signin.thanks')->with([
+			return View::make('soup::pages.signup.thanks')->with([
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
-				'backURL' => route('soup.signup.info')
+				'backURL' => route('soup.signup.code')
 			]);
 			
 		} //end getSignupThanks()
+	
+
 	
 
 	
@@ -284,7 +554,7 @@
 			return View::make('soup::pages.quiz.home')->with([
 				'pageData'=> $pageData,
 				'nextURL' => route('soup.question'),
-				'backURL' => route('soup.welcome')
+				//'backURL' => route('soup.welcome')
 			]);
 			
 		} //end getQuiz()

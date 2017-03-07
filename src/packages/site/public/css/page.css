@@ -135,9 +135,16 @@
 }
 
 
+.button-input {
+	background-color: transparent;
+	border: none;
+	border-left: thick solid;	
+}
+
 /********************************/
 /* 			INPUTS 				*/
 /********************************/
+
 
 .page-input-text {
 	padding-left: 10px;
@@ -168,6 +175,23 @@
 }
 
 
+.input-container {
+	width: 100%;
+}
+
+.page-input-text.input-clear {
+	width: 70%;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+	margin-top: 0;
+	border: none;
+}
+
+.page-input-text.input-clear:focus {
+	outline: none;	
+}
+
 /********************************/
 /* 			SPACER 				*/
 /********************************/
@@ -191,4 +215,16 @@
 .spacer-large {
 	padding-top: 20%;	
 }
+
+
+/********************************/
+/* 			SEPARATOR			*/
+/********************************/
+
+.input-line {
+	height: 80%;
+	width: 2px;
+}
+
+
 
