@@ -13,6 +13,7 @@ Homestead.json
 app/config/database.php
 public/*
 public/**
+!public/index.php
 vendor/
 node_modules/
 composer.lock
