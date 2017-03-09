@@ -11,7 +11,7 @@
 	
 	
 	//ensure page name is set
-	$pageName = (!isset($pageName) ? 'belif' : $pageName);
+	//$pageName = (!isset($pageName) ? 'soup' : $pageName);
 	
 ?>
 

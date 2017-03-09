@@ -24,7 +24,7 @@
 	
 	
 	//group controllers into namespace
-	Route::group(array('namespace' => 'Soup\Mobile\Controllers', 'middleware' => 'web'), function() {
+	Route::group(array('namespace' => 'Soup\Mobile\Controllers', 'middleware' => ['web', 'HTTPS']), function() {
 	
 	
 		Route::get('/', ['as' => 'soup.welcome', /*'middleware' => 'CMSAuth',*/ 'uses' => 'SiteController@getIndex']);

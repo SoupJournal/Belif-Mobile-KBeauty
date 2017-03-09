@@ -6,6 +6,7 @@
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
+	$text = safeArrayValue('text', $pageData, "");
 	$steps = safeArrayValue('steps', $pageData, null);
 	
 //	$text = safeArrayValue('text', $pageData, "");
@@ -17,12 +18,14 @@
 
 
 
-<div class="page-container bg-color-opacity-1" load-style="fade" load-group="{{ $sectionId }}">
+<div class="page-container bg-color-2" load-style="fade" load-group="{{ $sectionId }}">
 
-	<div class="text-center page-padding-large">
+	<div class="text-center page-padding-medium">
 		
-			{{-- title --}}
-			<h2 class="bold color-2">{{ $title }}</h2>
+		<div class="spacer-small"></div>
+		
+		{{-- title --}}
+		<h1 class="clear-header-margins color-1">{{ $title }}</h1>
 		
 		
 		<?php
@@ -34,17 +37,25 @@
 				foreach ($steps as $step) {
 					
 					//get step properties
-					$image = safeArrayValue('image', $step, null);
-					$text = safeArrayValue('text', $step, "");
+					$stepImage = safeArrayValue('image', $step, null);
+					$stepText = safeArrayValue('text', $step, "");
 		?>
 		
-					{{-- draw image --}}
-					@if (isset($image) && strlen($image)>0)			
-						<img src="{{ $image }}" class="section-image" load-style="fade" load-group="{{ $sectionId }}">
-					@endif
+					<div class="">
+		
+						{{-- draw image --}}
+						@if (isset($stepImage) && strlen($stepImage)>0)			
+							<img src="{{ $stepImage }}" class="section-image" load-style="fade" load-group="{{ $sectionId }}">
+						@endif
+						
+						<div class="spacer-tiny"></div>
+						
+						{{-- draw text --}}
+						<h5 class="page-padding-medium color-1">{!! $stepText !!}</h5>
+	
+						<div class="spacer-small"></div>
 					
-					{{-- draw text --}}
-					<div>{!! $text !!}</div>
+					</div>
 		
 		<?php
 		
@@ -52,6 +63,17 @@
 			
 			} //end if (has steps)
 		?>
+			
+			
+			{{-- footer text --}}
+			@if (isset($text))
+				<div class="spacer-medium"></div>
+				<h4 class="color-1">{{ $text }}</h4>
+			@endif
+			
+			
+			<div class="spacer-medium"></div>
+			
 			
 	</div>
 

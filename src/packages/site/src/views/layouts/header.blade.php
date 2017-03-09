@@ -26,7 +26,7 @@
 			
 				{{-- back button --}}
 				@if (isset($backURL))
-					<a href="{{ $backURL }}" class="button-back {{ $textColour }}">BACK</a>
+					<a href="{{ $backURL }}" class="button-header button-back {{ $textColour }}">BACK</a>
 				@endif
 		
 			</div>
@@ -48,7 +48,7 @@
 		   	
 				{{-- next button --}}
 				@if (isset($nextURL) && isset($nextLabel))
-					<a href="{{ $nextURL }}" class="button-next color-1">{{ $nextLabel }}</a>
+					<a href="{{ $nextURL }}" class="button-header button-next color-1">{{ $nextLabel }}</a>
 				@endif
 			
 			</div>

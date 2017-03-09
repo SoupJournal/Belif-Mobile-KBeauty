@@ -4,6 +4,7 @@
 
 	use Soup\Mobile\Controllers\BaseController;
 	use Soup\Mobile\Models\SoupUser;
+	use Soup\Mobile\Models\UserProfile;
 	use Soup\Mobile\Lib\AppGlobals;
 	
 	use View;
@@ -627,19 +628,55 @@
 			//get form values
 			$key = safeArrayValue('key', $_POST);
 			$type = safeArrayValue('key', $_POST);
+			$value = safeArrayValue('value', $_POST);
 
 			//valid form
 			if ($key && strlen($key)>0) {
 				
 				switch ($type) {
 					
+					case AppGlobals::QUESTION_TYPE_DROP_DOWN:
+
+					break;
+				
+					case AppGlobals::QUESTION_TYPE_MULTIPLE:
+	
+					break;
+					
+					//case AppGlobals::QUESTION_TYPE_BINARY:
+					default:
+
+					break;
 					
 				} //end switch (type)
 				
 				
 			} //end if (valid form)
 			
-			return "post question";
+			//valid form
+			if ($valid) {
+				
+				//TODO: move to setQuestionResult()
+				
+				//clear existing answers
+				$profileValues = UserProfile::where('question', '=', $key)->get();
+				foreach ($profileValues as $profile) {
+					$profile->delete();	
+				}
+				
+				//store question answer
+				$profile = new UserProfile();
+				$profile->question = $key;
+				$profile->value = $value;
+				$profile->save();
+					
+				//show next question
+				return redirect(route('soup.question'));
+					
+			}
+			
+			
+			return "Under construction";
 			
 		} //end postQuestion()
 		

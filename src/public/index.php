@@ -47,6 +47,9 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
+// Set the trusted proxies so we can generate HTTPS routes (used for AWS so that can run HTTP locally behind HTTPS)
+\Symfony\Component\HttpFoundation\Request::setTrustedProxies(['127.0.0.1']);
+
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(

@@ -234,7 +234,7 @@
 	        			
 	        		}
 	        		//non image element 
-	        		else {
+	        		//else {
 
         				//add load listener
 						scope.$on('load-group-updated', function (event, data) {
@@ -257,7 +257,7 @@
 			        		scope.elementLoaded(element[0]);
 			        		
 						}); 
-	        		}
+	        		//}
 		
 
 	        	} //end if (valid element)

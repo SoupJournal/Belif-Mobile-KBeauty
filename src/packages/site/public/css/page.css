@@ -175,6 +175,7 @@
 }
 
 
+
 .input-container {
 	width: 100%;
 }
@@ -216,6 +217,10 @@
 	padding-top: 20%;	
 }
 
+.spacer-horizontal {
+	display: inline-block;
+	width: 10%;	
+}
 
 /********************************/
 /* 			SEPARATOR			*/

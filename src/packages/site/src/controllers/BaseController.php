@@ -53,23 +53,41 @@
 							"title" => "YOUR MEMBERSHIP TO BREAKFAST, LUNCH, DINNER AND DRINKS FROM YOUR FAVOURITE CAFES AND RESTAURANTS EVERY MONTH.",
 							//"title" => "DISCOVER BETTER BREAKFASTS, LUNCH, DINNER AND DRINKS FROM YOUR NEW FAVOURITE CAFES, RESTAURANTS AND NIGHTLIFE EVERY MONTH.",
 							//"subtitle" => "MOISTURIZING BOMB OR AQUA BOMB?",
-							//"text" => "Take our quiz and claim a free sample",
 							"button" => "SIGN UP",
 							"secondary_button" => "LOG IN",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background001.jpg",
 						),
 						"guide" => Array (
 							"title" => "HOW IT WORKS",
+							"text" => "ACCESS TO MEALS + DRINKS FROM NYC'S BEST PLACES",
 							"steps" => [
 								[
-								"text" => "Place holder copy goes here.<br>\nPeople having a good time.",
-								"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background002.jpg"	
+								"text" => "Soup aims to band together lovers of food and eating out with friends.",
+								"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/misc/image001.jpg"	
 								],
 								[
-								"text" => "Place holder copy goes here.<br>\nPeople having a good time.",
-								"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background003.jpg"	
+								"text" => "We invite those who support their local community & thrive on quality experiences.",
+								"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/misc/image002.jpg"	
+								],
+								[
+								"text" => "Members are matched with local venues for unique experiences each month.",
+								"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/misc/image003.jpg"	
+								],
+								[
+								"text" => "Members share their experiences privately with Soup and with their friends.",
+								"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/misc/image004.jpg"	
 								]
 							]
+						),
+						"info" => Array (
+							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background009.jpg",
+						),
+						"info2" => Array (
+							"title" => "QUALITY LOCAL PLACES WITH THE PERFECT VIBE.",
+							"subtitle" => "We only work with local places that believe in quality and support their community.<br>\nThe Soup membership takes you to the places you have always wanted to try and brand new spots that might not be on your radar yet.",
+							"button" => "APPLY NOW",
+							"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/misc/image005.jpg",
+							"theme" => 1
 						)
 					);
 				}
@@ -171,15 +189,33 @@
 						[
 							"key" => "question1",
 							"type" => 0,
-							"question" => "WHERE IS YOUR FAVOURITE PART OF TOWN TO GET #EEEATS?",
+							"question" => "When eating out you're always...",
 							//"text" => "(Swipe Right or Left to answer)",
-							"options" => "SOUTH BROOKLYN",
+							"options" => "DOWNTOWN",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background007.jpg",
 							"theme"	=> 0,
 							"order" => 0
 						],
 						[
 							"key" => "question2",
+							"type" => 0,
+							"question" => "When eating out you're always...",
+							"options" => "NORTH BROOKLYN",
+							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background008.jpg",
+							"theme"	=> 0,
+							"order" => 0
+						],
+						[
+							"key" => "question3",
+							"type" => 0,
+							"question" => "When eating out you're always...",
+							"options" => "SOUTH BROOKLYN",
+							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background007.jpg",
+							"theme"	=> 0,
+							"order" => 0
+						],
+						[
+							"key" => "question4",
 							"type" => 1,
 							"question" => "WHAT ARE YOUR TOP 3 VIBES FOR EATING OUT?",
 							"options" => "[\"CHILL\",\"HEALTH&WELLNESS\",\"PARTY\",\"CASUAL\",\"POPULAR\",\"CLASSY\",\"VEGETARIAN\"]",

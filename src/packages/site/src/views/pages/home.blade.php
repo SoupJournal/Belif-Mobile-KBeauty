@@ -35,9 +35,8 @@
 	//get page variables
 	$welcomeData = safeArrayValue('welcome', $pageData, null);
 	$guideData = safeArrayValue('guide', $pageData, null);
-//	$subtitle = safeArrayValue('subtitle', $pageData, "");
-//	$text = safeArrayValue('text', $pageData, "");
-//	$button = safeArrayValue('button', $pageData, "");
+	$infoData = safeArrayValue('info', $pageData, null);
+	$info2Data = safeArrayValue('info2', $pageData, null);
 
 	$sectionData1 = null;
 	
@@ -63,7 +62,25 @@
 			'pageData' => $guideData
 		))
 	</div>
+	
+	
+	
+	{{----------------- INFO SECTION -------------------}}
+	<div class="page-section">
+		@include('soup::sections.info', Array(
+			'sectionId' => 'info',
+			'pageData' => $infoData
+		))
+	</div>
 
+
+	{{----------------- INFO SECTION -------------------}}
+	<div class="page-section">
+		@include('soup::sections.info', Array(
+			'sectionId' => 'info2',
+			'pageData' => $info2Data
+		))
+	</div>
 
 </div>
 

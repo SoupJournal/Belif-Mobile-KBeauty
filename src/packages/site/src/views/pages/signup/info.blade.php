@@ -80,17 +80,25 @@
 			</div>
 			
 			
+			<div class="spacer-tiny"</div>
+			
 			
 			{{-- enter gender --}}
 			<div class="form-group"> 
 				{{ Form::radio('gender', 'Female', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
-				{{ Form::label('female', 'Female', Array('class' => 'color-2')) }}
+				{{ Form::label('female', 'Female', Array('class' => 'title-semi-bold page-text-large color-1')) }}
+				
+				
+				<span class="spacer-horizontal"></span>
 				
 				{{ Form::radio('gender', 'Male', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
-				{{ Form::label('male', 'Male', Array('class' => 'color-2')) }}
+				{{ Form::label('male', 'Male', Array('class' => 'title-semi-bold page-text-large color-1')) }}
+
+				<span class="spacer-horizontal"></span>
+
 				
 				{{ Form::radio('gender', 'Other', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
-				{{ Form::label('other', 'Other', Array('class' => 'color-2')) }}
+				{{ Form::label('other', 'Other', Array('class' => 'title-semi-bold page-text-large color-1')) }}
 			</div>
 			
 

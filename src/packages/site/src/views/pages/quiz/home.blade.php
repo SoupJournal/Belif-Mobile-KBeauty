@@ -49,13 +49,13 @@
 {{-- page --}}
 <div class="page-overlay" load-style="fade" load-group="main">
 
-	<div class="page-container row-centered page-padding-small">
+	<div class="page-container row-centered page-padding-medium">
 
 
 		{{-- title --}}
 		<h1 class="color-2">{{ $title }}</h1>
 		
-		
+		<div class="spacer-large"></div>
 
 		{{-- start button --}}
 		@if (isset($nextURL))

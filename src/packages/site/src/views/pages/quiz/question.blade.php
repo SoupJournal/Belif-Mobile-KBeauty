@@ -82,7 +82,7 @@
 				<div class="row page-padding-medium">
 				
 					{{-- question --}}
-					<h2 class="color-2">{{ $question }}</h2>
+					<h1 class="title-regular color-2">{{ $question }}</h1>
 				
 					<h3 class="color-2">{{ $text }}</h3>
 				
@@ -94,7 +94,7 @@
 			{{-- center row --}}
 			<div class="text-center row-centered page-padding-tiny">
 				
-					<h1 class="bold color-2">{{ $answer }}</h1>	
+					<h1 class="title-bold large color-2">{{ $answer }}</h1>	
 		
 			</div>
 		

@@ -95,7 +95,7 @@
 			
 			{{-- log in button --}}
 			<div>
-				<a href="{{ route('soup.login') }}">{{ $secondaryButton }}</a>
+				<a href="{{ route('soup.login') }}" class="page-link color-4">{{ $secondaryButton }}</a>
 			</div>
 
 			

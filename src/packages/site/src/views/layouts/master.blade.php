@@ -2,6 +2,8 @@
 
 	//define variables
 	$fullScreen = (!isset($fullScreen) ? false : $fullScreen);
+	$pageName = (!isset($pageName) ? 'soup' : $pageName);
+
 
 ?>
 <!DOCTYPE html>
