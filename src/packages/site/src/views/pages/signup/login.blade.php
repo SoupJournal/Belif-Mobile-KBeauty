@@ -78,7 +78,7 @@
 			{{-- enter password --}}
 			<div class="form-group"> 
 			
-				{{ Form::password('password', Array ('placeholder' => 'password', 'class' => 'page-input-text square no-border', 'tabindex' => '2', 'required' => '', 'autofocus' => '')) }}
+				{{ Form::password('password', Array ('placeholder' => 'password', 'class' => 'page-input-text square no-border', 'tabindex' => '2', 'required' => '')) }}
 				
 			</div>
 			

@@ -161,12 +161,16 @@ a.page-link {
 	font-family: ProximaNovaSemiBold;	
 }
 
-.title-3 {
-	font-family: SansaItalic;
+.title-condensed {
+	font-family: ProximaNovaCondensed;
 }
 
 .title-regular {
 	font-family: ProximaNovaRegular;
+}
+
+.title-light {
+	font-family: ProximaNovaLight;
 }
 
 

@@ -33,7 +33,7 @@ class SoupUser extends Model implements AuthenticatableContract {
      */
 	public function profile() {
     
-        return $this->hasMany(UserProfile::class, 'question', 'key');
+        return $this->hasMany(UserProfile::class, 'user', 'id');
         
     } //end profile()
 

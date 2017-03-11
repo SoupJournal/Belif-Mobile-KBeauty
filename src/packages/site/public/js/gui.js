@@ -5,6 +5,44 @@
 	var module = angular.module('soup-gui', ['ngResource']); 
 	
 	
+	//fillHeight - update element to fill parent height
+/*	module.directive( 'fillHeight', function() {
+	    return {
+			restrict: 'A',
+	        link: function( scope, elem, attrs ) {
+	        	var p = angular.element(elem.parent());
+	console.log("git link: " + elem.parent().prop('id') + " - p: " + p);
+				//add listener
+	            scope.$watch( 
+	            	function () {
+	            		var parent = elem.parent();
+			            return parent ? parent.prop('offsetHeight') : 0;
+			        },
+	            	//'__height', 
+	            	function( newHeight, oldHeight ) {
+	            	
+	            	//find parent
+	            	var parent = elem.parent();
+	            	if (parent) {
+	            	
+	            		//determine height
+	            		var positionY = elem.prop('offsetTop');
+	            		//var marginY = elem.prop('margin-top');
+	            		var elemHeight = newHeight - positionY;
+	           console.log("height: " +  elemHeight + " - newHeight: " + newHeight + " - positionY: " + positionY + " - oldHeight: " + oldHeight);
+	            		//set height
+	            		elem.css('height', elemHeight +  'px');
+	                	//elem.attr( 'offsetHeight', 'margin-top: ' + (58 + newHeight) + 'px' );
+	                
+	            	}
+	            	
+	            }); //end listener()
+	        }
+	    }
+	    
+	}); //end directive()
+	*/
+	
 	
 	//pageButton directive - standard page button 
 	module.directive('loadStyle', ['$rootScope', '$timeout', function($rootScope, $timeout) {

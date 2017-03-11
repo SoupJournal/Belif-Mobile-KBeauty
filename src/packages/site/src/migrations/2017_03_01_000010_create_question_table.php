@@ -17,6 +17,7 @@ class CreateQuestionTable extends Migration {
 			$table->increments('id');
 			$table->integer('type')->default(0);
 			$table->string('key', 255)->unique();
+			$table->integer('group', 255)->nullable();
 			$table->string('question', 511)->nullable();
 			$table->string('text', 511)->nullable();
 			$table->string('options')->nullable();

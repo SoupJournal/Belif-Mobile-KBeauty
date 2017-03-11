@@ -56,7 +56,7 @@
 			//draw page
 			return View::make('soup::pages.signup.login')->with([
 				'pageData'=> $pageData,
-				'nextURL' => route('soup.question'),
+				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.welcome'),
 				'hideHeaderTitle' => true
 			]);
@@ -311,12 +311,23 @@
 						$date = Carbon::createFromFormat('m-d-Y', $birthDate);
 					}
 					catch (\Exception $ex) {
-				echo "Exception: " . $ex;
-				exit(0);
+						try {
+								$date = Carbon::createFromFormat('Y-m-d', $birthDate);
+						}
+						catch (\Exception $ex) {
+							try {
+								$date = Carbon::createFromFormat('Y-d-m', $birthDate);
+							}
+							catch (\Exception $ex) {
+								//echo "Exception: " . $ex;
+								//exit(0);
+							}
+						}
 					}
 				}	
 			}
-			
+			//echo "birthDate: " . $birthDate;
+			//exit(0);
 			
 			//find user
 			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
@@ -413,18 +424,31 @@
 			//get form values
 			$code = safeArrayValue('code', $_POST);
 			
+			//find user
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+			
+			//valid user
+			if (!$user) {
+				$errors = 'Sorry, missing or invalid user credentials. Please login or restart the signup proccess';
+				$valid = false;
+			}
+			
 			//code exist
 			if (!$code || strlen(trim($code))<=0) {
 				$errors = 'Please specify the registration code you received.';
 				$valid = false;
 			}
 			//valid code
-			else if (strcmp($code, 'AMS478')!=0) {
+			else if (strcasecmp($code, 'AMS478')!=0) {
 				$errors = 'Sorry, your registration code appears invalid.';
 				$valid = false;
 			}
 			
 			if ($valid) {
+			
+				//update user status
+				$user->status = AppGlobals::USER_STATUS_MEMBER;
+				$user->save();
 			
 				//redirect to main site
 				return Redirect::route('soup.quiz');
@@ -630,6 +654,15 @@
 			$type = safeArrayValue('key', $_POST);
 			$value = safeArrayValue('value', $_POST);
 
+			//find user
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+			
+			//valid user
+			if (!$user || $user->status!=AppGlobals::USER_STATUS_MEMBER) {
+				$errors = 'Sorry, missing or invalid user credentials. Please login or restart the signup proccess';
+				$valid = false;
+			}
+
 			//valid form
 			if ($key && strlen($key)>0) {
 				
@@ -666,6 +699,7 @@
 				
 				//store question answer
 				$profile = new UserProfile();
+				$profile->user = $user->id;
 				$profile->question = $key;
 				$profile->value = $value;
 				$profile->save();
@@ -696,6 +730,36 @@
 					
 					
 					
+		
+		private function previousQuestionData($currentKey, $questionsData) {
+			
+			$questionData = null;
+			
+			//valid data
+			if ($currentKey && $questionsData && strlen($currentKey)>0 && count($questionsData)>0) {
+				
+				//find question
+				foreach ($questionsData as $question) {
+					
+					//match found
+					if (strcmp($question['key'], $profile['question'])==0) {
+						break;
+					}
+					//no match (store as previous data)
+					else {
+						$questionData = $question;
+					}
+					
+				} //end for()
+				
+			} //end if (valid data)
+			
+			return $questionData;
+			
+		} //end previousQuestionData()
+					
+					
+					
 						
 		private function activeQuestionData($user, $questionsData) {
 			
@@ -707,7 +771,7 @@
 				
 				//get profile data
 				$profiles = $user->profile()->groupby('question')->get();
-				
+	
 				//found profile data
 				if ($profiles && count($profiles)>0) {
 
@@ -729,10 +793,14 @@
 							if (strcmp($question['key'], $profile['question'])==0) {
 								$foundAnswer = true;
 								break;
-								break;
 							}
 							
 						} //end for()
+						
+						//no match found
+						if (!$foundAnswer) {
+							break;
+						}
 						
 					} //end for()
 					
@@ -749,7 +817,6 @@
 				
 			} //end if (valid data)
 
-			
 			return $questionData;
 			
 		} //end activeQuestionData()

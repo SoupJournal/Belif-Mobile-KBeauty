@@ -64,7 +64,7 @@
 			{{-- instagram --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('instagram', null, Array ('placeholder' => '@Instagram', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('instagram', null, Array ('placeholder' => '@Instagram', 'class' => 'page-input-text', 'tabindex' => '1', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 				
@@ -72,7 +72,7 @@
 			{{-- snapchat --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('snapchat', null, Array ('placeholder' => '@Snapchat', 'class' => 'page-input-text', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('snapchat', null, Array ('placeholder' => '@Snapchat', 'class' => 'page-input-text', 'tabindex' => '2', 'auto-next-focus' => '')) }}
 				
 			</div>
 			

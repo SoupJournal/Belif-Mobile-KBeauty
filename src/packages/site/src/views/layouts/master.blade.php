@@ -42,13 +42,17 @@
 
 	
 			
-				<div class="page-body text-center">
+				<div class="page-body text-center" id="myteTST" >
 
+					<div class="background-fill"></div>
+					
+					<div class="stretch-to-fit">
 
 	        		{{----------------- CONTENT ------------------}}
 	        		@yield('content')
 	        		{{--------------- END CONTENT ----------------}}
 
+					</div>
 				
 				</div>
 				

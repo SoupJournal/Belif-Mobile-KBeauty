@@ -67,7 +67,13 @@
 
 
 .main-page-container {
-	overflow: auto;
+	overflow-y: auto;
+}
+
+
+.page-header {
+/*	display: table-row;
+	height: 0;	*/
 }
 
 
@@ -98,6 +104,9 @@
 	display: block;
 }
 
+.page-match-window {
+	
+}
 
 .question-overlay {
 	pointer-events: none;

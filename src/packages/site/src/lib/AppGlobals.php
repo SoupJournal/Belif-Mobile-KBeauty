@@ -20,7 +20,8 @@
 		//question types
 		const QUESTION_TYPE_BINARY	 	= 0;
 		const QUESTION_TYPE_DROP_DOWN 	= 1;
-		const QUESTION_TYPE_MULTIPLE 	= 2;
+		const QUESTION_TYPE_TEXT	 	= 2;
+		const QUESTION_TYPE_MULTIPLE 	= 3;
 			
 	} //end class AppGlobals
 
