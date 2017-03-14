@@ -11,6 +11,12 @@
 	height: auto;
 }
 
+.logo-page-image {
+	width: 40%;
+	height: auto;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
 
 .logo-header-image {
   	width: 108px; /*40%;*/
@@ -303,6 +309,11 @@
 .spacer-horizontal {
 	display: inline-block;
 	width: 10%;	
+}
+
+.spacer-horizontal-small {
+	display: inline-block;
+	width: 2%;	
 }
 
 /********************************/

@@ -67,9 +67,15 @@
 			{{-- enter name --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('first_name', null, Array ('placeholder' => 'Full Name', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('first_name', null, Array ('placeholder' => 'First Name', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
+			<div class="form-group"> 
+			
+				{{ Form::text('last_name', null, Array ('placeholder' => 'Last Name', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'auto-next-focus' => '')) }}
+				
+			</div>
+				
 				
 				
 			{{-- enter birth date --}}

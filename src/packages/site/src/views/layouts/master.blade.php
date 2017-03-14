@@ -2,6 +2,7 @@
 
 	//define variables
 	$fullScreen = (!isset($fullScreen) ? false : $fullScreen);
+	$fillHeight = (!isset($fillHeight) ? true : $fillHeight);
 	$pageName = (!isset($pageName) ? 'soup' : $pageName);
 
 
@@ -42,7 +43,11 @@
 
 	
 			
+				@if ($fillHeight)
 				<div class="page-body text-center" fill-height min-ratio="1.4">
+				@else 
+				<div class="page-body text-center">				
+				@endif
 
 					<div class="background-fill"></div>
 					

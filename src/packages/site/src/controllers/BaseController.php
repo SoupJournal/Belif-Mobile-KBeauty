@@ -80,16 +80,19 @@
 								]
 							]
 						),
-						"info" => Array (
+						"signup" => Array (
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background009.jpg",
 						),
-						"info2" => Array (
+						"info" => Array (
 							"title" => "QUALITY LOCAL PLACES WITH THE PERFECT VIBE.",
 							"subtitle" => "We only work with local places that believe in quality and support their community.<br>\nThe Soup membership takes you to the places you have always wanted to try and brand new spots that might not be on your radar yet.",
 							"button" => "APPLY NOW",
 							"image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/misc/image005.jpg",
 							"theme" => 1
-						)
+						),
+						"image" => Array (
+							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background010.jpg",
+						),
 					);
 				}
 				break;

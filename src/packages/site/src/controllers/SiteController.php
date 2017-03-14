@@ -34,7 +34,8 @@
 				'pageData' => $pageData,
 				'nextURL' => route('soup.login'),
 				'nextLabel' => 'LOG IN',
-				'alternateHeader' => true
+				'alternateHeader' => true,
+				'fillHeight' => false
 			]);
 			
 		} //end getIndex()
@@ -290,7 +291,8 @@
 			$errors = null;
 			
 			//get form values
-			$name = safeArrayValue('first_name', $_POST);
+			$firstName = safeArrayValue('first_name', $_POST);
+			$lastName = safeArrayValue('last_name', $_POST);
 			$birthDate = safeArrayValue('birth_date', $_POST);
 			$gender = safeArrayValue('gender', $_POST);
 			
@@ -338,9 +340,15 @@
 				$valid = false;
 			}
 			
-			//name exists
-			else if (!$name || strlen(trim($name))<=0) {
-				$errors = 'Please specify your name.';
+			//first name exists
+			else if (!$firstName || strlen(trim($firstName))<=0) {
+				$errors = 'Please specify your first name.';
+				$valid = false;
+			}
+			
+			//last name exists
+			else if (!$lastName || strlen(trim($lastName))<=0) {
+				$errors = 'Please specify your last name.';
 				$valid = false;
 			}
 			
@@ -378,7 +386,8 @@
 			if ($valid) {
 				
 				//update user details
-				$user->first_name = trim($name);
+				$user->first_name = trim($firstName);
+				$user->last_name = trim($lastName);
 				$user->birth_date = trim($date);
 				$user->gender = trim($gender);
 				$user->status = AppGlobals::USER_STATUS_REGISTERED;
