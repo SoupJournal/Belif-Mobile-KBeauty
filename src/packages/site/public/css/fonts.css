@@ -48,6 +48,9 @@ h1 {
 	font-family: ProximaNovaRegular;
 }
 
+h1.small {
+	font-size: 7vw;
+}
 
 h1.large {
 	font-size: 12vw;
@@ -191,6 +194,9 @@ a.page-link {
 		font-size: 75px;
 	}
 	
+	h1.small {
+		font-size: 60px;
+	}
 	
 	h1.large {
 		font-size: 120px;

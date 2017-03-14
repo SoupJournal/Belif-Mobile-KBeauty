@@ -50,14 +50,15 @@
 			Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
 		});
 		
-		//authicated routes
+		//authenticated routes
 		Route::group(array('middleware' => 'AppAuth'), function() {
 			
 			//quiz
-			Route::get('/quiz', ['as' => 'soup.quiz', 'uses' => 'SiteController@getQuiz']);
-			Route::get('/question', ['as' => 'soup.question', 'uses' => 'SiteController@getQuestion']);
-			Route::get('/question/{id}', ['as' => 'soup.question.id', 'uses' => 'SiteController@getQuestion']);
-			Route::post('/question', ['as' => 'soup.question', 'uses' => 'SiteController@postQuestion']);
+			Route::get('/quiz', ['as' => 'soup.quiz', 'uses' => 'QuizController@getQuiz']);
+			Route::get('/question', ['as' => 'soup.question', 'uses' => 'QuizController@getQuestion']);
+			Route::get('/question/{id}', ['as' => 'soup.question.id', 'uses' => 'QuizController@getQuestion']);
+			Route::post('/question', ['as' => 'soup.question', 'uses' => 'QuizController@postQuestion']);
+			Route::get('/quiz/thanks', ['as' => 'soup.quiz.thanks', 'uses' => 'QuizController@getThanks']);
 		
 		});
 	

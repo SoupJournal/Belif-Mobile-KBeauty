@@ -33,6 +33,7 @@
 	$pageData = isset($pageData) ? $pageData : null;
 
 	//get page variables
+	$key = safeArrayValue('key', $pageData, "");
 	$question = safeArrayValue('question', $pageData, "");
 	$optionsJSON = safeArrayValue('options', $pageData, "");
 	$settingsJSON = safeArrayValue('settings', $pageData, "");
@@ -58,6 +59,13 @@
 	//determine number of allowed selections
 	$allowedChoices = safeObjectValue('choices', $settings, 1);
 	
+	//TODO: get current selection??
+	$selected = null;
+	
+	
+	//form submit URL
+	$formURL = isset($formURL) ? $formURL : "";
+	
 ?>
 
 
@@ -68,7 +76,7 @@
 <div class="page-overlay text-center">
 
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'questionForm', 'class' => 'stretch-to-fit', 'id' => 'question-container')) }}
+	{{ Form::open(Array('role' => 'form', 'name' => 'questionForm', 'url' => $formURL, 'class' => 'stretch-to-fit', 'id' => 'question-container')) }}
 
 	
 		{{-- top row --}}
@@ -128,6 +136,39 @@
 			
 			</div>
 			
+			@if (isset($text))
+				<div class="row page-padding-small">
+				
+					{{-- second question --}}
+					<h1 class="title-light color-2">{!! $text !!}</h1>
+				
+	
+				</div>
+				
+					
+				<div class="row page-padding-large">
+				
+					{{-- dropdown --}}
+					{{ Form::text('option2', $selected, Array ('class' => 'page-input-select')) }}
+				
+				</div>	
+				
+			@else
+				<div class="spacer-medium"></div>
+			@endif
+			
+			
+			
+			
+			{{-- next button --}}
+			@if (isset($button))
+
+				<div class="spacer-large"></div>
+				
+				<button class="button-page button-page-border bg-color-clear color-3 border-color-3">{{ $button }}</button>
+			@endif
+			
+			
 		</div>
 
 
@@ -143,6 +184,10 @@
 			</div>
 				
 		</div>
+
+
+		{{-- question key --}}
+		<input type="hidden" name="key" value="{{ $key }}">
 
 	{{ Form::close() }}
 

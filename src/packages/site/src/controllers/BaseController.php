@@ -21,6 +21,7 @@
 		//const FORM_QUESTION_1 = 'page_question_1';
 		//const FORM_QUESTION_2 = 'page_question_2';
 		const FORM_QUESTION = 'page_question';
+		const FORM_QUIZ_THANKS = 'page_quiz_thanks';
 		
 
 
@@ -395,6 +396,8 @@
 							"question" => "Last but not least.<br>Are you?",
 							"options" => "[\"PESCATARIAN\",\"VEGETARIAN\",\"VEGAN\"]",
 							"settings" => "{\"choices\":1}",
+							"text" => "Any Allergies?",
+							"button" => "SUBMIT",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background-q016.jpg",
 							"step" => 8,
 							"theme"	=> 0,
@@ -404,20 +407,21 @@
 				}
 				break;
 			
-				/*
-				case self::FORM_QUESTION_1:
+				
+				case self::FORM_QUIZ_THANKS:
 				{
 					$pageData = Array (
-						"question" => "WHERE IS YOUR FAVOURITE PART OF TOWN TO GET #EEEATS?",
-						"text" => "(Swipe Right or Left to answer)",
-						"answer" => "SOUTH BROOKLYN",
-						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background007.jpg",
+						"title" => "You made it.<br>Thanks for answering",
+						"subtitle" => "As a special treat and welcome to the club have a coffee on us at",
+						"text" => "We've sent you an email with more details.",
+						"button" => "NEXT",
+						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background-q016.jpg",
 						"theme"	=> 0
 					);
 				}
 				break;
 				
-				
+				/*
 				case self::FORM_QUESTION_2:
 				{
 					$pageData = Array (

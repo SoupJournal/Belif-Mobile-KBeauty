@@ -11,6 +11,8 @@
 	**/
 	module.directive('checkboxLimit', function() {
 		
+		var checkCounter = {};
+		
 		return {
 			restrict: 'A',
 			link: function(scope, elem, attrs) {
@@ -19,20 +21,21 @@
 				if (attrs) {
 					scope.checkboxLimit = attrs.checkboxLimit;
 					scope.checkboxGroup = attrs.checkboxGroup;
+					scope.preventDeselection = (attrs.preventDeselection && attrs.preventDeselection.length<0 && attrs.preventDeselection.toLowerCase()!='false');
 				}
 
 
 				//create counter
-				if (!scope.checkCounter) {
-					scope.checkCounter = {};	
+				if (!checkCounter) {
+					checkCounter = {};	
 				}
 
 				//setup counter
 				if (scope.checkboxGroup && scope.checkboxGroup.length>0) {
 					
 					//create group counter
-					if (!(scope.checkCounter[scope.checkboxGroup]>0)) {
-						scope.checkCounter[scope.checkboxGroup] = 0;	
+					if (!(checkCounter[scope.checkboxGroup]>0)) {
+						checkCounter[scope.checkboxGroup] = 0;	
 					}
 						
 				}
@@ -52,18 +55,18 @@
 						if (scope.checkboxGroup && scope.checkboxGroup.length>0) {
 
 							//update value
-							scope.checkCounter[scope.checkboxGroup] += checkbox.checked ? 1 : -1;
+							checkCounter[scope.checkboxGroup] += checkbox.checked ? 1 : -1;
 							
 							//bounds check
-							if (scope.checkCounter[scope.checkboxGroup]<0) {
-								scope.checkCounter[scope.checkboxGroup] = 0;	
+							if (checkCounter[scope.checkboxGroup]<0) {
+								checkCounter[scope.checkboxGroup] = 0;	
 							}
 							
 							//enforce limit
-							if (scope.checkboxLimit>=0 && scope.checkCounter[scope.checkboxGroup]>scope.checkboxLimit) {
+							if (scope.checkboxLimit>=0 && checkCounter[scope.checkboxGroup]>scope.checkboxLimit) {
 
 								checkbox.checked = false;
-								--scope.checkCounter[scope.checkboxGroup];
+								--checkCounter[scope.checkboxGroup];
 							}
 
 						}
