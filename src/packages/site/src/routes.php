@@ -11,10 +11,10 @@
 	$safeStringPattern = '[0-9a-zA-Z_\-]+';
 	
 	//patterns
-	Route::pattern('appId', '[0-9]+');
 	Route::pattern('safestr', $safeStringPattern);
 	Route::pattern('safestr2', $safeStringPattern);
 	Route::pattern('id', '[0-9]+');
+		//Route::pattern('questionId', '[0-9]+');
 	
 
 
@@ -53,6 +53,7 @@
 			//quiz
 			Route::get('/quiz', ['as' => 'soup.quiz', 'uses' => 'SiteController@getQuiz']);
 			Route::get('/question', ['as' => 'soup.question', 'uses' => 'SiteController@getQuestion']);
+			Route::get('/question/{id}', ['as' => 'soup.question.id', 'uses' => 'SiteController@getQuestion']);
 			Route::post('/question', ['as' => 'soup.question', 'uses' => 'SiteController@postQuestion']);
 		
 		});

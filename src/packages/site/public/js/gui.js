@@ -6,12 +6,72 @@
 	
 	
 	//fillHeight - update element to fill parent height
-/*	module.directive( 'fillHeight', function() {
+	module.directive( 'fillHeight', ['$window', '$rootScope', function($window, $rootScope) {
 	    return {
 			restrict: 'A',
+			scope: {
+	            fillHeight: '@',
+	            minRatio: '@'
+	        },
 	        link: function( scope, elem, attrs ) {
-	        	var p = angular.element(elem.parent());
-	console.log("git link: " + elem.parent().prop('id') + " - p: " + p);
+	
+				//handle resize
+				scope.resizeElement = function(target) {
+					
+					if (target) {
+						
+						//get element dimensions
+						var positionY = target.prop('offsetTop');
+						var width = $window.innerWidth;
+						var height = $window.innerHeight;
+					
+						//determine new height
+						var elemHeight = height - positionY;
+					
+						//handle minimum ratio
+						if (scope.minRatio && scope.minRatio.length>0) {
+							var minHeight = width * parseInt(scope.minRatio);
+							if (elemHeight < minHeight) {
+								elemHeight = minHeight;	
+							}
+						}
+
+
+						//set height
+		            	target.css('height', elemHeight +  'px');
+						
+						// manuall $digest required as resize event
+						// is outside of angular
+						//scope.$digest();
+					
+						//broadcast update event
+						$rootScope.$broadcast('window-height-updated');
+						
+					}
+					
+				} //end scope.resizeElement()
+	
+				//listen for window events
+				angular.element($window).bind('resize', function() {
+
+					//resize element
+					scope.resizeElement(elem);
+
+				});
+				
+				//listen for load events
+				$rootScope.$on('load-group-updated', function() {
+
+					//re-check element sizes
+					scope.resizeElement(elem);
+					
+				}); //end listener
+	
+	
+				//set element initial size
+				scope.resizeElement(elem);
+	
+	/*
 				//add listener
 	            scope.$watch( 
 	            	function () {
@@ -37,11 +97,12 @@
 	            	}
 	            	
 	            }); //end listener()
+	            */
 	        }
 	    }
 	    
-	}); //end directive()
-	*/
+	}]); //end directive()
+	
 	
 	
 	//pageButton directive - standard page button 

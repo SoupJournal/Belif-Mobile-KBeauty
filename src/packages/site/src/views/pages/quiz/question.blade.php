@@ -78,14 +78,29 @@
 			{{-- top row --}}
 			<div class="container-top">
 			
-				<div class="spacer-small"></div>
+			
+				
+				{{-- display form errors --}}
+			    @if ($errors->has())
+			    
+			    
+			        @foreach ($errors->all() as $error)
+			            <div class='bg-danger alert clear-vertical-padding'>{{ $error }}</div>
+			        @endforeach
+			        
+			    @else
+					
+					<div class="spacer-small"></div>
+					
+				@endif
+				
+				
+				
 				
 				<div class="row page-padding-small">
 				
 					{{-- question --}}
 					<h1 class="title-light color-2">{{ $question }}</h1>
-				
-					{{-- <h3 class="color-2">{{ $text }}</h3> --}}
 				
 				</div>
 		

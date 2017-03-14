@@ -5,7 +5,46 @@
 	var module = angular.module('soup-core', ['ngResource']); 
 	
 	//create controller
-	module.controller('SoupController', [ '$http', '$scope', '$uibModal', function($http, $scope, $uibModal) {
+	module.controller('SoupController', [ '$http', '$scope', '$window', function($http, $scope, $window) {
+		
+
+
+		//------------------------------------------------------//
+		//----					PAGE STYLING				----//
+		//------------------------------------------------------//
+
+		$scope.$on('window-height-updated', function() {
+
+			//update background size
+			var elements = document.getElementsByClassName('background-fill');
+			var elem = null;
+			for (var i=0; i<elements.length; ++i) {
+				
+				//get element
+				elem = angular.element(elements[i]);
+				if (elem) {
+					
+					//get window width
+					//var width = $window.innerWidth;
+					
+					//determine min padding height
+					//var padding = width * 1.3;
+					
+					//clear padding
+					elem.css('padding-bottom', 0); //width + 'px');
+					
+				} //end if (valid element)
+				
+			} //end for()
+		
+		}); //end listener()
+		
+
+
+		
+		//------------------------------------------------------//
+		//----					SWIPE						----//
+		//------------------------------------------------------//		
 		
 		
 		//== SWIPE CONFIGURATION ==//
@@ -82,6 +121,12 @@
 		
 			
 	}]); //end controller
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -225,5 +270,8 @@
 	}); //end directive
 	
 	
+	
+	
+		
 })();
 //end anonymous function

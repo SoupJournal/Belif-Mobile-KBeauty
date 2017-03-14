@@ -42,7 +42,7 @@
 
 	
 			
-				<div class="page-body text-center" id="myteTST" >
+				<div class="page-body text-center" fill-height min-ratio="1.3">
 
 					<div class="background-fill"></div>
 					
