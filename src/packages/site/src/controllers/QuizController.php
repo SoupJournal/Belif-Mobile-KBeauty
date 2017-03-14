@@ -63,8 +63,11 @@
 			//get current question id
 			$activeId = $this->activeQuestionNumber($user, $pageData);
 			
+
+//				echo "questionId: " . $questionId . " - totalQuestions: " . $totalQuestions . " - activeId: " . $activeId;
+//				exit(0);
 			//valid question ID
-			if ($activeId<$totalQuestions) {
+			if (($questionId<$totalQuestions || $questionId<$activeId) || ($activeId==$totalQuestions && $questionId>=$totalQuestions)) {
 				
 	//		echo "activeId: " . $activeId . " - questionId: " . $questionId . "<BR>";
 				//validate id
@@ -286,7 +289,7 @@
 			//draw page
 			return View::make('soup::pages.quiz.thanks')->with([
 				'pageData'=> $pageData,
-				'nextURL' => route('soup.question'),
+				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.question.id', ['questionId' => $lastQuestionId])
 			]);
 			
