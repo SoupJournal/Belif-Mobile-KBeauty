@@ -57,7 +57,7 @@
 		
 		<div class="spacer-large"></div>
 
-		{{-- start button --}}
+		{{-- next button --}}
 		@if (isset($nextURL))
 			<a href="{{ $nextURL }}" class="button-page-border bg-color-clear color-3 border-color-3">{{ $button }}</a>
 		@endif

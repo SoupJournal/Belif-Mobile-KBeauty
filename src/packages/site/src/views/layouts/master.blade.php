@@ -42,7 +42,7 @@
 
 	
 			
-				<div class="page-body text-center" fill-height min-ratio="1.3">
+				<div class="page-body text-center" fill-height min-ratio="1.4">
 
 					<div class="background-fill"></div>
 					

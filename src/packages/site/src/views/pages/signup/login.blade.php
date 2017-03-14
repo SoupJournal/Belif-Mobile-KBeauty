@@ -91,7 +91,22 @@
 			</div>
 			
 			
-			<div class="spacer-large"></div>
+			{{-- display form errors --}}
+		    @if ($errors->has())
+		    
+			    <div class="spacer-small-2"></div>
+		    
+		        @foreach ($errors->all() as $error)
+		            <div class='bg-danger alert'>{{ $error }}</div>
+		        @endforeach
+		        
+		        <div class="spacer-small-2"></div>
+		        
+		    @else
+				
+				<div class="spacer-large"></div>
+				
+			@endif
 			
 		
 			{{-- log in buttons --}}

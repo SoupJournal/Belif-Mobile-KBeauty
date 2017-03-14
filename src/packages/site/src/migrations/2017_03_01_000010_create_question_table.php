@@ -21,6 +21,7 @@ class CreateQuestionTable extends Migration {
 			$table->string('question', 511)->nullable();
 			$table->string('text', 511)->nullable();
 			$table->string('options')->nullable();
+			$table->string('button', 511)->nullable();
 			$table->string('settings')->nullable();
 			$table->string('label', 255)->nullable();
 			$table->string('background_image', 511)->nullable();

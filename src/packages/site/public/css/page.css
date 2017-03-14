@@ -122,7 +122,7 @@
     overflow: hidden;
 }
 
-.button-checkbox label span {
+.button-checkbox label h1 {
     text-align:center;
     display:block;
     width: 100%;
@@ -140,7 +140,7 @@
   	opacity: 0; 
 }
 
-.button-checkbox label input:checked + span {
+.button-checkbox label input:checked + h1 {
     background-color: #FFFFFF;
     color: #48B6E4;
 }
@@ -259,6 +259,22 @@
 .page-input-text.input-clear:focus {
 	outline: none;	
 }
+
+
+
+.page-input-select {
+	padding-left: 10px;
+	padding-right: 10px;
+    padding-top: 3.6%;
+    padding-bottom: 3.6%;
+    margin-top: 4%;
+	min-width: 150px;
+	width: 100%;
+	text-align: center;
+	background-color: #FFFFFF;
+	border: none;
+}
+
 
 /********************************/
 /* 			SPACER 				*/

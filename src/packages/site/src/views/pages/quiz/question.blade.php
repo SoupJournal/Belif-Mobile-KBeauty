@@ -21,17 +21,17 @@
 	
 		//get page variables
 		$key = safeArrayValue('key', $pageData, "");
-		$type = safeArrayValue('type', $pageData, "");
 		$question = safeArrayValue('question', $pageData, "");
 		$text = safeArrayValue('text', $pageData, "");
 		$answer = safeArrayValue('options', $pageData, "");
 		$backgroundImage = safeArrayValue('background_image', $pageData, "");
 		$theme = safeArrayValue('theme', $pageData, 0);
 		$step = safeArrayValue('step', $pageData, 0);
+		$totalSteps = isset($totalSteps) ? $totalSteps : 0;
 
 		//form submit URL
 		$formURL = isset($formURL) ? $formURL : "";
-		$formURL = route('soup.question');
+		
 		
 		//answer images
 		$image_yes = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/answer_yes.png";
@@ -100,7 +100,7 @@
 				<div class="row page-padding-small">
 				
 					{{-- question --}}
-					<h1 class="title-light color-2">{{ $question }}</h1>
+					<h1 class="title-light color-2">{!! $question !!}</h1>
 				
 				</div>
 		
@@ -151,12 +151,16 @@
 				</div>
 		
 		
-				{{----------------- PROGRESS BAR -------------------}}
-				<div class="progress-section page-padding-tiny">
-					@include('soup::sections.progress', Array(
-						'step' => $step,
-						'total' => 7
-					))
+				<div class="progress-footer">
+		
+					{{----------------- PROGRESS BAR -------------------}}
+					<div class="progress-section page-padding-tiny">
+						@include('soup::sections.progress', Array(
+							'step' => $step,
+							'total' => $totalSteps
+						))
+					</div>
+				
 				</div>
 				
 		
@@ -169,9 +173,7 @@
 	
 		{{-- question key --}}
 		<input type="hidden" name="key" value="{{ $key }}">
-		
-		{{-- question type --}}
-		<input type="hidden" name="type" value="{{ $type }}">
+
 	
 	{{ Form::close() }}
 

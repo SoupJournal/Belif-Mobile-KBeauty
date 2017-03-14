@@ -139,7 +139,9 @@ a.page-link {
 }
 
 .page-input-select {
-	height: 11vw;
+	font-size: 4vw;
+	font-family: ProximaNovaRegular;
+	height: 13vw;
 }
 
 

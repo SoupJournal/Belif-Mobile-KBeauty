@@ -114,6 +114,16 @@
 }
 
 
+.progress-footer {
+	position: fixed;
+	bottom: 0;
+	top: 90%;
+	left: 3%;
+	right: 3%;
+	pointer-events: none;	
+}
+
+
 .background-fill {
 	padding-bottom: 160%;	
 }

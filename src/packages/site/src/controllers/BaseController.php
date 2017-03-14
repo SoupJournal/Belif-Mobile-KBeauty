@@ -372,7 +372,9 @@
 							"type" => 1,
 							"question" => "If you could only have 1 type of cuisine for the rest of your life it would be:",
 							"options" => "[\"CHOICE1\",\"CHOICE2\",\"CHOICE3\",\"CHOICE4\",\"CHOICE5\",\"CHOICE6\",\"CHOICE7\"]",
+							"button" => "NEXT",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background-q014.jpg",
+							"step" => 6,
 							"theme"	=> 0,
 							"order" => 0
 						],
@@ -380,7 +382,10 @@
 							"key" => "favRestaurant",
 							"type" => 2,
 							"question" => "What's your favourite restaurant or cafe in NYC right now?",
+							"options" => "RESTAURANT NAME",
+							"button" => "NEXT",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background-q015.jpg",
+							"step" => 7,
 							"theme"	=> 0,
 							"order" => 0
 						],
@@ -388,9 +393,10 @@
 							"key" => "question4",
 							"type" => 3,
 							"question" => "Last but not least.<br>Are you?",
-							"options" => "[\"PESCATARIAN\",\"VEGETARIAN\",\"VEGAN\",\"CASUAL\",\"POPULAR\",\"CLASSY\",\"VEGETARIAN\"]",
-							"settings" => "\"choices\":1",
+							"options" => "[\"PESCATARIAN\",\"VEGETARIAN\",\"VEGAN\"]",
+							"settings" => "{\"choices\":1}",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background-q016.jpg",
+							"step" => 8,
 							"theme"	=> 0,
 							"order" => 0
 						]

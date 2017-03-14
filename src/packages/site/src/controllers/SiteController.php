@@ -605,7 +605,7 @@
 //		echo "activeId: " . $activeId . " - questionId: " . $questionId . "<BR>";
 			//validate id
 			if ($questionId<0) $questionId = 0;
-			if ($questionId>$activeId) $questionId = $activeId;
+			if ($questionId>$activeId) $questionId = $activeId; //TODO: handle final question (should navigate to next page)
 			
 			//get question data
 			$questionData = null;
@@ -613,11 +613,16 @@
 				$questionData = $pageData[$questionId];
 			}
 			
-			//get question Data
-			//$questionData = $this->activeQuestionData($user, $pageData);
-			
-//				echo "questionId FINAL: " . $questionId . "<BR>";	
-//exit(0);
+
+			//compile page data
+			$viewParams = Array (
+				'pageData'=> $questionData,
+				'backURL' => $questionId > 0 ? route('soup.question.id', ($questionId-1)) : route('soup.quiz'),
+				'formURL' => route('soup.question'),
+				'totalSteps' => 8
+			);
+
+
 			//get question type
 			$questionType = safeArrayValue('type', $questionData, 0);
 			
@@ -625,8 +630,12 @@
 			$view = null;
 			switch ($questionType) {
 				
+				case AppGlobals::QUESTION_TYPE_TEXT:
+					$view = 'soup::pages.quiz.text';
+				break;
+				
 				case AppGlobals::QUESTION_TYPE_DROP_DOWN:
-					$view = 'soup::pages.quiz.question';
+					$view = 'soup::pages.quiz.dropdown';
 				break;
 				
 				case AppGlobals::QUESTION_TYPE_MULTIPLE:
@@ -645,10 +654,7 @@
 			if ($view) {
 			
 				//draw page
-				return View::make($view)->with([
-					'pageData'=> $questionData,
-					'backURL' => $questionId > 0 ? route('soup.question.id', ($questionId-1)) : route('soup.quiz')
-				]);
+				return View::make($view)->with($viewParams);
 			
 			}
 			//no valid view

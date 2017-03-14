@@ -14,7 +14,6 @@
 	Route::pattern('safestr', $safeStringPattern);
 	Route::pattern('safestr2', $safeStringPattern);
 	Route::pattern('id', '[0-9]+');
-		//Route::pattern('questionId', '[0-9]+');
 	
 
 
@@ -33,9 +32,13 @@
 		Route::get('/login', ['as' => 'soup.login', 'uses' => 'SiteController@getLogin']);
 		Route::post('/login', ['as' => 'soup.login', 'uses' => 'SiteController@postLogin']);
 		
-		//sign up
-		Route::get('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@getSignup']);
-		Route::post('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@postSignup']);
+		//user already logged in
+		Route::group(array('middleware' => 'AppUser'), function() {
+			//sign up
+			Route::get('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@getSignup']);
+			Route::post('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@postSignup']);
+		});
+		
 		//post signup
 		Route::group(array('middleware' => 'AppSignUp'), function() {
 			Route::get('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@getSignupData']);
