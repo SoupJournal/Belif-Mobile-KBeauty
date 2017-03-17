@@ -58,6 +58,7 @@
 	{{ HTML::script($assetPath . '/js/core.js') }}
 	{{ HTML::script($assetPath . '/js/swipe.js') }}
 	{{ HTML::script($assetPath . '/js/forms.js') }}
+	{{ HTML::script($assetPath . '/js/map.js') }}
 	
 	{{-- CMS libaries scripts --}}
 	{{ HTML::script($assetPath . '/js/core.js') }}

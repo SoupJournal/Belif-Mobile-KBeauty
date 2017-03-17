@@ -99,6 +99,12 @@
 	min-height: 400px;
 }
 
+.page-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+}
 
 .page-section {
 	position: relative;
@@ -130,6 +136,8 @@
 	margin-bottom: 2%;
 	padding-top: 2%;
 	padding-bottom: 2%;	
+	padding-left: 2%;
+	padding-right: 2%;
 }
 
 .profile-diet-container {
@@ -153,7 +161,7 @@
 
 .venue-suggestion {
 	position: relative;
-	padding-bottom: 80%;
+	padding-bottom: 68%;
 	overflow-y: hidden;	
 }
 

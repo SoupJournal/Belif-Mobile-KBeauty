@@ -23,6 +23,10 @@
 		const QUESTION_TYPE_TEXT	 	= 2;
 		const QUESTION_TYPE_MULTIPLE 	= 3;
 			
+		//Google API key
+		const GOOGLE_API_KEY = "AIzaSyB4ge2qO8plaMWCmLWNNi3U4o1RW4B_ucA";
+		
+			
 	} //end class AppGlobals
 
 

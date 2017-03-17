@@ -50,7 +50,7 @@
 	$userAge = userAge($user);  
 	$userEmail = safeObjectValue('email', $user, "");
 	$userPhone = safeObjectValue('phone', $user, "");
-	$userAddress = fullAddress($user);
+	$userAddress = compilePropertiesString($user, ['address_1', 'address_2', 'city', 'state', 'zip_code', 'country'], [' ', ', ', ', ', ' ']);
 	
 	//profile properties
 	$diets = isset($diets) ? $diets : null;

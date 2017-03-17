@@ -187,6 +187,10 @@ a.page-link {
 	text-transform: uppercase;	
 }
 
+.capitalize {
+	text-transform: capitalize;	
+}
+
 
 /********************************/
 /* 			MAX SIZE 			*/

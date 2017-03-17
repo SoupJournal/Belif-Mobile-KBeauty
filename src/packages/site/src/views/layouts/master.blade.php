@@ -80,7 +80,7 @@
 			(function() {
 		        
 				//load modules
-				var app = angular.module('soup', ['ngResource', 'ui.bootstrap', 'soup-core', 'soup-gui', 'swipe-gesture', 'forms']);   
+				var app = angular.module('soup', ['ngResource', 'ui.bootstrap', 'soup-core', 'soup-gui', 'swipe-gesture', 'forms', 'maps']);   
 			
 			})();
 			//end anonymous function

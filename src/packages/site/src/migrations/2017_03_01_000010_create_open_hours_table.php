@@ -21,6 +21,10 @@ class CreateOpenHoursTable extends Migration {
 			$table->time('close_time')->nullable();
 			
 			$table->timestamps();
+			
+			//add unique restrictions
+			$table->unique(array('venue', 'day'));
+			
 		});
 	}
 

@@ -157,7 +157,8 @@
 				//'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				//'backURL' => route('soup.welcome'),
-				'venue' => $venueData
+				'venue' => $venueData,
+				'mapsKey' => AppGlobals::GOOGLE_API_KEY
 			]);
 			
 		} //end getVenueProfile()

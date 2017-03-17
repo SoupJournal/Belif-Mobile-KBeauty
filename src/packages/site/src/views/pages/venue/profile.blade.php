@@ -32,6 +32,7 @@
 	//ensure page data is set
 //	$pageData = isset($pageData) ? $pageData : null;
 	$venue = isset($venue) ? $venue : null;
+	$mapsKey = isset($mapsKey) ? $mapsKey : null;
 
 	//get page variables
 //	$title = safeArrayValue('title', $pageData, "");
@@ -48,14 +49,26 @@
 	$venueDescription = safeObjectValue('description', $venue, "");
 	$venueRecommendations = safeObjectValue('recommendations', $venue, null);
 	$venueURL = safeObjectValue('website', $venue, null);
+	$venueAddress = compilePropertiesString($venue, ['address', 'suburb'], [', ']);
+	$openHours = venueTodaysOpenHoursString($venue, "CLOSED TODAY");
 
 	//suggestion data
 	$suggestionImage = safeObjectValue('image_suggestion', $venue, "");
 	$suggestion = safeObjectValue('suggestion', $venue, "");
 	
 	//venue co-ordinates
-	$lattitude = safeObjectValue('lattitude', $venue, "");
-	$longitude = safeObjectValue('longitude', $venue, "");
+	$lattitude = safeObjectValue('lattitude', $venue, null);
+	$longitude = safeObjectValue('longitude', $venue, null);
+	//create map position
+	$mapPosition = null;
+	if (isset($lattitude) && isset($longitude)) {
+		$mapPosition = [
+			'lat' => floatval($lattitude),
+			'lng' => floatval($longitude)
+		];
+	}
+	//create map marker
+	$mapMarkers = $mapPosition ? [$mapPosition] : null;
 	
 ?>
 
@@ -72,21 +85,32 @@
 	
 		<div class="spacer-small"></div>
 	
-		<h1 class="title-semi-bold color-2">{{ $venueName }}</h1>
+		<h1 class="title-semi-bold uppercase color-2 page-padding-large">{{ $venueName }}</h1>
 	
+		<div class="page-footer">
+		
+			<h2 class="shrink-to-fit title-semi-bold capitalize color-2">{{ $venueAddress }}</h2>
+			<h2 class="shrink-to-fit title-semi-bold capitalize color-1 bg-color-2 profile-field">{{ $openHours }}</h2>
+			
+			<div class="spacer-medium"></div>
+			
+		</div>
+		
 	</div>
 
 </div>
 
 {{-- description --}}
-<div class="venue-description page-padding-small bg-color-1">
+<div class="venue-description page-padding-medium bg-color-1">
 	
 	<div class="spacer-tiny"></div>
 	
-	<div class="color-2">{!! $venueDescription !!}</div>
+	@if (isset($venueDescription)) 
+		<h4 class="title-regular color-2">{!! $venueDescription !!}</h4>
+	@endif
 	
 	@if (isset($venueRecommendations)) 
-		<h5 class="uppercase color-2">RECOMMENDED BY {{ $venueRecommendations }}</h5>
+		<h4 class="title-semi-bold uppercase color-2">RECOMMENDED BY {{ $venueRecommendations }}</h4>
 	@endif
 	
 	<div class="spacer-tiny"></div>
@@ -94,7 +118,7 @@
 </div>
 
 {{-- suggestion --}}
-<div class="venue-suggestion bg-color-1">
+<div class="venue-suggestion">
 	
 	{{-- background image --}}
 	<div class="stretch-to-fit hide-overflow-y">
@@ -123,10 +147,14 @@
 </div>
 
 {{-- map --}}
-<div class="">
-	
-
-
+<div class="page-section">
+	@include('soup::sections.map', Array(
+		'APIKey' => $mapsKey,
+		'width' => '100%',
+		'height' => '200px',
+		'position' => $mapPosition,
+		'markers' => $mapMarkers
+	))
 </div>
 
 {{-- website --}}
