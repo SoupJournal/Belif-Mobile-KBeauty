@@ -17,12 +17,16 @@
 		const FORM_SIGNUP_CODE = 'page_signup_code';
 		const FORM_SIGNUP_REQUEST = 'page_signup_request';
 		const FORM_SIGNUP_THANKS = 'page_signup_thanks';
+		const FORM_FORGOT_PASSWORD = 'page_forgot_password';
+		const FORM_FORGOT_PASSWORD_THANKS = 'page_forgot_password_confirm';
+		const FORM_RESET_PASSWORD = 'page_reset_password';
+		const FORM_RESET_PASSWORD_THANKS = 'page_reset_password_confirm';
 		const FORM_QUIZ = 'page_quiz';
 		//const FORM_QUESTION_1 = 'page_question_1';
 		//const FORM_QUESTION_2 = 'page_question_2';
 		const FORM_QUESTION = 'page_question';
 		const FORM_QUIZ_THANKS = 'page_quiz_thanks';
-		
+		const FORM_USER_PROFILE = 'page_user_profile';
 
 
 		//public function __construct() {
@@ -54,7 +58,7 @@
 							"title" => "YOUR MEMBERSHIP TO BREAKFAST, LUNCH, DINNER AND DRINKS FROM YOUR FAVOURITE CAFES AND RESTAURANTS EVERY MONTH.",
 							//"title" => "DISCOVER BETTER BREAKFASTS, LUNCH, DINNER AND DRINKS FROM YOUR NEW FAVOURITE CAFES, RESTAURANTS AND NIGHTLIFE EVERY MONTH.",
 							//"subtitle" => "MOISTURIZING BOMB OR AQUA BOMB?",
-							"button" => "SIGN UP",
+							"button" => "APPLY NOW",
 							"secondary_button" => "LOG IN",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background001.jpg",
 						),
@@ -81,6 +85,7 @@
 							]
 						),
 						"signup" => Array (
+							"button" => "APPLY NOW",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background009.jpg",
 						),
 						"info" => Array (
@@ -171,6 +176,39 @@
 						"subtitle" => "The soup team will review your request and get back to you shortly with an approximate wait time.",
 						"text" => "We look forward to seeing you soon!",
 						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background006.jpg"
+					);
+				}
+				break;
+				
+				
+				case self::FORM_FORGOT_PASSWORD:
+				{
+					$pageData = Array (
+						//"title" => "Please enter your email address.",
+						"subtitle" => "Enter your email.",
+						"button" => "RESET PASSWORD",
+					);
+				}
+				break;
+				
+				
+				case self::FORM_FORGOT_PASSWORD_THANKS:
+				{
+					$pageData = Array (
+						"subtitle" => "An email has been sent to your account.",
+						"button" => "LOG IN",
+					);
+				}
+				break;
+				
+				
+				case self::FORM_RESET_PASSWORD_THANKS:
+				{
+					$pageData = Array (
+						"title" => "Password successfully changed.",
+						"subtitle" => "The password for",
+						"text" => "Has now been updated.",
+						"button" => "LOG IN",
 					);
 				}
 				break;
@@ -372,7 +410,7 @@
 							"order" => 0
 						],
 						[
-							"key" => "food1",
+							"key" => "cuisine",
 							"type" => 1,
 							"question" => "If you could only have 1 type of cuisine for the rest of your life it would be:",
 							"options" => "[\"CHOICE1\",\"CHOICE2\",\"CHOICE3\",\"CHOICE4\",\"CHOICE5\",\"CHOICE6\",\"CHOICE7\"]",
@@ -394,11 +432,11 @@
 							"order" => 0
 						],
 						[
-							"key" => "question4",
+							"key" => "diet",
 							"type" => 3,
 							"question" => "Last but not least.<br>Are you?",
 							"options" => "[\"PESCATARIAN\",\"VEGETARIAN\",\"VEGAN\"]",
-							"settings" => "{\"choices\":1}",
+							"settings" => "{\"choices\":-1}",
 							"text" => "Any Allergies?",
 							"button" => "SUBMIT",
 							"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background-q016.jpg",
@@ -424,27 +462,13 @@
 				}
 				break;
 				
-				/*
-				case self::FORM_QUESTION_2:
+				case self::FORM_USER_PROFILE:
 				{
 					$pageData = Array (
-						"question" => "WHAT ARE YOUR TOP 3 VIBES FOR EATING OUT?",
-						"answers" => Array (
-							"CHILL",
-							"HEALTH&WELLNESS",
-							"PARTY",
-							"CASUAL",
-							"POPULAR",
-							"CLASSY",
-							"VEGETARIAN"
-						),
-						"choices" => 3,
-						"type" => 1,
 						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background007.jpg"
 					);
 				}
 				break;
-				*/
 				
 			} //end switch()
 			

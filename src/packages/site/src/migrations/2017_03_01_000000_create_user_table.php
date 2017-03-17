@@ -27,6 +27,7 @@ class CreateUserTable extends Migration {
 			$table->string('city', 511)->nullable();
 			$table->string('state', 511)->nullable();
 			$table->string('zip_code', 255)->nullable();
+			$table->string('country', 255)->nullable();
 			$table->date('birth_date')->nullable();
 			$table->string('gender', 255)->nullable();
 			$table->string('photo')->nullable();
@@ -37,6 +38,7 @@ class CreateUserTable extends Migration {
 			$table->boolean('email_verified')->default(false);
 			//$table->boolean('unsubscribed')->default(false);
 			$table->integer('registration_attempts')->default(0);
+			$table->string('answered_questions', 2047)->nullable();
 
 			$table->string('ip_address', 15)->nullable();
 

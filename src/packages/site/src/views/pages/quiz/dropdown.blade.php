@@ -52,9 +52,14 @@
 			$options = json_decode($optionsJSON);
 		}
 		catch (Exception $ex) {
-			
+			//TODO: log error
 		}
 	}
+	//convert options to have equal key, values
+	if ($options && is_array($options)) {
+		$options = array_combine($options, $options);	
+	}
+	
 	
 	//TODO: get current selection??
 	$selected = null;
@@ -108,7 +113,7 @@
 			<div class="row page-padding-large">
 			
 				{{-- dropdown --}}
-				{{ Form::select('option', $options, $selected, Array ('placeholder' => 'TAP TO SELECT', 'class' => 'page-input-select', 'required' => '')) }}
+				{{ Form::select('value', $options, $selected, Array ('placeholder' => 'TAP TO SELECT', 'class' => 'page-input-select', 'required' => '')) }}
 			
 			</div>	
 			

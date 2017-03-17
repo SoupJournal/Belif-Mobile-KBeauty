@@ -28,6 +28,11 @@
 }
 
 
+.color-6 {
+	color: #48B6E4;	
+}
+
+
 /********************************/
 /* 			LINK COLOURS 		*/
 /********************************/
@@ -77,6 +82,13 @@ a:hover {
 	background-color: #48B6E4;	
 }
 
+.bg-color-7 {
+	background-color: #333333;	
+}
+
+.bg-color-8 {
+	background-color: #231F20;	
+}
 
 
 /********************************/

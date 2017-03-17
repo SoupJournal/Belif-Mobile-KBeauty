@@ -55,7 +55,7 @@
 		//question swipe elements
 		$scope.container = angular.element(document.getElementById('question-container'));
 		if ($scope.form) {
-			$scope.answerElement = $scope.form.elements['scriptAnswer'];
+			$scope.answerElement = $scope.form.elements['scriptValue'];
 		}
 		
 		
@@ -68,12 +68,12 @@
 				//set answer value
 				if ($scope.answerElement) {
 					$scope.answerElement.setAttribute('value', value);
+					
+					//submit form
+					$scope.form.submit();	
 				}
-
-				//submit form
-				$scope.form.submit();	
-
-			}
+				
+			} //end if (valid form)
 			
 		}; //end questionAnswered()
 		
@@ -91,15 +91,15 @@
 				var maxWidth = $scope.container.prop('offsetWidth');
 				var ratio = data.dragOffset.x / maxWidth;
 				
-				//console.log("ratio: " + ratio);
+				//console.log("ratio: " + ratio + " - maxWidth: " + maxWidth + " - offset: " +  data.dragOffset.x);
 				//selection made
 				if (ratio<-0.4) {
-					$scope.questionAnswered(1);
 				//	console.log("select left");	
+					$scope.questionAnswered(0);
 				}
 				else if (ratio>0.4) {
-					$scope.questionAnswered(0);
-				//	console.log("select right");	
+				//	console.log("select right");
+					$scope.questionAnswered(1);	
 				}
 			
 			
@@ -111,12 +111,12 @@
 		
 		//add swipe listener
 		$scope.$on('gesture-swipe-left', function (event) {
+//			console.log("swipe left");
 			$scope.questionAnswered(0);
-			//console.log("swipe left");
 		});
 		$scope.$on('gesture-swipe-right', function (event) {
+//			console.log("swipe right");			
 			$scope.questionAnswered(1);
-			//console.log("swipe right");
 		});
 		
 			

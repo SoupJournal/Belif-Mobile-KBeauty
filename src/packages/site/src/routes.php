@@ -31,6 +31,10 @@
 		//login
 		Route::get('/login', ['as' => 'soup.login', 'uses' => 'SiteController@getLogin']);
 		Route::post('/login', ['as' => 'soup.login', 'uses' => 'SiteController@postLogin']);
+		//forgotten password
+		Route::get('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@getForgot']);
+		Route::post('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@postForgot']);
+		Route::get('/forgot/sent', ['as' => 'soup.forgot.sent', 'uses' => 'SiteController@getResetSent']);		
 		
 		//user already logged in
 		Route::group(array('middleware' => 'AppUser'), function() {
@@ -59,6 +63,13 @@
 			Route::get('/question/{id}', ['as' => 'soup.question.id', 'uses' => 'QuizController@getQuestion']);
 			Route::post('/question', ['as' => 'soup.question', 'uses' => 'QuizController@postQuestion']);
 			Route::get('/quiz/thanks', ['as' => 'soup.quiz.thanks', 'uses' => 'QuizController@getThanks']);
+
+			//user
+			Route::get('/user/profile', ['as' => 'soup.user.profile', 'uses' => 'MainController@getUserProfile']);
+		
+			//venue
+			Route::get('/venue/recommendations', ['as' => 'soup.venue.recommendation', 'uses' => 'MainController@getVenueRecommendations']);
+			Route::get('/venue/profile/{id}', ['as' => 'soup.venue.profile', 'uses' => 'MainController@getVenueProfile']);
 		
 		});
 	

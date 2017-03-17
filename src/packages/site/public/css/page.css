@@ -43,6 +43,19 @@
 	height: auto;	
 }
 
+.profile-header-image {
+  	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.image-diet-icon {
+	margin-left: 25%;
+	width: 50%;
+	height: auto;
+	display: block;	
+}
+
 
 /********************************/
 /* 			QUESTIONS 			*/

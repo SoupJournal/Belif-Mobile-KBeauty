@@ -19,6 +19,31 @@ class UserProfile extends Model {
 
 
 
+		//==========================================================//
+		//====				RELATIONSHIP METHODS				====//
+		//==========================================================//	
+			
+
+	/**
+     * Get the user associated with this profile.
+     */
+	public function user() {
+    
+        return $this->belongsTo(SoupUser::class, 'user', 'id');
+    }
+    
+    
+	/**
+     * Get the question associated with this profile.
+     */
+	public function question() {
+    
+        return $this->belongsTo(Question::class, 'question', 'key');
+        
+    } //end questionData()
+
+
+
 } //end class UserProfile
 
 

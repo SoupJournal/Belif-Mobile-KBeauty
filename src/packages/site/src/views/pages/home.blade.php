@@ -75,7 +75,7 @@
 	
 	{{----------------- SIGNUP SECTION -------------------}}
 	<div class="page-section">
-		@include('soup::sections.info', Array(
+		@include('soup::sections.subscribe', Array(
 			'sectionId' => 'signup',
 			'pageData' => $signupData
 		))

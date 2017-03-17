@@ -20,7 +20,24 @@ class SoupUser extends Model implements AuthenticatableContract {
 	//set model table name
     protected $table = 'user';
 
+	//set date fields
+	protected $dates = ['birth_date'];
 
+//	protected $fillable = [
+//		'birth_date'
+//	];
+
+
+	/**
+	 * Get the attributes that should be converted to dates.
+	 *
+	 * @return array
+	 */
+//	public function getDates() {
+//	
+//	    return array_merge(parent::getDates(), array('birth_date'));
+//	    
+//	}
 
 
 		//==========================================================//
@@ -49,9 +66,17 @@ class SoupUser extends Model implements AuthenticatableContract {
 
 	public function getBirthDateAttribute($date) {
 	
-	    return (new Carbon($date))->format('m/d/Y');
+	    return $date ? Carbon::parse($date) : null; //new Carbon($date); //(new Carbon($date))->format('m/d/Y');
 	    
 	} //end getBirthDateAttribute()
+	
+	
+	public function setBirthDateAttribute($date) {
+	
+		$this->attributes['birth_date'] = Carbon::parse($date);
+	    //return (new Carbon($date))->format('m/d/Y');
+	    
+	} //end setBirthDateAttribute()
 
 
 	

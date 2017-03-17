@@ -147,10 +147,24 @@
 			
 			$valid = true;
 			
+			//determine if data should be saved
+			$saveValue = true;
+			
+			
+			
 			//get form values
 			$key = safeArrayValue('key', $_POST);
-			//$type = safeArrayValue('type', $_POST);
-			$value = safeArrayValue('value', $_POST);
+			
+			//handle secondary values
+			$secondaryValue = safeArrayValue('secondaryValue', $_POST, null);
+			$secondaryKey = null;
+
+			//get answer value
+			$value = safeArrayValue('value', $_POST, null);
+			//check for value set by javascript 
+			if ($value==null) {
+				$value = safeArrayValue('scriptValue', $_POST, null);
+			}
 
 
 			//valid key
@@ -196,16 +210,25 @@
 					switch ($type) {
 						
 						case AppGlobals::QUESTION_TYPE_DROP_DOWN:
-	
+						
 						break;
 					
 						case AppGlobals::QUESTION_TYPE_MULTIPLE:
-		
+							$secondaryKey = $key . "_text";
 						break;
 						
 						//case AppGlobals::QUESTION_TYPE_BINARY:
 						default:
 	
+							//option selected
+							if ($value>0) {
+								$value = $questionData['options'];	
+							}
+							//option rejected
+							else {
+								$saveValue = false;	
+							}
+							
 						break;
 						
 					} //end switch (type)
@@ -215,20 +238,68 @@
 				
 				//valid form
 				if ($valid) {
-					
+
+					//indicate question was answered
+					$this->storeQuestionKey($key, $user);
+
+
 					//clear existing answers
-					$profileValues = UserProfile::where('question', '=', $key)->get();
+					$deleteQuery = UserProfile::where('question', '=', $key);
+					if ($secondaryKey && strlen($secondaryKey)>0) {
+						$deleteQuery->orWhere('question', '=', $secondaryKey);
+					}
+					$profileValues = $deleteQuery->get();
 					foreach ($profileValues as $profile) {
 						$profile->delete();	
 					}
 					
-					//store question answer
-					$profile = new UserProfile();
-					$profile->user = $user->id;
-					$profile->question = $key;
-					$profile->value = $value;
-					$profile->save();
-					
+
+					//save new values
+					if ($saveValue) {
+
+						//array value
+						if (is_array($value)) {
+							
+							//store values
+							foreach ($value as $val) {
+								
+								//store question answer
+								$profile = new UserProfile();
+								$profile->user = $user->id;
+								$profile->question = $key;
+								$profile->value = $val;
+								$profile->save();
+								
+							} //end for()
+							
+						}
+						//single value
+						else {
+						
+							//store question answer
+							$profile = new UserProfile();
+							$profile->user = $user->id;
+							$profile->question = $key;
+							$profile->value = $value;
+							$profile->save();
+						
+						}
+						
+						//store secondary value
+						if ($secondaryKey && strlen($secondaryKey)>0) {
+							
+							//store secondary question answer
+							$profile = new UserProfile();
+							$profile->user = $user->id;
+							$profile->question = $secondaryKey;
+							$profile->value = $secondaryValue;
+							$profile->save();
+							
+						}
+						
+					} //end if (save values)
+						
+						
 					//get next question Id
 					$nextId = ($questionId+1);
 					
@@ -246,6 +317,8 @@
 					else {
 						return redirect()->route('soup.quiz.thanks');
 					}
+					
+					
 						
 				}
 			
@@ -289,7 +362,7 @@
 			//draw page
 			return View::make('soup::pages.quiz.thanks')->with([
 				'pageData'=> $pageData,
-				//'nextURL' => route('soup.question'),
+				'nextURL' => route('soup.user.profile'),
 				'backURL' => route('soup.question.id', ['questionId' => $lastQuestionId])
 			]);
 			
@@ -300,6 +373,9 @@
 		//==========================================================//
 		//====					SERVICE METHODS					====//
 		//==========================================================//	
+			
+			
+			
 			
 		//==========================================================//
 		//====					DATA METHODS					====//
@@ -322,44 +398,47 @@
 			//valid data
 			if ($user && $questionsData && count($questionsData)>0) { 
 				
-				//get profile data
-				$profiles = $user->profile()->groupby('question')->get();
+				try {
+				
+					//get profile data
+					$profiles = json_decode($user->answered_questions);
+					//$profiles = $user->profile()->groupby('question')->get();
+		
+					//found profile data
+					if ($profiles && count($profiles)>0) {
 	
-				//found profile data
-				if ($profiles && count($profiles)>0) {
-
-					//find question data
-					$foundAnswer = false;
-					foreach ($questionsData as $question) {
-			
-						//reset answer state
+						//find question data
 						$foundAnswer = false;
-						
-						//check if question answered
-						foreach ($profiles as $profile) {
-
-							//question was answered
-							if (strcmp($question['key'], $profile['question'])==0) {
-								++$questionId;
-								$foundAnswer = true;
+						foreach ($questionsData as $question) {
+				
+							//reset answer state
+							$foundAnswer = false;
+							
+							//check if question answered
+							foreach ($profiles as $profile) {
+	
+								//question was answered
+								if (strcmp($question['key'], $profile)==0) {
+									++$questionId;
+									$foundAnswer = true;
+									break;
+								}
+								
+							} //end for()
+							
+							//no match found
+							if (!$foundAnswer) {
 								break;
 							}
-							
-						} //end for()
-						
-						//no match found
-						if (!$foundAnswer) {
-							break;
-						}
-			
-			
-					} //end for()
-					
-					//all questions answered
-//					if ($foundAnswer) {
-//						$questionData = null;
-//					}
 				
+				
+						} //end for()
+					
+					}
+				
+				}
+				catch (Exception $ex) {
+					
 				}
 				
 			} //end if (valid data)
@@ -405,98 +484,56 @@
 			
 			
 			
-			/*
-		private function previousQuestionData($currentKey, $questionsData) {
+
+		private function storeQuestionKey($key, $user) {
 			
-			$questionData = null;
-			
-			//valid data
-			if ($currentKey && $questionsData && strlen($currentKey)>0 && count($questionsData)>0) {
+			//valid key
+			if ($key && strlen($key)>0) {
 				
-				//find question
-				foreach ($questionsData as $question) {
+				//valid user
+				if ($user) {
 					
-					//match found
-					if (strcmp($question['key'], $profile['question'])==0) {
-						break;
-					}
-					//no match (store as previous data)
-					else {
-						$questionData = $question;
-					}
-					
-				} //end for()
-				
-			} //end if (valid data)
-			
-			return $questionData;
-			
-		} //end previousQuestionData()
-			
-				
-				
+					//decode array
+					try {
+						$storedQuestions = json_decode($user->answered_questions);	
 						
-		private function activeQuestionData($user, $questionsData) {
+						//data exists
+						if ($storedQuestions && is_array($storedQuestions)) {
 			
-			$questionData = null;
-
-
-			//valid data
-			if ($user && $questionsData && count($questionsData)>0) { 
-				
-				//get profile data
-				$profiles = $user->profile()->groupby('question')->get();
-	
-				//found profile data
-				if ($profiles && count($profiles)>0) {
-
-					//find question data
-					$foundAnswer = false;
-					foreach ($questionsData as $question) {
-		
-						//store question data
-						$questionData = $question;
-
-	
-						//reset answer state
-						$foundAnswer = false;
-						
-						//check if question answered
-						foreach ($profiles as $profile) {
-
-							//question was answered
-							if (strcmp($question['key'], $profile['question'])==0) {
-								$foundAnswer = true;
-								break;
+							//check if key stored
+							if (!in_array($key, $storedQuestions)) {
+								
+								//add key
+								array_push($storedQuestions, $key);
+								
 							}
-							
-						} //end for()
-						
-						//no match found
-						if (!$foundAnswer) {
-							break;
+								
 						}
-						
-					} //end for()
-					
-					//all questions answered
-					if ($foundAnswer) {
-						$questionData = null;
-					}
+						//new array
+						else {
+							$storedQuestions = array($key);
+						}
 				
-				}
-				//no profile data
-				else {
-					$questionData = $questionsData[0];
-				}
-				
-			} //end if (valid data)
+						//convert data
+						$JSONdata = json_encode($storedQuestions);
 
-			return $questionData;
-			
-		} //end activeQuestionData()
-				*/		
-							
+						//save data
+						$user->answered_questions = $JSONdata;
+						$user->save();
+						
+					}
+					catch (Exception $ex) {
+						
+					}
+					
+				} //end if (valid user)
+				
+			} //end if (valid key)
+					
+		} //end storeQuestionKey()
+		
+		
+									
 	} //end class SiteController
 
 

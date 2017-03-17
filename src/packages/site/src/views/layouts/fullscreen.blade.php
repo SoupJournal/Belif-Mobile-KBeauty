@@ -1,7 +1,6 @@
 <?php
 
 	//define variables
-	$fullScreen = (!isset($fullScreen) ? false : $fullScreen);
 	$fillHeight = (!isset($fillHeight) ? true : $fillHeight);
 	$pageName = (!isset($pageName) ? 'soup' : $pageName);
 
@@ -32,39 +31,17 @@
    
     
 		{{-- controller --}}
-		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit" ng-controller="SoupController">
+		<div class="main-page-full page-text stretch-to-fit" ng-controller="SoupController">
 			
-			<div class="main-page-container fill-height bg-color-5">
-				
-	
-		   		{{----------------- HEADER -------------------}}
-		   		@if (!$fullScreen) 
-			    	@include('soup::layouts.header')
-		    	@endif
-		   		
-
-	
 			
-				@if ($fillHeight)
-				<div class="page-body text-center" fill-height min-ratio="1.4">
-				@else 
-				<div class="page-body text-center">				
-				@endif
+			
 
-					<div class="background-fill"></div>
-					
-					<div class="stretch-to-fit">
+       		{{----------------- CONTENT ------------------}}
+       		@yield('content')
+       		{{--------------- END CONTENT ----------------}}
 
-	        		{{----------------- CONTENT ------------------}}
-	        		@yield('content')
-	        		{{--------------- END CONTENT ----------------}}
+			        	
 
-					</div>
-				
-				</div>
-				
-			</div>	        	
-	
 	        
         {{-- end controller --}}
         </div>

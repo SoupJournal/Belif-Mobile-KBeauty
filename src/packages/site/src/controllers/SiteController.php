@@ -44,7 +44,7 @@
 	
 	
 		//==========================================================//
-		//====						SIGN UP						====//
+		//====						LOG IN						====//
 		//==========================================================//	
 	
 	
@@ -142,13 +142,104 @@
 							->withErrors($errors);
 			}
 			
-			return Redirect::route('soup.quiz');
 			
 		} //end postLogin()
 		
 	
 	
 	
+		public function getForgot() {
+			
+			//get page data
+			$pageData = $this->dataForFormId(self::FORM_FORGOT_PASSWORD);
+			
+			//draw page
+			return View::make('soup::pages.signup.forgot')->with([
+				'pageData'=> $pageData,
+				//'nextURL' => route('soup.question'),
+				'backURL' => route('soup.login'),
+				'hideHeaderTitle' => true
+			]);
+			
+		} //end getForgot()
+	
+	
+	
+	
+		public function postForgot() {
+			
+			$valid = true;
+			$errors = null;
+			
+			//get form values
+			$email = safeArrayValue('email', $_POST);
+			
+	
+			//valid email
+			if (!validEmail($email)) {
+				$errors = 'Please specify a valid email address.';
+				$valid = false;
+			}
+		
+		
+			//find matching user
+			$user = SoupUser::where('email', '=', $email)->first();
+	
+			//valid user
+			if ($valid && !$user) {
+				$errors = 'Sorry, we can not find a user registered with that email address.';
+				$valid = false;
+			}
+	
+	
+	
+			//valid form
+			if ($valid) {
+				
+				//TODO: send password reset email
+		
+				//direct to next page
+				return Redirect::route('soup.forgot.sent');
+				
+			}
+			
+			
+			//invalid form
+			if (!$valid) {
+				return Redirect::back()
+							->withInput()
+							->withErrors($errors);
+			}
+
+			
+		} //end postForgot()
+	
+	
+	
+		public function getResetSent() {
+			
+			//get page data
+			$pageData = $this->dataForFormId(self::FORM_FORGOT_PASSWORD_THANKS);
+			
+			//draw page
+			return View::make('soup::pages.signup.forgot_sent')->with([
+				'pageData'=> $pageData,
+				//'nextURL' => route('soup.question'),
+				'backURL' => route('soup.login'),
+				'hideHeaderTitle' => true
+			]);
+			
+		} //end getResetSent()
+	
+	
+	
+	
+	
+	
+		//==========================================================//
+		//====						SIGN UP						====//
+		//==========================================================//	
+		
 	
 	
 		public function getSignup() {
@@ -160,7 +251,8 @@
 			return View::make('soup::pages.signup.signup')->with([
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
-				'backURL' => route('soup.welcome')
+				'backURL' => route('soup.welcome'),
+				'fillHeight' => false
 			]);
 			
 		} //end getSignup()
@@ -280,6 +372,7 @@
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				//'backURL' => route('soup.signup')
+				'fillHeight' => false
 			]);
 			
 		} //end getSignupData()
@@ -419,6 +512,7 @@
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				//'backURL' => route('soup.signup.info')
+				'fillHeight' => false
 			]);
 			
 		} //end getSignupCode()
@@ -485,7 +579,8 @@
 			return View::make('soup::pages.signup.request')->with([
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
-				'backURL' => route('soup.signup.code')
+				'backURL' => route('soup.signup.code'),
+				'fillHeight' => false
 			]);
 			
 		} //end getSignupRequest()

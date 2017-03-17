@@ -131,7 +131,7 @@
 				
 					{{-- no --}}
 					<div class="button-answer-container pull-left" swipe-fade-view="left">
-						<button class="button-answer answer-reject stretch-to-fit">
+						<button name="value" value="0" class="button-answer answer-reject stretch-to-fit">
 							<img src="{{ $image_no }}" class="answer_image" load-style="fade">
 						</button>
 					</div>
@@ -143,7 +143,7 @@
 					
 					{{-- yes --}}
 					<div class="button-answer-container pull-right">
-						<button class="button-answer answer-accept stretch-to-fit" swipe-fade-view="right">
+						<button name="value" value="1" class="button-answer answer-accept stretch-to-fit" swipe-fade-view="right">
 							<img src="{{ $image_yes }}" class="answer_image" load-style="fade">
 						</button>
 					</div>
@@ -169,7 +169,7 @@
 		</div>
 	
 		{{-- answer field for javascript submits --}}
-		<input type="hidden" name="scriptAnswer">
+		<input type="hidden" name="scriptValue">
 	
 		{{-- question key --}}
 		<input type="hidden" name="key" value="{{ $key }}">

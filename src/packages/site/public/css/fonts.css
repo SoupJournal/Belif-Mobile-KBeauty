@@ -183,6 +183,11 @@ a.page-link {
 	text-decoration: underline;	
 }
 
+.uppercase {
+	text-transform: uppercase;	
+}
+
+
 /********************************/
 /* 			MAX SIZE 			*/
 /********************************/
@@ -234,6 +239,10 @@ a.page-link {
 		font-size: 29.5px;
 	}
 	
+	
+	.button-header {
+		font-size: 29.5px;
+	}
 	
 	.page-text {
 		font-size: 20px;

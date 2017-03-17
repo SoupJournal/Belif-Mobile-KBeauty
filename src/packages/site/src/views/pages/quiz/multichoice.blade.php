@@ -115,13 +115,14 @@
 				<?php
 				
 					//show answers
+					$index = 0;
 					foreach ($options as $option) {
 				?>
 				
 					<div class="button-checkbox">
 					   	<label class="color-2">
 					   	
-					   		{{ Form::checkbox($option, $option, false, Array ('class' => 'multiple-choice', 'checkbox-limit' => $allowedChoices, 'checkbox-group' => 'choices')) }}
+					   		{{ Form::checkbox('value[' . ($index++) . ']', $option, false, Array ('class' => 'multiple-choice', 'checkbox-limit' => $allowedChoices, 'checkbox-group' => 'choices')) }}
 					   		<h1 class="title-bold large color-2 clear-header-margins">{{ $option }}</h1>
 	
 						</label>
@@ -148,8 +149,8 @@
 					
 				<div class="row page-padding-large">
 				
-					{{-- dropdown --}}
-					{{ Form::text('option2', $selected, Array ('class' => 'page-input-select')) }}
+					{{-- text input --}}
+					{{ Form::text('secondaryValue', $selected, Array ('class' => 'page-input-select')) }}
 				
 				</div>	
 				

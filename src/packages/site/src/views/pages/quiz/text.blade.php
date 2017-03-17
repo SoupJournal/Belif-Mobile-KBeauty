@@ -97,7 +97,7 @@
 			<div class="row page-padding-large">
 			
 				{{-- dropdown --}}
-				{{ Form::text('option', $selected, Array ('placeholder' => $option, 'class' => 'page-input-select', 'required' => '')) }}
+				{{ Form::text('value', $selected, Array ('placeholder' => $option, 'class' => 'page-input-select', 'required' => '')) }}
 			
 			</div>	
 			

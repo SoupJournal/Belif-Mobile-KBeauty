@@ -17,7 +17,7 @@ class CreateUserProfileTable extends Migration {
 			$table->increments('id');
 			$table->integer('user')->references('id')->on('user')->nullable();
 			$table->string('question')->references('key')->on('question')->nullable();
-			$table->integer('type')->default(0);
+			//$table->integer('type')->default(0);
 			$table->string('value')->nullable();
 
 			$table->timestamps();
