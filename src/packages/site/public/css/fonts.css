@@ -183,6 +183,10 @@ a.page-link {
 	text-decoration: underline;	
 }
 
+.lowercase {
+	text-transform: lowercase;	
+}
+
 .uppercase {
 	text-transform: uppercase;	
 }

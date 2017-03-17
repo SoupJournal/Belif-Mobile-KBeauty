@@ -51,53 +51,57 @@
 			$favouriteRestaurant = null;
 			$restaurantQualities = null;
 			if ($user) {
-				//$profileData = UserProfile::where('user', '=', $user->id)->groupBy('question')->get();
+				
+				//GET PROFILE DATA PROPERTIES
 				
 				//get user profile
 				$profiles = UserProfile::where('user', '=', $user->id)->select('value');
 				
-				//get user questions
-				//$questions = Question::where('user', '=', $user->id);
 				
-				//get profile data properties
-				//$diets = $questions->where('group', '=', 'diet')->with('profile')->get();
+				
+				//diets
 				$query = clone $profiles;
 				$diets = $query->whereHas('question', function($subQuery) {
 					$subQuery->where('group', '=', 'diet');
 				})->get();
 				
-//				->whereHas('profile', function($fieldQuery){
-//									$fieldQuery->select(['id', 'name']);
-//								});
+				//allergies
 				$query = clone $profiles;
 				$allergies = $query->where('question', '=', 'diet_text')->first();
 				
+				//favourite meal
 				$query = clone $profiles;
 				$favouriteMeal = $query->whereHas('question', function($subQuery) {
 					$subQuery->where('group', '=', 'meal');
 				})->get();
 				
+				//morning routing
 				$query = clone $profiles;
 				$morningRoutine = $query->whereHas('question', function($subQuery) {
 					$subQuery->where('group', '=', 'wake');
 				})->get();
 				
+				//drinks preference
 				$query = clone $profiles;
 				$drinkPreference = $query->whereHas('question', function($subQuery) {
 					$subQuery->where('group', '=', 'drink');
 				})->get();
 				
+				//favourite locations
 				$query = clone $profiles;
 				$locations = $query->whereHas('question', function($subQuery) {
 					$subQuery->where('group', '=', 'location');
 				})->get();
 				
+				//favourite cuisine
 				$query = clone $profiles;
 				$favouriteCuisine = $query->where('question', '=', 'cuisine')->first();
 				
+				//favourite restaurant
 				$query = clone $profiles;
 				$favouriteRestaurant = $query->where('question', '=', 'favRestaurant')->first();
 				
+				//restaurant qualities
 				$query = clone $profiles;
 				$restaurantQualities = $query->whereHas('question', function($subQuery) {
 					$subQuery->where('group', '=', 'restaurant');
@@ -136,8 +140,18 @@
 	
 		public function getVenueRecommendations() {
 			
+			//get user data
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+			
+			//get venues data
+			$dinnerVenue = Venue::find(1);
+			$brunchVenue = Venue::find(1);
+			
 			//draw page
 			return View::make('soup::pages.venue.recommendations')->with([
+				'user' => $user,
+				'dinnerVenue' => $dinnerVenue,
+				'brunchVenue' => $brunchVenue
 				//'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				//'backURL' => route('soup.welcome'),
@@ -156,7 +170,7 @@
 			return View::make('soup::pages.venue.profile')->with([
 				//'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
-				//'backURL' => route('soup.welcome'),
+				'backURL' => route('soup.venue.recommendation'),
 				'venue' => $venueData,
 				'mapsKey' => AppGlobals::GOOGLE_API_KEY
 			]);

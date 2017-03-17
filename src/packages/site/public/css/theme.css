@@ -149,6 +149,20 @@
 	width: 15%;
 }
 
+.venue-preview-container {
+	position: relative;
+	margin-left: 6%;
+	margin-right: 6%;
+	margin-top: 2%;
+	margin-bottom: 5%;	
+}
+
+.venue-preview {
+	position: relative;
+	padding-bottom: 80%;
+	overflow-y: hidden;
+}
+
 .venue-profile {
 	position: relative;
 	padding-bottom: 120%;
@@ -212,6 +226,10 @@
 	padding-right: 15%;
 }
 
+.page-padding-very-large {
+	padding-left: 30%;	
+	padding-right: 30%;
+}
 
 /********************************/
 /* 			ALIGNMENT	 		*/

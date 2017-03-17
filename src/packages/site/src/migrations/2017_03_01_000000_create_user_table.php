@@ -39,6 +39,9 @@ class CreateUserTable extends Migration {
 			//$table->boolean('unsubscribed')->default(false);
 			$table->integer('registration_attempts')->default(0);
 			$table->string('answered_questions', 2047)->nullable();
+			$table->id('brunch_recommendation')->reference('id')->on('venue')->nullable();
+			$table->id('lunch_recommendation')->reference('id')->on('venue')->nullable();
+			$table->id('dinner_recommendation')->reference('id')->on('venue')->nullable();
 
 			$table->string('ip_address', 15)->nullable();
 
