@@ -115,8 +115,48 @@
 					//valid user
 					else if ($user->status==AppGlobals::USER_STATUS_MEMBER) {
 					
-						//direct to next page
-						return Redirect::route('soup.quiz');
+						//check if quiz answered
+						if (!$user->quiz_complete) {
+					
+							//get quiz data
+							$quizData = $this->dataForFormId(self::FORM_QUESTION);
+							
+							//determine total questions
+							$totalQuestions = ($quizData ? count($quizData) : 0);
+							
+							//get current question id
+							$questionId = activeQuestionNumber($user, $pageData);
+						
+							//no questions answered
+							if ($questionId<=0) {
+						
+								//direct to next page
+								return Redirect::route('soup.quiz');
+							
+							}
+							//more questions to answer
+							else if ($questionId<$totalQuestions)  {
+								
+								//direct to next page
+								return Redirect::route('soup.question.id', ['questionId' => $questionId]);
+								
+							}
+							//all questions answered
+							else {
+								
+								//direct to next page
+								return Redirect::route('soup.venue.recommendation');
+								
+							}
+						
+						}
+						//all questions answered
+						else {
+							
+							//direct to next page
+							return Redirect::route('soup.venue.recommendation');
+							
+						}
 					
 					}
 					//other user types

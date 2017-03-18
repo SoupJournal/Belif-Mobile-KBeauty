@@ -61,7 +61,7 @@
 			$totalQuestions = ($pageData ? count($pageData) : 0);
 			
 			//get current question id
-			$activeId = $this->activeQuestionNumber($user, $pageData);
+			$activeId = activeQuestionNumber($user, $pageData);
 			
 
 //				echo "questionId: " . $questionId . " - totalQuestions: " . $totalQuestions . " - activeId: " . $activeId;
@@ -315,6 +315,11 @@
 					}
 					//quiz complete
 					else {
+				dd(route('soup.quiz.thanks'));		
+						//store quiz state
+						$user->quiz_complete = true;
+						$user->save();
+						
 						return redirect()->route('soup.quiz.thanks');
 					}
 					
@@ -357,16 +362,30 @@
 			
 			//find last question Id
 			$lastQuestionId = $totalQuestions>1 ? $totalQuestions-1 : 0;
-			
+		
 			
 			//draw page
 			return View::make('soup::pages.quiz.thanks')->with([
 				'pageData'=> $pageData,
-				'nextURL' => route('soup.user.profile'),
+				'nextURL' => route('soup.quiz.complete'),
 				'backURL' => route('soup.question.id', ['questionId' => $lastQuestionId])
 			]);
 			
 		} //end getThanks()
+			
+			
+			
+			
+			
+		public function getCompleteQuiz() {
+			
+			return Redirect::route('soup.user.profile')->with(['showNext' => true]);
+			//indicate next button should show on profile page
+			//\Request::session()->set('showNext');
+			
+		} //end getCompleteQuiz()
+			
+			
 			
 			
 			
@@ -388,65 +407,7 @@
 					
 					
 		
-					
-					
-					
-		private function activeQuestionNumber($user, $questionsData) {
 			
-			$questionId = 0;
-			
-			//valid data
-			if ($user && $questionsData && count($questionsData)>0) { 
-				
-				try {
-				
-					//get profile data
-					$profiles = json_decode($user->answered_questions);
-					//$profiles = $user->profile()->groupby('question')->get();
-		
-					//found profile data
-					if ($profiles && count($profiles)>0) {
-	
-						//find question data
-						$foundAnswer = false;
-						foreach ($questionsData as $question) {
-				
-							//reset answer state
-							$foundAnswer = false;
-							
-							//check if question answered
-							foreach ($profiles as $profile) {
-	
-								//question was answered
-								if (strcmp($question['key'], $profile)==0) {
-									++$questionId;
-									$foundAnswer = true;
-									break;
-								}
-								
-							} //end for()
-							
-							//no match found
-							if (!$foundAnswer) {
-								break;
-							}
-				
-				
-						} //end for()
-					
-					}
-				
-				}
-				catch (Exception $ex) {
-					
-				}
-				
-			} //end if (valid data)
-			
-			return $questionId;
-			
-		} //end activeQuestionNumber()
-					
 					
 					
 		private function questionIdFromKey($key, $questionsData) {

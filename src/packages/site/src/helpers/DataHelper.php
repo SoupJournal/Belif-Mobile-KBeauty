@@ -112,6 +112,67 @@
 		//==========================================================//	
 	
 	
+
+
+	//====== QUIZ DATA ======//
+				
+				
+	function activeQuestionNumber($user, $questionsData) {
+		
+		$questionId = 0;
+		
+		//valid data
+		if ($user && $questionsData && count($questionsData)>0) { 
+			
+			try {
+			
+				//get profile data
+				$profiles = json_decode($user->answered_questions);
+				//$profiles = $user->profile()->groupby('question')->get();
+	
+				//found profile data
+				if ($profiles && count($profiles)>0) {
+
+					//find question data
+					$foundAnswer = false;
+					foreach ($questionsData as $question) {
+			
+						//reset answer state
+						$foundAnswer = false;
+						
+						//check if question answered
+						foreach ($profiles as $profile) {
+
+							//question was answered
+							if (strcmp($question['key'], $profile)==0) {
+								++$questionId;
+								$foundAnswer = true;
+								break;
+							}
+							
+						} //end for()
+						
+						//no match found
+						if (!$foundAnswer) {
+							break;
+						}
+			
+			
+					} //end for()
+				
+				}
+			
+			}
+			catch (Exception $ex) {
+				
+			}
+			
+		} //end if (valid data)
+		
+		return $questionId;
+		
+	} //end activeQuestionNumber()
+					
 	
 	
 	//====== USER DATA ======//

@@ -142,14 +142,21 @@
 
 			} //end if (valid user)
 			
+			
+			//check if next button should show
+			$showNext = \Request::session()->get('showNext');
 
-			//dd(extractModelValues('value', $favouriteMeal));
+			//restore flash data (in case page refreshed)
+			\Request::session()->reflash();
+
+			//next page url
+			$nextURL = route('soup.venue.recommendation');
 			
 			//draw page
 			return View::make('soup::pages.user.profile')->with([
 				'pageData'=> $pageData,
-				//'nextURL' => route('soup.question'),
-				//'backURL' => route('soup.welcome'),
+				'nextURL' => $showNext ? $nextURL : null,
+				'backURL' => $showNext ? null : $nextURL,
 				'user' => $user,
 				//'profile' => $profileData,
 				'diets' => extractModelValues('value', $diets),

@@ -89,8 +89,10 @@
 	<div class="header navbar navbar-top bg-color-8">
 	
 		<img class="profile-header-image" alt="Soup" src="{{ $backgroundImage }}" load-style="fade">
+
+		<div class="stretch-to-fit">
 	
-		<div class="table-parent">
+		<div class="table-parent fill-height">
 	
 			<div class="table-center-row">
 		
@@ -114,11 +116,18 @@
 			   	
 			   	<div class="table-center-cell header-column-right">
 				
+					{{-- next button --}}
+					@if (isset($nextURL))
+						<a href="{{ $nextURL }}" class="button-header button-next color-2">NEXT</a>
+					@endif
+				
 				</div>
 			
 			
 			</div>
 	
+		</div>
+		
 		</div>
 	
 	</div>

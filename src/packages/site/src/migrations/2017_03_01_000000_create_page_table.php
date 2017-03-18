@@ -15,7 +15,7 @@ class CreatePageTable extends Migration {
 		Schema::create('page', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->id('parent')->reference('id')->on('page')->nullable();
+			$table->integer('parent')->reference('id')->on('page')->nullable();
 			$table->string('title')->nullable();
 			$table->string('subtitle')->nullable();
 			$table->string('text')->nullable();
