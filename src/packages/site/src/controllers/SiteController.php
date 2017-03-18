@@ -125,7 +125,7 @@
 							$totalQuestions = ($quizData ? count($quizData) : 0);
 							
 							//get current question id
-							$questionId = activeQuestionNumber($user, $pageData);
+							$questionId = activeQuestionNumber($user, $quizData);
 						
 							//no questions answered
 							if ($questionId<=0) {

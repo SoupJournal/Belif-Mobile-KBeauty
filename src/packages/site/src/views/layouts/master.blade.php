@@ -51,7 +51,7 @@
 
 					<div class="background-fill"></div>
 					
-					<div class="stretch-to-fit">
+					<div class="stretch-to-fit bg-color-5">
 
 	        		{{----------------- CONTENT ------------------}}
 	        		@yield('content')
