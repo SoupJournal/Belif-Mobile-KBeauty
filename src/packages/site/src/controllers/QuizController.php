@@ -315,7 +315,7 @@
 					}
 					//quiz complete
 					else {
-				dd(route('soup.quiz.thanks'));		
+	
 						//store quiz state
 						$user->quiz_complete = true;
 						$user->save();
