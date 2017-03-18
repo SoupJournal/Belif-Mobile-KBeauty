@@ -86,7 +86,7 @@
 				$viewParams = Array (
 					'pageData'=> $questionData,
 					'backURL' => $questionId > 0 ? route('soup.question.id', ($questionId-1)) : route('soup.quiz'),
-					'formURL' => route('soup.question.id', ['questionId'=>$questionId]),
+					'formURL' => route('soup.question'),
 					'totalSteps' => 8
 				);
 	

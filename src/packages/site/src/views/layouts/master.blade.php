@@ -32,7 +32,7 @@
    
     
 		{{-- controller --}}
-		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit" ng-controller="SoupController">
+		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit bg-color-5" ng-controller="SoupController">
 			
 			<div class="main-page-container fill-height bg-color-5">
 				
