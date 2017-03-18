@@ -38,7 +38,7 @@
 			//draw page
 			return View::make('soup::pages.quiz.home')->with([
 				'pageData'=> $pageData,
-				'nextURL' => route('soup.question'),
+				'nextURL' => route('soup.question.id', ['questionId'=>0]),
 				//'backURL' => route('soup.welcome')
 			]);
 			
@@ -86,7 +86,7 @@
 				$viewParams = Array (
 					'pageData'=> $questionData,
 					'backURL' => $questionId > 0 ? route('soup.question.id', ($questionId-1)) : route('soup.quiz'),
-					'formURL' => route('soup.question'),
+					'formURL' => route('soup.question.id', ['questionId'=>$questionId]),
 					'totalSteps' => 8
 				);
 	
