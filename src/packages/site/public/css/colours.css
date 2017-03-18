@@ -33,6 +33,12 @@
 }
 
 
+.color-9 {
+	color: #F2453E;	
+}
+
+
+
 /********************************/
 /* 			LINK COLOURS 		*/
 /********************************/
@@ -115,7 +121,9 @@ a:hover {
 	border-color: #322D31; /*3069AD; */
 }
 
-
+.border-color-9 {
+	border-color: #F2453E;	
+}
 
 /********************************/
 /* 			OPACITY 			*/
@@ -129,4 +137,8 @@ a:hover {
 
 .bg-color-opacity-2 {
 	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bg-color-opacity-5 {
+	background-color: rgba(28, 2, 28, 0.95);
 }

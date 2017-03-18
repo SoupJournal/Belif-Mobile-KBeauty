@@ -72,6 +72,11 @@
 /* 			BUTTONS 			*/
 /********************************/
 
+.button-menu {
+	width: 25%;
+	height: auto;	
+}
+
 .button-page {
 	display: inline-block;
 	width: 60%;

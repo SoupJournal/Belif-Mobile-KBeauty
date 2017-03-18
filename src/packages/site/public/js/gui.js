@@ -5,6 +5,77 @@
 	var module = angular.module('soup-gui', ['ngResource']); 
 	
 	
+	
+	//broadcastClick directive - broadcasts named event on element click 
+	module.directive('broadcastClick', ['$rootScope', function($rootScope) {
+	    return {
+	    	restrict: 'A',
+	        scope: {
+	            broadcastClick: '@'
+	        },
+	        link: function (scope, element, attrs) {
+	        	
+	        	angular.element(element).on('click', function() {
+	        	
+		        	//click event defined
+		        	if (scope.broadcastClick && scope.broadcastClick.length>0) {
+
+		        		//broadcast event
+		        		$rootScope.$broadcast(scope.broadcastClick);
+		        		
+		        	} //end if (valid event name)
+	        	
+	        	});
+	        }
+	        
+	    }
+	}]); //end directive
+	
+	
+	
+	//broadcastClick directive - broadcasts named event on element click 
+	module.directive('toggleHeight', ['$rootScope', function($rootScope) {
+	    return {
+	    	restrict: 'A',
+	        scope: {
+	            toggleHeight: '@',
+	            eventName: '@',
+	        },
+	        link: function (scope, element, attrs) {
+	        	
+	        	//store element height
+	        	scope.baseHeight = element.css('height');
+	
+	        	//valid event name
+	        	if (scope.eventName && scope.eventName.length>0) {
+
+		        	scope.$on(scope.eventName, function() {
+		        	
+			        	//click event defined
+			        	if (scope.toggleHeight && scope.toggleHeight.length>0) {
+	
+			        		//update element
+			        		if (element.css('height') == scope.baseHeight) {
+			        			element.css('height', scope.toggleHeight);
+			        		}
+			        		//restore element
+			        		else {
+			        			element.css('height', scope.baseHeight);
+			        		}
+			        		
+			        	} //end if (valid event name)
+		        	
+		        	});
+	        	
+	        	} //end if (valid event name)
+	        }
+	        
+	    }
+	}]); //end directive
+	
+	
+	
+	
 	//fillHeight - update element to fill parent height
 	module.directive( 'fillHeight', ['$window', '$rootScope', function($window, $rootScope) {
 	    return {

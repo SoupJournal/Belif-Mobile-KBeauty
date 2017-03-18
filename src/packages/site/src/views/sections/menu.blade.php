@@ -2,45 +2,67 @@
 
 	//ensure page variables are set
 	$options = isset($options) ? $options : null;
-	
+
 ?>
 
-<div class="page-container bg-color-1">
+<div class="page-container fill-height">
 
-	<div class="text-center page-padding-medium">
+
+		
+	<div class="table-parent fill-height text-center page-padding-medium">
+
+		<div class="table-center-row">
+		
+			<div class="table-center-cell">	
 				
-		<?php
+				{{-- has steps --}}
+				@if ($options && count($options)>0) 
+			
+					{{-- draw options --}}
+					@foreach ($options as $option) 
 		
-			//has steps
-			if ($options && count($options)>0) {
-		
-				//draw steps
-				foreach ($options as $name => $url) {
-					
-		?>
-		
-					<div class="">
+						@if ($option) 
 						
-						<div class="spacer-tiny"></div>
+							@if (safeArrayValue('type', $option, "")=="spacer")
+							
+								<div class="spacer-medium"></div>
+							
+							@else
 						
-						{{-- draw text --}}
-						<a href="{{ $url }}">
-							<h3 class="page-padding-medium color-2">{!! $name !!}</h3>
-						</a>
+								<div class="page-padding-medium">
+									
+									<div class="spacer-tiny"></div>
+									
+									{{-- draw text --}}
+									<a href="{{ safeArrayValue('url', $option, '') }}">
+										<h3 class="color-2 {{ safeArrayValue('class', $option, '') }}">
+											{{ safeArrayValue('name', $option, "") }}
+										</h3>
+									</a>
+				
+									<div class="spacer-small"></div>
+								
+								</div>
+								
+							@endif
+							
+						@endif
+			
+		
+					@endforeach
+				
+				@endif
+		
+				<div class="spacer-medium"></div>
+		
+			</div>
+			
+		</div>
 	
-						<div class="spacer-small"></div>
-					
-					</div>
-		
-		<?php
-		
-				} //end for
-			
-			} //end if (has steps)
-		?>
-			
-
 	</div>
+		
+
+
 
 </div>
 

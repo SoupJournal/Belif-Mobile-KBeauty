@@ -1,10 +1,10 @@
 <?php
 
 	//define variables
-	$fullScreen = (!isset($fullScreen) ? false : $fullScreen);
-	$fillHeight = (!isset($fillHeight) ? true : $fillHeight);
-	$pageName = (!isset($pageName) ? 'soup' : $pageName);
-
+	$fullScreen = (isset($fullScreen) ? $fullScreen : false);
+	$fillHeight = (isset($fillHeight) ? $fillHeight : true);
+	$pageName = (isset($pageName) ? $pageName : 'soup');
+	
 
 ?>
 <!DOCTYPE html>
@@ -42,8 +42,6 @@
 			    	@include('soup::layouts.header')
 		    	@endif
 		   		
-
-	
 			
 				@if ($fillHeight)
 				<div class="page-body text-center" fill-height min-ratio="1.4">
@@ -60,11 +58,10 @@
 	        		{{--------------- END CONTENT ----------------}}
 
 					</div>
-				
+								
 				</div>
 				
 			</div>	        	
-	
 	        
         {{-- end controller --}}
         </div>

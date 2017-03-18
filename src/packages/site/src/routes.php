@@ -31,6 +31,7 @@
 		//login
 		Route::get('/login', ['as' => 'soup.login', 'uses' => 'SiteController@getLogin']);
 		Route::post('/login', ['as' => 'soup.login', 'uses' => 'SiteController@postLogin']);
+		Route::get('/logout', ['as' => 'soup.logout', 'uses' => 'SiteController@getLogout']);
 		//forgotten password
 		Route::get('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@getForgot']);
 		Route::post('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@postForgot']);

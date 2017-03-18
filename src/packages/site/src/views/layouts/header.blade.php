@@ -3,16 +3,19 @@
 	//get header styling
 	$useAlternateStyle = isset($alternateHeader) && $alternateHeader;
 	$hideHeaderTitle = isset($hideHeaderTitle) ? $hideHeaderTitle : false;
+	$menuOptions = isset($menuOptions) ? $menuOptions : null;
 
 	//header colours
 	$backgroundColor = "bg-color-5";
 	$textColour = "color-2";
 	$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-white.png";
+	$menuImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon-menu.png";
 	if ($useAlternateStyle) {
 		$backgroundColor = "bg-color-2";
 		$textColour = "color-1";
 		$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-black.png";
 	}
+	
 	
 ?>
 {{-- header --}}
@@ -51,6 +54,13 @@
 					<a href="{{ $nextURL }}" class="button-header button-next color-1">{{ $nextLabel }}</a>
 				@endif
 			
+				{{-- menu button --}}
+				@if (isset($showMenuButton) && $showMenuButton)
+					<a href="javascript:void(0)" class="button-header color-1" broadcast-click="change-menu-height">
+						<img class="button-menu" alt="Soup" src="{{ $menuImage }}" load-style="fade">
+					</a>
+				@endif
+			
 			</div>
 		
 		
@@ -58,6 +68,13 @@
 
 	</div>
 
+</div>
+
+{{-- menu --}}
+<div class="menu-overlay bg-color-opacity-5" toggle-height="100%" event-name="change-menu-height">
+	@include('soup::sections.menu', Array(
+		'options' => $menuOptions,
+	))
 </div>
 
     	

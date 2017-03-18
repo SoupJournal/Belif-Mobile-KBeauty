@@ -10,12 +10,12 @@
 	width: 100%;
 	max-width: 960px;
 	margin: 0 auto;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .main-page-full {
 	margin: 0 auto;
-	overflow: hidden;
+/*	overflow: hidden;*/
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -68,7 +68,7 @@
 
 
 .main-page-container {
-	overflow-y: auto;
+	/*overflow-y: auto;*/
 }
 
 
@@ -149,6 +149,10 @@
 	width: 15%;
 }
 
+/********************************/
+/* 			VENUE		 		*/
+/********************************/
+
 .venue-preview-container {
 	position: relative;
 	margin-left: 6%;
@@ -179,6 +183,20 @@
 	overflow-y: hidden;	
 }
 
+/********************************/
+/* 			MENU		 		*/
+/********************************/
+
+.menu-overlay {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    top: 67.46px;
+    left: 0;
+    overflow-y: hidden; /* hide scroll bar during transition */
+    transition: 0.5s;
+}
 
 /********************************/
 /* 			FILLS		 		*/
@@ -197,6 +215,11 @@
 
 .hide-overflow-y {
 	overflow-y: hidden;	
+}
+
+.proportional-fill {
+	width: 100%;
+	height: auto;	
 }
 
 /********************************/

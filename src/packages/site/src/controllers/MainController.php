@@ -18,10 +18,41 @@
 	class MainController extends BaseController {
 		
 
-		//public function __construct() {
-			
+		//set menu options
+		private $mainMenuOptions = null;
 
-		//} //end constructor()
+
+		public function __construct() {
+
+			//set menu options
+			$this->mainMenuOptions = [
+				[
+					'name' => 'Profile',
+					'url' => route('soup.user.profile')
+				],
+				[
+					'name' => 'How It Works',
+				//	'url' => route('soup.user.profile')
+				],
+				[
+					'name' => 'Blog',
+				//	'url' => route('soup.user.profile')
+				],
+				[
+					'name' => 'Help',
+				//	'url' => route('soup.user.profile')
+				],
+				[	
+					'type' => 'spacer'
+				],
+				[
+					'name' => 'LOG OUT',
+					'url' => route('soup.logout'),
+					'class' => 'button-page-border border-color-9 color-9'
+				]
+			];
+
+		} //end constructor()
 		
 		
 
@@ -146,12 +177,14 @@
 			//get venues data
 			$dinnerVenue = Venue::find(1);
 			$brunchVenue = Venue::find(1);
-			
+
 			//draw page
 			return View::make('soup::pages.venue.recommendations')->with([
 				'user' => $user,
 				'dinnerVenue' => $dinnerVenue,
-				'brunchVenue' => $brunchVenue
+				'brunchVenue' => $brunchVenue,
+				'showMenuButton' => true,
+				'menuOptions' => $this->mainMenuOptions
 				//'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				//'backURL' => route('soup.welcome'),

@@ -145,6 +145,18 @@
 			
 		} //end postLogin()
 		
+		
+		
+		public function getLogout() {
+			
+			//logout user
+			Auth::guard(AppGlobals::$AUTH_GUARD)->logout();
+			
+			//draw page
+			return Redirect::route('soup.welcome');
+			
+		} //end getLogout()
+	
 	
 	
 	
