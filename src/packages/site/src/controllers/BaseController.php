@@ -28,6 +28,11 @@
 		const FORM_QUIZ_THANKS = 'page_quiz_thanks';
 		const FORM_USER_PROFILE = 'page_user_profile';
 
+		const FORM_VENUE_PROFILE = 'page_venue_profile';
+
+		const FORM_RESERVATION = 'page_reservation';
+		const FORM_RESERVATION_CONFIRM = 'page_reservation_confirm';
+		const FORM_RESERVATION_THANKS = 'page_reservation_thanks';
 
 		//public function __construct() {
 			
@@ -469,6 +474,51 @@
 					);
 				}
 				break;
+				
+				
+				case self::FORM_VENUE_PROFILE:
+				{
+					$pageData = Array (
+						"button" => "MAKE A RESERVATION",
+						"secondary_button" => "VISIT THEIR WEBSITE"
+					);
+				}
+				break;
+				
+				
+				case self::FORM_RESERVATION:
+				{
+					$pageData = Array (
+						"title" => "MAKE A RESERVATION FOR",
+						"button" => "CONFIRM"
+					);
+				}
+				break;
+				
+				
+				case self::FORM_RESERVATION_CONFIRM:
+				{
+					$pageData = Array (
+						"title" => "CONFIRM YOUR REQUEST",
+						'text' => "If you can't make your reservation please notify us via email 6 hours in advance to avoid a late cancellation penalty.",
+						"button" => "CONFIRM",
+						"secondary_button" => "CANCEL"
+					);
+				}
+				break;
+				
+				
+				case self::FORM_RESERVATION_THANKS:
+				{
+					$pageData = Array (
+						"title" => "THANK YOU.",
+						'subtitle' => "Your request has been sent and we will confirm within 24 hours.",
+						'text' => "If you can't make your reservation please notify us via email 6 hours in advance to avoid a late cancellation penalty.",
+						"button" => "HOME"
+					);
+				}
+				break;
+				
 				
 			} //end switch()
 			

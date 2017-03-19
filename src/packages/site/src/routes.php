@@ -74,6 +74,15 @@
 			//venue
 			Route::get('/venue/recommendations', ['as' => 'soup.venue.recommendation', 'uses' => 'MainController@getVenueRecommendations']);
 			Route::get('/venue/profile/{id}', ['as' => 'soup.venue.profile', 'uses' => 'MainController@getVenueProfile']);
+			
+			//reservation
+			Route::get('/reservation/{id}', ['as' => 'soup.reservation.id', 'uses' => 'MainController@getReservation']);
+			Route::get('/reservation/{id}/{safestr}', ['as' => 'soup.reservation.id.id', 'uses' => 'MainController@getReservation']);
+			Route::post('/reservation', ['as' => 'soup.reservation', 'uses' => 'MainController@postReservation']);
+			Route::get('/reservation/confirm/{safestr}', ['as' => 'soup.reservation.confirm.id', 'uses' => 'MainController@getReservationConfirmation']);
+			Route::post('/reservation/confirm', ['as' => 'soup.reservation.confirm', 'uses' => 'MainController@postReservationConfirmation']);
+			Route::get('/reservation/thanks/{safestr}', ['as' => 'soup.reservation.thanks', 'uses' => 'MainController@getReservationThanks']);
+		
 		
 		});
 	

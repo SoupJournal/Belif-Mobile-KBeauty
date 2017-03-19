@@ -115,6 +115,15 @@
 	
 }
 
+
+.framed-box {
+	border: 2px solid;
+	margin-left: 5%;	
+	margin-right: 5%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
 .question-overlay {
 	pointer-events: none;
 	overflow: hidden;
@@ -196,6 +205,18 @@
     left: 0;
     overflow-y: hidden; /* hide scroll bar during transition */
     transition: 0.5s;
+}
+
+
+/********************************/
+/* 			RESERVATION	 		*/
+/********************************/
+
+.reservation-image-section {
+	position: relative;
+	width: 100%;
+	padding-bottom: 30%;
+	overflow-y: hidden;	
 }
 
 /********************************/

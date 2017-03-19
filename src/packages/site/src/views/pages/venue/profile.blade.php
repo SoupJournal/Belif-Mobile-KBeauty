@@ -30,7 +30,7 @@
 <?php
 
 	//ensure page data is set
-//	$pageData = isset($pageData) ? $pageData : null;
+	$pageData = isset($pageData) ? $pageData : null;
 	$venue = isset($venue) ? $venue : null;
 	$mapsKey = isset($mapsKey) ? $mapsKey : null;
 
@@ -38,13 +38,14 @@
 //	$title = safeArrayValue('title', $pageData, "");
 //	$subtitle = safeArrayValue('subtitle', $pageData, "");
 //	$text = safeArrayValue('text', $pageData, "");
-//	$button = safeArrayValue('button', $pageData, "");
-//	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
+	$button = safeArrayValue('button', $pageData, "");
+	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 //	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 
 
 	//profile properties
 	$profileImage = safeObjectValue('image_profile', $venue, "");
+	$venueId = safeObjectValue('id', $venue, "");
 	$venueName = safeObjectValue('name', $venue, "");
 	$venueDescription = safeObjectValue('description', $venue, "");
 	$venueRecommendations = safeObjectValue('recommendations', $venue, null);
@@ -55,6 +56,9 @@
 	//suggestion data
 	$suggestionImage = safeObjectValue('image_suggestion', $venue, "");
 	$suggestion = safeObjectValue('suggestion', $venue, "");
+	
+	//reservation data
+	$reservationURL = route('soup.reservation.id', ['venueId' => $venueId]);
 	
 	//venue co-ordinates
 	$lattitude = safeObjectValue('lattitude', $venue, null);
@@ -146,6 +150,23 @@
 
 </div>
 
+
+{{-- reservation --}}
+<div class="bg-color-2">
+	
+	<div class="spacer-medium"></div>
+	
+	<a href="{{ $reservationURL }}">
+		<h4 class="button-page-border title-bold bg-color-clear border-color-1 color-1">
+			{{ $button }}
+		</h4>
+	</a>
+	
+	<div class="spacer-medium"></div>
+
+</div>
+
+
 {{-- map --}}
 <div class="page-section">
 	@include('soup::sections.map', Array(
@@ -157,12 +178,13 @@
 	))
 </div>
 
+
 {{-- website --}}
 <div class="">
 	
 	<div class="spacer-medium"></div>
 	
-	<a href="{{ $venueURL }}"><h4 class="color-2">VISIT THEIR WEBSITE</h4></a>
+	<a href="{{ $venueURL }}"><h4 class="color-2">{{ $secondaryButton }}</h4></a>
 	
 	<div class="spacer-medium"></div>
 

@@ -47,6 +47,56 @@
 
 
 
+	function parseDateString($dateString, $formats = null) {
+		
+		$date = null;
+		
+		//valid date string
+		if ($dateString && strlen($dateString)>0) {
+			
+			//use default formats (if required)
+			if (!$formats) {
+				$formats = [
+					'm/d/Y',
+					'm\\d\\Y',
+					'm-d-Y',
+					'Y-m-d',
+					'Y-d-m'
+				];
+			}
+			
+			//formats specified
+			if ($formats && count($formats)>0) {
+				
+				//convert date
+				foreach ($formats as $format) {
+					
+					try {
+						
+						//convert date
+						$date = Carbon::createFromFormat($format, $dateString);
+						break;
+						
+					}
+					catch (\Exception $ex) {
+						$date = null;
+						continue;
+					}
+					
+				} //end for()
+				
+			} //end if (valid formats)
+			
+		} //end if (valid date string) 
+		
+		
+		return $date;
+		
+	} //end parseDateString()
+	
+	
+	
+
 
 		//==========================================================//
 		//====					SERVER FUNCTIONS				====//
@@ -104,6 +154,38 @@
 	    
 	} //end isMobileDevice()
 	
+	
+	
+		//==========================================================//
+		//====					UTIL FUNCTIONS					====//
+		//==========================================================//	
+	
+	
+	
+	function generateUniqueCode($baseSeed = null, $length = -1, $start = -1) {
+		
+		//create unique string
+		$baseString = ($baseSeed?$baseSeed:"") . microtime() . uniqid();
+		
+		//encrypt code
+		$code = hash('sha256', $baseString);	
+		
+		//limit code
+		if ($length>0) {
+			
+			//determine clip start
+			if ($start<0) {
+				$start = intval((strlen($code) - $length) * 0.5);
+				if ($start<0) $start = 0;
+			}
+			
+			//clip string
+			$code = substr($code, $start, $length);	
+		}
+
+		return $code;
+
+	} //end generateUniqueCode()
 	
 	
 	

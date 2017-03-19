@@ -22,6 +22,9 @@ class SoupServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
+		//set default time to New York
+		date_default_timezone_set('America/New_York');
+		
 		
 		//add forms support (TODO: check if support already available)
 		$loader = AliasLoader::getInstance();

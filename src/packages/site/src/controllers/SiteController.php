@@ -502,11 +502,6 @@
 				$errors = 'Please specify a valid birth date.';
 				$valid = false;
 			}
-			//birth date exists
-			else if (!$birthDate || strlen($birthDate)<=0) {
-				$errors = 'Please specify a valid birth date.';
-				$valid = false;
-			}
 			//valid year
 			else if (!$birthYear || strlen(trim($birthYear))<4) {
 				$errors = 'Please specify your birth year in full (4 digits).';

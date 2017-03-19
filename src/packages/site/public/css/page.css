@@ -34,6 +34,11 @@
     margin: 0 auto;
 }
 
+.reservation-title-image {
+	width: 100%;
+	height: auto;
+}
+
 .answer_image {
 	width: 100%;
 }
