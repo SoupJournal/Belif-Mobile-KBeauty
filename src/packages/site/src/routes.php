@@ -50,9 +50,13 @@
 			Route::post('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@postSignupData']);
 			Route::get('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@getSignupCode']);
 			Route::post('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@postSignupCode']);
-			Route::get('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@getSignupRequest']);
-			Route::post('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@postSignupRequest']);
-			Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
+			
+			//new signup (haven't requested member state)
+			Route::group(array('middleware' => 'NewSignUp'), function() {
+				Route::get('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@getSignupRequest']);
+				Route::post('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@postSignupRequest']);
+				Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
+			});
 		});
 		
 		//authenticated routes

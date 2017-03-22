@@ -33,7 +33,8 @@
 		public function getQuiz() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_QUIZ);
+			$pageData = $this->dataForPage(self::FORM_QUIZ);
+			//$pageData = $this->dataForFormId(self::FORM_QUIZ);
 			
 			//draw page
 			return View::make('soup::pages.quiz.home')->with([

@@ -187,7 +187,7 @@
 .button-input {
 	background-color: transparent;
 	border: none;
-	border-left: thick solid;	
+	border-left: 1px solid;	
 }
 
 
@@ -265,6 +265,7 @@
 	border: 1px solid;
 	border-radius: 5px;
 	-webkit-appearance: none;
+	border-color: transparent;
 }
 
 .page-input-text.square {
@@ -275,30 +276,57 @@
 	border: none;
 }
 
+.input-padding-small {
+	padding-top: 2.7%;
+    padding-bottom: 2.7%;
+}
+
+.input-padding-large {
+	padding-top: 5%;
+    padding-bottom: 5%;
+}
+
 .page-input-text.large {
 	padding-top: 4.6%;
     padding-bottom: 4.6%;
 }
 
-
+.page-input-text.small-margin {
+	margin-top: 2%;	
+}
 
 .input-container {
 	width: 100%;
-}
-
-.page-input-text.input-clear {
-	width: 70%;
 	padding-top: 0;
 	padding-bottom: 0;
+}
+
+.page-input-text.input-left {
+	width: 70%;
+/*	padding-top: 0;
+	padding-bottom: 0;*/
 	padding-left: 0;
 	margin-top: 0;
 	border: none;
 }
 
-.page-input-text.input-clear:focus {
-	outline: none;	
+.page-input-text:focus {
+	outline: none;
+	box-shadow: 0px 0px 2px black;
+/*	outline-color: #000000;
+	outline: 1px auto black;
+	border-radius: 5px;*/
 }
 
+.page-input-text.input-clear:focus {
+	outline: none;	
+	box-shadow: none;
+}
+
+
+.page-input-radio {
+
+}
 
 
 .page-input-select {
@@ -315,9 +343,26 @@
 }
 
 
+input[type=date] {
+	line-height: 1.5em;	
+}
+
+input[type=radio] {
+	margin-right: 5%;
+}
+
+.alert.clear-padding {
+	padding: 0;	
+}
+
+
 /********************************/
 /* 			SPACER 				*/
 /********************************/
+
+.spacer-miniscule {
+	padding-top: 0.5%;	
+}
 
 .spacer-tiny {
 	padding-top: 2%;	

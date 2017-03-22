@@ -52,6 +52,10 @@ h1.small {
 	font-size: 6.7vw;
 }
 
+h1.medium {
+	font-size: 9vw;
+}
+
 h1.large {
 	font-size: 12vw;
 }
@@ -84,11 +88,11 @@ h4 {
 	line-height: 5vw;
 	font-family: ProximaNovaSemiBold;
 }
-/*
+
 h4.large {
 	font-size: 3.7vw;
 }
-*/
+
 h5 {
 	font-size: 3vw;
 	font-family: ProximaNovaRegular;	
@@ -108,6 +112,12 @@ h5.font-header {
 .page-text-large {
 	font-size: 3.5vw;
 }
+
+.page-text-larger {
+	font-size: 4.6vw;
+}
+
+
 
 .page-link {
 	font-size: 3.5vw;
@@ -143,6 +153,10 @@ a.page-link {
 .page-input-text {
 	font-size: 4vw;
 	font-family: ProximaNovaRegular;
+}
+
+.page-input-text.small {
+	font-size: 3vw;
 }
 
 .page-input-select {
@@ -259,29 +273,32 @@ a.page-link {
 		font-size: 34.1px;
 		line-height: 48.75px;
 	}
-/*
+
 	h4.large {
 		font-size: 37px;
 	}
-*/	
+	
 	h5.font-header {
 		font-size: 29.5px;
-	}
-	
+	}	
 	
 	.button-header {
 		font-size: 29.5px;
 	}
 	
+	
 	.page-text {
 		font-size: 20px;
 	}
-	
 	
 	.page-text-large {
 		font-size: 35px;
 	}
 
+	.page-text-larger {
+		font-size: 45px;
+	}
+	
 	
 	.page-link {
 		font-size: 35px;		
@@ -304,12 +321,11 @@ a.page-link {
 */	
 	
 	.page-input-text {
-		font-size: 30px;
+		font-size: 39px;
 	}
 	
-	
-	.page-input-text {
-		font-size: 39px;
+	.page-input-text.small {
+		font-size: 29.5px;
 	}
 	
 	.page-input-select {

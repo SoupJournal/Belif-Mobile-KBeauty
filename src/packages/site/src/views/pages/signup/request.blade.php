@@ -53,18 +53,21 @@
 	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
 		{{-- login page --}}
-		<div class="page-container page-padding-large" style="background-color: transparent;">
+		<div class="page-container page-padding-medium" style="background-color: transparent;">
 
 			{{-- title --}}
 			<h1 class="color-1">{{ $title }}</h1>
-			<h4 class="color-1">{{ $subtitle }}</h4>
-			<h3 class="color-1">{{ $text }}</h3>
+			<h4 class="clear-header-margins title-regular large color-1">{{ $subtitle }}</h4>
+			<h4 class="clear-header-margins large color-1">{{ $text }}</h4>
+			
+
+			<div class="spacer-medium"><div>
 			
 
 			{{-- instagram --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('instagram', null, Array ('placeholder' => '@Instagram', 'class' => 'page-input-text', 'tabindex' => '1', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('instagram', null, Array ('placeholder' => '@Instagram', 'class' => 'page-input-text input-padding-small small-margin', 'tabindex' => '1', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 				
@@ -72,7 +75,7 @@
 			{{-- snapchat --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('snapchat', null, Array ('placeholder' => '@Snapchat', 'class' => 'page-input-text', 'tabindex' => '2', 'auto-next-focus' => '')) }}
+				{{ Form::text('snapchat', null, Array ('placeholder' => '@Snapchat', 'class' => 'page-input-text input-padding-small small-margin', 'tabindex' => '2', 'auto-next-focus' => '')) }}
 				
 			</div>
 			
@@ -80,7 +83,7 @@
 			{{-- zip code --}}
 			<div class="form-group"> 
 			
-				{{ Form::number('zip_code', null, Array ('placeholder' => 'Zipcode*', 'class' => 'page-input-text', 'tabindex' => '3', 'required' => '')) }}
+				{{ Form::number('zip_code', null, Array ('placeholder' => 'Zipcode*', 'class' => 'page-input-text input-padding-small small-margin', 'tabindex' => '3', 'required' => '')) }}
 				
 			</div>
 			
@@ -90,13 +93,9 @@
 			{{-- display form errors --}}
 		    @if ($errors->has())
 		    
-			    <div class="spacer-small-2"></div>
-		    
 		        @foreach ($errors->all() as $error)
 		            <div class='bg-danger alert'>{{ $error }}</div>
 		        @endforeach
-		        
-		        <div class="spacer-small-2"></div>
 		        
 		    @else
 				
@@ -106,10 +105,15 @@
 			
 
 			{{-- sign up button --}}
-			<button class="button-page-round bg-color-6 color-2">{{ $button }}</button>
+			<button class="button-page-round bg-color-6 color-2">
+				<div class="spacer-miniscule"></div>
+				<h4 class="clear-header-margins">{{ $button }}</h4>
+				<div class="spacer-miniscule"></div>
+			</button>
 
 
-			
+			<div class="spacer-medium"></div>
+			<div class="spacer-tiny"></div>
 
 		
 		</div>

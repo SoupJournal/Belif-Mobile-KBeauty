@@ -53,18 +53,23 @@
 	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
 		{{-- login page --}}
-		<div class="page-container page-padding-large" style="background-color: transparent;">
+		<div class="page-container page-padding-medium-2" style="background-color: transparent;">
 
-
-			{{-- title --}}
-			<h1 class="color-1">{{ $title }}</h1>
+			<div class="spacer-medium"></div>
 			
 
+			{{-- title --}}
+			<h1 class="color-1 small extra-padding-small">{!! $title !!}</h1>
+			
+			
+			<div class="spacer-small"></div>
+			
+			
 
 			{{-- enter email --}}
 			<div class="form-group"> 
 			
-				{{ Form::email('email', null, Array ('placeholder' => 'Email', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::email('email', null, Array ('placeholder' => 'Email', 'class' => 'page-input-text small-margin', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 				
@@ -72,7 +77,7 @@
 			{{-- enter password --}}
 			<div class="form-group"> 
 			
-				{{ Form::password('password', Array ('placeholder' => 'Create a password', 'class' => 'page-input-text', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::password('password', Array ('placeholder' => 'Create a password', 'class' => 'page-input-text small-margin', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 			
@@ -80,7 +85,7 @@
 			{{-- confirm password --}}
 			<div class="form-group"> 
 			
-				{{ Form::password('confirm_password', Array ('placeholder' => 'Confirm password', 'class' => 'page-input-text', 'tabindex' => '3', 'required' => '')) }}
+				{{ Form::password('confirm_password', Array ('placeholder' => 'Confirm password', 'class' => 'page-input-text small-margin', 'tabindex' => '3', 'required' => '')) }}
 				
 			</div>
 			
@@ -89,7 +94,9 @@
 
 		
 			{{-- sign up button --}}
-			<button class="button-page-round bg-color-4 color-2">{{ $button }}</button>
+			<button class="button-page-round bg-color-4 color-2">
+				<h3 class="clear-header-margins title-semi-bold">{{ $button }}</h3>
+			</button>
 
 
 			<div class="spacer-medium"></div>
@@ -97,7 +104,7 @@
 			
 			{{-- log in button --}}
 			<div>
-				<a href="{{ route('soup.login') }}" class="page-link color-4">{{ $secondaryButton }}</a>
+				<a href="{{ route('soup.login') }}" class="page-link underline color-4">{{ $secondaryButton }}</a>
 			</div>
 
 			
@@ -121,7 +128,7 @@
 			
 
 			{{-- footer --}}
-			<div>{{ $text }}</div>
+			<h5>{!! $text !!}</h5>
 			
 
 		

@@ -224,7 +224,7 @@
 
 
 .background-fill {
-	padding-bottom: 160%;	
+	padding-bottom: 157%; /*160%;	*/
 }
 
 
@@ -340,6 +340,21 @@
 }
 
 
+
+.table-column-left {
+	display: table-cell;
+	text-align: left;
+}
+
+.table-column-center {
+	display: table-cell;
+	text-align: center;
+}
+
+.table-column-right {
+	display: table-cell;
+	text-align: right;
+}
 
 
 /********************************/

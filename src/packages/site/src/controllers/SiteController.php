@@ -222,7 +222,8 @@
 		public function getForgot() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_FORGOT_PASSWORD);
+			$pageData = $this->dataForPage(self::FORM_FORGOT_PASSWORD);
+			//$pageData = $this->dataForFormId(self::FORM_FORGOT_PASSWORD);
 			
 			//draw page
 			return View::make('soup::pages.signup.forgot')->with([
@@ -290,7 +291,8 @@
 		public function getResetSent() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_FORGOT_PASSWORD_THANKS);
+			$pageData = $this->dataForPage(self::FORM_FORGOT_PASSWORD_THANKS);
+			//$pageData = $this->dataForFormId(self::FORM_FORGOT_PASSWORD_THANKS);
 			
 			//draw page
 			return View::make('soup::pages.signup.forgot_sent')->with([
@@ -304,7 +306,30 @@
 	
 	
 	
+		public function getChangePassword() {
+			/*
+			//get page data
+			$pageData = $this->dataForPage(self::FORM_FORGOT_PASSWORD_THANKS);
+			//$pageData = $this->dataForFormId(self::FORM_FORGOT_PASSWORD_THANKS);
+			
+			//draw page
+			return View::make('soup::pages.signup.forgot_sent')->with([
+				'pageData'=> $pageData,
+				//'nextURL' => route('soup.question'),
+				'backURL' => route('soup.login'),
+				'hideHeaderTitle' => true
+			]);
+			*/
+			
+		} //end getChangePassword()
 	
+	
+	
+		public function getPasswordChanged() {
+			
+		} //end getPasswordChanged()
+		
+		
 	
 	
 		//==========================================================//
@@ -316,7 +341,8 @@
 		public function getSignup() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_SIGNUP);
+			$pageData = $this->dataForPage(self::FORM_SIGNUP);
+			//$pageData = $this->dataForFormId(self::FORM_SIGNUP);
 			
 			//draw page
 			return View::make('soup::pages.signup.signup')->with([
@@ -432,21 +458,33 @@
 		public function getSignupData() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_SIGNUP_DATA);
+			$pageData = $this->dataForPage(self::FORM_SIGNUP_DATA);
+			//$pageData = $this->dataForFormId(self::FORM_SIGNUP_DATA);
 			
 			//find user
 			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 			
-			//draw page
-			return View::make('soup::pages.signup.info')->with([
-				'user' => $user,
-				'pageData'=> $pageData,
-				//'nextURL' => route('soup.question'),
-				//'backURL' => route('soup.signup')
-				'fillHeight' => false
-			]);
+			//user not yet signed up
+			if ($user->status==AppGlobals::USER_STATUS_INQUIRY) {
+			
+				//draw page
+				return View::make('soup::pages.signup.info')->with([
+					'user' => $user,
+					'pageData'=> $pageData,
+					//'nextURL' => route('soup.question'),
+					//'backURL' => route('soup.signup')
+					'fillHeight' => false
+				]);
+			
+			}
+			//user already signed up
+			else {
+				return Redirect::route('soup.signup.code');
+			}
 			
 		} //end getSignupData()
+	
+	
 	
 	
 		public function postSignupData() {
@@ -571,13 +609,18 @@
 		public function getSignupCode() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_SIGNUP_CODE);
+			$pageData = $this->dataForPage(self::FORM_SIGNUP_CODE);
+			//$pageData = $this->dataForFormId(self::FORM_SIGNUP_CODE);
+			
+			//find user
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 			
 			//draw page
 			return View::make('soup::pages.signup.code')->with([
 				'pageData'=> $pageData,
+				'user' => $user,
 				//'nextURL' => route('soup.question'),
-				//'backURL' => route('soup.signup.info')
+				'backURL' => route('soup.welcome'),
 				'fillHeight' => false
 			]);
 			
@@ -639,7 +682,8 @@
 		public function getSignupRequest() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_SIGNUP_REQUEST);
+			$pageData = $this->dataForPage(self::FORM_SIGNUP_REQUEST);
+			//$pageData = $this->dataForFormId(self::FORM_SIGNUP_REQUEST);
 			
 			//draw page
 			return View::make('soup::pages.signup.request')->with([
@@ -717,7 +761,8 @@
 		public function getSignupThanks() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_SIGNUP_THANKS);
+			$pageData = $this->dataForPage(self::FORM_SIGNUP_THANKS);
+			//$pageData = $this->dataForFormId(self::FORM_SIGNUP_THANKS);
 			
 			//draw page
 			return View::make('soup::pages.signup.thanks')->with([

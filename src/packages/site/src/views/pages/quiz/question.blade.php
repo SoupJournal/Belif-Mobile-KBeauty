@@ -76,7 +76,7 @@
 		
 		
 			{{-- top row --}}
-			<div class="container-top">
+			<div class="container-top page-padding-tiny">
 			
 			
 				
@@ -124,7 +124,7 @@
 		<div class="stretch-to-fit">
 		
 			{{-- bottom row --}}
-			<div class="container-bottom">
+			<div class="container-bottom page-padding-small">
 
 				
 				<div class="row">
@@ -163,6 +163,8 @@
 				
 				</div>
 				
+				
+				<div class="spacer-small-2"></div>
 		
 			</div>
 		

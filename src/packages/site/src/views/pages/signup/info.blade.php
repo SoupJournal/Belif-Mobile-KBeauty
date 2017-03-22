@@ -62,16 +62,19 @@
 
 			{{-- title --}}
 			<h1>{{ $title }}</h1>
-			
+
+			<div class="spacer-tiny"></div>			
 			
 			{{-- user email --}}
-			<h6>{{ $userEmail }}</h6>
+			<h5 class="clear-header-margins">{{ $userEmail }}</h5>
+
+			<div class="spacer-tiny"></div>
 
 
 			{{-- enter name --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('first_name', null, Array ('placeholder' => 'First Name', 'class' => 'page-input-text', 'tabindex' => '0', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('first_name', null, Array ('placeholder' => 'First Name', 'class' => 'page-input-text small-margin', 'tabindex' => '0', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 			<div class="form-group"> 
@@ -90,25 +93,41 @@
 			</div>
 			
 			
-			<div class="spacer-tiny"</div>
+			<div class="spacer-tiny"></div>
 			
 			
 			{{-- enter gender --}}
 			<div class="form-group"> 
-				{{ Form::radio('gender', 'Female', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
-				{{ Form::label('female', 'Female', Array('class' => 'title-semi-bold page-text-large color-1')) }}
-				
-				
-				<span class="spacer-horizontal"></span>
-				
-				{{ Form::radio('gender', 'Male', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
-				{{ Form::label('male', 'Male', Array('class' => 'title-semi-bold page-text-large color-1')) }}
+			
+				<div class="table-parent fill-height">
 
-				<span class="spacer-horizontal"></span>
-
+					<div class="table-center-row">
+					
+						<div class="table-column-left">
+						
+							{{ Form::radio('gender', 'Female', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
+							{{ Form::label('female', 'Female', Array('class' => 'title-semi-bold page-text-larger color-1')) }}
+							
+						</div>
+							
+							
+						<div class="table-column-center">
+							
+							{{ Form::radio('gender', 'Male', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
+							{{ Form::label('male', 'Male', Array('class' => 'title-semi-bold page-text-larger color-1')) }}
+			
+						</div>
+			
+			
+						<div class="table-column-right">
+							
+							{{ Form::radio('gender', 'Other', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
+							{{ Form::label('other', 'Other', Array('class' => 'title-semi-bold page-text-larger color-1')) }}
+							
+						</div>
+					</div>
+				</div>
 				
-				{{ Form::radio('gender', 'Other', false, Array ('class' => 'page-input-radio', 'required' => '')) }}
-				{{ Form::label('other', 'Other', Array('class' => 'title-semi-bold page-text-large color-1')) }}
 			</div>
 			
 
@@ -133,14 +152,21 @@
 
 		
 			{{-- join buttons --}}
-			<button class="button-page-round bg-color-4 color-2">{{ $button }}</button>
+			<button class="button-page-round bg-color-5 color-2">
+				<div class="spacer-tiny"></div>
+				<h4 class="clear-header-margins">{{ $button }}</h4>
+				<div class="spacer-tiny"></div>
+			</button>
 
 
 			<div class="spacer-large"></div>
-			
+		
+		</div>
+		
+		<div class="page-container page-padding-small">	
 
 			{{-- footer --}}
-			<div>{!! $text !!}</div>
+			<h5>{!! $text !!}</h5>
 		
 		</div>
 		

@@ -29,17 +29,24 @@
 
 <?php
 
+	use Soup\Mobile\Lib\AppGlobals;
+
 	//ensure page data is set
 	$pageData = isset($pageData) ? $pageData : null;
+	$user = isset($user) ? $user : null;
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
-	$subtext = safeArrayValue('subtext', $pageData, "");
+//	$subtext = safeArrayValue('subtext', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
-//	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
+	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
+	
+	//determine if member request option available
+	$memberStatus = safeObjectValue('status', $user, AppGlobals::USER_STATUS_UNSUBSCRIBED);
+	$showMemberRequest = ($memberStatus==AppGlobals::USER_STATUS_INQUIRY || $memberStatus==AppGlobals::USER_STATUS_REGISTERED) ? true : false;
 	
 ?>
 
@@ -51,66 +58,98 @@
 	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
 		{{-- login page --}}
-		<div class="page-container page-padding-large">
+		<div class="page-container page-padding-medium">
 
 
 			{{-- title --}}
 			<h1>{{ $title }}</h1>
 			
+			<div class="spacer-small-2"></div>
+			
 			
 			{{-- description --}}
-			<h4>{!! $subtitle !!}</h4>
+			<h4 class="title-regular">{!! $subtitle !!}</h4>
 			
+			<div class="spacer-small"></div>
+
+		</div>
 
 
+		<div class="page-container page-padding-large">
 
 			{{-- enter name --}}
-			<div class="form-group"> 
+			<div class="form-group page-padding-medium"> 
 			
 				<div class="page-input-text input-container">
-					{{ Form::text('code', null, Array ('placeholder' => 'Enter Invitation Code', 'class' => 'page-input-text input-clear', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+					{{ Form::text('code', null, Array ('placeholder' => 'Enter Invitation Code', 'class' => 'page-input-text small input-left input-padding-large input-clear', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 					{{-- <span class="input-line border-color-1"></span> --}}
-					<button class="button-input border-color-1">Enter</button>
+					<button class="button-input border-color-1">
+						<h4 class="clear-header-margins title-semi-bold">Enter</h4>
+					</button>
 				</div>
 				
 			</div>
+			
+		</div>
+		
+		<div class="page-container page-padding-medium">	
+			
+			{{-- display form errors --}}
+		    @if ($errors->has())
+		    
+		        @foreach ($errors->all() as $error)
+		            <div class='bg-danger alert clear-padding'><h5 class="clear-header-margins">{{ $error }}</h5></div>
+		        @endforeach
+		        
+		    @else
 				
+				<div class="spacer-medium"></div>
 				
-			<div class="spacer-medium"></div>
+			@endif
 				
+			
+				
+		@if ($showMemberRequest) 
 			
 			{{-- membership --}}
 			<div class="form-group">
 	
-				<h4>{!! $text !!}</div>
+				<h4 class="title-regular">{!! $text !!}</div>
 		
-				<div class="spacer-medium"></div>
+				<div class="spacer-small-2"></div>
 		
-				<a href="{{ route('soup.signup.request') }}" class="button-page-round bg-color-4 color-2">{{ $button }}</a>
+				<a href="{{ route('soup.signup.request') }}" class="button-page-round bg-color-5 color-2">
+					<div class="spacer-miniscule"></div>
+					<h4 class="clear-header-margins">{{ $button }}</h4>
+					<div class="spacer-miniscule"></div>
+				</a>
 
 			</div>
 
+		@else 
+		
+			<div class="spacer-large"></div>
+			<div class="spacer-large"></div>
+			<div class="spacer-tiny"></div>
+		
+		@endif
 
-			{{-- display form errors --}}
-		    @if ($errors->has())
-		    
-			    <div class="spacer-small-2"></div>
-		    
-		        @foreach ($errors->all() as $error)
-		            <div class='bg-danger alert'>{{ $error }}</div>
-		        @endforeach
-		        
-		        <div class="spacer-small-2"></div>
-		        
-		    @else
-				
-				<div class="spacer-large"></div>
-				
-			@endif
+
+			<div class="spacer-medium"></div>
+			<div class="spacer-small"></div>
+
 			
 
 			{{-- footer --}}
-			<div>{{ $subtext }}</div>
+			<h5>{!! $secondaryButton !!}</h5>
+		
+			
+			<div class="spacer-medium"></div>
+			<div class="spacer-small"></div>
+			
+		@if (!$showMemberRequest) 
+			<div class="spacer-small"></div>
+		@endif
 		
 		</div>
 		

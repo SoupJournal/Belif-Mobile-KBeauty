@@ -29,7 +29,7 @@
 
 
 .color-6 {
-	color: #48B6E4;	
+	color: #1887C9; /*#48B6E4;	*/
 }
 
 
@@ -87,7 +87,7 @@ a:hover {
 
 
 .bg-color-6 {
-	background-color: #48B6E4;	
+	background-color: #1887C9; /*#48B6E4;	*/
 }
 
 .bg-color-7 {
@@ -146,4 +146,14 @@ a:hover {
 
 .bg-color-opacity-5 {
 	background-color: rgba(28, 2, 28, 0.95);
+}
+
+
+/********************************/
+/* 			DEFAULTS 			*/
+/********************************/
+
+h5 a {
+	color: #000000;
+	text-decoration: underline;
 }

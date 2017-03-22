@@ -51,22 +51,23 @@
 	<div class="">
 	
 		{{-- login page --}}
-		<div class="page-container page-padding-large">
+		<div class="page-container page-padding-medium">
 
 
-			<div class="spacer-large"></div>
+			<div class="spacer-medium"></div>
+			<div class="spacer-tiny-2"></div>
 			
 
 			{{-- title --}}
-			<h1>{!! $title !!}</h1>
+			<h1 class="color-1">{!! $title !!}</h1>
 			
 			
 			{{-- subtitle --}}
-			<h5>{!! $subtitle !!}</h5>
+			<h3 class="title-regular">{!! $subtitle !!}</h3>
 			
 			
 			{{-- text --}}
-			<h4>{!! $text !!}</h4>
+			<h3 class="clear-header-margins">{!! $text !!}</h3>
 			
 
 		

@@ -42,6 +42,7 @@ class SoupServiceProvider extends ServiceProvider {
 			$router->middleware('AppHTTPS', 'Soup\Mobile\Middleware\HTTPSMiddleware');	
 			$router->middleware('AppAuth', 'Soup\Mobile\Middleware\AuthMiddleware');	
 			$router->middleware('AppSignUp', 'Soup\Mobile\Middleware\SignUpMiddleware');
+			$router->middleware('NewSignUp', 'Soup\Mobile\Middleware\InquiryRegisteredMiddleware');
 			$router->middleware('AppQuiz', 'Soup\Mobile\Middleware\QuizMiddleware');
 			$router->middleware('AppUser', 'Soup\Mobile\Middleware\ExistingUserMiddleware');
 		}
