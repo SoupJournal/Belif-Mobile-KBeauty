@@ -14,17 +14,23 @@
 	$theme = safeArrayValue('theme', $pageData, 0);
 	
 	//set theme properties
-	$bgColor = "bg-color-opacity-1";
+	$bgColor = "bg-color-clear"; //opacity-1";
 	$textColor = "color-2";
-	$titleClass = "bold";
+	$titleClass = "small title-bold extra-padding-small";
 	$subtitleClass = "";
+	$buttonSpacer = "spacer-large";
+	$headerPadding = "page-padding-small-2";
+	$useBackgroundPadding = true;
 	switch ($theme) {
 	
 		case 1:
 			$bgColor = "bg-color-2";
 			$textColor = "color-1";
-			$titleClass = "title-regular";
-			$subtitleClass = "title-regular";
+			$titleClass = "title-regular small extra-padding";
+			$subtitleClass = "title-regular extra-padding-small clear-header-margins";
+			$buttonSpacer = "spacer-small-2";
+			$headerPadding = "page-padding-medium-2";
+			$useBackgroundPadding = false;
 		break;	
 		
 	} 
@@ -32,34 +38,75 @@
 ?>
 
 
-
 {{-- background image --}}
-@include('soup::sections.background', ['backgroundImage' => $backgroundImage, 'loadGroup' => '{{ $sectionId }}'])
+@if ($useBackgroundPadding)
 
-<div class="page-overlay {{ $bgColor }}" load-style="fade" load-group="{{ $sectionId }}">
+	@include('soup::sections.background', ['backgroundImage' => $backgroundImage, 'loadGroup' => '{{ $sectionId }}'])
 
-	<div class="text-center row-centered page-padding-large">
-		
-		{{-- title --}}
-		@if (isset($title))
-			<h2 class="{{ $titleClass }} {{ $textColor }}">{!! $title !!}</h2>
-		@endif
-	
-		@if (isset($subtitle))
-			<h4 class="{{ $subtitleClass }} {{ $textColor }}">{!! $subtitle !!}</h4>
-		@endif
-		
-		{{-- draw image --}}
-		@if (isset($image) && strlen($image)>0)			
-			<img src="{{ $image }}" class="section-image" load-style="fade" load-group="{{ $sectionId }}">
-		@endif
-		
-		{{-- TODO: handle URL --}}
-			@if (isset($button))
-				<div class="spacer-large"></div>
-				<a href="{{ route('soup.signup') }}" class="button-page-border border-color-4 bg-color-2">{{ $button }}</a>
-			@endif
+	<div class="page-overlay {{ $bgColor }}" load-style="fade" load-group="{{ $sectionId }}">
+@else
+	<div class="page-section {{ $bgColor }}">
+@endif
+
+
+	{{-- center content vertically --}}
+	<div class="table-parent fill-height">
+		<div class="table-center-row fill-height">
+			<div class="table-center-cell">
 			
+				<div class="text-center page-padding-small-2">
+					
+					{{-- title --}}
+					@if (isset($title))
+						@if ($theme==1)
+							<div class="spacer-tiny"></div>
+							<h1 class="{{ $titleClass }} {{ $textColor }}">{!! $title !!}</h1>			
+						@else
+							<h1 class="{{ $titleClass }} {{ $textColor }}">{!! $title !!}</h1>
+							<div class="spacer-medium"></div>
+							<div class="spacer-tiny-2"></div>
+						@endif
+					@endif
+				
+				</div>
+				
+				<div class="text-center page-padding-small-2">
+				
+					@if (isset($subtitle))
+						<h3 class="{{ $subtitleClass }} {{ $textColor }}">{!! $subtitle !!}</h3>
+						<div class="spacer-small"></div>
+					@endif
+					
+				</div>
+				
+				
+				<div class="text-center page-padding-small">
+					
+					{{-- draw image --}}
+					@if (isset($image) && strlen($image)>0)	
+						<div class="spacer-small-2"></div>		
+						<img src="{{ $image }}" class="section-image" load-style="fade" load-group="{{ $sectionId }}">
+					@endif
+					
+					
+				</div>
+				
+				<div class="text-center page-padding-medium">
+					
+					{{-- TODO: handle URL --}}
+						@if (isset($button))
+							<div class="{{ $buttonSpacer }}"></div>
+							<a href="{{ route('soup.signup') }}" class="button-page-border title-semi-bold border-color-4 bg-color-2">
+								<h4 class="clear-header-margins">{{ $button }}</h4>
+							</a>
+						@endif
+						
+				</div>
+			
+				<div class="spacer-small-2"></div>
+				
+			</div>
+		</div>
 	</div>
 
 </div>

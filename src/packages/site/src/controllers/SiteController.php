@@ -6,6 +6,7 @@
 	use Soup\Mobile\Models\SoupUser;
 	use Soup\Mobile\Models\UserProfile;
 	use Soup\Mobile\Lib\AppGlobals;
+	use Soup\Mobile\Jobs\SendEmailJob;
 	
 	use View;
 	use Redirect;
@@ -27,7 +28,8 @@
 		public function getIndex() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_WELCOME);
+			//$pageData = $this->dataForFormId(self::FORM_WELCOME);
+			$pageData = $this->dataForPage(self::FORM_WELCOME);
 			
 			//draw page
 			return View::make('soup::pages.home')->with([
@@ -52,7 +54,8 @@
 		public function getLogin() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_LOGIN);
+//			$pageData = $this->dataForFormId(self::FORM_LOGIN);
+			$pageData = $this->dataForPage(self::FORM_LOGIN);
 			
 			//draw page
 			return View::make('soup::pages.signup.login')->with([
@@ -67,6 +70,22 @@
 	
 	
 		public function postLogin() {
+			
+			/*
+			$job = new SendEmailJob(
+							"aberrationmedia@gmail.com", 
+							"test@belifinhydration.com",
+							"soup::email.request",
+							["text" => "did this dynamic text come through?????"]
+							);
+			//$job->delay(5);
+			$this->dispatch($job); //->delay(60 * 5))
+			//$job->handle();
+	
+			echo "here";
+			exit(0);
+			*/
+			
 			
 			$valid = true;
 			$errors = null;

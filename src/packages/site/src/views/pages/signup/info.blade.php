@@ -41,6 +41,9 @@
 //	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	
+	//get user properties
+	$userEmail = safeObjectValue('email', $user, "");
+	
 	//form submit URL
 	$formURL = isset($formURL) ? $formURL : "";
 	
@@ -61,13 +64,14 @@
 			<h1>{{ $title }}</h1>
 			
 			
-			{{-- TODO: show user name --}}
+			{{-- user email --}}
+			<h6>{{ $userEmail }}</h6>
 
 
 			{{-- enter name --}}
 			<div class="form-group"> 
 			
-				{{ Form::text('first_name', null, Array ('placeholder' => 'First Name', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('first_name', null, Array ('placeholder' => 'First Name', 'class' => 'page-input-text', 'tabindex' => '0', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 			<div class="form-group"> 

@@ -33,6 +33,9 @@
 		const GOOGLE_API_KEY = "AIzaSyB4ge2qO8plaMWCmLWNNi3U4o1RW4B_ucA";
 		
 			
+		//email details
+		const EMAIL_SENDER_MEMBER_REQUEST = "team@soupjournal.com";
+			
 	} //end class AppGlobals
 
 

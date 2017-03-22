@@ -5,14 +5,18 @@
 	$hideHeaderTitle = isset($hideHeaderTitle) ? $hideHeaderTitle : false;
 	$menuOptions = isset($menuOptions) ? $menuOptions : null;
 
-	//header colours
+	//header settings
+	$headerPadding = "14%";
 	$backgroundColor = "bg-color-5";
 	$textColour = "color-2";
+	$headerImageClass = "";
 	$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-white.png";
 	$menuImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon-menu.png";
 	if ($useAlternateStyle) {
-		$backgroundColor = "bg-color-2";
+		$headerPadding = "16%";
+		$backgroundColor = "bg-color-10";
 		$textColour = "color-1";
+		$headerImageClass = "large";
 		$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-black.png";
 	}
 	
@@ -21,7 +25,11 @@
 {{-- header --}}
 <div id="page-header" class="header navbar navbar-top {{ $backgroundColor }} {{ $textColour }}">
 
-	<div class="table-parent">
+	<div class="header-fill" style="padding-bottom: {{ $headerPadding }}"></div>
+	
+	<div class="stretch-to-fit">
+
+	<div class="table-parent fill-height">
 
 		<div class="table-center-row">
 		
@@ -40,7 +48,7 @@
 				{{-- title --}}
 				@if (!$hideHeaderTitle)	
 						<!-- h1 class="font-header {{ $textColour }}">Soup</h1 -->
-						<img class="logo-header-image" alt="Soup" src="{{ $headerImage }}" load-style="fade">
+						<img class="logo-header-image {{ $headerImageClass }}" alt="Soup" src="{{ $headerImage }}" load-style="fade">
 				@endif
 			
 			</div>
@@ -66,6 +74,8 @@
 		
 		</div>
 
+	</div>
+	
 	</div>
 
 </div>

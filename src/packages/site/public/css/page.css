@@ -12,7 +12,7 @@
 }
 
 .logo-page-image {
-	width: 40%;
+	width: 34%;
 	height: auto;
 	padding-top: 5%;
 	padding-bottom: 5%;
@@ -27,11 +27,20 @@
 	margin-bottom: 7px; /* 5%; */
 }
 
+.logo-header-image.large {
+	width: 138px;
+}
+
 .logo-title-image {
-  	width: 60%;
+  	width: 53%;
 	height: auto;
 	display: block;
     margin: 0 auto;
+}
+
+.icon-instagram-image {
+  	width: 6.3%;
+	height: auto;
 }
 
 .reservation-title-image {
@@ -245,16 +254,17 @@
 .page-input-text {
 	padding-left: 10px;
 	padding-right: 10px;
-    padding-top: 3.6%;
-    padding-bottom: 3.6%;
+    padding-top: 3.8%;
+    padding-bottom: 3.8%;
     margin-top: 4%;
 	min-width: 150px;
 	width: 100%;
-	text-align: center;
+	text-align: left;
 	background-color: #FFFFFF;
 	border-color: #322D31;
 	border: 1px solid;
-	border-radius: 10px;
+	border-radius: 5px;
+	-webkit-appearance: none;
 }
 
 .page-input-text.square {
@@ -299,7 +309,7 @@
     margin-top: 4%;
 	min-width: 150px;
 	width: 100%;
-	text-align: center;
+	text-align: left;
 	background-color: #FFFFFF;
 	border: none;
 }
@@ -311,6 +321,10 @@
 
 .spacer-tiny {
 	padding-top: 2%;	
+}
+
+.spacer-tiny-2 {
+	padding-top: 3%;	
 }
 
 .spacer-small {
@@ -325,6 +339,10 @@
 	padding-top: 10%;	
 }
 
+.spacer-medium-3 {
+	padding-top: 17%;	
+}
+
 .spacer-large {
 	padding-top: 20%;	
 }
@@ -336,7 +354,7 @@
 
 .spacer-horizontal-small {
 	display: inline-block;
-	width: 2%;	
+	width: 1%;	
 }
 
 /********************************/

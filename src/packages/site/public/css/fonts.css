@@ -49,7 +49,7 @@ h1 {
 }
 
 h1.small {
-	font-size: 7vw;
+	font-size: 6.7vw;
 }
 
 h1.large {
@@ -84,7 +84,11 @@ h4 {
 	line-height: 5vw;
 	font-family: ProximaNovaSemiBold;
 }
-
+/*
+h4.large {
+	font-size: 3.7vw;
+}
+*/
 h5 {
 	font-size: 3vw;
 	font-family: ProximaNovaRegular;	
@@ -151,6 +155,20 @@ a.page-link {
 .bg-danger {
 	font-family: ProximaNovaRegular;
 	font-size: 4vw;	
+}
+
+
+
+/********************************/
+/* 			LINE SPACING		*/
+/********************************/
+
+.extra-padding {
+	line-height: 1.5em;	
+}
+
+.extra-padding-small {
+	line-height: 1.3em;	
 }
 
 
@@ -241,8 +259,11 @@ a.page-link {
 		font-size: 34.1px;
 		line-height: 48.75px;
 	}
-
-	
+/*
+	h4.large {
+		font-size: 37px;
+	}
+*/	
 	h5.font-header {
 		font-size: 29.5px;
 	}

@@ -37,7 +37,7 @@
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
-	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
+	//$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	
 	//images
@@ -53,20 +53,26 @@
 
 <div class="page-overlay bg-color-clear"  load-style="fade" load-group="main">
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
+	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => '')) }}
+	
+		
+		<div class="spacer-small"></div>
+		
+		{{-- title image --}}
+		<img class="logo-title-image" alt="Soup" src="{{ $titleImage }}" load-style="fade">
+	
+	
 	
 		{{-- login page --}}
-		<div class="page-container page-padding-large">
+		<div class="page-container page-padding-medium-2">
 			
-			{{-- <h1 class="color-2">{!! $title !!}</h1> --}}
-			<img class="logo-title-image" alt="Soup" src="{{ $titleImage }}" load-style="fade">
-		
-		
-			<div class="spacer-large"></div>
+			<div class="spacer-medium-3"></div>
 			
 		
 			<h4 class="color-2">{!! $subtitle !!}</h4>
 			
+			
+			<div class="spacer-tiny-2"></div>
 			
 			{{-- enter email --}}
 			<div class="form-group"> 
@@ -74,6 +80,9 @@
 				{{ Form::email('email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text square no-border', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
+			
+			
+			<div class="spacer-small"></div>
 				
 				
 			{{-- enter password --}}
@@ -84,11 +93,13 @@
 			</div>
 			
 			
-			<div class="spacer-tiny"></div>
+
 			
 			{{-- forgot password --}}
 			<div class="form-group">
-				<a href="{{ route('soup.forgot') }}" class="underline color-2">{{ $text }}</a>
+				<a href="{{ route('soup.forgot') }}" class="underline color-2">
+					<h5 class="title-regular">{{ $text }}</h5>
+				</a>
 			</div>
 			
 			
@@ -109,9 +120,16 @@
 				
 			@endif
 			
+		</div>
+		
+		<div class="spacer-tiny-2"></div>
+		
+		<div class="page-padding-medium">
 		
 			{{-- log in buttons --}}
-			<button class="button-page">{{ $button }}</button>
+			<button class="button-page bg-color-10">
+				<h4 class="clear-header-margins">{{ $button }}</h4>
+			</button>
 			
 	{{--
 			<div>or</div>

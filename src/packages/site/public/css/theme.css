@@ -33,7 +33,6 @@
 	overflow-y: hidden;
 }
 
-
 .header-column-left {
 	width: 20%;
 	text-align: center;
@@ -259,11 +258,21 @@
 }
 
 
+.page-padding-small-2 {
+	padding-left: 5.5%;	
+	padding-right: 5.5%;
+}
+
+
 .page-padding-medium {
 	padding-left: 9%;	
 	padding-right: 9%;
 }
 
+.page-padding-medium-2 {
+	padding-left: 12%;	
+	padding-right: 12%;
+}
 
 .page-padding-large {
 	padding-left: 15%;	

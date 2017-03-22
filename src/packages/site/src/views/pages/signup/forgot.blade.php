@@ -54,12 +54,12 @@
 
 	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
 	
-		{{-- login page --}}
-		<div class="page-container page-padding-large" style="background-color: transparent;">
+		{{-- title image --}}
+		<img class="logo-title-image" alt="Soup" src="{{ $titleImage }}" load-style="fade">
 
-			{{-- <h1 class="color-2">{!! $title !!}</h1> --}}
-			<img class="logo-title-image" alt="Soup" src="{{ $titleImage }}" load-style="fade">
-		
+	
+		{{-- login page --}}
+		<div class="page-container page-padding-medium-2" style="background-color: transparent;">		
 		
 			<div class="spacer-large"></div>
 			
@@ -71,7 +71,7 @@
 			{{-- enter email --}}
 			<div class="form-group"> 
 			
-				{{ Form::email('email', null, Array ('placeholder' => 'Email', 'class' => 'page-input-text', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::email('email', null, Array ('placeholder' => 'Email', 'class' => 'page-input-text square no-border', 'tabindex' => '0', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 				
@@ -97,7 +97,9 @@
 			
 		
 			{{-- next button --}}
-			<button class="button-page">{{ $button }}</button>
+			<button class="button-page bg-color-10">
+				<h4 class="clear-header-margins">{{ $button }}</h4>
+			</button>
 
 			
 

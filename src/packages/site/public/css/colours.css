@@ -37,7 +37,9 @@
 	color: #F2453E;	
 }
 
-
+.color-10 {
+	color: #F1F2F3;	
+}
 
 /********************************/
 /* 			LINK COLOURS 		*/
@@ -96,6 +98,9 @@ a:hover {
 	background-color: #231F20;	
 }
 
+.bg-color-10 {
+	background-color: #F1F2F3;	
+}
 
 /********************************/
 /* 		BORDER COLOURS 			*/

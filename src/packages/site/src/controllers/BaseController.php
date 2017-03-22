@@ -2,6 +2,8 @@
 
 	namespace Soup\Mobile\Controllers;
 
+
+	use Soup\Mobile\Models\Page;
 	
 	use App\Http\Controllers\Controller;
 
@@ -9,7 +11,7 @@
 		
 
 		//page constants
-		const FORM_WELCOME = 'page_home';
+		const FORM_WELCOME = 'page_welcome';
 		const FORM_HOME = 'page_home';
 		const FORM_LOGIN = 'page_login';
 		const FORM_SIGNUP = 'page_signup';
@@ -46,6 +48,27 @@
 		//==========================================================//
 		//====					DATA METHODS					====//
 		//==========================================================//	
+		
+		
+		protected function dataForPage($pageId) {
+			
+			$pageData = null;
+			//echo "pageId: " . $pageId;
+			//valid id
+			if ($pageId && strlen($pageId)>0) {
+				
+				//find page and any children
+				$pageData = Page::where('key', $pageId)->with('children')->first();
+				if ($pageData) {
+					$pageData = $pageData->toArray();
+				}
+				
+			} //end if (valid id)
+			
+			return $pageData;
+			
+		} //end dataForPage()
+		
 		
 			
 		protected function dataForFormId($pageId) {
@@ -140,7 +163,7 @@
 					$pageData = Array (
 						"title" => "One more thing:",
 						"text" => "by signing up you agree with our terms and conditions",
-						"button" => "FINISH APPLICATION",
+						"button" => "NEXT",
 						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background003.jpg"
 					);
 				}
@@ -154,7 +177,7 @@
 						"subtitle" => "Soup membership is currently by invitation only.<br>\nEnter your code below to complete your membership now.",
 						"text" => "or apply for membership below.",
 						"subtext" => "by signing up you agree with our terms and conditions",
-						"button" => "APPLY FOR MEMBERSHIP",
+						"button" => "FINISH APPLICATION",
 						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background004.jpg"
 					);
 				}
@@ -167,7 +190,7 @@
 						"title" => "Interested in becoming a member?",
 						"subtitle" => "Submit your details and we'll be in touch.",
 						"text" => "We look forward to seeing you soon!",
-						"button" => "APPLY FOR MEMBERSHIP",
+						"button" => "SUBMIT",
 						"background_image" => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/backgrounds/background005.jpg"
 					);
 				}

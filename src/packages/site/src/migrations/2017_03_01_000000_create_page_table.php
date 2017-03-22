@@ -15,7 +15,9 @@ class CreatePageTable extends Migration {
 		Schema::create('page', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('key')->unique()->nullable();
 			$table->integer('parent')->reference('id')->on('page')->nullable();
+			$table->string('type')->nullable();
 			$table->string('title')->nullable();
 			$table->string('subtitle')->nullable();
 			$table->string('text')->nullable();
@@ -24,6 +26,7 @@ class CreatePageTable extends Migration {
 			$table->string('image')->nullable();
 			$table->string('background_image')->nullable();
 			$table->integer('theme')->default(0);
+			$table->integer('order')->default(0);
 			$table->string('meta_tags')->nullable();
 			$table->integer('status')->default(0);
 

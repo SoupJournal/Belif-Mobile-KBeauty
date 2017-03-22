@@ -55,9 +55,11 @@
 		{{-- login page --}}
 		<div class="page-container page-padding-large" style="background-color: transparent;">
 
+
 			{{-- title --}}
 			<h1 class="color-1">{{ $title }}</h1>
 			
+
 
 			{{-- enter email --}}
 			<div class="form-group"> 

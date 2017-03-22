@@ -90,6 +90,7 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
+            'exposed'	=>	true,	//exposed to CMS
         ],
 
     ],

@@ -42,9 +42,6 @@
 	//images
 	$titleImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-large-white.png";
 	
-	//form submit URL
-	$formURL = isset($formURL) ? $formURL : "";
-	
 ?>
 
 {{-- background image --}}
@@ -52,14 +49,15 @@
 
 <div class="page-overlay bg-color-clear" load-style="fade" load-group="main">
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'loginForm', 'class' => 'row-centered')) }}
+	<div class="row-centered">
+	
+		{{-- title image --}}
+		<img class="logo-title-image" alt="Soup" src="{{ $titleImage }}" load-style="fade">
+		
 	
 		{{-- login page --}}
-		<div class="page-container page-padding-large" style="background-color: transparent;">
-
-
-			<img class="logo-title-image" alt="Soup" src="{{ $titleImage }}" load-style="fade">
-		
+		<div class="page-container page-padding-medium-2" style="background-color: transparent;">
+	
 		
 			<div class="spacer-large"></div>
 			
@@ -67,20 +65,20 @@
 			{{-- subtitle --}}
 			<h4 class="color-2">{!! $subtitle !!}</h4>
 			
-
+	
 			<div class="spacer-large"></div>
 			<div class="spacer-medium"></div>
 			
 		
 			{{-- next button --}}
-			<button class="button-page">{{ $button }}</button>
-
-			
-
-		
+			<a href="{{ route('soup.login') }}" class="button-page bg-color-10 color-4">
+				<h4 class="clear-header-margins">{{ $button }}</h4>
+			</a>
+	
+	
 		</div>
-		
-	{{ Form::close() }}
+
+	</div>		
 
 </div>
 

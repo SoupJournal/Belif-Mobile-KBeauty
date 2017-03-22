@@ -7,7 +7,7 @@
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
-	$steps = safeArrayValue('steps', $pageData, null);
+	$steps = safeArrayValue('children', $pageData, null);
 	
 //	$text = safeArrayValue('text', $pageData, "");
 //	$button = safeArrayValue('button', $pageData, "");
@@ -20,12 +20,14 @@
 
 <div class="page-container bg-color-2" load-style="fade" load-group="{{ $sectionId }}">
 
-	<div class="text-center page-padding-medium">
+	<div class="text-center page-padding-small-2">
 		
-		<div class="spacer-small"></div>
+		<div class="spacer-small-2"></div>
 		
 		{{-- title --}}
 		<h1 class="clear-header-margins color-1">{{ $title }}</h1>
+
+		<div class="spacer-small-2"></div>
 		
 		
 		<?php
@@ -51,9 +53,9 @@
 						<div class="spacer-tiny"></div>
 						
 						{{-- draw text --}}
-						<h5 class="page-padding-medium color-1">{!! $stepText !!}</h5>
+						<h4 class="page-padding-medium title-regular color-1">{!! $stepText !!}</h4>
 	
-						<div class="spacer-small"></div>
+						<div class="spacer-tiny-2"></div>
 					
 					</div>
 		
@@ -65,16 +67,20 @@
 		?>
 			
 			
-			{{-- footer text --}}
-			@if (isset($text))
-				<div class="spacer-medium"></div>
-				<h4 class="color-1">{{ $text }}</h4>
-			@endif
+	</div>
+	
+	<div class="text-center page-padding-tiny">
 			
-			
-			<div class="spacer-medium"></div>
-			
-			
+		{{-- footer text --}}
+		@if (isset($text))
+			<div class="spacer-small"></div>
+			<h4 class="color-1">{{ $text }}</h4>
+		@endif
+		
+		
+		<div class="spacer-medium"></div>
+		
+		
 	</div>
 
 </div>

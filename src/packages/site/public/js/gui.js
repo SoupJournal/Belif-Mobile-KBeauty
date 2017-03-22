@@ -107,7 +107,9 @@
 							}
 						}
 
-
+						//(subtrack two pixels to avoid scroll bar in chrome)
+						elemHeight -= 2;
+	
 						//set height
 		            	target.css('height', elemHeight +  'px');
 						
