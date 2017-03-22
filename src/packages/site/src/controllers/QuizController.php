@@ -56,16 +56,18 @@
 			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_QUESTION);
+			$pageData = $this->questionsData();
+//			$pageData = $this->dataForFormId(self::FORM_QUESTION);
 			
 			//determine total questions
-			$totalQuestions = ($pageData ? count($pageData) : 0);
+			$totalQuestions = $this->questionsCount();
+			//$totalQuestions = ($pageData ? count($pageData) : 0);
 			
 			//get current question id
 			$activeId = activeQuestionNumber($user, $pageData);
 			
 
-//				echo "questionId: " . $questionId . " - totalQuestions: " . $totalQuestions . " - activeId: " . $activeId;
+//				echo "questionId: " . $questionId . " - totalQuestions: " . $totalQuestions . " - activeId: " . $activeId . " - groups: " . $this->questionGroupCount();
 //				exit(0);
 			//valid question ID
 			if (($questionId<$totalQuestions || $questionId<$activeId) || ($activeId==$totalQuestions && $questionId>=$totalQuestions)) {
@@ -88,7 +90,7 @@
 					'pageData'=> $questionData,
 					'backURL' => $questionId > 0 ? route('soup.question.id', ($questionId-1)) : route('soup.quiz'),
 					'formURL' => route('soup.question'),
-					'totalSteps' => 8
+					'totalSteps' => $this->questionGroupCount()
 				);
 	
 	
@@ -172,7 +174,8 @@
 			if ($key && strlen($key)>0) {
 
 				//get page data
-				$pageData = $this->dataForFormId(self::FORM_QUESTION);
+				$pageData = $this->questionsData();
+				//$pageData = $this->dataForFormId(self::FORM_QUESTION);
 	
 				//get question data
 				$questionData = null;
@@ -182,7 +185,8 @@
 				}
 				
 				//determine total questions
-				$totalQuestions = ($pageData ? count($pageData) : 0);
+				$totalQuestions = $this->questionsCount();
+				//$totalQuestions = ($pageData ? count($pageData) : 0);
 				
 			
 	
@@ -358,8 +362,10 @@
 			$pageData = $this->dataForFormId(self::FORM_QUIZ_THANKS);
 			
 			//determine total questions
-			$questionsData = $this->dataForFormId(self::FORM_QUESTION);
-			$totalQuestions = ($questionsData ? count($questionsData) : 0);
+			$questionsData = $this->questionsData();
+			$totalQuestions = $this->questionsCount();
+			//$questionsData = $this->dataForFormId(self::FORM_QUESTION);
+			//$totalQuestions = ($questionsData ? count($questionsData) : 0);
 			
 			//find last question Id
 			$lastQuestionId = $totalQuestions>1 ? $totalQuestions-1 : 0;

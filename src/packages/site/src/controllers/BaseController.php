@@ -4,6 +4,7 @@
 
 
 	use Soup\Mobile\Models\Page;
+	use Soup\Mobile\Models\Question;
 	
 	use App\Http\Controllers\Controller;
 
@@ -68,6 +69,41 @@
 			return $pageData;
 			
 		} //end dataForPage()
+		
+		
+		
+		
+		protected function questionsData() {
+			
+			//get questions data
+			$questionsData = Question::where('status', 1)->orderBy('order')->get();
+			if ($questionsData) {
+				$questionsData = $questionsData->toArray();	
+			}
+
+			return $questionsData;
+			
+		} //end questionsData()
+		
+		
+		
+		protected function questionsCount() {
+			
+			return Question::where('status', 1)->count();
+			
+		} //end questionsCount()
+		
+		
+		
+		protected function questionGroupCount() {
+
+			//select all groups (using count directly generates incorrect SQL)
+			$groups = Question::where('status', 1)->groupBy('group')->get();
+			
+			return $groups ? count($groups) : 0;
+			
+		} //end questionGroupCount()
+		
 		
 		
 			

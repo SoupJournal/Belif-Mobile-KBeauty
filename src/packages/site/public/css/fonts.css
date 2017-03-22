@@ -52,8 +52,16 @@ h1.small {
 	font-size: 6.7vw;
 }
 
+h1.small-2 {
+	font-size: 7.6vw;
+}
+
 h1.medium {
 	font-size: 9vw;
+}
+
+h1.medium-2 {
+	font-size: 11vw;
 }
 
 h1.large {
@@ -241,6 +249,18 @@ a.page-link {
 	
 	h1.small {
 		font-size: 60px;
+	}
+	
+	h1.small-2 {
+		font-size: 70px;
+	}
+	
+	h1.medium {
+		font-size: 80px;
+	}
+	
+	h1.medium-2 {
+		font-size: 110px;
 	}
 	
 	h1.large {

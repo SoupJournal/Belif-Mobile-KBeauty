@@ -15,7 +15,7 @@
         
         {{------------------ TITLE -------------------}}
         
-        <title>{{-- @yield('title') --}}Soup</title>
+        <title>{{-- @yield('title', '') --}}Soup</title>
         
         {{---------------- END TITLE -----------------}}
         
@@ -27,12 +27,12 @@
     </head>
     
     
-    <body ng-app="soup" class="bg-color-1"> 
+    <body ng-app="soup" class="bg-color-1" ng-controller="SoupController"> 
    
    
     
 		{{-- controller --}}
-		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit bg-color-5" ng-controller="SoupController">
+		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit bg-color-5">
 			
 			<div class="main-page-container fill-height bg-color-5">
 				
@@ -54,21 +54,30 @@
 					<div class="stretch-to-fit bg-color-5">
 
 	        		{{----------------- CONTENT ------------------}}
-	        		@yield('content')
+	        		@yield('content', '')
 	        		{{--------------- END CONTENT ----------------}}
 
 					</div>
 								
 				</div>
-				
+			
 			</div>	        	
-	        
+	                
+              
         {{-- end controller --}}
         </div>
+ 
         
-        
-        
-        
+ 		<div class="main-page">
+	 		<div class="main-page-container">
+
+		  		{{----------------- FOOTER ------------------}}
+		   		@yield('footer', '')
+		   		{{--------------- END FOOTER ----------------}}
+
+			</div>
+ 		</div>
+ 
         
         {{-- load angular modules --}}
         <script type="text/javascript">

@@ -76,41 +76,22 @@
 <div class="page-overlay text-center">
 
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'questionForm', 'url' => $formURL, 'class' => 'stretch-to-fit', 'id' => 'question-container')) }}
+	{{ Form::open(Array('role' => 'form', 'name' => 'questionForm', 'url' => $formURL, 'class' => '')) }}
 
 	
 		{{-- top row --}}
-		<div class="container-top">
+		<div class="page-padding-medium-2">
 		
-		
-			
-			{{-- display form errors --}}
-		    @if ($errors->has())
-		    
-		    
-		        @foreach ($errors->all() as $error)
-		            <div class='bg-danger alert clear-vertical-padding'>{{ $error }}</div>
-		        @endforeach
-		        
-		    @else
-				
+	
 				<div class="spacer-small"></div>
-				
-			@endif
-			
-			
-			
-			
-			<div class="row page-padding-small">
-			
+	
+					
 				{{-- question --}}
-				<h1 class="title-light color-2">{!! $question !!}</h1>
+				<h1 class="small-2 title-light color-2">{!! $question !!}</h1>
 			
 
-			</div>
-			
-			
-			<div class="row page-padding-medium">
+				<div class="spacer-small"></div>
+
 
 				<?php
 				
@@ -123,7 +104,7 @@
 					   	<label class="color-2">
 					   	
 					   		{{ Form::checkbox('value[' . ($index++) . ']', $option, false, Array ('class' => 'multiple-choice', 'checkbox-limit' => $allowedChoices, 'checkbox-group' => 'choices')) }}
-					   		<h1 class="title-bold large color-2 clear-header-margins">{{ $option }}</h1>
+					   		<h1 class="title-bold medium-2 color-2 clear-header-margins no-margins">{{ $option }}</h1>
 	
 						</label>
 					</div>
@@ -135,36 +116,37 @@
 					
 				?>
 			
-			</div>
+		
 			
 			@if (isset($text))
-				<div class="row page-padding-small">
+				
+				<div class="spacer-medium"></div>
+				
+				<div>
 				
 					{{-- second question --}}
-					<h1 class="title-light color-2">{!! $text !!}</h1>
+					<h1 class="title-light small color-2 clear-header-margins">{!! $text !!}</h1>
 				
-	
-				</div>
-				
-					
-				<div class="row page-padding-large">
 				
 					{{-- text input --}}
-					{{ Form::text('secondaryValue', $selected, Array ('class' => 'page-input-select')) }}
-				
-				</div>	
-				
+					{{ Form::textarea('secondaryValue', $selected, Array ('class' => 'page-input-text square input-padding-small', 'rows' => 2)) }}
+
+				</div>
+			
 			@else
 				<div class="spacer-medium"></div>
 			@endif
 			
-			
+		</div>
+		
+		<div class="page-padding-small">	
 			
 			
 			{{-- next button --}}
 			@if (isset($button))
 
-				<div class="spacer-large"></div>
+				<div class="spacer-medium"></div>
+				<div class="spacer-small"></div>
 				
 				<button class="button-page button-page-border bg-color-clear color-3 border-color-3">{{ $button }}</button>
 			@endif
@@ -172,19 +154,6 @@
 			
 		</div>
 
-
-		{{-- bottom row --}}
-		<div class="progress-footer">
-			
-			{{----------------- PROGRESS BAR -------------------}}
-			<div class="progress-section page-padding-tiny">
-				@include('soup::sections.progress', Array(
-					'step' => $step,
-					'total' => $totalSteps
-				))
-			</div>
-				
-		</div>
 
 
 		{{-- question key --}}
@@ -196,3 +165,25 @@
 
 @stop
 {{--------------- END CONTENT ----------------}}
+
+
+
+{{----------------- FOOTER ------------------}}
+
+@section('footer')
+
+	<div class="progress-footer">
+		<div class="main-page">
+		
+			{{----------------- PROGRESS BAR -------------------}}
+			<div class="progress-section page-padding-tiny">
+				@include('soup::sections.progress', Array(
+					'step' => $step,
+					'total' => $totalSteps
+				))
+			</div>
+			
+		</div>
+	</div>
+
+@stop

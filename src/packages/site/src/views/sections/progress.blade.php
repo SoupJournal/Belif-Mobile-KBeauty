@@ -8,6 +8,8 @@
 	$percentage = ($total > 0 ? ($step / $total) * 100 : 0);
 	$inversePercentage = 100 - $percentage;
 	
+	//allow room for title percentage (TODO: use CSS solution)
+	$titlePercentage = $inversePercentage > 85 ? 85 : $inversePercentage;
 ?>
 
 
@@ -16,7 +18,7 @@
 @if ($total>0 && $step>0) 
 	<div class="progress-bar-container padding-tiny">
 		<div class="progress-bar-title">
-			<div class="progress-bar-label page-text-large title-condensed color-2" style="margin-right: {{ $inversePercentage }}%">
+			<div class="progress-bar-label page-text-large title-condensed color-2" style="margin-right: {{ $titlePercentage }}%">
 				STEP {{ $step }} of {{ $total }}
 			</div>
 		</div>

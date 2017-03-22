@@ -130,9 +130,9 @@
 
 
 .progress-footer {
-	position: fixed;
-	bottom: 0;
-	top: 90%;
+	position: absolute;
+	bottom: 1.4%;
+/*	top: 90%;*/
 	left: 3%;
 	right: 3%;
 	pointer-events: none;	
@@ -356,6 +356,11 @@
 	text-align: right;
 }
 
+
+h1.no-margins {
+	margin-top: 0;
+	margin-bottom: 0;	
+}
 
 /********************************/
 /* 			IMAGES	 			*/

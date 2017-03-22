@@ -28,6 +28,7 @@ class CreateQuestionTable extends Migration {
 			//$table->string('button', 255)->nullable();
 			$table->string('background_image', 511)->nullable();
 			$table->integer('order')->default(0);
+			$table->integer('step')->default(0);
 			$table->integer('theme')->default(0);
 			$table->integer('status')->default(0);
 

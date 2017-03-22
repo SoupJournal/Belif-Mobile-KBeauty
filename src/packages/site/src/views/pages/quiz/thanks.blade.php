@@ -53,47 +53,58 @@ $restaurant = "XXXX RESTAURANT";
 {{-- page --}}
 <div class="page-overlay" load-style="fade" load-group="main">
 
-	<div class="page-container row-centered page-padding-medium">
+	<div class="page-container row-centered">
 
-		<div class="spacer-small"></div>
+		<div class="page-padding-medium">
 
-
-		{{-- title --}}
-		@if (isset($title))
-			<h1 class="title-light small color-2">{!! $title !!}</h1>
-		@endif
+			<div class="spacer-small"></div>
+	
+	
+			{{-- title --}}
+			@if (isset($title))
+				<h1 class="title-light small color-2">{!! $title !!}</h1>
+			@endif
+			
+			<div class="spacer-medium"></div>
+	
+	
+			{{-- subtitle --}}
+			@if (isset($subtitle))
+				<h1 class="title-light small color-2">{!! $subtitle !!}</h1>
+			@endif
+	
+	
+			@if (isset($restaurant))
+				<h2 class="title-light bg-color-2 color-3">{{ $restaurant }}</h2>
+			@endif
+			
+	
+	
+			<div class="spacer-medium"></div>
+	
+			{{-- text --}}
+			@if (isset($text))
+				<h1 class="title-light small color-2">{!! $text !!}</h1>
+			@endif
+	
+	
+			<div class="spacer-large"></div>
 		
-		<div class="spacer-medium"></div>
-
-
-		{{-- subtitle --}}
-		@if (isset($subtitle))
-			<h1 class="title-light small color-2">{!! $subtitle !!}</h1>
-		@endif
-
-
-		@if (isset($restaurant))
-			<h1 class="title-light small bg-color-2 color-3">{{ $restaurant }}</h1>
-		@endif
+		</div>
 		
-
-
-		<div class="spacer-medium"></div>
-
-		{{-- text --}}
-		@if (isset($text))
-			<h1 class="title-light small color-2">{!! $text !!}</h1>
-		@endif
-
-
-		<div class="spacer-large"></div>
 		
-
-		{{-- next button --}}
-		@if (isset($nextURL))
-			<a href="{{ $nextURL }}" class="button-page-border bg-color-clear color-3 border-color-3">{{ $button }}</a>
-		@endif
-
+		<div class="page-padding-small">
+			
+	
+			{{-- next button --}}
+			@if (isset($nextURL))
+				<a href="{{ $nextURL }}" class="button-page-border bg-color-clear color-3 border-color-3">
+					<h4 class="clear-header-margins">{{ $button }}</h4>
+				</a>
+			@endif
+	
+		
+		</div>
 	
 	</div>
 	

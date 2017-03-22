@@ -99,10 +99,10 @@
 			
 			
 			
-			<div class="row page-padding-small">
+			<div class="row page-padding-medium">
 			
 				{{-- question --}}
-				<h1 class="title-light color-2">{!! $question !!}</h1>
+				<h1 class="small-2 title-light color-2">{!! $question !!}</h1>
 			
 			</div>
 			
@@ -113,7 +113,7 @@
 			<div class="row page-padding-large">
 			
 				{{-- dropdown --}}
-				{{ Form::select('value', $options, $selected, Array ('placeholder' => 'TAP TO SELECT', 'class' => 'page-input-select', 'required' => '')) }}
+				{{ Form::select('value', $options, $selected, Array ('placeholder' => 'TAP TO SELECT', 'class' => 'page-input-select page-input-center', 'required' => '')) }}
 			
 			</div>	
 			
