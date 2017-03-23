@@ -1,9 +1,15 @@
 <?php
 
+	use Soup\Mobile\Lib\AppGlobals;
+	
+
 	//get header styling
-	$useAlternateStyle = isset($alternateHeader) && $alternateHeader;
+	$headerStyle = isset($headerStyle) ? $headerStyle : AppGlobals::HEADER_STYLE_NORMAL;
 	$hideHeaderTitle = isset($hideHeaderTitle) ? $hideHeaderTitle : false;
 	$menuOptions = isset($menuOptions) ? $menuOptions : null;
+
+	//determine if menu visible
+	$showMenuButton = ($menuOptions && count($menuOptions)>0);
 
 	//header settings
 	$headerPadding = "14%";
@@ -12,13 +18,27 @@
 	$headerImageClass = "";
 	$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-white.png";
 	$menuImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon-menu.png";
-	if ($useAlternateStyle) {
-		$headerPadding = "16%";
-		$backgroundColor = "bg-color-10";
-		$textColour = "color-1";
-		$headerImageClass = "large";
-		$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-black.png";
-	}
+	
+	//custom header style
+	switch ($headerStyle) {
+		
+		case AppGlobals::HEADER_STYLE_BLACK:
+		{
+			$backgroundColor = "bg-color-1";
+		}
+		break;
+		
+		case AppGlobals::HEADER_STYLE_WHITE:
+		{
+			$headerPadding = "16%";
+			$backgroundColor = "bg-color-10";
+			$textColour = "color-1";
+			$headerImageClass = "large";
+			$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-black.png";
+		}
+		break;
+		
+	} //end switch (header style)
 	
 	
 ?>
@@ -63,7 +83,7 @@
 				@endif
 			
 				{{-- menu button --}}
-				@if (isset($showMenuButton) && $showMenuButton)
+				@if ($showMenuButton)
 					<a href="javascript:void(0)" class="button-header color-1" broadcast-click="change-menu-height">
 						<img class="button-menu" alt="Soup" src="{{ $menuImage }}" load-style="fade">
 					</a>

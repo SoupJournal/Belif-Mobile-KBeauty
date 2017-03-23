@@ -26,23 +26,30 @@
 
 		public function __construct() {
 
+			//standard menu button class
+			$buttonClass = "bold title-light";
+
 			//set menu options
 			$this->mainMenuOptions = [
 				[
 					'name' => 'Profile',
-					'url' => route('soup.user.profile')
+					'url' => route('soup.user.profile'),
+					'class' => $buttonClass
 				],
 				[
 					'name' => 'How It Works',
-				//	'url' => route('soup.user.profile')
+				//	'url' => route('soup.user.profile'),
+					'class' => $buttonClass
 				],
 				[
 					'name' => 'Blog',
-				//	'url' => route('soup.user.profile')
+				//	'url' => route('soup.user.profile'),
+					'class' => $buttonClass
 				],
 				[
 					'name' => 'Help',
-				//	'url' => route('soup.user.profile')
+				//	'url' => route('soup.user.profile'),
+					'class' => $buttonClass
 				],
 				[	
 					'type' => 'spacer'
@@ -50,7 +57,7 @@
 				[
 					'name' => 'LOG OUT',
 					'url' => route('soup.logout'),
-					'class' => 'button-page-border border-color-9 color-9'
+					'class' => 'title-semi-bold small button-page-border border-thin border-color-9 color-9'
 				]
 			];
 
@@ -68,7 +75,8 @@
 		//	\DB::connection('Soup')->enableQueryLog();
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_USER_PROFILE);
+			$pageData = $this->dataForPage(self::FORM_USER_PROFILE);
+			//$pageData = $this->dataForFormId(self::FORM_USER_PROFILE);
 			
 			//get user
 			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
@@ -192,7 +200,6 @@
 				'user' => $user,
 				'dinnerVenue' => $dinnerVenue,
 				'brunchVenue' => $brunchVenue,
-				'showMenuButton' => true,
 				'menuOptions' => $this->mainMenuOptions
 				//'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
@@ -206,7 +213,8 @@
 		public function getVenueProfile($venueId) {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_VENUE_PROFILE);
+			$pageData = $this->dataForPage(self::FORM_VENUE_PROFILE);
+			//$pageData = $this->dataForFormId(self::FORM_VENUE_PROFILE);
 			
 			//get venue data
 			$venueData = Venue::find($venueId);
@@ -216,6 +224,7 @@
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.venue.recommendation'),
+				'menuOptions' => $this->mainMenuOptions,
 				'venue' => $venueData,
 				'mapsKey' => AppGlobals::GOOGLE_API_KEY
 			]);

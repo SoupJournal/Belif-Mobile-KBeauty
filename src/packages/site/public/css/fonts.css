@@ -60,6 +60,10 @@ h1.medium {
 	font-size: 9vw;
 }
 
+h1.medium-1 {
+	font-size: 10vw;
+}
+
 h1.medium-2 {
 	font-size: 11vw;
 }
@@ -79,6 +83,10 @@ h2 {
 	font-family: ProximaNovaBold;
 }
 
+h2.small {
+	font-size: 4vw;
+}
+
 h2.bold {
 	font-size: 5.7vw;
 	line-height: 8vw;
@@ -90,6 +98,9 @@ h3 {
 	font-family: ProximaNovaSemiBold;
 }
 
+h3.large {
+	font-size: 4.4vw;
+}
 
 h4 {
 	font-size: 3.5vw;
@@ -235,6 +246,10 @@ a.page-link {
 	text-transform: capitalize;	
 }
 
+.condensed {
+	transform:scale(0.8,1); 
+    -webkit-transform:scale(0.8,1); 		
+}
 
 /********************************/
 /* 			MAX SIZE 			*/
@@ -256,7 +271,11 @@ a.page-link {
 	}
 	
 	h1.medium {
-		font-size: 80px;
+		font-size: 90px;
+	}
+	
+	h1.medium-1 {
+		font-size: 100vw;
 	}
 	
 	h1.medium-2 {
@@ -288,6 +307,9 @@ a.page-link {
 		font-size: 40px;
 	}
 	
+	h3.large {
+		font-size: 44px;
+	}	
 	
 	h4 {
 		font-size: 34.1px;

@@ -36,7 +36,7 @@
 				'pageData' => $pageData,
 				'nextURL' => route('soup.login'),
 				'nextLabel' => 'LOG IN',
-				'alternateHeader' => true,
+				'headerStyle' => AppGlobals::HEADER_STYLE_WHITE,
 				'fillHeight' => false
 			]);
 			
@@ -54,7 +54,6 @@
 		public function getLogin() {
 			
 			//get page data
-//			$pageData = $this->dataForFormId(self::FORM_LOGIN);
 			$pageData = $this->dataForPage(self::FORM_LOGIN);
 			
 			//draw page
@@ -162,9 +161,13 @@
 							}
 							//all questions answered
 							else {
-								
-								//direct to next page
-								return Redirect::route('soup.venue.recommendation');
+
+								//get id of last question
+								$lastQuestion = $totalQuestions - 1;
+								if ($lastQuestion<0) $lastQuestion = 0;
+							
+								//direct to last question
+								return Redirect::route('soup.question.id', ['questionId' => $lastQuestion]);
 								
 							}
 						

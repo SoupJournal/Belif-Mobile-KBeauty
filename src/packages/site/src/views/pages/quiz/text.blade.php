@@ -115,19 +115,6 @@
 		</div>
 
 
-		{{-- bottom row --}}
-		<div class="progress-footer">
-			
-			{{----------------- PROGRESS BAR -------------------}}
-			<div class="progress-section page-padding-tiny">
-				@include('soup::sections.progress', Array(
-					'step' => $step,
-					'total' => $totalSteps
-				))
-			</div>
-				
-		</div>
-
 
 		{{-- question key --}}
 		<input type="hidden" name="key" value="{{ $key }}">
@@ -138,3 +125,25 @@
 
 @stop
 {{--------------- END CONTENT ----------------}}
+
+
+
+{{----------------- FOOTER ------------------}}
+
+@section('footer')
+
+	<div class="progress-footer">
+		<div class="main-page">
+		
+			{{----------------- PROGRESS BAR -------------------}}
+			<div class="progress-section page-padding-tiny">
+				@include('soup::sections.progress', Array(
+					'step' => $step,
+					'total' => $totalSteps
+				))
+			</div>
+			
+		</div>
+	</div>
+
+@stop

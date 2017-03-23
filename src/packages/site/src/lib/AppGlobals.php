@@ -10,6 +10,12 @@
 		//auth guard
 		public static $AUTH_GUARD = 'soup';
 			
+		//header styles
+		const HEADER_STYLE_NORMAL 	= 0;
+		const HEADER_STYLE_WHITE	= 1;
+		const HEADER_STYLE_BLACK 	= 2;
+			
+			
 		//user status codes
 		const USER_STATUS_INQUIRY	 	= 0;
 		const USER_STATUS_REGISTERED 	= 1; 

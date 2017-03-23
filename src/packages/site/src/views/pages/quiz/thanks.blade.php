@@ -55,14 +55,16 @@ $restaurant = "XXXX RESTAURANT";
 
 	<div class="page-container row-centered">
 
-		<div class="page-padding-medium">
+		<div class="page-padding-small">
 
 			<div class="spacer-small"></div>
 	
 	
 			{{-- title --}}
 			@if (isset($title))
-				<h1 class="title-light small color-2">{!! $title !!}</h1>
+				<h1 class="title-light small-2 color-2">
+					{!! $title !!}
+				</h1>
 			@endif
 			
 			<div class="spacer-medium"></div>
@@ -70,12 +72,17 @@ $restaurant = "XXXX RESTAURANT";
 	
 			{{-- subtitle --}}
 			@if (isset($subtitle))
-				<h1 class="title-light small color-2">{!! $subtitle !!}</h1>
+				<h1 class="title-light clear-header-margins small-2 color-2">
+					{!! $subtitle !!}
+				</h1>
 			@endif
 	
+			<div class="spacer-tiny"></div>
 	
 			@if (isset($restaurant))
-				<h2 class="title-light bg-color-2 color-3">{{ $restaurant }}</h2>
+				<h2 class="sized-highlight title-light clear-header-margins bg-color-2 color-3">
+					{{ $restaurant }}
+				</h2>
 			@endif
 			
 	
@@ -84,11 +91,12 @@ $restaurant = "XXXX RESTAURANT";
 	
 			{{-- text --}}
 			@if (isset($text))
-				<h1 class="title-light small color-2">{!! $text !!}</h1>
+				<h1 class="title-light small-2 color-2">{!! $text !!}</h1>
 			@endif
 	
 	
 			<div class="spacer-large"></div>
+			<div class="spacer-small-2"></div>
 		
 		</div>
 		

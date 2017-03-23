@@ -538,6 +538,7 @@
 				case self::FORM_VENUE_PROFILE:
 				{
 					$pageData = Array (
+						"text" => "FEATURE",
 						"button" => "MAKE A RESERVATION",
 						"secondary_button" => "VISIT THEIR WEBSITE"
 					);

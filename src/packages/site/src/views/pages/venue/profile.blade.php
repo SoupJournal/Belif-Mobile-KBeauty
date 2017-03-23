@@ -37,7 +37,7 @@
 	//get page variables
 //	$title = safeArrayValue('title', $pageData, "");
 //	$subtitle = safeArrayValue('subtitle', $pageData, "");
-//	$text = safeArrayValue('text', $pageData, "");
+	$text = safeArrayValue('text', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 //	$backgroundImage = safeArrayValue('background_image', $pageData, "");
@@ -73,7 +73,7 @@
 	}
 	//create map marker
 	$mapMarkers = $mapPosition ? [$mapPosition] : null;
-	
+
 ?>
 
 
@@ -83,18 +83,23 @@
 	{{-- background image --}}
 	<div class="stretch-to-fit hide-overflow-y">
 		@include('soup::sections.background', ['backgroundImage' => $profileImage, 'loadGroup' => 'profile'])
+		<div class="stretch-to-fit gradient-overlay"></div>
 	</div>
 	
 	<div class="page-overlay bg-color-clear" load-style="fade" load-group="profile">
 	
 		<div class="spacer-small"></div>
 	
-		<h1 class="title-semi-bold uppercase color-2 page-padding-large">{{ $venueName }}</h1>
+		<h1 class="medium-1 title-bold uppercase color-2 page-padding-small">{{ $venueName }}</h1>
 	
 		<div class="page-footer">
 		
-			<h2 class="shrink-to-fit title-semi-bold capitalize color-2">{{ $venueAddress }}</h2>
-			<h2 class="shrink-to-fit title-semi-bold capitalize color-1 bg-color-2 profile-field">{{ $openHours }}</h2>
+			<h2 class="inline clear-header-margins shrink-to-fit title-semi-bold capitalize color-2 condensed">
+				{{ $venueAddress }}
+			</h2>
+			<h2 class="inline clear-header-margins shrink-to-fit title-semi-bold capitalize color-1 bg-color-2 venue-hours condensed">
+				{{ $openHours }}
+			</h2>
 			
 			<div class="spacer-medium"></div>
 			
@@ -105,16 +110,16 @@
 </div>
 
 {{-- description --}}
-<div class="venue-description page-padding-medium bg-color-1">
+<div class="venue-description page-padding-small bg-color-5">
 	
 	<div class="spacer-tiny"></div>
 	
 	@if (isset($venueDescription)) 
-		<h4 class="title-regular color-2">{!! $venueDescription !!}</h4>
+		<h3 class="title-light large color-2">{!! $venueDescription !!}</h3>
 	@endif
 	
 	@if (isset($venueRecommendations)) 
-		<h4 class="title-semi-bold uppercase color-2">RECOMMENDED BY {{ $venueRecommendations }}</h4>
+		<h3 class="title-semi-bold uppercase color-2">RECOMMENDED BY {{ $venueRecommendations }}</h3>
 	@endif
 	
 	<div class="spacer-tiny"></div>
@@ -129,7 +134,7 @@
 		@include('soup::sections.background', ['backgroundImage' => $suggestionImage, 'loadGroup' => 'suggestion'])
 	</div>
 	
-	<div class="page-overlay bg-color-clear" load-style="fade" load-group="suggestion">
+	<div class="stretch-to-fit bg-color-clear" load-style="fade" load-group="suggestion">
 	
 		<div class="table-parent fill-height">
 
@@ -137,8 +142,9 @@
 			
 				<div class="table-center-cell">
 	
-					<h4 class="title-regular color-2">- SUGGESTION -</h4>
-					<h1 class="title-semi-bold uppercase color-2">{{ $suggestion }}</h1>
+					<h3 class="clear-header-margins title-regular color-2">- {{ $text }} -</h3>
+					<div class="spacer-tiny"></div>
+					<h1 class="clear-header-margins title-semi-bold uppercase color-2">{{ $suggestion }}</h1>
 	
 				</div>
 				
@@ -152,14 +158,20 @@
 
 
 {{-- reservation --}}
-<div class="bg-color-2">
+<div class="bg-color-10">
 	
-	<div class="spacer-medium"></div>
+	<div class="spacer-small-2"></div>
+	
+	@if (isset($inviteDate))
+		<div class="page-padding-small">
+			<h1 class="small">You and a friend are invited for dinner in {{ $inviteDate }}.</h1>
+		</div>
+	@endif
 	
 	<a href="{{ $reservationURL }}">
-		<h4 class="button-page-border title-bold bg-color-clear border-color-1 color-1">
+		<h3 class="button-page-border border-thin title-bold bg-color-clear border-color-1 color-1">
 			{{ $button }}
-		</h4>
+		</h3>
 	</a>
 	
 	<div class="spacer-medium"></div>

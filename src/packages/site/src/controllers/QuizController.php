@@ -72,7 +72,6 @@
 			//valid question ID
 			if (($questionId<$totalQuestions || $questionId<$activeId) || ($activeId==$totalQuestions && $questionId>=$totalQuestions)) {
 				
-	//		echo "activeId: " . $activeId . " - questionId: " . $questionId . "<BR>";
 				//validate id
 				if ($questionId<0) $questionId = 0;
 				if ($questionId>$activeId) $questionId = $activeId; 
@@ -214,12 +213,17 @@
 						
 					switch ($type) {
 						
+						case AppGlobals::QUESTION_TYPE_TEXT:
+							$value = $value ? trim($value) : null;
+						break;
+						
 						case AppGlobals::QUESTION_TYPE_DROP_DOWN:
 						
 						break;
 					
 						case AppGlobals::QUESTION_TYPE_MULTIPLE:
 							$secondaryKey = $key . "_text";
+							$secondaryValue = $secondaryValue ? trim($secondaryValue) : null;
 						break;
 						
 						//case AppGlobals::QUESTION_TYPE_BINARY:
@@ -249,7 +253,7 @@
 
 
 					//clear existing answers
-					$deleteQuery = UserProfile::where('question', '=', $key);
+					$deleteQuery = $user->profile()->where('question', '=', $key);
 					if ($secondaryKey && strlen($secondaryKey)>0) {
 						$deleteQuery->orWhere('question', '=', $secondaryKey);
 					}
@@ -359,13 +363,12 @@
 		public function getThanks() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_QUIZ_THANKS);
+			$pageData = $this->dataForPage(self::FORM_QUIZ_THANKS);
+			//$pageData = $this->dataForFormId(self::FORM_QUIZ_THANKS);
 			
 			//determine total questions
 			$questionsData = $this->questionsData();
 			$totalQuestions = $this->questionsCount();
-			//$questionsData = $this->dataForFormId(self::FORM_QUESTION);
-			//$totalQuestions = ($questionsData ? count($questionsData) : 0);
 			
 			//find last question Id
 			$lastQuestionId = $totalQuestions>1 ? $totalQuestions-1 : 0;

@@ -40,9 +40,9 @@ class CreateUserTable extends Migration {
 			$table->integer('registration_attempts')->default(0);
 			$table->string('answered_questions', 2047)->nullable();
 			$table->boolean('quiz_complete')->default(false);
-			$table->integer('brunch_recommendation')->reference('id')->on('venue')->nullable();
-			$table->integer('lunch_recommendation')->reference('id')->on('venue')->nullable();
-			$table->integer('dinner_recommendation')->reference('id')->on('venue')->nullable();
+//			$table->integer('brunch_recommendation')->reference('id')->on('venue')->nullable();
+//			$table->integer('lunch_recommendation')->reference('id')->on('venue')->nullable();
+//			$table->integer('dinner_recommendation')->reference('id')->on('venue')->nullable();
 
 			$table->string('ip_address', 15)->nullable();
 

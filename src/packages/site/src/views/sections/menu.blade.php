@@ -9,7 +9,7 @@
 
 
 		
-	<div class="table-parent fill-height text-center page-padding-medium">
+	<div class="table-parent fill-height text-center page-padding-small">
 
 		<div class="table-center-row">
 		
@@ -29,18 +29,18 @@
 							
 							@else
 						
-								<div class="page-padding-medium">
+								<div class="">
 									
 									<div class="spacer-tiny"></div>
 									
 									{{-- draw text --}}
 									<a href="{{ safeArrayValue('url', $option, '') }}">
-										<h3 class="color-2 {{ safeArrayValue('class', $option, '') }}">
+										<h2 class="color-2 {{ safeArrayValue('class', $option, '') }}">
 											{{ safeArrayValue('name', $option, "") }}
-										</h3>
+										</h2>
 									</a>
 				
-									<div class="spacer-small"></div>
+									<div class="spacer-tiny"></div>
 								
 								</div>
 								

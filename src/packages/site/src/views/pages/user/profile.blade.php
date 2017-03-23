@@ -156,61 +156,73 @@
 						$dietImage = null;
 						foreach($diets as $diet) {
 							
-							//get diet value
-							//$dietValue = safeObjectValue('value', $diet);
-							//if ($dietValue && strlen($dietValue)>0) {
-							
 							//get icon image
-							$dietImage = array_key_exists($diet, $dietImages) ? $dietImages[$diet] : "";
-							
+							$dietImage = safeArrayValue($diet, $dietImages, null);
+							if ($dietImage && strlen($dietImage)>0) {
 					?>
 					
 								<div class="profile-diet-container">
-									<!-- div class="diet-icon-box" -->
-										<img src="{{ $dietImage }}" class="image-diet-icon">
-									<!-- /div -->
+									<img src="{{ $dietImage }}" class="image-diet-icon">
 									<h4 class="color-2">{{ $diet }}</h4>
 								</div>
 							
 					<?php
-							//} //end if (valid value)
+							} //end if (valid image)
 					
 						} //end for()
 					?>		
 				</div>
 			@endif
 		
+		</div>
+		
+		<div class="page-container page-padding-medium">
+		
 			{{-- allergies --}}
-			@if (isset($allergies)) 
+			@if (isset($allergies) && strlen($allergies)>0) 
 				<div class="form-group color-2">
-					<span>Allergies: </span><span>{{ $allergies }}</span>
+					<h3 class="title-regular">
+						<span>Allergies: </span>
+						<span>{{ $allergies }}</span>
+					</h3>
 				</div>
 			@endif
 		
 		
 			<div class="spacer-tiny"></div>
 			
-		</div>
-		
-		<div class="page-container page-padding-large">
-			
-		
+
 			{{-- email --}}
-			<div class="form-group">
-				<div class="profile-field bg-color-7 color-2">{{ $userEmail }}</div>
+			@if (isset($userEmail) && strlen($userEmail)>0)
+			<div class="">
+				<h4 class="profile-field bg-color-7 color-2">{{ $userEmail }}</h4>
 			</div>
+			@endif
 		
 			{{-- phone --}}
-			<div class="form-group">
-				<div class="profile-field bg-color-7 color-2">{{ $userPhone }}</div>
-			</div>
+			@if (isset($userPhone) && strlen($userPhone)>0)
+				<div class="form-group">
+					<h4 class="profile-field bg-color-7 color-2">{{ $userPhone }}</h4>
+				</div>
+			@endif
 		
 			{{-- address --}}
-			<div class="form-group">
-				<div class="profile-field bg-color-7 color-2">{{ $userAddress }}</div>
-			</div>
+			@if (isset($userAddress) && strlen($userAddress)>0)
+				<div class="form-group">
+					<h4 class="profile-field bg-color-7 color-2">{{ $userAddress }}</h4>
+				</div>
+			@endif
 		
 			<div class="spacer-small"></div>
+	
+	
+	
+			{{-- arrow --}}
+			<div class="profile-arrow-box">
+				<div class="stretch-to-fit">
+					<div class="arrow-up border-color-2"></div>
+				</div>
+			</div>
 	
 		</div>
 	
@@ -222,8 +234,10 @@
 				<div class="spacer-small"></div>
 			
 				<div class="form-group">
-					<div class="color-2">Favourite meal of the day:</div>
-					<div class="color-6">{{ implode(", ", $favouriteMeal) }}</div>
+					<h4 class="clear-header-margins title-regular">
+						<div class="color-11">Favourite meal of the day:</div>
+						<div class="color-6">{{ implode(", ", $favouriteMeal) }}</div>
+					</h4>
 				</div>
 			@endif
 			
@@ -232,8 +246,10 @@
 				<div class="spacer-small"></div>
 			
 				<div class="form-group">
-					<div class="color-2">Morning ritual involves:</div>
-					<div class="color-6">{{ implode(", ", $morningRoutine) }}</div>
+					<h4 class="clear-header-margins title-regular">
+						<div class="color-11">Morning ritual involves:</div>
+						<div class="color-6">{{ implode(", ", $morningRoutine) }}</div>
+					</h4>
 				</div>
 			@endif
 		
@@ -242,8 +258,10 @@
 				<div class="spacer-small"></div>
 			
 				<div class="form-group">
-					<span class="color-2">Drinks with friends</span>
-					<span class="color-6">{{ implode(", ", $drinkPreference) }}</span>
+					<h4 class="clear-header-margins title-regular">
+						<span class="color-11">Drinks with friends</span>
+						<span class="color-6">{{ implode(", ", $drinkPreference) }}</span>
+					</h4>
 				</div>
 			@endif
 		
@@ -252,8 +270,10 @@
 				<div class="spacer-small"></div>
 			
 				<div class="form-group">
-					<span class="color-2">Hangs out in </span>
-					<span class="color-6">{{ implode(", ", $locations) }}</span>
+					<h4 class="clear-header-margins title-regular">
+						<span class="color-11">Hangs out in </span>
+						<span class="color-6">{{ implode(", ", $locations) }}</span>
+					</h4>
 				</div>
 			@endif
 			
@@ -262,8 +282,10 @@
 				<div class="spacer-small"></div>
 				
 				<div class="form-group">
-					<div class="color-2">Favourite cuisine (ever):</div>
-					<div class="color-6">{{ $favouriteCuisine }}</div>
+					<h4 class="clear-header-margins title-regular">
+						<div class="color-11">Favourite cuisine (ever):</div>
+						<div class="color-6">{{ $favouriteCuisine }}</div>
+					</h4>
 				</div>
 			@endif
 		
@@ -272,12 +294,23 @@
 				<div class="spacer-small"></div>
 				
 				<div class="form-group">
-					<div class="color-2">Favourite restaurant in NYC is:</div>
-					<div class="color-6">{{ $favouriteRestaurant }}</div>
+					<h4 class="clear-header-margins title-regular">
+						<div class="color-11">Favourite restaurant in NYC is:</div>
+						<div class="color-6">{{ $favouriteRestaurant }}</div>
+					</h4>
 				</div>
 			@endif
 		
 			<div class="spacer-small"></div>
+		
+		
+		
+			{{-- arrow --}}
+			<div class="profile-arrow-box">
+				<div class="stretch-to-fit">
+					<div class="arrow-up border-color-8"></div>
+				</div>
+			</div>
 		
 		</div>
 	
@@ -289,10 +322,14 @@
 			@if (isset($restaurantQualities))
 				<div class="spacer-small"></div>
 			
-				<div class="color-2">Key restaurant qualities:</div>
-				@foreach($restaurantQualities as $quality) 
-					<div class="color-6">{{ $quality }}</div>
-				@endforeach
+				<h4 class="clear-header-margins title-regular">
+				
+					<div class="color-2">Key restaurant qualities:</div>
+					@foreach($restaurantQualities as $quality) 
+						<div class="color-6">{{ $quality }}</div>
+					@endforeach
+					
+				</h4>
 				
 				<div class="spacer-medium"></div>
 			@endif

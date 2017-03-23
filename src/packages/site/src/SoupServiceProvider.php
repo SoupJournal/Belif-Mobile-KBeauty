@@ -70,7 +70,7 @@ class SoupServiceProvider extends ServiceProvider {
 		
 
 		//force HTTPS (used because Nginx runs HTTP behind AWS portal)
-		//\URL::forceSchema('https');
+		\URL::forceSchema('https');
 
 	} //end boot()
 
