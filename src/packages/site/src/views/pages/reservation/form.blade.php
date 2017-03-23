@@ -41,7 +41,7 @@
 	$button = safeArrayValue('button', $pageData, "");
 //	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
-	
+	$mealType = safeArrayValue('meal_type', $pageData, null);
 
 	//venue properties
 	$profileImage = safeObjectValue('image_profile', $venue, "");
@@ -61,6 +61,9 @@
 	$date = $reservationDate ? $reservationDate->format('m/d/Y') : null;
 	$time = $reservationDate ? $reservationDate->format('g:i A') : null;
 
+	//guest options
+	$guestOptions = [1, 2];
+
 	//form submit URL
 	$formURL = isset($formURL) ? $formURL : "";
 	
@@ -75,14 +78,14 @@
 		<div class="stretch-to-fit">
 			<img class="reservation-title-image" alt="{{ $venueName }}" src="{{ $profileImage }}" load-style="fade">
 		</div>
-		<div class="stretch-to-fit">
+		<div class="stretch-to-fit page-padding-medium">
 			<div class="table-parent fill-height">
 				
 				<div class="table-center-row">
 
 					<div class="table-center-cell">
-						<h2 class="clear-header-margins uppercase color-2">{{ $venueName }}</h2>
-						<h2 class="clear-header-margins capitalise title-regular color-2">{{ $venueAddress }}</h2>
+						<h2 class="clear-header-margins uppercase bold color-2">{{ $venueName }}</h2>
+						<h2 class="clear-header-margins capitalise bold title-light color-2">{{ $venueAddress }}</h2>
 					</div>
 					
 				</div>
@@ -95,41 +98,47 @@
 
 	{{ Form::model($reservation, Array('role' => 'form', 'name' => 'loginForm', 'url' => $formURL)) }}
 	
+		<div class="page-section page-padding-small">		
+		
+			<h2 class="color-2">
+				<div>{{ $title }}</div>
+				@if (isset($mealType))
+					<div class="spacer-tiny"></div>
+					<div class="uppercase">{{ $mealType }}</div>
+				@endif
+			</h2>
+			
+		</div>
+		
+		
 		<div class="page-section page-padding-large">		
-		
-			<div class="spacer-medium"></div>
-			
-		
-			<h4 class="color-2">{{ $title }}</h4>
-			
-			
 			
 			{{-- number of guests --}}
 			<div class="form-group"> 
 			
-				{{ Form::number('guests', null, Array ('placeholder' => 'Number of guests', 'class' => 'page-input-text square no-border', 'tabindex' => '0', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::select('guests', $guestOptions, null, Array ('placeholder' => 'Number of guests', 'class' => 'page-input-select page-input-center square no-border input-padding-tiny input-clear-top-margin small', 'tabindex' => '0', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 				
 				
-			<h4 class="color-2">ON</h4>
+			<h2 class="margin-tiny clear-header-margins color-2">ON</h2>
 				
 				
 			{{-- date --}}
 			<div class="form-group"> 
 			
-				{{ Form::date('date', $date, Array ('placeholder' => 'Select available date', 'class' => 'page-input-text square no-border', 'tabindex' => '1', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::date('date', $date, Array ('placeholder' => 'Select available date', 'class' => 'page-input-text square no-border page-input-center input-padding-tiny input-clear-top-margin', 'tabindex' => '1', 'required' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 			
 			
-			<h4 class="color-2">AT</h4>
+			<h2 class="margin-tiny clear-header-margins color-2">AT</h2>
 			
 			
 			{{-- time --}}
 			<div class="form-group"> 
 			
-				{{ Form::time('time', $time, Array ('placeholder' => 'Select available time', 'class' => 'page-input-text square no-border', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::time('time', $time, Array ('placeholder' => 'Select available time', 'class' => 'page-input-text square no-border page-input-center input-padding-tiny input-clear-top-margin', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 			
@@ -153,19 +162,31 @@
 		
 		</div>
 		
-		<div class="table-parent bg-color-2" fill-height>
-			
-				<div class="table-center-row">
-
-					<div class="table-center-cell">
+		<div class="page-section bg-color-2" fill-height>
+			<div class="reservation-arrow-box">
+				<div class="">
+					<div class="arrow-down"></div>
+				</div>
+			</div>
+		
+			<div class="stretch-to-fit">
+				<div class="table-parent fill-height">
+									
+					<div class="table-center-row">
+		
+						<div class="table-center-cell">
+						
+							{{-- submit button --}}
+							<button class="button-page-border bg-color-clear border-color-1 color-1 border-thin">
+								<h4 class="clear-header-margins">{{ $button }}</h4>
+							</button>
 					
-						{{-- submit button --}}
-						<button class="button-page-border bg-color-clear border-color-1 color-1">{{ $button }}</button>
-				
-					</div>
-				
-				</div>		
-
+						</div>
+					
+					</div>		
+		
+				</div>
+			</div>
 		</div>
 		
 		

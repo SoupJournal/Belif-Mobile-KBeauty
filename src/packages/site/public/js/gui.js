@@ -77,7 +77,8 @@
 	
 	
 	//fillHeight - update element to fill parent height
-	module.directive( 'fillHeight', ['$window', '$rootScope', function($window, $rootScope) {
+	module.directive( 'fillHeight', ['$window', '$document', '$rootScope', function($window, $document, $rootScope) {
+		
 	    return {
 			restrict: 'A',
 			scope: {
@@ -95,6 +96,30 @@
 						var positionY = target.prop('offsetTop');
 						var width = $window.innerWidth;
 						var height = $window.innerHeight;
+					
+					/*
+						//append element to body (used to measure document height)
+						var docBody = angular.element(document.body);
+						var documentBase = angular.element('<div style="position: relative; background-color: red; width: 50px; height: 50px; display: block;"></div>');
+						docBody.append(documentBase);
+						//var documentBase = docBody.append('<div style="position: absolute; background-color: red; width: 50px; height: 50px; display: block;"></div>');
+						documentBase.remove();
+						*/
+					/*
+						//get document height
+						var docHeight = document.height | (document.body ? document.body.offsetHeight : 0) | document.documentElement.scrollHeight;
+						//var docHeight = $document.height;
+
+						console.log("window.innerHeight: " + window.innerHeight);
+						console.log("document.height: " + document.height);
+						console.log("document.documentElement.clientHeight: " + document.documentElement.clientHeight);
+						console.log("document.body.offsetHeight: " + document.body.offsetHeight);
+						console.log("document.body.innerHeight: " + document.body.innerHeight);
+						console.log("document.documentElement.scrollHeight: " + document.documentElement.scrollHeight);
+						console.log("docHeight: " + docHeight + " - greater: " + (docHeight>height) + "\n\n\n\n");
+						if (docHeight>height) {
+							height = docHeight;	
+						}*/
 					
 						//determine new height
 						var elemHeight = height - positionY;
@@ -144,33 +169,6 @@
 				//set element initial size
 				scope.resizeElement(elem);
 	
-	/*
-				//add listener
-	            scope.$watch( 
-	            	function () {
-	            		var parent = elem.parent();
-			            return parent ? parent.prop('offsetHeight') : 0;
-			        },
-	            	//'__height', 
-	            	function( newHeight, oldHeight ) {
-	            	
-	            	//find parent
-	            	var parent = elem.parent();
-	            	if (parent) {
-	            	
-	            		//determine height
-	            		var positionY = elem.prop('offsetTop');
-	            		//var marginY = elem.prop('margin-top');
-	            		var elemHeight = newHeight - positionY;
-	           console.log("height: " +  elemHeight + " - newHeight: " + newHeight + " - positionY: " + positionY + " - oldHeight: " + oldHeight);
-	            		//set height
-	            		elem.css('height', elemHeight +  'px');
-	                	//elem.attr( 'offsetHeight', 'margin-top: ' + (58 + newHeight) + 'px' );
-	                
-	            	}
-	            	
-	            }); //end listener()
-	            */
 	        }
 	    }
 	    
