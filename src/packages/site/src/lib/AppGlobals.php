@@ -39,8 +39,20 @@
 		const GOOGLE_API_KEY = "AIzaSyB4ge2qO8plaMWCmLWNNi3U4o1RW4B_ucA";
 		
 			
-		//email details
-		const EMAIL_SENDER_MEMBER_REQUEST = "team@soupjournal.com";
+		//EMAIL DETAILS
+				
+		//forgot password
+		const EMAIL_PASSWORD_RESET_SENDER = "test@belifinhydration.com"; //"team@soupjournal.com";
+		const EMAIL_PASSWORD_RESET_SUBJECT = "Soup - Password Reset Request";
+		
+		//request membership
+		const EMAIL_MEMBER_REQUEST_RECIPIENT = "aberrationmedia@gmail.com";
+		const EMAIL_MEMBER_REQUEST_SENDER = "test@belifinhydration.com"; //"team@soupjournal.com";
+		const EMAIL_MEMBER_REQUEST_SUBJECT = "Soup - Membership request";
+		
+		//request reservation
+		const EMAIL_RESERVATION_REQUEST_SENDER = "test@belifinhydration.com"; //"team@soupjournal.com";
+		//const EMAIL_RESERVATION_REQUEST_SUBJECT = "Soup - Password Reset Request";
 			
 	} //end class AppGlobals
 

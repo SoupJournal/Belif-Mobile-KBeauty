@@ -171,7 +171,7 @@
 		$code = hash('sha256', $baseString);	
 		
 		//limit code
-		if ($length>0) {
+		if ($length>0 && strlen($code)>$length) {
 			
 			//determine clip start
 			if ($start<0) {

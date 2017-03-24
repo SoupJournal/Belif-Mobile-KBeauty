@@ -35,7 +35,7 @@
 		//forgotten password
 		Route::get('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@getForgot']);
 		Route::post('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@postForgot']);
-		Route::get('/forgot/sent', ['as' => 'soup.forgot.sent', 'uses' => 'SiteController@getResetSent']);		
+		Route::get('/forgot/sent', ['as' => 'soup.forgot.sent', 'uses' => 'SiteController@getResetSent']);			Route::get('/password/reset/{safestr}', ['as' => 'soup.password.reset', 'uses' => 'SiteController@getChangePassword']);	
 		
 		//user already logged in
 		Route::group(array('middleware' => 'AppUser'), function() {
@@ -55,8 +55,8 @@
 			Route::group(array('middleware' => 'NewSignUp'), function() {
 				Route::get('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@getSignupRequest']);
 				Route::post('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@postSignupRequest']);
-				Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
 			});
+			Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
 		});
 		
 		//authenticated routes

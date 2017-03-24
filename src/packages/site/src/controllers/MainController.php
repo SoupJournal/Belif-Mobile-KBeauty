@@ -434,36 +434,45 @@
 				//validate reservation
 				if ($reservation) {
 				
-					//get venue data
+					//get reservation properties
+					$userId = safeObjectValue('user', $reservation, -1);
 					$venueId = safeObjectValue('venue', $reservation, -1);
-					$venue = null;
-					if ($venueId>=0) {
-						$venue = Venue::find($venueId);
-					}
-					else {
-						$valid = false;
-					}
-
-					//valid form
-					if ($valid) {
+				
+					//find user
+					$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+					if ($user && strcmp($user->id, $userId)==0) {
+				
+						//get venue data
+						$venue = null;
+						if ($venueId>=0) {
+							$venue = Venue::find($venueId);
+						}
+						else {
+							$valid = false;
+						}
 	
-						//create back URL
-						$backURL = route('soup.reservation.id.id', [
-							'venueId' => $venueId,
-							'reservationKey' => $reservation->code
-						]);
-	
-						//draw page
-						return View::make('soup::pages.reservation.confirm')->with([
-							'pageData'=> $pageData,
-							'venue' => $venue,
-							'reservation' => $reservation,
-							//'nextURL' => route('soup.question'),
-							'backURL' => $backURL,
-							'formURL' => route('soup.reservation.confirm')
-						]);
+						//valid form
+						if ($valid) {
+		
+							//create back URL
+							$backURL = route('soup.reservation.id.id', [
+								'venueId' => $venueId,
+								'reservationKey' => $reservation->code
+							]);
+		
+							//draw page
+							return View::make('soup::pages.reservation.confirm')->with([
+								'pageData'=> $pageData,
+								'venue' => $venue,
+								'reservation' => $reservation,
+								//'nextURL' => route('soup.question'),
+								'backURL' => $backURL,
+								'formURL' => route('soup.reservation.confirm')
+							]);
+						
+						} //end if (valid venue)
 					
-					} //end if (valid form)
+					} //end if (valid user)
 				
 				} //end if (valid reservation)
 			
@@ -499,22 +508,70 @@
 			$reservation = Reservation::where('code', '=', $reservationKey)->first();
 			if ($reservation && $reservation->status==AppGlobals::RESERVATION_STATUS_DRAFT) {
 				
-				//store reservation details in session (flash)
-				//\Request::session()->set('reservation', $reservation);
+				//get reservation properties
+				$userId = safeObjectValue('user', $reservation, -1);
+				$venueId = safeObjectValue('venue', $reservation, -1);
 			
-				//update reservation status
-				$reservation->status = AppGlobals::RESERVATION_STATUS_REQUESTED;
-				$reservation->save();
+				//find user
+				$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+				if ($user && strcmp($user->id, $userId)==0) {
+					
+					//get venue data
+					$venue = null;
+					if ($venueId>=0) {
+						$venue = Venue::find($venueId);
+					}
+	
+					//valid venue
+					if ($venue) {
+					
+						//store reservation details in session (flash)
+						//\Request::session()->set('reservation', $reservation);
+					
+						//update reservation status
+						$reservation->status = AppGlobals::RESERVATION_STATUS_REQUESTED;
+						$reservation->save();
+						
+						//send reservation request email (sent via queue to avoid delay loading next page)
+						$emailJob = new SendEmailJob([
+							"recipient" => $user->email, 
+							"sender" => AppGlobals::EMAIL_RESERVATION_REQUEST_SENDER,
+							"subject" => "Your reservation at " . $venue->name . " has been requested.",
+							"view" => "soup::email.request_reservation",
+							"view_properties" => [
+									"user" => $user,
+							]
+						]);
+						$this->dispatch($emailJob);
+			
+			
+						//show thanks page
+						return Redirect::route('soup.reservation.thanks', ['reservationKey', $reservation->code]);
+						
+					}
+					//invalid venue
+					else {
+						$errors = "Sorry, we can't seem to find the venue you wanted.");
+						$valid = false;	
+					}
 				
-				//TODO: send email
-	
-	
-				return Redirect::route('soup.reservation.thanks', ['reservationKey', $reservation->code]);
+				}
+				//invalid user
+				else {
+					$errors = "Sorry, your user details do not seem to match.");
+					$valid = false;	
+				}
 				
 			}
 			//invalid reservation
 			else {
-				return Redirect::route('soup.venue.recommendation');
+				$errors = "Sorry, your reservation appears invalid.");
+				$valid = false;	
+			}
+			
+			//invalid form
+			if (!$valid) {
+				return Redirect::route('soup.venue.recommendation')->withErrors($errors);	
 			}
 			
 		} //end postReservationConfirmation()

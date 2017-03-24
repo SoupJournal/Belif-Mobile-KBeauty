@@ -18,10 +18,7 @@
 	    
 	    
 	    //email properties
-	    protected $recipient;
-	    protected $sender;
-	    protected $emailView;
-	   	protected $viewProperties;
+	    protected $properties;
 	    
 	    
 	    /**
@@ -29,13 +26,10 @@
 	     *
 	     * @return void
 	     */
-	    public function __construct($recipient, $sender, $emailView, $viewProperties = null) {
+	    public function __construct($properties) {
 	    
 	    	//set properties
-	        $this->recipient = $recipient;
-	        $this->sender = $sender;
-	        $this->emailView = $emailView;
-	        $this->viewProperties = $viewProperties;
+	    	$this->properties = $properties;
 	        
 	    } //end constructor()
 	    
@@ -47,71 +41,99 @@
 	     */
 	    public function handle() //Mailer $mailer)
 	    {
-	    	//$this->info('Display this on the screen');
-//	    	$output = new \Symfony\Component\Console\Output\ConsoleOutput(2);
-//
-//$output->writeln('hello');
 	    	
-	    	//var_dump("got queue event");
-	    	//dd($this);
+	    	//valid properties
+	    	if ($this->properties) {
 	    	
-	    	/*
-	    	//send through Laravel
-			try {
-				$viewParams = [
-					'text' => "recipient: " . $this->recipient . " - sender: " . $this->sender . " - emailView: " . $this->emailView
-				];
-				
-				
-				//send email
-				$result = \Mail::send('soup::email.request', $viewParams, function ($data) {
-				//$result = $mailer->send('soup::email.request', $viewParams, function ($data) {
-					//$data->from(AppGlobals::EMAIL_SENDER_MEMBER_REQUEST, 'Soup');
-					$data->from("test@belifinhydration.com", 'Soup');
-					$data->to("aberrationmedia@gmail.com", "some name");
-					$data->subject("some subject");
-				});
-				
-//				//send email
-//				$result = \Mail::send('soup::email.request', $viewParams, function ($data) {
-//					$data->from(AppGlobals::EMAIL_SENDER_MEMBER_REQUEST, 'Soup');
-//					$data->from("test@belifinhydration.com", 'Soup');
-//					$data->to("aberrationmedia@gmail.com", "some name");
-//					$data->subject("some subject");
-//				});
-			//echo "sent email";
-				
-			}
-			//Laravel SMTP failed try alternate
-			catch (Exception $e) {
-		*/
-		echo "recipient: " . $this->recipient . "\n";
-		echo "sender: " . $this->sender . "\n";
-		echo "emailView: " . $this->emailView . "\n";
-		echo "viewProperties: " . print_r($this->viewProperties, true) . "\n";
-		echo "test\n";
-				//create headers
-				$headers = "MIME-Version: 1.0\r\n"
-						 . "Content-type: text/html;charset=UTF-8\r\n"
-						 . "From: " . "test@soupjournal.com" . "\r\n";
-						 
-		var_dump($headers);				 
-		dd($headers);
-		//		$body = "recipient: " . $this->recipient . " - sender: " . $this->sender . " - emailView: " . $this->emailView;
-//				$body = $view->render();
-$body = "my test";
-		
-				//send email through sendmail
-				$result = mail("aberrationmedia@gmail.com", "some subject1111", $body, $headers);	
-								
-		/*	}
-	    */	
+	    		//get properties
+	    		$recipient = safeArrayValue('recipient', $this->properties, null);
+	    		$sender = safeArrayValue('sender', $this->properties, "");
+	    		$subject = safeArrayValue('subject', $this->properties, "");
+	    		$viewName = safeArrayValue('view', $this->properties, null);
+	    		$viewProperties = safeArrayValue('view_properties', $this->properties, null);
+	    		
+	    		//get sender properties
+	    		$senderName = "";
+	    		$senderEmail = "";
+	    		if ($sender) {
+	    			
+	    			//array
+	    			if (is_array($sender)) {
+	    				$senderName = safeArrayValue('name', $sender, "");	
+	    				$senderEmail = safeArrayValue('email', $sender, "");	
+	    			}
+	    			//string 
+	    			else {
+	    				$senderEmail = $sender;
+	    			}
+	    			
+	    		}
 	    	
-//	        $mailer->send('email.welcome', ['data'=>'data'], function ($message) {
-//	            $message->from('nwambachristian@gmail.com', 'Christian Nwmaba');
-//	            $message->to('nwambachristian@gmail.com');
-//	        });
+		    	//valid recipient
+		    	if ($recipient && strlen($recipient)>0) {
+		    	
+		    		//valid view name
+		    		if ($viewName && strlen($viewName)>0) {
+		    	
+		    			//send result
+		    			$result = false;
+		    	
+		    			try {
+		    	
+			    			//create view
+			    			$view = \View::make($viewName);
+			    			if ($view) {
+			    				
+			    					//apply view properties
+			    					if ($viewProperties) {
+				    					$view->with($viewProperties);
+			    					}
+				    	
+									//create headers
+									$headers = "MIME-Version: 1.0\r\n"
+											 . "Content-type: text/html;charset=UTF-8\r\n"
+											 . "From: " . $senderEmail . "\r\n";
+				    	
+				    	
+							    	//send email through sendmail
+									$result = mail($recipient, $subject, $view->render(), $headers);	
+						    	
+						    	
+			    			} //end if (valid view)
+				    	
+		    			}
+		    			catch (Exception $ex) {
+		    				Log::error("ERROR sending mail with Sendmail service: " . $ex);
+		    				$result = false;
+		    			}
+		    			
+		    			
+		    			//retry with Laravel mail service
+		    			if (!$result) {
+		    				
+							try {
 
+								//send email 
+								$result = \Mail::send($viewName, $viewProperties, function ($data) {
+									$data->from($senderEmail, $senderName);
+									$data->to($recipient); //, "some name");
+									$data->subject($subject);
+								});
+								
+							}
+							catch (Exception $ex) {
+								Log::error("ERROR sending mail with Laravel service: " . $ex);
+							}
+		    				
+		    			} 
+		    			
+				    	
+		    		} //end if (valid view name)
+		    	
+		    	} //end if (valid recipient)
+	    	
+	    	} //end if (has properties)
+	 
 	    } //end handle()
 	    
 	    

@@ -69,23 +69,7 @@
 	
 	
 		public function postLogin() {
-			
-			/*
-			$job = new SendEmailJob(
-							"aberrationmedia@gmail.com", 
-							"test@belifinhydration.com",
-							"soup::email.request",
-							["text" => "did this dynamic text come through?????"]
-							);
-			//$job->delay(5);
-			$this->dispatch($job); //->delay(60 * 5))
-			//$job->handle();
-	
-			echo "here";
-			exit(0);
-			*/
-			
-			
+						
 			$valid = true;
 			$errors = null;
 			
@@ -271,8 +255,20 @@
 			//valid form
 			if ($valid) {
 				
-				//TODO: send password reset email
-		
+				//send password reset email (sent via queue to avoid delay loading next page)
+				$emailJob = new SendEmailJob([
+					"recipient" => $user->email, 
+					"sender" => AppGlobals::EMAIL_PASSWORD_RESET_SENDER,
+					"subject" => AppGlobals::EMAIL_PASSWORD_RESET_SUBJECT,
+					"view" => "soup::email.password_reset",
+					"view_properties" => [
+							"user" => $user,
+							"link" => route('soup.welcome')
+					]
+				]);
+				$this->dispatch($emailJob);
+
+
 				//direct to next page
 				return Redirect::route('soup.forgot.sent');
 				
@@ -301,7 +297,7 @@
 			return View::make('soup::pages.signup.forgot_sent')->with([
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
-				'backURL' => route('soup.login'),
+				'backURL' => route('soup.password.reset'),
 				'hideHeaderTitle' => true
 			]);
 			
@@ -309,7 +305,7 @@
 	
 	
 	
-		public function getChangePassword() {
+		public function getChangePassword($code) {
 			/*
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_FORGOT_PASSWORD_THANKS);
@@ -425,6 +421,7 @@
 				$user->email = $email;
 				$user->password = $cryptedPassword;
 				$user->status = AppGlobals::USER_STATUS_INQUIRY;
+				$user->verify_code = generateUniqueCode(null, 8);
 				$user->save();
 				
 				//authorise user
@@ -655,6 +652,7 @@
 			}
 			//valid code
 			else if (strcasecmp($code, 'AMS478')!=0) {
+			//else if (strcasecmp($code, $user->verify_code)!=0) {
 				$errors = 'Sorry, your registration code appears invalid.';
 				$valid = false;
 			}
@@ -743,6 +741,18 @@
 				$user->zip_code = $zipCode;
 				$user->status = AppGlobals::USER_STATUS_REQUESTED;
 				$user->save();
+			
+				//send membership request email (sent via queue to avoid delay loading next page)
+				$emailJob = new SendEmailJob([
+					"recipient" => AppGlobals::EMAIL_MEMBER_REQUEST_RECIPIENT, 
+					"sender" => AppGlobals::EMAIL_MEMBER_REQUEST_SENDER,
+					"subject" => AppGlobals::EMAIL_MEMBER_REQUEST_SUBJECT,
+					"view" => "soup::email.request_membership",
+					"view_properties" => [
+							"user" => $user,
+					]
+				]);
+				$this->dispatch($emailJob);
 			
 				//show thanks page
 				return Redirect::route('soup.signup.thanks');
