@@ -297,7 +297,8 @@
 			return View::make('soup::pages.signup.forgot_sent')->with([
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
-				'backURL' => route('soup.password.reset'),
+				//'backURL' => route('soup.login'),
+				//'backURL' => route('soup.password.reset', ['code'=>'']),
 				'hideHeaderTitle' => true
 			]);
 			
