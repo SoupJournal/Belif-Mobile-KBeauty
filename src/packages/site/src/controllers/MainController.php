@@ -239,7 +239,8 @@
 		public function getReservation($venueId, $reservationKey = null) {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_RESERVATION);
+			$pageData = $this->dataForPage(self::FORM_RESERVATION);
+			//$pageData = $this->dataForFormId(self::FORM_RESERVATION);
 			
 			//get venue data
 			$venue = Venue::find($venueId);
@@ -309,9 +310,18 @@
 				}
 			}
 			
+			//find user
+			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+			
 
 			//valid venue
 			if (!$venue) {
+				$errors = 'Sorry, an error occured processing your reservation.';
+				$valid = false;
+			}
+			
+			//valid user
+			else if (!$user) {
 				$errors = 'Sorry, an error occured processing your reservation.';
 				$valid = false;
 			}
@@ -383,6 +393,7 @@
 				if ($reservation) {
 					
 					//update reservation
+					$reservation->user = $user->id;
 					$reservation->venue = $venueId;
 					$reservation->guests = $guests;
 					$reservation->date = $reservationDate;
@@ -396,18 +407,22 @@
 					
 					//store reservation details in session (flash)
 					//\Request::session()->set('reservation', $reservation);
-	
+
 					return Redirect::route('soup.reservation.confirm.id', ['reservationKey' => $reservation->code]); 
 					//->with([
 					//	'reservation' => $reservation
 					//]);
 				
 				}
-			
+				//failed to create reservation
+				else {
+					$errors = "Sorry, an error occurred processing your reservation";
+					$valid = false;	
+				}
 			}
 			
 			//form has errors
-			else {
+			if (!$valid) {
 				return Redirect::back()
 							->withInput()
 							->withErrors($errors);
@@ -425,7 +440,8 @@
 			if ($reservationKey && strlen($reservationKey)>0) {
 			
 				//get page data
-				$pageData = $this->dataForFormId(self::FORM_RESERVATION_CONFIRM);
+				$pageData = $this->dataForPage(self::FORM_RESERVATION_CONFIRM);
+				//$pageData = $this->dataForFormId(self::FORM_RESERVATION_CONFIRM);
 				
 				//get reservation
 				$reservation = Reservation::where('code', '=', $reservationKey)->first();
@@ -437,7 +453,7 @@
 					//get reservation properties
 					$userId = safeObjectValue('user', $reservation, -1);
 					$venueId = safeObjectValue('venue', $reservation, -1);
-				
+
 					//find user
 					$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 					if ($user && strcmp($user->id, $userId)==0) {
@@ -447,12 +463,9 @@
 						if ($venueId>=0) {
 							$venue = Venue::find($venueId);
 						}
-						else {
-							$valid = false;
-						}
 	
 						//valid form
-						if ($valid) {
+						if ($venue) {
 		
 							//create back URL
 							$backURL = route('soup.reservation.id.id', [
@@ -470,11 +483,34 @@
 								'formURL' => route('soup.reservation.confirm')
 							]);
 						
-						} //end if (valid venue)
+						}
+						//invalid venue
+						else {
+							$errors = "Sorry, we can't seem to find the venue you wanted.";
+							$valid = false;	
+						}
 					
-					} //end if (valid user)
+					}
+					//invalid user
+					else {
+						$errors = "Sorry, your user details do not seem to match.";
+						$valid = false;	
+					}
+					
+				}
+				//invalid reservation
+				else {
+					$errors = "Sorry, your reservation appears invalid.";
+					$valid = false;	
+				}
 				
-				} //end if (valid reservation)
+				
+				//form has errors
+				if (!$valid) {
+					return Redirect::back()
+								->withInput()
+								->withErrors($errors);
+				}
 			
 			} //end if (valid reservation key)
 			
@@ -511,7 +547,7 @@
 				//get reservation properties
 				$userId = safeObjectValue('user', $reservation, -1);
 				$venueId = safeObjectValue('venue', $reservation, -1);
-			
+
 				//find user
 				$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 				if ($user && strcmp($user->id, $userId)==0) {
@@ -532,6 +568,7 @@
 						$reservation->status = AppGlobals::RESERVATION_STATUS_REQUESTED;
 						$reservation->save();
 						
+						//USER CONFIRMATION EMAIL
 						//send reservation request email (sent via queue to avoid delay loading next page)
 						$emailJob = new SendEmailJob([
 							"recipient" => $user->email, 
@@ -539,7 +576,24 @@
 							"subject" => "Your reservation at " . $venue->name . " has been requested.",
 							"view" => "soup::email.request_reservation",
 							"view_properties" => [
+									"reservation" => $reservation,
 									"user" => $user,
+									"venue" => $venue,
+							]
+						]);
+						$this->dispatch($emailJob);
+						
+						//BACKEND NOTIFICATION
+						//send reservation notification email (sent via queue to avoid delay loading next page)
+						$emailJob = new SendEmailJob([
+							"recipient" => AppGlobals::EMAIL_RESERVATION_NOTIFICATION_RECIPIENT, 
+							"sender" => AppGlobals::EMAIL_RESERVATION_NOTIFICATION_SENDER,
+							"subject" => AppGlobals::EMAIL_RESERVATION_NOTIFICATION_SUBJECT,
+							"view" => "soup::email.reservation_notification",
+							"view_properties" => [
+									"reservation" => $reservation,
+									"user" => $user,
+									"venue" => $venue,
 							]
 						]);
 						$this->dispatch($emailJob);
@@ -551,21 +605,21 @@
 					}
 					//invalid venue
 					else {
-						$errors = "Sorry, we can't seem to find the venue you wanted.");
+						$errors = "Sorry, we can't seem to find the venue you wanted.";
 						$valid = false;	
 					}
 				
 				}
 				//invalid user
 				else {
-					$errors = "Sorry, your user details do not seem to match.");
+					$errors = "Sorry, your user details do not seem to match.";
 					$valid = false;	
 				}
 				
 			}
 			//invalid reservation
 			else {
-				$errors = "Sorry, your reservation appears invalid.");
+				$errors = "Sorry, your reservation appears invalid.";
 				$valid = false;	
 			}
 			

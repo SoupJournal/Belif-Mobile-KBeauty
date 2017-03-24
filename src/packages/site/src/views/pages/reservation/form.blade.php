@@ -62,7 +62,7 @@
 	$time = $reservationDate ? $reservationDate->format('g:i A') : null;
 
 	//guest options
-	$guestOptions = [1, 2];
+	$guestOptions = [1 => 1, 2 => 2];
 
 	//form submit URL
 	$formURL = isset($formURL) ? $formURL : "";

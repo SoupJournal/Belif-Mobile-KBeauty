@@ -76,41 +76,58 @@
 					
 						<div class="page-section page-padding-small">		
 						
-							<div class="spacer-small"></div>
-							
+							<div class="spacer-medium"></div>
 						
-							<h1 class="title-bold small color-2">{{ $title }}</h1>
+							<h1 class="title-bold color-2">{{ $title }}</h1>
 							
 							
-							<div class="spacer-small"></div>
 							
-							<h3 class="color-2">{{ $venueName }}</h3>
+							<div class="spacer-medium"></div>
+							<div class="spacer-tiny"></div>
 							
-							<h3 class="title-regular color-2">
+							
+							
+							<h2 class="clear-header-margins bold title-light color-2">
+								{{ $venueName }}
+							</h2>
+							
+							<div class="spacer-tiny"></div>
+						
+						
+							
+							<h2 class="clear-header-margins bold title-light color-2">
 								<div>
 									Dinner for {{ $reservationGuests }} {{ $reservationGuests==1 ? 'person' : 'people' }} at {{ $reservationTime }} 
 								</div>
 								<div>
 									On {{ $reservationDay }}.
 								</div>
-							</h3>
+							</h2>
 							
 							<div class="spacer-medium"></div>
 							
 							
-							<div class="form-group color-2">{!! $text !!}</div>
+						</div>
+						
+						
+						<div class="page-section page-padding-small-2">
+							
+							<h4 class="title-light color-2">{!! $text !!}</h4>
 								
 								
 							<div class="spacer-medium"></div>
 						
 						</div>
 						
-						<div class="page-section">		
+	
+					
+						<div class="page-section">
 								
+									
 							{{-- submit button --}}
 							<div class="form-group"> 
-								<button class="button-page-border title-bold bg-color-clear border-color-2 color-2">
-									{{ $button }}
+								<button class="button-page-border title-bold border-thin bg-color-clear border-color-2 color-2">
+									<h4 class="clear-header-margins">{{ $button }}</h4>
 								</button>
 							</div>
 						
@@ -120,18 +137,19 @@
 						
 							{{-- cancel button --}}
 							<div class="form-group"> 
-								<a href="{{ $backURL }}" class="button-page-border title-bold bg-color-clear border-color-9 color-9">
-									{{ $secondaryButton }}
+								<a href="{{ $backURL }}" class="button-page-border border-thin title-bold bg-color-clear border-color-9 color-9">
+									<h4 class="clear-header-margins">{{ $secondaryButton }}</h4>
 								</a>
 							</div>
 						
 							<div class="spacer-large"></div>
 						
+							
+							
+							{{-- reservation key --}}
+							<input type="hidden" name="reservation" value="{{ $reservationKey }}">
+						
 						</div>
-						
-						
-						{{-- reservation key --}}
-						<input type="hidden" name="reservation" value="{{ $reservationKey }}">
 						
 					{{ Form::close() }}
 		
