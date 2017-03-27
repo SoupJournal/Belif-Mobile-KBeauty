@@ -55,6 +55,14 @@ class SoupUser extends Model implements AuthenticatableContract {
     } //end profile()
 
 
+	/**
+     * Get the password requests data associated with this user.
+     */
+	public function passwordRequests() {
+    
+        return $this->hasMany(PasswordRequest::class, 'user', 'id');
+        
+    } //end passwordRequests()
 
 
 		//==========================================================//

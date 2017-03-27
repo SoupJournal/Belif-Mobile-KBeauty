@@ -266,6 +266,16 @@
 				break;
 				
 				
+				case self::FORM_RESET_PASSWORD:
+				{
+					$pageData = Array (
+						"subtitle" => "Enter new password",
+						"button" => "CONTINUE",
+					);
+				}
+				break;
+				
+				
 				case self::FORM_RESET_PASSWORD_THANKS:
 				{
 					$pageData = Array (

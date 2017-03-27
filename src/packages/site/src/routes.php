@@ -36,7 +36,9 @@
 		Route::get('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@getForgot']);
 		Route::post('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@postForgot']);
 		Route::get('/forgot/sent', ['as' => 'soup.forgot.sent', 'uses' => 'SiteController@getResetSent']);			
-		Route::get('/password/reset/{safestr}', ['as' => 'soup.password.reset', 'uses' => 'SiteController@getChangePassword']);	
+		Route::get('/password/reset/{safestr}', ['as' => 'soup.password.reset.id', 'uses' => 'SiteController@getChangePassword']);	
+		Route::post('/password/reset', ['as' => 'soup.password.reset', 'uses' => 'SiteController@postChangePassword']);	
+		Route::get('/password/reset/thanks/{safestr}', ['as' => 'soup.password.reset.thanks', 'uses' => 'SiteController@getPasswordChanged']);	
 		
 		//user already logged in
 		Route::group(array('middleware' => 'AppUser'), function() {
@@ -90,41 +92,6 @@
 		
 		
 		});
-	
-	
-		/*
-		//Applications
-		Route::group(array('middleware' => ['CMSAuth', 'CMSApp']), function() use (&$basePath) {
-			
-			//determine path
-			$path = $basePath . '/app';
-			
-			//page actions
-			Route::get($path, array('as' => 'cms.app.index', 'uses' => 'ApplicationController@getIndex'));
-			Route::get($path . '/create', array('as' => 'cms.app.create', 'uses' => 'ApplicationController@getCreate'));
-			
-			//service actions
-			Route::get($path . '/applications', array('as' => 'cms.app.applications', 'uses' => 'ApplicationController@getApplications'));
-			Route::post($path . '/applicationid', array('as' => 'cms.app.applicationid', 'uses' => 'ApplicationController@postApplicationid'));
-			//Route::resource($basePath . '/app', 'ApplicationController');
-		});
-		
-				
-		//CMS Login
-		Route::get($basePath . '/login', ['as' => 'cms.login', 'middleware' => ['HTTPS'], 'uses' => 'CMSController@getLogin']);
-		Route::post($basePath . '/login', ['as' => 'cms.login', 'middleware' => ['HTTPS'], 'uses' => 'CMSController@postLogin']);
-		Route::get($basePath . '/logout', ['as' => 'cms.logout', 'uses' => 'CMSController@getLogout']);
-	
-		
-		//CMS Errors
-		Route::get($basePath . '/error', ['as' => 'cms.error', 'uses' => 'CMSController@getError']);
-		Route::get($basePath . '/error/{safestr}', ['as' => 'cms.error', 'uses' => 'CMSController@getError']);
-		
-		//CMS Admin
-		Route::get($basePath, ['as' => 'cms.home', 'middleware' => 'CMSAuth', 'uses' => 'CMSController@getIndex']);
-		Route::get($basePath . '/{appId}' , ['as' => 'cms.home', 'middleware' => ['CMSAuth', 'CMSApp'], 'uses' => 'CMSController@getIndex']);
-	
-		*/
 	
 	
 	}); //end namespace group

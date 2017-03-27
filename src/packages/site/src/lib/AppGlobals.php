@@ -34,6 +34,12 @@
 		const RESERVATION_STATUS_REQUESTED 	= 1;
 		const RESERVATION_STATUS_CONFIRMED 	= 2;
 		const RESERVATION_STATUS_CANCELLED 	= 3;
+		
+		//password reset request status
+		const RESET_PASSWORD_STATUS_ISSUED 		= 0;
+		const RESET_PASSWORD_STATUS_CONSUMED 	= 1;
+		
+		
 			
 		//Google API key
 		const GOOGLE_API_KEY = "AIzaSyB4ge2qO8plaMWCmLWNNi3U4o1RW4B_ucA";

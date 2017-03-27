@@ -10,6 +10,7 @@
 	use Soup\Mobile\Models\VenueOpenHours;
 	use Soup\Mobile\Models\Reservation;
 	use Soup\Mobile\Lib\AppGlobals;
+	use Soup\Mobile\Jobs\SendEmailJob;
 	
 	use View;
 	use Redirect;

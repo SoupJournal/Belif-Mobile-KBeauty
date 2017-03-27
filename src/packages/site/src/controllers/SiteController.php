@@ -5,6 +5,7 @@
 	use Soup\Mobile\Controllers\BaseController;
 	use Soup\Mobile\Models\SoupUser;
 	use Soup\Mobile\Models\UserProfile;
+	use Soup\Mobile\Models\PasswordReset;
 	use Soup\Mobile\Lib\AppGlobals;
 	use Soup\Mobile\Jobs\SendEmailJob;
 	
@@ -206,6 +207,11 @@
 	
 	
 	
+		//==========================================================//
+		//====					UPDATE PASSWORD					====//
+		//==========================================================//	
+	
+	
 		public function getForgot() {
 			
 			//get page data
@@ -255,6 +261,15 @@
 			//valid form
 			if ($valid) {
 				
+				//create reset request
+				$resetRequest = new PasswordReset();
+				$resetRequest->user = $user->id;
+				$resetRequest->code = generateUniqueCode("pr" . $user->id);
+				$resetRequest->save();
+				
+				//create reset password link
+				$link = route('soup.password.reset.id', ['code' => $resetRequest->code]);
+				
 				//send password reset email (sent via queue to avoid delay loading next page)
 				$emailJob = new SendEmailJob([
 					"recipient" => $user->email, 
@@ -263,7 +278,7 @@
 					"view" => "soup::email.password_reset",
 					"view_properties" => [
 							"user" => $user,
-							"link" => route('soup.welcome')
+							"link" => $link
 					]
 				]);
 				$this->dispatch($emailJob);
@@ -307,25 +322,159 @@
 	
 	
 		public function getChangePassword($code) {
-			/*
-			//get page data
-			$pageData = $this->dataForPage(self::FORM_FORGOT_PASSWORD_THANKS);
-			//$pageData = $this->dataForFormId(self::FORM_FORGOT_PASSWORD_THANKS);
 			
-			//draw page
-			return View::make('soup::pages.signup.forgot_sent')->with([
-				'pageData'=> $pageData,
-				//'nextURL' => route('soup.question'),
-				'backURL' => route('soup.login'),
-				'hideHeaderTitle' => true
-			]);
-			*/
+			//find matching request
+			$resetRequest = PasswordReset::where('code', $code)->first();
+			if ($resetRequest && isset($resetRequest->user)) {
+			
+				//get request user
+				$user = $resetRequest->user()->first();
+				if ($user) {
+
+					//get page data
+					$pageData = $this->dataForPage(self::FORM_RESET_PASSWORD);
+					
+					//draw page
+					return View::make('soup::pages.signup.reset')->with([
+						'pageData'=> $pageData,
+						'request' => $resetRequest,
+						//'user' => $user,
+						'formURL' => route('soup.password.reset'),
+						//'backURL' => route('soup.login'),
+						'hideHeaderTitle' => true
+					]);
+				
+				} //end if (found user)
+			
+			} //end if (valid request)
+			
+			
+			//invalid request
+			return Redirect::route('soup.welcome');
 			
 		} //end getChangePassword()
 	
 	
 	
-		public function getPasswordChanged() {
+	
+		public function postChangePassword() {
+			
+			$valid = true;
+			$errors = null;
+			
+			//get form values
+			$code = safeArrayValue('code', $_POST);
+			$password = safeArrayValue('password', $_POST);
+			$confirmPassword = safeArrayValue('confirm_password', $_POST);
+			
+			//find matching request
+			$resetRequest = PasswordReset::where('code', $code)->first();
+	
+			//find matching user
+			$user = $resetRequest->user()->first();
+	
+			//invalid request
+			if (!$resetRequest || $resetRequest->status!=AppGlobals::RESET_PASSWORD_STATUS_ISSUED) {
+				$errors = 'Sorry, it looks like your request is no longer valid. Please issue a new password reset request.';
+				$valid = false;
+			}
+			
+			//invalid user
+			if (!$user) {
+				$errors = 'Sorry, there seems to be an error with your user account.';
+				$valid = false;
+			}
+	
+			//password exists
+			else if (!$password || strlen(trim($password))<=0) {
+				$errors = 'Please specify a password.';
+				$valid = false;
+			}
+			
+			//invalid password length
+			else if (strlen(trim($password))<5) {
+				$errors = 'Passwords must be at least 5 characters.';
+				$valid = false;
+			}
+			
+			//confirm password exists
+			else if (!$confirmPassword || strlen(trim($confirmPassword))<=0) {
+				$errors = 'Please confirm your password.';
+				$valid = false;
+			}
+			
+			//passwords dont match
+			else if (strcmp(trim($password), trim($confirmPassword))!=0) {
+				$errors = 'Your passwords do not match.';
+				$valid = false;
+			}
+		
+		
+			//valid form
+			if ($valid) {
+				
+				//encrypt password
+				$cryptedPassword = bcrypt($password);
+				
+				//update user details
+				$user->password = $cryptedPassword;
+				$user->save();
+				
+				//update request details
+				$resetRequest->status = AppGlobals::RESET_PASSWORD_STATUS_CONSUMED;
+				$resetRequest->save();
+				
+				//redirect to confirmation page
+				return Redirect::route('soup.password.reset.thanks', ['code' => $code]);
+				
+			}
+			
+			//invalid form
+			else {
+				return Redirect::back()
+							->withInput()
+							->withErrors($errors);	
+			}
+			
+		} //end postChangePassword()
+	
+	
+	
+	
+	
+		public function getPasswordChanged($code) {
+			
+			//valid code
+			if ($code && strlen($code)>0) {
+			
+				//find matching request
+				$resetRequest = PasswordReset::where('code', $code)->first();
+				if ($resetRequest) {
+				
+					//find matching user
+					$user = $resetRequest->user()->first();
+					if ($user) {
+
+						//get page data
+						$pageData = $this->dataForPage(self::FORM_RESET_PASSWORD_THANKS);
+						
+						//draw page
+						return View::make('soup::pages.signup.reset_confirm')->with([
+							'pageData'=> $pageData,
+							'user' => $user,
+							//'nextURL' => route('soup.question'),
+							//'backURL' => route('soup.login'),
+							'hideHeaderTitle' => true
+						]);
+					
+					} //end if (valid user)
+				
+				} //end if (valid request)
+				
+			} //end if (has code)
+			
+			//invalid request
+			return Redirect::route('soup.welcome');
 			
 		} //end getPasswordChanged()
 		
