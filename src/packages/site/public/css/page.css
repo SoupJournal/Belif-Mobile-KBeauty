@@ -507,31 +507,51 @@ input[type=radio] {
 }
 
 .arrow-down {
-/*	position: absolute;*/
+	/*
     content: "";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -70px;
-    margin-left:-50px;
+    margin-top: -100%; 
+    margin-left: -100%; 
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
   	border-top: 100px solid #1C021C;
 	overflow: hidden; 	
-/*    width: 100%;
-    height: 100%;    
-    padding-left:50%;
-    */
-  /*  padding-bottom: 50%;*/
-  /*  overflow: hidden;*/
+	*/
 }
 .arrow-down:after {
-/*    content: "";
+
+}
+
+
+
+.arrow-down {
+	margin: 0 auto;
+	content: "";
+	    width:0px;
+    height:0px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid #1C021C;
+	/*
+    width: 100%;
+    height: 0;    
+    padding-left:50%;
+    padding-top: 50%;
+    padding-top: 50%; */
+ /*   overflow: hidden; */
+}
+.arrow-down:after {
+ /*   content: "";
     display: block;
-    margin-left:-100px;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 100px solid red;
-  */  
+    width: 0;
+    height: 0;
+    
+    margin-left:-500px;
+    border-left: 500px solid transparent;
+    border-right: 500px solid transparent;
+    border-top: 500px solid;*/
+    
 }
 

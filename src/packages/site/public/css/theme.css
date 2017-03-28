@@ -259,11 +259,11 @@
 /********************************/
 
 .menu-overlay {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 0;
     z-index: 1;
-    top: 67.46px;
+    /* top: 67.46px;*/
     left: 0;
     overflow-y: hidden; /* hide scroll bar during transition */
     transition: 0.5s;

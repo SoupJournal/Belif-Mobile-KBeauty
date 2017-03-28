@@ -15,8 +15,9 @@
 	$headerPadding = "14%";
 	$backgroundColor = "bg-color-5";
 	$textColour = "color-2";
-	$headerContainer = "";
+	$headerContainer = "header-fixed";
 	$headerImageClass = "";
+	$headerFixed = true;
 	$headerImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/logo-soup-white.png";
 	$menuImage = "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon-menu.png";
 	
@@ -107,12 +108,12 @@
 </div>
 
 {{-- menu --}}
-<div class="menu-overlay bg-color-opacity-5" toggle-height="100%" event-name="change-menu-height">
+<div class="menu-overlay bg-color-opacity-5" toggle-height="100%" event-name="change-menu-height" style="margin-top: {{ $headerPadding }}">
 	@include('soup::sections.menu', Array(
 		'options' => $menuOptions,
 	))
 </div>
-@if ($headerStyle==AppGlobals::HEADER_STYLE_WHITE) 
+@if ($headerFixed) 
 	<div style="padding-bottom: {{ $headerPadding }}"></div>
 @endif
     	

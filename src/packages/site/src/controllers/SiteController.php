@@ -34,6 +34,7 @@
 			
 			//draw page
 			return View::make('soup::pages.home')->with([
+				'pageName' => 'welcome',
 				'pageData' => $pageData,
 				'nextURL' => route('soup.login'),
 				'nextLabel' => 'LOG IN',
@@ -59,6 +60,7 @@
 			
 			//draw page
 			return View::make('soup::pages.signup.login')->with([
+				'pageName' => 'login',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.welcome'),
@@ -220,6 +222,7 @@
 			
 			//draw page
 			return View::make('soup::pages.signup.forgot')->with([
+				'pageName' => 'forgotten password',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.login'),
@@ -310,6 +313,7 @@
 			
 			//draw page
 			return View::make('soup::pages.signup.forgot_sent')->with([
+				'pageName' => 'requested new password',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				//'backURL' => route('soup.login'),
@@ -336,6 +340,7 @@
 					
 					//draw page
 					return View::make('soup::pages.signup.reset')->with([
+						'pageName' => 'new password',
 						'pageData'=> $pageData,
 						'request' => $resetRequest,
 						//'user' => $user,
@@ -460,6 +465,7 @@
 						
 						//draw page
 						return View::make('soup::pages.signup.reset_confirm')->with([
+							'pageName' => 'password changed',
 							'pageData'=> $pageData,
 							'user' => $user,
 							//'nextURL' => route('soup.question'),
@@ -495,6 +501,7 @@
 			
 			//draw page
 			return View::make('soup::pages.signup.signup')->with([
+				'pageName' => 'new signup',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.welcome'),
@@ -619,6 +626,7 @@
 			
 				//draw page
 				return View::make('soup::pages.signup.info')->with([
+					'pageName' => 'signup details',
 					'user' => $user,
 					'pageData'=> $pageData,
 					//'nextURL' => route('soup.question'),
@@ -767,6 +775,7 @@
 			
 			//draw page
 			return View::make('soup::pages.signup.code')->with([
+				'pageName' => 'signup code',
 				'pageData'=> $pageData,
 				'user' => $user,
 				//'nextURL' => route('soup.question'),
@@ -838,6 +847,7 @@
 			
 			//draw page
 			return View::make('soup::pages.signup.request')->with([
+				'pageName' => 'request membership',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.signup.code'),
@@ -936,6 +946,7 @@
 			
 			//draw page
 			return View::make('soup::pages.signup.thanks')->with([
+				'pageName' => 'request membership thanks',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.signup.code')

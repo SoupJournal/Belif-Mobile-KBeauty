@@ -127,7 +127,7 @@
 </div>
 
 {{-- suggestion --}}
-<div class="venue-suggestion">
+<div class="venue-suggestion bg-color-10">
 	
 	{{-- background image --}}
 	<div class="stretch-to-fit hide-overflow-y">

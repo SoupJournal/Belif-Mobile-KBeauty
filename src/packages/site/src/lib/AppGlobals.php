@@ -42,7 +42,7 @@
 		
 			
 		//Google API key
-		const GOOGLE_API_KEY = "AIzaSyB4ge2qO8plaMWCmLWNNi3U4o1RW4B_ucA";
+		const GOOGLE_API_KEY = "AIzaSyBDh1B9VMqSCyO2zXUkX37U_iiStdtbzW0"; //"AIzaSyB4ge2qO8plaMWCmLWNNi3U4o1RW4B_ucA";
 		
 			
 		//EMAIL DETAILS

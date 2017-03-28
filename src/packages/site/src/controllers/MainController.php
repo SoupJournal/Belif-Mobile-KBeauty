@@ -165,6 +165,7 @@
 			
 			//draw page
 			return View::make('soup::pages.user.profile')->with([
+				'pageName' => 'user profile',
 				'pageData'=> $pageData,
 				'nextURL' => $showNext ? $nextURL : null,
 				'backURL' => $showNext ? null : $nextURL,
@@ -198,6 +199,7 @@
 
 			//draw page
 			return View::make('soup::pages.venue.recommendations')->with([
+				'pageName' => 'recommendations',
 				'user' => $user,
 				'dinnerVenue' => $dinnerVenue,
 				'brunchVenue' => $brunchVenue,
@@ -218,15 +220,16 @@
 			//$pageData = $this->dataForFormId(self::FORM_VENUE_PROFILE);
 			
 			//get venue data
-			$venueData = Venue::find($venueId);
+			$venue = Venue::find($venueId);
 			
 			//draw page
 			return View::make('soup::pages.venue.profile')->with([
+				'pageName' => safeObjectValue('name', $venue, 'venue profile'),
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.venue.recommendation'),
 				'menuOptions' => $this->mainMenuOptions,
-				'venue' => $venueData,
+				'venue' => $venue,
 				'mapsKey' => AppGlobals::GOOGLE_API_KEY
 			]);
 			
@@ -254,6 +257,7 @@
 
 			//draw page
 			return View::make('soup::pages.reservation.form')->with([
+				'pageName' => 'reservation',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.question'),
 				'backURL' => route('soup.venue.profile', ['venueId' => $venueId]),
@@ -476,6 +480,7 @@
 		
 							//draw page
 							return View::make('soup::pages.reservation.confirm')->with([
+								'pageName' => 'confirm reservation',
 								'pageData'=> $pageData,
 								'venue' => $venue,
 								'reservation' => $reservation,
@@ -641,6 +646,7 @@
 			
 			//draw page
 			return View::make('soup::pages.reservation.thanks')->with([
+				'pageName' => 'reservation complete',
 				'pageData'=> $pageData,
 				'nextURL' => route('soup.venue.recommendation')
 			]);
