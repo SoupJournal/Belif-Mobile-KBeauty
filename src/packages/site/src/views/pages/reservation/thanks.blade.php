@@ -61,15 +61,16 @@
 							<div class="spacer-small"></div>
 							
 							@if (isset($title))
-								<h1 class="title-bold small color-2">{{ $title }}</h1>
+								<h1 class="title-bold color-2">{{ $title }}</h1>
 							@endif
 							
+							
+							<div class="spacer-medium"></div>	
 
 
-							@if (isset($subtitle))	
-								<div class="spacer-small"></div>						
-								<h3 class="title-regular color-2">{{ $subtitle }}</h3>
-								<div class="spacer-medium"></div>
+							@if (isset($subtitle))						
+								<h2 class="title-regular bold color-2">{{ $subtitle }}</h2>
+								<div class="spacer-large"></div>
 							@else
 								<div class="spacer-large"></div>
 							@endif
@@ -78,11 +79,11 @@
 						
 						
 						
-						<div class="page-section page-padding-small">
+						<div class="page-section page-padding-small-2">
 							
 							
 							@if (isset($text))
-								<div class="form-group color-2">{!! $text !!}</div>
+								<h4 class="form-group title-light color-2">{!! $text !!}</h4>
 							@endif
 								
 								
@@ -95,8 +96,8 @@
 								
 							{{-- next button --}}
 							<div class="form-group"> 
-								<a href="{{ $nextURL }}" class="button-page-border title-bold bg-color-clear border-color-2 color-2">
-									{{ $button }}
+								<a href="{{ $nextURL }}" class="button-page-border border-thin bg-color-clear border-color-2 color-2">
+									<h4 class="clear-header-margins title-bold">{{ $button }}</h4>
 								</a>
 							</div>
 						

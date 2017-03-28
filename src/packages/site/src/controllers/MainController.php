@@ -642,7 +642,8 @@
 		public function getReservationThanks() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_RESERVATION_THANKS);
+			$pageData = $this->dataForPage(self::FORM_RESERVATION_THANKS);
+			//$pageData = $this->dataForFormId(self::FORM_RESERVATION_THANKS);
 			
 			//draw page
 			return View::make('soup::pages.reservation.thanks')->with([
