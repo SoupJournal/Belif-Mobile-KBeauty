@@ -176,6 +176,177 @@
 	
 	
 	
+	
+	
+	//carousel - creates carousel of HTML elements  
+	module.directive('carousel', ['$rootScope', function($rootScope) {
+	    return {
+	    	restrict: 'A',
+	        scope: {
+	            carousel: '@'
+	        },
+	        link: function (scope, element, attrs) {
+	        	
+				//animation active
+				scope.animationActive = false;
+				
+				
+
+				//next navigation
+				scope.nextItem = function() {
+					
+        			//get child elements
+        			var children = element.children();
+        			if (children && children.length>1) {
+	        	
+			        	//get next item
+			        	var nextItem = scope.index + 1;
+			        	if (nextItem>=children.length) {
+			        		nextItem = 0;	
+			        	}
+
+						//move to next item
+						scope.showItem(nextItem);
+
+        			} //end if (has items)
+					
+				} //end nextItem()
+
+
+
+				//change item
+				scope.showItem = function(itemIndex) {
+					
+					var children = element.children();
+					if (itemIndex>=0 && itemIndex<children.length) {
+					
+						//get child element
+						var child = children[itemIndex];
+						if (child) {
+							
+							//get offset position
+							var offset = child.offsetLeft;
+							
+							//update carousel position
+							scope.scrollTo(element[0], offset, 1000);
+							
+							//store index
+							scope.index = itemIndex;
+							
+						} //end if (valid child)
+						
+					}
+					
+				} //end showItem()
+
+
+				//smooth scrolling function
+				scope.scrollTo = function(element, to, duration) {
+					
+					//find change amount
+					var start = element.scrollLeft;
+					var change = to - start;
+					
+					var data = {
+						
+						//configure scroll
+					    start: start,
+					    change: change,
+					    currentTime: 0,
+					    increment: 20,
+					    duration: duration,
+					        
+					        
+					    //create scroll function
+					    animateScroll: function() {     
+					    	
+					    	//update timer   
+					        data.currentTime += data.increment;
+					        
+					        //get next scroll position
+					        var val = scope.easeInOutQuad(data.currentTime, data.start, data.change, data.duration);
+					        
+					        //apply scroll
+					        element.scrollLeft = val;
+					        if(data.currentTime < data.duration) {
+					        	scope.animationActive = true;
+					            setTimeout(data.animateScroll, data.increment);
+					        }
+					        //scroll ended
+					        else {
+					        	scope.animationActive = false;	
+					        }
+					        
+					    } //end animateScroll()  //();
+					    //animateScroll();
+				    
+					};
+					data.animateScroll();
+				    
+				} //end scrollTo();
+				
+				
+				//ease function
+				scope.easeInOutQuad = function (t, b, c, d) {
+					
+					t /= d/2;
+					if (t < 1) return c/2*t*t + b;
+					t--;
+					return -c/2 * (t*(t-2) - 1) + b;
+					
+				} //end easeInOutQuad()
+
+
+
+				//==== CONFIGURATION ====//
+
+				//add button elements
+				scope.index = 0;
+				
+				//get carousel properties
+				if (element) {
+					
+					//clear scroll bar
+					element.css('overflow-x', 'hidden');
+					
+					
+					//implement auto timer
+					if (scope.carousel && scope.carousel.length>0) {
+						
+						//get automation time
+						var itemDuration = parseInt(scope.carousel);
+						if (itemDuration>0) {
+							setInterval(function() {
+								
+								//not scrolling
+								if (!scope.animationActive) {
+									scope.nextItem();
+								}
+								
+							}, itemDuration);	
+						}
+					}
+					
+					//add listener
+					element.on('click', function() {
+	        	
+						//change item
+						scope.nextItem();
+		        	
+		        	});
+					
+					
+				} //end if (valid element)
+
+	        }
+	        
+	    }
+	}]); //end directive
+	
+	
+	
+	
+	
 	//pageButton directive - standard page button 
 	module.directive('loadStyle', ['$rootScope', '$timeout', function($rootScope, $timeout) {
 		

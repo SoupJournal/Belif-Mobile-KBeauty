@@ -11,6 +11,13 @@
 	height: auto;
 }
 
+.page-carousel-image {
+	width: 100%;
+	height: auto;
+	vertical-align: middle;
+	text-align: center;	
+}
+
 .logo-page-image {
 	width: 34%;
 	height: auto;
