@@ -61,7 +61,7 @@
 	
 ?>
 
-<div class="text-center">
+<div class="text-center bg-color-10">
 
 
 	<?php
@@ -119,55 +119,8 @@
 	
 	?>
 	
-	{{----------------- WELCOME SECTION -------------------}}
-{{--	<div class="page-section">
-		@include('soup::sections.info', Array(
-			'sectionId' => 'info',
-			'pageData' => $welcomeData
-		))
-	</div>
---}}
-
-
-	{{----------------- GUIDE SECTION -------------------}}
-{{--	<div class="page-section">
-		@include('soup::sections.guide', Array(
-			'sectionId' => 'guide',
-			'pageData' => $guideData
-		))
-	</div>
---}}	
-	
-	
-	{{----------------- SIGNUP SECTION -------------------}}
-{{--	<div class="page-section">
-		@include('soup::sections.subscribe', Array(
-			'sectionId' => 'signup',
-			'pageData' => $signupData
-		))
-	</div>
---}}
-
-	{{----------------- INFO SECTION -------------------}}
-{{--	<div class="page-section">
-		@include('soup::sections.info', Array(
-			'sectionId' => 'info',
-			'pageData' => $infoData
-		))
-	</div>
---}}	
-	
-	{{----------------- IMAGE SECTION -------------------}}
-{{--	<div class="page-section">
-		@include('soup::sections.image', Array(
-			'sectionId' => 'info',
-			'pageData' => $imageData
-		))
-	</div>
---}}
-
 	{{----------------- FOOTER -------------------}}
-	<div class="page-section text-center bg-color-2">
+	<div class="page-section text-center">
 		
 		<div class="spacer-tiny"></div>
 		

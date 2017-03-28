@@ -33,6 +33,12 @@
 	overflow-y: hidden;
 }
 
+.header-fixed {
+	position: fixed;
+	width: 100%;
+	z-index: 1;	
+}
+
 .header-column-left {
 	width: 20%;
 	text-align: center;
@@ -178,9 +184,9 @@
 .carousel-box { 
 	overflow-x: scroll;
 	white-space: nowrap;
-	-webkit-transition-property:-webkit-scrolling;
+/*	-webkit-transition-property:-webkit-scrolling;
     -webkit-transition-duration:1.5s;
-    -webkit-transition-delay:0.1s;
+    -webkit-transition-delay:0.1s; */
 }
 
 .carousel-item {

@@ -82,7 +82,6 @@
 			
 				<div class="page-input-text input-container">
 					{{ Form::text('code', null, Array ('placeholder' => 'Enter Invitation Code', 'class' => 'page-input-text small input-left input-padding-large input-clear', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
-					{{-- <span class="input-line border-color-1"></span> --}}
 					<button class="button-input border-color-1">
 						<h4 class="clear-header-margins title-semi-bold">Enter</h4>
 					</button>
@@ -104,39 +103,45 @@
 		    @else
 				
 				<div class="spacer-medium"></div>
+				<div class="spacer-small"></div>
 				
 			@endif
 				
 			
 				
-		@if ($showMemberRequest) 
 			
 			{{-- membership --}}
 			<div class="form-group">
-	
-				<h4 class="title-regular">{!! $text !!}</div>
 		
 				<div class="spacer-small-2"></div>
 		
-				<a href="{{ route('soup.signup.request') }}" class="button-page-round bg-color-5 color-2">
+				<button class="button-page-round bg-color-5 color-2">
 					<div class="spacer-miniscule"></div>
 					<h4 class="clear-header-margins">{{ $button }}</h4>
 					<div class="spacer-miniscule"></div>
-				</a>
+				</button>
 
 			</div>
 
+
+		@if ($showMemberRequest) 
+
+			<div class="spacer-tiny"></div>
+			<a href="{{ route('soup.signup.request') }}">
+				<h4 class="title-regular color-1">{!! $text !!}</h4>
+			</a>
+
+
 		@else 
 		
-			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
+			<div class="spacer-medium"></div>
 			<div class="spacer-tiny"></div>
 		
 		@endif
 
 
 			<div class="spacer-medium"></div>
-			<div class="spacer-small"></div>
+			<div class="spacer-tiny"></div>
 
 			
 

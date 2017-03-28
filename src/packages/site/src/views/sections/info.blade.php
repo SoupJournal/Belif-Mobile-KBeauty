@@ -24,7 +24,7 @@
 	switch ($theme) {
 	
 		case 1:
-			$bgColor = "bg-color-2";
+			$bgColor = "bg-color-10";
 			$textColor = "color-1";
 			$titleClass = "title-regular small extra-padding";
 			$subtitleClass = "title-regular extra-padding-small clear-header-margins";

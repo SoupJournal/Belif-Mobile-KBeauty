@@ -88,7 +88,7 @@
 			{{-- enter birth date --}}
 			<div class="form-group"> 
 			
-				{{ Form::date('birth_date', ($user->birth_date? $user->birth_date->format('m/d/Y') : null), Array ('placeholder' => 'Date of Birth (MM/DD/YYYY)', 'class' => 'page-input-text', 'tabindex' => '2', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('birth_date', ($user->birth_date? $user->birth_date->format('m/d/Y') : null), Array ('placeholder' => 'Date of Birth (MM/DD/YYYY)', 'class' => 'page-input-text', 'tabindex' => '2', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 			

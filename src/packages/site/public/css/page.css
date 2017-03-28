@@ -318,6 +318,7 @@ a.no-underline-highlight:hover {
 
 .page-input-text.input-left {
 	width: 70%;
+	min-width: auto;
 /*	padding-top: 0;
 	padding-bottom: 0;*/
 	padding-left: 0;

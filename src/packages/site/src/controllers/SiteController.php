@@ -871,6 +871,13 @@
 				$errors = 'Your request has already been sent, please allow some time for us to process your request.';
 				$valid = false;
 			}
+			
+			//valid instagram
+			else if (!$instagram || strlen($instagram)<1 || !preg_match('/^[a-zA-Z0-9._]+$/', $instagram)) {
+				$errors = 'Please specify a vaild Instagram handle.';
+				$valid = false;
+			}
+			
 			//valid zip code
 			else if (!$zipCode || strlen(trim($zipCode))<=0) {
 				$errors = 'Please specify your zip code.';

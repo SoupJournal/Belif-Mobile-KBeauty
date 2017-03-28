@@ -18,7 +18,7 @@
 
 
 
-<div class="page-container bg-color-2" load-style="fade" load-group="{{ $sectionId }}">
+<div class="page-container bg-color-10" load-style="fade" load-group="{{ $sectionId }}">
 
 	<div class="text-center page-padding-small-2">
 		
