@@ -45,6 +45,7 @@ class SoupServiceProvider extends ServiceProvider {
 			$router->middleware('NewSignUp', 'Soup\Mobile\Middleware\InquiryRegisteredMiddleware');
 			$router->middleware('AppQuiz', 'Soup\Mobile\Middleware\QuizMiddleware');
 			$router->middleware('AppUser', 'Soup\Mobile\Middleware\ExistingUserMiddleware');
+			$router->middleware('AppReview', 'Soup\Mobile\Middleware\ReviewMiddleware');
 		}
 		
 

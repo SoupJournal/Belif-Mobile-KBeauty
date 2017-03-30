@@ -75,28 +75,37 @@
 				Route::get('/quiz/complete', ['as' => 'soup.quiz.complete', 'uses' => 'QuizController@getCompleteQuiz']);
 			//});
 
-			//guide
-			Route::get('/guide/{id}', ['as' => 'soup.guide', 'uses' => 'MainController@getGuide']);
-			Route::post('/guide/{id}', ['as' => 'soup.guide', 'uses' => 'MainController@postGuide']);
 
-			//user
-			Route::get('/user/profile', ['as' => 'soup.user.profile', 'uses' => 'MainController@getUserProfile']);
-		
-			//venue
-			Route::get('/venue/recommendations', ['as' => 'soup.venue.recommendation', 'uses' => 'MainController@getVenueRecommendations']);
-			Route::get('/venue/profile/{id}', ['as' => 'soup.venue.profile', 'uses' => 'MainController@getVenueProfile']);
+			//check for waiting reviews
+			Route::group(array('middleware' => 'AppReview'), function() {
+
+				//guide
+				Route::get('/guide/{id}', ['as' => 'soup.guide', 'uses' => 'MainController@getGuide']);
+				Route::post('/guide/{id}', ['as' => 'soup.guide', 'uses' => 'MainController@postGuide']);
+	
+				//user
+				Route::get('/user/profile', ['as' => 'soup.user.profile', 'uses' => 'MainController@getUserProfile']);
 			
-			//reservation
-			Route::get('/reservation/{id}', ['as' => 'soup.reservation.id', 'uses' => 'MainController@getReservation']);
-			Route::get('/reservation/{id}/{safestr}', ['as' => 'soup.reservation.id.id', 'uses' => 'MainController@getReservation']);
-			Route::post('/reservation', ['as' => 'soup.reservation', 'uses' => 'MainController@postReservation']);
-			Route::get('/reservation/confirm/{safestr}', ['as' => 'soup.reservation.confirm.id', 'uses' => 'MainController@getReservationConfirmation']);
-			Route::post('/reservation/confirm', ['as' => 'soup.reservation.confirm', 'uses' => 'MainController@postReservationConfirmation']);
-			Route::get('/reservation/thanks/{safestr}', ['as' => 'soup.reservation.thanks', 'uses' => 'MainController@getReservationThanks']);
+				//venue
+				Route::get('/venue/recommendations', ['as' => 'soup.venue.recommendation', 'uses' => 'MainController@getVenueRecommendations']);
+				Route::get('/venue/profile/{id}', ['as' => 'soup.venue.profile', 'uses' => 'MainController@getVenueProfile']);
+				
+				//reservation
+				Route::get('/reservation/{id}', ['as' => 'soup.reservation.id', 'uses' => 'MainController@getReservation']);
+				Route::get('/reservation/{id}/{safestr}', ['as' => 'soup.reservation.id.id', 'uses' => 'MainController@getReservation']);
+				Route::post('/reservation', ['as' => 'soup.reservation', 'uses' => 'MainController@postReservation']);
+				Route::get('/reservation/confirm/{safestr}', ['as' => 'soup.reservation.confirm.id', 'uses' => 'MainController@getReservationConfirmation']);
+				Route::post('/reservation/confirm', ['as' => 'soup.reservation.confirm', 'uses' => 'MainController@postReservationConfirmation']);
+				Route::get('/reservation/thanks/{safestr}', ['as' => 'soup.reservation.thanks', 'uses' => 'MainController@getReservationThanks']);
 			
+			});
+				
+				
 			//review
 			Route::get('/reservation/review/{safestr}', ['as' => 'soup.reservation.review.id', 'uses' => 'MainController@getReview']);
 			Route::post('/reservation/review', ['as' => 'soup.reservation.review', 'uses' => 'MainController@postReview']);
+		
+		
 		
 		});
 	

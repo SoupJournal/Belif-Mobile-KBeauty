@@ -39,6 +39,10 @@
 		const RESET_PASSWORD_STATUS_ISSUED 		= 0;
 		const RESET_PASSWORD_STATUS_CONSUMED 	= 1;
 		
+		//review status
+		const REVIEW_STATUS_REQUIRED 	= 0;
+		const REVIEW_STATUS_IGNORED 	= 1;
+		const REVIEW_STATUS_COMPLETE 	= 2;
 		
 			
 		//Google API key

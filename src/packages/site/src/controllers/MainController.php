@@ -741,17 +741,22 @@
 					$review = $reservation->review()->first();
 					
 					//no review made
-					if (!$review) {
+					if (!$review || $review->status==AppGlobals::REVIEW_STATUS_IGNORED || $review->status==AppGlobals::REVIEW_STATUS_REQUIRED) {
 	
 						//find user
 						$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 						if ($user && $user->id == $reservationUser->id) {
 						
-							//create review
-							$review = new Review();
+							//create review (if required)
+							if (!$review) {
+								$review = new Review();
+							}
+							
+							//update review
 							$review->reservation = $reservation->id;
 							$review->rating = $rating;
 							$review->comment = $comment;
+							$review->status = AppGlobals::REVIEW_STATUS_COMPLETE;
 							$review->save();
 							
 							//TODO: show thanks page?

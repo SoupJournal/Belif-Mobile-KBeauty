@@ -18,7 +18,7 @@ class CreatePasswordResetTable extends Migration {
 			$table->integer('user')->references('id')->on('user')->nullable();
 			$table->string('code')->unique();
 			$table->integer('status')->default(0);
-			//$table->timestamp('expiration')->nullable();
+			//$table->dateTime('expiration')->nullable();
 
 			$table->timestamps();
 		});
