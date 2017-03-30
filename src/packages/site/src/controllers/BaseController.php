@@ -24,11 +24,13 @@
 		const FORM_FORGOT_PASSWORD_THANKS = 'page_forgot_password_confirm';
 		const FORM_RESET_PASSWORD = 'page_reset_password';
 		const FORM_RESET_PASSWORD_THANKS = 'page_reset_password_confirm';
+		
 		const FORM_QUIZ = 'page_quiz';
-		//const FORM_QUESTION_1 = 'page_question_1';
-		//const FORM_QUESTION_2 = 'page_question_2';
 		const FORM_QUESTION = 'page_question';
 		const FORM_QUIZ_THANKS = 'page_quiz_thanks';
+		
+		const FORM_GUIDE = 'page_guide';
+		
 		const FORM_USER_PROFILE = 'page_user_profile';
 
 		const FORM_VENUE_PROFILE = 'page_venue_profile';
@@ -36,6 +38,7 @@
 		const FORM_RESERVATION = 'page_reservation';
 		const FORM_RESERVATION_CONFIRM = 'page_reservation_confirm';
 		const FORM_RESERVATION_THANKS = 'page_reservation_thanks';
+		const FORM_RESERVATION_REVIEW = 'page_reservation_review';
 
 		//public function __construct() {
 			
@@ -585,6 +588,17 @@
 						'subtitle' => "Your request has been sent and we will confirm within 24 hours.",
 						'text' => "If you can't make your reservation please notify us via email 6 hours in advance to avoid a late cancellation penalty.",
 						"button" => "HOME"
+					);
+				}
+				break;
+				
+				
+				case self::FORM_RESERVATION_REVIEW:
+				{
+					$pageData = Array (
+						"title" => "PLEASE RATE YOUR EXPERIENCE",
+						'subtitle' => "ANY COMMENTS OR SUGGESTIONS?",
+						"button" => "SUBMIT"
 					);
 				}
 				break;

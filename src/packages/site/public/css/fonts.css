@@ -87,6 +87,10 @@ h2.small {
 	font-size: 4vw;
 }
 
+h2.medium {
+	font-size: 5.2vw;
+}
+
 h2.bold {
 	font-size: 5.7vw;
 	/*line-height: 8vw;*/
@@ -300,6 +304,9 @@ a.page-link {
 		font-size: 49px;
 	}
 	
+	h2.medium {
+		font-size: 52px;
+	}
 	
 	h2.bold {
 		font-size: 56px;

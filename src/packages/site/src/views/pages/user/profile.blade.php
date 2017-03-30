@@ -66,7 +66,7 @@
 	
 	//diet images
 	$dietImages = [
-		'PESCATARIAN' => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon_diet_vegetarian.png",
+		'PESCATARIAN' => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon_diet_pescatarian.png",
 		'VEGETARIAN' => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon_diet_vegetarian.png",
 		'GLUTEN' => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon_diet_gluten.png",
 		'VEGAN' => "https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/images/icons/icon_diet_vegan.png"
@@ -259,8 +259,8 @@
 			
 				<div class="form-group">
 					<h4 class="clear-header-margins title-regular">
-						<span class="color-11">Drinks with friends</span>
-						<span class="color-6">{{ implode(", ", $drinkPreference) }}</span>
+						<div class="color-11">Drinks with friends:</div>
+						<div class="color-6">{{ implode(", ", $drinkPreference) }}</div>
 					</h4>
 				</div>
 			@endif

@@ -75,6 +75,10 @@
 				Route::get('/quiz/complete', ['as' => 'soup.quiz.complete', 'uses' => 'QuizController@getCompleteQuiz']);
 			//});
 
+			//guide
+			Route::get('/guide/{id}', ['as' => 'soup.guide', 'uses' => 'MainController@getGuide']);
+			Route::post('/guide/{id}', ['as' => 'soup.guide', 'uses' => 'MainController@postGuide']);
+
 			//user
 			Route::get('/user/profile', ['as' => 'soup.user.profile', 'uses' => 'MainController@getUserProfile']);
 		
@@ -89,7 +93,10 @@
 			Route::get('/reservation/confirm/{safestr}', ['as' => 'soup.reservation.confirm.id', 'uses' => 'MainController@getReservationConfirmation']);
 			Route::post('/reservation/confirm', ['as' => 'soup.reservation.confirm', 'uses' => 'MainController@postReservationConfirmation']);
 			Route::get('/reservation/thanks/{safestr}', ['as' => 'soup.reservation.thanks', 'uses' => 'MainController@getReservationThanks']);
-		
+			
+			//review
+			Route::get('/reservation/review/{safestr}', ['as' => 'soup.reservation.review.id', 'uses' => 'MainController@getReview']);
+			Route::post('/reservation/review', ['as' => 'soup.reservation.review', 'uses' => 'MainController@postReview']);
 		
 		});
 	

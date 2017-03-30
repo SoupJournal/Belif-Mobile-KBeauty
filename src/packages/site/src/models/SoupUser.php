@@ -4,6 +4,7 @@ namespace Soup\Mobile\Models;
 
 
 use Soup\Mobile\Models\UserProfile;
+use Soup\Mobile\Models\Reservation;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\UserInterface;
@@ -54,6 +55,18 @@ class SoupUser extends Model implements AuthenticatableContract {
         
     } //end profile()
 
+
+
+	/**
+     * Get the reservations data associated with this user.
+     */
+	public function reservations() {
+    
+        return $this->hasMany(Reservation::class, 'reservation', 'id');
+        
+    } //end reservations()
+    
+    
 
 	/**
      * Get the password requests data associated with this user.

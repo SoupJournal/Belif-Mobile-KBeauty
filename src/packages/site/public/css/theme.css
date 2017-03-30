@@ -199,6 +199,7 @@
 	text-align: center;	
 }
 
+
 /********************************/
 /* 			VENUE		 		*/
 /********************************/
@@ -290,7 +291,7 @@
 .reservation-image-section {
 	position: relative;
 	width: 100%;
-	padding-bottom: 38%;
+	padding-bottom: 40%;
 	overflow-y: hidden;	
 }
 
@@ -302,6 +303,41 @@
 	padding-bottom: 20%;
 	overflow: hidden; 	
 }
+
+
+
+/********************************/
+/* 			REVIEW		 		*/
+/********************************/
+
+.rating-container {
+	margin: 0 auto;
+	width: auto;
+}
+
+.rating-button {
+	display: inline-block;	
+	width: 15%;
+	height: auto;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+}
+
+.rating-button:focus {
+	outline:0;
+}
+
+.rating-star {
+	width: 100%;
+	height: auto;
+	opacity: 0.6;
+}
+
+.rating-on {
+	opacity: 1;	
+}
+
 
 /********************************/
 /* 			FILLS		 		*/

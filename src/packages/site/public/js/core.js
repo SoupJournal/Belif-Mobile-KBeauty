@@ -95,11 +95,11 @@
 				//selection made
 				if (ratio<-0.4) {
 				//	console.log("select left");	
-					$scope.questionAnswered(0);
+					$scope.questionAnswered(1);
 				}
 				else if (ratio>0.4) {
 				//	console.log("select right");
-					$scope.questionAnswered(1);	
+					$scope.questionAnswered(0);	
 				}
 			
 			
@@ -112,11 +112,11 @@
 		//add swipe listener
 		$scope.$on('gesture-swipe-left', function (event) {
 //			console.log("swipe left");
-			$scope.questionAnswered(0);
+			$scope.questionAnswered(1);
 		});
 		$scope.$on('gesture-swipe-right', function (event) {
 //			console.log("swipe right");			
-			$scope.questionAnswered(1);
+			$scope.questionAnswered(0);
 		});
 		
 			

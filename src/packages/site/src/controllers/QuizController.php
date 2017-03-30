@@ -232,14 +232,14 @@
 						default:
 	
 							//option selected
-							if ($value>0) {
+							if ($value && strlen($value)>0) {
 								$value = $questionData['options'];	
 							}
 							//option rejected
 							else {
 								$saveValue = false;	
 							}
-							
+
 						break;
 						
 					} //end switch (type)
@@ -293,7 +293,7 @@
 							$profile->question = $key;
 							$profile->value = $value;
 							$profile->save();
-						
+
 						}
 						
 						//store secondary value
@@ -309,7 +309,7 @@
 						}
 						
 					} //end if (save values)
-						
+		
 						
 					//get next question Id
 					$nextId = ($questionId+1);

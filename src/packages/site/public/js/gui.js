@@ -123,6 +123,7 @@
 					
 						//determine new height
 						var elemHeight = height - positionY;
+						if (elemHeight<0) elemHeight = 0;
 					
 						//handle minimum ratio
 						if (scope.minRatio && scope.minRatio.length>0) {
@@ -175,6 +176,88 @@
 	}]); //end directive()
 	
 	
+	
+	
+	//star rating directive - broadcasts named event on element click 
+	module.directive('starRating', ['$rootScope', function($rootScope) {
+	    return {
+	    	restrict: 'A',
+	        scope: {
+	            starRating: '@',
+	            starRatingOn: '@',
+	            starRatingOff: '@'
+	        },
+	        link: function (scope, element, attrs) {
+	        	
+	        	//get input element
+	        	var inputs = element.find('input');
+	        	scope.inputElement = inputs && inputs.length>0 ? angular.element(inputs[0]) :  null;
+	        	//scope.inputElement = angular.element(element.getElementByName('rating'));
+
+	        	//get children
+	        	scope.stars = element[0].getElementsByTagName('BUTTON'); //element.children();
+	        	if (scope.stars) {
+	        		
+	        		var child = null;
+	        		for (var i=0; i<scope.stars.length; ++i) {
+	        	
+	        			//get child
+	        			child = scope.stars[i];
+	        			if (child) {
+	        				
+				        	angular.element(child).on('click', function() {
+				        	
+				        		//update stars
+				        		var item = null;
+				        		var itemIndex = 0;
+				        		var foundIndex = false;
+				        		var images = null;
+				        		var image = null;
+				        		for (var j=0; j<scope.stars.length; ++j) {
+				        			
+				        			item = scope.stars[j];
+				        			if (item) {
+				        			
+				        				//apply image
+				        				images = item.getElementsByTagName('IMG');
+				        				if (images && images.length>0) {
+				        					image = angular.element(images[0]);
+				        					image.prop('src', foundIndex ? scope.starRatingOff : scope.starRatingOn);
+				        					if (foundIndex) {
+				        						image.removeClass('rating-on');				        						
+				        					}
+				        					else {
+				        						image.addClass('rating-on');
+				        					}
+				        					//image.css('opacity', foundIndex ? '0.6' : '1');
+				        				}
+				        				
+					        			//found current item
+					        			if (item == this) {
+					        				foundIndex = true;
+					        				itemIndex = j + 1;	
+					        			}
+				        			
+				        			} //end if (valid item)
+				        			
+				        		} //end for()
+
+								//set input value
+								if (scope.inputElement) {
+									scope.inputElement.attr('value', itemIndex);
+								}
+				        	
+				        	});
+				        	
+	        			}
+		        	
+	        		} //end for()
+	        	
+	        	} //end if (found children)
+	        }
+	        
+	    }
+	}]); //end directive
 	
 	
 	

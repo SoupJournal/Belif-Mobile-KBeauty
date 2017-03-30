@@ -9,6 +9,7 @@
 	use Soup\Mobile\Models\Venue;
 	use Soup\Mobile\Models\VenueOpenHours;
 	use Soup\Mobile\Models\Reservation;
+	use Soup\Mobile\Models\Review;
 	use Soup\Mobile\Lib\AppGlobals;
 	use Soup\Mobile\Jobs\SendEmailJob;
 	
@@ -39,7 +40,7 @@
 				],
 				[
 					'name' => 'How It Works',
-				//	'url' => route('soup.user.profile'),
+					'url' => route('soup.guide', ['page' => 0]),
 					'class' => $buttonClass
 				],
 				[
@@ -654,6 +655,208 @@
 			
 		} //end getReservationThanks()
 		
+				
+				
+				
+		public function getReview($code) {
+			
+			//get page data
+			$pageData = $this->dataForPage(self::FORM_RESERVATION_REVIEW);
+			//$pageData = $this->dataForFormId(self::FORM_RESERVATION_REVIEW);
+			
+			//get reservation
+			$reservation = Reservation::where('code', $code)->first();
+			if ($reservation) {
+
+				//get reservation user
+				$reservationUser = $reservation->user()->first();
+				if ($reservationUser) {
+
+					//find user
+					$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+					if ($user && $user->id == $reservationUser->id) {
+	
+						//get venue
+						$venue = $reservation->venue()->first();
+						
+						//draw page
+						return View::make('soup::pages.reservation.review')->with([
+							'pageName' => 'venue review',
+							'pageData'=> $pageData,
+							'reservation' => $reservation,
+							'venue' => $venue,
+							'nextURL' => route('soup.venue.recommendation'),
+							'formURL' => route('soup.reservation.review'),
+							'menuOptions' => $this->mainMenuOptions
+						]);
+					
+					} //end if (valid user)
+				
+				} //end if (valid reservation user)
+			
+			} //end if (valid reservation
+
+			//invalid request
+			return Redirect::route('soup.venue.recommendation');
+			
+		} //end getReview()
+				
+				
+				
+		public function postReview() {
+			
+			$valid = true;
+			$errors = null;
+			
+			//get form values
+			$rating = safeArrayValue('rating', $_POST);
+			$comment = safeArrayValue('comment', $_POST);
+			$reservationKey = safeArrayValue('reservation', $_POST);
+			
+			//convert rating
+			$rating = intval($rating);
+			
+			//validate rating
+			if ($rating<=0 || $rating>5) {
+				$errors = "Please rate your experience.";	
+				$valid = false;
+			}
+						
+			//valid reservation key
+			else if (!$reservationKey || strlen($reservationKey)<=0) {
+				$errors = "Sorry, your reservation key appears invalid.";	
+				$valid = false;
+			}
+			
+			
+			//valid form
+			if ($valid) {
+							
+				//get reservation
+				$reservation = Reservation::where('code', $reservationKey)->first();
+				if ($reservation) {
+
+					//get reservation properties
+					$reservationUser = $reservation->user()->first();
+					$review = $reservation->review()->first();
+					
+					//no review made
+					if (!$review) {
+	
+						//find user
+						$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+						if ($user && $user->id == $reservationUser->id) {
+						
+							//create review
+							$review = new Review();
+							$review->reservation = $reservation->id;
+							$review->rating = $rating;
+							$review->comment = $comment;
+							$review->save();
+							
+							//TODO: show thanks page?
+							return Redirect::route('soup.venue.recommendation');
+						
+						} 
+						//else (invalid user)
+						else {
+							$errors = "Sorry, your reservation does not seem to match your user profile.";	
+						}
+					
+					}
+					//else (review already exists)
+					else {
+						$errors = "It looks like you have already written a review.";	
+					}
+					
+				} 
+				//else (invalid reservation)
+				else {
+					$errors = "Sorry, your reservation details appear invalid.";	
+				}
+			
+			} //end if (valid form)
+			
+			
+			//form has errors
+			return Redirect::back()
+						->withInput()
+						->withErrors($errors);
+			
+		} //end postReview()
+				
+				
+				
+				
+		public function getGuide($page) {
+			
+			//get page data
+			$guideData = $this->dataForPage(self::FORM_GUIDE);
+			//$pageData = $this->dataForFormId(self::FORM_GUIDE);
+
+			//convert page ID
+			$page = $page && strlen($page)>0 ? intval($page) : 0;
+			
+			//get page data
+			$pageData = null;
+			$totalPages = 0;
+			if ($guideData && $guideData['children'] && count($guideData['children'])>0) {
+				
+				if (array_key_exists($page, $guideData['children'])) {
+				//if ($page>=0 && $page<count($guideData['children'])) {
+					$pageData = $guideData['children'][$page];	
+				}
+				
+				//get total pages
+				$totalPages = count($guideData['children']);
+			}
+			
+			//draw page
+			return View::make('soup::pages.guide.info')->with([
+				'pageName' => 'guide' . $page,
+				'pageData'=> $pageData,
+				'nextURL' => route('soup.venue.recommendation'),
+				'backURL' => $page>0 ? route('soup.guide', ['page' => ($page-1)]) : null,
+				'formURL' => route('soup.guide', ['page'=>$page]),
+				'menuOptions' => $this->mainMenuOptions,
+				'step' => intval($page) + 1,
+				'totalSteps' => $totalPages
+			]);
+			
+		} //end getGuide()
+							
+					
+							
+		public function postGuide($page) {
+			
+					
+			//get integer Id
+			$page = $page && strlen($page)>0 ? intval($page) : 0;
+				
+			//bounds check page
+			if ($page<0) $page = 0;
+			
+				
+			//get page data
+			$guideData = $this->dataForPage(self::FORM_GUIDE);
+				
+			//get total pages
+			$totalPages = $guideData && $guideData['children'] ? count($guideData['children']) : 0;
+				
+			
+			//valid more pages
+			if ($page<$totalPages-1) {
+				return Redirect::route('soup.guide', ['page' => ($page+1)]);
+			}
+			//no more pages
+			else {
+				return Redirect::route('soup.venue.recommendation');
+			}
+				
+				
+		} //end postGuide()
+			
+
 								
 	} //end class MainController
 
