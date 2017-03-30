@@ -156,7 +156,7 @@
 			
 			
 			//check if next button should show
-			$showNext = \Request::session()->get('showNext');
+			$firstRun = \Request::session()->get('firstRun');
 
 			//restore flash data (in case page refreshed)
 			\Request::session()->reflash();
@@ -168,8 +168,8 @@
 			return View::make('soup::pages.user.profile')->with([
 				'pageName' => 'user profile',
 				'pageData'=> $pageData,
-				'nextURL' => $showNext ? $nextURL : null,
-				'backURL' => $showNext ? null : $nextURL,
+				'nextURL' => $firstRun ? $nextURL : null,
+				'backURL' => $firstRun ? null : $nextURL,
 				'user' => $user,
 				//'profile' => $profileData,
 				'diets' => extractModelValues('value', $diets),
@@ -794,6 +794,13 @@
 			$guideData = $this->dataForPage(self::FORM_GUIDE);
 			//$pageData = $this->dataForFormId(self::FORM_GUIDE);
 
+			//check if first run
+			$firstRun = \Request::session()->get('firstRun');
+
+			//restore flash data (in case page refreshed)
+			\Request::session()->reflash();
+
+
 			//convert page ID
 			$page = $page && strlen($page)>0 ? intval($page) : 0;
 			
@@ -815,7 +822,7 @@
 			return View::make('soup::pages.guide.info')->with([
 				'pageName' => 'guide' . $page,
 				'pageData'=> $pageData,
-				'nextURL' => route('soup.venue.recommendation'),
+				//'nextURL' => route('soup.venue.recommendation'),
 				'backURL' => $page>0 ? route('soup.guide', ['page' => ($page-1)]) : null,
 				'formURL' => route('soup.guide', ['page'=>$page]),
 				'menuOptions' => $this->mainMenuOptions,
@@ -837,6 +844,13 @@
 			if ($page<0) $page = 0;
 			
 				
+			//check if first run
+			$firstRun = \Request::session()->get('firstRun');
+
+			//restore flash data (in case page refreshed)
+			\Request::session()->reflash();
+				
+				
 			//get page data
 			$guideData = $this->dataForPage(self::FORM_GUIDE);
 				
@@ -850,7 +864,15 @@
 			}
 			//no more pages
 			else {
-				return Redirect::route('soup.venue.recommendation');
+				
+				//first run
+				if ($firstRun) {
+					return Redirect::route('soup.user.profile')->with(['firstRun' => true]);
+				}
+				//normal run
+				else {
+					return Redirect::route('soup.venue.recommendation');
+				}
 			}
 				
 				

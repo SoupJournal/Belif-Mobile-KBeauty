@@ -392,9 +392,10 @@
 			
 		public function getCompleteQuiz() {
 			
-			return Redirect::route('soup.user.profile')->with(['showNext' => true]);
+			return Redirect::route('soup.guide', ['page'=>0])->with(['firstRun' => true]);
+			//return Redirect::route('soup.user.profile')->with(['firstRun' => true]);
 			//indicate next button should show on profile page
-			//\Request::session()->set('showNext');
+			//\Request::session()->set('firstRun');
 			
 		} //end getCompleteQuiz()
 			
