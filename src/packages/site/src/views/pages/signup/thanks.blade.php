@@ -50,7 +50,7 @@
 
 	<div class="">
 	
-		{{-- login page --}}
+		{{-- page content --}}
 		<div class="page-container page-padding-medium">
 
 

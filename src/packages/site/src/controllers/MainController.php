@@ -904,13 +904,28 @@
 			
 			//draw page
 			return View::make('soup::pages.guide.tipping')->with([
-				'pageName' => 'reservation complete',
+				'pageName' => 'guide - tipping',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.venue.recommendation')
 				'menuOptions' => $this->mainMenuOptions
 			]);
 			
 		} //end getTipping()
+		
+		
+		
+		public function getDesktop() {
+			
+			//get page data
+			$pageData = $this->dataForPage(self::FORM_DESKTOP);
+			
+			//draw page
+			return View::make('soup::pages.desktop')->with([
+				'pageName' => 'desktop',
+				'pageData'=> $pageData,
+			]);
+			
+		} //end getDesktop()
 
 								
 	} //end class MainController

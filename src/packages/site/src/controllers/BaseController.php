@@ -12,6 +12,8 @@
 		
 
 		//page constants
+		const FORM_DESKTOP = 'page_desktop';
+		
 		const FORM_WELCOME = 'page_welcome';
 		const FORM_HOME = 'page_home';
 		const FORM_LOGIN = 'page_login';
