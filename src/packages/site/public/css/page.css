@@ -555,3 +555,27 @@ input[type=radio] {
     
 }
 
+
+
+
+/********************************/
+/* 			MAX SIZE 			*/
+/********************************/
+
+
+@media all and (min-width: 960px) {
+	
+	div.headerPadding {
+		height: 150px;
+		padding-bottom: 0 !important;	
+	}
+	
+	div.headerMargin {
+		margin-top: 150px !important;
+	}
+	
+	.button-menu {
+		width: 49.55px;	
+	}
+	
+}

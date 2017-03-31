@@ -45,12 +45,22 @@
 	
 	
 ?>
+
+<style>
+	.headerPadding {
+		padding-bottom: {{ $headerPadding }};
+	}
+	.headerMargin {
+		margin-top: {{ $headerPadding }};
+	} 
+</style>
+
 {{-- header --}}
 <div class="{{ $headerContainer }}">
 
 	<div id="page-header" class="header navbar navbar-top {{ $backgroundColor }} {{ $textColour }}">
 	
-		<div class="header-fill" style="padding-bottom: {{ $headerPadding }}"></div>
+		<div class="header-fill headerPadding"></div>
 		
 		<div class="stretch-to-fit">
 	
@@ -108,12 +118,12 @@
 </div>
 
 {{-- menu --}}
-<div class="menu-overlay bg-color-opacity-5" toggle-height="100%" event-name="change-menu-height" style="margin-top: {{ $headerPadding }}">
+<div class="menu-overlay bg-color-opacity-5 headerMargin" toggle-height="100%" event-name="change-menu-height">
 	@include('soup::sections.menu', Array(
 		'options' => $menuOptions,
 	))
 </div>
 @if ($headerFixed) 
-	<div style="padding-bottom: {{ $headerPadding }}"></div>
+	<div class="headerPadding"></div>
 @endif
     	

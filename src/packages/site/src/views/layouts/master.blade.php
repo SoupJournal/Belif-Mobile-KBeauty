@@ -1,9 +1,10 @@
 <?php
 
 	//define variables
-	$fullScreen = (isset($fullScreen) ? $fullScreen : false);
-	$fillHeight = (isset($fillHeight) ? $fillHeight : true);
-	$pageName = (isset($pageName) ? $pageName : 'soup');
+	$fullScreen = isset($fullScreen) ? $fullScreen : false;
+	$fillHeight = isset($fillHeight) ? $fillHeight : true;
+	$pageName = isset($pageName) ? $pageName : 'soup';
+	$backgroundColor = isset($backgroundColor) ? $backgroundColor : 'bg-color-1';
 	
 
 ?>
@@ -32,9 +33,9 @@
    
     
 		{{-- controller --}}
-		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit bg-color-5">
+		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-5')">
 			
-			<div class="main-page-container fill-height bg-color-5">
+			<div class="main-page-container fill-height @yield('background-color', 'bg-color-5')">
 				
 	
 		   		{{----------------- HEADER -------------------}}
@@ -51,7 +52,7 @@
 
 					<div class="background-fill"></div>
 					
-					<div class="stretch-to-fit bg-color-5">
+					<div class="stretch-to-fit @yield('background-color', 'bg-color-5')">
 
 	        		{{----------------- CONTENT ------------------}}
 	        		@yield('content', '')

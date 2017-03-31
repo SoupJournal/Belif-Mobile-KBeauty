@@ -82,6 +82,7 @@
 				//guide
 				Route::get('/guide/{id}', ['as' => 'soup.guide', 'uses' => 'MainController@getGuide']);
 				Route::post('/guide/{id}', ['as' => 'soup.guide', 'uses' => 'MainController@postGuide']);
+				Route::get('/guide/tipping', ['as' => 'soup.guide.tipping', 'uses' => 'MainController@getTipping']);
 	
 				//user
 				Route::get('/user/profile', ['as' => 'soup.user.profile', 'uses' => 'MainController@getUserProfile']);

@@ -34,6 +34,11 @@
 			//set menu options
 			$this->mainMenuOptions = [
 				[
+					'name' => 'Home',
+					'url' => route('soup.venue.recommendation'),
+					'class' => $buttonClass
+				],
+				[
 					'name' => 'Profile',
 					'url' => route('soup.user.profile'),
 					'class' => $buttonClass
@@ -41,6 +46,11 @@
 				[
 					'name' => 'How It Works',
 					'url' => route('soup.guide', ['page' => 0]),
+					'class' => $buttonClass
+				],
+				[
+					'name' => 'Tipping',
+					'url' => route('soup.guide.tipping'),
 					'class' => $buttonClass
 				],
 				[
@@ -830,7 +840,7 @@
 				//'nextURL' => route('soup.venue.recommendation'),
 				'backURL' => $page>0 ? route('soup.guide', ['page' => ($page-1)]) : null,
 				'formURL' => route('soup.guide', ['page'=>$page]),
-				'menuOptions' => $this->mainMenuOptions,
+				//'menuOptions' => $this->mainMenuOptions,
 				'step' => intval($page) + 1,
 				'totalSteps' => $totalPages
 			]);
@@ -883,6 +893,24 @@
 				
 		} //end postGuide()
 			
+
+
+
+		public function getTipping() {
+			
+			//get page data
+			$pageData = $this->dataForPage(self::FORM_GUIDE_TIPPING);
+			//$pageData = $this->dataForFormId(self::FORM_RESERVATION_THANKS);
+			
+			//draw page
+			return View::make('soup::pages.guide.tipping')->with([
+				'pageName' => 'reservation complete',
+				'pageData'=> $pageData,
+				//'nextURL' => route('soup.venue.recommendation')
+				'menuOptions' => $this->mainMenuOptions
+			]);
+			
+		} //end getTipping()
 
 								
 	} //end class MainController

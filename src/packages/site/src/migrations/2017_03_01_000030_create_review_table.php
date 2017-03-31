@@ -20,7 +20,7 @@ class CreateReviewTable extends Migration {
 			//$table->integer('user')->references('id')->on('user');
 			//$table->integer('venue')->references('id')->on('venue');
 			$table->integer('rating')->default(0);
-			$table->string('comment', 1023)->nullable();
+			$table->string('comment', 2047)->nullable();
 			$table->integer('status')->default(0);
 
 			$table->timestamps();
