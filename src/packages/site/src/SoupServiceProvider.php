@@ -47,6 +47,7 @@ class SoupServiceProvider extends ServiceProvider {
 			$router->middleware('AppUser', 'Soup\Mobile\Middleware\ExistingUserMiddleware');
 			$router->middleware('AppReview', 'Soup\Mobile\Middleware\ReviewMiddleware');
 			$router->middleware('AppMobile', 'Soup\Mobile\Middleware\MobileMiddleware');
+			$router->middleware('AppDesktop', 'Soup\Mobile\Middleware\DesktopMiddleware');
 		}
 		
 

@@ -25,8 +25,14 @@
 	//group controllers into namespace
 	Route::group(array('namespace' => 'Soup\Mobile\Controllers', 'middleware' => ['web'/*, 'HTTPS'*/]), function() {
 	
-		//desktop
-		Route::get('/desktop', ['as' => 'soup.desktop', 'uses' => 'MainController@getDesktop']);
+		//desktop only access
+		Route::group(array('middleware' => 'AppDesktop'), function() {
+	
+			//desktop
+			Route::get('/desktop', ['as' => 'soup.desktop', 'uses' => 'MainController@getDesktop']);
+		
+		});
+	
 	
 		//mobile only access
 		//Route::group(array('middleware' => 'AppMobile'), function() {
