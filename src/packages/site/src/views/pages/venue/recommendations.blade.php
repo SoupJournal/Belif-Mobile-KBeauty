@@ -30,15 +30,16 @@
 <?php
 
 	//ensure page data is set
-//	$pageData = isset($pageData) ? $pageData : null;
+	$pageData = isset($pageData) ? $pageData : null;
 	$user = isset($user) ? $user : null;
+	$recommendations = isset($recommendations) ? $recommendations : null;
 	$dinnerVenue = isset($dinnerVenue) ? $dinnerVenue : null;
 	$brunchVenue = isset($brunchVenue) ? $brunchVenue : null;
 
 	//get page variables
 //	$title = safeArrayValue('title', $pageData, "");
 //	$subtitle = safeArrayValue('subtitle', $pageData, "");
-//	$text = safeArrayValue('text', $pageData, "");
+	$text = safeArrayValue('text', $pageData, "");
 //	$button = safeArrayValue('button', $pageData, "");
 //	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 //	$backgroundImage = safeArrayValue('background_image', $pageData, "");
@@ -46,7 +47,7 @@
 	//user properties
 	$userName = fullName($user, null);
 
-
+/*
 	//dinner venue properties
 	$dinnerId = safeObjectValue('id', $dinnerVenue, "");
 	$dinnerProperties = [
@@ -68,7 +69,7 @@
 		'address' => compilePropertiesString($brunchVenue, ['address', 'suburb'], [', ']),
 		'openHours' => venueTodaysOpenHoursString($brunchVenue, "CLOSED TODAY")
 	];
-	
+*/	
 ?>
 
 <div class="spacer-tiny"></div>
@@ -81,15 +82,30 @@
 </div>
 
 
-{{-- dinner venue --}}
-@if (isset($dinnerVenue) && intval($dinnerId)>=0)
-	@include('soup::sections.recommendation', $dinnerProperties)
-@endif
+@if (isset($recommendations) && count($recommendations)>0)
+
+	@foreach($recommendations as $recommendation)
+		@include('soup::sections.recommendation', $recommendation)
+	@endforeach
 
 
-{{-- brunch venue --}}
-@if (isset($brunchVenue) && intval($brunchId)>=0)
-	@include('soup::sections.recommendation', $brunchProperties)
+	{{-- dinner venue --}}
+	@if (isset($dinnerVenue) && intval($dinnerId)>=0)
+{{--		@include('soup::sections.recommendation', $dinnerProperties) --}}
+	@endif
+	
+	
+	{{-- brunch venue --}}
+	@if (isset($brunchVenue) && intval($brunchId)>=0)
+{{--		@include('soup::sections.recommendation', $brunchProperties) --}}
+	@endif
+
+@else
+
+	<div class="page-padding-medium">
+		<h2 class="title-light color-2">{!! $text !!}</h2>
+	</div>
+
 @endif
 
 <div class="spacer-medium"></div>

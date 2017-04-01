@@ -17,6 +17,7 @@ class CreateReservationTable extends Migration {
 			$table->increments('id');
 			$table->integer('user')->references('id')->on('user');
 			$table->integer('venue')->references('id')->on('venue');
+			$table->string('type', 255);
 			$table->dateTime('date');
 			$table->integer('guests')->default(1);
 			$table->string('code', 255)->unique();

@@ -30,6 +30,7 @@
 <?php
 
 	//ensure page data is set
+	$type = isset($type) ? $type : null;
 	$venue = isset($venue) ? $venue : null;
 	$reservation = isset($reservation) ? $reservation : null;
 	$pageData = isset($pageData) ? $pageData : null;
@@ -41,7 +42,7 @@
 	$button = safeArrayValue('button', $pageData, "");
 //	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
-	$mealType = safeArrayValue('meal_type', $pageData, null);
+	//$mealType = safeArrayValue('meal_type', $pageData, null);
 
 	//venue properties
 	$profileImage = safeObjectValue('image_profile', $venue, "");
@@ -102,9 +103,9 @@
 		
 			<h2 class="color-2">
 				<div>{{ $title }}</div>
-				@if (isset($mealType))
+				@if (isset($type))
 					<div class="spacer-tiny"></div>
-					<div class="uppercase">{{ $mealType }}</div>
+					<div class="uppercase">{{ $type }}</div>
 				@endif
 			</h2>
 			
@@ -189,6 +190,9 @@
 			</div>
 		</div>
 		
+		
+		{{-- reservation type --}}
+		<input type="hidden" name="type" value="{{ $type }}">
 		
 		{{-- venue ID --}}
 		<input type="hidden" name="venue" value="{{ $venueId }}">

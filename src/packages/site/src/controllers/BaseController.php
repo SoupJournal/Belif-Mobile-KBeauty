@@ -37,6 +37,7 @@
 		const FORM_USER_PROFILE = 'page_user_profile';
 
 		const FORM_VENUE_PROFILE = 'page_venue_profile';
+		const FORM_VENUE_RECOMMENDATIONS = 'page_venue_recommendations';
 
 		const FORM_RESERVATION = 'page_reservation';
 		const FORM_RESERVATION_CONFIRM = 'page_reservation_confirm';

@@ -15,9 +15,11 @@ class CreateRecommendationsTable extends Migration {
 		Schema::create('recommendation', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('code', 255);
 			$table->integer('user')->references('id')->on('user');
 			$table->integer('venue')->references('id')->on('venue');
 			$table->string('type', 255);
+			$table->integer('status')->default(0);
 			$table->date('activation_date')->nullable();
 			$table->date('expiration_date')->nullable();
 			

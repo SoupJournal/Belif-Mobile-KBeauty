@@ -2,11 +2,16 @@
 
 	//ensure page variables are set
 	$type = isset($type) ? $type : "";
-	$name = isset($name) ? $name : "";
-	$address = isset($address) ? $address : "";
-	$openHours = isset($openHours) ? $openHours : "";
-	$link = isset($link) ? $link : "";
-	$image = isset($image) ? $image : "";
+	$venue = isset($venue) ? $venue : "";
+	
+	//get venue properties
+	$name = safeArrayValue('name', $venue, "");
+	$image = safeArrayValue('image_profile', $venue, "");
+	
+	//compile properties
+	$link = (isset($type) && strlen($type)>0) ? route('soup.venue.profile', ['type'=>$type]) : "#";
+	$address = compilePropertiesString($venue, ['address', 'suburb'], [', ']);
+	$openHours = venueTodaysOpenHoursString($venue, "CLOSED TODAY");
 	
 ?>
 
@@ -25,7 +30,7 @@
 			<div class="page-overlay bg-color-clear" load-style="fade" load-group="{{ $type }}">
 			
 				<div class="spacer-tiny"></div>
-				<h1 class="clear-header-margins title-bold color-2">{{ $type }}</h1>
+				<h1 class="clear-header-margins title-bold uppercase color-2">{{ $type }}</h1>
 			
 			</div>
 		</div>

@@ -431,19 +431,43 @@
 			$index = 0;
 			foreach ($properties as $property) {
 	
-				//append property
-				if (isset($source->$property) && strlen($source->$property)>0) {
-
+				//ARRAY SOURCE
+				if (is_array($source)) {
+					
 					//append property
-					if ($result && strlen($result)>0) {
-						$result .= $separator . $source->$property;
+					if (isset($source[$property]) && strlen($source[$property])>0) {
+	
+						//append property
+						if ($result && strlen($result)>0) {
+							$result .= $separator . $source[$property];
+						}
+						
+						//set property
+						else {
+							$result = $source[$property];
+						}
+	
 					}
 					
-					//set property
-					else {
-						$result = $source->$property;
+				}
+				//OBJECT SOURCE
+				else {
+	
+					//append property
+					if (isset($source->$property) && strlen($source->$property)>0) {
+	
+						//append property
+						if ($result && strlen($result)>0) {
+							$result .= $separator . $source->$property;
+						}
+						
+						//set property
+						else {
+							$result = $source->$property;
+						}
+	
 					}
-
+				
 				}
 				
 				//get separator (separator is not used for first entry)
@@ -455,84 +479,6 @@
 				++$index;
 				
 			} //end for()
-			
-			
-			/*
-			//append address 1
-			if (isset($user->address_1) && strlen($user->address_1)>0) {
-				$address = $user->address_1;
-			}
-			
-			//append address 2
-			if (isset($user->address_2) && strlen($user->address_2)>0) {
-				
-				//append address
-				if ($address && strlen($address)>0) {
-					$address .= ' ' . $user->address_2;
-				}
-				
-				//set address
-				else {
-					$address = $user->address_2;
-				}
-			}
-			
-			//append city
-			if (isset($user->city) && strlen($user->city)>0) {
-				
-				//append address
-				if ($address && strlen($address)>0) {
-					$address .= ', ' . $user->city;
-				}
-				
-				//set address
-				else {
-					$address = $user->city;
-				}
-			}
-			
-			//append state
-			if (isset($user->state) && strlen($user->state)>0) {
-				
-				//append address
-				if ($address && strlen($address)>0) {
-					$address .= ', ' . $user->state;
-				}
-				
-				//set address
-				else {
-					$address = $user->state;
-				}
-			}
-			
-			//append zip code
-			if (isset($user->zip_code) && strlen($user->zip_code)>0) {
-				
-				//append address
-				if ($address && strlen($address)>0) {
-					$address .= ' ' . $user->zip_code;
-				}
-				
-				//set address
-				else {
-					$address = $user->zip_code;
-				}
-			}
-			*/
-//			
-//			//append country
-//			if (isset($user->country) && strlen($user->country)>0) {
-//				
-//				//append address
-//				if ($address && strlen($address)>0) {
-//					$address .= ', ' . $user->country;
-//				}
-//				
-//				//set address
-//				else {
-//					$address = $user->country;
-//				}
-//			}
 			
 			
 		} //end if (valid user)

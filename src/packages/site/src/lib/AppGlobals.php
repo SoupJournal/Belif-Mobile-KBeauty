@@ -44,6 +44,12 @@
 		const REVIEW_STATUS_IGNORED 	= 1;
 		const REVIEW_STATUS_COMPLETE 	= 2;
 		
+		//recommendation type
+		const RECOMMENDATION_TYPE_DINNER = 'Dinner';
+		const RECOMMENDATION_TYPE_LUNCH = 'Lunch';
+		const RECOMMENDATION_TYPE_BRUNCH = 'Brunch';
+		const RECOMMENDATION_TYPE_BREAKFAST = 'Breakfast';
+		
 			
 		//Google API key
 		const GOOGLE_API_KEY = "AIzaSyBDh1B9VMqSCyO2zXUkX37U_iiStdtbzW0"; //"AIzaSyB4ge2qO8plaMWCmLWNNi3U4o1RW4B_ucA";

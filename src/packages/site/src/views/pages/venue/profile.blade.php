@@ -31,17 +31,30 @@
 
 	//ensure page data is set
 	$pageData = isset($pageData) ? $pageData : null;
+	$recommendation = isset($recommendation) ? $recommendation : null;
 	$venue = isset($venue) ? $venue : null;
 	$mapsKey = isset($mapsKey) ? $mapsKey : null;
 
 	//get page variables
 //	$title = safeArrayValue('title', $pageData, "");
-//	$subtitle = safeArrayValue('subtitle', $pageData, "");
+	$subtitle = safeArrayValue('subtitle', $pageData, null);
 	$text = safeArrayValue('text', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$secondaryButton = safeArrayValue('secondary_button', $pageData, "");
 //	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 
+	//get recommendation properties
+	$recommendationType = safeObjectValue('type', $recommendation, null);
+	$recommendationDate = safeObjectValue('activation_date', $recommendation, null);
+	$recommendationMonth = $recommendationDate ? $recommendationDate->format('F') : null;
+	$recommendationText = null;
+	if (isset($subtitle) && isset($recommendationType) && isset($recommendationMonth)) {
+		$recommendationText = $subtitle . strtolower($recommendationType) . ' in ' . $recommendationMonth . '.';
+	}
+
+	//reservation data
+	$reservationURL = route('soup.reservation.id', ['type' => $recommendationType]);
+	
 
 	//profile properties
 	$profileImage = safeObjectValue('image_profile', $venue, "");
@@ -56,9 +69,6 @@
 	//suggestion data
 	$suggestionImage = safeObjectValue('image_suggestion', $venue, "");
 	$suggestion = safeObjectValue('suggestion', $venue, "");
-	
-	//reservation data
-	$reservationURL = route('soup.reservation.id', ['venueId' => $venueId]);
 	
 	//venue co-ordinates
 	$lattitude = safeObjectValue('lattitude', $venue, null);
@@ -162,9 +172,9 @@
 	
 	<div class="spacer-small-2"></div>
 	
-	@if (isset($inviteDate))
+	@if (isset($recommendationText) && strlen($recommendationText)>0)
 		<div class="page-padding-small">
-			<h1 class="small">You and a friend are invited for dinner in {{ $inviteDate }}.</h1>
+			<h1 class="small">{!! $recommendationText !!}</h1>
 		</div>
 	@endif
 	

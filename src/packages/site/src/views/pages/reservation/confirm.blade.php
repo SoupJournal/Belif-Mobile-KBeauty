@@ -50,6 +50,7 @@
 	//reservation properties
 	$reservationKey = safeObjectValue('code', $reservation, null);
 	$date = safeObjectValue('date', $reservation, null);
+	$reservationType = safeObjectValue('type', $reservation, null);
 	$reservationGuests = safeObjectValue('guests', $reservation, 0);
 	$reservationTime = $date ? $date->format('g:i A') : "";
 	$reservationDay = $date ? $date->format('l, F jS') : "";
@@ -97,7 +98,7 @@
 							
 							<h2 class="clear-header-margins bold title-light color-2">
 								<div>
-									Dinner for {{ $reservationGuests }} {{ $reservationGuests==1 ? 'person' : 'people' }} at {{ $reservationTime }} 
+									{{ isset($reservationType) ? $reservationType . ' for' : 'For' }} {{ $reservationGuests }} {{ $reservationGuests==1 ? 'person' : 'people' }} at {{ $reservationTime }} 
 								</div>
 								<div>
 									On {{ $reservationDay }}.
