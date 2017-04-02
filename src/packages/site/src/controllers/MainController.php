@@ -337,6 +337,8 @@
 					if ($reservationKey && strlen($reservationKey)>0) {
 						$reservation = Reservation::where('code', '=', $reservationKey)->first();
 					}
+					//TODO: reuse reservations (get unconfirmed reservation)
+					
 		
 					//draw page
 					return View::make('soup::pages.reservation.form')->with([
@@ -551,6 +553,7 @@
 				if ($reservation) {
 				
 					//get reservation properties
+					$type = safeObjectValue('type', $reservation, "");
 					$userId = safeObjectValue('user', $reservation, -1);
 					$venueId = safeObjectValue('venue', $reservation, -1);
 
@@ -569,7 +572,7 @@
 		
 							//create back URL
 							$backURL = route('soup.reservation.id.id', [
-								'venueId' => $venueId,
+								'type' => $type,
 								'reservationKey' => $reservation->code
 							]);
 		
