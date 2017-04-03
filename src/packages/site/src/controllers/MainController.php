@@ -927,7 +927,7 @@
 				//'nextURL' => route('soup.venue.recommendation'),
 				'backURL' => $page>0 ? route('soup.guide', ['page' => ($page-1)]) : null,
 				'formURL' => route('soup.guide', ['page'=>$page]),
-				//'menuOptions' => $this->mainMenuOptions,
+				'menuOptions' => $this->mainMenuOptions,
 				'step' => intval($page) + 1,
 				'totalSteps' => $totalPages
 			]);

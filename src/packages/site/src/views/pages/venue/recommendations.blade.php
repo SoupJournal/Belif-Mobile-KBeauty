@@ -33,8 +33,8 @@
 	$pageData = isset($pageData) ? $pageData : null;
 	$user = isset($user) ? $user : null;
 	$recommendations = isset($recommendations) ? $recommendations : null;
-	$dinnerVenue = isset($dinnerVenue) ? $dinnerVenue : null;
-	$brunchVenue = isset($brunchVenue) ? $brunchVenue : null;
+//	$dinnerVenue = isset($dinnerVenue) ? $dinnerVenue : null;
+//	$brunchVenue = isset($brunchVenue) ? $brunchVenue : null;
 
 	//get page variables
 //	$title = safeArrayValue('title', $pageData, "");
@@ -87,18 +87,6 @@
 	@foreach($recommendations as $recommendation)
 		@include('soup::sections.recommendation', $recommendation)
 	@endforeach
-
-
-	{{-- dinner venue --}}
-	@if (isset($dinnerVenue) && intval($dinnerId)>=0)
-{{--		@include('soup::sections.recommendation', $dinnerProperties) --}}
-	@endif
-	
-	
-	{{-- brunch venue --}}
-	@if (isset($brunchVenue) && intval($brunchId)>=0)
-{{--		@include('soup::sections.recommendation', $brunchProperties) --}}
-	@endif
 
 @else
 
