@@ -35,7 +35,7 @@
 	
 	
 		//mobile only access
-		//Route::group(array('middleware' => 'AppMobile'), function() {
+		Route::group(array('middleware' => 'AppMobile'), function() {
 	
 			//welcome
 			Route::get('/', ['as' => 'soup.welcome', /*'middleware' => 'CMSAuth',*/ 'uses' => 'SiteController@getIndex']);
@@ -120,7 +120,7 @@
 			
 			}); //end middleware (authorised users only)
 		
-		//}); //end middleware (mobile only)
+		}); //end middleware (mobile only)
 	
 	
 	}); //end namespace group
