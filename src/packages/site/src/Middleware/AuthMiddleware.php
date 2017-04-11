@@ -21,9 +21,9 @@
 	    {
 		   
 		   	//ensure https connection 
-		    if (!$request->secure()) {
-		    	return Redirect::secure( $request->path('/toSecureURL') );
-		    }
+//		    if (!$request->secure()) {
+//		    	return Redirect::secure( $request->path('/toSecureURL') );
+//		    }
 		    
 		    //ensure user is logged in
 			if (!Auth::guard(AppGlobals::$AUTH_GUARD)->check()) {
