@@ -35,4 +35,4 @@ if (file_exists($compiledPath)) {
 
 
 //increase number of function calls allowed, seems like a hack but fixes a bug in Laravel 5.2
-ini_set('xdebug.max_nesting_level', 120);
+ini_set('xdebug.max_nesting_level', 240);
