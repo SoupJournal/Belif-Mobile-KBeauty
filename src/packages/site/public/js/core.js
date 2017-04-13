@@ -57,7 +57,8 @@
 		if ($scope.form) {
 			$scope.answerElement = $scope.form.elements['scriptValue'];
 		}
-		
+		$scope.answerAccept = angular.element(document.getElementById('answer-accept'));
+		$scope.answerReject = angular.element(document.getElementById('answer-reject'));
 		
 		//handle question selection
 		$scope.questionAnswered = function(value) {
@@ -76,6 +77,31 @@
 			} //end if (valid form)
 			
 		}; //end questionAnswered()
+		
+		
+		$scope.withinElement = function(elem, position) {
+			
+			//valid element
+			if (elem && position) { 
+			
+				var rect = elem[0].getBoundingClientRect();
+//			console.log("rect: " + rect.left + ", " + rect.top + " - " + rect.width + ", " + rect.height);
+				
+				//get element bounds
+				var elemBounds = { 
+					left: rect.left,
+					right: rect.left + rect.width,
+					top: rect.top,
+					bottom: rect.top + rect.height
+				};
+
+				return ((position.x >= elemBounds.left && position.x < elemBounds.right) && (position.y >= elemBounds.top && position.y < elemBounds.bottom))
+		     
+			} //end if (valid element)
+			
+			return false;
+			
+		 }; //end withinElement()
 		
 		
 		
@@ -117,6 +143,21 @@
 		$scope.$on('gesture-swipe-right', function (event) {
 //			console.log("swipe right");			
 			$scope.questionAnswered(0);
+		});
+		
+		
+		$scope.$on('gesture-click', function (event, data) {
+
+			//click within accept element
+			if ($scope.withinElement($scope.answerAccept, data.position)) {
+				$scope.questionAnswered(1);
+			}
+			
+			//click within reject element
+			else if ($scope.withinElement($scope.answerReject, data.position)) {
+				$scope.questionAnswered(0);
+			}
+			
 		});
 		
 			

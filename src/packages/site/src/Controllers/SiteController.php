@@ -883,7 +883,7 @@
 			}
 			
 			//valid instagram
-			else if (!$instagram || strlen($instagram)<1 || !preg_match('/^[a-zA-Z0-9._]+$/', $instagram)) {
+			else if (!$instagram || strlen($instagram)<1 || !preg_match('/^@?[a-zA-Z0-9._]+$/', $instagram)) {
 				$errors = 'Please specify a vaild Instagram handle.';
 				$valid = false;
 			}
@@ -903,7 +903,7 @@
 			if ($valid) {
 			
 				//store user details
-				$user->instagram = $instagram;
+				$user->instagram = strcmp($instagram[0], '@')==0 ? substr($instagram, 1) : $instagram;
 				$user->snapchat = $snapchat;
 				$user->zip_code = $zipCode;
 				$user->status = AppGlobals::USER_STATUS_REQUESTED;

@@ -131,7 +131,7 @@
 				
 					{{-- no --}}
 					<div class="button-answer-container pull-left" swipe-fade-view="left">
-						<button name="value" value="0" class="button-answer answer-reject stretch-to-fit">
+						<button name="value" value="0" class="button-answer answer-reject stretch-to-fit" id="answer-reject">
 							<img src="{{ $image_no }}" class="answer_image" load-style="fade">
 						</button>
 					</div>
@@ -143,7 +143,7 @@
 					
 					{{-- yes --}}
 					<div class="button-answer-container pull-right">
-						<button name="value" value="1" class="button-answer answer-accept stretch-to-fit" swipe-fade-view="right">
+						<button name="value" value="1" class="button-answer answer-accept stretch-to-fit" swipe-fade-view="right" id="answer-accept">
 							<img src="{{ $image_yes }}" class="answer_image" load-style="fade">
 						</button>
 					</div>

@@ -138,7 +138,7 @@
 					
 					{{-- yes --}}
 					<div class="button-answer-container">
-						<button name="value" value="1" class="button-answer answer-accept stretch-to-fit">
+						<button name="value" value="1" class="button-answer answer-accept stretch-to-fit" id="answer-accept">
 							<img src="{{ $image_yes }}" class="answer_image" load-style="fade">
 						</button>
 					</div>
