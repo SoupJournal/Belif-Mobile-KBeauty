@@ -1,4 +1,4 @@
-@extends('soup::layouts.master')
+@extends('soup::layouts.fullscreen')
 
 
 {{------------------ TITLE -------------------}}
@@ -51,16 +51,16 @@
 	{{-- background image --}}
 	<img class="page-image" src="{{ $backgroundImage }}" load-style="fade" load-group="main">
 	
-	<div class="page-overlay" load-style="fade" load-group="main">
+	<div class="page-overlay text-center" load-style="fade" load-group="main">
 	
-		<div class="">
+		<div class="stretch-to-fit bg-color-10">
 		
 			{{-- page content --}}
 			<div class="page-container page-padding-medium">
 	
 	
 				<div class="spacer-medium"></div>
-				<div class="spacer-tiny-2"></div>
+				<div class="spacer-large"></div>
 				
 	
 				{{-- title --}}

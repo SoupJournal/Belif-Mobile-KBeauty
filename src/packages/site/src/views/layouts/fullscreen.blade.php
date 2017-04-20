@@ -3,7 +3,7 @@
 	//define variables
 	$fillHeight = (!isset($fillHeight) ? true : $fillHeight);
 	$pageName = (!isset($pageName) ? 'soup' : $pageName);
-
+	$showHeader = (!isset($showHeader) ? true : $showHeader); 
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,12 @@
 		{{-- controller --}}
 		<div class="main-page-full page-text stretch-to-fit" ng-controller="SoupController">
 			
-			
+			{{----------------- HEADER -------------------}}
+	   		@if ($showHeader) 
+	   			<div class="header-fixed-full">
+			    	@include('soup::layouts.header')
+		    	</div>
+	    	@endif	
 			
 
        		{{----------------- CONTENT ------------------}}
