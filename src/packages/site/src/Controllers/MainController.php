@@ -967,14 +967,14 @@
 			//no more pages
 			else {
 				
-				//first run
-				if ($firstRun) {
-					return Redirect::route('soup.user.profile')->with(['firstRun' => true]);
-				}
-				//normal run
-				else {
+//				//first run
+//				if ($firstRun) {
+//					return Redirect::route('soup.user.profile')->with(['firstRun' => true]);
+//				}
+//				//normal run
+//				else {
 					return Redirect::route('soup.venue.recommendation');
-				}
+//				}
 			}
 				
 				

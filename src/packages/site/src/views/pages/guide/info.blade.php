@@ -130,7 +130,7 @@
 
 	
 					{{-- help --}}
-					<div class="question-text"><h3 class="title-light color-2">{!! $text !!}</h3></div>
+					<div class="guide-text"><h3 class="title-light color-2">{!! $text !!}</h3></div>
 					
 					<div class="spacer-large"></div>
 					<div class="spacer-tiny-2"></div>
