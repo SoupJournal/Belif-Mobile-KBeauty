@@ -47,29 +47,6 @@
 	//user properties
 	$userName = fullName($user, null);
 
-/*
-	//dinner venue properties
-	$dinnerId = safeObjectValue('id', $dinnerVenue, "");
-	$dinnerProperties = [
-		'type' => 'DINNER',
-		'name' => safeObjectValue('name', $dinnerVenue, ""),
-		'image' => safeObjectValue('image_profile', $dinnerVenue, ""),
-		'link' => intval($dinnerId)>=0 ? route('soup.venue.profile', ['venueId'=>$dinnerId]) : null,
-		'address' => compilePropertiesString($dinnerVenue, ['address', 'suburb'], [', ']),
-		'openHours' => venueTodaysOpenHoursString($dinnerVenue, "CLOSED TODAY")
-	];
-
-	//brunch venue properties
-	$brunchId = safeObjectValue('id', $brunchVenue, "");
-	$brunchProperties = [
-		'type' => 'BRUNCH',
-		'name' => safeObjectValue('name', $brunchVenue, ""),
-		'image' => safeObjectValue('image_profile', $brunchVenue, ""),
-		'link' => intval($brunchId)>=0 ? route('soup.venue.profile', ['venueId'=>$brunchId]) : null,
-		'address' => compilePropertiesString($brunchVenue, ['address', 'suburb'], [', ']),
-		'openHours' => venueTodaysOpenHoursString($brunchVenue, "CLOSED TODAY")
-	];
-*/	
 ?>
 
 <div class="spacer-tiny"></div>

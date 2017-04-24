@@ -37,7 +37,7 @@
 	@endif
 
 	@if ($debugMode) 
-		{{-- HTML::script('site/js/core/debug.js') --}}
+		{{ HTML::script('soup/cms/js/core/debug.js') }}
 	@endif
 
 

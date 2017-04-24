@@ -38,44 +38,44 @@
 		Route::group(array('middleware' => 'AppMobile'), function() {
 	
 			//welcome
-			Route::get('/', ['as' => 'soup.welcome', 'uses' => 'SiteController@getIndex']);
+			Route::get('/', ['as' => 'soup.welcome', 'uses' => 'SignUpController@getIndex']);
 			
 			
 			//secure HTTPS
 			Route::group(array('middleware' => 'AppHTTPS'), function() {
 			
 				//login
-				Route::get('/login', ['as' => 'soup.login', 'uses' => 'SiteController@getLogin']);
-				Route::post('/login', ['as' => 'soup.login', 'uses' => 'SiteController@postLogin']);
-				Route::get('/logout', ['as' => 'soup.logout', 'uses' => 'SiteController@getLogout']);
+				Route::get('/login', ['as' => 'soup.login', 'uses' => 'SignUpController@getLogin']);
+				Route::post('/login', ['as' => 'soup.login', 'uses' => 'SignUpController@postLogin']);
+				Route::get('/logout', ['as' => 'soup.logout', 'uses' => 'SignUpController@getLogout']);
 				//forgotten password
-				Route::get('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@getForgot']);
-				Route::post('/forgot', ['as' => 'soup.forgot', 'uses' => 'SiteController@postForgot']);
-				Route::get('/forgot/sent', ['as' => 'soup.forgot.sent', 'uses' => 'SiteController@getResetSent']);			
-				Route::get('/password/reset/{safestr}', ['as' => 'soup.password.reset.id', 'uses' => 'SiteController@getChangePassword']);	
-				Route::post('/password/reset', ['as' => 'soup.password.reset', 'uses' => 'SiteController@postChangePassword']);	
-				Route::get('/password/reset/thanks/{safestr}', ['as' => 'soup.password.reset.thanks', 'uses' => 'SiteController@getPasswordChanged']);	
+				Route::get('/forgot', ['as' => 'soup.forgot', 'uses' => 'SignUpController@getForgot']);
+				Route::post('/forgot', ['as' => 'soup.forgot', 'uses' => 'SignUpController@postForgot']);
+				Route::get('/forgot/sent', ['as' => 'soup.forgot.sent', 'uses' => 'SignUpController@getResetSent']);			
+				Route::get('/password/reset/{safestr}', ['as' => 'soup.password.reset.id', 'uses' => 'SignUpController@getChangePassword']);	
+				Route::post('/password/reset', ['as' => 'soup.password.reset', 'uses' => 'SignUpController@postChangePassword']);	
+				Route::get('/password/reset/thanks/{safestr}', ['as' => 'soup.password.reset.thanks', 'uses' => 'SignUpController@getPasswordChanged']);	
 				
 				//user already logged in
 				Route::group(array('middleware' => 'AppUser'), function() {
 					//sign up
-					Route::get('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@getSignup']);
-					Route::post('/signup', ['as' => 'soup.signup', 'uses' => 'SiteController@postSignup']);
+					Route::get('/signup', ['as' => 'soup.signup', 'uses' => 'SignUpController@getSignup']);
+					Route::post('/signup', ['as' => 'soup.signup', 'uses' => 'SignUpController@postSignup']);
 				});
 				
 				//post signup
 				Route::group(array('middleware' => ['AppSignUp']), function() {
-					Route::get('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@getSignupData']);
-					Route::post('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SiteController@postSignupData']);
-					Route::get('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@getSignupCode']);
-					Route::post('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SiteController@postSignupCode']);
+					Route::get('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SignUpController@getSignupData']);
+					Route::post('/signup/info', ['as' => 'soup.signup.info', 'uses' => 'SignUpController@postSignupData']);
+					Route::get('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SignUpController@getSignupCode']);
+					Route::post('/signup/code', ['as' => 'soup.signup.code', 'uses' => 'SignUpController@postSignupCode']);
 					
 					//new signup (haven't requested member state)
 					Route::group(array('middleware' => 'NewSignUp'), function() {
-						Route::get('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@getSignupRequest']);
-						Route::post('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SiteController@postSignupRequest']);
+						Route::get('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SignUpController@getSignupRequest']);
+						Route::post('/signup/request', ['as' => 'soup.signup.request', 'uses' => 'SignUpController@postSignupRequest']);
 					});
-					Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SiteController@getSignupThanks']);
+					Route::get('/signup/thanks', ['as' => 'soup.signup.thanks', 'uses' => 'SignUpController@getSignupThanks']);
 				});
 				
 				//authenticated routes

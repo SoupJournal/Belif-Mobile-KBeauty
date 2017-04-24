@@ -61,7 +61,8 @@
 					'm\\d\\Y',
 					'm-d-Y',
 					'Y-m-d',
-					'Y-d-m'
+					'Y-d-m',
+					'Y-d-m H:m:s'
 				];
 			}
 			
@@ -80,15 +81,27 @@
 					}
 					catch (\Exception $ex) {
 						$date = null;
+						//echo "Exception - format[" . $format . "] - string[" . $dateString . "]: " . $ex->getMessage() . "<br>";
 						continue;
 					}
 					
 				} //end for()
 				
+				
+				//no date found - try direct conversion
+				if (!$date) {
+					try {
+						$date = new Carbon($dateString);	
+					}
+					catch (\Exception $ex) {
+						$date = null;
+					}
+				}
+				
 			} //end if (valid formats)
 			
 		} //end if (valid date string) 
-		
+
 		
 		return $date;
 		
@@ -320,15 +333,20 @@
 	
 	//====== VENUE DATA ======//
 	
-	function venueTodaysOpenHoursString($venue, $default = null) {
+	function venueOpenHoursString($venue, $default = null, $date = null) {
 		
 		$result = $default;
 		
-		//valid venue
-		if ($venue) {
+		//use default date (if required)
+		if (!$date) {
+			$date = Carbon::now();
+		}
+		
+		//valid venue and date
+		if ($venue && $date) {
 		
 			//get day of week
-			$day = Carbon::now()->format('l');
+			$day = $date->format('l');
 			if ($day && strlen($day)>0) {
 				
 				//find open hours
@@ -357,11 +375,126 @@
 				
 			} //end if (valid day)
 		
-		} //end if (valid venue)
+		} //end if (valid venue and date)
 		
 		return $result;
 		
-	} //end venueTodaysOpenHoursString()
+	} //end venueOpenHoursString()
+	
+	
+	
+	function availablityForRecommendation($recommendation, $venue = null, $startDate = null, $endDate = null) {
+		
+		$availableDates = null;
+		
+		//valid recommendation
+		if ($recommendation) {
+		
+			//get venue if required
+			if (!$venue || $venue->id!=$recommendation->venue) {
+				$venue = $recommendation->venue();	
+			}
+
+			//valid venue
+			if ($venue) {
+
+				//get start date
+				if (!$startDate) {
+					$startDate = $recommendation->activation_date ? $recommendation->activation_date : Carbon::now();	
+				}
+	
+				//get end date
+				if (!$endDate) {
+					$endDate = $recommendation->expiration_date ? $recommendation->expiration_date : Carbon::now()->addDays(30);
+				}
+				
+				//get days venue is open
+				$availability = VenueOpenHours::select(['day', 'open_time', 'close_time'])
+											->where('venue', $venue->id)
+		    								->whereNotNull('open_time')
+		    								->where('open_time', '!=', '')
+		    								->where('open_time', '<', 'close_time')
+		    								->get();
+
+				//venue is open
+				if ($availability && count($availability)>0) {
+				
+					//compile day availability times
+					$days = [];
+					$hours = null;
+					$openTime = null;
+					$closeTime = null;
+					foreach ($availability as $day) {
+						
+						//get open time
+						$openTime = $day->open_time;
+						if ($openTime) {
+							
+							//get close time
+							$closeTime = $day->close_time;
+							if (!$closeTime) {
+								$closeTime = $openTime->endOfDay();	
+							}
+							//prevent bookings for last hour (TODO: handle case where venue is open past midnight)
+							else {
+								$closeTime->subHour();
+							}
+							
+							//TODO: limit hours by reservation type
+							
+	
+							//compile list of hours
+							$hours = [];
+							for ($date = $day->open_time; $date->lte($closeTime); $date->addMinutes(15)) {
+								$hours[] = $date->format('g:i A');
+							}
+							
+							//store hours list for day
+							$days[$day->day] = $hours;
+
+						} //end if (valid open time)
+
+					} //end for()
+
+				
+					//create dates list
+					$availableDates = [];
+
+					//add dates
+					$day = null;
+					$openTimes = null;
+				    for($date = $startDate; $date->lte($endDate); $date->addDay()) {
+				    	
+				    	//get date day of week
+						$day = $date->format('l');
+						if (!is_null($day) && strlen($day)>0) {
+				    	
+							//check if venue is open on specified day
+							$openTimes = $days[$day];
+							
+							//TODO: check for blocked times
+								
+					    	//venue is open on date
+					    	if ($openTimes && count($openTimes)>0) {
+					    	
+						    	//add date and times
+						    	$availableDates[] = ['date' => $date->copy(), 'times' => $openTimes]; 
+					    	
+					    	}
+				    	
+						} //end if (valid day)
+				        
+				    } //end for()
+			    
+				} //end if (venue is open)
+		    
+			} //end if (valid venue)
+			
+		} //end if (valid recommendation)
+
+		return $availableDates;
+		
+	} //end availablityForRecommendation()
 	
 	
 	

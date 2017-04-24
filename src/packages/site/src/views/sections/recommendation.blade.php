@@ -11,7 +11,7 @@
 	//compile properties
 	$link = (isset($type) && strlen($type)>0) ? route('soup.venue.profile', ['type'=>$type]) : "#";
 	$address = compilePropertiesString($venue, ['address', 'suburb'], [', ']);
-	$openHours = venueTodaysOpenHoursString($venue, "CLOSED TODAY");
+	$openHours = venueOpenHoursString($venue, "CLOSED TODAY");
 	
 ?>
 

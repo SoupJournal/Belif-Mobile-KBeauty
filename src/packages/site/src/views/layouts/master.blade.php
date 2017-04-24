@@ -28,7 +28,7 @@
     </head>
     
     
-    <body ng-app="soup" class="bg-color-1" ng-controller="SoupController"> 
+    <body ng-app="soup" class="bg-color-1" ng-controller="SoupController" ng-init="@yield('init', '')"> 
    
    
     
@@ -87,7 +87,12 @@
 			(function() {
 		        
 				//load modules
-				var app = angular.module('soup', ['ngResource', 'ui.bootstrap', 'soup-core', 'soup-gui', 'swipe-gesture', 'forms', 'maps']);   
+				var app = angular.module('soup', ['ngResource', 'ui.bootstrap', 'soup-core', 'soup-gui', 'swipe-gesture', 'forms', 'maps'], function($interpolateProvider) {
+					
+					//update tags to avoid conflict with blade
+			        $interpolateProvider.startSymbol('<%');
+			        $interpolateProvider.endSymbol('%>');
+    			});   
 			
 			})();
 			//end anonymous function

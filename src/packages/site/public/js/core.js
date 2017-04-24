@@ -41,6 +41,136 @@
 		
 
 
+		//------------------------------------------------------//
+		//----					RESERVATIONS				----//
+		//------------------------------------------------------//	
+
+
+		//reservation times
+		$scope.reservationTimes = []
+
+
+		//reservation configuration
+		$scope.initReservations = function(reservationData) {
+			
+			//store data
+			$scope.reservationData = reservationData;
+			
+		} //end initReservations()
+
+
+		//reservation form elements
+		$scope.resForm = document.forms['reservationForm'];
+		if ($scope.resForm) {
+			$scope.reservationDateElement = angular.element($scope.resForm.elements['date']);
+			$scope.reservationTimeSelectorElement = angular.element($scope.resForm.elements['time_selector']);
+			$scope.reservationTimeElement = angular.element($scope.resForm.elements['time']);
+		}
+
+		
+		//handle reservation date updates
+		$scope.$on('reservationDateUpdated', function (event, inputElement) {
+			
+			//valid input
+			if (inputElement) {
+			
+				//data exists
+				if ($scope.reservationData) {
+				
+					//get angular element
+					inputElement = angular.element(inputElement);
+					
+					//get date value
+					var dateValue = inputElement.prop('value');
+					
+					//get date data
+					var data = dateValue>=0 && dateValue<$scope.reservationData.length ? $scope.reservationData[dateValue] : null;
+
+					//found data
+					if (data) {
+					
+						//update date input
+						if ($scope.reservationDateElement) {
+							$scope.reservationDateElement.prop('value', data.date.date);
+						}
+						
+						//update time input
+						if ($scope.reservationTimeSelectorElement) {
+							
+							//set available times
+							$scope.$apply(function() {
+								$scope.reservationTimes = data.times;
+							});
+
+							//times available
+							if ($scope.reservationTimes) {
+								$scope.reservationTimeSelectorElement.prop('disabled', false);
+							}
+							//no times available
+							else {
+								$scope.reservationTimeSelectorElement.prop('value', '');
+								$scope.reservationTimeSelectorElement.prop('disabled', true);
+							}
+						}
+					
+					} //end if (found data)
+					
+					//no data
+					else {
+						
+						//set available times
+						$scope.$apply(function() {
+							$scope.reservationTimes = null;
+						});
+						
+						//update date input
+						if ($scope.reservationDateElement) {
+							$scope.reservationDateElement.prop('value', '');
+						}
+						
+						//clear selector
+						if ($scope.reservationTimeSelectorElement) {
+							$scope.reservationTimeSelectorElement.prop('value', '');
+							$scope.reservationTimeSelectorElement.prop('disabled', true);
+						}
+					}
+				
+				} //end if (reservation data exists)
+			
+			} //end if (valid input element)
+
+		});
+
+
+		//handle reservation time updates
+		$scope.$on('reservationTimeUpdated', function (event, inputElement) {
+
+			//found elements
+			if ($scope.reservationTimeSelectorElement && $scope.reservationTimeElement) {
+				
+				//get time value
+				var timeValue = $scope.reservationTimeSelectorElement.prop('value');
+
+				//time specified
+				if (timeValue && timeValue.length>0) {
+				//if ($scope.reservationTimes && timeValue>=0 && timeValue<$scope.reservationTimes.length) {
+					
+					//get time
+					//var time = $scope.reservationTimes[timeValue];
+
+					//set time
+					$scope.reservationTimeElement.prop('value', timeValue);
+					
+				}
+				//no time specified
+				else {
+					$scope.reservationTimeElement.prop('value', '');
+				}
+
+			} //end if (valid elements)
+		
+		});
+
 		
 		//------------------------------------------------------//
 		//----					SWIPE						----//

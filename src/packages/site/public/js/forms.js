@@ -6,6 +6,35 @@
 	
 	
 	
+	
+	//broadcastChange directive - broadcasts named event on element change 
+	module.directive('broadcastChange', ['$rootScope', function($rootScope) {
+	    return {
+	    	restrict: 'A',
+	        scope: {
+	            broadcastChange: '@'
+	        },
+	        link: function (scope, element, attrs) {
+	        	
+	        	angular.element(element).on('change', function() {
+	        	
+		        	//click event defined
+		        	if (scope.broadcastChange && scope.broadcastChange.length>0) {
+
+		        		//broadcast event
+		        		$rootScope.$broadcast(scope.broadcastChange, angular.element(element));
+		        		
+		        	} //end if (valid event name)
+	        	
+	        	});
+	        }
+	        
+	    }
+	}]); //end directive
+	
+	
+	
+	
 	/**
 	* 	checkbox-limit - limits number of checkboxes selected
 	**/

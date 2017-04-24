@@ -15,7 +15,7 @@
 	
 	use Carbon\Carbon;
 
-	class SiteController extends BaseController {
+	class SignUpController extends BaseController {
 		
 
 		//public function __construct() {
@@ -959,7 +959,7 @@
 
 	
 								
-	} //end class SiteController
+	} //end class SignUpController
 
 
 ?>

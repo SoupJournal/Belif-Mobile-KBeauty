@@ -16,23 +16,13 @@
 
 	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
 	
-@stop
-{{--------------- END SCRIPTS ----------------}}
-
-
-
-
-
-{{----------------- CONTENT ------------------}}
-
-@section('content')
-
 <?php
 
 	//ensure page data is set
 	$type = isset($type) ? $type : null;
 	$venue = isset($venue) ? $venue : null;
 	$reservation = isset($reservation) ? $reservation : null;
+	$reservationAvailability = isset($reservationAvailability) ? $reservationAvailability : null;
 	$pageData = isset($pageData) ? $pageData : null;
 
 	//get page variables
@@ -62,6 +52,17 @@
 	$date = $reservationDate ? $reservationDate->format('m/d/Y') : null;
 	$time = $reservationDate ? $reservationDate->format('g:i A') : null;
 
+	//compile reservation date options
+	$dateOptions = []; //'' => 'Select available date'];
+	foreach ($reservationAvailability as $date) {
+		if ($date && array_key_exists('date', $date) && $date['date']) {
+			$dateOptions[] = $date['date']->format('l jS F');
+		}
+	} //end for()
+
+	//compile time options
+	$timeData = convertObjectToJS($reservationAvailability);
+
 	//guest options
 	$guestOptions = [1 => 1, 2 => 2];
 
@@ -69,6 +70,29 @@
 	$formURL = isset($formURL) ? $formURL : "";
 	
 ?>
+	
+@stop
+{{--------------- END SCRIPTS ----------------}}
+
+
+
+
+{{--------------------------------------------}}
+{{--------------- 	  INIT 	  ----------------}}
+@section('init')
+	initReservations({{ $timeData }})
+@stop
+{{--------------- 	END INIT  ----------------}}
+
+
+
+
+{{--------------------------------------------}}
+{{----------------- CONTENT ------------------}}
+
+@section('content')
+
+
 
 {{-- background image --}}
 @include('soup::sections.background', ['backgroundImage' => $backgroundImage, 'loadGroup' => 'main'])
@@ -97,7 +121,7 @@
 		
 
 
-	{{ Form::model($reservation, Array('role' => 'form', 'name' => 'loginForm', 'url' => $formURL)) }}
+	{{ Form::model($reservation, Array('role' => 'form', 'name' => 'reservationForm', 'url' => $formURL, 'id' => 'reservation-form')) }}
 	
 		<div class="page-section page-padding-small">		
 		
@@ -128,7 +152,8 @@
 			{{-- date --}}
 			<div class="form-group"> 
 			
-				{{ Form::date('date', $date, Array ('placeholder' => 'Select available date', 'class' => 'page-input-text square no-border page-input-center input-padding-tiny input-clear-top-margin', 'tabindex' => '1', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::select('date_selector', $dateOptions, null, Array ('placeholder' => 'Select available date', 'class' => 'page-input-select square no-border page-input-center input-padding-tiny input-clear-top-margin small', 'tabindex' => '1', 'required' => '', 'auto-next-focus' => '', 'broadcast-change' => 'reservationDateUpdated')) }}
+				{{ Form::hidden('date', null, Array ('id' => 'date')) }}
 				
 			</div>
 			
@@ -139,7 +164,8 @@
 			{{-- time --}}
 			<div class="form-group"> 
 			
-				{{ Form::time('time', $time, Array ('placeholder' => 'Select available time', 'class' => 'page-input-text square no-border page-input-center input-padding-tiny input-clear-top-margin', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::select('time_selector', [], $time, Array (/*'disabled' => 'disabled',*/ 'placeholder' => 'Select available time', 'class' => 'page-input-select square no-border page-input-center input-padding-tiny input-clear-top-margin small', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '', 'broadcast-change' => 'reservationTimeUpdated', 'ng-model' => 'reservationTime', 'ng-options' => 'time as time for time in reservationTimes')) }}
+				{{ Form::hidden('time', null, Array ('id' => 'time')) }}
 				
 			</div>
 			

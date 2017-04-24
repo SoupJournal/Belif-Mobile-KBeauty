@@ -509,7 +509,7 @@
 		
 		
 									
-	} //end class SiteController
+	} //end class QuizController
 
 
 ?>
