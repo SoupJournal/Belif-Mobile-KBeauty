@@ -164,7 +164,7 @@
 			{{-- time --}}
 			<div class="form-group"> 
 			
-				{{ Form::select('time_selector', [], $time, Array (/*'disabled' => 'disabled',*/ 'placeholder' => 'Select available time', 'class' => 'page-input-select square no-border page-input-center input-padding-tiny input-clear-top-margin small', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '', 'broadcast-change' => 'reservationTimeUpdated', 'ng-model' => 'reservationTime', 'ng-options' => 'time as time for time in reservationTimes')) }}
+				{{ Form::select('time_selector', [], $time, Array (/*'disabled' => 'disabled',*/ 'placeholder' => 'Select available time', 'class' => 'page-input-select square no-border page-input-center input-padding-tiny input-clear-top-margin small', 'tabindex' => '2', 'required' => '', 'auto-next-focus' => '', 'broadcast-change' => 'reservationTimeUpdated', 'ng-model' => 'reservationTime', 'ng-options' => 'time as time for time in reservationTimes track by time')) }}
 				{{ Form::hidden('time', null, Array ('id' => 'time')) }}
 				
 			</div>

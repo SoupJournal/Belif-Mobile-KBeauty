@@ -49,6 +49,16 @@
 		//reservation times
 		$scope.reservationTimes = []
 
+		//reservation form elements
+		$scope.resForm = document.forms['reservationForm'];
+		if ($scope.resForm) {
+			$scope.reservationDateSelectorElement = angular.element($scope.resForm.elements['date_selector']);
+			$scope.reservationDateElement = angular.element($scope.resForm.elements['date']);
+			$scope.reservationTimeSelectorElement = angular.element($scope.resForm.elements['time_selector']);
+			$scope.reservationTimeElement = angular.element($scope.resForm.elements['time']);
+		}
+
+
 
 		//reservation configuration
 		$scope.initReservations = function(reservationData) {
@@ -56,86 +66,117 @@
 			//store data
 			$scope.reservationData = reservationData;
 			
+			//Apply initial options
+			if ($scope.reservationDateSelectorElement) {
+				
+				//get date value
+				var dateValue = $scope.reservationDateSelectorElement.prop('value');
+
+				//update elements
+				$scope.updatedDateElement(dateValue, false);
+					
+			}
+			
 		} //end initReservations()
 
 
-		//reservation form elements
-		$scope.resForm = document.forms['reservationForm'];
-		if ($scope.resForm) {
-			$scope.reservationDateElement = angular.element($scope.resForm.elements['date']);
-			$scope.reservationTimeSelectorElement = angular.element($scope.resForm.elements['time_selector']);
-			$scope.reservationTimeElement = angular.element($scope.resForm.elements['time']);
-		}
 
+		//update date times
+		$scope.updatedDateElement = function(dateValue, applyValues) {
+			
+			//set default values
+			if (applyValues===undefined) applyValues = true;
+			
+
+			//data exists
+			if ($scope.reservationData) {
+
+				//get date data
+				var data = dateValue>=0 && dateValue<$scope.reservationData.length ? $scope.reservationData[dateValue] : null;
+
+				//found data
+				if (data) {
+				
+					//update date input
+					if ($scope.reservationDateElement) {
+						$scope.reservationDateElement.prop('value', data.date.date);
+					}
+					
+					//update time input
+					if ($scope.reservationTimeSelectorElement) {
+
+						//set available times
+						if (applyValues) {
+							$scope.$apply(function() {
+								$scope.reservationTimes = data.times;
+							});
+						}
+						//apply values directly (used for init call when apply is still in progress)
+						else {
+							$scope.reservationTimes = data.times;
+						}
+
+						//times available
+						if ($scope.reservationTimes) {
+							$scope.reservationTimeSelectorElement.prop('disabled', false);
+						}
+						//no times available
+						else {
+							$scope.reservationTimeSelectorElement.prop('value', '');
+							$scope.reservationTimeSelectorElement.prop('disabled', true);
+						}
+					}
+				
+				} //end if (found data)
+				
+				//no data
+				else {
+					
+					//set available times
+					if (applyValues) {
+						$scope.$apply(function() {
+							$scope.reservationTimes = null;
+						});
+					}
+					//apply values directly (used for init call when apply is still in progress)
+					else {
+						$scope.reservationTimes = null;
+					}
+					
+					//update date input
+					if ($scope.reservationDateElement) {
+						$scope.reservationDateElement.prop('value', '');
+					}
+					
+					//clear selector
+					if ($scope.reservationTimeSelectorElement) {
+						$scope.reservationTimeSelectorElement.prop('value', '');
+						$scope.reservationTimeSelectorElement.prop('disabled', true);
+					}
+				}
+				
+			} //end if (reservation data exists)
+			
+		}; //end updatedDateElement()
+		
+		
+		
+		//== EVENT HANDLING ==//
 		
 		//handle reservation date updates
 		$scope.$on('reservationDateUpdated', function (event, inputElement) {
 			
 			//valid input
 			if (inputElement) {
-			
-				//data exists
-				if ($scope.reservationData) {
 				
-					//get angular element
-					inputElement = angular.element(inputElement);
-					
-					//get date value
-					var dateValue = inputElement.prop('value');
-					
-					//get date data
-					var data = dateValue>=0 && dateValue<$scope.reservationData.length ? $scope.reservationData[dateValue] : null;
-
-					//found data
-					if (data) {
-					
-						//update date input
-						if ($scope.reservationDateElement) {
-							$scope.reservationDateElement.prop('value', data.date.date);
-						}
-						
-						//update time input
-						if ($scope.reservationTimeSelectorElement) {
-							
-							//set available times
-							$scope.$apply(function() {
-								$scope.reservationTimes = data.times;
-							});
-
-							//times available
-							if ($scope.reservationTimes) {
-								$scope.reservationTimeSelectorElement.prop('disabled', false);
-							}
-							//no times available
-							else {
-								$scope.reservationTimeSelectorElement.prop('value', '');
-								$scope.reservationTimeSelectorElement.prop('disabled', true);
-							}
-						}
-					
-					} //end if (found data)
-					
-					//no data
-					else {
-						
-						//set available times
-						$scope.$apply(function() {
-							$scope.reservationTimes = null;
-						});
-						
-						//update date input
-						if ($scope.reservationDateElement) {
-							$scope.reservationDateElement.prop('value', '');
-						}
-						
-						//clear selector
-						if ($scope.reservationTimeSelectorElement) {
-							$scope.reservationTimeSelectorElement.prop('value', '');
-							$scope.reservationTimeSelectorElement.prop('disabled', true);
-						}
-					}
+				//get angular element
+				inputElement = angular.element(inputElement);
 				
-				} //end if (reservation data exists)
+				//get date value
+				var dateValue = inputElement.prop('value');
+				
+				//update elements
+				$scope.updatedDateElement(dateValue);
 			
 			} //end if (valid input element)
 
@@ -171,6 +212,9 @@
 		
 		});
 
+		
+		
+		
 		
 		//------------------------------------------------------//
 		//----					SWIPE						----//

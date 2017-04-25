@@ -20,6 +20,27 @@ class VenueOpenHours extends Model {
     
     
 
+
+ 
+ 
+		//==========================================================//
+		//====				RELATIONSHIP METHODS				====//
+		//==========================================================//	
+			   
+    
+    
+	/**
+     * Get the venue data associated with these hours.
+     */
+	public function venue() {
+    
+        return $this->belongsTo(Venue::class, 'venue', 'id');
+        
+    } //end venue()
+    
+
+
+
 		//==========================================================//
 		//====				ACCESSOR METHODS					====//
 		//==========================================================//	
@@ -29,7 +50,8 @@ class VenueOpenHours extends Model {
 
 	public function getOpenTimeAttribute($date) {
 	
-	    return $date ? Carbon::parse($date) : null;	   
+		return $date ? Carbon::createFromFormat('H:i:s', $date) : null;
+	    //return $date ? Carbon::parse($date) : null;	   
 	     
 	} //end getOpenTimeAttribute()
 	
@@ -43,7 +65,8 @@ class VenueOpenHours extends Model {
 	
 	public function getCloseTimeAttribute($date) {
 	
-	    return $date ? Carbon::parse($date) : null;	   
+		return $date ? Carbon::createFromFormat('H:i:s', $date) : null;
+	    //return $date ? Carbon::parse($date) : null;	   
 	     
 	} //end getCloseTimeAttribute()
 	

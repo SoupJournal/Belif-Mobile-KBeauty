@@ -3,6 +3,7 @@
 	//setup namespace
 	use Carbon\Carbon;
 	use Soup\Mobile\Models\VenueOpenHours;
+	use Soup\Mobile\Models\VenueBlockedHours;
 
 
 		//==========================================================//
@@ -419,6 +420,32 @@
 				//venue is open
 				if ($availability && count($availability)>0) {
 				
+				
+					//limit hours by reservation type
+					$startLimit = null;
+					$endLimit = null;
+					switch (strtolower($recommendation->type)) {
+					
+						case "dinner":
+							$startLimit = Carbon::createFromFormat('H:i:s', '17:00:00');
+						break;
+						
+						case "lunch":
+							$startLimit = Carbon::parse('10:00:00');
+							$endLimit = Carbon::parse('15:00:00');
+						break;
+						
+						case "brunch":
+							$endLimit = Carbon::parse('13:00:00');
+						break;
+						
+						case "breakfast":
+							$endLimit = Carbon::parse('11:00:00');
+						break;
+						
+					} //end switch (recommendation type)
+				
+				
 					//compile day availability times
 					$days = [];
 					$hours = null;
@@ -440,12 +467,23 @@
 								$closeTime->subHour();
 							}
 							
-							//TODO: limit hours by reservation type
 							
-	
+							//limit hours by recommendation type
+							if ($startLimit) {
+								if ($openTime->lt($startLimit)) {
+									$openTime = $startLimit;
+								}
+							}
+							if ($endLimit) {
+								if ($closeTime->gt($endLimit)) {
+									$closeTime = $endLimit;
+								}	
+							}
+	//echo "day[" . $day->day . "] type[" . $recommendation->type . "] openTime: " . print_r($openTime, true) . " - closeTime: " .  print_r($closeTime, true) . "<br><br>";
+
 							//compile list of hours
 							$hours = [];
-							for ($date = $day->open_time; $date->lte($closeTime); $date->addMinutes(15)) {
+							for ($date = $openTime->copy(); $date->lte($closeTime); $date->addMinutes(15)) {
 								$hours[] = $date->format('g:i A');
 							}
 							
@@ -456,14 +494,18 @@
 
 					} //end for()
 
-				
+
+
+					//get list of blocked dates
+					$blockedDates = $venue->blockedHours()->get();
+
 					//create dates list
 					$availableDates = [];
 
 					//add dates
 					$day = null;
 					$openTimes = null;
-				    for($date = $startDate; $date->lte($endDate); $date->addDay()) {
+				    for($date = $startDate->copy(); $date->lte($endDate); $date->addDay()) {
 				    	
 				    	//get date day of week
 						$day = $date->format('l');
@@ -472,7 +514,39 @@
 							//check if venue is open on specified day
 							$openTimes = $days[$day];
 							
-							//TODO: check for blocked times
+							//has open times
+							if ($openTimes && count($openTimes)>0) {
+
+								//TODO: check for blocked times
+								if ($blockedDates) {
+								
+									//get venue open times
+									$startTime = Carbon::createFromFormat('Y-m-d g:i A', $date->format('Y-m-d ') . ($openTimes[0]));
+									$endTime = Carbon::createFromFormat('Y-m-d g:i A', $date->format('Y-m-d ') . $openTimes[count($openTimes)-1]);
+									
+									//check for blocked dates
+									foreach ($blockedDates as $blocked) {
+										
+										//end has dates
+										if ($blocked->start_date && $blocked->end_date) {
+											
+											//within blocked dates
+											if ($blocked->start_date->lte($startTime) && $blocked->end_date->gt($endTime)) {
+											 	
+											 	//TODO: compare hours - allow hours outside of times
+											 	
+											 	//clear open times
+											 	$openTimes = null;
+											 	break;
+											}
+											 
+										} //end if (has dates)
+										
+									} //end for()
+									
+								} //end if (has blocked dates)
+								
+							} //end if (has open times)
 								
 					    	//venue is open on date
 					    	if ($openTimes && count($openTimes)>0) {

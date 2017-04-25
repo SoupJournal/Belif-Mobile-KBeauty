@@ -339,8 +339,11 @@
 					}
 					//TODO: reuse reservations (get unconfirmed reservation)
 					
+					//get earliest reservation date
+					$earliestReservationDate = Carbon::now()->addMinutes(30);
+					
 					//get list of recommendation dates
-					$availableDates = availablityForRecommendation($recommendation, $venue);
+					$availableDates = availablityForRecommendation($recommendation, $venue, $earliestReservationDate);
 					
 		
 					//draw page
@@ -380,10 +383,10 @@
 			$guests = safeArrayValue('guests', $_POST);
 			$dateString = safeArrayValue('date', $_POST);
 			$timeString = safeArrayValue('time', $_POST);
-		$dateString2 = safeArrayValue('time_selector', $_POST);	
+//		$dateString2 = safeArrayValue('time_selector', $_POST);	
 //		echo "dateString: " . $dateString . "<br>";
 //		echo "timeString: " . $timeString . "<br>";
-		dd($dateString2);
+//		dd($dateString2);
 			//get reservation date
 			$date = parseDateString($dateString);
 			$time = parseDateString($timeString, ['g:i', 'g:i A', 'h:i', 'h:i A', 'H:i']);
@@ -398,7 +401,7 @@
 					0
 				);
 			}
-		dd($timeString);
+
 			//get bounding dates
 			$currentDate = Carbon::now();
 			$earliestReservationDate = Carbon::now()->addMinutes(30);
