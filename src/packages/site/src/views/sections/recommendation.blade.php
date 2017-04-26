@@ -1,6 +1,7 @@
 <?php
 
 	//ensure page variables are set
+	$id = isset($id) ? $id : null;
 	$type = isset($type) ? $type : "";
 	$venue = isset($venue) ? $venue : "";
 	
@@ -9,7 +10,7 @@
 	$image = safeArrayValue('image_preview', $venue, "");
 	
 	//compile properties
-	$link = (isset($type) && strlen($type)>0) ? route('soup.venue.profile', ['type'=>$type]) : "#";
+	$link = (isset($type) && strlen($type)>0) ? route('soup.venue.profile', ['recommendationId'=>$id]) : "#";
 	$address = compilePropertiesString($venue, ['address', 'suburb'], [', ']);
 	$openHours = venueOpenHoursString($venue, "CLOSED TODAY");
 	

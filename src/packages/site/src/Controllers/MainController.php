@@ -224,6 +224,7 @@
 
 			//get recommendations
 			$recommendations = Recommendation::with('venue')
+											 ->where('user', $user->id)
 											 ->whereDate('activation_date', '<=', $currentDate)
 											 ->whereDate('expiration_date', '>', $currentDate)
 											 ->where('status', 0)
@@ -260,45 +261,57 @@
 	
 	
 	
-		public function getVenueProfile($type) { //$venueId) {
+		public function getVenueProfile($recommendationId) {
 			
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_VENUE_PROFILE);
 			//$pageData = $this->dataForFormId(self::FORM_VENUE_PROFILE);
 			
 			//valid type
-			if ($type && strlen($type)>0) {
-			
-				//get current date
-				$currentDate = Carbon::now();
-			
-				//get recommendation
-				$recommendation = Recommendation::where('type', $type)
-												 ->whereDate('activation_date', '<=', $currentDate)
-												 ->whereDate('expiration_date', '>', $currentDate)
-												 ->where('status', 0)
-												 ->first();
-
-				//found recommendation
-				if ($recommendation) {
-
-					//get venue data
-					$venue = $recommendation->venue()->first();
-					//$venue = Venue::find($venueId);
-
-					//draw page
-					return View::make('soup::pages.venue.profile')->with([
-						'pageName' => safeObjectValue('name', $venue, 'venue profile'),
-						'pageData'=> $pageData,
-						'venue' => $venue,
-						'recommendation' => $recommendation,
-						//'nextURL' => route('soup.question'),
-						'backURL' => route('soup.venue.recommendation'),
-						'menuOptions' => $this->mainMenuOptions,
-						'mapsKey' => AppGlobals::GOOGLE_API_KEY
-					]);
+			if (!is_null($recommendationId)) {
 				
-				} //end if (found recommendation)
+				//get recommendation id
+				$recommendationId = intval($recommendationId);
+				
+				//valid Id
+				if ($recommendationId>=0) {
+				
+					//get user data
+					$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+				
+					//get current date
+					$currentDate = Carbon::now();
+				
+					//get recommendation
+					$recommendation = Recommendation::where('id', $recommendationId)
+													 //->where('user', $user->id)
+													 ->whereDate('activation_date', '<=', $currentDate)
+													 ->whereDate('expiration_date', '>', $currentDate)
+													 ->where('status', 0)
+													 ->first();
+
+					//found recommendation
+					if ($recommendation) {
+	
+						//get venue data
+						$venue = $recommendation->venue()->first();
+						//$venue = Venue::find($venueId);
+	
+						//draw page
+						return View::make('soup::pages.venue.profile')->with([
+							'pageName' => safeObjectValue('name', $venue, 'venue profile'),
+							'pageData'=> $pageData,
+							'venue' => $venue,
+							'recommendation' => $recommendation,
+							//'nextURL' => route('soup.question'),
+							'backURL' => route('soup.venue.recommendation'),
+							'menuOptions' => $this->mainMenuOptions,
+							'mapsKey' => AppGlobals::GOOGLE_API_KEY
+						]);
+					
+					} //end if (found recommendation)
+					
+				} //end if (valid recommendation id)
 			
 			} //end if (valid type)
 			
@@ -313,62 +326,75 @@
 	
 	
 	
-		public function getReservation($type, $reservationKey = null) {
+		public function getReservation($recommendationId, $reservationKey = null) {
 			
 			//valid type
-			if ($type && strlen($type)>0) {
+			if (!is_null($recommendationId)) {
+				
+				//get recommendation id
+				$recommendationId = intval($recommendationId);
+				
+				//valid Id
+				if ($recommendationId>=0) {
+				
+					//get user data
+					$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
+				
+					//get current date
+					$currentDate = Carbon::now();
+				
+					//get recommendation
+					$recommendation = Recommendation::where('id', $recommendationId)
+	//				$recommendation = Recommendation::where('type', $type)
+													 ->where('user', $user->id)
+													 ->whereDate('activation_date', '<=', $currentDate)
+													 ->whereDate('expiration_date', '>', $currentDate)
+													 ->where('status', 0)
+													 ->first();
+	
+					//found recommendation
+					if ($recommendation) {
+				
+						//get page data
+						$pageData = $this->dataForPage(self::FORM_RESERVATION);
+						//$pageData = $this->dataForFormId(self::FORM_RESERVATION);
+						
+						//get venue data
+						$venue = $recommendation->venue()->first();
+						//$venue = Venue::find($venueId);
 			
-				//get current date
-				$currentDate = Carbon::now();
+						//get pre-existing reservation
+						$reservation = null;
+						if ($reservationKey && strlen($reservationKey)>0) {
+							$reservation = Reservation::where('code', '=', $reservationKey)->first();
+						}
+						//TODO: reuse reservations (get unconfirmed reservation)
+						
+						//get earliest reservation date
+						$earliestReservationDate = Carbon::now()->addMinutes(30);
+						
+						//get list of recommendation dates
+						$availableDates = availablityForRecommendation($recommendation, $venue, $earliestReservationDate);
+						
 			
-				//get recommendation
-				$recommendation = Recommendation::where('type', $type)
-												 ->whereDate('activation_date', '<=', $currentDate)
-												 ->whereDate('expiration_date', '>', $currentDate)
-												 ->where('status', 0)
-												 ->first();
+						//draw page
+						return View::make('soup::pages.reservation.form')->with([
+							'pageName' => 'reservation',
+							'pageData'=> $pageData,
+							'type' => $recommendation->type,
+							'venue' => $venue,
+							'reservation' => $reservation,
+							'reservationAvailability' => $availableDates,
+							//'nextURL' => route('soup.question'),
+							'backURL' => route('soup.venue.profile', ['recommendationId' => $recommendation->id]),
+							'formURL' => route('soup.reservation')
+						]);
+						
+					} //end if (found recommendation)
 
-				//found recommendation
-				if ($recommendation) {
+				} //end if (valid recommendation id)
 			
-					//get page data
-					$pageData = $this->dataForPage(self::FORM_RESERVATION);
-					//$pageData = $this->dataForFormId(self::FORM_RESERVATION);
-					
-					//get venue data
-					$venue = $recommendation->venue()->first();
-					//$venue = Venue::find($venueId);
-		
-					//get pre-existing reservation
-					$reservation = null;
-					if ($reservationKey && strlen($reservationKey)>0) {
-						$reservation = Reservation::where('code', '=', $reservationKey)->first();
-					}
-					//TODO: reuse reservations (get unconfirmed reservation)
-					
-					//get earliest reservation date
-					$earliestReservationDate = Carbon::now()->addMinutes(30);
-					
-					//get list of recommendation dates
-					$availableDates = availablityForRecommendation($recommendation, $venue, $earliestReservationDate);
-					
-		
-					//draw page
-					return View::make('soup::pages.reservation.form')->with([
-						'pageName' => 'reservation',
-						'pageData'=> $pageData,
-						'type' => $type,
-						'venue' => $venue,
-						'reservation' => $reservation,
-						'reservationAvailability' => $availableDates,
-						//'nextURL' => route('soup.question'),
-						'backURL' => route('soup.venue.profile', ['type' => $type]),
-						'formURL' => route('soup.reservation')
-					]);
-					
-				} //end if (found recommendation)
-			
-			} //end if (valid type)
+			} //end if (valid recommendation value)
 			
 			
 			//invalid venue/recommendation
@@ -587,22 +613,44 @@
 						//valid form
 						if ($venue) {
 		
-							//create back URL
-							$backURL = route('soup.reservation.id.id', [
-								'type' => $type,
-								'reservationKey' => $reservation->code
-							]);
+							//get current date
+							$currentDate = Carbon::now();
 		
-							//draw page
-							return View::make('soup::pages.reservation.confirm')->with([
-								'pageName' => 'confirm reservation',
-								'pageData'=> $pageData,
-								'venue' => $venue,
-								'reservation' => $reservation,
-								//'nextURL' => route('soup.question'),
-								'backURL' => $backURL,
-								'formURL' => route('soup.reservation.confirm')
-							]);
+							//get recommendation
+							$recommendation = Recommendation::where('type', $type)
+													 ->where('venue', $venue->id)
+													 ->where('user', $user->id)
+													 ->whereDate('activation_date', '<=', $currentDate)
+													 ->whereDate('expiration_date', '>', $currentDate)
+													 ->where('status', 0)
+													 ->first();
+		
+							//valid recommendation
+							if ($recommendation) {
+		
+								//create back URL
+								$backURL = route('soup.reservation.id.id', [
+									'recommendationId' => $recommendation->id,
+									'reservationKey' => $reservation->code
+								]);
+			
+								//draw page
+								return View::make('soup::pages.reservation.confirm')->with([
+									'pageName' => 'confirm reservation',
+									'pageData'=> $pageData,
+									'venue' => $venue,
+									'reservation' => $reservation,
+									//'nextURL' => route('soup.question'),
+									'backURL' => $backURL,
+									'formURL' => route('soup.reservation.confirm')
+								]);
+							
+							}
+							//invalid recommendation
+							else {
+								$errors = "Sorry, we can't seem to find a recommendation that matches this venue.";
+								$valid = false;	
+							}
 						
 						}
 						//invalid venue

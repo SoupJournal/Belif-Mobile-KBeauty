@@ -44,6 +44,7 @@
 //	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 
 	//get recommendation properties
+	$recommendationId = safeObjectValue('id', $recommendation, null);
 	$recommendationType = safeObjectValue('type', $recommendation, null);
 	$recommendationDate = safeObjectValue('activation_date', $recommendation, null);
 	$recommendationMonth = $recommendationDate ? $recommendationDate->format('F') : null;
@@ -53,7 +54,7 @@
 	}
 
 	//reservation data
-	$reservationURL = route('soup.reservation.id', ['type' => $recommendationType]);
+	$reservationURL = route('soup.reservation.id', ['recommendationId' => $recommendationId]);
 	
 
 	//profile properties
