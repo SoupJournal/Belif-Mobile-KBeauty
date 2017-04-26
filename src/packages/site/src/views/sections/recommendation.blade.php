@@ -6,7 +6,7 @@
 	
 	//get venue properties
 	$name = safeArrayValue('name', $venue, "");
-	$image = safeArrayValue('image_profile', $venue, "");
+	$image = safeArrayValue('image_preview', $venue, "");
 	
 	//compile properties
 	$link = (isset($type) && strlen($type)>0) ? route('soup.venue.profile', ['type'=>$type]) : "#";

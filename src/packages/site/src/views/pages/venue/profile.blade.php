@@ -93,7 +93,7 @@
 	{{-- background image --}}
 	<div class="stretch-to-fit hide-overflow-y">
 		@include('soup::sections.background', ['backgroundImage' => $profileImage, 'loadGroup' => 'profile'])
-		<div class="stretch-to-fit gradient-overlay"></div>
+		<div class="stretch-to-fit gradient-overlay-2"></div>
 	</div>
 	
 	<div class="page-overlay bg-color-clear" load-style="fade" load-group="profile">
@@ -104,10 +104,10 @@
 	
 		<div class="page-footer">
 		
-			<h2 class="inline clear-header-margins shrink-to-fit title-semi-bold capitalize color-2 condensed">
+			<h2 class="inline clear-header-margins-all shrink-to-fit title-semi-bold capitalize color-2">
 				{{ $venueAddress }}
 			</h2>
-			<h2 class="inline clear-header-margins shrink-to-fit title-semi-bold capitalize color-1 bg-color-2 venue-hours condensed">
+			<h2 class="clear-header-margins-all shrink-to-fit title-semi-bold capitalize color-1 bg-color-2 venue-hours">
 				{{ $openHours }}
 			</h2>
 			
@@ -128,7 +128,7 @@
 		<h3 class="title-light large color-2">{!! $venueDescription !!}</h3>
 	@endif
 	
-	@if (isset($venueRecommendations)) 
+	@if (isset($venueRecommendations) && strlen($venueRecommendations)>0) 
 		<h3 class="title-semi-bold uppercase color-2">RECOMMENDED BY {{ $venueRecommendations }}</h3>
 	@endif
 	
@@ -142,6 +142,7 @@
 	{{-- background image --}}
 	<div class="stretch-to-fit hide-overflow-y">
 		@include('soup::sections.background', ['backgroundImage' => $suggestionImage, 'loadGroup' => 'suggestion'])
+		<div class="stretch-to-fit fill-overlay"></div>
 	</div>
 	
 	<div class="stretch-to-fit bg-color-clear" load-style="fade" load-group="suggestion">

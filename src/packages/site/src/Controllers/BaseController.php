@@ -33,6 +33,7 @@
 		
 		const FORM_GUIDE = 'page_guide';
 		const FORM_GUIDE_TIPPING = 'page_guide_tipping';
+		const FORM_GUIDE_TRANSPARENCY = 'page_guide_transparency';
 		
 		const FORM_USER_PROFILE = 'page_user_profile';
 

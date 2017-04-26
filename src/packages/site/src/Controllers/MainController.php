@@ -55,12 +55,18 @@
 					'class' => $buttonClass
 				],
 				[
-					'name' => 'Blog',
-				//	'url' => route('soup.user.profile'),
+					'name' => 'Transparency',
+					'url' => route('soup.guide.transparency'),
 					'class' => $buttonClass
 				],
+//				[
+//					'name' => 'Blog',
+//				//	'url' => route('soup.user.profile'),
+//					'class' => $buttonClass
+//				],
 				[
 					'name' => 'Help',
+					'url' => 'mailto:support@soupjournal.com', //?subject=Soup Help',
 				//	'url' => route('soup.user.profile'),
 					'class' => $buttonClass
 				],
@@ -179,8 +185,8 @@
 			return View::make('soup::pages.user.profile')->with([
 				'pageName' => 'user profile',
 				'pageData'=> $pageData,
-				'nextURL' => $firstRun ? $nextURL : null,
-				'backURL' => $firstRun ? null : $nextURL,
+				//'nextURL' => $firstRun ? $nextURL : null,
+				//'backURL' => $firstRun ? null : $nextURL,
 				'user' => $user,
 				//'profile' => $profileData,
 				'diets' => extractModelValues('value', $diets),
@@ -192,6 +198,7 @@
 				'favouriteCuisine' => safeObjectValue('value', $favouriteCuisine),
 				'favouriteRestaurant' => safeObjectValue('value', $favouriteRestaurant),
 				'restaurantQualities' => extractModelValues('value', $restaurantQualities),
+				'menuOptions' => $this->mainMenuOptions,
 				'fullScreen' => true,
 //				'hideHeaderTitle' => true
 			]);
@@ -997,7 +1004,6 @@
 			
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_GUIDE_TIPPING);
-			//$pageData = $this->dataForFormId(self::FORM_RESERVATION_THANKS);
 			
 			//draw page
 			return View::make('soup::pages.guide.tipping')->with([
@@ -1008,6 +1014,23 @@
 			]);
 			
 		} //end getTipping()
+		
+		
+		
+		public function getTransparency() {
+			
+			//get page data
+			$pageData = $this->dataForPage(self::FORM_GUIDE_TRANSPARENCY);
+			
+			//draw page
+			return View::make('soup::pages.guide.tipping')->with([
+				'pageName' => 'guide - transparency',
+				'pageData'=> $pageData,
+				//'nextURL' => route('soup.venue.recommendation')
+				'menuOptions' => $this->mainMenuOptions
+			]);
+			
+		} //end getTransparency()
 		
 		
 		

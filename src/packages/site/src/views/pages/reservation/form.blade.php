@@ -54,11 +54,13 @@
 
 	//compile reservation date options
 	$dateOptions = []; //'' => 'Select available date'];
-	foreach ($reservationAvailability as $date) {
-		if ($date && array_key_exists('date', $date) && $date['date']) {
-			$dateOptions[] = $date['date']->format('l jS F');
-		}
-	} //end for()
+	if ($reservationAvailability) {
+		foreach ($reservationAvailability as $date) {
+			if ($date && array_key_exists('date', $date) && $date['date']) {
+				$dateOptions[] = $date['date']->format('l jS F');
+			}
+		} //end for()
+	}
 
 	//compile time options
 	$timeData = convertObjectToJS($reservationAvailability);
