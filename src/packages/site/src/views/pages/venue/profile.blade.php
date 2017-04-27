@@ -208,7 +208,7 @@
 	
 	<div class="spacer-medium"></div>
 	
-	<a href="{{ $venueURL }}"><h4 class="color-2">{{ $secondaryButton }}</h4></a>
+	<a href="{{ $venueURL }}" target="_blank"><h4 class="color-2">{{ $secondaryButton }}</h4></a>
 	
 	<div class="spacer-medium"></div>
 
