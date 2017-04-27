@@ -4,7 +4,7 @@
 	$APIKey = isset($APIKey) ? $APIKey : 0;
 	$width = isset($width) ? $width : 0;
 	$height = isset($height) ? $height : 0;
-	$zoom = isset($zoom) ? $zoom : 8;
+	$zoom = isset($zoom) ? $zoom : 15;
 	$markers = isset($markers) ? $markers : null;
 	
 	/*

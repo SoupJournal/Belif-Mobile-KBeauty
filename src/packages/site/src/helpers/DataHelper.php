@@ -334,7 +334,7 @@
 	
 	//====== VENUE DATA ======//
 	
-	function venueOpenHoursString($venue, $default = null, $date = null) {
+	function venueOpenHoursString($venueId, $default = null, $date = null) {
 		
 		$result = $default;
 		
@@ -344,14 +344,15 @@
 		}
 		
 		//valid venue and date
-		if ($venue && $date) {
+		if ($venueId>=0 && $date) {
 		
 			//get day of week
 			$day = $date->format('l');
 			if ($day && strlen($day)>0) {
 				
 				//find open hours
-				$hours = VenueOpenHours::select('open_time', 'close_time')->where('day', '=', $day)->first();
+				//$hours = $venue->openHours()->select('open_time', 'close_time')->where('day', '=', $day)->first();
+				$hours = VenueOpenHours::select('open_time', 'close_time')->where('venue', $venueId)->where('day', '=', $day)->first();
 				if ($hours) {
 					
 					//get times
@@ -512,7 +513,7 @@
 						if (!is_null($day) && strlen($day)>0) {
 				    	
 							//check if venue is open on specified day
-							$openTimes = $days[$day];
+							$openTimes = safeArrayValue($day, $days);
 							
 							//has open times
 							if ($openTimes && count($openTimes)>0) {

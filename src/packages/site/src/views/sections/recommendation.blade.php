@@ -6,13 +6,14 @@
 	$venue = isset($venue) ? $venue : "";
 	
 	//get venue properties
+	$venueId = safeArrayValue('id', $venue, "");
 	$name = safeArrayValue('name', $venue, "");
 	$image = safeArrayValue('image_preview', $venue, "");
 	
 	//compile properties
 	$link = (isset($type) && strlen($type)>0) ? route('soup.venue.profile', ['recommendationId'=>$id]) : "#";
 	$address = compilePropertiesString($venue, ['address', 'suburb'], [', ']);
-	$openHours = venueOpenHoursString($venue, "CLOSED TODAY");
+	$openHours = venueOpenHoursString($venueId, "CLOSED TODAY");
 	
 ?>
 

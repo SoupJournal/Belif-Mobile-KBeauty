@@ -65,7 +65,7 @@
 	$venueRecommendations = safeObjectValue('recommendations', $venue, null);
 	$venueURL = safeObjectValue('website', $venue, null);
 	$venueAddress = compilePropertiesString($venue, ['address', 'suburb'], [', ']);
-	$openHours = venueOpenHoursString($venue, "CLOSED TODAY");
+	$openHours = venueOpenHoursString($venueId, "CLOSED TODAY");
 
 	//suggestion data
 	$suggestionImage = safeObjectValue('image_suggestion', $venue, "");
