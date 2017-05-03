@@ -53,9 +53,9 @@
 
 
 {{-- background image --}}
-<img class="page-image" src="{{ $backgroundImage }}" load-style="fade" load-group="main">
+{{-- <img class="page-image" src="{{ $backgroundImage }}" load-style="fade" load-group="main"> --}}
 
-<div class="page-overlay" load-style="fade" load-group="main">
+{{-- <div class="page-overlay" load-style="fade" load-group="main"> --}}
 
 	{{-- center content vertically --}}
 	<div class="table-parent fill-height">
@@ -111,7 +111,7 @@
 		</div>
 	</div>
 
-</div>
+{{-- </div> --}}
 
 
 @stop

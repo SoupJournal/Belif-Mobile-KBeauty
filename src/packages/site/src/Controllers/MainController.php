@@ -1075,7 +1075,8 @@
 				'pageName' => 'guide - transparency',
 				'pageData'=> $pageData,
 				//'nextURL' => route('soup.venue.recommendation')
-				'menuOptions' => $this->mainMenuOptions
+				'menuOptions' => $this->mainMenuOptions,
+//				'fillHeight' => false
 			]);
 			
 		} //end getTransparency()

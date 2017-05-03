@@ -87,15 +87,68 @@
 	        },
 	        link: function( scope, elem, attrs ) {
 	
+				//find absolute offset
+				scope.absoluteOffset = function(target) {
+					
+					var offset = {x:0, y:0};
+					
+					if (target) {
+						
+						//has parent
+						if (target.parentNode) {
+							
+							//find parent offset
+							var parentOffset = scope.absoluteOffset(target.parentNode);
+							if (parentOffset) {
+								offset.x = parentOffset.x;
+								offset.y = parentOffset.y;
+							}
+							
+							//add element offset
+							if (target.offsetLeft) offset.x += target.offsetLeft;
+							if (target.offsetTop) offset.y += target.offsetTop;
+						}
+						
+					} //end if (valid element)
+						
+					return offset;
+						
+				} //end absoluteOffset()
+				
+	
 				//handle resize
 				scope.resizeElement = function(target) {
 					
 					if (target) {
 						
+						//get element offsets
+						//var offset = scope.absoluteOffset(target[0]);
+						
 						//get element dimensions
+						//var positionY = offset ? offset.y : 0;
 						var positionY = target.prop('offsetTop');
 						var width = $window.innerWidth;
 						var height = $window.innerHeight;
+
+						//find actual page height (compare all elements)
+						var items = document.getElementsByTagName("*");
+						var item = null;
+						var itemHeight = 0;
+						//var itemOffset = null;
+					    for (var i = 0; i < items.length; i++) {
+					    	item = items[i];
+					    	if (item) {
+					    		//itemOffset = scope.absoluteOffset(item);
+					    		//itemHeight = itemOffset.y + item.offsetHeight;
+					        	itemHeight = item.offsetTop + item.offsetHeight;
+					        	
+					        	//compare height
+					        	if (itemHeight>height) {
+					        		height = itemHeight;	
+					        	}
+					    	}
+					    } //end for()
+
 					
 					/*
 						//append element to body (used to measure document height)
