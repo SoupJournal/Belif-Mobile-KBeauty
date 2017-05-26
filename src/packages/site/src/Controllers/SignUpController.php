@@ -810,8 +810,8 @@
 				$valid = false;
 			}
 			//valid code
-			else if (strcasecmp($code, 'AMS478')!=0) {
-			//else if (strcasecmp($code, $user->verify_code)!=0) {
+			//else if (strcasecmp($code, 'AMS478')!=0) {
+			else if (strcasecmp($code, $user->verify_code)!=0) {
 				$errors = 'Sorry, your registration code appears invalid.';
 				$valid = false;
 			}
@@ -911,7 +911,7 @@
 			
 				//send membership request email (sent via queue to avoid delay loading next page)
 				$emailJob = new SendEmailJob([
-					"recipient" => AppGlobals::EMAIL_MEMBER_REQUEST_RECIPIENT, 
+					"recipient" => env('SYSTEM_EMAIL', AppGlobals::EMAIL_MEMBER_REQUEST_RECIPIENT), 
 					"sender" => AppGlobals::EMAIL_MEMBER_REQUEST_SENDER,
 					"subject" => AppGlobals::EMAIL_MEMBER_REQUEST_SUBJECT,
 					"view" => "soup::email.request_membership",

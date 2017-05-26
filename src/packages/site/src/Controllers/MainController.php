@@ -231,16 +231,16 @@
 											 ->get();
 
 			//TEMP (create default recommendations)
-			if (!$recommendations || $recommendations->count()<=0) {
-				$recommendation = new Recommendation();
-				$recommendation->type = AppGlobals::RECOMMENDATION_TYPE_DINNER;
-				$recommendation->user = $user->id;
-				$recommendation->venue = 1;
-				$recommendation->activation_date = new Carbon('first day of this month'); //Carbon::now()->subHour(1);
-				$recommendation->expiration_date = new Carbon('last day of this month'); //Carbon::now()->subHour(1);
-				$recommendation->save();
-				$recommendations = collect($recommendation);
-			}
+//			if (!$recommendations || $recommendations->count()<=0) {
+//				$recommendation = new Recommendation();
+//				$recommendation->type = AppGlobals::RECOMMENDATION_TYPE_DINNER;
+//				$recommendation->user = $user->id;
+//				$recommendation->venue = 1;
+//				$recommendation->activation_date = new Carbon('first day of this month'); //Carbon::now()->subHour(1);
+//				$recommendation->expiration_date = new Carbon('last day of this month'); //Carbon::now()->subHour(1);
+//				$recommendation->save();
+//				$recommendations = collect($recommendation);
+//			}
 			
 
 			//draw page
@@ -371,7 +371,7 @@
 						//TODO: reuse reservations (get unconfirmed reservation)
 						
 						//get earliest reservation date
-						$earliestReservationDate = Carbon::now()->addMinutes(30);
+						$earliestReservationDate = Carbon::now()->addDays(3); //->addMinutes(30);
 						
 						//get list of recommendation dates
 						$availableDates = availablityForRecommendation($recommendation, $venue, $earliestReservationDate);
@@ -755,7 +755,7 @@
 						//BACKEND NOTIFICATION
 						//send reservation notification email (sent via queue to avoid delay loading next page)
 						$emailJob = new SendEmailJob([
-							"recipient" => AppGlobals::EMAIL_RESERVATION_NOTIFICATION_RECIPIENT, 
+							"recipient" => env('SYSTEM_EMAIL', AppGlobals::EMAIL_RESERVATION_NOTIFICATION_RECIPIENT), 
 							"sender" => AppGlobals::EMAIL_RESERVATION_NOTIFICATION_SENDER,
 							"subject" => AppGlobals::EMAIL_RESERVATION_NOTIFICATION_SUBJECT,
 							"view" => "soup::email.reservation_notification",

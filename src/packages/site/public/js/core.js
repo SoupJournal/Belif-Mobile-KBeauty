@@ -256,7 +256,7 @@
 		$scope.withinElement = function(elem, position) {
 			
 			//valid element
-			if (elem && position) { 
+			if (elem && elem[0] && position) { 
 			
 				var rect = elem[0].getBoundingClientRect();
 //			console.log("rect: " + rect.left + ", " + rect.top + " - " + rect.width + ", " + rect.height);
@@ -294,12 +294,12 @@
 				//console.log("ratio: " + ratio + " - maxWidth: " + maxWidth + " - offset: " +  data.dragOffset.x);
 				//selection made
 				if (ratio<-0.4) {
-				//	console.log("select left");	
-					$scope.questionAnswered(1);
+					//console.log("select left");	
+					$scope.questionAnswered(0);
 				}
 				else if (ratio>0.4) {
-				//	console.log("select right");
-					$scope.questionAnswered(0);	
+					//console.log("select right");
+					$scope.questionAnswered(1);	
 				}
 			
 			
@@ -311,25 +311,27 @@
 		
 		//add swipe listener
 		$scope.$on('gesture-swipe-left', function (event) {
-//			console.log("swipe left");
-			$scope.questionAnswered(1);
+			//console.log("swipe left");
+			$scope.questionAnswered(0);
 		});
 		$scope.$on('gesture-swipe-right', function (event) {
-//			console.log("swipe right");			
-			$scope.questionAnswered(0);
+			//console.log("swipe right");			
+			$scope.questionAnswered(1);
 		});
 		
 		
 		$scope.$on('gesture-click', function (event, data) {
-
-			//click within accept element
-			if ($scope.withinElement($scope.answerAccept, data.position)) {
-				$scope.questionAnswered(1);
-			}
 			
 			//click within reject element
-			else if ($scope.withinElement($scope.answerReject, data.position)) {
+			if ($scope.withinElement($scope.answerReject, data.position)) {
+				//console.log("click left");
 				$scope.questionAnswered(0);
+			}
+			
+			//click within accept element
+			else if ($scope.withinElement($scope.answerAccept, data.position)) {
+				//console.log("click right");
+				$scope.questionAnswered(1);
 			}
 			
 		});

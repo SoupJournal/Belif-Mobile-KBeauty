@@ -32,7 +32,7 @@
 	//ensure page data is set
 	$pageData = isset($pageData) ? $pageData : null;
 	$user = isset($user) ? $user : null;
-	$recommendations = isset($recommendations) ? $recommendations : null;
+	$recommendations = isset($recommendations) ? $recommendations : [];
 //	$dinnerVenue = isset($dinnerVenue) ? $dinnerVenue : null;
 //	$brunchVenue = isset($brunchVenue) ? $brunchVenue : null;
 

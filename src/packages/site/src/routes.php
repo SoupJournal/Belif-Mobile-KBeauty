@@ -82,14 +82,14 @@
 				Route::group(array('middleware' => ['AppAuth']), function() {
 					
 					//quiz
-					//Route::group(array('middleware' => 'AppQuiz'), function() {
+					Route::group(array('middleware' => 'AppQuiz'), function() {
 						Route::get('/quiz', ['as' => 'soup.quiz', 'uses' => 'QuizController@getQuiz']);
 						Route::get('/question', ['as' => 'soup.question', 'uses' => 'QuizController@getQuestion']);
 						Route::get('/question/{id}', ['as' => 'soup.question.id', 'uses' => 'QuizController@getQuestion']);
 						Route::post('/question', ['as' => 'soup.question', 'uses' => 'QuizController@postQuestion']);
-						Route::get('/quiz/thanks', ['as' => 'soup.quiz.thanks', 'uses' => 'QuizController@getThanks']);
-						Route::get('/quiz/complete', ['as' => 'soup.quiz.complete', 'uses' => 'QuizController@getCompleteQuiz']);
-					//});
+					});
+					Route::get('/quiz/thanks', ['as' => 'soup.quiz.thanks', 'uses' => 'QuizController@getThanks']);
+					Route::get('/quiz/complete', ['as' => 'soup.quiz.complete', 'uses' => 'QuizController@getCompleteQuiz']);
 		
 		
 					//check for waiting reviews

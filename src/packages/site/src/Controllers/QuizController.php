@@ -381,7 +381,7 @@
 				'pageName' => 'quiz complete',
 				'pageData'=> $pageData,
 				'nextURL' => route('soup.quiz.complete'),
-				'backURL' => route('soup.question.id', ['questionId' => $lastQuestionId])
+				//'backURL' => route('soup.question.id', ['questionId' => $lastQuestionId])
 			]);
 			
 		} //end getThanks()
