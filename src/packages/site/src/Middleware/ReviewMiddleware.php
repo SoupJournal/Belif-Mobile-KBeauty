@@ -31,7 +31,8 @@
 				$reviewTime = Carbon::now()->subHours(2);
 
 				//check for incomplete reviews
-				$reservation = Reservation::where('user', $user->id)
+				$reservation = Reservation::where('status', AppGlobals::RESERVATION_STATUS_CONFIRMED)
+										  ->where('user', $user->id)
 										  ->whereDate('date', '<', $reviewTime)
 										  ->where('review_notified', 0)
 										  ->first();

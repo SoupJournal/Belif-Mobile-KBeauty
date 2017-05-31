@@ -31,6 +31,25 @@
 			//get page data
 			//$pageData = $this->dataForFormId(self::FORM_WELCOME);
 			$pageData = $this->dataForPage(self::FORM_WELCOME);
+	
+			/*
+			$reservation = null;
+			$user = null;
+			$venue = null;
+			$emailJob = new SendEmailJob([
+				"recipient" => env('SYSTEM_EMAIL'), 
+				"sender" => "something@soupjournal.com",
+				"subject" => "Soup Test Email",
+				"view" => "soup::email.request_reservation",
+				"view_properties" => [
+						"reservation" => $reservation,
+						"user" => $user,
+						"venue" => $venue,
+				]
+			]);
+			//$emailJob->handle();
+			$this->dispatch($emailJob);
+			*/
 			
 			//draw page
 			return View::make('soup::pages.home')->with([

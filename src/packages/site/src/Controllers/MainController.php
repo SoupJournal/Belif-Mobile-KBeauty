@@ -766,6 +766,7 @@
 							]
 						]);
 						$this->dispatch($emailJob);
+						
 			
 			
 						//show thanks page

@@ -58,13 +58,13 @@
 		//EMAIL DETAILS
 				
 		//forgot password
-		const EMAIL_PASSWORD_RESET_SENDER = "test@belifinhydration.com"; //"team@soupjournal.com";
+		const EMAIL_PASSWORD_RESET_SENDER = ['name' => 'Soup', 'email' => "team@soupjournal.com"]; //"test@belifinhydration.com"; 
 		const EMAIL_PASSWORD_RESET_SUBJECT = "Soup - Password Reset Request";
 		
 		//request membership (SYSTEM EMAIL)
 		const EMAIL_MEMBER_REQUEST_RECIPIENT = "adam.kinnane@soupjournal.com"; 
 		//const EMAIL_MEMBER_REQUEST_RECIPIENT = "aberrationmedia@gmail.com"; //TEST EMAIL (REMOVE)
-		const EMAIL_MEMBER_REQUEST_SENDER = "test@belifinhydration.com"; //"team@soupjournal.com";
+		const EMAIL_MEMBER_REQUEST_SENDER = ['name' => 'Soup', 'email' => "team@soupjournal.com"]; //"test@belifinhydration.com"; 
 		const EMAIL_MEMBER_REQUEST_SUBJECT = "Soup - Membership request";
 		
 		//request reservation

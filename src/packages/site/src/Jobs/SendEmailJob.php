@@ -78,26 +78,26 @@
 		    			//send result
 		    			$result = false;
 		    	
+		    	/*
 		    			try {
 		    	
 			    			//create view
 			    			$view = \View::make($viewName);
 			    			if ($view) {
 			    				
-			    					//apply view properties
-			    					if ($viewProperties) {
-				    					$view->with($viewProperties);
-			    					}
-				    	
-									//create headers
-									$headers = "MIME-Version: 1.0\r\n"
-											 . "Content-type: text/html;charset=UTF-8\r\n"
-											 . "From: " . $senderEmail . "\r\n";
-				    	
-				    	
-							    	//send email through sendmail
-									$result = mail($recipient, $subject, $view->render(), $headers);	
-						    	
+		    					//apply view properties
+		    					if ($viewProperties) {
+			    					$view->with($viewProperties);
+		    					}
+			    	
+								//create headers
+								$headers = "MIME-Version: 1.0\r\n"
+										 . "Content-type: text/html;charset=UTF-8\r\n"
+										 . "From: " . $senderEmail . "\r\n";
+			    	
+			    	
+						    	//send email through sendmail
+								$result = mail($recipient, $subject, $view->render(), $headers);	
 						    	
 			    			} //end if (valid view)
 				    	
@@ -106,23 +106,25 @@
 		    				Log::error("ERROR sending mail with Sendmail service: " . $ex);
 		    				$result = false;
 		    			}
-		    			
-		    			
+
+		    			//dd(\Mail::failures());
+		    		*/	
 		    			//retry with Laravel mail service
 		    			if (!$result) {
 		    				
 							try {
 
-								//send email 
-								$result = \Mail::send($viewName, $viewProperties, function ($data) {
+								//send email (Using Laravel Mail Provider)
+								$result = \Mail::send($viewName, $viewProperties, function ($data) use ($senderEmail, $senderName, $recipient, $subject) {
 									$data->from($senderEmail, $senderName);
-									$data->to($recipient); //, "some name");
+									$data->to($recipient); 
 									$data->subject($subject);
 								});
 								
 							}
-							catch (Exception $ex) {
-								Log::error("ERROR sending mail with Laravel service: " . $ex);
+							catch (\Exception $ex) {
+								//dd($ex);
+								\Log::error("ERROR sending mail with Laravel service: " . $ex);
 							}
 		    				
 		    			} 

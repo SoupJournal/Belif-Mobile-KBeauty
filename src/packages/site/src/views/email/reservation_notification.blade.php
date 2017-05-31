@@ -13,7 +13,8 @@
 	
 	//get user properties
 	$firstName = safeObjectValue('first_name', $user, "");
-	//$lastName = safeObjectValue('last_name', $user, "");
+	$lastName = safeObjectValue('last_name', $user, "");
+	$email = safeObjectValue('email', $user, "");
 
 	//get venue properties
 	$venueName = safeObjectValue('name', $venue, "");
