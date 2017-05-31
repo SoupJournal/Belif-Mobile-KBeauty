@@ -136,9 +136,9 @@
 		
 		<div class="spacer-medium"></div>
 		
-		<span><a href="#" class="underline color-1">Privacy</a></span>
+		<span><a href="https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/pdfs/Soup_private_policy.pdf" target="_blank" class="underline color-1">Privacy</a></span>
 		<span class="spacer-horizontal-small"></span>
-		<span><a href="#" class="underline color-1">Terms and Conditions</a></span>
+		<span><a href="https://s3.amazonaws.com/soup-journal-app-storage/soup/mobile/pdfs/Soup_terms.pdf" target="_blank" class="underline color-1">Terms and Conditions</a></span>
 		
 		<div class="spacer-tiny"></div>
 		
