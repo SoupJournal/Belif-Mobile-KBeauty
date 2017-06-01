@@ -887,6 +887,9 @@
 			$snapchat = safeArrayValue('snapchat', $_POST);
 			$zipCode = safeArrayValue('zip_code', $_POST);
 			
+			//trim white space
+           	$instagram = trim($instagram);
+			
 			//find user
 			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 			

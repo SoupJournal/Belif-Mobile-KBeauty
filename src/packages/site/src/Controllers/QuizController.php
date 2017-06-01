@@ -68,10 +68,17 @@
 			$activeId = activeQuestionNumber($user, $pageData);
 			
 
-//				echo "questionId: " . $questionId . " - totalQuestions: " . $totalQuestions . " - activeId: " . $activeId . " - groups: " . $this->questionGroupCount();
-//				exit(0);
+			//bounds check question Id
+			if ($questionId>$activeId) {
+				$questionId = $activeId;	
+			}
+
+				//dd( "questionId: " . $questionId . " - totalQuestions: " . $totalQuestions . " - activeId: " . $activeId . " - groups: " . $this->questionGroupCount() );
+
+			
+
 			//valid question ID
-			if (($questionId<$totalQuestions || $questionId<$activeId) || ($activeId==$totalQuestions && $questionId>=$totalQuestions)) {
+			if (($questionId<$totalQuestions || $questionId<$activeId) || ($activeId==$totalQuestions && $questionId<$totalQuestions)) {
 				
 				//validate id
 				if ($questionId<0) $questionId = 0;
@@ -91,7 +98,7 @@
 					'pageData'=> $questionData,
 					'backURL' => $questionId > 0 ? route('soup.question.id', ($questionId-1)) : route('soup.quiz'),
 					'formURL' => route('soup.question'),
-					'totalSteps' => $this->questionGroupCount()
+					'totalSteps' => $this->questionGroupCount(),
 				);
 	
 	
@@ -375,14 +382,23 @@
 			//find last question Id
 			$lastQuestionId = $totalQuestions>1 ? $totalQuestions-1 : 0;
 		
+			//determine if thank you page should be shown
+			if (safeArrayValue('status', $pageData, 1)==0) {
 			
-			//draw page
-			return View::make('soup::pages.quiz.thanks')->with([
-				'pageName' => 'quiz complete',
-				'pageData'=> $pageData,
-				'nextURL' => route('soup.quiz.complete'),
-				//'backURL' => route('soup.question.id', ['questionId' => $lastQuestionId])
-			]);
+				//draw page
+				return View::make('soup::pages.quiz.thanks')->with([
+					'pageName' => 'quiz complete',
+					'pageData'=> $pageData,
+					'nextURL' => route('soup.quiz.complete'),
+					//'backURL' => route('soup.question.id', ['questionId' => $lastQuestionId])
+					'fillHeight' => false
+				]);
+			
+			}
+			//skip thank you page
+			else {
+				return Redirect::route('soup.quiz.complete');
+			}
 			
 		} //end getThanks()
 			
