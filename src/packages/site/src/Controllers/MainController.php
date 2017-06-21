@@ -467,7 +467,7 @@
 		public function getVerify() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_VERIFY);
+			$pageData = $this->dataForPage(self::FORM_VERIFY);
 			
 			//get background image
 			$backgroundImage = safeArrayValue('background_image', $pageData);
@@ -477,7 +477,7 @@
 				'pageName' => 'verify',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-				'backURL' => URL::to('/address'),
+				'backURL' => route('belif.address'),
 			));
 			
 		} //end getVerify()
@@ -500,7 +500,7 @@
 			
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_VERIFY);
+			$pageData = $this->dataForPage(self::FORM_VERIFY);
 			
 			//get background image
 			$backgroundImage = safeArrayValue('background_image', $pageData);
@@ -510,7 +510,7 @@
 				'pageName' => 'reverify',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-				'backURL' => URL::to('/address'),
+				'backURL' => route('belif.address'),
 				'verifyEmail' => $user->email
 			));
 			

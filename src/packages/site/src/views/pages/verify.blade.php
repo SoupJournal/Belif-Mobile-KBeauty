@@ -40,6 +40,7 @@
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
+	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$buttonNo = safeArrayValue('button_cancel', $pageData, "");
 	
@@ -47,46 +48,58 @@
 
 <div class="text-center page-padding-small">
 	
-	
-	
-		<div class="container-top">
+
 		
-			<div class="spacer-large"></div>
-			
-			<div class="row page-margin-small">
-			
-				{{-- title --}}
-				<h2 class="bold color-1 page-padding-small">{{ $title }}</h2>
-			
-				<div class="spacer-small"></div>
-			
-				<h4 class="color-1 page-padding">{{ $subtitle }}</h4>
-			
+	<div class="spacer-large"></div>
+	
+	<div class="row page-margin-small">
+	
+		{{-- title --}}
+		<h2 class="bold page-padding-small">{{ $title }}</h2>
+	
+		<div class="spacer-small"></div>
+	
+
+	
+		{{-- image --}}
+		@if ($image && strlen($image)>0) 
+			<div class="page-padding-medium">
+				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 			</div>
+		@endif
+		
+		
+		<!-- load group -->
+		<div load-style="fade" load-group="page">
 	
+		
+			{{-- info --}}
+			<h3 class="title-light page-padding">{{ $text }}</h3>
+		
+			
+			<div class="spacer-medium"></div>
+			
+			
+			{{-- Next button --}}
+			<a href="" class="button-page bg-color-3 color-2">
+				<h4 class="button-link">{{ $button }}</h4>
+			</a>
+		
+		
+			{{-- Re-verify button --}}
+			<a href="{{ route('belif.reverify') }}" class="button-page color-1">
+				<h4 class="button-link">{{ $buttonNo }}</h4>
+			</a>
+		
 		</div>
-	
-	
-		<div id="modalContainer" class="container-bottom stretch-to-width page-padding-small-absolute">
-	
-			<div class="row">
-			
-			
-			
-				{{-- info --}}
-				<h2 class="bold color-1 page-padding">{{ $text }}</h2>
-			
-				
-				{{-- Re-verify button --}}
-				<a href="{{ URL::to('/reverify') }}" class="color-1"><h4 class="button-link">{{ $button }}</h4></a>
-			
-			
-			</div>
+		<!-- load group -->
 		
-			<div class="spacer-larger"></div>
+	
+	</div>
+
+	<div class="spacer-larger"></div>
 		
-		</div>
-		
+
 	
 	{{-- modal popup --}}
 	<script type="text/ng-template" id="ResentEmail.html">
