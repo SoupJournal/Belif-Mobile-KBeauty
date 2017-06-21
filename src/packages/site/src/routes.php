@@ -23,27 +23,71 @@
 	
 	
 	//group controllers into namespace
-	Route::group(array('namespace' => 'Soup\Mobile\Controllers', 'middleware' => ['web'/*, 'HTTPS'*/]), function() {
+	Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['web'/*, 'HTTPS'*/]), function() {
 	
 		//desktop only access
 		Route::group(array('middleware' => 'AppDesktop'), function() {
 	
 			//desktop
-			Route::get('/desktop', ['as' => 'soup.desktop', 'uses' => 'MainController@getDesktop']);
+			Route::get('/desktop', ['as' => 'belif.desktop', 'uses' => 'MainController@getDesktop']);
 		
 		});
 	
 	
 		//mobile only access
-		Route::group(array('middleware' => 'AppMobile'), function() {
+		//Route::group(array('middleware' => 'AppMobile'), function() {
 	
 			//welcome
-			Route::get('/', ['as' => 'soup.welcome', 'uses' => 'SignUpController@getIndex']);
+			//Route::get('/', ['as' => 'belif.welcome', 'uses' => 'MainController@getIndex']);
+			
+			//email
+			Route::get('/', ['as' => 'belif.home', 'uses' => 'MainController@getEmail']);
+			//Route::get('/email', ['as' => 'belif.email', 'uses' => 'MainController@getEmail']);
+			Route::post('/email', ['as' => 'belif.email', 'uses' => 'MainController@postEmail']);
+			
+			//guide
+			Route::get('/guide', ['as' => 'belif.guide', 'uses' => 'MainController@getGuide']);
+
+			//question
+			Route::get('/question', ['as' => 'belif.question', 'uses' => 'ProductController@getQuestion']);		
+			Route::get('/previousquestion', ['as' => 'belif.question.previous', 'uses' => 'ProductController@getPreviousQuestion']);		
+			Route::get('/answer', ['as' => 'belif.answer', 'uses' => 'ProductController@getAnswer']);	
+			Route::post('/answer/{id}', ['as' => 'belif.answer.id', 'uses' => 'ProductController@postAnswer']);	
+			
+			//results
+			Route::get('/results', ['as' => 'belif.results', 'uses' => 'ProductController@getResults']);
+			
+			//product
+			Route::get('/product', ['as' => 'belif.product', 'uses' => 'ProductController@getProduct']);
+			
+			//address
+			Route::get('/address', ['as' => 'belif.address', 'uses' => 'MainController@getAddress']);
+			Route::post('/address', ['as' => 'belif.address', 'uses' => 'MainController@postAddress']);
+			
+			//verfication
+			Route::get('/verify', ['as' => 'belif.verify', 'uses' => 'MainController@getVerify']);
+			Route::get('/reverify', ['as' => 'belif.reverify', 'uses' => 'MainController@getReverify']);
+			
+			//unavailable
+			Route::get('/unavailable', ['as' => 'belif.unavailable', 'uses' => 'MainController@getUnavailable']);
+			
+			//share
+			Route::get('/share', ['as' => 'belif.share', 'uses' => 'MainController@getShare']);			
+			Route::post('/share', ['as' => 'belif.share', 'uses' => 'MainController@postShare']);			
+
+			//thanks
+			Route::get('/thanks', ['as' => 'belif.thanks', 'uses' => 'MainController@getThanks']);						
+
+			//unsubscribe
+			Route::get('/unsubscribe', ['as' => 'belif.unsubscribe', 'uses' => 'MainController@getUnsubscribe']);									
+			
 			
 			
 			//secure HTTPS
 			Route::group(array('middleware' => 'AppHTTPS'), function() {
 			
+			
+			/*
 				//login
 				Route::get('/login', ['as' => 'soup.login', 'uses' => 'SignUpController@getLogin']);
 				Route::post('/login', ['as' => 'soup.login', 'uses' => 'SignUpController@postLogin']);
@@ -125,9 +169,12 @@
 				
 				}); //end middleware (authorised users only)
 			
+			*/
+			
 			}); //end middleware (HTTPS only)
 		
-		}); //end middleware (mobile only)
+		
+		//}); //end middleware (mobile only)
 	
 	
 	}); //end namespace group

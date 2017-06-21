@@ -25,40 +25,6 @@
 	height: 100%;
 }
 
-.header {
-	margin: 0;	
-	border: none;
-	border-radius: 0;
-	padding: 0.8% 0 0.8% 0;	
-	overflow-y: hidden;
-}
-
-.header-fixed {
-	position: fixed;
-	max-width: 960px;
-	width: 100%;
-	z-index: 1;	
-}
-
-.header-fixed-full .header-fixed {
-	max-width: 100%;
-}
-
-.header-column-left {
-	width: 20%;
-	text-align: center;
-}
-
-.header-column-center {
-	width: 60%;
-	height: 100%;
-}
-
-.header-column-right {
-	width: 20%;
-	text-align: center;
-}
-
 
 .main-page-full .header {
 	max-height: 100px;
@@ -176,91 +142,71 @@
 }
 
 
+
 /********************************/
-/* 			CAROUSEL	 		*/
+/* 			MARGINS		 		*/
 /********************************/
 
-.carousel-section {
-	white-space: nowrap;
-	width: 100%;
-	padding-bottom: 111%;	
+
+.page-margin-tiny {
+	margin-left: 2%;
+	margin-right: 2%;	
 }
 
-.carousel-box { 
-	overflow-x: scroll;
-	white-space: nowrap;
-/*	-webkit-transition-property:-webkit-scrolling;
-    -webkit-transition-duration:1.5s;
-    -webkit-transition-delay:0.1s; */
+.page-margin-small {
+	margin-left: 5%;
+	margin-right: 5%;	
 }
 
-.carousel-item {
-	display: inline-block;
-	position: relative;
-  	width: 100%;
+.page-margin-medium {
+	margin-left: 7.5%;
+	margin-right: 7.5%;	
+}
+
+
+.page-margin-large {
+	margin-left: 10%;
+	margin-right: 10%;	
+}
+
+
+
+
+/********************************/
+/* 			HEADER		 		*/
+/********************************/
+
+
+.page-header {
+	margin: 0;	
+	border: none;
+	border-radius: 0;
+	padding: 0.8% 0 0.8% 0;	
+	overflow-y: hidden;
+	z-depth: 100;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.page-header-side {
+	width: 20%;
+	text-align: center;
+}
+
+.page-header-center {
+	width: 60%;
 	height: 100%;
-	overflow: hidden;
-	vertical-align: middle;
-	text-align: center;	
 }
 
 
-/********************************/
-/* 			VENUE		 		*/
-/********************************/
-
-.venue-preview-container {
-	position: relative;
-	margin-left: 6%;
-	margin-right: 6%;
-	margin-top: 2%;
-	margin-bottom: 5%;	
-}
-
-.venue-preview {
-	position: relative;
-	padding-bottom: 80%;
-	overflow-y: hidden;
-}
-
-.venue-profile {
-	position: relative;
-	padding-bottom: 132%;
-	overflow-y: hidden;
-}
-
-.venue-hours {
-	padding-left: 1%;	
-	padding-right: 1%;
-	white-space: nowrap;
-	display: inline-block;
-}
-
-.venue-description {
-	text-align: left;	
-}
-
-.venue-suggestion {
-	position: relative;
-	padding-bottom: 68%;
-	overflow-y: hidden;	
-}
-
-.corner-icon-box {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 12%;
-	height: 12%;
-	overflow: hidden;	
-}
-
-.corner-icon-label {
-	position: absolute;
-	bottom: 0;
-	right: 5%;
-	line-height: 0.7em;
-}
 
 /********************************/
 /* 			MENU		 		*/
@@ -313,60 +259,6 @@
 	background-color: rgba(0,0,0,0.3);
 }
 
-/********************************/
-/* 			RESERVATION	 		*/
-/********************************/
-
-.reservation-image-section {
-	position: relative;
-	width: 100%;
-	padding-bottom: 40%;
-	overflow-y: hidden;	
-}
-
-.reservation-arrow-box {
-	position: absolute;
-	top: 0;
-	left: 40%;
-	right: 40%;
-	padding-bottom: 20%;
-	overflow: hidden; 	
-}
-
-
-
-/********************************/
-/* 			REVIEW		 		*/
-/********************************/
-
-.rating-container {
-	margin: 0 auto;
-	width: auto;
-}
-
-.rating-button {
-	display: inline-block;	
-	width: 15%;
-	height: auto;
-	margin: 0;
-	background-color: transparent;
-	border: none;
-}
-
-.rating-button:focus {
-	outline:0;
-}
-
-.rating-star {
-	width: 100%;
-	height: auto;
-	opacity: 0.6;
-}
-
-.rating-on {
-	opacity: 1;	
-}
-
 
 /********************************/
 /* 			FILLS		 		*/
@@ -374,7 +266,7 @@
 
 
 .background-fill {
-	padding-bottom: 157%; /*160%;	*/
+/*	padding-bottom: 157%; */
 }
 
 
@@ -436,6 +328,11 @@
 	padding-right: 15%;
 }
 
+.page-padding-larger {
+	padding-left: 20%;	
+	padding-right: 20%;
+}
+
 .page-padding-very-large {
 	padding-left: 30%;	
 	padding-right: 30%;
@@ -448,7 +345,11 @@
 
 /* centered columns styles */
 .row-centered {
-    text-align:center;
+    text-align: center;
+}
+
+.row-left {
+    text-align: left;
 }
 
 
@@ -514,7 +415,7 @@
 }
 
 
-h1.no-margins {
+.no-margins {
 	margin-top: 0;
 	margin-bottom: 0;	
 }

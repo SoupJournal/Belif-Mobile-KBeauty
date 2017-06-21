@@ -13,7 +13,6 @@
 {{----------------- SCRIPTS ------------------}}
 
 @section('scripts')
-
 	
 @stop
 {{--------------- END SCRIPTS ----------------}}
@@ -31,35 +30,30 @@
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
-	$image = safeArrayValue('text', $pageData, "");
 	
 ?>
 
-<div class="text-center page-padding-small">
-	
-	
+<div class="text-center page-padding">
 	
 		<div class="container-top">
 		
-			<div class="spacer-medium"></div>
+			<div class="spacer-larger"></div>
+			<div class="spacer-small"></div>
 			
 			<div class="row page-margin">
 			
 				{{-- title --}}
-				<h3 class="title-2 color-2 page-padding-small">{{ $title }}</h3>
+				<h2 class="bold color-2">{{ $title }}</h2>
 			
-				<h4 class="title-4 color-2 page-padding-small">{{ $subtitle }}</h4>
-			
-				
-				<div class="spacer-landscape"></div>
-				
-				{{-- image --}}
-				<div class="logo-page-image" style="background-image: url({{ $image }});"></div>
+				<h4 class="color-2">{{ $subtitle }}</h4>
 			
 			</div>
 	
 		</div>
 	
+
+
+
 
 </div>
 

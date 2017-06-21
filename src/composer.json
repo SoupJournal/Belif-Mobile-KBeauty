@@ -7,6 +7,7 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
+        "laravelcollective/html": "5.2.*",
         "doctrine/dbal": "2.4.*"
     },
     "require-dev": {
@@ -23,7 +24,7 @@
         "psr-4": {
             "App\\": "app/",
             "Soup\\CMS\\" : "packages/soup/cms/src/",
-            "Soup\\Mobile\\" : "packages/site/src/",
+            "Belif\\Mobile\\" : "packages/site/src/",
             "Collective\\Html\\": "packages/soup/cms/vendor/laravelcollective/html/src/"
         }
     },

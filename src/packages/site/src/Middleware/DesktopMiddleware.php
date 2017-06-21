@@ -25,7 +25,7 @@
 		    if (isMobileDevice()) {
 	    	
 				//show welcome page
-				return Redirect::route('soup.welcome');
+				return Redirect::route('belif.home');
 					
 			} //end if (valid user)
 			

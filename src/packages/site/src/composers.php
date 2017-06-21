@@ -1,10 +1,9 @@
 <?php
 
 
-//	use Soup\Mobile\Models\CMSApp;
 
 	//composer groups
-	$siteGroup = ['soup::*'];
+	$siteGroup = ['belif::*'];
 
 
 
@@ -23,10 +22,10 @@
 
 	    
 	    //set scripts asset path
-	    $view->with('assetPath', URL::asset('soup/mobile/'));
+	    $view->with('assetPath', URL::asset('belif/mobile/'));
 
 	    //set controllers namespace
-	    $view->with('controllerNamespace', 'Soup\\Mobile\\Controllers\\');
+	    $view->with('controllerNamespace', 'Belif\\Mobile\\Controllers\\');
 	    
 	});
 	

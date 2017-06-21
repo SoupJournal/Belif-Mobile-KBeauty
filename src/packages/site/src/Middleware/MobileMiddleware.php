@@ -25,7 +25,7 @@
 		    if (!isMobileDevice()) {
 	    	
 				//show desktop page
-				return Redirect::route('soup.desktop');
+				return Redirect::route('belif.desktop');
 					
 			} //end if (valid user)
 			

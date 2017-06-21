@@ -2,10 +2,9 @@
 
 	//define variables
 	$fullScreen = isset($fullScreen) ? $fullScreen : false;
+	$title = isset($title) ? $title : 'belif | belif in hydration';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
-	$pageName = isset($pageName) ? $pageName : 'soup';
-	$backgroundColor = isset($backgroundColor) ? $backgroundColor : 'bg-color-1';
-	
+	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
 
 ?>
 <!DOCTYPE html>
@@ -16,43 +15,51 @@
         
         {{------------------ TITLE -------------------}}
         
-        <title>{{-- @yield('title', '') --}}Soup</title>
+        <title>{{ $title }}</title>
         
         {{---------------- END TITLE -----------------}}
         
         
         {{----------------- SCRIPTS ------------------}}
-	    @include('soup::general.scripts')
+	    @include('belif::general.scripts')
         
+
+		{{-- preloading (for modern browsers) --}}
+		@if (isset($backgroundImage) && strlen($backgroundImage)>0)
+			<link rel="preload" href="{{ $backgroundImage }}" as="image">
+		@endif
 
     </head>
     
     
-    <body ng-app="soup" class="bg-color-1" ng-controller="SoupController" ng-init="@yield('init', '')"> 
+    <body ng-app="belif"> 
    
-   
-    
-		{{-- controller --}}
+
 		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-5')">
 			
-			<div class="main-page-container fill-height @yield('background-color', 'bg-color-5')">
+			<div class="main-page-container fill-height @yield('background-color', 'bg-color-5') color-2">
 				
 	
 		   		{{----------------- HEADER -------------------}}
 		   		@if (!$fullScreen) 
-			    	@include('soup::layouts.header')
+			    	@include('belif::layouts.header')
 		    	@endif
 		   		
 			
 				@if ($fillHeight)
-				<div class="page-body text-center" fill-height min-ratio="1.4">
+				<div class="page-body text-center @yield('background-color', 'bg-color-5')" fill-height>
 				@else 
-				<div class="page-body text-center">				
+				<div class="page-body text-center @yield('background-color', 'bg-color-5')">				
 				@endif
 
-					<div class="background-fill"></div>
+
+					@if (isset($backgroundImage) && strlen($backgroundImage)>0)
+						<img class="background-proportional" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
+					@else
+						<div class="background-fill"></div>
+					@endif
 					
-					<div class="stretch-to-fit @yield('background-color', 'bg-color-5')">
+					<div class="stretch-to-fit">
 
 	        		{{----------------- CONTENT ------------------}}
 	        		@yield('content', '')
@@ -65,7 +72,6 @@
 			</div>	        	
 	                
               
-        {{-- end controller --}}
         </div>
  
         
@@ -80,23 +86,19 @@
  		</div>
  
         
+        
         {{-- load angular modules --}}
         <script type="text/javascript">
-	     <!--			     
+	     			     
 			//anonymous function to load features without name conflicts
 			(function() {
 		        
 				//load modules
-				var app = angular.module('soup', ['ngResource', 'ui.bootstrap', 'soup-core', 'soup-gui', 'swipe-gesture', 'forms', 'maps'], function($interpolateProvider) {
-					
-					//update tags to avoid conflict with blade
-			        $interpolateProvider.startSymbol('<%');
-			        $interpolateProvider.endSymbol('%>');
-    			});   
+				var app = angular.module('belif', ['ngResource', 'ui.bootstrap', 'belif-core', 'belif-gui', 'swipe-gesture']);   
 			
 			})();
 			//end anonymous function
-         // -->
+        
         </script>
         
     </body>

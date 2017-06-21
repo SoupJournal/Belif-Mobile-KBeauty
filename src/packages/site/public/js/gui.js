@@ -2,7 +2,7 @@
 (function() {
 	
 	//setup module
-	var module = angular.module('soup-gui', ['ngResource']); 
+	var module = angular.module('belif-gui', ['ngResource']); 
 	
 	
 	
@@ -123,9 +123,10 @@
 						
 						//get element offsets
 						//var offset = scope.absoluteOffset(target[0]);
+						//var boundingRect = target[0].getBoundingClientRect();
+						
 						
 						//get element dimensions
-						//var positionY = offset ? offset.y : 0;
 						var positionY = target.prop('offsetTop');
 						var width = $window.innerWidth;
 						var height = $window.innerHeight;
@@ -136,8 +137,12 @@
 						var itemHeight = 0;
 						//var itemOffset = null;
 					    for (var i = 0; i < items.length; i++) {
+					    	
+					    	//get item
 					    	item = items[i];
-					    	if (item) {
+					    	
+					    	//valid item and avoid measuring active element
+					    	if (item && item!=target[0]) {
 					    		//itemOffset = scope.absoluteOffset(item);
 					    		//itemHeight = itemOffset.y + item.offsetHeight;
 					        	itemHeight = item.offsetTop + item.offsetHeight;
@@ -148,31 +153,9 @@
 					        	}
 					    	}
 					    } //end for()
-
+//console.log("[" + target.attr('class') + "] final height: " + height + " - positionY: " + positionY + " - min ratio: " + scope.minRatio);
 					
-					/*
-						//append element to body (used to measure document height)
-						var docBody = angular.element(document.body);
-						var documentBase = angular.element('<div style="position: relative; background-color: red; width: 50px; height: 50px; display: block;"></div>');
-						docBody.append(documentBase);
-						//var documentBase = docBody.append('<div style="position: absolute; background-color: red; width: 50px; height: 50px; display: block;"></div>');
-						documentBase.remove();
-						*/
-					/*
-						//get document height
-						var docHeight = document.height | (document.body ? document.body.offsetHeight : 0) | document.documentElement.scrollHeight;
-						//var docHeight = $document.height;
 
-						console.log("window.innerHeight: " + window.innerHeight);
-						console.log("document.height: " + document.height);
-						console.log("document.documentElement.clientHeight: " + document.documentElement.clientHeight);
-						console.log("document.body.offsetHeight: " + document.body.offsetHeight);
-						console.log("document.body.innerHeight: " + document.body.innerHeight);
-						console.log("document.documentElement.scrollHeight: " + document.documentElement.scrollHeight);
-						console.log("docHeight: " + docHeight + " - greater: " + (docHeight>height) + "\n\n\n\n");
-						if (docHeight>height) {
-							height = docHeight;	
-						}*/
 					
 						//determine new height
 						var elemHeight = height - positionY;
@@ -188,7 +171,7 @@
 
 						//(subtrack two pixels to avoid scroll bar in chrome)
 						elemHeight -= 2;
-	
+
 						//set height
 		            	target.css('height', elemHeight +  'px');
 						
@@ -230,89 +213,101 @@
 	
 	
 	
-	
-	//star rating directive - broadcasts named event on element click 
-	module.directive('starRating', ['$rootScope', function($rootScope) {
+	//hidden-video - creates video HTML elements  
+	module.directive('hiddenVideo', ['$compile', function($compile) {
 	    return {
 	    	restrict: 'A',
 	        scope: {
-	            starRating: '@',
-	            starRatingOn: '@',
-	            starRatingOff: '@'
+	            hiddenVideo: '@'
 	        },
 	        link: function (scope, element, attrs) {
-	        	
-	        	//get input element
-	        	var inputs = element.find('input');
-	        	scope.inputElement = inputs && inputs.length>0 ? angular.element(inputs[0]) :  null;
-	        	//scope.inputElement = angular.element(element.getElementByName('rating'));
-
-	        	//get children
-	        	scope.stars = element[0].getElementsByTagName('BUTTON'); //element.children();
-	        	if (scope.stars) {
-	        		
-	        		var child = null;
-	        		for (var i=0; i<scope.stars.length; ++i) {
-	        	
-	        			//get child
-	        			child = scope.stars[i];
-	        			if (child) {
-	        				
-				        	angular.element(child).on('click', function() {
-				        	
-				        		//update stars
-				        		var item = null;
-				        		var itemIndex = 0;
-				        		var foundIndex = false;
-				        		var images = null;
-				        		var image = null;
-				        		for (var j=0; j<scope.stars.length; ++j) {
-				        			
-				        			item = scope.stars[j];
-				        			if (item) {
-				        			
-				        				//apply image
-				        				images = item.getElementsByTagName('IMG');
-				        				if (images && images.length>0) {
-				        					image = angular.element(images[0]);
-				        					image.prop('src', foundIndex ? scope.starRatingOff : scope.starRatingOn);
-				        					if (foundIndex) {
-				        						image.removeClass('rating-on');				        						
-				        					}
-				        					else {
-				        						image.addClass('rating-on');
-				        					}
-				        					//image.css('opacity', foundIndex ? '0.6' : '1');
-				        				}
-				        				
-					        			//found current item
-					        			if (item == this) {
-					        				foundIndex = true;
-					        				itemIndex = j + 1;	
-					        			}
-				        			
-				        			} //end if (valid item)
-				        			
-				        		} //end for()
-
-								//set input value
-								if (scope.inputElement) {
-									scope.inputElement.attr('value', itemIndex);
-								}
-				        	
-				        	});
-				        	
-	        			}
-		        	
-	        		} //end for()
-	        	
-	        	} //end if (found children)
-	        }
+	        console.log("found hidden video - loop: " + element.prop('loop'));	
 	        
+	        	//find button element
+	        	if (scope.hiddenVideo && scope.hiddenVideo.length>0) {
+	        		var buttonElem = document.getElementById(scope.hiddenVideo);
+	        		if (buttonElem) {
+	        			scope.buttonElement = angular.element(buttonElem);	
+	        		}
+	        	}
+	        console.log("button id: " + scope.hiddenVideo + " - elem: " + scope.buttonElement);
+	        
+	        	//valid button element
+	        	if (scope.buttonElement) {
+	        		
+	        		//handle button press
+	        		scope.buttonElement.on('click', function() {
+	        			
+	        			if (element) {
+
+	        				//start video
+	        				element[0].play();
+	        				
+	        			}
+	        			
+	        		});
+	        		
+	        	}
+	        
+	        
+	        	//valid element
+	        	if (element) {
+	        		
+	        		//hide video
+	        		scope.oldDisplay = element[0].style.display;
+	        		element[0].style.display = 'none';
+	        	//	element.attr('display', 'none');
+	        		
+	        		//disable loop
+	        	//	element.prop('loop', false);
+		        	element[0].loop = false;
+	        		
+	        		
+					//add listener
+					element.on('playing', function() {
+	        	
+						console.log("playing");
+						//show video
+	        			element[0].style.display = scope.oldDisplay;
+		        	
+		        	});
+
+					element.on('pause', function() {
+	        	
+						console.log("paused");
+						
+						//check if video plays inline
+						var playsInline = typeof element[0]['oncanplay'] !== 'undefined';
+						
+						//inline video
+						if (playsInline) {
+						
+							//hide video
+		        			element[0].style.display = 'none';
+		        			
+						}
+		        	
+		        	});
+
+					element.on('ended', function() {
+	        	
+						console.log("ended");
+						//hide video
+	        			element[0].style.display = 'none';
+		        	
+		        	});
+		        	
+		        	//$compile(element)(scope);
+		        	
+	        	} //end if (valid element)
+	        	
+	        }
 	    }
-	}]); //end directive
+	    
+	}]); //end directive()
 	
 	
+		
 	
 	//carousel - creates carousel of HTML elements  
 	module.directive('carousel', ['$rootScope', function($rootScope) {
@@ -548,7 +543,7 @@
 	        	
 	        	//update element transition
 	        	scope.updateElement = function(target) {
-
+console.log("update element: " + target);
 	        		if (target) {
 	        			
 	        			//apply final configuration
@@ -567,7 +562,7 @@
 	        	
 	        	
 	        	scope.elementLoaded = function(target) {
-	        		
+	        	console.log("ELEMENT loaded");	
 	        		//create event data
 	        		var eventData = {
 	     				group: group,
@@ -672,7 +667,7 @@
 	        			
 		        		//listen for load event
 			        	element.bind("load" , function(e){ 
-
+console.log("loaded image");
 							//update element
 			        		scope.elementLoaded(element[0]);
 			        		
@@ -698,7 +693,7 @@
 			        			}
 
 			        		} //end if (has group)
-
+console.log("error loading");
 							//update element
 			        		scope.elementLoaded(element[0]);
 			        		
@@ -706,12 +701,13 @@
 			        	
 			        	//check if already loaded
 			        	if (scope.imageLoaded(element[0])) {
+			        		console.log("image was already loaded");
 			        		scope.elementLoaded(element[0]);	
 			        	}
 	        			
 	        		}
 	        		//non image element 
-	        		//else {
+	        		else {
 
         				//add load listener
 						scope.$on('load-group-updated', function (event, data) {
@@ -734,7 +730,7 @@
 			        		scope.elementLoaded(element[0]);
 			        		
 						}); 
-	        		//}
+	        		}
 		
 
 	        	} //end if (valid element)

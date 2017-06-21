@@ -26,3 +26,9 @@ nohup.out
 # Laravel 4 specific
 ######################
 bootstrap/compiled.php
+
+
+# Project Specific #
+####################
+packages/site/public/videos
+

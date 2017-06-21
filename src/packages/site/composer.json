@@ -1,6 +1,6 @@
 {
-    "name": "soup/mobile",
-    "description": "Soup mobile site",
+    "name": "belif/mobile",
+    "description": "Belif mobile site",
     "authors": [
         {
             "name": "Daniel Welsh",
@@ -21,7 +21,7 @@
             "src/Lib"
         ],
         "psr-4": {
-            "Soup\\Mobile\\": "src/",
+            "Belif\\Mobile\\": "src/",
             "Collective\\Html\\": "vendor/laravelcollective/html/src/"
         }
     },
