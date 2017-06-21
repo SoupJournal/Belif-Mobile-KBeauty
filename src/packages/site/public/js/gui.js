@@ -237,12 +237,13 @@
 	        		
 	        		//handle button press
 	        		scope.buttonElement.on('click', function() {
-	        			
+	        		console.log("clicked: " + element);	
 	        			if (element) {
 
 	        				//start video
+	        				element[0].load();
 	        				element[0].play();
-	        				
+	        				console.log("--PRESSED PLAY");
 	        			}
 	        			
 	        		});
@@ -266,7 +267,7 @@
 					//add listener
 					element.on('playing', function() {
 	        	
-						console.log("playing");
+						console.log("playing: " + scope.oldDisplay);
 						//show video
 	        			element[0].style.display = scope.oldDisplay;
 		        	

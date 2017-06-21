@@ -65,7 +65,7 @@
 		{{-- name --}}
 		<div class="form-group"> 
 		
-			{{ Form::text('name', null, Array ('placeholder' => 'Name', 'class' => 'page-input-text', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+			{{ Form::text('name', null, Array ('placeholder' => 'Full Name', 'class' => 'page-input-text', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 			
 		</div>
 
@@ -78,38 +78,40 @@
 			
 		</div>
 			
-		{{-- address 2 --}}
-		<div class="form-group"> 
 		
-			{{ Form::text('address_2', null, Array ('placeholder' => 'Address line 2', 'class' => 'page-input-text', 'required' => '', 'auto-next-focus' => '')) }}
+		<div class="form-group input-flex"> 
+		
+			{{-- address 2 --}}
+			<span class="input-address-2-left">
+				{{ Form::text('address_2', null, Array ('placeholder' => 'Address line 2', 'class' => 'page-input-text', 'required' => '', 'auto-next-focus' => '')) }}
+			</span>
+
+			{{-- zip code --}}
+			<span class="input-address-2-right">
+				{{ Form::input('number', 'zip_code', null, Array ('placeholder' => 'Zip Code', 'class' => 'page-input-text', 'required' => '', 'pattern' => '[0-9]*')) }}
+			</span>
 			
 		</div>
-				
-			
-		{{-- city --}}
-		<div class="form-group">
 		
-			{{ Form::text('city', null, Array ('placeholder' => 'City', 'class' => 'page-input-text', 'required' => '', 'auto-next-focus' => '')) }}
+			
+		
+		<div class="form-group input-flex">
+		
+			{{-- city --}}
+			<span class="input-city-left">
+				{{ Form::text('city', null, Array ('placeholder' => 'City', 'class' => 'page-input-text', 'required' => '', 'auto-next-focus' => '')) }}
+			</span>
+
+	
+			{{-- state --}}
+			<span class="input-city-right">
+				<select-button class="page-input-text input-place-holder input-padding-zero" label-class="page-input-select-overlay stretch-to-fit">
+				{{ Form::select('state', $states, 'State', Array ('placeholder' => 'State', 'class' => 'page-input-text page-input-select input-padding-zero', 'ng-model' => 'state', 'ng-change' => '$parent.valueUpdated(state, this);', 'required' => '', 'auto-next-focus' => '')) }}
+				</select-button>
+			</span>
 			
 		</div>
 	
-	
-		{{-- state --}}
-		<div class="form-group">
-		
-			<select-button class="page-input-text input-place-holder" label-class="page-input-select-overlay stretch-to-fit">
-			{{ Form::select('state', $states, 'State', Array ('placeholder' => 'State', 'class' => 'page-input-text page-input-select', 'ng-model' => 'state', 'ng-change' => '$parent.valueUpdated(state, this);', 'required' => '', 'auto-next-focus' => '')) }}
-			</select-button>
-			
-		</div>
-	
-	
-		{{-- zip code --}}
-		<div class="form-group">
-		
-			{{ Form::input('number', 'zip_code', null, Array ('placeholder' => 'Zip Code', 'class' => 'page-input-text', 'required' => '', 'pattern' => '[0-9]*')) }}
-			
-		</div>
 	
 	
 		{{-- display form errors --}}

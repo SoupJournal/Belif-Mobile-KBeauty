@@ -23,7 +23,8 @@ class CreateQuestionsTable extends Migration {
 			$table->string('answer_B', 1023)->nullable();
 			$table->string('answer_C', 1023)->nullable();
 			$table->string('video', 1023)->nullable();
-			$table->string('background_image', 1023)->nullable();
+			$table->string('question_background_image', 1023)->nullable();
+			$table->string('answer_background_image', 1023)->nullable();
 			$table->integer('order')->default(0);
 			$table->integer('theme')->default(0);
 			$table->string('meta_tags')->nullable();

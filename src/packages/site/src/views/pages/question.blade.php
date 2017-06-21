@@ -36,6 +36,10 @@
 
 <?php
 
+	//ensure page data is set
+	$pageData = isset($pageData) ? $pageData : null;
+	$questionData = isset($questionData) ? $questionData : null;
+
 	//get page properties
 	$questionNumber = isset($questionNumber) ? $questionNumber : 1;
 	$buttonURL = isset($buttonURL) ? $buttonURL : null;
@@ -46,11 +50,11 @@
 	$text = safeArrayValue('text', $pageData, "");
 	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
-	$videoURL = safeArrayValue('video_url', $pageData, $assetPath . '/videos/test.3gpp');
 	
 	//get question data
 	$question = safeArrayValue('question', $questionData, "");
 	$questionText = safeArrayValue('text', $questionData, "");
+	$videoURL = safeArrayValue('video', $questionData, $assetPath . '/videos/test.3gpp');
 
 ?>
 

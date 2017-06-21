@@ -115,6 +115,57 @@
 	function availableStates() {
 		
 		return array (
+			'AL',
+			'AZ',
+			'AR',
+			'CA',
+			'CO',
+			'CT',
+			'DE',
+			'DC',
+			'FL',
+			'GA',
+			'ID',
+			'IL',
+			'IN',
+			'IA',
+			'KS',
+			'KY',
+			'LA',
+			'ME',
+			'MD',
+			'MA',
+			'MI',
+			'MN',
+			'MS',
+			'MO',
+			'MT',
+			'NE',
+			'NV',
+			'NH',
+			'NJ',
+			'NM',
+			'NY',
+			'NC',
+			'OH',
+			'OK',
+			'OR',
+			'PA',
+			'RI',
+			'SC',
+			'SD',
+			'TN',
+			'TX',
+			'UT',
+			'VT',
+			'VA',
+			'WA',
+			'WV',
+			'WI',
+			'WY',
+		);
+		/*
+		return array (
 			'Alabama',
 			'Alaska',
 			'Arizona',
@@ -167,7 +218,7 @@
 			'Wisconsin',
 			'Wyoming'
 		);
-		
+		*/
 	} //end availableStates()
 	
 

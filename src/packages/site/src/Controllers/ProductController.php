@@ -76,13 +76,13 @@
 			if ($questionData) {
 
 				//convert question data
-				$questionData = $questionData->toArray();
+				//$questionData = $questionData->toArray();
 
 				//get page data
 				$pageData = parent::dataForPage(self::FORM_QUESTION);
 				
 				//get background image
-				$backgroundImage = safeArrayValue('background_image', $questionData);
+				$backgroundImage = safeArrayValue('question_background_image', $questionData);
 	
 
 				//render view
@@ -204,12 +204,12 @@
 			
 					//get question data
 					$questionData = $this->questionData($questionIndex);
-			
+
 					//get page data
 					$pageData = $this->dataForPage(self::FORM_ANSWER);
 		
 					//get background image
-					$backgroundImage = safeArrayValue('background_image', $pageData);
+					$backgroundImage = safeArrayValue('answer_background_image', $questionData);
 					
 					//render view
 					return View::make('belif::pages.answer')->with(Array (
@@ -243,10 +243,6 @@
 			
 				//get answer
 				$value = safeArrayValue('value', $_POST, null);
-				//check for value set by javascript 
-				if ($value==null) {
-					$value = safeArrayValue('scriptValue', $_POST, null);
-				}
 						
 				
 				//valid answer
@@ -277,7 +273,7 @@
 			
 			
 			//no question specified
-			return Redirect::route('belif.email');
+			return Redirect::route('belif.home');
 			
 			
 		} //end postAnswer()
@@ -317,7 +313,7 @@
 		public function getProduct() {
 			
 			//calculate product
-			$product = $this->getSelectedProduct();
+			//$product = $this->getSelectedProduct();
 			
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_PRODUCTS);
@@ -327,7 +323,7 @@
 		
 			//render view
 			return View::make('belif::pages.product')->with(Array (
-				'pageName' => 'product_' . $product,
+				//'pageName' => 'product_' . $product,
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'buttonURL' => route('belif.address'),
@@ -540,6 +536,9 @@
 								->offset($questionIndex-1) //adjust question to start at 0 not 1
 								->limit(1)
 								->first();	
+								
+			//convert question data
+			$questionData = $questionData ? $questionData->toArray() : null;
 								
 			return $questionData;
 			
