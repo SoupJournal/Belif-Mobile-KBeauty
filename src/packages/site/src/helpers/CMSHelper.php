@@ -1,6 +1,6 @@
 <?php
 
-	
+	/*
 	function safeValue($key, $object, $default = null) {
 		
 		$result = $default;
@@ -105,5 +105,5 @@
 		
 	} //end decodeJSON()
 
-
+*/
 ?>
