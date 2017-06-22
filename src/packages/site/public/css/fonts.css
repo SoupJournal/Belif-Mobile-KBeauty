@@ -4,32 +4,32 @@
 /********************************/
 
 
+/*
 @font-face {
-    font-family: ProximaNovaCondensed; /* SansaNormal;*/
-    src: url(../fonts/proxima-nova-alt-condensed-light.otf);
-}
-
-@font-face {
-    font-family: ProximaNovaBold; /*SansaSemiBold;*/
-    src: url(../fonts/proxima-nova-bold.otf);
-}
-
-@font-face {
-    font-family: ProximaNovaSemiBold; 
-    src: url(../fonts/proxima-nova-semibold.otf);
-}
-
-@font-face {
-    font-family: ProximaNovaLight; /*SansaBold;*/
+    font-family: ProximaNovaLight; 
     src: url(../fonts/proxima-nova-light.otf);
 }
+*/
 
 @font-face {
-    font-family: ProximaNovaRegular; /*SansaItalic;*/
-    src: url(../fonts/proxima-nova-regular.otf);
+    font-family: SansaNormal;
+    src: url(../fonts/SansaPro-Normal.otf);
 }
 
+@font-face {
+    font-family: SansaSemiBold;
+    src: url(../fonts/SansaPro-SemiBold.otf);
+}
 
+@font-face {
+    font-family: SansaBold;
+    src: url(../fonts/SansaPro-Bold.otf);
+}
+
+@font-face {
+    font-family: SansaItalic;
+    src: url(../fonts/SansaPro-NormalItalic.otf);
+}
 
 
 
@@ -39,13 +39,13 @@
 /********************************/
 
 body {
-	font-family: ProximaNovaLight;	
+	font-family: SansaNormal;	
 }
 
 
 h1 {
 	font-size: 8vw;
-	font-family: ProximaNovaRegular;
+	font-family: SansaBold;
 }
 
 h1.small {
@@ -80,7 +80,7 @@ h1.font-header {
 
 h2 {
 	font-size: 4.8vw;
-	font-family: ProximaNovaBold;
+	font-family: SansaBold;
 }
 
 h2.small {
@@ -91,15 +91,19 @@ h2.medium {
 	font-size: 5.2vw;
 }
 
-h2.bold {
-	font-size: 5.7vw;
+h2.large {
+	font-size: 5.5vw;
 	/*line-height: 8vw;*/
 }
 
 
 h3 {
 	font-size: 4.2vw;
-	font-family: ProximaNovaSemiBold;
+	font-family: SansaSemiBold;
+}
+
+h3.small {
+	font-size: 3.6vw;
 }
 
 h3.large {
@@ -109,7 +113,7 @@ h3.large {
 h4 {
 	font-size: 3.5vw;
 	line-height: 5vw;
-	font-family: ProximaNovaSemiBold;
+	font-family: SansaSemiBold;
 }
 
 h4.large {
@@ -118,7 +122,7 @@ h4.large {
 
 h5 {
 	font-size: 3vw;
-	font-family: ProximaNovaRegular;	
+	font-family: SansaNormal;	
 }
 
 h5.font-header {
@@ -153,13 +157,13 @@ a.page-link {
 
 .button-page {
 	font-size: 4vw;
-	font-family: ProximaNovaSemiBold;
+	font-family: SansaSemiBold;
 }
 
 
 .button-header {
 	font-size: 3vw;
-	font-family: ProximaNovaSemiBold;
+	font-family: SansaSemiBold;
 }
 
 /*
@@ -174,8 +178,8 @@ a.page-link {
 
 
 .page-input-text {
-	font-size: 4vw;
-	font-family: ProximaNovaRegular;
+	font-size: 3.6vw;
+	font-family: SansaItalic;
 }
 
 .page-input-text.small {
@@ -184,7 +188,7 @@ a.page-link {
 
 .page-input-select {
 	font-size: 4vw;
-	font-family: ProximaNovaRegular;
+	font-family: SansaNormal;
 	height: 13vw;
 }
 
@@ -194,7 +198,7 @@ a.page-link {
 
 
 .bg-danger {
-	font-family: ProximaNovaRegular;
+	font-family: SansaNormal;
 	font-size: 4vw;	
 }
 
@@ -226,23 +230,28 @@ a.page-link {
 /********************************/
 
 .title-bold {
-	font-family: ProximaNovaBold;
+	font-family: SansaBold;
 }
 
 .title-semi-bold {
-	font-family: ProximaNovaSemiBold;	
+	font-family: SansaSemiBold;	
 }
 
+/*
 .title-condensed {
 	font-family: ProximaNovaCondensed;
 }
 
 .title-regular {
-	font-family: ProximaNovaRegular;
+	font-family: SansaNormal;
+}
+*/
+.title-light {
+	font-family: SansaNormal;
 }
 
-.title-light {
-	font-family: ProximaNovaLight;
+.title-italic {
+	font-family: SansaItalic;
 }
 
 
@@ -316,14 +325,17 @@ a.page-link {
 		font-size: 52px;
 	}
 	
-	h2.bold {
-		font-size: 56px;
-	/*	line-height: 80px;*/
+	h2.large {
+		font-size: 55px;
 	}
 	
 	
 	h3 {
 		font-size: 40px;
+	}
+	
+	h3.small {
+		font-size: 36px;
 	}
 	
 	h3.large {
@@ -382,7 +394,7 @@ a.page-link {
 */	
 	
 	.page-input-text {
-		font-size: 39px;
+		font-size: 36px;
 	}
 	
 	.page-input-text.small {

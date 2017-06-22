@@ -61,20 +61,26 @@
 	
 	{{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL)) }}
 	
-
-	
-		<div class="spacer-large">
 		
-		<div class="row page-margin-small">
+		<div class="page-padding-medium">
+	
+			<div class="spacer-large"></div>
+			<div class="spacer-tiny"></div>
 		
 			{{-- question --}}
-			<h3 class="title-lightcolor-2">{!! $questionText !!}</h3>
-			<h2 class="color-2">{!! $question !!}</h2>
+			<h3 class="title-light color-2 no-margins">{!! $questionText !!}</h3>
+			<div class="spacer-small-2"></div>
+			<h3 class="color-2 no-margins">{!! $question !!}</h3>
 					
 
 		
-			<div class="spacer-small"></div>
+			<div class="spacer-large"></div>
 		
+		
+		</div>
+		
+		
+		<div class="page-padding-small">
 		
 			{{-- answers --}}
 			@if ($answerA && strlen($answerA)>0)
@@ -105,7 +111,7 @@
 		</div>
 	
 	
-		<div class="spacer-large">
+		<div class="spacer-large"></div>
 	
 	
 	{{ Form::close() }}

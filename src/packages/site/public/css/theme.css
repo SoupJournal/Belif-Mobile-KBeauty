@@ -143,34 +143,6 @@
 
 
 
-/********************************/
-/* 			MARGINS		 		*/
-/********************************/
-
-
-.page-margin-tiny {
-	margin-left: 2%;
-	margin-right: 2%;	
-}
-
-.page-margin-small {
-	margin-left: 5%;
-	margin-right: 5%;	
-}
-
-.page-margin-medium {
-	margin-left: 7.5%;
-	margin-right: 7.5%;	
-}
-
-
-.page-margin-large {
-	margin-left: 10%;
-	margin-right: 10%;	
-}
-
-
-
 
 /********************************/
 /* 			HEADER		 		*/
@@ -291,6 +263,36 @@
 	height: auto;	
 }
 
+
+
+/********************************/
+/* 			MARGINS		 		*/
+/********************************/
+
+
+.page-margin-tiny {
+	margin-left: 2%;
+	margin-right: 2%;	
+}
+
+.page-margin-small {
+	margin-left: 5%;
+	margin-right: 5%;	
+}
+
+.page-margin-medium {
+	margin-left: 7.5%;
+	margin-right: 7.5%;	
+}
+
+
+.page-margin-large {
+	margin-left: 10%;
+	margin-right: 10%;	
+}
+
+
+
 /********************************/
 /* 			PADDING		 		*/
 /********************************/
@@ -331,6 +333,11 @@
 .page-padding-larger {
 	padding-left: 20%;	
 	padding-right: 20%;
+}
+
+.page-padding-larger-more {
+	padding-left: 27%;	
+	padding-right: 27%;
 }
 
 .page-padding-very-large {

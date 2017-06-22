@@ -55,18 +55,20 @@
 		<div class="row page-margin-small">
 		
 		
-			<div class="spacer-large"></div>
+			<div class="spacer-medium"></div>
 			
 		
 			{{-- title --}}
-			<h2 class="title-3 color-2">{{ $title }}</h2>
+			<h2 class="medium color-2">{{ $title }}</h2>
 		
 		
-			<div class="spacer-small"></div>
+			<div class="spacer-medium"></div>
 			
 			{{-- image --}}
 			@if ($image && strlen($image)>0) 
-				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
+				<div class="page-padding-medium title-light">
+					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
+				</div>
 			@endif
 			
 			
@@ -74,7 +76,7 @@
 			<!-- load group -->
 			<div load-style="fade" load-group="page">
 				
-		
+
 				{{-- html --}}
 				@if ($html && strlen($html)>0) 
 					<div class="bg-color-1 row-left guide-block">
@@ -84,7 +86,7 @@
 				@endif
 		
 		
-				<div class="spacer-small"></div>
+				<div class="spacer-tiny"></div>
 	
 	
 				{{-- text --}}

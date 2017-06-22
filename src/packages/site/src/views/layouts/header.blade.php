@@ -6,7 +6,7 @@
 	{{-- back button --}}
 	<div class="page-header-side">
 		@if (isset($backURL) && strlen($backURL)>0)
-			<a href="{{ $backURL }}" class="color-2 button-back">BACK</a>
+			<h4 class="title-light button-back"><a href="{{ $backURL }}" class="color-2">BACK</a></h4>
 		@endif
 	</div>
 

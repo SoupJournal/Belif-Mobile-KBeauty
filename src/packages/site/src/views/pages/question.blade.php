@@ -62,12 +62,12 @@
 	
 	<div class="container-top">
 	
-		<div class="spacer-large">
+		<div class="spacer-small-2">
 		
 		<div class="row page-margin-small">
 		
 			{{-- question title --}}
-			<h2 class="title-3 color-2">Question {{ $questionNumber }}</h2>
+			<h2 class="title-semi-bold large color-2">Question {{ $questionNumber }}</h2>
 		
 		
 			<div class="spacer-medium"></div>
@@ -75,12 +75,12 @@
 		
 			{{-- image --}}
 			@if ($image && strlen($image)>0) 
-				<div class="page-padding-very-large">
+				<div class="page-padding-larger-more">
 					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 				</div>
 			@endif
 		
-			<div class="spacer-small"></div>
+			<div class="spacer-small-2"></div>
 		
 
 			{{-- video --}}
@@ -95,12 +95,24 @@
 					
 
 		
-			<div class="spacer-small"></div>
+			<div class="spacer-tiny"></div>
 		
 		
 			{{-- question --}}
-			<h3 class="title-light no-margins color-2">{!! $questionText !!}</h3>
-			<h2 class="no-margins color-2">{!! $question !!}</h2>
+			<div class="question-text page-padding-medium">
+			
+				<div class="spacer-medium"></div>
+			
+				<h3 class="title-light no-margins color-2">{!! $questionText !!}</h3>
+				
+				<div class="spacer-small-2"></div>
+				
+				<h3 class="title-semi-bold large no-margins color-2">{!! $question !!}</h3>
+				
+				<div class="spacer-large"></div>
+				<div class="spacer-small-2"></div>
+				
+			</div>
 			
 			
 			<div class="spacer-small"></div>
@@ -115,7 +127,7 @@
 		</div>
 	
 	
-		<div class="spacer-large">
+		<div class="spacer-small">
 	
 	
 	</div>

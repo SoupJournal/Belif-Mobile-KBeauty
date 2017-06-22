@@ -69,6 +69,11 @@
 		$numberOfSamples = 1;
 	}
 	
+	//answer images
+	$imageRight = asset($assetPath . "/images/icon-answer-right.png");
+	$imageWrong = asset($assetPath . "/images/icon-answer-wrong.png");
+	
+	
 ?>
 
 <div class="text-center">
@@ -98,9 +103,9 @@
 			@if ($results) 
 				@for ($i=0; $i<count($results); ++$i)
 				
-					<h2 class="title-3 color-2 no-margins">
-						<span class="result_value"></span>
-						<span>Question {{ ($i+1) }}</span>
+					<h2 class="title-3 color-2 no-margins results-answer">
+						<span class="results-item"><img src="{{ $imageRight }}" class="results-value-image"></span>
+						<span class="results-item">Question {{ ($i+1) }}</span>
 					</h2>
 					
 				@endfor
