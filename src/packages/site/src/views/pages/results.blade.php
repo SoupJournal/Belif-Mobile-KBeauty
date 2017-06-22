@@ -133,7 +133,7 @@
 			<div load-style="fade" load-group="page">
 		
 				{{-- next button --}}
-				@if ($correctAnswers>0)
+				@if ($numberOfSamples>0)
 					<a href="{{ $buttonURL }}" class="button-page bg-color-3 color-2" label="{{ $button }}">
 						{{ $button }}
 					</a>
