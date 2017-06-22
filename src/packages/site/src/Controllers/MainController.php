@@ -202,6 +202,9 @@
 			//get background image
 			$backgroundImage = safeArrayValue('background_image', $pageData);
 		
+			//clear quiz answers
+			$this->clearAnswers(0);
+		
 			//render view
 			return View::make('belif::pages.guide')->with(Array (
 				'pageName' => 'guide',

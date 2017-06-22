@@ -43,6 +43,7 @@
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
+	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$html = safeArrayValue('html', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
 	$image = safeArrayValue('image', $pageData, "");
@@ -62,7 +63,7 @@
 	
 	//determine number of samples
 	$numberOfSamples = 0;
-	if ((floatval($correctAnswers) / $numberOfQuestions) > 0.5) {
+	if ((floatval($correctAnswers) / $numberOfQuestions) > 0.75) {
 		$numberOfSamples = 2;
 	}
 	else if ((floatval($correctAnswers) / $numberOfQuestions) > 0.35) {
@@ -83,30 +84,33 @@
 		<div class="row page-margin-small">
 		
 		
-			<div class="spacer-large"></div>
+			<div class="spacer-medium"></div>
+			<div class="spacer-tiny"></div>
 			
 		
 			{{-- title --}}
-			<h2 class="color-2 no-margins">{{ $title }}</h2>
-			<h2 class="color-2 no-margins">
+			<h2 class="color-2 small-margins medium">{{ $correctAnswers>0 ? $title : $subtitle }}</h2>
+			<h2 class="color-2 small-margins medium">
 				You got {{ $correctAnswers }} out of {{ $numberOfQuestions }} correct!
 			</h2>
-			<h2 class="title-light color-2 no-margins">
-				You can have {{ $numberOfSamples }} samples.
+			<h2 class="title-light color-2 small-margins medium">
+				You can have {{ $numberOfSamples }} sample{{ $numberOfSamples==1 ? "" : "s" }}.
 			</h2>
 		
 		
-			<div class="spacer-tiny"></div>
+			<div class="spacer-small"></div>
 	
 
 			{{-- question results --}}
 			@if ($results) 
-				@for ($i=0; $i<count($results); ++$i)
+				@for ($i=1; $i<=count($results); ++$i)
 				
-					<h2 class="title-3 color-2 no-margins results-answer">
-						<span class="results-item"><img src="{{ $imageRight }}" class="results-value-image"></span>
-						<span class="results-item">Question {{ ($i+1) }}</span>
-					</h2>
+					<h4 class="title-semi-bold color-2 no-margins results-answer large">
+						<span class="results-item">
+							<img src="{{ safeArrayValue($i, $results) ? $imageRight : $imageWrong }}" class="results-value-image">
+						</span>
+						<span class="results-item">Question {{ ($i) }}</span>
+					</h4>
 					
 				@endfor
 			@endif
@@ -129,11 +133,13 @@
 			<div load-style="fade" load-group="page">
 		
 				{{-- next button --}}
-				<a href="{{ $buttonURL }}" class="button-page bg-color-3 color-2" label="{{ $button }}">
-					{{ $button }}
-				</a>
+				@if ($correctAnswers>0)
+					<a href="{{ $buttonURL }}" class="button-page bg-color-3 color-2" label="{{ $button }}">
+						{{ $button }}
+					</a>
+				@endif
 					
-				<div class="spacer-tiny"></div>
+
 				
 				
 				{{-- restart --}}
@@ -145,7 +151,7 @@
 			</div>
 			<!-- load group -->
 		
-			<div class="spacer-small"></div>
+			<div class="spacer-tiny"></div>
 		
 		</div>
 

@@ -93,11 +93,14 @@
 					'questionNumber' => $questionIndex,
 					'backgroundImage' => $backgroundImage,
 					'buttonURL' => route('belif.answer'),
-					'backURL' => route('belif.guide')
+					'backURL' => $questionIndex>1 ? route('belif.question.previous') : route('belif.guide')
 				));
 			
 			} //end if (valid question)
 			
+			//assume all questions answered
+			return Redirect::route('belif.results');
+
 
 		} //end getQuestion()
 		
@@ -283,10 +286,10 @@
 			
 		
 		public function getResults() {
-			
+
 			//get quiz results
 			$results = $this->answerResults();
-			
+
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_RESULTS);
 			
@@ -344,10 +347,10 @@
 		//==========================================================//	
 		
 		
-		private function setAnswer($questionId, $value) {
+		private function setAnswer($questionIndex, $value) {
 			
 			//valid question ID
-			if ($questionId>0) {
+			if ($questionIndex>0) {
 			
 				//get current answers
 				$answers = Session::get('answers');
@@ -356,14 +359,14 @@
 				}
 				
 				//set answer
-				$answers[$questionId] = $value;
+				$answers[$questionIndex] = $value;
 				
 				//store answers
 				Session::set('answers', $answers);
-				
+	
 				//clear remaining answers
-				$this->clearAnswers($questionId+1);
-					
+				$this->clearAnswers($questionIndex+1);
+						
 			} //end if (valid question ID)
 			
 		} //end setAnswer()
@@ -380,24 +383,24 @@
 			$questionData = Question::orderBy('order')
 									->orderBy('id')
 									->get();	
-			
+
 			//found questions
 			if ($questionData && count($questionData)>0) {
 			
 				//get current answers
 				$answers = Session::get('answers');
-				if ($answers) {
+				if (!$answers) {
 					$answers = array();
 				}
-			
+		
 				//compile results
-				$index = 0;
+				$index = 1;
 				foreach ($questionData as $question) {
-					
+
 					//get answer value
-					$answer = $index<count($answers) ? $answers[$index] : null;
+					$answer = safeArrayValue($index, $answers, null); //$index<count($answers) ? $answers[$index] : null;
 					if (isset($answer)) {
-					
+
 						//set result
 						$results[$index] = safeObjectValue('correct_answer', $question, null) == $answer;
 						
@@ -413,7 +416,7 @@
 				} //end for()
 			
 			} //end if (found questions)
-			
+
 			return $results;
 			
 		} //end answerResults()

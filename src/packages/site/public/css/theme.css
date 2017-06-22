@@ -427,6 +427,10 @@
 	margin-bottom: 0;	
 }
 
+.small-margins {
+	margin-top: 0.8vw;
+	margin-bottom: 0.8vw;	
+}
 
 
 /********************************/
@@ -440,7 +444,6 @@
   	background-position: center center;
   	width: 100%;
 }
-
 
 
 
