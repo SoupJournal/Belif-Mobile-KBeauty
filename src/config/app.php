@@ -159,7 +159,7 @@ return [
 		//Aws\Laravel\AwsServiceProvider::class,
 
 		Collective\Html\HtmlServiceProvider::class,
-        //Soup\CMS\CmsServiceProvider::class,
+        Soup\CMS\CmsServiceProvider::class,
         Belif\Mobile\BelifServiceProvider::class,        
 
     ],
