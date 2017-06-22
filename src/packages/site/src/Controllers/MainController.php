@@ -481,6 +481,7 @@
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'backURL' => route('belif.address'),
+				'buttonURL' => route('belif.share')
 			));
 			
 		} //end getVerify()
@@ -514,6 +515,7 @@
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'backURL' => route('belif.address'),
+				'buttonURL' => route('belif.share'),				
 				'verifyEmail' => $user->email
 			));
 			
@@ -549,7 +551,7 @@
 						}
 						
 						//jump to thanks page
-						return Redirect::to('/thanks');
+						return Redirect::route('belif.thanks');
 						
 					}
 					
@@ -562,7 +564,7 @@
 				
 				
 						//get page data
-						$pageData = $this->dataForFormId(self::FORM_SHARE);
+						$pageData = $this->dataForPage(self::FORM_SHARE);
 						
 						//get background image
 						$backgroundImage = safeArrayValue('background_image', $pageData);

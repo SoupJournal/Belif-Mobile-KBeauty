@@ -241,6 +241,26 @@
 	height: auto;
 }
 
+
+/********************************/
+/* 			PRODUCTS 			*/
+/********************************/
+
+.product-slider {
+	display: table;
+	border-spacing: 20px 0;
+}
+
+.product-box {
+	display: table-cell;
+	width: 60%;	
+}
+
+.product-box img {
+	width: 100%;
+	height: auto;	
+}
+
 /********************************/
 /* 			BUTTONS 			*/
 /********************************/
@@ -426,14 +446,14 @@ a.no-underline-highlight:hover {
 .page-input-text {
 	padding-left: 10px;
 	padding-right: 10px;
-    padding-top: 2vw; /* 3.8%; */
-    padding-bottom: 2vw; /* 3.8%; */
-    margin-top: 2vw; /* 4%; */
+    padding-top: 3vw; 
+    padding-bottom: 3vw; 
+    margin-top: 4vw; 
 /*	min-width: 150px; */
 	width: 100%;
-	text-align: center;
+	text-align: left;
 	background-color: transparent;
-	border: 1vw solid #FFFFFF;
+	border: 0.5vw solid #FFFFFF;
 /*	border-radius: 5px; */
 	-webkit-appearance: none;
 /*	border-color: transparent; */
@@ -490,8 +510,11 @@ a.no-underline-highlight:hover {
 
 
 .page-input-text.large {
+	margin-top: 2vw; 
 	padding-top: 3vw;
     padding-bottom: 3vw;
+	border: 1vw solid #FFFFFF;
+	text-align: center;
 }
 
 .page-input-text.small-margin {
@@ -561,9 +584,10 @@ a.no-underline-highlight:hover {
 .page-input-select, .page-input-select:active, .page-input-select:focus {
 	padding-left: 0px;
 	padding-right: 0px;
-    padding-top: 3.6%;
-    padding-bottom: 3.6%;
-    margin-top: 4%;
+    padding-top: 3vw; 
+    padding-bottom: 3vw; 
+    margin-top: 4vw; 
+/*    margin-top: 4%;*/
 /*	min-width: 150px; */
 	width: 100%;
 	text-align: left;

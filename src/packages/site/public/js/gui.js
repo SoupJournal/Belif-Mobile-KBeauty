@@ -221,7 +221,6 @@
 	            hiddenVideo: '@'
 	        },
 	        link: function (scope, element, attrs) {
-	        console.log("found hidden video - loop: " + element.prop('loop'));	
 	        
 	        	//find button element
 	        	if (scope.hiddenVideo && scope.hiddenVideo.length>0) {
@@ -230,20 +229,19 @@
 	        			scope.buttonElement = angular.element(buttonElem);	
 	        		}
 	        	}
-	        console.log("button id: " + scope.hiddenVideo + " - elem: " + scope.buttonElement);
 	        
 	        	//valid button element
 	        	if (scope.buttonElement) {
 	        		
 	        		//handle button press
 	        		scope.buttonElement.on('click', function() {
-	        		console.log("clicked: " + element);	
+
 	        			if (element) {
 
 	        				//start video
 	        				element[0].load();
 	        				element[0].play();
-	        				console.log("--PRESSED PLAY");
+
 	        			}
 	        			
 	        		});
@@ -267,15 +265,12 @@
 					//add listener
 					element.on('playing', function() {
 	        	
-						console.log("playing: " + scope.oldDisplay);
 						//show video
 	        			element[0].style.display = scope.oldDisplay;
 		        	
 		        	});
 
 					element.on('pause', function() {
-	        	
-						console.log("paused");
 						
 						//check if video plays inline
 						var playsInline = typeof element[0]['oncanplay'] !== 'undefined';
@@ -292,7 +287,6 @@
 
 					element.on('ended', function() {
 	        	
-						console.log("ended");
 						//hide video
 	        			element[0].style.display = 'none';
 		        	
@@ -544,7 +538,7 @@
 	        	
 	        	//update element transition
 	        	scope.updateElement = function(target) {
-console.log("update element: " + target);
+
 	        		if (target) {
 	        			
 	        			//apply final configuration
@@ -563,7 +557,7 @@ console.log("update element: " + target);
 	        	
 	        	
 	        	scope.elementLoaded = function(target) {
-	        	console.log("ELEMENT loaded");	
+
 	        		//create event data
 	        		var eventData = {
 	     				group: group,
@@ -668,7 +662,7 @@ console.log("update element: " + target);
 	        			
 		        		//listen for load event
 			        	element.bind("load" , function(e){ 
-console.log("loaded image");
+
 							//update element
 			        		scope.elementLoaded(element[0]);
 			        		
@@ -694,7 +688,7 @@ console.log("loaded image");
 			        			}
 
 			        		} //end if (has group)
-console.log("error loading");
+
 							//update element
 			        		scope.elementLoaded(element[0]);
 			        		
@@ -702,7 +696,6 @@ console.log("error loading");
 			        	
 			        	//check if already loaded
 			        	if (scope.imageLoaded(element[0])) {
-			        		console.log("image was already loaded");
 			        		scope.elementLoaded(element[0]);	
 			        	}
 	        			

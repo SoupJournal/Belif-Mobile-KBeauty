@@ -4,6 +4,7 @@
 	
 
 	use Belif\Mobile\Models\Question;
+	use Belif\Mobile\Models\Product;
 	use Belif\Mobile\Controllers\BaseController;
 	
 
@@ -315,7 +316,9 @@
 			
 		public function getProduct() {
 			
-			//calculate product
+			//get products
+			$products = Product::get();
+
 			//$product = $this->getSelectedProduct();
 			
 			//get page data
@@ -328,6 +331,7 @@
 			return View::make('belif::pages.product')->with(Array (
 				//'pageName' => 'product_' . $product,
 				'pageData' => $pageData,
+				'products' => $products,
 				'backgroundImage' => $backgroundImage,
 				'buttonURL' => route('belif.address'),
 				'backURL' => route('belif.results')

@@ -50,23 +50,28 @@
 	
 
 		
-	<div class="spacer-large"></div>
+	<div class="spacer-small-2"></div>
+	<div class="spacer-tiny"></div>
 	
-	<div class="row page-margin-small">
+	<div class="page-padding-small">
+	
 	
 		{{-- title --}}
-		<h2 class="bold page-padding-small">{{ $title }}</h2>
+		<h2 class="medium page-padding-small">{{ $title }}</h2>
 	
-		<div class="spacer-small"></div>
-	
+		<div class="spacer-medium"></div>
+		<div class="spacer-small"></div>	
 
 	
 		{{-- image --}}
 		@if ($image && strlen($image)>0) 
-			<div class="page-padding-medium">
+			<div class="page-padding-large">
 				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 			</div>
 		@endif
+		
+		
+		<div class="spacer-medium"></div>
 		
 		
 		<!-- load group -->
@@ -81,8 +86,8 @@
 			
 			
 			{{-- Next button --}}
-			<a href="" class="button-page bg-color-3 color-2">
-				<h4 class="button-link">{{ $button }}</h4>
+			<a href="{{ $buttonURL }}" class="button-page bg-color-3">
+				<h4 class="button-link color-2">{{ $button }}</h4>
 			</a>
 		
 		

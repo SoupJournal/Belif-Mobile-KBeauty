@@ -36,6 +36,9 @@
 
 <?php
 
+ 	//ensure page properties are set
+	$buttonURL = isset($buttonURL) ? $buttonURL : null;
+
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");

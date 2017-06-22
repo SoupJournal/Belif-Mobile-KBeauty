@@ -42,6 +42,7 @@
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
+	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	
 ?>
@@ -50,15 +51,25 @@
 	
 	{{ Form::open(Array('role' => 'form', 'name' => 'addressForm', 'url' => $formURL)) }}
 	
-		<div class="spacer-small"></div>
+		<div class="spacer-medium"></div>
 	
 	
 		{{-- title --}}
-		<h2 class="bold">{{ $title }}</h2>
+		<h2 class="medium">{{ $title }}</h2>
 	
 	
+		<div class="spacer-tiny"></div>
+		
 	
-		<div class="spacer-small"></div>
+		{{-- image --}}
+		@if ($image && strlen($image)>0) 
+			<div class="page-padding-extreme">
+				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
+			</div>
+		@endif
+	
+	
+		<div class="spacer-tiny"></div>
 	
 
 
@@ -88,7 +99,7 @@
 
 			{{-- zip code --}}
 			<span class="input-address-2-right">
-				{{ Form::input('number', 'zip_code', null, Array ('placeholder' => 'Zip Code', 'class' => 'page-input-text', 'required' => '', 'pattern' => '[0-9]*')) }}
+				{{ Form::input('number', 'zip_code', null, Array ('placeholder' => 'ZIP', 'class' => 'page-input-text', 'required' => '', 'pattern' => '[0-9]*')) }}
 			</span>
 			
 		</div>
