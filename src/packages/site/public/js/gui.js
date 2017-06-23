@@ -87,26 +87,66 @@
 	        },
 	        link: function( scope, elem, attrs ) {
 	
+	
+				//get applied style
+				scope.getComputedStyle = function(baseElement, property) {
+				
+					var style = null;
+				
+					//valid element
+					if (baseElement && baseElement.style) {
+
+						//set default
+						style = baseElement.style[property];
+						
+						//current style
+						if (baseElement.currentStyle) {
+							style = baseElement.currentStyle[property];
+						}
+						
+						//computed style
+						else if (window.getComputedStyle) {
+							style = document.defaultView.getComputedStyle(baseElement,null).getPropertyValue(property);
+						}
+					
+					} //end if (valid element)
+					
+					return style;
+					
+				} //end getComputedStyle()
+				
+	
+	
+	
 				//find absolute offset
-				scope.absoluteOffset = function(target) {
+				scope.absoluteOffset = function(baseElement) {
 					
 					var offset = {x:0, y:0};
 					
-					if (target) {
+					if (baseElement) {
 						
 						//has parent
-						if (target.parentNode) {
+						if (baseElement.parentNode) {
 							
 							//find parent offset
-							var parentOffset = scope.absoluteOffset(target.parentNode);
+							var parentOffset = scope.absoluteOffset(baseElement.offsetParent); //parentNode);
 							if (parentOffset) {
 								offset.x = parentOffset.x;
 								offset.y = parentOffset.y;
 							}
 							
+							//determine if absolute element
+							//var isAbsolute = scope.getComputedStyle(baseElement, 'position')=='absolute';
+							
 							//add element offset
-							if (target.offsetLeft) offset.x += target.offsetLeft;
-							if (target.offsetTop) offset.y += target.offsetTop;
+//							if (baseElement.offsetLeft) {
+//								offset.x = isAbsolute ? offset.x + baseElement.offsetLeft : baseElement.offsetLeft;
+//							}
+//							if (baseElement.offsetTop) {
+//								offset.y = isAbsolute ? offset.y + baseElement.offsetTop : baseElement.offsetTop;
+//							}
+							if (baseElement.offsetLeft) offset.x += baseElement.offsetLeft;
+							if (baseElement.offsetTop) offset.y += baseElement.offsetTop;
 						}
 						
 					} //end if (valid element)
@@ -124,7 +164,7 @@
 						//get element offsets
 						//var offset = scope.absoluteOffset(target[0]);
 						//var boundingRect = target[0].getBoundingClientRect();
-						
+						//for (var i=0; i<2; ++i) {
 						
 						//get element dimensions
 						var positionY = target.prop('offsetTop');
@@ -141,11 +181,17 @@
 					    	//get item
 					    	item = items[i];
 					    	
+					    	var offsetTop = scope.absoluteOffset(item);
+		//console.log("[" + item.className + "][" + item.offsetTop + "][ " + item.offsetHeight + "] - offsetTop: " + offsetTop.y); 	
 					    	//valid item and avoid measuring active element
 					    	if (item && item!=target[0]) {
+					    		
+					    		//var offsetTop = item.offsetTop;
+					    		var offsetTop = scope.absoluteOffset(item);
+					        	itemHeight = offsetTop.y + item.offsetHeight;
 					    		//itemOffset = scope.absoluteOffset(item);
 					    		//itemHeight = itemOffset.y + item.offsetHeight;
-					        	itemHeight = item.offsetTop + item.offsetHeight;
+					        	//itemHeight = item.offsetTop + item.offsetHeight;
 					        	
 					        	//compare height
 					        	if (itemHeight>height) {
@@ -178,7 +224,9 @@
 						// manuall $digest required as resize event
 						// is outside of angular
 						//scope.$digest();
-					
+						
+						//} //end for()
+						
 						//broadcast update event
 						$rootScope.$broadcast('window-height-updated');
 						

@@ -199,6 +199,7 @@
 .guide-text ul {
 	list-style: none;
 	-webkit-padding-start: 3%;	
+    list-style-position: inside;
 }
 
 .guide-text ul li:before {
@@ -210,6 +211,8 @@
 .guide-text li {
 	margin-top: 4%;	
 	margin-bottom: 4%;
+    text-indent: -1em;
+    padding-left: 1em;
 }
 
 .guide-text img {
@@ -496,6 +499,13 @@ a.no-underline-highlight:hover {
     color: red;
 }*/
 
+.page-input-place-holder {
+	padding-top: 4vw;
+	padding-bottom: 3.3vw;
+	margin-left: 2vw;
+}
+
+
 .page-input-center {
 	text-align: center;	
 }
@@ -587,9 +597,10 @@ a.no-underline-highlight:hover {
     padding-top: 3vw; 
     padding-bottom: 3vw; 
     margin-top: 4vw; 
+    text-align: center;
 /*    margin-top: 4%;*/
 /*	min-width: 150px; */
-	width: 100%;
+	width: 90%;
 	text-align: left;
 /*	background-color: #FFFFFF; */
 	border: none;
@@ -643,6 +654,12 @@ input[type=radio] {
 .input-padding-large {
 	padding-top: 5%;
     padding-bottom: 5%;
+}
+
+
+.input-padding-very-large {
+	padding-left: 8%;
+	padding-right: 8%;	
 }
 
 .input-clear-top-margin {

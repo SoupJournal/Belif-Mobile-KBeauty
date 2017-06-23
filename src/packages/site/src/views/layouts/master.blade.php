@@ -2,7 +2,7 @@
 
 	//define variables
 	$fullScreen = isset($fullScreen) ? $fullScreen : false;
-	$title = isset($title) ? $title : 'belif | belif in hydration';
+	$pagetitle = isset($pagetitle) ? $pagetitle : 'belif | belif in hydration';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
 
@@ -15,7 +15,7 @@
         
         {{------------------ TITLE -------------------}}
         
-        <title>{{ $title }}</title>
+        <title>{{ $pagetitle }}</title>
         
         {{---------------- END TITLE -----------------}}
         

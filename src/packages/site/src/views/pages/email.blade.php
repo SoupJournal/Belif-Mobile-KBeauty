@@ -38,7 +38,7 @@
 
 	//ensure page properties are set
 	$formURL = isset($formURL) ? $formURL : '';
-	$unregisterURL = isset($unregisterURL) ? $unregisterURL : '';
+	$termsURL = isset($termsURL) ? $termsURL : '';
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
@@ -118,10 +118,10 @@
 			</button>
 			
 			
-			{{-- Unregister --}}
-			<!--a href="{{ $unregisterURL }}" class="color-1" target="_blank">
+			{{-- Terms & Conditions --}}
+			<a href="{{ $termsURL }}" class="color-1" target="_blank">
 				<h4 class="button-link">{{ $buttonNo }}</h4>
-			</a-->
+			</a>
 			
 			
 		</div>

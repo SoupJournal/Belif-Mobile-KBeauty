@@ -116,8 +116,8 @@
 	
 			{{-- state --}}
 			<span class="input-city-right">
-				<select-button class="page-input-text input-place-holder input-padding-zero" label-class="page-input-select-overlay stretch-to-fit">
-				{{ Form::select('state', $states, 'State', Array ('placeholder' => 'State', 'class' => 'page-input-text page-input-select input-padding-zero', 'ng-model' => 'state', 'ng-change' => '$parent.valueUpdated(state, this);', 'required' => '', 'auto-next-focus' => '')) }}
+				<select-button class="page-input-text page-input-place-holder input-padding-zero" label-class="page-input-select-overlay stretch-to-fit">
+				{{ Form::select('state', $states, 'State', Array ('placeholder' => 'State', 'class' => 'page-input-text page-input-select input-padding-very-large', 'ng-model' => 'state', 'ng-change' => '$parent.valueUpdated(state, this);', 'required' => '', 'auto-next-focus' => '')) }}
 				</select-button>
 			</span>
 			

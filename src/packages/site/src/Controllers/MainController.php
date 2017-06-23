@@ -96,7 +96,7 @@
 				'backgroundImage' => $backgroundImage,
 				//'backURL' => route('belif.home'),
 				'formURL' => route('belif.email'),
-				'unregisterURL' => '' //route('belif.unsubscribe')
+				'termsURL' => 'https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/belif_in_hydration_terms_and_conditions.pdf'
 			));
 			
 		} //end getEmail()
