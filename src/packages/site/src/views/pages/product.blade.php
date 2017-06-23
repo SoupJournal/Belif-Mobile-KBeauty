@@ -66,12 +66,14 @@
 
 	{{-- product carosel --}}
 	@if ($products)
-		<div class="product-slider" >
-			@foreach ($products as $product) 
-				<div class="product-box">
-					<img src="{{ safeObjectValue('sample_image', $product, '') }}" load-style="fade">
-				</div>
-			@endforeach
+		<div class="product-slider-box" scroll-view scroll-pages="{{ count($products) }}">
+			<div class="product-slider" >
+				@foreach ($products as $product) 
+					<div class="product-box">
+						<img src="{{ safeObjectValue('sample_image', $product, '') }}" load-style="fade">
+					</div>
+				@endforeach
+			</div>
 		</div>
 	@endif
 

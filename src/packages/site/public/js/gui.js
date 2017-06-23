@@ -76,6 +76,389 @@
 	
 	
 	
+	//scrollView - scrollable content view
+	module.directive( 'scrollView', ['$window', '$document', '$rootScope', function($window, $document, $rootScope) {
+		
+	    return {
+			restrict: 'A',
+			scope: {
+	            scrollView: '@',
+	            scrollName: '@',
+	            scrollPages: '@',
+	            scrollDuration: '@'
+	        },
+	        link: function( scope, elem, attrs ) {
+	        	
+	        	//default properties
+	        	if (!scope.scrollDuration>0) scope.scrollDuration = 300;
+	        	
+	        	
+	
+				//timeout for scrolling
+				var scrollTimeout = null;
+	
+				//timeout for detecting scroll end
+				var endTimer = null;
+	
+				//indicate if touch/press held
+				var touchHeld = false;
+				
+				//scroll update time
+				var scrollFrameRate = 30;
+				
+				//indicate if auto scrolling
+				var autoScrolling = false;
+	
+	
+				//touch supported
+				if ('ontouchstart' in window || navigator.maxTouchPoints) {
+	
+					//clear scrollbar
+					var styleSheet = document.styleSheets[0];
+				    styleSheet.insertRule('::-webkit-scrollbar { display: none; }', 0);
+			    
+				}
+	
+				//get touch/press position
+//		     	scope.getPosition = function(event) {
+//		     		
+//		     		//default position
+//		     		var pos = { x:0, y:0 };
+//				    if(event) {
+//				    	
+//				    	//find input handler
+//				      	var touches = event.touches && event.touches.length ? event.touches : [event];
+//				      	var e = (event.changedTouches && event.changedTouches[0]) ? event.changedTouches[0] : touches[0];
+//				      	if(e) {
+//				       	 	pos.x = e.clientX || e.pageX || 0;
+//				        	pos.y = e.clientY || e.pageY || 0;
+//				      	}
+//				    }
+//		     		
+//		     		return pos;
+//		     		
+//		     	} //end getPosition()
+	
+				scope.updateTimer = function() {
+					
+   					//invalidate any existings detection
+   					if (endTimer) {
+   						clearTimeout(endTimer);
+   						endTimer = null;
+   					}
+   					
+   					//set timeout to detect scroll end
+	     			endTimer = setTimeout(scope.detectScrollEnd, 100);
+					
+				} //end updateTimer()
+	
+	
+				//detect scroll end
+				scope.detectScrollEnd = function() {
+
+     				//scroll held
+     				if (touchHeld) {
+     					
+     					//update timer
+						scope.updateTimer();     					
+
+     				}
+     				//scroll ended
+     				else {
+     					scope.scrollEnd();
+     				}
+     				
+     			}; //end detectScrollEnd()
+     			
+	
+		     	//drag started
+		     	scope.dragStart = function(event) {
+     		
+		     		//valid event
+		     		if (event) {
+		     			
+		     			//store touch state
+		     			touchHeld = true;
+		     		
+		     		}
+		     		
+		     	}; //end dragStart()
+		     	
+		     	
+		     	//drag ended
+		     	scope.dragEnd = function(event) {
+
+		     		//valid event
+		     		if (event) {
+		     			
+		     			//store touch state
+		     			touchHeld = false;
+
+						//broadcast event
+//		     			$rootScope.$broadcast('gesture-drag-start', {
+//		     				name: scope.name,
+//		     				position: scope.startPos
+//		     			});
+		     		
+		     		}
+		     		
+		     	}; //end dragEnd()
+	
+	
+				//scrolling has ended
+				scope.scrollEnd = function() {
+					
+					//get event data
+					var eventData = scope.eventData();
+					
+					//valid element
+					if (elem && elem[0] && eventData) {
+						
+						//scroll to page position
+						scope.scrollToPosition(eventData.pageStart, scope.scrollDuration);
+						
+					}
+					
+					//broadcast event
+					scope.triggerEvent('scroll-view-scrollEnd', eventData);	
+					
+				} //end scrollEnd()
+	
+	
+				//scroll to position
+				scope.scrollToPosition = function(position, duration) {
+					
+					//clear existing scroll
+					if (scrollTimeout) {
+						clearTimeout(scrollTimeout);
+						scrollTimeout = null;
+					}	
+					
+					//valid element
+					if (elem && elem[0]) {
+						
+						//round position
+						position = Math.round(position);
+						
+						//check bounds
+						var max = elem[0].scrollWidth - elem[0].clientWidth;
+						if (position<0) position = 0;
+						if (position>max) position = max;
+						
+						//movement required
+						if (elem[0].scrollLeft != position) {
+						
+							//indicate auto scrolling
+							autoScrolling = true;
+						
+							//determine number of frames
+							var frames = duration / scrollFrameRate;
+						
+							//determine scroll amount
+							var difference = (position - elem[0].scrollLeft) / frames;
+							
+							//adjust position
+							elem[0].scrollLeft += difference;
+
+							//bounds check
+							if (difference>0 && elem[0].scrollLeft > position) elem[0].scrollLeft = position;
+							else if (difference<0 && elem[0].scrollLeft < position) elem[0].scrollLeft = position;
+						//console.log("--- scrolled to: " + position + " - current: " + elem[0].scrollLeft + " - difference: " + difference);							
+							//adjust duration
+							duration -= scrollFrameRate;
+							
+							//retrigger update
+							scrollTimeout = setTimeout(function() {
+								scope.scrollToPosition(position, duration);
+							}, scrollFrameRate);
+							
+						}
+						
+					} //end if (valid element)
+					
+				} //end scrollToPosition()
+		
+	
+				//trigger event
+				scope.triggerEvent = function(eventName, eventData) {
+					
+					//valid event name
+					if (eventName && eventName.length>0) {
+						
+						//console.log("scroll event: " + eventName);
+						
+						//broadcast event
+		     			$rootScope.$broadcast(eventName, eventData);
+						
+					} //end if (valid event name)
+					
+				}; //end triggerEvent()
+	
+	
+				//compile event data
+				scope.eventData = function() {
+					
+					var data = null;
+					
+					//valid element
+					if (elem && elem[0]) {
+					
+						//determine number of pages
+						var pages = parseInt(scope.scrollPages);
+						if (!Number.isInteger(pages) || pages<0) pages = 1;
+					
+						//scroll position 
+						var scrollPosition = elem[0].scrollLeft;
+					
+						//scroll view size
+						var scrollWidth = elem[0].offsetWidth;
+						
+						//scroll content size
+						var contentWidth = 0;
+						var paddingElementLeft = null;
+						var paddingElementRight = null;
+						for (var i=0; i<elem[0].children.length; ++i) {
+							
+							//find end position
+							var child = elem[0].children[i];
+							var endX = child.offsetLeft + child.offsetWidth;
+							if (endX>contentWidth) {
+								contentWidth = endX;
+							}
+							
+							//find padding elements
+							if (!paddingElementLeft || child.offsetLeft < paddingElementLeft.offsetLeft) {
+								paddingElementLeft = child;	
+							}
+							if (!paddingElementRight || endX > paddingElementRight.offsetLeft + paddingElementRight.offsetWidth) {
+								paddingElementRight = child;	
+							}
+							
+						} //end for()
+						
+						//determine page offset
+						var pageOffsetLeft = 0;
+						var pageOffsetRight = 0;
+						if (paddingElementLeft) {
+							var style = getComputedStyle(paddingElementLeft);
+							pageOffsetLeft = style ? parseFloat(style.paddingLeft) : 0;
+						}
+						if (paddingElementRight) {
+							var style = getComputedStyle(paddingElementRight);
+							pageOffsetRight = style ? parseFloat(style.paddingRight) : 0;
+						}
+						
+						//determine total offset
+						var totalOffset = pageOffsetLeft + pageOffsetRight;
+						
+						//page size
+						var pageSize = (contentWidth - totalOffset) / pages;
+					
+						//half page size
+						var halfPageSize = (pageSize * 0.5);
+					
+						//determine offset relative to view center
+						var startX = pageOffsetLeft - (scrollWidth * 0.5); // + (pageSize * 0.5);
+					
+						//get current page
+						//var currentPage = parseInt((scrollPosition - totalOffset) / pageSize);
+						var currentPage = parseInt((scrollPosition - startX) / pageSize);
+						
+						//find page start
+						var pageStart = startX + halfPageSize + (currentPage * pageSize);
+						//var pageStart = (currentPage * pageSize) + pageOffsetLeft + ((pageSize + scrollWidth) * 0.5);
+						//var pageStart = pageOffsetLeft - (scrollWidth * 0.5) + (pageSize * 0.5) + (currentPage * pageSize);
+						
+						//select next page if beyond half way point
+//						if ((scrollPosition - (pageStart)) > (pageSize * 0.5)) {
+//							 ++currentPage;
+//							 pageStart += pageSize;
+//						}
+					
+					
+						//console.log("inner width: " + elem[0].clientWidth + " - offsetWidth: " + scrollWidth + " - scrollWidth: " + elem[0].scrollWidth + " - contentWidth: " + contentWidth + " - totalOffset: " + totalOffset); 
+						//console.log("scroll pos: " + elem[0].scrollLeft + " - scrollWidth: " + scrollWidth + " - contentWidth: " + contentWidth + " - pages: " + pages + " - pageSize: " + pageSize + " - currentPage: " + currentPage + " - pageStart: " + pageStart); 
+					
+						//create data
+						data = {
+		     				name: scope.scrollName,
+		     				position: scrollPosition,
+		     				viewWidth: scrollWidth,
+		     				contentWidth: contentWidth,
+		     				pageSize: pageSize,
+		     				pageCenter: halfPageSize,
+		     				pages: pages,
+		     				currentPage: currentPage,
+		     				pageStart: pageStart
+		     			}
+	     			
+					} //end if (valid element)
+	     			
+	     			return data;
+					
+				} //end eventData()
+				
+				
+	
+		     	//valid element
+		     	if (elem) {
+
+		     		//add input event listeners
+		     		angular.element(elem).bind('scroll', function () {
+		     			
+		     			//not auto scrolling
+		     			if (!autoScrolling) {
+		     			
+			     			//clear existing scroll
+							if (scrollTimeout) {
+								clearTimeout(scrollTimeout);
+								scrollTimeout = null;
+							}
+		     			
+							//broadcast event
+							scope.triggerEvent('scroll-view-scroll', scope.eventData());
+			     			
+	     					//update timer (check for scroll end)
+							scope.updateTimer();  
+						
+		     			}
+		     			
+		     			//clear auto scrolling
+						autoScrolling = false;   					
+						
+		     		});
+		     		angular.element($window).on('mousedown', scope.dragStart);
+		     		angular.element($window).on('mouseup', scope.dragEnd);
+		     		angular.element($window).on('touchstart', scope.dragStart);
+		     		angular.element($window).on('touchend', scope.dragEnd);
+		     		
+		     		
+		     		//get position data
+					var positionData = scope.eventData();
+					
+					//valid element
+					if (elem[0] && positionData) {
+						
+						//scroll to first page position
+						scope.scrollToPosition(positionData.pageStart, scope.scrollDuration);
+						
+					}
+		     		
+		     		
+		     	} //end if (valid element)
+
+
+		    },
+//		    controller: ['$scope', '$rootScope', function(scope, $rootScope) {
+//		    	
+//		    }]
+	        
+	    }
+	}]); //end directive() - scrollView
+	
+	
+	
+	
 	//fillHeight - update element to fill parent height
 	module.directive( 'fillHeight', ['$window', '$document', '$rootScope', function($window, $document, $rootScope) {
 		
@@ -87,7 +470,7 @@
 	        },
 	        link: function( scope, elem, attrs ) {
 	
-	
+	/*
 				//get applied style
 				scope.getComputedStyle = function(baseElement, property) {
 				
@@ -115,7 +498,7 @@
 					
 				} //end getComputedStyle()
 				
-	
+	*/
 	
 	
 				//find absolute offset
@@ -257,11 +640,11 @@
 	        }
 	    }
 	    
-	}]); //end directive()
+	}]); //end directive() - fillHeight
 	
 	
 	
-	//hidden-video - creates video HTML elements  
+	//hiddenVideo - creates video HTML elements  
 	module.directive('hiddenVideo', ['$compile', function($compile) {
 	    return {
 	    	restrict: 'A',
@@ -347,7 +730,7 @@
 	        }
 	    }
 	    
-	}]); //end directive()
+	}]); //end directive() - hiddenVideo
 	
 	
 		

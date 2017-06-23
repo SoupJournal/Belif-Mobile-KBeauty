@@ -249,20 +249,45 @@
 /* 			PRODUCTS 			*/
 /********************************/
 
+.product-slider-box {
+	height: 50vw;	
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
 .product-slider {
-	display: table;
-	border-spacing: 20px 0;
+	display: inline-block;
+	/*position: absolute;*/
+	left: 0;
+	height: 50vw;
+	padding-left: 28vw;
+	padding-right: 28vw;
+	white-space: nowrap;
 }
 
 .product-box {
-	display: table-cell;
-	width: 60%;	
+	display: inline-block;
+	position: relative;
+	width: 50vw;	
+	margin-left: 6vw;
+	margin-right: 6vw; 
 }
 
 .product-box img {
 	width: 100%;
 	height: auto;	
 }
+
+/* touch supported devices */
+@media (pointer:coarse) {
+
+	/* hide scroll bars */
+	::-webkit-scrollbar { 
+	    display: none; 
+	}
+
+}
+
 
 /********************************/
 /* 			BUTTONS 			*/
