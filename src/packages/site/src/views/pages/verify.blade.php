@@ -86,9 +86,9 @@
 			
 			
 			{{-- Next button --}}
-			<a href="{{ $buttonURL }}" class="button-page bg-color-3">
+			<!-- a href="{{ $buttonURL }}" class="button-page bg-color-3">
 				<h4 class="button-link color-2">{{ $button }}</h4>
-			</a>
+			</a -->
 		
 		
 			{{-- Re-verify button --}}

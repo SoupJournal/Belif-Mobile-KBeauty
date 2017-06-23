@@ -687,7 +687,7 @@
 		public function getThanks() {
 			
 			//get page data
-			$pageData = $this->dataForFormId(self::FORM_THANKS);
+			$pageData = $this->dataForPage(self::FORM_THANKS);
 			
 			//get background image
 			$backgroundImage = safeArrayValue('background_image', $pageData);
@@ -697,6 +697,7 @@
 				'pageName' => 'thanks',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
+				'buttonURL' => 'https://www.instagram.com/belifusa/'
 				//'backURL' => URL::to('/share'),
 			));
 			

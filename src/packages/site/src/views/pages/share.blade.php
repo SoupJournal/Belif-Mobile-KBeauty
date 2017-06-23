@@ -43,73 +43,87 @@
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
+	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$buttonNo = safeArrayValue('button_cancel', $pageData, "");
 	
 ?>
 
-<div class="text-center page-padding">
+<div class="text-center" ng-controller="BelifController" id="modalContainer">
 	
 	{{ Form::open(Array('role' => 'form', 'name' => 'shareForm')) }}
 	
-		<div class="container-top">
+
+		<div class="spacer-medium"></div>
+		<div class="spacer-tiny"></div>
 		
-			<div class="stretch-to-width bg-color-opacity-1 box-margin">
-				<h4 class="color-1">{{ $text }}</h4>
-			</div>
-		
-			<div class="spacer-huge">
-			
-			<div class="row page-margin">
-			
-				{{-- title --}}
-				<h2 class="bold color-1">{{ $title }}</h2>
-			
-				<h4 class="color-1">{{ $subtitle }}</h4>
-			
-			</div>
 	
+		<div class="page-padding-small">
+	
+			{{-- title --}}
+			<h2 class="large color-2 no-margins">{{ $title }}</h2>
+		
+			<div class="spacer-small"></div>
+		
+			<h4 class="title-light large color-2 no-margins">{{ $subtitle }}</h4>
+		
+			<div class="spacer-small"></div>
+
 		</div>
+
+
+		<div class="page-padding-large">
 	
-	
-		<div id="modalContainer" class="container-bottom stretch-to-width page-padding-small-absolute">
-	
-			<div class="row">
-			
-			
-				{{-- enter email --}}
-				<div class="form-group"> 
-				
-					{{ Form::email('email', null, Array ('placeholder' => 'enter yourfriends@email.com', 'class' => 'page-input-text', 'required' => '', 'autofocus' => '')) }}
-					
+			{{-- image --}}
+			@if ($image && strlen($image)>0) 
+				<div class="page-padding-larger">
+					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 				</div>
+			@endif
 			
-				{{-- display form errors --}}
-			    @if ($errors->has())
-			        @foreach ($errors->all() as $error)
-			            <div class='bg-danger alert'>{{ $error }}</div>
-			        @endforeach
-			    @endif
-			
-			
-			
-				{{-- info --}}
-				<div class="shrink-to-fit page-margin-small">
-				<div>
-				{{--	<h4 class="title-3 color-4 box-padding">{{ $text }}</h4> --}}
-				</div>
-				</div>
-			
-				<div class="spacer-small"></div>
-			
-				<form-button class="button-next bg-color-4 color-2" label="{{ $button }}"></form-button>
-			
-			
-				{{-- Cancel button --}}
-				<a href ng-click="openModal('noShare', 'modalContainer', 'NoShare.html');" class="color-1"><h4 class="button-link">{{ $buttonNo }}</h4></a>
-					
-			
+		</div>
+
+
+		<div class="page-padding-large">
+
+			<div class="spacer-small"></div>
+
+			<div class="box-margin page-input-text">
+				<h4 class="title-light color-2">{!! $text !!}</h4>
 			</div>
+		
+
+		
+			{{-- enter email --}}
+			<div class="form-group"> 
+			
+				{{ Form::email('email', null, Array ('placeholder' => 'Yourfriends@email.com', 'class' => 'page-input-text', 'required' => '', 'autofocus' => '')) }}
+				
+			</div>
+		
+			{{-- display form errors --}}
+		    @if ($errors->has())
+		        @foreach ($errors->all() as $error)
+		            <div class='bg-danger alert'>{{ $error }}</div>
+		        @endforeach
+		    @endif
+		
+		
+	
+		
+			<div class="spacer-large"></div>
+		
+
+			{{-- submit button --}}
+			<button class="button-page bg-color-3 color-2" label="{{ $button }}">
+				{{ $button }}
+			</button>
+		
+			{{-- Cancel button --}}
+			<a href ng-click="openModal('noShare', 'modalContainer', 'NoShare.html');" class="color-1"><h4 class="button-link">{{ $buttonNo }}</h4></a>
+				
+		
+
 		
 			<div class="spacer-larger"></div>
 			<div class="spacer-small"></div>
@@ -122,7 +136,7 @@
 	{{-- modal popup --}}
 	<script type="text/ng-template" id="NoShare.html">
         <div class="modal-body" id="modal-body">
-            <h3>No worries! You do you and enjoy belif yourself!</h3>
+            <h3 class="color-1">No worries! You do you and enjoy belif yourself!</h3>
         </div>
     {{--    <div class="modal-footer text-center">
             <button class="btn" type="button" ng-click="$parent.closeModal('noShare');">Dismiss</button>

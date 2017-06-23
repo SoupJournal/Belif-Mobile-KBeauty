@@ -5,7 +5,7 @@
 	var module = angular.module('belif-core', ['ngResource']); 
 	
 	//create controller
-	module.controller('BelifController', [ '$http', '$scope', '$window', function($http, $scope, $window) {
+	module.controller('BelifController', [ '$http', '$scope', '$window', '$uibModal', function($http, $scope, $window, $uibModal) {
 		
 
 
@@ -165,6 +165,99 @@
 			console.log("product clicked: " + $event.currentTarget);
 			
 		} //end productClicked()
+		
+		
+		
+		
+		
+		
+		
+
+		//==========================================================//
+		//====				MODAL VIEW FUNCTIONALITY			====//
+		//==========================================================//	
+		
+		
+		//modal instances
+		$scope.modals = [];
+		
+		
+		$scope.openModal = function (modalId, containerId, templateURL) { //size, parentSelector) {
+
+			//valid modal id
+			if (modalId && modalId.length>0) {
+	
+				//valid parent
+				if (containerId && containerId.length>0) {
+				
+					//valid template URL
+					if (templateURL && templateURL.length>0) {
+					
+						//get container element
+						var parentElement = angular.element(document.getElementById(containerId));
+						if (parentElement) {
+					
+							//var parentElem = parentSelector ? 
+							//angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+							
+							//open view
+							$scope.modals[modalId] = modalInstance = $uibModal.open({
+								animation: true,
+								//ariaLabelledBy: 'modal-title',
+								ariaDescribedBy: 'modal-body',
+								templateUrl: templateURL, //'myModalContent.html',
+								//controller: 'ModalInstanceCtrl',
+								//controllerAs: '$ctrl',
+								//size: size,
+								appendTo: parentElement,
+				//				resolve: {
+				//					items: function () {
+				//						return $ctrl.items;
+				//					}
+				//				}
+							});
+					
+					/*
+							modalInstance.result.then(function (selectedItem) {
+								//$ctrl.selected = selectedItem;
+							}, function () {
+								$log.info('Modal dismissed at: ' + new Date());
+							});
+					*/
+					
+						} //end if (found parent element)
+					
+					} //end if (valid template URL)
+				
+				} //end if (valid container id)
+				
+			} //end if (valid id)
+	
+		}; //end openModal()
+		
+		
+		
+		
+		$scope.closeModal = function(modalId) {
+								console.log("here2");
+			//valid id
+			if (modalId && modalId.length>0) {
+					console.log("here1");			
+				//instance exists
+				if ($scope.modals && $scope.modals[modalId]) {
+					console.log("here");
+					//close modal
+					$scope.modals[modalId].cancel();
+					$scope.modals[modalId] = null;
+					
+				} //end if (valid instance)
+			
+			} //end if (valid id)
+			
+		}; //end closeModal()
+	
+		
+		
 		
 		
 		//------------------------------------------------------//
