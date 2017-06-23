@@ -385,6 +385,9 @@
 		     				position: scrollPosition,
 		     				viewWidth: scrollWidth,
 		     				contentWidth: contentWidth,
+		     				contentStart: startX,
+		     				contentLeft: pageOffsetLeft,
+		     				contentRight: pageOffsetRight,
 		     				pageSize: pageSize,
 		     				pageCenter: halfPageSize,
 		     				pages: pages,
@@ -414,14 +417,14 @@
 								clearTimeout(scrollTimeout);
 								scrollTimeout = null;
 							}
-		     			
-							//broadcast event
-							scope.triggerEvent('scroll-view-scroll', scope.eventData());
 			     			
 	     					//update timer (check for scroll end)
 							scope.updateTimer();  
 						
 		     			}
+		     			
+						//broadcast event
+						scope.triggerEvent('scroll-view-scroll', scope.eventData());
 		     			
 		     			//clear auto scrolling
 						autoScrolling = false;   					

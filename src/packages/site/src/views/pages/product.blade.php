@@ -51,7 +51,7 @@
 
 ?>
 
-<div class="text-center page-padding-small">
+<div class="text-center page-padding-small" ng-controller="BelifController">
 	
 	
 	<div class="spacer-small-2"></div>
@@ -68,11 +68,21 @@
 	@if ($products)
 		<div class="product-slider-box" scroll-view scroll-pages="{{ count($products) }}">
 			<div class="product-slider" >
-				@foreach ($products as $product) 
-					<div class="product-box">
-						<img src="{{ safeObjectValue('sample_image', $product, '') }}" load-style="fade">
+				@for ($i=0; $i<count($products); ++$i)
+					<div id="product_{{ $i }}" class="product-box" load-style="fade" load-group="product" style="z-index: {{ count($products) - $i }}">
+						<div class="product-image-padding page-padding-larger">
+							<img class="product-image" src="{{ safeObjectValue('sample_image', $products[$i], '') }}" load-style="fade" load-group="product">
+						</div>
+						<div class="spacer-medium"></div>
+						<div class="spacer-small"></div>
+						<div class="product-title-box">
+							<h4 class="product-title large">{{ safeObjectValue('name', $products[$i], '') }}</h4>
+							<div>
+								<button name="product[{{ $i }}]" value="1" class="product-select-button bg-color-3" ng-click="productClicked($event)"></button>
+							</div>
+						</div>
 					</div>
-				@endforeach
+				@endfor
 			</div>
 		</div>
 	@endif

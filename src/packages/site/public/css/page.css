@@ -250,7 +250,7 @@
 /********************************/
 
 .product-slider-box {
-	height: 50vw;	
+	height: 70vw;	
 	overflow-x: scroll;
 	overflow-y: hidden;
 }
@@ -259,7 +259,7 @@
 	display: inline-block;
 	/*position: absolute;*/
 	left: 0;
-	height: 50vw;
+	height: 70vw;
 	padding-left: 28vw;
 	padding-right: 28vw;
 	white-space: nowrap;
@@ -268,15 +268,45 @@
 .product-box {
 	display: inline-block;
 	position: relative;
-	width: 50vw;	
-	margin-left: 6vw;
-	margin-right: 6vw; 
+	width: 70vw;	
+	margin-left: -10vw;
+	margin-right: -10vw; 
+}
+
+.product-image-padding {
+	height: 30vw;	
+/*	vertical-align: bottom;
+    display: table-cell; */
 }
 
 .product-box img {
 	width: 100%;
 	height: auto;	
 }
+
+.product-title-box {
+	display: block;	
+}
+
+.product-title {
+	display:inline-block;
+	width: auto;
+	border-bottom: 0.5vw solid #42b6e7;	
+}
+
+.product-select-button {
+	float: right;
+	width: 15vw;
+	height: 15vw;
+	margin-top: -2vw;
+	-moz-border-radius: 7.5vw;
+	-webkit-border-radius: 7.5vw;
+	border-radius: 7.5vw;
+	border: none;
+/*    overflow: hidden; */
+    outline:none;	
+}
+
 
 /* touch supported devices */
 @media (pointer:coarse) {
@@ -398,9 +428,18 @@
 .button-input {
 	background-color: transparent;
 	border: none;
-	border-left: 1px solid;	
+/*	border-left: 1px solid;	*/
 }
 
+
+.button-hidden {
+	background-color: transparent;
+	background-repeat:no-repeat;
+    border: none;
+    /*cursor:pointer;*/
+    overflow: hidden;
+    outline:none;
+}
 
 /********************************/
 /* 				LINKS			*/
@@ -409,62 +448,6 @@
 a.no-underline-highlight:hover {
 	text-decoration: none;
 }
-
-/********************************/
-/* 			PROGRESS BAR		*/
-/********************************/
-
-.progress-section {
-	position: relative;
-	display: block;
-	height: 20px;
-	margin-bottom: 3%;	
-	margin-top: -2%;
-}
-
-.progress-bar-container {
-	height: auto;	
-	margin-bottom: 5%;
-}
-
-.progress-bar-title {
-	position: relative;
-	display: block;
-	width: 100%;
-}
-
-.progress-bar-label {
-	display: inline;
-	float: right;
-	width: auto;
-	white-space: nowrap;
-	padding-left: 10%;
-}
-
-.progress-bar {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 5px;	
-	background-color: transparent;
-}
-
-.progress-bar-full {
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	background-color: white;	
-}
-
-.progress-bar-empty {
-	position: absolute;
-	right: 0;
-	top: 35%;
-	bottom: 35%;
-	background-color: white;
-}
-
 
 /********************************/
 /* 			INPUTS 				*/
@@ -752,96 +735,6 @@ input[type=radio] {
 	height: 80%;
 	width: 2px;
 }
-
-
-/********************************/
-/* 			ARROWS				*/
-/********************************/
-
-.corner-triangle-br {
-	position: absolute;
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    top: 10px;
-    right: 0;
-	border-left: 100px solid transparent;
-  	border-bottom: 100px solid #6A6A6A;
-	overflow: hidden; 	
-}
-
-.arrow-up {
-    width: 100%;
-    height: 0;    
-    padding-left:50%;
-    padding-top: 50%;
-    padding-bottom: 50%;
-    overflow: hidden;
-}
-.arrow-up:after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    
-    margin-left:-500px;
-    border-left: 500px solid transparent;
-    border-right: 500px solid transparent;
-    border-bottom: 500px solid;
-    
-}
-
-.arrow-down {
-	/*
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin-top: -100%; 
-    margin-left: -100%; 
-	border-left: 100px solid transparent;
-	border-right: 100px solid transparent;
-  	border-top: 100px solid #1C021C;
-	overflow: hidden; 	
-	*/
-}
-.arrow-down:after {
-
-}
-
-
-
-.arrow-down {
-	margin: 0 auto;
-	content: "";
-	    width:0px;
-    height:0px;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 30px solid #1C021C;
-	/*
-    width: 100%;
-    height: 0;    
-    padding-left:50%;
-    padding-top: 50%;
-    padding-top: 50%; */
- /*   overflow: hidden; */
-}
-.arrow-down:after {
- /*   content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    
-    margin-left:-500px;
-    border-left: 500px solid transparent;
-    border-right: 500px solid transparent;
-    border-top: 500px solid;*/
-    
-}
-
-
 
 
 /********************************/

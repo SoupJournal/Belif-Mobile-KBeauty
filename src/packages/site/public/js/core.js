@@ -42,12 +42,138 @@
 		
 		
 		//------------------------------------------------------//
+		//----					PRODUCT SCROLL				----//
+		//------------------------------------------------------//
+		
+		//get product elements
+		$scope.productElements = document.getElementsByClassName('product-box');
+		console.log("found controller");
+		
+		//get sub elements
+		$scope.productPaddingElements = [];
+		$scope.productImageElements = [];
+		$scope.productTitleElements = [];
+		if ($scope.productElements) {
+			
+			for (var i=0; i<$scope.productElements.length; ++i) {
+				
+				//get element
+				var product = $scope.productElements[i];
+				if (product) {
+					
+					//get product id
+					var pId = product.id;
+
+					//get image padding elements
+					var paddingElements = product.getElementsByClassName('product-image-padding');
+					if (paddingElements && paddingElements.length>0) {
+						$scope.productPaddingElements[pId] = paddingElements[0]; 	
+					}
+					
+					//get image elements
+					var imageElements = product.getElementsByClassName('product-image');
+					if (imageElements && imageElements.length>0) {
+						$scope.productImageElements[pId] = imageElements[0]; 	
+					}
+					
+					//get title elements
+					var titleElements = product.getElementsByClassName('product-title-box');
+					if (titleElements && titleElements.length>0) {
+						$scope.productTitleElements[pId] = titleElements[0]; 	
+					}
+					
+				
+				} //end if (valid product)
+				
+			} //end for()
+		
+		} //end if (found elements)
+		
+		
+		//add scroll listener
+		$scope.$on('scroll-view-scroll', function (event, data) {
+			
+			//found data
+			if ($scope.productElements && data) {
+				
+				//update elements
+				var productOffset = data.contentStart;
+				//var totalSize = data.pageSize * data.pages;
+				for (var i=0; i<$scope.productElements.length; ++i) {
+					
+					//determine offset percentage
+					var percentage = (productOffset - data.position + data.pageCenter) / data.pageSize;
+					if (percentage>1) percentage = 1;
+					if (percentage<-1) percentage = -1;
+					
+					//var expPercentage = percentage / percentage;
+					
+					//update position
+					productOffset += data.pageSize;
+					
+					//get padding element
+					var paddingElement = $scope.productPaddingElements['product_' + i];
+					if (paddingElement) {
+					
+						//update padding
+						var padding = 20 + (Math.abs(percentage)) * 10;
+						angular.element(paddingElement).css('padding-left', padding + "%");
+						angular.element(paddingElement).css('padding-right', padding + "%");
+
+					} //end if (valid element)
+					
+					//get image element
+					var imageElement = $scope.productImageElements['product_' + i];
+					if (imageElement) {
+					
+						//update rotation
+						var rotation = (1 - Math.abs(percentage)) * -5;
+						imageElement.style.webkitTransform = 'rotate('+ rotation +'deg)'; 
+					    imageElement.style.mozTransform    = 'rotate('+ rotation +'deg)'; 
+					    imageElement.style.msTransform     = 'rotate('+ rotation +'deg)'; 
+					    imageElement.style.oTransform      = 'rotate('+ rotation +'deg)'; 
+					    imageElement.style.transform       = 'rotate('+ rotation +'deg)'; 
+					    
+					    //update position
+					    var padding = (Math.abs(percentage)) * 30;
+						angular.element(imageElement).css('margin-top', padding + "%");
+
+					} //end if (valid element)
+					
+					//get title element
+					var titleElement = $scope.productTitleElements['product_' + i];
+					if (titleElement) {
+					
+						//update opacity
+						angular.element(titleElement).css('opacity', 1 - Math.abs(percentage));
+
+					} //end if (valid element)
+					
+					//console.log("element[" + i + "] offset: " + $scope.productElements[i].offsetLeft + " - scroll: " + data.position + " - page: " + data.currentPage + " - page start: " + data.pageStart + " - scrollOffset: "+ percentage + " - pageSize: " + data.pageSize);
+					
+					
+				} //end for()
+			
+			} //end if (valid elements)
+			
+		});
+		
+		
+		//product clicked
+		$scope.productClicked = function($event) {
+			
+			console.log("product clicked: " + $event.currentTarget);
+			
+		} //end productClicked()
+		
+		
+		//------------------------------------------------------//
 		//----					SWIPE						----//
 		//------------------------------------------------------//		
 		
 		
 		//== SWIPE CONFIGURATION ==//
-		
+		/*
 		//get base form
 		$scope.form = document.forms['questionForm'];
 		
@@ -160,7 +286,7 @@
 			}
 			
 		});
-		
+		*/
 			
 	}]); //end controller
 	
