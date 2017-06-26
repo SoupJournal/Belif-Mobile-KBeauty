@@ -5,6 +5,7 @@
 	$pagetitle = isset($pagetitle) ? $pagetitle : 'belif | belif in hydration';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
+	$backgroundFill = isset($backgroundFill) ? $backgroundFill : false;
 
 ?>
 <!DOCTYPE html>
@@ -54,7 +55,7 @@
 
 
 					@if (isset($backgroundImage) && strlen($backgroundImage)>0)
-						<img class="background-proportional" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
+						<img class="{{ $backgroundFill ? 'background-scale-fill' : 'background-proportional' }}" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
 					@else
 						<div class="background-fill"></div>
 					@endif
@@ -94,7 +95,14 @@
 			(function() {
 		        
 				//load modules
-				var app = angular.module('belif', ['ngResource', 'ui.bootstrap', 'belif-core', 'belif-gui', 'swipe-gesture']);   
+				var app = angular.module('belif', ['ngResource', 'ui.bootstrap', 'belif-core', 'belif-gui', 'swipe-gesture'],  
+				
+					//replace code brackets so as not to conflict with Blade
+					function($interpolateProvider) {
+					    $interpolateProvider.startSymbol('#{');
+					    $interpolateProvider.endSymbol('}#');
+					}
+				);   
 			
 			})();
 			//end anonymous function

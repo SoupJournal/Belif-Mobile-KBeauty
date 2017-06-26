@@ -46,8 +46,8 @@ class BelifServiceProvider extends ServiceProvider {
 			$router->middleware('AppQuiz', 'Soup\Mobile\Middleware\QuizMiddleware');
 			$router->middleware('AppUser', 'Soup\Mobile\Middleware\ExistingUserMiddleware');
 			$router->middleware('AppReview', 'Soup\Mobile\Middleware\ReviewMiddleware');
-			$router->middleware('AppMobile', 'Soup\Mobile\Middleware\MobileMiddleware');
-			$router->middleware('AppDesktop', 'Soup\Mobile\Middleware\DesktopMiddleware');*/
+		*/	$router->middleware('AppMobile', 'Belif\Mobile\Middleware\MobileMiddleware');
+			$router->middleware('AppDesktop', 'Belif\Mobile\Middleware\DesktopMiddleware');
 		}
 		
 

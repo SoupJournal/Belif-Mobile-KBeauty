@@ -41,18 +41,172 @@
 		
 		
 		
+		
+		//------------------------------------------------------//
+		//----					PRODUCT SELECTION			----//
+		//------------------------------------------------------//
+		
+		//number of allowed samples
+		$scope.allowedSamples = 0;
+		
+		
+		//currently selected products
+		$scope.selectedProducts = [];
+		
+		
+		$scope.initProducts = function(allowedSamples, selectedSamples) {
+			
+			//allows samples
+			if (allowedSamples>0) {
+				
+				//set limit
+				$scope.allowedSamples = allowedSamples;	
+				
+			}
+			
+			//pre-selected samples
+			if (selectedSamples && selectedSamples.length>0) {
+				
+				//add samples
+				for (var i=0; i<selectedSamples.length && i<$scope.allowedSamples; ++i) {
+					
+					//find sample index
+					var index = null;
+					for (var pId in $scope.productButtonElements) {
+
+						//found match
+						var name = $scope.productButtonElements[pId].attr('name');
+						if (name == ('product_' + selectedSamples[i])) {
+							index = pId;
+							break;	
+						}
+							
+					} //end for()
+
+					//found match
+					if (index && index.length>=0) {
+						$scope.selectProduct(index);	
+					}
+					
+				} //end for()
+			}
+			
+		} //end initProducts()
+		
+		
+		
+		//product clicked
+		$scope.productClicked = function($event) {
+			
+			//valid event
+			if ($event) {
+			
+				//valid target
+				if ($event.currentTarget) {
+			
+					//select product
+					$scope.selectProduct($event.currentTarget.id);
+			
+				} //end if (valid target)
+				
+			} //end if (valid event)
+//			console.log("product clicked: " + $event.currentTarget.id);
+			
+		} //end productClicked()
+			
+			
+			
+		//product clicked
+		$scope.selectProduct = function(productId) {
+			
+			
+			//valid product Id
+			if (productId && productId.length>0) {
+
+				//elements exists
+				if ($scope.productImageElements) {
+
+					//get associated image
+					var image = $scope.productImageElements[productId];
+					if (image) {
+
+						//get form element
+						var formInput = $scope.productInputElements[productId];
+						if (formInput) {
+
+							//get button element
+							var buttonElement = $scope.productButtonElements[productId];
+							
+						
+							//check if sample has already been added
+							var selectedIndex = -1;
+							for (var i=0; i<$scope.selectedProducts.length; ++i) {
+								if ($scope.selectedProducts[i].img==image.src) {
+									selectedIndex = i;
+									break;
+								}	
+							}
+							
+							//sample already added
+							if (selectedIndex>=0) {
+							
+								//remove sample
+								$scope.selectedProducts.splice(selectedIndex, 1);
+								if (buttonElement) {
+									buttonElement.removeClass('minus');
+								}
+								
+								//update form
+								formInput.attr('value', false);
+								
+							}
+							//sample not yet added
+							else {
+
+								//check if more products can be added
+								if ($scope.selectedProducts.length<$scope.allowedSamples) {
+
+									//add sample
+									$scope.selectedProducts.push({'img':image.src});
+									if (buttonElement) {
+										buttonElement.addClass('minus');
+									}
+									
+									//update form
+									formInput.attr('value', true);
+
+								} //end if (allowed more samples)
+								
+							}
+						
+						} //end if (found input element)
+						
+					}
+				
+				} //end if (has elements)
+				
+				
+			} //end if (valid product Id)
+					
+		} //end productClicked()
+		
+		
+		
+		
 		//------------------------------------------------------//
 		//----					PRODUCT SCROLL				----//
 		//------------------------------------------------------//
 		
 		//get product elements
 		$scope.productElements = document.getElementsByClassName('product-box');
-		console.log("found controller");
+
 		
 		//get sub elements
 		$scope.productPaddingElements = [];
-		$scope.productImageElements = [];
-		$scope.productTitleElements = [];
+		$scope.productImageElements = {};
+		$scope.productTitleElements = {};
+		$scope.productButtonElements = {};
+		$scope.productInputElements = {};
 		if ($scope.productElements) {
 			
 			for (var i=0; i<$scope.productElements.length; ++i) {
@@ -81,8 +235,16 @@
 					if (titleElements && titleElements.length>0) {
 						$scope.productTitleElements[pId] = titleElements[0]; 	
 					}
-					
 				
+					//get button elements
+					var buttonElements = product.getElementsByClassName('product-select-button');
+					if (buttonElements && buttonElements.length>0) {
+						$scope.productButtonElements[pId] = angular.element(buttonElements[0]); 	
+					}
+					
+					//get input element
+					$scope.productInputElements[pId] = angular.element(document.getElementById(pId + "_input"));
+	
 				} //end if (valid product)
 				
 			} //end for()
@@ -157,18 +319,7 @@
 			} //end if (valid elements)
 			
 		});
-		
-		
-		//product clicked
-		$scope.productClicked = function($event) {
 			
-			console.log("product clicked: " + $event.currentTarget);
-			
-		} //end productClicked()
-		
-		
-		
-		
 		
 		
 		

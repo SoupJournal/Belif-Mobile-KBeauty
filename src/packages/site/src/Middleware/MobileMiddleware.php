@@ -1,8 +1,7 @@
 <?php 
 
-	namespace Soup\Mobile\Middleware; 
+	namespace Belif\Mobile\Middleware; 
 
-	//use Soup\Mobile\Models\Reservation;
 
 	use Closure;
 	use Redirect;

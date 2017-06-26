@@ -36,7 +36,7 @@
 	    	if (!isMobileDevice()) {
 			
 				//get page data
-				$pageData = $this->dataForFormId(self::FORM_DESKTOP);
+				$pageData = $this->dataForPage(self::FORM_DESKTOP);
 				
 				//get background image
 				$backgroundImage = safeArrayValue('background_image', $pageData);
@@ -171,13 +171,13 @@
 				if ($available) {
 	
 					//move to first question
-					return Redirect::to('/guide');
+					return Redirect::route('belif.guide');
 				
 				}
 				else {
 					
 					//show unavailable
-					return Redirect::to('/unavailable');
+					return Redirect::route('belif.unavailable');
 					
 				}
 				
@@ -221,24 +221,23 @@
 			
 		
 		public function getUnavailable() {
-			//calculate product
-			//$product = $this->getSelectedProduct();
+
 			
 			//check if product available
-			$available = $this->productAvailable(); //$product);
+			$available = $this->productAvailable(); 
 			
 			//available
 			if ($available) {
 				
 				//show quiz
-				return Redirect::to('/question');
+				return Redirect::route('belif.home');
 				
 			}
 			//not available
 			else {
 			
 				//get page data
-				$pageData = $this->dataForFormId(self::FORM_NO_SAMPLES);
+				$pageData = $this->dataForPage(self::FORM_NO_SAMPLES);
 				
 				//get background image
 				$backgroundImage = safeArrayValue('background_image', $pageData);
@@ -261,12 +260,8 @@
 			
 		public function getAddress() {
 			
-			//calculate product
-			//$product = $this->getSelectedProduct();
-			
 			//check if product available
 			//$available = $this->productAvailable($product);
-			
 			
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_ADDRESS);
@@ -311,8 +306,8 @@
 				
 				
 			
-				//calculate product
-				$product = $this->getSelectedProducts();
+				//get sample product
+				$products = $this->getSelectedProducts();
 				
 				//get state
 				$states = availableStates();
@@ -320,6 +315,8 @@
 			
 				//find ip address
 				$ipAddress = retrieveIPAddress();
+				
+				
 	
 				//form validation
 				$valid = true;
@@ -410,6 +407,16 @@
 					//valid user
 					if ($user) {
 					
+						//get products
+						$product1 = null;
+						$product2 = null;
+						if ($products && count($products)>0) {
+							$product1 = $products[0];	
+							if (count($products)>1) {
+								$product2 = $products[1];	
+							}
+						}
+					
 						//update user details
 						$user->name = $name;
 						$user->email = $email;
@@ -419,7 +426,8 @@
 						$user->state = $state;
 						$user->zip_code = $zipCode;
 						$user->ip_address = $ipAddress;
-						$user->product_1 = $product;
+						$user->product_1 = $product1;
+						$user->product_2 = $product2;
 						
 						//save user details
 						if (!$user->save()) {
@@ -584,7 +592,7 @@
 			} //end if (valid code)
 			
 			//invalid code - show home page
-			return Redirect::to('/');
+			return Redirect::route('belif.home');
 			
 		} //end getShare()	
 			
@@ -676,7 +684,7 @@
 			
 			
 			//show home page
-			return Redirect::to('/');
+			return Redirect::route('belif.home');
 			
 		} //end postShare()
 		
@@ -725,7 +733,7 @@
 					
 			
 					//get page data
-					$pageData = $this->dataForFormId(self::FORM_UNSUBSCRIBE);
+					$pageData = $this->dataForPage(self::FORM_UNSUBSCRIBE);
 					
 					//get background image
 					$backgroundImage = safeArrayValue('background_image', $pageData);
@@ -742,7 +750,7 @@
 			} //end if (valid code)
 			
 			//invalid code - show home page
-			return Redirect::to('/');
+			return Redirect::route('belif.home');
 			
 			
 		} //end getUnsubscribe()

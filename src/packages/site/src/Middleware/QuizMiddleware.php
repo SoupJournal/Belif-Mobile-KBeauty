@@ -1,8 +1,8 @@
 <?php 
 
-	namespace Soup\Mobile\Middleware; 
+	namespace Belif\Mobile\Middleware; 
 
-	use Soup\Mobile\Lib\AppGlobals;
+	use Belif\Mobile\Lib\AppGlobals;
 
 	use Closure;
 	use Redirect;
@@ -19,7 +19,7 @@
 	     */
 	    public function handle($request, Closure $next)
 	    {
-	
+	/*
 			//ensure user is capable of registration
 			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
 			if (!$user) {
@@ -32,7 +32,7 @@
 				//show main page
 				return Redirect::route('soup.venue.recommendation');
 			} 
-	
+	*/
 			//process request
 	        return $next($request);
 	        

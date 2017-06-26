@@ -59,10 +59,16 @@
 			
 			//product
 			Route::get('/product', ['as' => 'belif.product', 'uses' => 'ProductController@getProduct']);
+			Route::post('/product', ['as' => 'belif.product.submit', 'uses' => 'ProductController@postProduct']);
 			
-			//address
-			Route::get('/address', ['as' => 'belif.address', 'uses' => 'MainController@getAddress']);
-			Route::post('/address', ['as' => 'belif.address', 'uses' => 'MainController@postAddress']);
+			//mobile only access
+			//Route::group(array('middleware' => 'ProductRequired'), function() {
+			
+				//address
+				Route::get('/address', ['as' => 'belif.address', 'uses' => 'MainController@getAddress']);
+				Route::post('/address', ['as' => 'belif.address', 'uses' => 'MainController@postAddress']);
+				
+			//});
 			
 			//verfication
 			Route::get('/verify', ['as' => 'belif.verify', 'uses' => 'MainController@getVerify']);

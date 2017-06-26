@@ -1,6 +1,6 @@
 <?php 
 
-	namespace Soup\Mobile\Middleware; 
+	namespace Belif\Mobile\Middleware; 
 
 
 	use Closure;

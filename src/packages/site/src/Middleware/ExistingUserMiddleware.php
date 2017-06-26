@@ -1,8 +1,8 @@
 <?php 
 
-	namespace Soup\Mobile\Middleware; 
+	namespace Belif\Mobile\Middleware; 
 
-	use Soup\Mobile\Lib\AppGlobals;
+	//use Belif\Mobile\Lib\AppGlobals;
 
 	use Closure;
 	use Redirect;

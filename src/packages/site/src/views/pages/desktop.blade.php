@@ -31,7 +31,7 @@
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
-	$image = safeArrayValue('text', $pageData, "");
+	$image = safeArrayValue('image', $pageData, "");
 	
 ?>
 
@@ -43,18 +43,24 @@
 		
 			<div class="spacer-medium"></div>
 			
-			<div class="row page-margin">
+			<div class="page-padding-medium">
 			
 				{{-- title --}}
-				<h3 class="title-2 color-2 page-padding-small">{{ $title }}</h3>
+				<h3 class="title-2 color-2 page-padding-small">{!! $title !!}</h3>
 			
-				<h4 class="title-4 color-2 page-padding-small">{{ $subtitle }}</h4>
+				<div class="spacer-small"></div>
+			
+				<h4 class="title-4 color-2 page-padding-small">{!! $subtitle !!}</h4>
 			
 				
-				<div class="spacer-landscape"></div>
+				<div class="spacer-medium"></div>
 				
 				{{-- image --}}
-				<div class="logo-page-image" style="background-image: url({{ $image }});"></div>
+				@if ($image && strlen($image)>0) 
+					<div class="page-padding-very-large">
+						<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
+					</div>
+				@endif
 			
 			</div>
 	

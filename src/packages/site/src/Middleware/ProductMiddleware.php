@@ -6,9 +6,8 @@
 	use Closure;
 	use Redirect;
 	use Illuminate\Support\Facades\Auth;
-	use Carbon\Carbon;
 
-	class DesktopMiddleware { 
+	class ProductMiddleware { 
 
 	    /**
 	     * Handle an incoming request.
@@ -20,20 +19,19 @@
 	    public function handle($request, Closure $next)
 	    {
 	
-			//non-mobile device
-		    if (isMobileDevice()) {
-	    	
-				//show welcome page
-				return Redirect::route('belif.home');
-					
-			} //end if (valid user)
-			
-
+			//get selected products
+			$selectedProducts = Session::get('selectedProducts');
+	
+		    //ensure has selected a product
+			if (!$selectedProducts || count($selectedProducts)<=0) {
+		        return Redirect::route('belif.product');
+		    }
+	
 			//process request
 	        return $next($request);
 	        
 	    } //end handle()
 	
-	} //end class DesktopMiddleware
+	} //end class ProductMiddleware
 	
 ?>

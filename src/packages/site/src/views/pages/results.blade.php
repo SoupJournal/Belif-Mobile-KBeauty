@@ -38,6 +38,8 @@
 
 	//ensure page properties are set
 	$results = isset($results) ? $results : null;
+	$correctAnswers = isset($correctAnswers) ? $correctAnswers : 0;
+	$numberOfSamples = isset($numberOfSamples) ? $numberOfSamples : 0;
 	$buttonURL = isset($buttonURL) ? $buttonURL : null;
 	$restartURL = isset($restartURL) ? $restartURL : '';
 
@@ -54,21 +56,21 @@
 	$numberOfQuestions = count($results);
 	
 	//determine number of correct answers
-	$correctAnswers = 0;
-	foreach ($results as $result) {
-		if ($result) {
-			++$correctAnswers;
-		}
-	}
+//	$correctAnswers = 0;
+//	foreach ($results as $result) {
+//		if ($result) {
+//			++$correctAnswers;
+//		}
+//	}
 	
 	//determine number of samples
-	$numberOfSamples = 0;
-	if ((floatval($correctAnswers) / $numberOfQuestions) > 0.75) {
-		$numberOfSamples = 2;
-	}
-	else if ((floatval($correctAnswers) / $numberOfQuestions) > 0.35) {
-		$numberOfSamples = 1;
-	}
+//	$numberOfSamples = 0;
+//	if ((floatval($correctAnswers) / $numberOfQuestions) > 0.75) {
+//		$numberOfSamples = 2;
+//	}
+//	else if ((floatval($correctAnswers) / $numberOfQuestions) > 0.35) {
+//		$numberOfSamples = 1;
+//	}
 	
 	//answer images
 	$imageRight = asset($assetPath . "/images/icon-answer-right.png");

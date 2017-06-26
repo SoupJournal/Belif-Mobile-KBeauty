@@ -283,13 +283,19 @@
 		} //end postAnswer()
 		
 			
-			
+
 			
 		
 		public function getResults() {
 
 			//get quiz results
 			$results = $this->answerResults();
+
+			//number of correct answers
+			$correctAnswers = $this->correctAnswers($results);
+
+			//get number of samples
+			$numberOfSamples = $this->numberOfSamples(count($results), $correctAnswers);
 
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_RESULTS);
@@ -302,6 +308,8 @@
 				'pageName' => 'results',
 				'pageData' => $pageData,
 				'results' => $results,
+				'correctAnswers' => $correctAnswers,
+				'numberOfSamples' => $numberOfSamples,
 				'backgroundImage' => $backgroundImage,
 				'backURL' => route('belif.question.previous'),
 				'buttonURL' => route('belif.product'),
@@ -317,7 +325,16 @@
 		public function getProduct() {
 			
 			//get products
-			$products = Product::get();
+			$products = Product::where('available', true)->get();
+
+			//get quiz results
+			$results = $this->answerResults();
+
+			//number of correct answers
+			$correctAnswers = $this->correctAnswers($results);
+
+			//get number of samples
+			$numberOfSamples = $this->numberOfSamples(count($results), $correctAnswers);
 
 			//$product = $this->getSelectedProduct();
 			
@@ -326,14 +343,20 @@
 			
 			//get background image
 			$backgroundImage = safeArrayValue('background_image', $pageData);
-		
+			
+			//get previously selected products
+			$selectedProducts = Session::get('selectedProducts');
+
 			//render view
 			return View::make('belif::pages.product')->with(Array (
 				//'pageName' => 'product_' . $product,
 				'pageData' => $pageData,
 				'products' => $products,
+				'numberOfSamples' => $numberOfSamples,
+				'selectedProducts' => $selectedProducts,
 				'backgroundImage' => $backgroundImage,
-				'buttonURL' => route('belif.address'),
+				'backgroundFill' => true,
+				'formURL' => route('belif.product.submit'),
 				'backURL' => route('belif.results')
 			));
 			
@@ -343,6 +366,91 @@
 					
 			
 			
+		public function postProduct() {
+	
+			$valid = true;
+			$errors = null;
+			
+			//get form values
+			$products = safeArrayValue('product', $_POST);
+			
+			//product Id's
+			//$productIds = ['A', 'B', 'C'];
+			
+			//find selected products
+			$selectedProducts = [];
+			if ($products) {
+				
+				foreach ($products as $key => $product) {
+				
+					//product is selected
+					if (filter_var($product, FILTER_VALIDATE_BOOLEAN)) {
+						$selectedProducts[] = $key;
+					}
+					
+				} //end for()
+				
+				
+			} //end if (found products)
+
+
+			//get quiz results
+			$results = $this->answerResults();
+
+			//number of correct answers
+			$correctAnswers = $this->correctAnswers($results);
+
+			//get number of samples
+			$numberOfSamples = $this->numberOfSamples(count($results), $correctAnswers);
+
+
+			//number of selected products
+			$numberOfSelectedProducts = count($selectedProducts);
+
+			
+			//no products selected
+			if (!$selectedProducts || $numberOfSelectedProducts<=0) {
+				$errors = 'Please select the products you would like to sample.';
+				$valid = false;
+			}
+			
+			//not enough samples selected
+			else if ($numberOfSelectedProducts<$numberOfSamples) {
+				
+				//get number of unselected samples
+				$unselected = $numberOfSamples - $numberOfSelectedProducts;
+				
+				$errors = 'You are entitled to select ' . $unselected . ' more sample' . ($unselected!=1?'s.':'.');
+				$valid = false;
+			}
+			
+			//too many samples selected
+			else if ($numberOfSelectedProducts>$numberOfSamples) {	
+				$errors = 'Sorry, you have selected too many samples.';
+				$valid = false;
+			}
+			
+			
+			
+			//store selected samples
+			Session::set('selectedProducts', $selectedProducts);
+			
+			//valid form
+			if ($valid) {
+				
+				//show unavailable
+				return Redirect::route('belif.address');
+				
+			}
+			//invalid form
+			else {
+				return Redirect::back()
+							->withInput()
+							->withErrors($errors);
+							//->with('selectedProducts', $selectedProducts);
+			}
+			
+		} //end postProduct()
 					
 			
 			
@@ -552,6 +660,53 @@
 		} //end questionData()
 		
 		
+		
+		
+			
+		private function correctAnswers($results = null) {
+			
+			//get results if required
+			if (!$results) {
+				$results = $this->answerResults();
+			}
+			
+			//determine number of correct answers
+			$correctAnswers = 0;
+			foreach ($results as $result) {
+				if ($result) {
+					++$correctAnswers;
+				}
+			}
+			
+			return $correctAnswers;
+			
+		} //end correctAnswers()
+			
+			
+			
+			
+			
+		private function numberOfSamples($numberOfQuestions, $correctAnswers) {
+			
+			$numberOfSamples = 0;
+			
+			//questions exist
+			if ($numberOfQuestions>0) {
+			
+				//determine number of samples
+				if ((floatval($correctAnswers) / $numberOfQuestions) > 0.75) {
+					$numberOfSamples = 2;
+				}
+				else if ((floatval($correctAnswers) / $numberOfQuestions) > 0.35) {
+					$numberOfSamples = 1;
+				}
+			
+			}
+			
+			return $numberOfSamples;
+			
+		} //end numberOfSamples()
+			
 		
 					
 	} //end class ProductController

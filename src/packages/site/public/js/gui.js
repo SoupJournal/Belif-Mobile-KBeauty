@@ -29,11 +29,11 @@
 	        }
 	        
 	    }
-	}]); //end directive
+	}]); //end directive - broadcastClick
 	
 	
 	
-	//broadcastClick directive - broadcasts named event on element click 
+	//toggleHeight directive - change height on event trigger 
 	module.directive('toggleHeight', ['$rootScope', function($rootScope) {
 	    return {
 	    	restrict: 'A',
@@ -71,7 +71,7 @@
 	        }
 	        
 	    }
-	}]); //end directive
+	}]); //end directive - toggleHeight
 	
 	
 	
@@ -901,13 +901,13 @@
 	        }
 	        
 	    }
-	}]); //end directive
+	}]); //end directive - carousel
 	
 	
 	
 	
 	
-	//pageButton directive - standard page button 
+	//loadStyle directive - transition element on load
 	module.directive('loadStyle', ['$rootScope', '$timeout', function($rootScope, $timeout) {
 		
 		//shared group data
@@ -1096,7 +1096,7 @@
 	        			
 		        		//listen for load event
 			        	element.bind("load" , function(e){ 
-
+//console.log("load called - group: " + group);
 							//update element
 			        		scope.elementLoaded(element[0]);
 			        		
@@ -1165,7 +1165,7 @@
 
 	        }
 	    }
-	}]); //end directive
+	}]); //end directive - loadStyle
 	
 		
 })();
