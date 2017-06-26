@@ -100,7 +100,7 @@
 		
 		
 			//TEST EMAIL
-			Route::get('/testemail', ['as' => 'belif.email.test', 'uses' => 'MainController@getEmailTest']);						
+			//Route::get('/testemail', ['as' => 'belif.email.test', 'uses' => 'MainController@getEmailTest']);						
 		
 		//}); //end middleware (mobile only)
 	
