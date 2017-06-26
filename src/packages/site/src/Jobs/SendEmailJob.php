@@ -1,8 +1,8 @@
 <?php
 
-	namespace Soup\Mobile\Jobs;
+	namespace Belif\Mobile\Jobs;
 	
-	use Soup\Mobile\Jobs\BaseJob;
+	use Belif\Mobile\Jobs\BaseJob;
 	use Illuminate\Queue\SerializesModels;
 	use Illuminate\Queue\InteractsWithQueue;
 	use Illuminate\Contracts\Bus\SelfHandling;

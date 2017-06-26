@@ -82,6 +82,10 @@
 /* 			QUESTIONS 			*/
 /********************************/
 
+.question-video-box {
+	margin-top: -5vw;	
+}
+
 .question-video {
 	position: absolute;
 	top: 0;	

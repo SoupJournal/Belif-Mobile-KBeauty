@@ -2,13 +2,13 @@
 
 	namespace Belif\Mobile\Middleware; 
 
-	use Belif\Mobile\Lib\AppGlobals;
+	use Belif\Mobile\Models\Product;
 
 	use Closure;
 	use Redirect;
 	use Illuminate\Support\Facades\Auth;
 
-	class QuizMiddleware { 
+	class AvailableMiddleware { 
 
 	    /**
 	     * Handle an incoming request.
@@ -19,25 +19,22 @@
 	     */
 	    public function handle($request, Closure $next)
 	    {
-	/*
-			//ensure user is capable of registration
-			$user = Auth::guard(AppGlobals::$AUTH_GUARD)->user();
-			if (!$user) {
-				return Redirect::route('soup.login');
-			}
+	    	
+			//get available products
+			$products = Product::where('available', true)->get();
 			
-			//quiz complete
-			if ($user->quiz_complete) {
+			//no products available
+			if (!$products || count($products)<=0) {
 				
-				//show main page
-				return Redirect::route('soup.venue.recommendation');
+				//show no products available
+				return Redirect::route('belif.unavailable');
 			} 
-	*/
+	
 			//process request
 	        return $next($request);
 	        
 	    } //end handle()
 	
-	} //end class QuizMiddleware
+	} //end class AvailableMiddleware
 	
 ?>

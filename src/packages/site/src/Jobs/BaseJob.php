@@ -1,7 +1,7 @@
 <?php
 
 
-	namespace Soup\Mobile\Jobs;
+	namespace Belif\Mobile\Jobs;
 	
 	
 	use Illuminate\Bus\Queueable;

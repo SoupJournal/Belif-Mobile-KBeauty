@@ -6,6 +6,7 @@
 
 	use Belif\Mobile\Controllers\BaseController;
 	use Belif\Mobile\Models\User;
+	use Belif\Mobile\Jobs\SendEmailJob;
 
 	use URL;
 	use View;
@@ -705,7 +706,7 @@
 				'pageName' => 'thanks',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-				'buttonURL' => 'https://www.instagram.com/belifusa/'
+				'buttonURL' => 'http://www.sephora.com/belif'
 				//'backURL' => URL::to('/share'),
 			));
 			
@@ -849,27 +850,51 @@
 					}
 					
 					
-					//create view parameters
-					$viewParams = Array(
-						'name' => $user->name,
-						'address1' => $user->address_1,
-						'address2' => $user->address_2,
-						'address3' => $address3,
-						'pageData' => $pageData,
-						'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
-						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
-					);
+//					//create view parameters
+//					$viewParams = Array(
+//						'name' => $user->name,
+//						'address1' => $user->address_1,
+//						'address2' => $user->address_2,
+//						'address3' => $address3,
+//						'pageData' => $pageData,
+//						'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
+//						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+//					);
 					
-					//create email view
-					$view = View::make('belif::email.verify')->with($viewParams);
-					
-					
-					//create headers
-					$headers = "MIME-Version: 1.0\r\n"
-							 . "Content-type: text/html;charset=UTF-8\r\n"
-							 . "From: " . self::EMAIL_SENDER_VERIFY . "\r\n";
+//					//create email view
+//					$view = View::make('belif::email.verify')->with($viewParams);
 					
 					
+//					//create headers
+//					$headers = "MIME-Version: 1.0\r\n"
+//							 . "Content-type: text/html;charset=UTF-8\r\n"
+//							 . "From: " . self::EMAIL_SENDER_VERIFY . "\r\n";
+					
+					
+					
+					//send confirm email (sent via queue to avoid delay loading next page)
+					$emailJob = new SendEmailJob([
+						"recipient" => $user->email, 
+						"sender" => [
+							'email' => self::EMAIL_SENDER_VERIFY, 
+							'name' => 'Belif'
+						],
+						"subject" => self::EMAIL_SUBJECT_VERIFY,
+						"view" => "belif::email.verify",
+						"view_properties" => [
+							'name' => $user->name,
+							'address1' => $user->address_1,
+							'address2' => $user->address_2,
+							'address3' => $address3,
+							'pageData' => $pageData,
+							'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
+							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+						]
+					]);
+					$this->dispatch($emailJob);
+					//$emailJob->handle();
+					$result = true;
+				
 					//send through Laravel
 				/*	try {
 						
@@ -885,7 +910,7 @@
 					catch (Exception $e) {
 				*/		
 						//send email through sendmail
-						$result = mail($user->email, self::EMAIL_SUBJECT_VERIFY, $view->render(), $headers);	
+					//	$result = mail($user->email, self::EMAIL_SUBJECT_VERIFY, $view->render(), $headers);	
 										
 				//	}
 					
@@ -935,19 +960,37 @@
 //							'unsubscribeLink' => URL::to('/unsubscribe?code=' . $shareUser->verify_code)
 //						);
 						
-						//create email view
-						$view = View::make('belif::email.share')->with(Array (
-							'pageData' => $pageData,
-							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $shareUser->verify_code])
-						));
+//						//create email view
+//						$view = View::make('belif::email.share')->with(Array (
+//							'pageData' => $pageData,
+//							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $shareUser->verify_code])
+//						));
 			
 						//create subject line
 						$subject = $user->name . self::EMAIL_SUBJECT_SHARE;
 			
-						//create headers
-						$headers = "MIME-Version: 1.0\r\n"
-								 . "Content-type: text/html;charset=UTF-8\r\n"
-								 . "From: " . self::EMAIL_SENDER_SHARE . "\r\n";
+//						//create headers
+//						$headers = "MIME-Version: 1.0\r\n"
+//								 . "Content-type: text/html;charset=UTF-8\r\n"
+//								 . "From: " . self::EMAIL_SENDER_SHARE . "\r\n";
+			
+			
+						//send share email (sent via queue to avoid delay loading next page)
+						$emailJob = new SendEmailJob([
+							"recipient" => $shareUser->email, 
+							"sender" => [
+								'email' => self::EMAIL_SENDER_SHARE, 
+								'name' => 'Belif'
+							],
+							"subject" => $subject,
+							"view" => "belif::email.share",
+							"view_properties" => [
+								'pageData' => $pageData,
+								'unsubscribeLink' => route('belif.unsubscribe', ['code' => $shareUser->verify_code])
+							]
+						]);
+						$this->dispatch($emailJob);
+						$result = true;
 			
 			/*
 						//send through Laravel
@@ -965,7 +1008,7 @@
 						catch (Exception $e) {
 				*/
 							//send email through sendmail
-							$result = mail($shareUser->email, $subject, $view->render(), $headers);
+							//$result = mail($shareUser->email, $subject, $view->render(), $headers);
 							
 				//		}
 					
@@ -1022,12 +1065,12 @@
 //					);
 					
 					//create email view
-					$view = View::make('belif::email.product)->with(Array (
-						'pageData' => $pageData,
-						'productImage' => $productImage,
-						'productColour' => '#125a7d'
-						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
-					));
+//					$view = View::make('belif::email.product')->with(Array (
+//						'pageData' => $pageData,
+//						'productImage' => $productImage,
+//						'productColour' => '#125a7d',
+//						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+//					));
 //					$view = null;
 //					if ($user->product==1) {
 //						$view = View::make('belif::email.product1')->with($viewParams);
@@ -1037,17 +1080,38 @@
 //					}
 					
 					//valid view
-					if ($view) {
+//					if ($view) {
 					
-						//create headers
-						$headers = "MIME-Version: 1.0\r\n"
-								 . "Content-type: text/html;charset=UTF-8\r\n"
-								 . "From: " . self::EMAIL_SENDER_PRODUCT . "\r\n";
+//						//create headers
+//						$headers = "MIME-Version: 1.0\r\n"
+//								 . "Content-type: text/html;charset=UTF-8\r\n"
+//								 . "From: " . self::EMAIL_SENDER_PRODUCT . "\r\n";
 						
 						//send email through sendmail
-						$result = mail($user->email, self::EMAIL_SUBJECT_PRODUCT, $view->render(), $headers);	
+						//$result = mail($user->email, self::EMAIL_SUBJECT_PRODUCT, $view->render(), $headers);	
 						
-					} //end if (valid view)
+//					} //end if (valid view)
+
+					//send product sent email (sent via queue to avoid delay loading next page)
+					$emailJob = new SendEmailJob([
+						"recipient" => $user->email, 
+						"sender" => [
+							'email' => self::EMAIL_SENDER_PRODUCT, 
+							'name' => 'Belif'
+						],
+						"subject" => self::EMAIL_SUBJECT_PRODUCT,
+						"view" => "belif::email.product",
+						"view_properties" => [
+							'pageData' => $pageData,
+							'productImage' => $productImage,
+							'productColour' => '#125a7d',
+							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+						]
+					]);
+					$this->dispatch($emailJob);
+					$result = true;
+
+
 				
 				} //end if (valid code)
 				

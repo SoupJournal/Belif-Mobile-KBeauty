@@ -8,7 +8,7 @@
 	use Redirect;
 	use Illuminate\Support\Facades\Auth;
 
-	class ProductMiddleware { 
+	class EmailMiddleware { 
 
 	    /**
 	     * Handle an incoming request.
@@ -20,12 +20,12 @@
 	    public function handle($request, Closure $next)
 	    {
 	
-			//get selected products
-			$selectedProducts = Session::get('selectedProducts');
+			//get email
+			$email = Session::get('email');
 	
-		    //ensure has selected a product
-			if (!$selectedProducts || count($selectedProducts)<=0) {
-		        return Redirect::route('belif.product');
+		   	//ensure email is specified
+		    if (!$email || strlen($email)<=0) {
+		    	return Redirect::route( 'belif.home' );
 		    }
 	
 			//process request
@@ -33,6 +33,6 @@
 	        
 	    } //end handle()
 	
-	} //end class ProductMiddleware
+	} //end class EmailMiddleware
 	
 ?>

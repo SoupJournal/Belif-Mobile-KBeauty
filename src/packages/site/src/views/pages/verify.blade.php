@@ -46,7 +46,7 @@
 	
 ?>
 
-<div class="text-center page-padding-small">
+<div class="text-center page-padding-small" id="modalContainer">
 	
 
 		
@@ -109,7 +109,7 @@
 	{{-- modal popup --}}
 	<script type="text/ng-template" id="ResentEmail.html">
         <div class="modal-body" id="modal-body">
-            <h3>An email has been resent 
+            <h3 class="color-1">An email has been resent 
             	@if (isset($verifyEmail) && $verifyEmail)
 		            to {{ $verifyEmail }}
 		        @endif

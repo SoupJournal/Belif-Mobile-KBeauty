@@ -80,22 +80,7 @@
 				</div>
 			@endif
 		
-			<div class="spacer-small-2"></div>
-		
-
-			{{-- video --}}
-			<video class="question-video" src="{{ $videoURL }}" controls hidden-video="video-button"></video>
-			
-			<button id="video-button" class="video-button">
-				<img src="{{ asset($assetPath . '/images/icon-play.png') }}" class="image-video-play">
-			</button>
-		
-			{{-- text --}}
-			<h4 class="title-light color-2">{{ $text }}</h4>
-					
-
-		
-			<div class="spacer-tiny"></div>
+			<div class="spacer-small"></div>
 		
 		
 			{{-- question --}}
@@ -115,7 +100,25 @@
 			</div>
 			
 			
-			<div class="spacer-small"></div>
+			
+			{{-- video --}}
+			<div class="question-video-box">
+			
+				<video class="question-video" src="{{ $videoURL }}" controls hidden-video="video-button"></video>
+				
+				<button id="video-button" class="video-button">
+					<img src="{{ asset($assetPath . '/images/icon-play.png') }}" class="image-video-play">
+				</button>
+			
+				{{-- text --}}
+				<h4 class="title-light color-2">{{ $text }}</h4>
+				
+			</div>
+					
+
+		
+			<div class="spacer-medium"></div>
+			<div class="spacer-small-2"></div>
 			
 		
 			{{-- answer button --}}

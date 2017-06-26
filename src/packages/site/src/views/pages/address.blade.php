@@ -94,7 +94,7 @@
 		
 			{{-- address 2 --}}
 			<span class="input-address-2-left">
-				{{ Form::text('address_2', null, Array ('placeholder' => 'Address line 2', 'class' => 'page-input-text', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::text('address_2', null, Array ('placeholder' => 'Address line 2', 'class' => 'page-input-text', 'auto-next-focus' => '')) }}
 			</span>
 
 			{{-- zip code --}}

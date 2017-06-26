@@ -237,9 +237,9 @@
 														<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 													</tr>
 													<tr>
-													<table width="300" border="0" cellspacing="0" cellpadding="0">
+													<table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
 												<tbody>
-													<tr>
+													<tr align="center">
 														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:16px; line-height: 24px; text-align: center;"><a href="http://belifusa.com" target="_blank" style="color: #00aeef; text-decoration: none; font-style:italic;">belifusa.com</a></td>
 														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:16px; line-height: 24px; text-align: center;"><a href="http://www.sephora.com/belif" target="_blank" style="color: #00aeef; text-decoration: none; font-style:italic;">belif at sephora</a></td>
 													</tr>

@@ -39,14 +39,14 @@ class BelifServiceProvider extends ServiceProvider {
 		//register middleware
 		$router = $this->app['router'];
 		if ($router) {
-	/*		$router->middleware('AppHTTPS', 'Soup\Mobile\Middleware\HTTPSMiddleware');	
-			$router->middleware('AppAuth', 'Soup\Mobile\Middleware\AuthMiddleware');	
-			$router->middleware('AppSignUp', 'Soup\Mobile\Middleware\SignUpMiddleware');
-			$router->middleware('NewSignUp', 'Soup\Mobile\Middleware\InquiryRegisteredMiddleware');
-			$router->middleware('AppQuiz', 'Soup\Mobile\Middleware\QuizMiddleware');
-			$router->middleware('AppUser', 'Soup\Mobile\Middleware\ExistingUserMiddleware');
-			$router->middleware('AppReview', 'Soup\Mobile\Middleware\ReviewMiddleware');
-		*/	$router->middleware('AppMobile', 'Belif\Mobile\Middleware\MobileMiddleware');
+			$router->middleware('AppHTTPS', 'Belif\Mobile\Middleware\HTTPSMiddleware');	
+//			$router->middleware('AppAuth', 'Soup\Mobile\Middleware\AuthMiddleware');	
+//			$router->middleware('AppSignUp', 'Soup\Mobile\Middleware\SignUpMiddleware');
+//			$router->middleware('NewSignUp', 'Soup\Mobile\Middleware\InquiryRegisteredMiddleware');
+			$router->middleware('ProductAvailable', 'Belif\Mobile\Middleware\AvailableMiddleware');
+			$router->middleware('ProductRequired', 'Belif\Mobile\Middleware\ProductMiddleware');
+			$router->middleware('EmailRequired', 'Belif\Mobile\Middleware\EmailMiddleware');
+			$router->middleware('AppMobile', 'Belif\Mobile\Middleware\MobileMiddleware');
 			$router->middleware('AppDesktop', 'Belif\Mobile\Middleware\DesktopMiddleware');
 		}
 		
