@@ -19,7 +19,8 @@ class CreateProductTable extends Migration {
 			$table->string('description')->nullable();	
 			$table->boolean('available')->default(true);
 			$table->string('sample_image', 1023)->nullable();
-			$table->string('selected_sample_image', 1023)->nullable();
+			$table->string('email_image', 1023)->nullable();
+			$table->string('email_colour', 15)->nullable();
 		});
 	}
 

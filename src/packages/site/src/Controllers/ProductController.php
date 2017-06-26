@@ -535,83 +535,8 @@
 		
 		
 		
-		
-		
-		
-		
-		//==========================================================//
-		//====					EMAIL METHODS					====//
-		//==========================================================//
-		
+
 				
-		
-		/*
-		private function sendProductEmail($user) {
-			
-			$result = false;
-			
-			//valid user
-			if ($user && $user->email && strlen($user->email)>0) {
-				
-				//generate and store unique code
-				$this->generateVerifyCode($user);
-				
-				
-				//valid code
-				if ($user->verify_code && strlen($user->verify_code)>0) { 
-				
-				
-					//compile last address line
-					$address3 = $user->city;
-					if ($user->state && strlen($user->state)>0) {
-						$address3 .= strlen($address3)>0 ? ', ' . $user->state : $user.state;
-					}
-					if ($user->zip_code && strlen($user->zip_code)>0) {
-						$address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
-					}
-					
-					
-					//create view parameters
-					$viewParams = Array(
-						'unsubscribeLink' => URL::to('/unsubscribe?code=' . $user->verify_code)
-					);
-					
-					//create email view
-					$view = null;
-					if ($user->product==1) {
-						$view = View::make('belif::email.product1')->with($viewParams);
-					}
-					else {
-						$view = View::make('belif::email.product2')->with($viewParams);	
-					}
-					
-					//valid view
-					if ($view) {
-					
-						//create headers
-						$headers = "MIME-Version: 1.0\r\n"
-								 . "Content-type: text/html;charset=UTF-8\r\n"
-								 . "From: " . self::EMAIL_SENDER_PRODUCT . "\r\n";
-						
-						//send email through sendmail
-						$result = mail($user->email, self::EMAIL_SUBJECT_PRODUCT, $view->render(), $headers);	
-						
-					} //end if (valid view)
-				
-				} //end if (valid code)
-				
-			} //end if (valid user)
-		
-	
-			return $result;
-			
-		} //end sendProductEmail()
-		*/
-		
-		
-		
-		
-		
 		//==========================================================//
 		//====					DATA METHODS					====//
 		//==========================================================//

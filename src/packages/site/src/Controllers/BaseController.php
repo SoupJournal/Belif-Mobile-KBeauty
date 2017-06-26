@@ -29,6 +29,11 @@
 		const FORM_UNSUBSCRIBE = 'page_unsubscribe';
 		const FORM_DESKTOP = 'page_desktop';
 		
+		//emails
+		const EMAIL_VERIFY = 'email_verify';
+		const EMAIL_PRODUCT = 'email_product';
+		const EMAIL_SHARE = 'email_share';
+		
 		//verify email details
 		const EMAIL_SENDER_VERIFY = 'team@belifinhydration.com';
 		const EMAIL_SUBJECT_VERIFY = 'Verify your email to claim your gift.';

@@ -764,6 +764,34 @@
 		//====					EMAIL METHODS					====//
 		//==========================================================//
 		
+		/*
+		public function getEmailTest() {
+
+			//test properties
+//			$view = 'belif::email.product';
+//			$view = 'belif::email.verify';
+			$view = 'belif::email.share';
+//			$pageId = self::EMAIL_PRODUCT;			
+//			$pageId = self::EMAIL_VERIFY;
+			$pageId = self::EMAIL_SHARE;			
+			
+			//get page data
+			$pageData = $this->dataForPage($pageId);
+			
+			//get background image
+			$productImage = safeArrayValue('background_image', $pageData);
+			
+			//render view
+			return View::make($view)->with(Array (
+				'unsubscribeLink' => 'testLINKtestLINKtestLINK',
+				'pageData' => $pageData,
+				'productImage' => $productImage,
+				'productColour' => '#125a7d'
+			));
+			
+		} //end test()
+		*/
+		
 		
 		private function generateVerifyCode($user) {
 			
@@ -807,6 +835,9 @@
 				//valid code
 				if ($user->verify_code && strlen($user->verify_code)>0) { 
 				
+					//get page data
+					$pageData = $this->dataForPage(self::EMAIL_VERIFY);
+					
 				
 					//compile last address line
 					$address3 = $user->city;
@@ -824,8 +855,9 @@
 						'address1' => $user->address_1,
 						'address2' => $user->address_2,
 						'address3' => $address3,
-						'verifyLink' => URL::to('/share?code=' . $user->verify_code),
-						'unsubscribeLink' => URL::to('/unsubscribe?code=' . $user->verify_code)
+						'pageData' => $pageData,
+						'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
+						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
 					);
 					
 					//create email view
@@ -893,14 +925,21 @@
 						//generate and store unique code (if one doesn't already exist)
 						$this->generateVerifyCode($shareUser);
 					
+						//get page data
+						$pageData = $this->dataForPage(self::EMAIL_SHARE);
 		
-						//create view parameters
-						$viewParams = Array(
-							'unsubscribeLink' => URL::to('/unsubscribe?code=' . $shareUser->verify_code)
-						);
+		
+		
+//						//create view parameters
+//						$viewParams = Array(
+//							'unsubscribeLink' => URL::to('/unsubscribe?code=' . $shareUser->verify_code)
+//						);
 						
 						//create email view
-						$view = View::make('belif::email.share')->with($viewParams);
+						$view = View::make('belif::email.share')->with(Array (
+							'pageData' => $pageData,
+							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $shareUser->verify_code])
+						));
 			
 						//create subject line
 						$subject = $user->name . self::EMAIL_SUBJECT_SHARE;
@@ -961,6 +1000,12 @@
 				if ($user->verify_code && strlen($user->verify_code)>0) { 
 				
 				
+					//get page data
+					$pageData = $this->dataForPage(self::EMAIL_PRODUCT);
+				
+					//get background image
+					$productImage = safeArrayValue('background_image', $pageData);
+				
 					//compile last address line
 					$address3 = $user->city;
 					if ($user->state && strlen($user->state)>0) {
@@ -971,19 +1016,25 @@
 					}
 					
 					
-					//create view parameters
-					$viewParams = Array(
-						'unsubscribeLink' => URL::to('/unsubscribe?code=' . $user->verify_code)
-					);
+//					//create view parameters
+//					$viewParams = Array(
+//						'unsubscribeLink' => URL::to('/unsubscribe?code=' . $user->verify_code)
+//					);
 					
 					//create email view
-					$view = null;
-					if ($user->product==1) {
-						$view = View::make('belif::email.product1')->with($viewParams);
-					}
-					else {
-						$view = View::make('belif::email.product2')->with($viewParams);	
-					}
+					$view = View::make('belif::email.product)->with(Array (
+						'pageData' => $pageData,
+						'productImage' => $productImage,
+						'productColour' => '#125a7d'
+						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+					));
+//					$view = null;
+//					if ($user->product==1) {
+//						$view = View::make('belif::email.product1')->with($viewParams);
+//					}
+//					else {
+//						$view = View::make('belif::email.product2')->with($viewParams);	
+//					}
 					
 					//valid view
 					if ($view) {
