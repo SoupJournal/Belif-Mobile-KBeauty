@@ -35,7 +35,7 @@
 	
 	
 		//mobile only access
-		//Route::group(array('middleware' => 'AppMobile'), function() {
+		Route::group(array('middleware' => 'AppMobile'), function() {
 	
 	
 				
@@ -118,7 +118,7 @@
 			//TEST EMAIL
 			//Route::get('/testemail', ['as' => 'belif.email.test', 'uses' => 'MainController@getEmailTest']);						
 		
-		//}); //end middleware (mobile only)
+		}); //end middleware (mobile only)
 	
 	
 	}); //end namespace group
