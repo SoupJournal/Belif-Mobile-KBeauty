@@ -765,16 +765,16 @@
 		//====					EMAIL METHODS					====//
 		//==========================================================//
 		
-		/*
+	/*	
 		public function getEmailTest() {
 
 			//test properties
 //			$view = 'belif::email.product';
-//			$view = 'belif::email.verify';
-			$view = 'belif::email.share';
+			$view = 'belif::email.verify';
+//			$view = 'belif::email.share';
 //			$pageId = self::EMAIL_PRODUCT;			
-//			$pageId = self::EMAIL_VERIFY;
-			$pageId = self::EMAIL_SHARE;			
+			$pageId = self::EMAIL_VERIFY;
+//			$pageId = self::EMAIL_SHARE;			
 			
 			//get page data
 			$pageData = $this->dataForPage($pageId);

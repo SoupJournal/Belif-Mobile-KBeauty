@@ -84,10 +84,26 @@
 										<td height="18" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" width="570px">
 											<tbody>
 												<tr>
+													<td>
+														<table border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+														<tr><td style="border:0; margin:0; padding:16px 80px;"></tr>
+														<tr><td bgcolor="#125a7d" style="border:0; margin:0; padding:16px 82px;"></tr>
+														</tbody>
+														</table>
+													</td>
 													<td bgcolor="#42b6e7" style="border:0; margin:0; padding:21px 45px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
+													<td>
+														<table border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+														<tr><td style="border:0; margin:0; padding:16px 80px;"></tr>
+														<tr><td bgcolor="#125a7d" style="border:0; margin:0; padding:16px 82px;"></tr>
+														</tbody>
+														</table>
+													</td>
 												</tr>
 											</tbody>
 										</table></td>

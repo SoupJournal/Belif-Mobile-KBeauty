@@ -25,6 +25,7 @@
 		@if (isset($nextURL) && strlen($nextURL)>0)
 			<a href="{{ $nextURL }}" class="color-2 button-next">BACK</a>
 		@endif
+		@yield('header-right', '')
    	</div>
 
 </div>

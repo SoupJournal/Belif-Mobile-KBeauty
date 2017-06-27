@@ -4,8 +4,24 @@
 	//setup module
 	var module = angular.module('belif-core', ['ngResource']); 
 	
+	//create service
+	module.service('BelifService', function () {
+	
+		//shared selected products list
+        var selectedProducts = [];
+
+        return {
+            getSelectedProducts: function () {
+                return selectedProducts;
+            },
+            setSelectedProducts: function(value) {
+                selectedProducts = value;
+            }
+        };
+    });
+	
 	//create controller
-	module.controller('BelifController', [ '$http', '$scope', '$window', '$uibModal', function($http, $scope, $window, $uibModal) {
+	module.controller('BelifController', [ '$http', '$scope', '$window', '$uibModal', 'BelifService', function($http, $scope, $window, $uibModal, $belif) {
 		
 
 
@@ -52,6 +68,13 @@
 		
 		//currently selected products
 		$scope.selectedProducts = [];
+		
+		$scope.numberOfSelectedProducts = function() {
+
+			var products = $belif.getSelectedProducts();
+			return products ? products.length : 0;
+		
+		} //end numberOfSelectedProducts()
 		
 		
 		$scope.initProducts = function(allowedSamples, selectedSamples) {
@@ -178,6 +201,9 @@
 								} //end if (allowed more samples)
 								
 							}
+							
+							//update shared list
+							$belif.setSelectedProducts($scope.selectedProducts);
 						
 						} //end if (found input element)
 						

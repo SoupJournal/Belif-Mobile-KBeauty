@@ -27,6 +27,17 @@
 {{--------------- END SCRIPTS ----------------}}
 
 
+{{--------------- HEADER RIGHT ----------------}}
+@section('header-right')
+<?php
+	//ensure page properties are set
+	$numberOfSamples = isset($numberOfSamples) ? $numberOfSamples : 0;
+?>
+<span ng-controller="BelifController">
+	#{ numberOfSelectedProducts() }# / {{ $numberOfSamples }}
+</span>
+@stop
+{{------------- END HEADER RIGHT --------------}}
 
 
 
