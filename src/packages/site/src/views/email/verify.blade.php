@@ -87,20 +87,20 @@
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" width="570px">
 											<tbody>
 												<tr>
-													<td>
+													<td bgcolor="#125a7d">
 														<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
+														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 80px;"></tr>
 														<tr><td style="border:0; margin:0; padding:16px 80px;"></tr>
-														<tr><td bgcolor="#125a7d" style="border:0; margin:0; padding:16px 82px;"></tr>
 														</tbody>
 														</table>
 													</td>
 													<td bgcolor="#42b6e7" style="border:0; margin:0; padding:21px 45px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
-													<td>
+													<td bgcolor="#125a7d">
 														<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
+														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 80px;"></tr>
 														<tr><td style="border:0; margin:0; padding:16px 80px;"></tr>
-														<tr><td bgcolor="#125a7d" style="border:0; margin:0; padding:16px 82px;"></tr>
 														</tbody>
 														</table>
 													</td>
@@ -160,7 +160,7 @@
 										<td height="44" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.4px;">{!! $text !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">{!! $text !!}</td>
 									</tr>
 									<tr>
 										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>

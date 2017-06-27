@@ -43,6 +43,7 @@
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
+	$html = safeArrayValue('html', $pageData, "");
 	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$buttonNo = safeArrayValue('button_cancel', $pageData, "");
@@ -88,8 +89,9 @@
 
 			<div class="spacer-small"></div>
 
-			<div class="box-margin page-input-text">
-				<h4 class="title-light color-2">{!! $text !!}</h4>
+			<div class="box-margin">
+				{{-- Form::textArea('email', null, Array ('placeholder' => $text, 'class' => 'page-input-text share-text-area', 'required' => '', 'autofocus' => '', 'rows' => '3')) --}}
+				<!-- <h4 class="title-light color-2">{!! $text !!}</h4> -->
 			</div>
 		
 
@@ -111,8 +113,12 @@
 		
 	
 		
-			<div class="spacer-large"></div>
-		
+			<div class="spacer-medium"></div>
+			
+			<h5 class="title-light color-2 no-margins">{!! $html !!}</h5>
+			
+			<div class="spacer-medium"></div>
+			
 
 			{{-- submit button --}}
 			<button class="button-page bg-color-3 color-2" label="{{ $button }}">
