@@ -34,7 +34,7 @@
 	$numberOfSamples = isset($numberOfSamples) ? $numberOfSamples : 0;
 ?>
 <span ng-controller="BelifController">
-	#{ numberOfSelectedProducts() }# / {{ $numberOfSamples }}
+	<h4 class="color-2">#{ numberOfSelectedProducts() }# / {{ $numberOfSamples }}</h4>
 </span>
 @stop
 {{------------- END HEADER RIGHT --------------}}

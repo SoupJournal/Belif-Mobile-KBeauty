@@ -25,6 +25,7 @@ class CreateUserTable extends Migration {
 			$table->string('city', 511)->nullable();
 			$table->string('state', 511)->nullable();
 			$table->string('zip_code', 255)->nullable();
+			$table->string('answers', 1023)->nullable();
 			$table->boolean('email_verified')->default(false);
 			$table->boolean('unsubscribed')->default(false);
 			$table->boolean('product_sent')->default(false);

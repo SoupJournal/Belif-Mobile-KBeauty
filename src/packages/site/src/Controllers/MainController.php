@@ -6,6 +6,8 @@
 
 	use Belif\Mobile\Controllers\BaseController;
 	use Belif\Mobile\Models\User;
+	use Belif\Mobile\Models\Question;
+	use Belif\Mobile\Models\ProductImage;
 	use Belif\Mobile\Jobs\SendEmailJob;
 
 	use URL;
@@ -140,6 +142,9 @@
 			
 			//valid form
 			if ($valid) {
+				
+				//clear selected products
+				Session::set('selectedProducts', null);
 				
 				//store email
 				Session::set('email', trim($email));
@@ -317,7 +322,37 @@
 				//find ip address
 				$ipAddress = retrieveIPAddress();
 				
-				
+				//get current answers
+				$answers = Session::get('answers');		
+				$answersJSON = null;
+				if ($answers) {
+					
+					//get questions
+					$questions = Question::select('id')
+									->orderBy('order')
+									->orderBy('id')
+									->get();
+					
+					//compile array (reference questions by Id)
+					$referencedArray = [];
+					for ($i=0; $i<count($questions) && $i<=count($answers); ++$i) {
+						
+						$qId = safeObjectValue('id', $questions[$i], -1);
+						$referencedArray[$qId] = $answers[$i+1];
+						
+					} //end for()
+					
+					
+					try {
+						$answersJSON = json_encode($referencedArray);
+					}
+					catch (Exception $ex) {
+						//error processing JSON
+					}	
+				}	
+	
+	
+	
 	
 				//form validation
 				$valid = true;
@@ -429,6 +464,8 @@
 						$user->ip_address = $ipAddress;
 						$user->product_1 = $product1;
 						$user->product_2 = $product2;
+						$user->answers = $answersJSON;
+						
 						
 						//save user details
 						if (!$user->save()) {
@@ -769,18 +806,40 @@
 		public function getEmailTest() {
 
 			//test properties
-//			$view = 'belif::email.product';
-			$view = 'belif::email.verify';
+			$view = 'belif::email.product';
+//			$view = 'belif::email.verify';
 //			$view = 'belif::email.share';
-//			$pageId = self::EMAIL_PRODUCT;			
-			$pageId = self::EMAIL_VERIFY;
+			$pageId = self::EMAIL_PRODUCT;			
+//			$pageId = self::EMAIL_VERIFY;
 //			$pageId = self::EMAIL_SHARE;			
+			
+
 			
 			//get page data
 			$pageData = $this->dataForPage($pageId);
 			
+			//product image
+			$productImage = null;
+			
+			//test user
+			$user = User::find(1);
+			if ($user) {
+			
+				//get image data
+				$imageData = ProductImage::where('product_1', $user->product_1)
+										->where('product_2', $user->product_2)
+										->first();
+			
+				//get product image
+				if ($imageData) {
+					$productImage = safeObjectValue('image', $imageData, null);
+				}
+			
+			}
+	//$productImage = "https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/share-background.png";
+
 			//get background image
-			$productImage = safeArrayValue('background_image', $pageData);
+			//$productImage = safeArrayValue('background_image', $pageData);
 			
 			//render view
 			return View::make($view)->with(Array (
@@ -792,6 +851,9 @@
 			
 		} //end test()
 		*/
+		
+		
+		
 		
 		
 		private function generateVerifyCode($user) {
@@ -877,7 +939,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_VERIFY, 
-							'name' => 'Belif'
+							'name' => 'belif'
 						],
 						"subject" => self::EMAIL_SUBJECT_VERIFY,
 						"view" => "belif::email.verify",
@@ -980,7 +1042,7 @@
 							"recipient" => $shareUser->email, 
 							"sender" => [
 								'email' => self::EMAIL_SENDER_SHARE, 
-								'name' => 'Belif'
+								'name' => 'belif'
 							],
 							"subject" => $subject,
 							"view" => "belif::email.share",
@@ -1046,8 +1108,6 @@
 					//get page data
 					$pageData = $this->dataForPage(self::EMAIL_PRODUCT);
 				
-					//get background image
-					$productImage = safeArrayValue('background_image', $pageData);
 				
 					//compile last address line
 					$address3 = $user->city;
@@ -1057,6 +1117,20 @@
 					if ($user->zip_code && strlen($user->zip_code)>0) {
 						$address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
 					}
+			
+					//get product image data
+					$imageData = ProductImage::where('product_1', $user->product_1)
+											->where('product_2', $user->product_2)
+											->first();
+				
+					//get product image
+					$productImage = null;
+					if ($imageData) {
+						$productImage = safeObjectValue('image', $imageData, null);
+					}
+			
+
+					
 					
 					
 //					//create view parameters
@@ -1097,7 +1171,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_PRODUCT, 
-							'name' => 'Belif'
+							'name' => 'belif'
 						],
 						"subject" => self::EMAIL_SUBJECT_PRODUCT,
 						"view" => "belif::email.product",

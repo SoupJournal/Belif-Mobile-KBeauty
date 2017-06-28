@@ -34,6 +34,10 @@
 		const EMAIL_PRODUCT = 'email_product';
 		const EMAIL_SHARE = 'email_share';
 		
+		//product email images
+		//const EMAIL_PRODUCT_IMAGES = 'email_images';
+		
+		
 		//verify email details
 		const EMAIL_SENDER_VERIFY = 'team@belifinhydration.com';
 		const EMAIL_SUBJECT_VERIFY = 'Verify your email to claim your gift.';

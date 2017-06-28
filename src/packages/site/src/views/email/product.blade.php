@@ -5,11 +5,14 @@
 	if (!isset($productColour)) $productColour = "";
 	if (!isset($unsubscribeLink)) $unsubscribeLink = "";
 	if (!isset($pageData)) $pageData = null;
+	if (!isset($multipleSamples)) $multipleSamples = false;
 	
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
+	$text = safeArrayValue('text', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$html = safeArrayValue('html', $pageData, "");
+	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	
 
 ?>
@@ -52,7 +55,7 @@
 														<tr>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/logo-belif.png" width="102" height="107" alt="belif - believe in truth"/></td>
-															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/header-belif.png" width="250" height="76" alt="belif - believe in truth"/></td>
+															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/header-belif-black.png" width="250" height="76" alt="belif - believe in truth"/></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="1" alt=""/></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 														</tr>
@@ -67,13 +70,13 @@
 												</table></td>
 											</tr>
 											<tr>
-												<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="117"></td>
+												<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="50"></td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#0072bc; text-transform:uppercase; font-size:31px; line-height:56px; font-weight:bold; letter-spacing:-0.4px;">{{ $title }}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; text-transform:uppercase; font-size:28px; line-height:34px; font-weight:bold; letter-spacing:-0.4px;">{{ $multipleSamples ? $text : $title }}</td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#00aeef; font-size:21px; line-height:48px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#00aeef; font-size:18px; line-height:32px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
 											</tr>
 											<tr>
 												<td height="554" style="border: 0; margin:0; padding: 0;"></td>
@@ -88,14 +91,15 @@
 							</td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;" height="20"></td>
-						</tr>
-						<tr>
-							<td height="41" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"></td>
-						</tr>
-						<tr>
-							<td align="center" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#2c68ae; font-size:19px; line-height:30px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{!! $html !!}</td>
-						</tr>
+						<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="{{ $productColour }}" style="border: 0; margin: 0; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $backgroundImage }}">
+							<tbody>
+								<tr>
+									<td></td>
+									<td align="center" style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; font-size:16px; line-height:20px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{!! $html !!}</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
 						<tr>
 							<td height="32" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"></td>
 						</tr>
