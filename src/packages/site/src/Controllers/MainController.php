@@ -802,7 +802,7 @@
 		//====					EMAIL METHODS					====//
 		//==========================================================//
 		
-	/*	
+		/*
 		public function getEmailTest() {
 
 			//test properties
@@ -826,8 +826,14 @@
 			if ($user) {
 			
 				//get image data
-				$imageData = ProductImage::where('product_1', $user->product_1)
-										->where('product_2', $user->product_2)
+				$imageData = ProductImage::where(function ($query) use ($user) {
+											$query->where('product_1', $user->product_1)
+											  	  ->where('product_2', $user->product_2);
+										})
+										->orWhere(function ($query) use ($user) {
+											$query->where('product_2', $user->product_1)
+												  ->where('product_1', $user->product_2);
+										})
 										->first();
 			
 				//get product image
@@ -836,6 +842,10 @@
 				}
 			
 			}
+			
+			//determine if multiple samples sent
+			$multipleSamples = isset($user->product_1) && isset($user->product_2);
+			
 	//$productImage = "https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/share-background.png";
 
 			//get background image
@@ -846,7 +856,8 @@
 				'unsubscribeLink' => 'testLINKtestLINKtestLINK',
 				'pageData' => $pageData,
 				'productImage' => $productImage,
-				'productColour' => '#125a7d'
+				'productColour' => '#125a7d',
+				'multipleSamples' => $multipleSamples
 			));
 			
 		} //end test()
@@ -1118,9 +1129,15 @@
 						$address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
 					}
 			
-					//get product image data
-					$imageData = ProductImage::where('product_1', $user->product_1)
-											->where('product_2', $user->product_2)
+					//get image data
+					$imageData = ProductImage::where(function ($query) use ($user) {
+												$query->where('product_1', $user->product_1)
+												  	  ->where('product_2', $user->product_2);
+											})
+											->orWhere(function ($query) use ($user) {
+												$query->where('product_2', $user->product_1)
+													  ->where('product_1', $user->product_2);
+											})
 											->first();
 				
 					//get product image
@@ -1130,8 +1147,9 @@
 					}
 			
 
-					
-					
+					//determine if multiple samples sent
+					$multipleSamples = isset($user->product_1) && isset($user->product_2);
+							
 					
 //					//create view parameters
 //					$viewParams = Array(
@@ -1179,6 +1197,7 @@
 							'pageData' => $pageData,
 							'productImage' => $productImage,
 							'productColour' => '#125a7d',
+							'multipleSamples' => $multipleSamples,
 							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
 						]
 					]);
