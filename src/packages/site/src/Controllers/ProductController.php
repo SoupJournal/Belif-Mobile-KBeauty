@@ -374,8 +374,9 @@
 			//get form values
 			$products = safeArrayValue('product', $_POST);
 			
-			//product Id's
-			//$productIds = ['A', 'B', 'C'];
+			//get number of available products
+			$availableProducts = Product::where('available', true)->count();
+			
 			
 			//find selected products
 			$selectedProducts = [];
@@ -409,13 +410,13 @@
 
 			
 			//no products selected
-			if (!$selectedProducts || $numberOfSelectedProducts<=0) {
+			if ((!$selectedProducts || $numberOfSelectedProducts<=0) && $availableProducts>0) {
 				$errors = 'Please select the products you would like to sample.';
 				$valid = false;
 			}
 			
 			//not enough samples selected
-			else if ($numberOfSelectedProducts<$numberOfSamples) {
+			else if (($numberOfSelectedProducts<$numberOfSamples) && $numberOfSelectedProducts<$availableProducts) {
 				
 				//get number of unselected samples
 				$unselected = $numberOfSamples - $numberOfSelectedProducts;
@@ -425,7 +426,7 @@
 			}
 			
 			//too many samples selected
-			else if ($numberOfSelectedProducts>$numberOfSamples) {	
+			else if ($numberOfSelectedProducts>$numberOfSamples || $numberOfSelectedProducts>$availableProducts) {	
 				$errors = 'Sorry, you have selected too many samples.';
 				$valid = false;
 			}

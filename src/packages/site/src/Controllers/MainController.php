@@ -3,6 +3,7 @@
 
 	namespace Belif\Mobile\Controllers;
 
+	use Soup\CMS\Lib\CMSTrigger;
 
 	use Belif\Mobile\Controllers\BaseController;
 	use Belif\Mobile\Models\User;
@@ -16,7 +17,7 @@
 	use Session;
 	use Illuminate\Support\Facades\Auth;
 
-	class MainController extends BaseController {
+	class MainController extends BaseController implements CMSTrigger {
 		
 
 		//==========================================================//
@@ -34,7 +35,7 @@
 		
 		
 		public function getDesktop() {
-			
+
 			//non-mobile device
 	    	if (!isMobileDevice()) {
 			
@@ -1215,6 +1216,112 @@
 			
 		} //end sendProductEmail()
 		
+
+
+
+
+		//==========================================================//
+		//====					CMS METHODS					====//
+		//==========================================================//	
+
+
+
+		public function handleTrigger($data, $info) {
+
+			//has data
+			if ($data) {
+				
+				//wrap data for single users
+				
+				//count updated users
+				$updatedUsers = 0;
+				
+				//process users
+				foreach ($data as $userData) {
+				
+					//get user
+					$user = User::find($userData->id);
+					if ($user) {
+				
+						//check if product email already sent
+						if (!$user->product_sent) {
+							
+							//get page data
+							$pageData = $this->dataForPage(self::EMAIL_PRODUCT);
+							
+							//product image
+							$productImage = null;
+		
+							
+							//get image data
+							$imageData = ProductImage::where(function ($query) use ($user) {
+														$query->where('product_1', $user->product_1)
+														  	  ->where('product_2', $user->product_2);
+													})
+													->orWhere(function ($query) use ($user) {
+														$query->where('product_2', $user->product_1)
+															  ->where('product_1', $user->product_2);
+													})
+													->first();
+						
+							//get product image
+							if ($imageData) {
+								$productImage = safeObjectValue('image', $imageData, null);
+							}
+						
+			
+							//determine if multiple samples sent
+							$multipleSamples = isset($user->product_1) && isset($user->product_2);
+							
+							
+							
+							//send product sent email (sent via queue to avoid delay loading next page)
+							$emailJob = new SendEmailJob([
+								"recipient" => $user->email, 
+								"sender" => [
+									'email' => self::EMAIL_SENDER_PRODUCT, 
+									'name' => 'belif'
+								],
+								"subject" => self::EMAIL_SUBJECT_PRODUCT,
+								"view" => "belif::email.product",
+								"view_properties" => [
+									'pageData' => $pageData,
+									'productImage' => $productImage,
+									'productColour' => '#125a7d',
+									'multipleSamples' => $multipleSamples,
+									'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+								]
+							]);
+							$this->dispatch($emailJob);
+							//$emailJob->handle();
+								
+							//update user 
+							$user->product_sent = true;
+							$user->save();
+							
+							//increment user count
+							++$updatedUsers;
+							
+							
+						} //end if (product not sent)
+					
+					} //end if (found user match)
+				
+				} //end for()
+				
+				
+				//set response message
+				return "Processed users, " . $updatedUsers . " emails sent!";
+				
+				
+			} //end if (has data)
+			
+			
+			//return error response
+			return "No data found";
+			
+		} //end handleTrigger()
+
 
 						
 	} //end class MainController
