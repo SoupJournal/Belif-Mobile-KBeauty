@@ -1277,7 +1277,7 @@
 					if ($user) {
 				
 						//check if product email already sent
-						if (!$user->product_sent) {
+						if (!$user->product_sent && $user->email_verified) {
 							
 							//get page data
 							$pageData = $this->dataForPage(self::EMAIL_PRODUCT);
