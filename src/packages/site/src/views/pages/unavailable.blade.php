@@ -72,13 +72,13 @@
 		
 			<div class="spacer-medium">
 		
-			<button href="https://www.instagram.com/belifusa/" class="button-page button-next bg-color-3 color-2" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png">
+			<a href="{{ $buttonNo }}" class="button-page button-next bg-color-3 color-2" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
 				{{ $button }}
-			</button>
+			</a>
 		
 		
 			{{-- Cancel button --}}
-			<a href="#" class="color-1"><h4 class="button-link">{{ $buttonNo }}</h4></a>
+			{{-- <a href="#" class="color-1"><h4 class="button-link">{{ $buttonNo }}</h4></a> --}}
 				
 		
 		</div>
