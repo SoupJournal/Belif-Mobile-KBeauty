@@ -12,16 +12,17 @@ class CreateProductTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('product', function(Blueprint $table)
-		{
-			$table->increments('id');
-			$table->string('name')->nullable();	
-			$table->string('description')->nullable();	
-			$table->boolean('available')->default(true);
-			$table->string('sample_image', 1023)->nullable();
-			$table->string('email_image', 1023)->nullable();
-			$table->string('email_colour', 15)->nullable();
-		});
+        if (!Schema::hasTable('product')) {
+            Schema::create('product', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name')->nullable();
+                $table->string('description')->nullable();
+                $table->boolean('available')->default(true);
+                $table->string('sample_image', 1023)->nullable();
+                $table->string('email_image', 1023)->nullable();
+                $table->string('email_colour', 15)->nullable();
+            });
+        }
 	}
 
 	/**

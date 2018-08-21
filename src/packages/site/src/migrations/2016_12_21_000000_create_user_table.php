@@ -12,32 +12,33 @@ class CreateUserTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('user', function(Blueprint $table)
-		{
-			$table->increments('id');
-			$table->string('name', 255)->nullable();
-			$table->string('email', 255)->unique();
-			$table->string('verify_code', 511)->nullable();
-			$table->integer('product_1')->nullable();
-			$table->integer('product_2')->nullable();
-			$table->string('address_1', 511)->nullable();
-			$table->string('address_2', 511)->nullable();
-			$table->string('city', 511)->nullable();
-			$table->string('state', 511)->nullable();
-			$table->string('zip_code', 255)->nullable();
-			$table->string('answers', 1023)->nullable();
-			$table->boolean('email_verified')->default(false);
-			$table->boolean('unsubscribed')->default(false);
-			$table->boolean('product_sent')->default(false);
-			$table->integer('email_registration_attempts')->default(0);
-			$table->string('shared_email', 255)->nullable();
+        if (!Schema::hasTable('user')) {
+            Schema::create('user', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name', 255)->nullable();
+                $table->string('email', 255)->unique();
+                $table->string('verify_code', 511)->nullable();
+                $table->integer('product_1')->nullable();
+                $table->integer('product_2')->nullable();
+                $table->string('address_1', 511)->nullable();
+                $table->string('address_2', 511)->nullable();
+                $table->string('city', 511)->nullable();
+                $table->string('state', 511)->nullable();
+                $table->string('zip_code', 255)->nullable();
+                $table->string('answers', 1023)->nullable();
+                $table->boolean('email_verified')->default(false);
+                $table->boolean('unsubscribed')->default(false);
+                $table->boolean('product_sent')->default(false);
+                $table->integer('email_registration_attempts')->default(0);
+                $table->string('shared_email', 255)->nullable();
 
-			$table->string('ip_address', 15)->nullable();
+                $table->string('ip_address', 15)->nullable();
 
-			$table->string('remember_token')->nullable();
+                $table->string('remember_token')->nullable();
 
-			$table->timestamps();
-		});
+                $table->timestamps();
+            });
+        }
 	}
 
 	/**

@@ -25,7 +25,6 @@ class BelifServiceProvider extends ServiceProvider {
 		//set default time to New York
 		date_default_timezone_set('America/New_York');
 		
-		
 		//add forms support (TODO: check if support already available)
 		$loader = AliasLoader::getInstance();
 		if ($loader) {
@@ -33,13 +32,11 @@ class BelifServiceProvider extends ServiceProvider {
         	$loader->alias('HTML', \Collective\Html\HtmlFacade::class);
 		}
 		App::register('Collective\Html\HtmlServiceProvider');
-		
-		
-		
+
 		//register middleware
 		$router = $this->app['router'];
 		if ($router) {
-			$router->middleware('AppHTTPS', 'Belif\Mobile\Middleware\HTTPSMiddleware');	
+			$router->middleware('AppHTTPS', 'Belif\Mobile\Middleware\HTTPSMiddleware');
 //			$router->middleware('AppAuth', 'Soup\Mobile\Middleware\AuthMiddleware');	
 //			$router->middleware('AppSignUp', 'Soup\Mobile\Middleware\SignUpMiddleware');
 //			$router->middleware('NewSignUp', 'Soup\Mobile\Middleware\InquiryRegisteredMiddleware');
@@ -49,9 +46,7 @@ class BelifServiceProvider extends ServiceProvider {
 			$router->middleware('AppMobile', 'Belif\Mobile\Middleware\MobileMiddleware');
 			$router->middleware('AppDesktop', 'Belif\Mobile\Middleware\DesktopMiddleware');
 		}
-		
 
-		
 		//include package routes
 		include __DIR__.'/routes.php';
 		
@@ -62,8 +57,6 @@ class BelifServiceProvider extends ServiceProvider {
 		include __DIR__.'/helpers/CMSHelper.php';
 		include __DIR__.'/helpers/DataHelper.php';
 
-		
-		
 		//load views
 		$this->loadViewsFrom(__DIR__.'/views', 'belif');
 
@@ -71,10 +64,11 @@ class BelifServiceProvider extends ServiceProvider {
 		$this->publishes([
 		    __DIR__.'/../public' => public_path('belif/mobile'),
 		], 'public');
-		
 
-		//force HTTPS (used because Nginx runs HTTP behind AWS portal)
-		\URL::forceSchema('https');
+		// force HTTPS (used because Nginx runs HTTP behind AWS portal)
+        if ($this->app->environment() != 'local') {
+		    \URL::forceSchema('https');
+        }
 
 	} //end boot()
 
