@@ -1,11 +1,8 @@
 <?php
 
-
-
 	//==========================================================//
 	//====						PATTERNS					====//
 	//==========================================================//
-
 
 	//pattern regex
 	$safeStringPattern = '[0-9a-zA-Z_\-]+';
@@ -15,8 +12,6 @@
 	Route::pattern('safestr2', $safeStringPattern);
 	Route::pattern('id', '[0-9]+');
 	
-
-
 	//==========================================================//
 	//====						CMS ROUTING					====//
 	//==========================================================//	
@@ -33,19 +28,14 @@
 		
 		});
 	
-	
 		//mobile only access
 		Route::group(array('middleware' => 'AppMobile'), function() {
 	
-	
-				
 			//secure HTTPS
 			Route::group(array('middleware' => 'AppHTTPS'), function() {
 			
-			
 				//product is available
 				Route::group(array('middleware' => 'ProductAvailable'), function() {
-			
 			
 					//welcome
 					//Route::get('/', ['as' => 'belif.welcome', 'uses' => 'MainController@getIndex']);

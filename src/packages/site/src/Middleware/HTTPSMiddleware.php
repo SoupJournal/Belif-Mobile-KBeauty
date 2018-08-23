@@ -17,11 +17,12 @@
 	     */
 	    public function handle($request, Closure $next)
 	    {
-	    	
-	    	//ensure https connection 
-		    if (!$request->secure()) {
-		    	return Redirect::secure( $request->path('/toSecureURL') );
-		    }
+            if (env('APP_ENV') != 'local') {
+                // ensure https connection
+                if (!$request->secure()) {
+                    return Redirect::secure($request->path('/toSecureURL'));
+                }
+            }
 	
 			//process request
 	        return $next($request);

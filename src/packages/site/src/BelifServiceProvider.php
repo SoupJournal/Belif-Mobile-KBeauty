@@ -66,7 +66,7 @@ class BelifServiceProvider extends ServiceProvider {
 		], 'public');
 
 		// force HTTPS (used because Nginx runs HTTP behind AWS portal)
-        if ($this->app->environment() != 'local') {
+        if (env('APP_ENV') != 'local') {
 		    \URL::forceSchema('https');
         }
 

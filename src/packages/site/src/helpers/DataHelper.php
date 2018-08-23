@@ -229,7 +229,8 @@
 	
 
 
-	function retrieveIPAddress() {
+	function retrieveIPAddress()
+    {
 		
 		$ip = NULL;
 		
@@ -248,10 +249,13 @@
 		
 	} //end retrieveIPAdress()
 
+	function isMobileDevice()
+    {
 
+	    if (env('APP_ENV') == 'local') {
+            return true;
+        }
 
-	function isMobileDevice(){
-		
 		//mobile user agents
 	    $mobileUserAgents = array(
 	        '/iphone/i' => 'iPhone', 
@@ -265,8 +269,7 @@
 	        '/webos/i' => 'Mobile',
 	        '/phone/i' => 'Mobile'
 	    );
-//echo "AGENT: " . $_SERVER['HTTP_USER_AGENT'];
-//exit(0);	
+
 	    //check if Mobile User Agent is detected
 	    foreach($mobileUserAgents as $mobileKey => $mobileOS){
 	        if(preg_match($mobileKey, $_SERVER['HTTP_USER_AGENT'])){
@@ -280,14 +283,12 @@
 	} //end isMobileDevice()
 	
 	
-	
 		//==========================================================//
 		//====					UTIL FUNCTIONS					====//
 		//==========================================================//	
 	
-	
-	
-	function generateUniqueCode($baseSeed = null, $length = -1, $start = -1) {
+	function generateUniqueCode($baseSeed = null, $length = -1, $start = -1)
+    {
 		
 		//create unique string
 		$baseString = ($baseSeed?$baseSeed:"") . microtime() . uniqid();
