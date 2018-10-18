@@ -4,19 +4,15 @@
 	$bootstrapVersion = "3.3.2";
 	$angularVersion = "1.5.8";
 	
-	
 	//DEBUG
 	$useLocalAPIs = false;
 	$debugMode = true;
-	
 	
 	//ensure properties are set
 	$pageName = (isset($pageName) ? $pageName : 'belif');
 	$useHTTP = (isset($useHTTP) ? $useHTTP : false);
 	
-	
 ?>
-
 
 	{{-- Load styles --}}
 	@if (isset($useLocalAPIs) && $useLocalAPIs)
@@ -26,7 +22,6 @@
 	   	<link href="//maxcdn.bootstrapcdn.com/bootstrap/{{ $bootstrapVersion }}/css/bootstrap.min.css" rel="stylesheet">
 	   	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> 
 	@endif
-      
 
 	{{-- Add libraries --}}
     @if (isset($useLocalAPIs) && $useLocalAPIs)
@@ -41,11 +36,10 @@
 		{{ HTML::script('soup/cms/js/core/debug.js') }}
 	@endif
 
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 	{{-- import angularjs version of bootstrap ui --}}
 	{{ HTML::script('soup/cms/js/bootstrap/ui-bootstrap-2.4.0.js') }}
-
-
 
 	{{----------------- SCRIPTS ------------------}}
       
@@ -53,23 +47,17 @@
 
 	{{--------------- END SCRIPTS ----------------}}
 	
-	
-	
 	{{-- custom app scripts --}}
 	{{ HTML::script($assetPath . '/js/gui.js') }}
 	{{ HTML::script($assetPath . '/js/core.js') }}
 	{{ HTML::script($assetPath . '/js/swipe.js') }}
-	{{-- HTML::script($assetPath . '/js/forms.js') --}}
-	
+	{{ HTML::script($assetPath . '/js/jquery.touchSwipe.min.js') }}
 	
 	<!-- add style -->
     {{ HTML::style($assetPath . '/css/theme.css') }} 
     {{ HTML::style($assetPath . '/css/colours.css') }} 
     {{ HTML::style($assetPath . '/css/fonts.css') }} 
     {{ HTML::style($assetPath . '/css/page.css') }} 
-	
-	
-	
 	
 	{{-- Google Analytics --}}
 	<script type="text/javascript"> 

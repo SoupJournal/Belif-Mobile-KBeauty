@@ -13,18 +13,15 @@
     <head>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         
-        
         {{------------------ TITLE -------------------}}
         
         <title>{{ $pagetitle }}</title>
         
         {{---------------- END TITLE -----------------}}
         
-        
         {{----------------- SCRIPTS ------------------}}
 	    @include('belif::general.scripts')
         
-
 		{{-- preloading (for modern browsers) --}}
 		@if (isset($backgroundImage) && strlen($backgroundImage)>0)
 			<link rel="preload" href="{{ $backgroundImage }}" as="image">
@@ -32,14 +29,11 @@
 
     </head>
     
-    
     <body ng-app="belif"> 
-   
 
 		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-5')">
 			
 			<div class="main-page-container fill-height @yield('background-color', 'bg-color-5') color-2">
-				
 	
 		   		{{----------------- HEADER -------------------}}
 		   		@if (!$fullScreen) 
@@ -71,10 +65,8 @@
 				</div>
 			
 			</div>	        	
-	                
               
         </div>
- 
         
  		<div class="main-page">
 	 		<div class="main-page-container">
@@ -85,8 +77,6 @@
 
 			</div>
  		</div>
- 
-        
         
         {{-- load angular modules --}}
         <script type="text/javascript">

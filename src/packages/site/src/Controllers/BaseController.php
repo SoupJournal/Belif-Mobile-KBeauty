@@ -20,6 +20,8 @@
 		const FORM_QUESTION = 'page_question';
 		const FORM_ANSWER = 'page_answer';
 		const FORM_RESULTS = 'page_results';
+		const FORM_RESULTS_A = 'page_results_a';
+		const FORM_RESULTS_B = 'page_results_b';
 		const FORM_PRODUCTS = 'page_products';
 		const FORM_ADDRESS = 'page_address';
 		const FORM_VERIFY = 'page_verify';

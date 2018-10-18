@@ -1,7 +1,5 @@
-
 {{-- header --}}
 <div class="page-header navbar navbar-top bg-color-1 color-2">
-
 
 	{{-- back button --}}
 	<div class="page-header-side">
@@ -10,15 +8,12 @@
 		@endif
 	</div>
 
-
-
 	{{-- title --}}
 	<div class="page-header-center text-center">
 		{{-- <h1 class="font-header">belif</h1> --}}
 		{{-- <h5 class="font-header">believe in truth</h5> --}}
 		<img class="logo-title-image" alt="belif" src="{{ $assetPath }}/images/logo-title.png" load-style1="fade"/>
 	</div>
-   	
    	
    	{{-- next button --}}
    	<div class="page-header-side">
@@ -28,6 +23,4 @@
 		@yield('header-right', '')
    	</div>
 
-</div>
-
-    	
+</div>	

@@ -18,7 +18,7 @@
 	
 	
 	//group controllers into namespace
-	Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['web'/*, 'HTTPS'*/]), function() {
+	Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['web', 'HTTPS']), function() {
 	
 		//desktop only access
 		Route::group(array('middleware' => 'AppDesktop'), function() {
@@ -36,22 +36,15 @@
 			
 				//product is available
 				Route::group(array('middleware' => 'ProductAvailable'), function() {
-			
-					//welcome
-					//Route::get('/', ['as' => 'belif.welcome', 'uses' => 'MainController@getIndex']);
-					
+
 					//email
 					Route::get('/', ['as' => 'belif.home', 'uses' => 'MainController@getEmail']);
 					//Route::get('/email', ['as' => 'belif.email', 'uses' => 'MainController@getEmail']);
 					Route::post('/email', ['as' => 'belif.email', 'uses' => 'MainController@postEmail']);
 					
-					
 					//email required
 					Route::group(array('middleware' => 'EmailRequired'), function() {
 					
-						//guide
-						Route::get('/guide', ['as' => 'belif.guide', 'uses' => 'MainController@getGuide']);
-			
 						//question
 						Route::get('/question', ['as' => 'belif.question', 'uses' => 'ProductController@getQuestion']);		
 						Route::get('/previousquestion', ['as' => 'belif.question.previous', 'uses' => 'ProductController@getPreviousQuestion']);		
@@ -60,11 +53,6 @@
 						
 						//results
 						Route::get('/results', ['as' => 'belif.results', 'uses' => 'ProductController@getResults']);
-						
-						//product
-						Route::get('/product', ['as' => 'belif.product', 'uses' => 'ProductController@getProduct']);
-						Route::post('/product', ['as' => 'belif.product.submit', 'uses' => 'ProductController@postProduct']);
-						
 						
 						//ensure product samples have been selected
 						Route::group(array('middleware' => 'ProductRequired'), function() {
@@ -75,17 +63,16 @@
 							
 						});
 						
-						
 						//verfication
 						Route::get('/verify', ['as' => 'belif.verify', 'uses' => 'MainController@getVerify']);
-						Route::get('/reverify', ['as' => 'belif.reverify', 'uses' => 'MainController@getReverify']);
+
+						// remove the get method eventually
+						Route::get('/sharefriend', ['as' => 'belif.sharefriend', 'uses' => 'MainController@postSharefriend']);
+						Route::post('/sharefriend', ['as' => 'belif.sharefriend', 'uses' => 'MainController@postSharefriend']);
 					
 					}); //end middleware (Email required)
 					
-								
-					
 				}); //end middleware (Product is available)
-				
 				
 				//unavailable
 				Route::get('/unavailable', ['as' => 'belif.unavailable', 'uses' => 'MainController@getUnavailable']);
@@ -102,8 +89,6 @@
 					
 				
 			}); //end middleware (HTTPS only)
-		
-		
 		
 			//TEST EMAIL
 			//Route::get('/testemail', ['as' => 'belif.email.test', 'uses' => 'MainController@getEmailTest']);						

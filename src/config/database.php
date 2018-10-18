@@ -83,7 +83,7 @@ return [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE_CMS', 'kbeauty_cms'),
+            'database' => env('DB_DATABASE_CMS', 'belif-mobile-gh-cms'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', 'root'),
 			'charset'   => 'utf8mb4',

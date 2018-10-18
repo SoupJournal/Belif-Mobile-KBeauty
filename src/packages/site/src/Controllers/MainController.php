@@ -60,9 +60,6 @@
 			
 		} //end getDesktop()
 		
-		
-		
-		
 //		public function getIndex() {
 //		
 //			//get page data
@@ -79,11 +76,6 @@
 //			));
 //			
 //		} //end getIndex()
-	
-	
-
-		
-		
 		
 		public function getEmail() {
 
@@ -98,16 +90,12 @@
 				'pageName' => 'email',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-				//'backURL' => route('belif.home'),
 				'formURL' => route('belif.email'),
 				'termsURL' => 'https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/belif_in_hydration_terms_and_conditions.pdf'
 			));
 			
 		} //end getEmail()
 		
-			
-			
-			
 		public function postEmail() {
 	
 			$valid = true;
@@ -116,7 +104,6 @@
 			//get form values
 			$email = safeArrayValue('email', $_POST);
 			$confirmEmail = safeArrayValue('confirm-email', $_POST);
-			
 			
 			//email exists
 			if (!$email || strlen(trim($email))<=0) {
@@ -130,16 +117,12 @@
 				$valid = false;
 			}
 			
-			
-			
 			//check if email used already
 			$user = User::where('email', '=', $email)->where('email_verified', '=', true)->first();
 			if ($user) {
 				$errors = 'Sorry, looks like you\'ve already registered with that email';
 				$valid = false;
 			}
-			
-			
 			
 			//valid form
 			if ($valid) {
@@ -178,7 +161,7 @@
 				if ($available) {
 	
 					//move to first question
-					return Redirect::route('belif.guide');
+					return Redirect::route('belif.question');
 				
 				}
 				else {
@@ -197,35 +180,28 @@
 			}
 			
 		} //end postEmail()
-		
 			
-			
-			
-		public function getGuide() {
+		// public function getGuide() {
 
-			//get page data
-			$pageData = parent::dataForPage(self::FORM_GUIDE);
+		// 	//get page data
+		// 	$pageData = parent::dataForPage(self::FORM_GUIDE);
 			
-			//get background image
-			$backgroundImage = safeArrayValue('background_image', $pageData);
+		// 	//get background image
+		// 	$backgroundImage = safeArrayValue('background_image', $pageData);
 		
-			//clear quiz answers
-			$this->clearAnswers(0);
+		// 	//clear quiz answers
+		// 	$this->clearAnswers(0);
 		
-			//render view
-			return View::make('belif::pages.guide')->with(Array (
-				'pageName' => 'guide',
-				'pageData' => $pageData,
-				'backgroundImage' => $backgroundImage,
-				'buttonURL' => route('belif.question'),
-				'backURL' => route('belif.home'),
-			));
+		// 	//render view
+		// 	return View::make('belif::pages.guide')->with(Array (
+		// 		'pageName' => 'guide',
+		// 		'pageData' => $pageData,
+		// 		'backgroundImage' => $backgroundImage,
+		// 		'buttonURL' => route('belif.question'),
+		// 		'backURL' => route('belif.home'),
+		// 	));
 			
-		} //end getGuide()
-		
-			
-			
-			
+		// } //end getGuide()
 		
 		public function getUnavailable() {
 
@@ -260,15 +236,8 @@
 			}
 			
 		} //end getUnavailable()
-		
-		
-			
-			
 			
 		public function getAddress() {
-			
-			//check if product available
-			//$available = $this->productAvailable($product);
 			
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_ADDRESS);
@@ -280,22 +249,19 @@
 			return View::make('belif::pages.address')->with(Array (
 				'pageName' => 'address',
 				'pageData' => $pageData,
-				'states' => availableStates(),
 				'backgroundImage' => $backgroundImage,
 				'formURL' => route('belif.address'),
-				'backURL' => route('belif.product')
+				'backURL' => route('belif.results'),
+				'buttonURL' => route('belif.address')
 			));
 			
 		} //end getAddress()
-			
-		
-		
 		
 		public function postAddress() {
 			
 			//get user email 
 			$email = Session::get('email');
-		
+
 			//valid email
 			if ($email && strlen($email)>0 && validEmail($email)) {
 			
@@ -304,22 +270,16 @@
 				$address1 = safeArrayValue('address_1', $_POST, null);
 				$address2 = safeArrayValue('address_2', $_POST, null);
 				$city = safeArrayValue('city', $_POST, null);
-				$stateId = safeArrayValue('state', $_POST, null);
+				$state = safeArrayValue('state', $_POST, null);
 				$zipCode = safeArrayValue('zip_code', $_POST, null);
 			
 				//trim strings
 				$address1 = $address1 ? trim($address1) : null;
 				$city = $city ? trim($city) : null;
 				
-				
-			
 				//get sample product
 				$products = $this->getSelectedProducts();
 				
-				//get state
-				$states = availableStates();
-				$state = (is_numeric($stateId) && $stateId>=0 && $states && $stateId<count($states)) ? $states[$stateId] : null;
-			
 				//find ip address
 				$ipAddress = retrieveIPAddress();
 				
@@ -343,7 +303,6 @@
 						
 					} //end for()
 					
-					
 					try {
 						$answersJSON = json_encode($referencedArray);
 					}
@@ -351,9 +310,6 @@
 						//error processing JSON
 					}	
 				}	
-	
-	
-	
 	
 				//form validation
 				$valid = true;
@@ -364,7 +320,6 @@
 				}
 				
 				//valid address
-				//if ($valid && (!$address1 || !$address2 || strlen(trim($address1))<=0 || strlen(trim($address2))<=0)) {
 				if ($valid && (!$address1 || strlen(trim($address1))<=0)) {
 					$errors = 'Please specify your full address.';
 					$valid = false;
@@ -419,8 +374,6 @@
 						//user already verified
 						if ($user->email_verified) {
 							
-							//TODO: show separate error page
-						
 							//show error
 							$errors = 'Sorry, it looks like your email address has already been used to register';
 							
@@ -428,18 +381,13 @@
 							return Redirect::back()
 								->withInput()
 								->withErrors($errors);
-						
 						}
-						
 					}
 					//new user
 					else {
-						
 						//create user
 						$user = new User();
-						
 					}
-					
 					
 					//valid user
 					if ($user) {
@@ -466,7 +414,6 @@
 						$user->product_1 = $product1;
 						$user->product_2 = $product2;
 						$user->answers = $answersJSON;
-						
 						
 						//save user details
 						if (!$user->save()) {
@@ -504,15 +451,10 @@
 			
 			} //end if (valid question id)
 			
-			
 			//no email specified
 			return Redirect::route('belif.home');
 			
-			
 		} //end postAddress()
-		
-				
-			
 			
 		public function getVerify() {
 			
@@ -528,49 +470,95 @@
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'backURL' => route('belif.address'),
-				'buttonURL' => route('belif.share')
+				'buttonURL' => route('belif.sharefriend'),
+				'formURL' => route('belif.sharefriend')
 			));
 			
 		} //end getVerify()
-		
-		
-		
-		
-		
-		public function getReverify() {
+
+		public function postSharefriend() {
+
+			// need to implement sending email to supplied email address if valid
+			$currentEmail = Session::get('email');
+
+			//get user id
+			$userId = Session::get('userId');
 			
-			//get session email
-			$email = Session::get('email');
-			if ($email && strlen($email)>0) {
+			//validate user id
+			$user = User::where('email', '=', $currentEmail)->first();
+
+			if ($user) {
 				
-				//get user details
-				$user = User::where('email', '=', $email)->first();
-				$this->sendVerifyEmail($user);
+				$valid = true;
+				$errors = null;
+				
+				//get form values
+				$email = safeArrayValue('share_email', $_POST);
+				
+				//email exists
+				if (!$email || strlen(trim($email))<=0) {
+					$errors = 'Please specify a email address.';
+					$valid = false;
+				}
+				
+				//valid email
+				else if (!validEmail($email)) {
+					$errors = 'Please specify a valid email address.';
+					$valid = false;
+				}
+				
+				//valid form
+				if ($valid) {
+					
+					//if user hasn't already sent share email
+					if (!$user->shared_email || strlen($user->shared_email)==0) {
+	
+						//determine if email should be sent
+						$sendMail = true;
+	
+						//check if shared email is already a user (avoid sending emails to unsubscribed users)
+						$sharedUser = User::where('email', '=', $email)->first();
+						if ($sharedUser) {
+							
+							//user has unsubscribed - do not send them an email
+						 	if ($sharedUser->unsubscribed) {
+								$sendMail = false;	
+						 	}
+						}
+						//new user
+						else {
+							//create user
+							$sharedUser = new User();
+							$sharedUser->email = $email;
+							$sharedUser->save();	
+						}
+	
+						//send email
+						if ($sendMail) {
+							$this->sendShareEmail($user, $sharedUser);
+						}
+	
+						//store friends email
+						$user->shared_email = $email;
+						$user->save();
+					
+					} //end if (new share)
+	
+					//show next page
+					return Redirect::route('belif.thanks');
+					
+				}
+				//invalid form
+				else {
+					return Redirect::back()
+								->withInput()
+								->withErrors($errors);
+				}
 			
-			}
+			} //end if (valid user)
 			
-			
-			//get page data
-			$pageData = $this->dataForPage(self::FORM_VERIFY);
-			
-			//get background image
-			$backgroundImage = safeArrayValue('background_image', $pageData);
-			
-			//render view
-			return View::make('belif::pages.verify')->with(Array (
-				'pageName' => 'reverify',
-				'pageData' => $pageData,
-				'backgroundImage' => $backgroundImage,
-				'backURL' => route('belif.address'),
-				'buttonURL' => route('belif.share'),				
-				'verifyEmail' => $user->email
-			));
-			
-		} //end getReverify()
-		
-		
-		
-		
+			return Redirect::route('belif.thanks');
+		}
 		
 		public function getShare() {
 			
@@ -634,9 +622,6 @@
 			return Redirect::route('belif.home');
 			
 		} //end getShare()	
-			
-			
-			
 			
 		public function postShare() {
 			
@@ -727,10 +712,6 @@
 			
 		} //end postShare()
 		
-		
-		
-		
-		
 		public function getThanks() {
 			
 			//get page data
@@ -749,10 +730,6 @@
 			));
 			
 		} //end getThanks()
-		
-			
-			
-			
 			
 		public function getUnsubscribe() {
 			
@@ -769,7 +746,6 @@
 					//update user
 					$user->unsubscribed = true;
 					$user->save();
-					
 			
 					//get page data
 					$pageData = $this->dataForPage(self::FORM_UNSUBSCRIBE);
@@ -791,13 +767,7 @@
 			//invalid code - show home page
 			return Redirect::route('belif.home');
 			
-			
 		} //end getUnsubscribe()
-		
-		
-		
-			
-					
 		
 		//==========================================================//
 		//====					EMAIL METHODS					====//
@@ -836,71 +806,6 @@
 				
 		} //end getEmailTest()
 		
-		/*
-		public function getEmailTest() {
-
-			//test properties
-			$view = 'belif::email.product';
-//			$view = 'belif::email.verify';
-//			$view = 'belif::email.share';
-			$pageId = self::EMAIL_PRODUCT;			
-//			$pageId = self::EMAIL_VERIFY;
-//			$pageId = self::EMAIL_SHARE;			
-			
-
-			
-			//get page data
-			$pageData = $this->dataForPage($pageId);
-			
-			//product image
-			$productImage = null;
-			
-			//test user
-			$user = User::find(1);
-			if ($user) {
-			
-				//get image data
-				$imageData = ProductImage::where(function ($query) use ($user) {
-											$query->where('product_1', $user->product_1)
-											  	  ->where('product_2', $user->product_2);
-										})
-										->orWhere(function ($query) use ($user) {
-											$query->where('product_2', $user->product_1)
-												  ->where('product_1', $user->product_2);
-										})
-										->first();
-			
-				//get product image
-				if ($imageData) {
-					$productImage = safeObjectValue('image', $imageData, null);
-				}
-			
-			}
-			
-			//determine if multiple samples sent
-			$multipleSamples = isset($user->product_1) && isset($user->product_2);
-			
-	//$productImage = "https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/share-background.png";
-
-			//get background image
-			//$productImage = safeArrayValue('background_image', $pageData);
-			
-			//render view
-			return View::make($view)->with(Array (
-				'unsubscribeLink' => 'testLINKtestLINKtestLINK',
-				'pageData' => $pageData,
-				'productImage' => $productImage,
-				'productColour' => '#125a7d',
-				'multipleSamples' => $multipleSamples
-			));
-			
-		} //end test()
-		*/
-		
-		
-		
-		
-		
 		private function generateVerifyCode($user) {
 			
 			//valid user
@@ -920,14 +825,9 @@
 					
 				}
 				
-				
 			} //end if (valid user)
 			
 		} //end generateVerifyCode()
-		
-		
-
-	
 		
 		private function sendVerifyEmail($user) {
 			
@@ -956,29 +856,6 @@
 						$address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
 					}
 					
-					
-//					//create view parameters
-//					$viewParams = Array(
-//						'name' => $user->name,
-//						'address1' => $user->address_1,
-//						'address2' => $user->address_2,
-//						'address3' => $address3,
-//						'pageData' => $pageData,
-//						'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
-//						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
-//					);
-					
-//					//create email view
-//					$view = View::make('belif::email.verify')->with($viewParams);
-					
-					
-//					//create headers
-//					$headers = "MIME-Version: 1.0\r\n"
-//							 . "Content-type: text/html;charset=UTF-8\r\n"
-//							 . "From: " . self::EMAIL_SENDER_VERIFY . "\r\n";
-					
-					
-					
 					//send confirm email (sent via queue to avoid delay loading next page)
 					$emailJob = new SendEmailJob([
 						"recipient" => $user->email, 
@@ -1002,28 +879,6 @@
 					//$emailJob->handle();
 					$result = true;
 				
-					//send through Laravel
-				/*	try {
-						
-						//send email
-						$result = Mail::send('belif::email.verify', $viewParams, function ($data) use ($user) {
-							$data->from(self::EMAIL_SENDER_VERIFY, 'Belif');
-							$data->to($user->email, $user->name);
-							$data->subject(self::EMAIL_SUBJECT_VERIFY);
-						});
-						
-					}
-					//Laravel SMTP failed try alternate
-					catch (Exception $e) {
-				*/		
-						//send email through sendmail
-					//	$result = mail($user->email, self::EMAIL_SUBJECT_VERIFY, $view->render(), $headers);	
-										
-				//	}
-					
-						
-					
-				
 				} //end if (valid code)
 				
 			} //end if (valid user)
@@ -1032,11 +887,6 @@
 			return $result;
 			
 		} //end sendVerifyEmail()
-		
-		
-		
-		
-		
 		
 		private function sendShareEmail($user, $shareUser) {
 			
@@ -1060,27 +910,8 @@
 						//get page data
 						$pageData = $this->dataForPage(self::EMAIL_SHARE);
 		
-		
-		
-//						//create view parameters
-//						$viewParams = Array(
-//							'unsubscribeLink' => URL::to('/unsubscribe?code=' . $shareUser->verify_code)
-//						);
-						
-//						//create email view
-//						$view = View::make('belif::email.share')->with(Array (
-//							'pageData' => $pageData,
-//							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $shareUser->verify_code])
-//						));
-			
 						//create subject line
 						$subject = $user->name . self::EMAIL_SUBJECT_SHARE;
-			
-//						//create headers
-//						$headers = "MIME-Version: 1.0\r\n"
-//								 . "Content-type: text/html;charset=UTF-8\r\n"
-//								 . "From: " . self::EMAIL_SENDER_SHARE . "\r\n";
-			
 			
 						//send share email (sent via queue to avoid delay loading next page)
 						$emailJob = new SendEmailJob([
@@ -1099,26 +930,6 @@
 						$this->dispatch($emailJob);
 						$result = true;
 			
-			/*
-						//send through Laravel
-						try {
-							
-							//send email
-							$result = Mail::send('belif::email.share', $viewParams, function ($data) use ($user) {
-								$data->from(self::EMAIL_SENDER_SHARE, 'Belif');
-								$data->to($shareUser->email);
-								$data->subject($user->name . self::EMAIL_SUBJECT_SHARE);
-							});
-							
-						}
-						//Laravel SMTP failed try alternate
-						catch (Exception $e) {
-				*/
-							//send email through sendmail
-							//$result = mail($shareUser->email, $subject, $view->render(), $headers);
-							
-				//		}
-					
 					}
 				
 				} //end if (valid share address)
@@ -1129,12 +940,7 @@
 			return $result;
 			
 		} //end sendShareEmail()
-		
-		
-		
-		
-		
-		
+
 		private function sendProductEmail($user) {
 			
 			$result = false;
@@ -1152,7 +958,6 @@
 				
 					//get page data
 					$pageData = $this->dataForPage(self::EMAIL_PRODUCT);
-				
 				
 					//compile last address line
 					$address3 = $user->city;

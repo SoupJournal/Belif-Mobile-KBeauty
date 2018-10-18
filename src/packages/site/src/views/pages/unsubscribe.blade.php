@@ -36,8 +36,8 @@
 <div class="text-center page-padding-medium">
 	
 		
-	<div class="spacer-larger"></div>
-	<div class="spacer-small"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-medium"></div>
 	
 	<div class="row page-margin">
 	

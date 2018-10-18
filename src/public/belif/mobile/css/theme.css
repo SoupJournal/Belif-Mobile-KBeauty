@@ -1,0 +1,646 @@
+/********************************/
+/* 			PAGE STYLING		*/
+/********************************/
+
+
+/* main page */
+.main-page {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	overflow-x: hidden;
+}
+
+.main-page-full {
+	margin: 0 auto;
+/*	overflow: hidden;*/
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.main-page-full .header {
+	max-height: 100px;
+}
+
+.main-body {
+	border: none;	
+	/*padding-bottom: 162.6%;*/
+}
+
+.main-page-full .main-body {
+	display: table;
+    height: 100%;
+    width: 100%;
+	/*padding-bottom: 10%;*/
+}
+
+
+.main-page-container {
+	/*overflow-y: auto;*/
+}
+
+
+.page-header {
+/*	display: table-row;
+	height: 0;	*/
+}
+
+
+.page-body {
+	position: relative;	
+}
+
+
+.page-container {
+	position: relative;
+	width: 100%;
+/*	height: 100%;	*/
+}
+
+.page-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+	z-index: 0;
+	min-height: 400px;
+}
+
+.page-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+}
+
+.page-section {
+	position: relative;
+	display: block;
+}
+
+.page-match-window {
+	
+}
+
+
+.framed-box {
+	border: 2px solid;
+	margin-left: 5%;	
+	margin-right: 5%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.question-overlay {
+	pointer-events: none;
+	overflow: hidden;
+}
+
+
+.progress-footer {
+	position: absolute;
+	bottom: 1.4%;
+/*	top: 90%;*/
+	left: 3%;
+	right: 3%;
+	pointer-events: none;	
+}
+
+
+.profile-field {
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding-top: 3%;
+	padding-bottom: 3%;	
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+.profile-diet-container {
+	display: inline-block;	
+	width: 30%;
+}
+
+.diet-icon-box {
+	width: 15%;
+}
+
+.profile-arrow-box {
+	position: relative;
+	margin: 0 auto;
+	width: 12%;
+	padding-bottom: 12%;
+}
+
+
+
+
+
+/********************************/
+/* 			SYSTEM		 		*/
+/********************************/
+
+.alert {
+	margin-bottom: 0;	
+}
+
+
+/********************************/
+/* 			HEADER		 		*/
+/********************************/
+
+
+.page-header {
+	margin: 0;	
+	border: none;
+	border-radius: 0;
+	padding: 0.8% 0 0.8% 0;	
+	overflow-y: hidden;
+	z-depth: 100;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-direction: row;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.page-header-side {
+	width: 20%;
+	text-align: center;
+}
+
+.page-header-center {
+	width: 60%;
+	height: 100%;
+}
+
+
+
+/********************************/
+/* 			MENU		 		*/
+/********************************/
+
+.menu-overlay {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    /* top: 67.46px;*/
+    left: 0;
+    overflow-y: hidden; /* hide scroll bar during transition */
+    transition: 0.5s;
+}
+
+
+.gradient-overlay {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: transparent; /* fallback color if gradients are not supported */
+  	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0) 32%); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  	background-image: -moz-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0) 32%); /* For Firefox (3.6 to 15) */
+  	background-image: -o-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0) 32%); /* For old Opera (11.1 to 12.0) */ 
+  	background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0) 32%); /* Standard syntax; must be last */
+}
+
+.gradient-overlay-2 {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: transparent; /* fallback color if gradients are not supported */
+  	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0) 35%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.7)); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  	background-image: -moz-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0) 35%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.7)); /* For Firefox (3.6 to 15) */
+  	background-image: -o-linear-gradient(top, rgba(0,0,0,0.8), rgba(0,0,0,0) 35%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.7)); /* For old Opera (11.1 to 12.0) */ 
+  	background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0) 35%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.7)); /* Standard syntax; must be last */
+}
+
+.fill-overlay {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.3);
+}
+
+
+/********************************/
+/* 			FILLS		 		*/
+/********************************/
+
+
+.background-fill {
+/*	padding-bottom: 157%; */
+}
+
+
+.clear-header-margins {
+	-webkit-margin-before:0em;
+	-webkit-margin-after:0em;	
+}
+
+.clear-header-margins-all {
+	-webkit-margin-before:0em;
+	-webkit-margin-after:0em;
+	margin-top: 0;
+	margin-bottom: 0;	
+}
+
+.hide-overflow-y {
+	overflow-y: hidden;	
+}
+
+.proportional-fill {
+	width: 100%;
+	height: auto;	
+}
+
+
+
+/********************************/
+/* 			MARGINS		 		*/
+/********************************/
+
+
+.page-margin-tiny {
+	margin-left: 2%;
+	margin-right: 2%;	
+}
+
+.page-margin-small {
+	margin-left: 5%;
+	margin-right: 5%;	
+}
+
+.page-margin-medium {
+	margin-left: 7.5%;
+	margin-right: 7.5%;	
+}
+
+
+.page-margin-large {
+	margin-left: 10%;
+	margin-right: 10%;	
+}
+
+
+
+/********************************/
+/* 			PADDING		 		*/
+/********************************/
+
+.page-padding-tiny {
+	padding-left: 1%;	
+	padding-right: 1%;
+}
+
+
+.page-padding-small {
+	padding-left: 4%;	
+	padding-right: 4%;
+}
+
+
+.page-padding-small-2 {
+	padding-left: 5.5%;	
+	padding-right: 5.5%;
+}
+
+
+.page-padding-medium {
+	padding-left: 9%;	
+	padding-right: 9%;
+}
+
+.page-padding-medium-2 {
+	padding-left: 12%;	
+	padding-right: 12%;
+}
+
+.page-padding-large {
+	padding-left: 15%;	
+	padding-right: 15%;
+}
+
+.page-padding-larger {
+	padding-left: 20%;	
+	padding-right: 20%;
+}
+
+.page-padding-larger-more {
+	padding-left: 27%;	
+	padding-right: 27%;
+}
+
+.page-padding-very-large {
+	padding-left: 30%;	
+	padding-right: 30%;
+}
+
+.page-padding-extreme {
+	padding-left: 37.5%;	
+	padding-right: 37.5%;	
+}
+
+/********************************/
+/* 			ALIGNMENT	 		*/
+/********************************/
+
+
+/* centered columns styles */
+.row-centered {
+    text-align: center;
+}
+
+.row-left {
+    text-align: left;
+}
+
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+
+
+.row-centered {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	transform: translateY(-50%);
+}
+
+
+
+.table-parent {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.table-center-row {
+	display: table-cell;
+  	text-align: center;
+  	vertical-align: middle;
+}
+
+.table-center-row {
+	display: table-row;
+  	text-align: center;
+  	vertical-align: middle;
+}
+
+.table-center-cell {
+	display: table-cell;
+  	text-align: center;
+  	vertical-align: middle;
+}
+
+
+
+.table-column-left {
+	display: table-cell;
+	text-align: left;
+}
+
+.table-column-center {
+	display: table-cell;
+	text-align: center;
+}
+
+.table-column-right {
+	display: table-cell;
+	text-align: right;
+}
+
+
+.no-margins {
+	margin-top: 0;
+	margin-bottom: 0;	
+}
+
+.small-margins {
+	margin-top: 0.8vw;
+	margin-bottom: 0.8vw;	
+}
+
+
+/********************************/
+/* 			IMAGES	 			*/
+/********************************/
+
+
+.background-proportional {
+	background: no-repeat;
+  	background-size: cover;
+  	background-position: center center;
+  	width: 100%;
+}
+
+
+.background-scale-fill {
+	background: no-repeat;
+  	background-size: 100% 100%;
+  	background-position: center center;
+  	width: 100%;
+ /* 	height: 100%;*/
+}
+
+
+/********************************/
+/* 			SIZING	 			*/
+/********************************/
+
+
+.shrink-to-fit {
+	display: inline-block;
+	position: relative;
+}
+
+
+.stretch-to-fit {
+	display: block;
+	position:absolute;
+	height:auto;
+	bottom:0;
+	top:0;
+	left:0;
+	right:0;
+}
+
+.stretch-to-width {
+	position:absolute;
+  	left:0;
+  	right:0;
+}
+
+.stretch-to-height {
+	position:absolute;
+  	top:0;
+  	bottom:0;
+}
+
+
+.inline {
+	display: inline;	
+}
+
+
+.clear-padding {
+	padding: 0;	
+}
+
+.fill-height {
+	height: 100%;	
+}
+
+.fill-height-or-more {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/********************************/
+/* 			  DISPLAY	 		*/
+/********************************/
+
+
+.clear {
+	display: hidden;
+	opacity: 0;	
+}
+
+
+/********************************/
+/* 				GUI	 			*/
+/********************************/
+
+
+.container-top {
+	position: absolute;
+	top: 0;
+	width: 100%;	
+}
+
+
+.container-bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;	
+}
+
+
+.bg-danger {
+	background-color: transparent;
+	color: #882222;
+}
+
+button:hover {
+	color: rgb(35, 82, 124);	
+}
+
+
+.form-group {
+	margin-bottom: 1%;	
+}
+
+
+.clear-vertical-padding {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;	
+}
+
+/********************************/
+/* 			LOADING	 			*/
+/********************************/
+
+
+/* hidden element - used for preloading */
+.preload {
+	position: absolute;
+	width: 0;
+	height: 0;	
+	opacity: 0;
+}
+
+
+/********************************/
+/* 			TRANSFORMS	 		*/
+/********************************/
+
+
+.flip-horizontal {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";	
+}
+
+.flip-vertical {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter: "FlipV";		
+}
+
+
+.terms {
+	font-size: 4vw;
+	font-family: SansaNormal;
+}
+
+.answer-cloud {
+	margin: 0 auto;
+	padding: 5px;
+    width: 90%;
+    font-family: SansaNormal;
+    font-style: italic;
+    color: #fff;
+    font-size: 3vw;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.light-blue-left {
+	background: #41b6e6; /* url("../images/backgrounds/left-light-blue.png") no-repeat bottom left;*/
+}
+
+.light-blue-right {
+	background: #41b6e6; /* url("../images/backgrounds/right-light-blue.png") no-repeat bottom right;*/
+}
+
+.dark-blue-left {
+	background: #2c68ae; /* url("../images/backgrounds/left-dark-blue.png") no-repeat bottom left;*/
+}
+
+.dark-blue-right {
+	background: #2c68ae; /* url("../images/backgrounds/right-dark-blue.png") no-repeat bottom right;*/
+}

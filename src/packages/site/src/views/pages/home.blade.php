@@ -69,7 +69,6 @@
 			{{-- title --}}
 			<div class="shrink-to-fit">
 			<div class="bg-color-opacity-1 box-margin">
-				<!-- div class="stretch-to-fit bg-color-2 opacity-50"></div -->
 				<h3 class="title-3 color-4 box-padding">{{ $text }}</h3>
 			</div>
 			</div>

@@ -25,7 +25,7 @@
 	
 		    //ensure has selected a product
 			if (!$selectedProducts || count($selectedProducts)<=0) {
-		        return Redirect::route('belif.product');
+		        return Redirect::route('belif.results');
 		    }
 	
 			//process request

@@ -1,0 +1,84 @@
+
+/********************************/
+/* 			 COLOURS 			*/
+/********************************/
+
+.color-1 {
+	color: #000000;
+}
+
+
+.color-2 {
+	color: #FFFFFF;
+}
+
+
+.color-3 {
+	color: #48B6E4;
+}
+
+
+.color-4 {
+	color: #3069AD;
+}
+
+.question-color-1 {
+	color: #fff;
+}
+
+.question-color-2 {
+	color: #3069AD;
+}
+
+.question-color-3 {
+	color: #48B6E4;
+}
+
+
+/********************************/
+/* 		BACKGROUND COLOURS 		*/
+/********************************/
+
+.bg-color-clear {
+	background-color: "transparent";
+}
+
+.bg-color-1 {
+	background-color: #000000;	
+}
+
+.bg-color-2 {
+	background-color: #FFFFFF;	
+}
+
+.bg-color-3 {
+	background-color: #48B6E4;	
+}
+
+.bg-color-4 {
+	background-color: #3069AD;	
+}
+
+/********************************/
+/* 			OPACITY 			*/
+/********************************/
+
+.bg-color-opacity-1 {
+	background-color: rgba(255,255,255,0.7);
+}
+
+.page-input-text::-webkit-input-placeholder {
+	color: #3069AD !important;
+}
+ 
+.page-input-text:-moz-placeholder { /* Firefox 18- */
+	color: #3069AD !important;  
+}
+ 
+.page-input-text::-moz-placeholder {  /* Firefox 19+ */
+	color: #3069AD !important;  
+}
+ 
+.page-input-text:-ms-input-placeholder {  
+	color: #3069AD !important;  
+}
