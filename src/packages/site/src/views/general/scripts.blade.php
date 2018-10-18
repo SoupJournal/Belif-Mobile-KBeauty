@@ -67,11 +67,10 @@
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  		ga('create', 'UA-91272304-2', 'auto');
+  		ga('create', 'UA-90585268-6', 'auto');
  		ga('send', 'pageview', '{{ $pageName }}');
  		
 	</script>
-	
 	
 	{{-- Facebook Pixel Code --}}
 	<script>
