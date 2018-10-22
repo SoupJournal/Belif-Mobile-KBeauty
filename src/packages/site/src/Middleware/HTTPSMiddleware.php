@@ -20,7 +20,7 @@
             if (env('APP_ENV') != 'local') {
                 // ensure https connection
                 if (!$request->secure()) {
-                    return Redirect::secure($request->path('/toSecureURL'));
+                    #return Redirect::secure($request->path('/toSecureURL'));
                 }
             }
 	
