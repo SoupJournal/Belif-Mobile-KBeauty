@@ -112,13 +112,16 @@
 		$("#question-left").swipe( {
 			swipeStatus:function(event, phase, direction, distance, duration, fingers, fingerData, currentDirection)
         	{
+        		$('.page-body').css('left','');
         		$('input[name="value"]').val('B');
-        		if (direction == "left") {
+        		console.log(direction);
+        		console.log(distance);
+        		//if (direction == "right") {
         			$('.page-body').css('right', distance + 'px');
 	        		if (distance > 150) {
 	        			$('form[name="questionForm"]').submit();
 	        		}
-	        	}
+	        	//}
 	        	if (phase == 'end' && distance < 150) {
 	        		$('.page-body').css('right', '0px');
 	        	}
@@ -128,13 +131,16 @@
 		$("#question-right").swipe( {
 			swipeStatus:function(event, phase, direction, distance, duration, fingers, fingerData, currentDirection)
         	{
+        		$('.page-body').css('right','');
         		$('input[name="value"]').val('A');
-        		if (direction == "right") {
+        		console.log(direction);
+        		console.log(distance);
+        		//if (direction == "left") {
 	        		$('.page-body').css('left', distance + 'px');
 	        		if (distance > 150) {
 	        			$('form[name="questionForm"]').submit();
 	        		}
-	        	}
+	        	//}
 	        	if (phase == 'end' && distance < 150) {
 	        		$('.page-body').css('left', '0px');
 	        	}
