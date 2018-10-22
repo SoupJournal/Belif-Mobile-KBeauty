@@ -39,7 +39,7 @@
 
 ?>
 
-{{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL)) }}
+{{ Form::open(Array('role' => 'form', 'name' => 'questionForm', 'url' => $formURL)) }}
 
 <div class="text-center">
 	
@@ -111,17 +111,15 @@
 	$(function() {			
 		$("#question-left").swipe( {
 			swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
-				console.log("You swiped left!!");
-				$('[name=value]').val('B');
-				$('[name=emailForm').submit();
+				$('input[name="value"]').val('B');
+				$('form[name="questionForm"]').submit();
 			},
 			threshold:0
 		});
 		$("#question-right").swipe( {
 			swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) {
-				console.log("You swiped right!!");	
-				$('[name=value]').val('A');
-				$('[name=emailForm').submit();
+				$('input[name="value"]').val('A');
+				$('form[name="questionForm"]').submit();
 			},
 			threshold:0
 		});
