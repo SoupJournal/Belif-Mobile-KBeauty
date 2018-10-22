@@ -127,9 +127,6 @@
 		
 			{{-- Cancel button --}}
 			<a href ng-click="openModal('noShare', 'modalContainer', 'NoShare.html');" class="color-1"><h4 class="button-link">{{ $buttonNo }}</h4></a>
-				
-		
-
 		
 			<div class="spacer-larger"></div>
 			<div class="spacer-small"></div>

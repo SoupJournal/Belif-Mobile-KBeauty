@@ -725,8 +725,7 @@
 				'pageName' => 'thanks',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-				'buttonURL' => 'http://www.sephora.com/belif'
-				//'backURL' => URL::to('/share'),
+				'buttonURL' => 'https://www.instagram.com/beliffrance/'
 			));
 			
 		} //end getThanks()

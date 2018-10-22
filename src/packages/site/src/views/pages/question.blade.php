@@ -110,18 +110,40 @@
 <script>
 	$(function() {			
 		$("#question-left").swipe( {
-			swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
-				$('input[name="value"]').val('B');
-				$('form[name="questionForm"]').submit();
-			},
-			threshold:0
+			// swipeLeft:function(event, direction, distance, duration, fingerCount, fingerData) {
+			// 	if (direction == 'left') {
+			// 		$('input[name="value"]').val('B');
+			// 		$('form[name="questionForm"]').submit();
+			// 	}
+			// 	console.log(distance);
+			// },
+			swipeStatus:function(event, phase, direction, distance, duration, fingers, fingerData, currentDirection)
+        	{
+        		$('input[name="value"]').val('B');
+        		$('.page-body').css('right', distance + 'px');
+        		if (distance > 200) {
+        			$('form[name="questionForm"]').submit();
+        		}
+        	},
+        	threshold:200
 		});
 		$("#question-right").swipe( {
-			swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) {
-				$('input[name="value"]').val('A');
-				$('form[name="questionForm"]').submit();
-			},
-			threshold:0
+			// swipeRight:function(event, direction, distance, duration, fingerCount, fingerData) {
+			// 	if (direction == 'right') {
+			// 		$('input[name="value"]').val('A');
+			// 		$('form[name="questionForm"]').submit();
+			// 	}
+			// 	console.log(distance);
+			// },
+			swipeStatus:function(event, phase, direction, distance, duration, fingers, fingerData, currentDirection)
+        	{
+        		$('input[name="value"]').val('A');
+        		$('.page-body').css('left', distance + 'px');
+        		if (distance > 200) {
+        			$('form[name="questionForm"]').submit();
+        		}
+        	},
+			threshold:200
 		});
 	});
 </script>
