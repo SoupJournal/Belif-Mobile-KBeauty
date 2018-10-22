@@ -80,8 +80,6 @@
 		   	 	<div class="spacer-tiny"></div>
 		    @endif
 		
-			<div class="spacer-tiny"></div>
-		
 			{{-- submit button --}}
 			<button class="button-page bg-color-3 color-2" label="{{ $button }}">
 				{{ $button }}
@@ -92,9 +90,6 @@
 			<p class="terms italic"><input type="checkbox" name="agree" value="1" required /> <a href="{{ $termsURL }}" class="color-1" target="_blank">{{ $buttonNo }}</a></p>
 			
 		</div>
-		<!-- load group -->
-		
-		<div class="spacer-small"></div>
 
 </div>
 
