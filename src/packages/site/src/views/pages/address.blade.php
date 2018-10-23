@@ -24,7 +24,6 @@
 	//ensure page properties are set
 	$formURL = isset($formURL) ? $formURL : "";
 	$buttonURL = isset($buttonURL) ? $buttonURL : "";
-	$states = isset($states) ? $states : null;
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
@@ -90,11 +89,6 @@
 	{{-- city --}}
 	<div class="form-group"> 
 		{{ Form::text('city', null, Array ('placeholder' => 'City', 'class' => 'page-input-text page-input-center color-4', 'required' => '', 'auto-next-focus' => '')) }}
-	</div>
-
-	{{-- state --}}
-	<div class="form-group"> 
-		{{ Form::text('state', null, Array ('placeholder' => 'State', 'class' => 'page-input-text page-input-center color-4', 'required' => '', 'auto-next-focus' => '')) }}
 	</div>
 
 	{{--zip code --}}

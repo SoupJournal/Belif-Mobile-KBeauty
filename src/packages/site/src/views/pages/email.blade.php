@@ -58,7 +58,7 @@
 			
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 		
 		<!-- load group -->
 		<div class="page-padding-medium" load-style="fade" load-group="page">

@@ -270,7 +270,6 @@
 				$address1 = safeArrayValue('address_1', $_POST, null);
 				$address2 = safeArrayValue('address_2', $_POST, null);
 				$city = safeArrayValue('city', $_POST, null);
-				$state = safeArrayValue('state', $_POST, null);
 				$zipCode = safeArrayValue('zip_code', $_POST, null);
 			
 				//trim strings
@@ -330,12 +329,6 @@
 					$valid = false;
 				}
 				
-				//valid state
-				if ($valid && (!$state || strlen(trim($state))<=0)) {
-					$errors = 'Please specify your state.';
-					$valid = false;
-				}
-				
 				//valid zip code
 				if ($valid && (!$zipCode || strlen(trim($zipCode))<=0)) {
 					$errors = 'Please specify your zip code.';
@@ -350,7 +343,6 @@
 						
 					//check for existing addresses
 					$addressUsers = User::where('email_verified', '=', true)
-							->where('state', '=', $state)
 							->where('zip_code', '=', $zipCode)
 							->where('city', 'like', $city)
 							->where('address_1', 'like', $address1)
@@ -408,7 +400,6 @@
 						$user->address_1 = $address1;
 						$user->address_2 = $address2;
 						$user->city = $city;
-						$user->state = $state;
 						$user->zip_code = $zipCode;
 						$user->ip_address = $ipAddress;
 						$user->product_1 = $product1;
@@ -609,7 +600,6 @@
 							'pageName' => 'share',
 							'pageData' => $pageData,
 							'backgroundImage' => $backgroundImage,
-							//'backURL' => URL::to('/address'),
 						));
 					
 					}
