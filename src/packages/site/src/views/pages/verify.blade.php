@@ -50,7 +50,6 @@
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
 		<div class="spacer-small"></div>
 		
 		<div load-style="fade" load-group="page">
