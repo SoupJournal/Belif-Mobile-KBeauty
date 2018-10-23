@@ -16,13 +16,6 @@
 
 	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
 	
-	<?php
-	
-		//set custom page controllers
-		//$pageModules = Array('cms.form');
-	
-	?>
-	
 @stop
 {{--------------- END SCRIPTS ----------------}}
 
@@ -52,13 +45,9 @@
 	$products = isset($products) ? $products : null;
 	$numberOfSamples = isset($numberOfSamples) ? $numberOfSamples : 0;
 	$formURL = isset($formURL) ? $formURL : '';
-	//$buttonURL = isset($buttonURL) ? $buttonURL : null;
-
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
-	//$subtitle = safeArrayValue('subtitle', $pageData, ""); 
-	//$text = safeArrayValue('text', $pageData, ""); 
 	$button = safeArrayValue('button', $pageData, "");
 	
 	//already selected items
@@ -67,10 +56,6 @@
      	$selected = json_encode(Session::get('selectedProducts'));
 	}
 	
-	//if (isset($selectedProducts) && count($selectedProducts)>0) {
-	//	$selected = json_encode($selectedProducts);
-	//}
-
 ?>
 
 <div class="text-center page-padding-small" ng-controller="BelifController" ng-init="initProducts({{ $numberOfSamples }}, {{ $selected }})">
@@ -116,16 +101,12 @@
 			</div>
 		@endif
 	
-	
 		{{-- selected products --}}
 		<div class="selected-products-box">
 			<div class="selected-product-image-box" ng-repeat="product in selectedProducts">
 				<img src="#{ product.img }#" class="selected-product-image">
 			</div>
 		</div>
-	
-	
-
 		
 		{{-- display form errors --}}
 	    @if ($errors->has())
@@ -138,20 +119,14 @@
 			<div class="spacer-tiny"></div>
 	    @endif
 	
-	
-	
-	
 		{{-- next button --}}
 		<button class="button-page bg-color-5 color-2" label="{{ $button }}">
 			{{ $button }}
 		</button>
-	
-		
 		
 		<div class="spacer-small">
 		
 	{{ Form::close() }}
-		
 	
 </div>
 

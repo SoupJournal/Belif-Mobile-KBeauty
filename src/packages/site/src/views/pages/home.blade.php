@@ -16,19 +16,8 @@
 
 	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
 	
-	<?php
-	
-		//set custom page controllers
-		//$pageModules = Array('cms.form');
-	
-	?>
-	
 @stop
 {{--------------- END SCRIPTS ----------------}}
-
-
-
-
 
 {{----------------- CONTENT ------------------}}
 

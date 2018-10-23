@@ -7,9 +7,6 @@
 
 {{---------------- END TITLE -----------------}}
 
-
-
-
 {{----------------- SCRIPTS ------------------}}
 
 @section('scripts')
@@ -33,36 +30,27 @@
 		$answerB = safeArrayValue('answer_B', $questionData, null);
 		$answerC = safeArrayValue('answer_C', $questionData, null);
 		$theme = safeArrayValue('theme', $questionData, 0);
-	
 
 		//form submit URL
 		$formURL = isset($formURL) ? $formURL : "";
 
-
 		//determine button colours
 		$answerClass = "answer-theme-" . $theme;
 		$checkClass = "answer-check-theme-" . $theme;
-
 
 	?>
 	
 @stop
 {{--------------- END SCRIPTS ----------------}}
 
-
-
-
-
 {{----------------- CONTENT ------------------}}
 
 @section('content')
-
 
 <div class="text-center">
 	
 	{{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL)) }}
 	
-		
 		<div class="page-padding-medium">
 	
 			<div class="spacer-large"></div>
@@ -73,14 +61,10 @@
 			<div class="spacer-small-2"></div>
 			<h3 class="color-2 no-margins">{!! $question !!}</h3>
 					
-
-		
 			<div class="spacer-large"></div>
 		
-		
 		</div>
-		
-		
+
 		<div class="page-padding-small">
 		
 			{{-- answers --}}
@@ -107,15 +91,11 @@
 				</button>
 			@endif
 			
-			
 			<div class="spacer-small"></div>
-
 		
 		</div>
 	
-	
 		<div class="spacer-small"></div>
-	
 	
 	{{ Form::close() }}
 

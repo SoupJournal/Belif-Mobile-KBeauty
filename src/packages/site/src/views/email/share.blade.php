@@ -179,7 +179,7 @@
 							<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="#" style="text-decoration:none; color:#000000;">unsubscribe</a> <unsubscribe>unsubscribe</unsubscribe></td>
+							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="{{ $unsubscribeLink }}" style="text-decoration:none; color:#000000;">se désabonner</a></td>
 						</tr>
 						<tr>
 							<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>

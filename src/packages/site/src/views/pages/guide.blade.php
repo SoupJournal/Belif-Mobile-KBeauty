@@ -16,19 +16,8 @@
 
 	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
 	
-	<?php
-	
-		//set custom page controllers
-		//$pageModules = Array('cms.form');
-	
-	?>
-	
 @stop
 {{--------------- END SCRIPTS ----------------}}
-
-
-
-
 
 {{----------------- CONTENT ------------------}}
 
@@ -71,11 +60,8 @@
 				</div>
 			@endif
 			
-			
-			
 			<!-- load group -->
 			<div load-style="fade" load-group="page">
-				
 
 				{{-- html --}}
 				@if ($html && strlen($html)>0) 
@@ -85,30 +71,24 @@
 					</div>
 				@endif
 		
-		
 				<div class="spacer-tiny"></div>
-	
 	
 				{{-- text --}}
 				<h4 class="title-light color-2 page-margin-large">
 					{{ $text }}
 				</h4>
 	
-	
 				<div class="spacer-small"></div>
-			
 			
 				{{-- next button --}}
 				<a href="{{ $buttonURL }}" class="button-page bg-color-3 color-2" label="{{ $button }}">
 					{{ $button }}
 				</a>
-				
 					
 			</div>
 			<!-- load group -->
 					
 			<div class="spacer-small"></div>
-		
 		
 		</div>
 
