@@ -57,7 +57,7 @@
 	
 			{{-- enter email --}}
 			<div class="form-group"> 
-				{{ Form::email('share_email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text large no-border color-4 white-background', 'tabindex' => '1', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::email('share_email', null, Array ('placeholder' => 'vosamis@email.com', 'class' => 'page-input-text large no-border color-4 white-background', 'tabindex' => '1', 'required' => '', 'auto-next-focus' => '')) }}
 			</div>
 
 			{{-- info --}}

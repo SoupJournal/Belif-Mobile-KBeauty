@@ -37,6 +37,9 @@
 	$answerLeft = $questionData['answer_A'];
 	$answerRight = $questionData['answer_B'];
 
+	$leftColor = ($questionNumber == 1) ? 'dark' : 'light';
+	$rightColor = ($questionNumber == 1) ? 'light' : 'dark';
+
 ?>
 
 {{ Form::open(Array('role' => 'form', 'name' => 'questionForm', 'url' => $formURL)) }}
@@ -71,7 +74,7 @@
 				<div class="spacer-large"></div>
 				<div class="spacer-large"></div>
 				<div class="spacer-large"></div>
-				<div class="answer-cloud light-blue-left">{{ $answerLeft }}</div>
+				<div class="answer-cloud {{ $leftColor }}-blue-left">{{ $answerLeft }}</div>
 				<div class="spacer-large"></div>
 				<div class="spacer-large"></div>
 				<div class="spacer-large"></div>
@@ -90,7 +93,7 @@
 				<div class="spacer-large"></div>
 				<div class="spacer-large"></div>
 				<div class="spacer-large"></div>
-				<div class="answer-cloud dark-blue-right">{{ $answerRight }}</div>
+				<div class="answer-cloud {{ $rightColor }}-blue-right">{{ $answerRight }}</div>
 				<div class="spacer-large"></div>
 				<div class="spacer-large"></div>
 				<div class="spacer-large"></div>
