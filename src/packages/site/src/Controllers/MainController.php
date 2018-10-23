@@ -31,9 +31,6 @@
 			
 		} //end missingMethod()
 		
-		
-		
-		
 		public function getDesktop() {
 
 			//non-mobile device
@@ -59,23 +56,6 @@
 			return Redirect::action('ProductController@getIndex');
 			
 		} //end getDesktop()
-		
-//		public function getIndex() {
-//		
-//			//get page data
-//			$pageData = parent::dataForFormId(self::FORM_HOME);
-//			
-//			//get background image
-//			$backgroundImage = safeArrayValue('background_image', $pageData);
-//			
-//			//render view
-//			return View::make('belif::pages.home')->with(Array (
-//				'pageName' => 'home',
-//				'pageData' => $pageData,
-//				'backgroundImage' => $backgroundImage
-//			));
-//			
-//		} //end getIndex()
 		
 		public function getEmail() {
 
@@ -181,28 +161,6 @@
 			
 		} //end postEmail()
 			
-		// public function getGuide() {
-
-		// 	//get page data
-		// 	$pageData = parent::dataForPage(self::FORM_GUIDE);
-			
-		// 	//get background image
-		// 	$backgroundImage = safeArrayValue('background_image', $pageData);
-		
-		// 	//clear quiz answers
-		// 	$this->clearAnswers(0);
-		
-		// 	//render view
-		// 	return View::make('belif::pages.guide')->with(Array (
-		// 		'pageName' => 'guide',
-		// 		'pageData' => $pageData,
-		// 		'backgroundImage' => $backgroundImage,
-		// 		'buttonURL' => route('belif.question'),
-		// 		'backURL' => route('belif.home'),
-		// 	));
-			
-		// } //end getGuide()
-		
 		public function getUnavailable() {
 
 			
@@ -449,6 +407,16 @@
 			
 		public function getVerify() {
 			
+			//get user email 
+			$email = Session::get('email');
+
+			$user = User::where('email', $email)->first();
+
+			$resend = safeArrayValue('resend', $_GET, false);
+			if ($resend) {
+				$this->sendVerifyEmail($user);
+			}
+
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_VERIFY);
 			

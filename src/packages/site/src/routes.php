@@ -16,7 +16,6 @@
 	//====						CMS ROUTING					====//
 	//==========================================================//	
 	
-	
 	//group controllers into namespace
 	Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['web', 'HTTPS']), function() {
 	
@@ -39,7 +38,6 @@
 
 					//email
 					Route::get('/', ['as' => 'belif.home', 'uses' => 'MainController@getEmail']);
-					//Route::get('/email', ['as' => 'belif.email', 'uses' => 'MainController@getEmail']);
 					Route::post('/email', ['as' => 'belif.email', 'uses' => 'MainController@postEmail']);
 					
 					//email required
@@ -90,11 +88,7 @@
 				
 			}); //end middleware (HTTPS only)
 		
-			//TEST EMAIL
-			//Route::get('/testemail', ['as' => 'belif.email.test', 'uses' => 'MainController@getEmailTest']);						
-		
 		}); //end middleware (mobile only)
-	
 	
 	}); //end namespace group
 	

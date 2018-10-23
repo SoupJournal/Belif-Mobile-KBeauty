@@ -68,7 +68,6 @@
 			<div class="spacer-large"></div>
 			<div class="spacer-large"></div>
 			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
 			<div class="spacer-medium"></div>
 
 		
@@ -86,7 +85,7 @@
 		        @endforeach
 		    @endif
 		
-			<h5 class="title-light color-2 no-margins">{!! $html !!}</h5>
+			<h5 class="title-light color-2 no-margins">{!! $text !!}</h5>
 			
 			<div class="spacer-tiny"></div>
 
