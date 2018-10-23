@@ -37,9 +37,6 @@
 {{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL)) }}
 
 <div class="text-center page-padding-small" id="modalContainer">
-		
-	<div class="spacer-small-2"></div>
-	<div class="spacer-tiny"></div>
 	
 	<div class="page-padding-small">
 	
@@ -50,7 +47,6 @@
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
-		<div class="spacer-small"></div>
 		
 		<div load-style="fade" load-group="page">
 	
@@ -75,8 +71,6 @@
 		</div>
 	
 	</div>
-
-	<div class="spacer-larger"></div>
 
 </div>
 

@@ -54,7 +54,6 @@
 			<div class="spacer-large"></div>
 			<div class="spacer-large"></div>
 			<div class="spacer-large"></div>
-			<div class="spacer-medium"></div>
 		
 			<h4 class="title-3 {{ $textColor }} italic">{{ $subtitle }}</h4>
 

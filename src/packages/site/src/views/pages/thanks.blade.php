@@ -35,7 +35,6 @@
 <div class="text-center page-padding-medium" id="modalContainer">
 		
 	<div class="spacer-medium"></div>
-	<div class="spacer-medium"></div>
 	
 	{{-- title --}}
 	<h2 class="title-4 color-2 page-padding-small line-height-30">{!! $title !!}</h2>
@@ -46,8 +45,6 @@
 	<div class="spacer-medium"></div>
 
 	<h2 class="color-1 line-height-30">{!! $text !!}</h2>
-
-	<div class="spacer-small-2"></div>
 
 	{{-- Next button --}}
 	<a href="{{ $buttonURL }}" class="button-page bg-color-1 color-2" label="{{ $button }}">
