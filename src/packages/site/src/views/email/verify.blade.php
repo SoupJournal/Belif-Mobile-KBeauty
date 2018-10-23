@@ -54,7 +54,7 @@
 												<tr>
 													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/logo-belif.png" width="102" height="107" alt="belif - believe in truth"/></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/header-belif-black.png" width="250" height="76" alt="belif - believe in truth"/></td>
+													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/header-belif.png" width="250" height="76" alt="belif - believe in truth"/></td>
 													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="1" alt=""/></td>
 													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 												</tr>
@@ -69,41 +69,25 @@
 										</table></td>
 									</tr>	
 									<tr>
-										<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
+										<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="51"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:28px; line-height:30px; font-weight:bold; letter-spacing:-0.8px; word-spacing:-0.2px;">{!! $title !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:36px; line-height:47px; font-weight:bold; letter-spacing:-0.8px; word-spacing:-0.2px;">{!! $title !!}</td>
 									</tr>
 									<tr>
-										<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+										<td height="48" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:18px; line-height:20px; font-style:italic; letter-spacing:-0.8px;">{!! $subtitle !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#0072bc; font-size:24px; line-height:33px; font-style:italic; letter-spacing:-0.8px;">{!! $subtitle !!}</td>
 									</tr>
 									<tr>
 										<td height="18" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" width="570px">
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
 											<tbody>
 												<tr>
-													<td bgcolor="#125a7d">
-														<table border="0" cellspacing="0" cellpadding="0">
-														<tbody>
-														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
-														<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-														</tbody>
-														</table>
-													</td>
-													<td bgcolor="#42b6e7" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
-													<td bgcolor="#125a7d">
-														<table border="0" cellspacing="0" cellpadding="0">
-														<tbody>
-														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
-														<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-														</tbody>
-														</table>
-													</td>
+													<td bgcolor="#2c68ae" style="border:0; margin:0; padding:21px 45px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
 												</tr>
 											</tbody>
 										</table></td>
@@ -112,10 +96,10 @@
 							</table></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0 ; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $productImage }}" bgcolor="#125a7d" valign="top">
+							<td style="border: 0; margin: 0; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $productImage }}" bgcolor="#e5f1ef" valign="top">
 								<!--[if gte mso 9]>
 									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:570px;">
-										<v:fill type="tile" src="{{ $productImage }}" color="#125a7d" />
+										<v:fill type="tile" src="{{ $productImage }}" color="#e5f1ef" />
 										<v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
 								<![endif]-->
 								<div>
@@ -129,7 +113,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; font-size:32px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $productTitle !!}</td>
+															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#0072bc; font-size:36px; line-height:47px; font-weight:bold; letter-spacing:-0.8px;">{!! $productTitle !!}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -139,7 +123,7 @@
 												<td height="367" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $html !!}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#0072bc; font-size:24px; line-height:38px; font-style:italic; letter-spacing:-0.8px;">{!! $html !!}</td>
 											</tr>
 											<tr>
 												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
@@ -154,23 +138,23 @@
 							</td>
 						</tr>
 						<tr>
-							<td height="20" bgcolor="#125a7d" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td height="20" bgcolor="#2c68ae" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
 										<td height="44" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">{!! $text !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.4px;">{!! $text !!}</td>
 									</tr>
 									<tr>
 										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF;">
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #cddbec;">
 											
                                             <tbody>
 												<tr>
-													<td bgcolor="#FFFFFF" style="border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $name }}</td>
+													<td bgcolor="#cddbec" style="border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#2c68ae; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $name }}</td>
 												</tr>
 											</tbody>
 										</table></td>
@@ -179,23 +163,10 @@
 										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF;">
-											
-                                            <tbody>
-												<tr>
-													<td bgcolor="#FFFFFF" style="border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address1 }}</td>
-												</tr>
-											</tbody>
-										</table></td>
-									</tr>
-									<tr>
-										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
-									</tr>
-									<tr>
-										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF;">
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #cddbec;">
 											<tbody>
 												<tr>
-													<td bgcolor="#FFFFFF" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address2 }}</td>
+													<td bgcolor="#cddbec" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#2c68ae; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address1 }}</td>
 												</tr>
 											</tbody>
 										</table></td>
@@ -204,28 +175,40 @@
 										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF;">
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #cddbec;">
 											<tbody>
 												<tr>
-													<td bgcolor="#FFFFFF" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
+													<td bgcolor="#cddbec" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#2c68ae; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address2 }}</td>
 												</tr>
 											</tbody>
 										</table></td>
 									</tr>
 									<tr>
-										<td height="10" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
+										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
+									</tr>
+									<tr>
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #cddbec;">
+											<tbody>
+												<tr>
+													<td bgcolor="#cddbec" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#2c68ae; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
+												</tr>
+											</tbody>
+										</table></td>
+									</tr>
+									<tr>
+										<td height="34" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
 								</tbody>
 							</table></td>
 						</tr>
 						<tr>
-							<td bgcolor="#125a7d" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
-										<td height="5" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+										<td height="22" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:16px; line-height:20px; font-weight:bold; letter-spacing:-0.6px;">{!! $text2 !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#0072bc; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.6px;">{!! $text2 !!}</td>
 									</tr>
 									<tr>
 										<td height="18" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
@@ -234,8 +217,9 @@
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table width="290" border="0" cellspacing="0" cellpadding="0">
 											<tbody>
 												<tr>
-													<td align="center" style="padding: 0; margin: 0; border: 0;"><a href="http://www.sephora.com/"><img style="padding: 0; margin: 0; border: 0;" src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/samples-small.png" width="166" height="118" alt="Belif Product"/></a></td>
-
+													<td style="padding: 0; margin: 0; border: 0;"><a href="#"><img style="padding: 0; margin: 0; border: 0;" src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/product-1.jpg" width="119" height="119" alt="Belif Product"/></a></td>
+													<td width="52" style="padding: 0; margin: 0; border: 0;"></td>
+													<td style="padding: 0; margin: 0; border: 0;"><a href="#"><img style="padding: 0; margin: 0; border: 0;" src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/product-2.jpg" width="119" height="119" alt="Belif Product"/></a></td>
 												</tr>
 											</tbody>
 										</table></td>
@@ -253,14 +237,7 @@
 														<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 													</tr>
 													<tr>
-													<table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
-												<tbody>
-													<tr align="center">
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:16px; line-height: 24px; text-align: center;"><a href="http://belifusa.com" target="_blank" style="color: #00aeef; text-decoration: none; font-style:italic;">belifusa.com</a></td>
 														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:16px; line-height: 24px; text-align: center;"><a href="http://www.sephora.com/belif" target="_blank" style="color: #00aeef; text-decoration: none; font-style:italic;">belif at sephora</a></td>
-													</tr>
-													</tbody>
-													</table>
 													</tr>
 													<tr>
 														<td height="21" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
@@ -287,7 +264,8 @@
 											<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;">&nbsp;											  <unsubscribe> Need to change your address or report spam? &nbsp;Contact us at <a href="mailto:contact@belifinhydration.com?Subject=Change%2address" target="_top">contact@belifinhydration.com</a></unsubscribe></td>
 										</tr>
                                         <tr>
-											<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="{{ $unsubscribeLink }}" style="text-decoration:none; color:#000000;"><unsubscribe>unsubscribe</unsubscribe></a></td>
+											<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="#" style="text-decoration:none; color:#000000;">unsubscribe</a>
+												<unsubscribe>unsubscribe</unsubscribe></td>
 										</tr>
 										<tr>
 											<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>

@@ -17,18 +17,18 @@
 <meta charset="UTF-8">
 <title>Belif EDM 3</title>
 </head>
-<body style="border:0; margin:0; padding:0; background-color:#125a7d">
+<body style="border:0; margin:0; padding:0; background-color:#f5f5f5">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#f5f5f5" >
 	<tbody>
 		<tr>
-			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #125a7d;">
+			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #f5f5f5;">
 				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" >
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="14"></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; background-position:bottom center; background-size: contain; background-repeat: no-repeat;" background="{{ $backgroundImage }}" bgcolor="#125a7d" valign="top">
+							<td style="border: 0; margin: 0; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $backgroundImage }}" bgcolor="#ecf4fa" valign="top">
 								<!--[if gte mso 9]>
 									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:570px;">
 										<v:fill type="tile" src="{{ $backgroundImage }}" color="#ecf4fa" />
@@ -51,7 +51,7 @@
 															<tr>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/logo-belif.png" width="102" height="107" alt="belif - believe in truth"/></td>
-																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/header-belif-white.png" width="250" height="76" alt="belif - believe in truth"/></td>
+																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/header-belif.png" width="250" height="76" alt="belif - believe in truth"/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="1" alt=""/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 																</tr>
@@ -67,14 +67,14 @@
 												</td>
 											</tr>
 											<tr>
-												<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="40"></td>
+												<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="52"></td>
 											</tr>
 											<tr>
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; text-transform:uppercase; font-size:36px; line-height:54px; font-weight:bold; letter-spacing:-1.5px; word-spacing:-1px;">{{ $title }}</td>
+															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; text-transform:uppercase; font-size:36px; line-height:54px; font-weight:bold; letter-spacing:-1.5px; word-spacing:-1px;">{{ $title }}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -89,7 +89,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#42b6e7; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
+															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#0072bc; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -97,14 +97,14 @@
 												</td>
 											</tr>
 											<tr>
-												<td height="440" style="border: 0; margin:0; padding: 0;"></td>
+												<td height="352" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 											<tr>
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-												<table width="350px" border="0" cellspacing="0" cellpadding="0" style="background-color: #125a7d;">
+												<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
 													<tbody>
 														<tr>
-															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; font-size:14px; line-height:15px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">{{ $text }}</td>
+															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#2c68ae; font-size:21px; line-height:21px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">{{ $text }}</td>
 														</tr>
 													</tbody>
 												</table></td>
@@ -112,7 +112,15 @@
 											<tr>
 												<td height="2" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="1" height="1" alt=""/></td>
 											</tr>
-
+											<tr>
+												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
+													<tbody>
+														<tr>
+															<td style="border:0; margin:0; padding:7px 15px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#2c68ae; font-size:21px; line-height:21px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">a sample of belif’s bestselling moisturizers</td>
+														</tr>
+													</tbody>
+												</table></td>
+											</tr>
 											<tr>
 												<td height="31" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
 											</tr>
@@ -120,7 +128,7 @@
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
 													<tbody>
 														<tr>
-															<td bgcolor="#42b6e7" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.belifinhydration.com" target="_blank" style="text-decoration: none; color:#ffffff;">Claim Gift Now</a></td>
+															<td bgcolor="#2c68ae" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.belifinhydration.com" target="_blank" style="text-decoration: none; color:#ffffff;">Claim Gift Now</a></td>
 														</tr>
 													</tbody>
 												</table></td>
@@ -171,7 +179,7 @@
 							<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="{{ $unsubscribeLink }}" style="text-decoration:none; color:#000000;"><unsubscribe>unsubscribe</unsubscribe></a></td>
+							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="#" style="text-decoration:none; color:#000000;">unsubscribe</a> <unsubscribe>unsubscribe</unsubscribe></td>
 						</tr>
 						<tr>
 							<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
