@@ -292,10 +292,10 @@
 					$errors = 'S\'il vous plaît spécifier votre code postal.';
 					$valid = false;
 				}
-				else if ($valid && (strlen(trim($zipCode))!=5 || intval($zipCode)<=0)) {
-					$errors = 'S\'il vous plaît spécifier un code postal vaild.';
-					$valid = false;
-				}
+				// else if ($valid && (strlen(trim($zipCode))!=5 || intval($zipCode)<=0)) {
+				// 	$errors = 'S\'il vous plaît spécifier un code postal vaild.';
+				// 	$valid = false;
+				// }
 				//check for existing addresses
 				if ($valid) {
 						
