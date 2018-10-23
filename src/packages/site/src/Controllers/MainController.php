@@ -314,28 +314,28 @@
 				$valid = true;
 				//email exists
 				if (!$name || strlen(trim($name))<=0) {
-					$errors = 'Please specify your name.';
+					$errors = 'Merci de préciser votre nom.';
 					$valid = false;
 				}
 				
 				//valid address
 				if ($valid && (!$address1 || strlen(trim($address1))<=0)) {
-					$errors = 'Please specify your full address.';
+					$errors = 'Veuillez spécifier votre adresse complète.';
 					$valid = false;
 				}
 				//valid city
 				if ($valid && (!$city || strlen(trim($city))<=0)) {
-					$errors = 'Please specify your city.';
+					$errors = 'S\'il vous plaît spécifier votre ville.';
 					$valid = false;
 				}
 				
 				//valid zip code
 				if ($valid && (!$zipCode || strlen(trim($zipCode))<=0)) {
-					$errors = 'Please specify your zip code.';
+					$errors = 'S\'il vous plaît spécifier votre code postal.';
 					$valid = false;
 				}
 				else if ($valid && (strlen(trim($zipCode))!=5 || intval($zipCode)<=0)) {
-					$errors = 'Please specify a vaild zip code.';
+					$errors = 'S\'il vous plaît spécifier un code postal vaild.';
 					$valid = false;
 				}
 				//check for existing addresses
@@ -350,7 +350,7 @@
 				
 					//address used too many times
 					if ($addressUsers>=4) {
-						$errors = 'This address has already claimed samples. Please use a valid address.';
+						$errors = 'Cette adresse a déjà revendiqué des échantillons. Veuillez utiliser une adresse valide.';
 						$valid = false;
 					}
 					
@@ -367,7 +367,7 @@
 						if ($user->email_verified) {
 							
 							//show error
-							$errors = 'Sorry, it looks like your email address has already been used to register';
+							$errors = 'Désolé, il semble que votre adresse e-mail ait déjà été utilisée pour vous inscrire.';
 							
 							//indicate error
 							return Redirect::back()
@@ -410,7 +410,7 @@
 						if (!$user->save()) {
 							
 							//show error
-							$errors = 'Sorry, it looks like we had a problem processing your details';
+							$errors = 'Désolé, il semble que nous ayons eu un problème pour traiter vos détails.';
 							
 							//indicate error
 							return Redirect::back()
@@ -488,13 +488,13 @@
 				
 				//email exists
 				if (!$email || strlen(trim($email))<=0) {
-					$errors = 'Please specify a email address.';
+					$errors = 'S\'il vous plaît spécifier une adresse email.';
 					$valid = false;
 				}
 				
 				//valid email
 				else if (!validEmail($email)) {
-					$errors = 'Please specify a valid email address.';
+					$errors = 'Veuillez spécifier une adresse email valide.';
 					$valid = false;
 				}
 				
@@ -611,13 +611,13 @@
 				
 				//email exists
 				if (!$email || strlen(trim($email))<=0) {
-					$errors = 'Please specify a email address.';
+					$errors = 'S\'il vous plaît spécifier une adresse email.';
 					$valid = false;
 				}
 				
 				//valid email
 				else if (!validEmail($email)) {
-					$errors = 'Please specify a valid email address.';
+					$errors = 'Veuillez spécifier une adresse email valide.';
 					$valid = false;
 				}
 				
