@@ -53,11 +53,11 @@
 		<div class="page-padding-small">
 	
 			{{-- title --}}
-			<h2 class="large color-2 no-margins">{{ $title }}</h2>
+			<h2 class="large color-1 no-margins">{{ $title }}</h2>
 		
 			<div class="spacer-small"></div>
 		
-			<h4 class="title-light large color-2 no-margins">{{ $subtitle }}</h4>
+			<h4 class="title-light large color-1 no-margins">{{ $subtitle }}</h4>
 		
 			<div class="spacer-small"></div>
 
@@ -85,7 +85,7 @@
 		        @endforeach
 		    @endif
 		
-			<h5 class="title-light color-2 no-margins">{!! $text !!}</h5>
+			<h5 class="title-light color-1 no-margins">{!! $text !!}</h5>
 			
 			<div class="spacer-tiny"></div>
 

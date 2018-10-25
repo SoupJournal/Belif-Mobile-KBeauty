@@ -42,11 +42,11 @@
 		
 		//verify email details
 		const EMAIL_SENDER_VERIFY = 'team@belifinhydration.com';
-		const EMAIL_SUBJECT_VERIFY = 'Verify your email to claim your gift.';
+		const EMAIL_SUBJECT_VERIFY = 'Vérifiez votre mail pour réclamer votre cadeau.';
 		
 		//share email details
 		const EMAIL_SENDER_SHARE = 'team@belifinhydration.com';
-		const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of belif.';
+		const EMAIL_SUBJECT_SHARE = ' souhaite vous offrir le cadeau de belif.';
 		
 		//product email details
 		const EMAIL_SENDER_PRODUCT = 'team@belifinhydration.com';

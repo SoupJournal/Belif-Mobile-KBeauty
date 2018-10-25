@@ -72,7 +72,7 @@
 
 	{{-- name --}}
 	<div class="form-group"> 
-		{{ Form::text('name', null, Array ('placeholder' => 'Prénom', 'class' => 'page-input-text page-input-center color-4', 'required' => '', 'auto-next-focus' => '')) }}
+		{{ Form::text('name', null, Array ('placeholder' => 'Nom et prénom', 'class' => 'page-input-text page-input-center color-4', 'required' => '', 'auto-next-focus' => '')) }}
 	</div>
 
 	{{-- address 1 --}}
