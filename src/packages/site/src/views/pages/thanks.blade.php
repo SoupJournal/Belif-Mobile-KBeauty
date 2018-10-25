@@ -54,7 +54,7 @@
 
 	{{-- Cancel button --}}
 	<a href="{{ route('belif.home') }}" class="button-page color-1">
-		<h5 class="button-link">{{ $buttonNo }}</h5>
+		<h5 class="button-link">{!! $buttonNo !!}</h5>
 	</a>
 		
 </div>
