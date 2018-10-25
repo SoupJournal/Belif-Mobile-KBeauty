@@ -5,7 +5,7 @@
 	$pagetitle = isset($pagetitle) ? $pagetitle : 'belif | belif in hydration';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
-	$backgroundFill = isset($backgroundFill) ? $backgroundFill : false;
+	$backgroundFill = true;
 
 ?>
 <!DOCTYPE html>
