@@ -119,7 +119,7 @@
 												</table></td>
 											</tr>
 											<tr>
-												<td height="367" style="border: 0; margin:0; padding: 0;"></td>
+												<td height="567" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 											<tr>
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#0072bc; font-size:24px; line-height:38px; font-style:italic; letter-spacing:-0.8px;">{!! $html !!}</td>
