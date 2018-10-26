@@ -2,16 +2,13 @@
 
 	namespace Belif\Mobile\Controllers;
 
-
 	use Belif\Mobile\Models\Page;
 	use Belif\Mobile\Models\Product;
 	
 	use Session;
 	use App\Http\Controllers\Controller;
 
-
 	class BaseController extends Controller {
-		
 
 		//page constants
 		//const FORM_HOME = 'page_home';
@@ -52,14 +49,8 @@
 		const EMAIL_SENDER_PRODUCT = 'team@belifinhydration.com';
 		const EMAIL_SUBJECT_PRODUCT = "Your sample is on its way!";
 		
-					
-			
-		
 		//number of questions
 		private $numberOfQuestions = 3;
-		
-		
-		
 		
 		//catch all undefined request and route to home
 		public function missingMethod($parameters = array()) {
@@ -68,15 +59,9 @@
 			
 		} //end missingMethod()
 		
-		
-			
-		
 		//==========================================================//
 		//====					DATA METHODS					====//
 		//==========================================================//	
-		
-		
-				
 		
 		protected function clearAnswers($clearIndex = 0) {
 			
@@ -93,10 +78,6 @@
 			
 		} //end clearAnswers()
 		
-		
-		
-		
-		
 		protected function productAvailable() {
 			
 			//get available products
@@ -107,20 +88,12 @@
 				
 		} //end productAvailable()
 		
-		
-		
-		
-		
 		protected function getSelectedProducts() {
 			
 			//get selected products
 			return Session::get('selectedProducts');
 	
 		} //end getSelectedProducts()
-		
-		
-				
-		
 				
 		protected function dataForPage($pageKey) {
 			
@@ -139,10 +112,7 @@
 			
 			return $pageData;
 			
-			
 		} //end dataForPage()
-		
-
 					
 	} //end class BaseController
 

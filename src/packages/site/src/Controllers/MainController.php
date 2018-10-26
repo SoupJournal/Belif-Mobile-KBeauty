@@ -83,24 +83,29 @@
 			
 			//get form values
 			$email = safeArrayValue('email', $_POST);
-			$confirmEmail = safeArrayValue('confirm-email', $_POST);
-			
+			$agree = safeArrayValue('agree', $_POST);
+
 			//email exists
 			if (!$email || strlen(trim($email))<=0) {
-				$errors = 'Please specify a email address.';
+				$errors = 'S\'il vous plaît spécifier une adresse email.';
 				$valid = false;
 			}
 			
 			//valid email
 			else if (!validEmail($email)) {
-				$errors = 'Please specify a valid email address.';
+				$errors = 'Veuillez spécifier une adresse email valide.';
 				$valid = false;
 			}
 			
 			//check if email used already
 			$user = User::where('email', '=', $email)->where('email_verified', '=', true)->first();
 			if ($user) {
-				$errors = 'Sorry, looks like you\'ve already registered with that email';
+				$errors = 'Désolé, vous vous êtes déjà inscrits avec cette adresse mail.';
+				$valid = false;
+			}
+
+			if (!$agree) {
+				$errors = 'S\'il vous plaît accepter les termes et conditions';
 				$valid = false;
 			}
 			
@@ -548,6 +553,7 @@
 					return View::make('belif::pages.share')->with(Array (
 						'pageName' => 'share',
 						'pageData' => $pageData,
+						'verified' => true,
 						'backgroundImage' => $backgroundImage,
 					));
 					
@@ -924,40 +930,6 @@
 
 					//determine if multiple samples sent
 					$multipleSamples = isset($user->product_1) && isset($user->product_2);
-							
-					
-//					//create view parameters
-//					$viewParams = Array(
-//						'unsubscribeLink' => URL::to('/unsubscribe?code=' . $user->verify_code)
-//					);
-					
-					//create email view
-//					$view = View::make('belif::email.product')->with(Array (
-//						'pageData' => $pageData,
-//						'productImage' => $productImage,
-//						'productColour' => '#125a7d',
-//						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
-//					));
-//					$view = null;
-//					if ($user->product==1) {
-//						$view = View::make('belif::email.product1')->with($viewParams);
-//					}
-//					else {
-//						$view = View::make('belif::email.product2')->with($viewParams);	
-//					}
-					
-					//valid view
-//					if ($view) {
-					
-//						//create headers
-//						$headers = "MIME-Version: 1.0\r\n"
-//								 . "Content-type: text/html;charset=UTF-8\r\n"
-//								 . "From: " . self::EMAIL_SENDER_PRODUCT . "\r\n";
-						
-						//send email through sendmail
-						//$result = mail($user->email, self::EMAIL_SUBJECT_PRODUCT, $view->render(), $headers);	
-						
-//					} //end if (valid view)
 
 					//send product sent email (sent via queue to avoid delay loading next page)
 					$emailJob = new SendEmailJob([
@@ -978,27 +950,18 @@
 					]);
 					$this->dispatch($emailJob);
 					$result = true;
-
-
 				
 				} //end if (valid code)
 				
 			} //end if (valid user)
 		
-	
 			return $result;
 			
 		} //end sendProductEmail()
 		
-
-
-
-
 		//==========================================================//
 		//====					CMS METHODS					====//
 		//==========================================================//	
-
-
 
 		public function handleTrigger($data, $info) {
 
@@ -1026,7 +989,6 @@
 							//product image
 							$productImage = null;
 		
-							
 							//get image data
 							$imageData = ProductImage::where(function ($query) use ($user) {
 														$query->where('product_1', $user->product_1)
@@ -1047,8 +1009,6 @@
 							//determine if multiple samples sent
 							$multipleSamples = isset($user->product_1) && isset($user->product_2);
 							
-							
-							
 							//send product sent email (sent via queue to avoid delay loading next page)
 							$emailJob = new SendEmailJob([
 								"recipient" => $user->email, 
@@ -1067,7 +1027,6 @@
 								]
 							]);
 							$this->dispatch($emailJob);
-							//$emailJob->handle();
 								
 							//update user 
 							$user->product_sent = true;
@@ -1076,27 +1035,21 @@
 							//increment user count
 							++$updatedUsers;
 							
-							
 						} //end if (product not sent)
 					
 					} //end if (found user match)
 				
 				} //end for()
 				
-				
 				//set response message
 				return "Processed users, " . $updatedUsers . " emails sent!";
 				
-				
 			} //end if (has data)
-			
 			
 			//return error response
 			return "No data found";
 			
 		} //end handleTrigger()
-
-
 						
 	} //end class MainController
 ?>

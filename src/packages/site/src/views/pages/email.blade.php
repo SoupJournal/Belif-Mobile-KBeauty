@@ -68,7 +68,7 @@
 			
 			{{-- enter email --}}
 			<div class="form-group"> 
-				{{ Form::email('email', null, Array ('placeholder' => 'votreemail@email.com', 'class' => 'page-input-text large no-border color-4 white-background', 'tabindex' => '1', 'required' => '', 'auto-next-focus' => '')) }}
+				{{ Form::email('email', null, Array ('placeholder' => 'votreemail@email.com', 'class' => 'page-input-text large no-border color-4 white-background', 'tabindex' => '1', 'auto-next-focus' => '')) }}
 			</div>
 		
 			{{-- display form errors --}}
@@ -87,7 +87,7 @@
 			
 			{{-- Terms & Conditions --}}
 			<div class="spacer-tiny"></div>
-			<p class="terms italic"><input type="checkbox" name="agree" value="1" required /> <a href="{{ $termsURL }}" class="color-1" target="_blank">{{ $buttonNo }}</a></p>
+			<p class="terms italic"><input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1" target="_blank">{{ $buttonNo }}</a></p>
 			
 		</div>
 

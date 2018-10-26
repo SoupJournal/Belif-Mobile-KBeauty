@@ -31,6 +31,7 @@
 
  	//ensure page properties are set
 	$buttonURL = isset($buttonURL) ? $buttonURL : null;
+	$verified = isset($verified) ? $verified : false;
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
@@ -45,6 +46,10 @@
 
 <div class="text-center" ng-controller="BelifController" id="modalContainer">
 	
+	@if ($verified)
+	<h5 class="title-light color-1 no-margins white-background">Votre mail a été vérifié!</h5>
+	@endif
+
 	{{ Form::open(Array('role' => 'form', 'name' => 'shareForm')) }}
 
 		<div class="spacer-medium"></div>
