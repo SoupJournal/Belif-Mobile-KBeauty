@@ -87,9 +87,11 @@
 			
 			{{-- Terms & Conditions --}}
 			<div class="spacer-tiny"></div>
-			<p class="terms italic"><input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1" target="_blank">{{ $buttonNo }}</a></p>
+			<div class="terms italic"><input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1" target="_blank">{{ $buttonNo }}</a></div>
 			
 		</div>
+
+		<div class="spacer-tiny"></div>
 
 </div>
 

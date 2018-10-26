@@ -79,7 +79,7 @@
 			{{-- enter email --}}
 			<div class="form-group"> 
 			
-				{{ Form::email('email', null, Array ('placeholder' => 'vosamis@email.com', 'class' => 'page-input-text large no-border color-4 white-background', 'required' => '', 'autofocus' => '')) }}
+				{{ Form::email('email', null, Array ('placeholder' => 'vosamis@email.com', 'class' => 'page-input-text large no-border color-4 white-background',  'autofocus' => '')) }}
 				
 			</div>
 		

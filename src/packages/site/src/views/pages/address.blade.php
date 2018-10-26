@@ -72,12 +72,12 @@
 
 	{{-- name --}}
 	<div class="form-group"> 
-		{{ Form::text('name', null, Array ('placeholder' => 'Nom et prénom', 'class' => 'page-input-text page-input-center color-4', 'required' => '', 'auto-next-focus' => '')) }}
+		{{ Form::text('name', null, Array ('placeholder' => 'Nom et prénom', 'class' => 'page-input-text page-input-center color-4', 'auto-next-focus' => '')) }}
 	</div>
 
 	{{-- address 1 --}}
 	<div class="form-group"> 
-		{{ Form::text('address_1', null, Array ('placeholder' => 'Adresse Ligne 1', 'class' => 'page-input-text page-input-center color-4', 'required' => '', 'auto-next-focus' => '')) }}
+		{{ Form::text('address_1', null, Array ('placeholder' => 'Adresse Ligne 1', 'class' => 'page-input-text page-input-center color-4', 'auto-next-focus' => '')) }}
 	</div>
 
 	{{-- address 2 --}}
@@ -87,12 +87,12 @@
 
 	{{-- city --}}
 	<div class="form-group"> 
-		{{ Form::text('city', null, Array ('placeholder' => 'Ville', 'class' => 'page-input-text page-input-center color-4', 'required' => '', 'auto-next-focus' => '')) }}
+		{{ Form::text('city', null, Array ('placeholder' => 'Ville', 'class' => 'page-input-text page-input-center color-4', 'auto-next-focus' => '')) }}
 	</div>
 
 	{{--zip code --}}
 	<div class="form-group"> 
-		{{ Form::input('number', 'zip_code', null, Array ('placeholder' => 'Code Postal', 'class' => 'page-input-text page-input-center color-4', 'required' => '', 'pattern' => '[0-9]*')) }}
+		{{ Form::input('number', 'zip_code', null, Array ('placeholder' => 'Code Postal', 'class' => 'page-input-text page-input-center color-4', 'pattern' => '[0-9]*')) }}
 	</div>
 	
     <div class="spacer-small">
