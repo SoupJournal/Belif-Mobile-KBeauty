@@ -1,14 +1,10 @@
 @extends('belif::layouts.master')
 
-
 {{------------------ TITLE -------------------}}
 
 @section('title') Belif @stop
 
 {{---------------- END TITLE -----------------}}
-
-
-
 
 {{----------------- SCRIPTS ------------------}}
 
@@ -16,19 +12,8 @@
 
 	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
 	
-	<?php
-	
-		//set custom page controllers
-		//$pageModules = Array('cms.form');
-	
-	?>
-	
 @stop
 {{--------------- END SCRIPTS ----------------}}
-
-
-
-
 
 {{----------------- CONTENT ------------------}}
 
@@ -57,16 +42,20 @@
 	
 		<div class="page-padding-tiny">
 	
-			<div class="spacer-small-2"></div>
+			<div class="spacer-large"></div>
+			<div class="spacer-large"></div>
+			<div class="spacer-small"></div>
 		
 			{{-- title --}}
-			<h2 class="no-margins title-bold medium">{{ $title }}</h2>	
-			<h2 class="no-margins title-light large">{{ $subtitle }}</h2>
+			<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+
+			<div class="spacer-small"></div>
+			
+			<h3 class="title-light no-margins small color-1">{!! $subtitle !!}</h2>
 			
 			<div class="spacer-small"></div>
 		
 		</div>	
-			
 			
 		{{-- image --}}
 		@if ($image && strlen($image)>0) 
@@ -74,10 +63,6 @@
 				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 			</div>
 		@endif
-
-		
-		<div class="spacer-small"></div>
-		
 		
 		<!-- load group -->
 		<div class="page-padding-medium" load-style="fade" load-group="page">
@@ -85,13 +70,13 @@
 			
 			
 			{{-- text --}}
-			<h3 class="title-light no-margins small">{!! $text !!}</h3>
+			<h3 class="title-light no-margins small color-1">{!! $text !!}</h3>
 			
 			
 			{{-- enter email --}}
 			<div class="form-group"> 
 			
-				{{ Form::email('email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text large color-2', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::email('email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text large color-1', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
 				
@@ -113,7 +98,7 @@
 	
 		
 			{{-- submit button --}}
-			<button class="button-page bg-color-3 color-2" label="{{ $button }}">
+			<button class="button-page bg-color-1 color-2" label="{{ $button }}">
 				{{ $button }}
 			</button>
 			

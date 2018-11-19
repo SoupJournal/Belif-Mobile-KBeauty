@@ -2,7 +2,7 @@
 
 	//define variables
 	$fullScreen = isset($fullScreen) ? $fullScreen : false;
-	$pagetitle = isset($pagetitle) ? $pagetitle : 'belif | belif in hydration';
+	$pagetitle = isset($pagetitle) ? $pagetitle : 'VDL';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
 	$backgroundFill = isset($backgroundFill) ? $backgroundFill : false;
@@ -33,12 +33,12 @@
     </head>
     
     
-    <body ng-app="belif"> 
+    <body ng-app="vdl">
    
 
 		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-5')">
 			
-			<div class="main-page-container fill-height @yield('background-color', 'bg-color-5') color-2">
+			<div class="main-page-container fill-height @yield('background-color', 'bg-color-2') color-2">
 				
 	
 		   		{{----------------- HEADER -------------------}}
@@ -55,7 +55,7 @@
 
 
 					@if (isset($backgroundImage) && strlen($backgroundImage)>0)
-						<img class="{{ $backgroundFill ? 'background-scale-fill' : 'background-proportional' }}" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
+						<img class="background-proportional" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
 					@else
 						<div class="background-fill"></div>
 					@endif
