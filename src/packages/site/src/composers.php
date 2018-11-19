@@ -11,18 +11,13 @@
 	//====					 COMPOSERS						====//
 	//==========================================================//	
 
-
-
 	View::composer($siteGroup, function($view)
 	{
 		//get route 
 		$currentRoute = Route::current();
-		
-
-
 	    
 	    //set scripts asset path
-	    $view->with('assetPath', URL::asset('belif/mobile/'));
+	    $view->with('assetPath', URL::asset('vdl/mobile/'));
 
 	    //set controllers namespace
 	    $view->with('controllerNamespace', 'Belif\\Mobile\\Controllers\\');
