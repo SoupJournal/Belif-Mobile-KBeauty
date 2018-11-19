@@ -500,10 +500,10 @@ a.no-underline-highlight:hover {
     padding-bottom: 3vw; 
     margin-top: 4vw; 
 /*	min-width: 150px; */
-	width: 100%;
+	width: 90%;
 	text-align: left;
 	background-color: transparent;
-	border: 0.5vw solid #FFFFFF;
+	border: 0.5vw solid #dadada;
 /*	border-radius: 5px; */
 	-webkit-appearance: none;
 /*	border-color: transparent; */
@@ -511,21 +511,21 @@ a.no-underline-highlight:hover {
 
 /* adjust input placeholder text */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-   color: #FFFFFF !important;
+   color: #000000 !important;
 }
 :-moz-placeholder {  /* Mozilla Firefox 4 to 18 */
-   color: #FFFFFF !important;
+   color: #000000 !important;
    opacity: 1;
 }
 ::-moz-placeholder {  /* Mozilla Firefox 19+ */
-   color: #FFFFFF !important;
+   color: #000000 !important;
    opacity: 1;
 }
 :-ms-input-placeholder {  /* Internet Explorer 10-11 */
-   color: #FFFFFF !important;
+   color: #000000 !important;
 }
 ::-ms-input-placeholder {  /* Microsoft Edge */
-   color: #FFFFFF !important;
+   color: #000000 !important;
    opacity: 1;
 }
 
@@ -570,7 +570,7 @@ a.no-underline-highlight:hover {
 	margin-top: 2vw; 
 	padding-top: 3vw;
     padding-bottom: 3vw;
-	border: 1vw solid #FFFFFF;
+	border: 1vw solid #dadada;
 	text-align: center;
 }
 
@@ -621,7 +621,7 @@ a.no-underline-highlight:hover {
 
 .page-input-text:focus {
 	outline: none;
-	box-shadow: 0px 0px 2px black;
+	box-shadow: 0px 0px 2px #dadada;
 /*	outline-color: #000000;
 	outline: 1px auto black;
 	border-radius: 5px;*/

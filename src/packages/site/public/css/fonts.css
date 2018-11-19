@@ -3,49 +3,22 @@
 /* 			FONT FACES			*/
 /********************************/
 
-
-/*
-@font-face {
-    font-family: ProximaNovaLight; 
-    src: url(../fonts/proxima-nova-light.otf);
-}
-*/
-
-@font-face {
-    font-family: SansaNormal;
-    src: url(../fonts/SansaPro-Normal.otf);
-}
-
-@font-face {
-    font-family: SansaSemiBold;
-    src: url(../fonts/SansaPro-SemiBold.otf);
-}
-
-@font-face {
-    font-family: SansaBold;
-    src: url(../fonts/SansaPro-Bold.otf);
-}
-
-@font-face {
-    font-family: SansaItalic;
-    src: url(../fonts/SansaPro-NormalItalic.otf);
-}
-
-
-
-
 /********************************/
 /* 			FONT SIZING			*/
 /********************************/
 
 body {
-	font-family: SansaNormal;	
+	font-family: brandon-grotesque, sans-serif;	
+	font-style: normal;
+	font-weight: 400;
 }
 
 
 h1 {
 	font-size: 8vw;
-	font-family: SansaBold;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 700;
 }
 
 h1.small {
@@ -80,7 +53,9 @@ h1.font-header {
 
 h2 {
 	font-size: 4.8vw;
-	font-family: SansaBold;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 700;
 }
 
 h2.small {
@@ -88,7 +63,7 @@ h2.small {
 }
 
 h2.medium {
-	font-size: 5.2vw;
+	font-size: 10vw;
 }
 
 h2.large {
@@ -99,7 +74,9 @@ h2.large {
 
 h3 {
 	font-size: 4.2vw;
-	font-family: SansaSemiBold;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 500;
 }
 
 h3.small {
@@ -113,7 +90,9 @@ h3.large {
 h4 {
 	font-size: 3.5vw;
 	line-height: 5vw;
-	font-family: SansaSemiBold;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 500;
 }
 
 h4.large {
@@ -122,12 +101,16 @@ h4.large {
 
 h5 {
 	font-size: 3vw;
-	font-family: SansaNormal;	
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 400;	
 }
 
 h5.font-header {
 	font-size: 2vw;
-	font-family: SansaNormal;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 400;	
 }
 
 
@@ -157,21 +140,19 @@ a.page-link {
 
 .button-page {
 	font-size: 4vw;
-	font-family: SansaSemiBold;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 500;	
 }
 
 
 .button-header {
 	font-size: 3vw;
-	font-family: SansaSemiBold;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 500;	
 }
 
-/*
-.button-question {
-	font-size: 4.5vw;
-	font-family: SansaItalic;	
-}
-*/
 .button-question.small {
 	font-size: 3.45vw;
 }
@@ -179,7 +160,9 @@ a.page-link {
 
 .page-input-text {
 	font-size: 3.6vw;
-	font-family: SansaItalic;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: italic;
+	font-weight: 400;	
 }
 
 .page-input-text.small {
@@ -188,7 +171,9 @@ a.page-link {
 
 .page-input-select {
 	font-size: 4vw;
-	font-family: SansaNormal;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 400;	
 	height: 13vw;
 }
 
@@ -198,7 +183,9 @@ a.page-link {
 
 
 .bg-danger {
-	font-family: SansaNormal;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 400;	
 	font-size: 4vw;	
 }
 
@@ -230,28 +217,28 @@ a.page-link {
 /********************************/
 
 .title-bold {
-	font-family: SansaBold;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 700;	
 }
 
 .title-semi-bold {
-	font-family: SansaSemiBold;	
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 500;	
 }
 
-/*
-.title-condensed {
-	font-family: ProximaNovaCondensed;
-}
-
-.title-regular {
-	font-family: SansaNormal;
-}
-*/
 .title-light {
-	font-family: SansaNormal;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 5vw;
 }
 
 .title-italic {
-	font-family: SansaItalic;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: italic;
+	font-weight: 400;	
 }
 
 
