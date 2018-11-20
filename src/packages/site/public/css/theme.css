@@ -612,3 +612,11 @@ button:hover {
     filter: FlipV;
     -ms-filter: "FlipV";		
 }
+
+.terms {
+	margin-top: 10px;
+	font-size: 3.5vw;
+	font-family: brandon-grotesque, sans-serif;
+	font-style: italic;
+	font-weight: 400;	
+}

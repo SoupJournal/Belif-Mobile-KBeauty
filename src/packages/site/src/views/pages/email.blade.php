@@ -104,9 +104,9 @@
 			
 			
 			{{-- Terms & Conditions --}}
-			<a href="{{ $termsURL }}" class="color-1" target="_blank">
-				<h4 class="button-link">{{ $buttonNo }}</h4>
-			</a>
+			<div class="terms">
+				<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1" target="_blank">{{ $buttonNo }}</a>
+			</div>
 			
 			
 		</div>
