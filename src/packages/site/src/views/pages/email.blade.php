@@ -10,8 +10,6 @@
 
 @section('scripts')
 
-	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
-	
 @stop
 {{--------------- END SCRIPTS ----------------}}
 
@@ -67,20 +65,15 @@
 		<!-- load group -->
 		<div class="page-padding-medium" load-style="fade" load-group="page">
 			
-			
-			
 			{{-- text --}}
 			<h3 class="title-light no-margins small color-1">{!! $text !!}</h3>
-			
 			
 			{{-- enter email --}}
 			<div class="form-group"> 
 			
-				{{ Form::email('email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text large color-1', 'tabindex' => '1', 'required' => '', 'autofocus' => '', 'auto-next-focus' => '')) }}
+				{{ Form::email('email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text large color-1', 'tabindex' => '1',  'autofocus' => '', 'auto-next-focus' => '')) }}
 				
 			</div>
-				
-		
 		
 			{{-- display form errors --}}
 		    @if ($errors->has())
@@ -88,32 +81,23 @@
 		            <div class='bg-danger alert'>{{ $error }}</div>
 		        @endforeach
 		    @else
-		   	 	<div class="spacer-tiny"></div>
+		   	 	<div class="spacer-small-2"></div>
 		    @endif
-		
-		
-				
-			<div class="spacer-small-2"></div>
-			
-	
 		
 			{{-- submit button --}}
 			<button class="button-page bg-color-1 color-2" label="{{ $button }}">
 				{{ $button }}
 			</button>
 			
-			
 			{{-- Terms & Conditions --}}
 			<div class="terms">
-				<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1" target="_blank">{{ $buttonNo }}</a>
+				<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1 small" target="_blank">{{ $buttonNo }}</a>
 			</div>
-			
 			
 		</div>
 		<!-- load group -->
 		
 		<div class="spacer-small"></div>
-		
 		
 	{{ Form::close() }}
 

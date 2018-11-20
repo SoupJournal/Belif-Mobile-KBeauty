@@ -1,6 +1,5 @@
 <?php
 
-
 	namespace Belif\Mobile\Controllers;
 
 	use Soup\CMS\Lib\CMSTrigger;
@@ -19,7 +18,6 @@
 
 	class MainController extends BaseController implements CMSTrigger {
 		
-
 		//==========================================================//
 		//====					PAGE METHODS					====//
 		//==========================================================//	
@@ -30,9 +28,6 @@
 			return Redirect::to('/');
 			
 		} //end missingMethod()
-		
-		
-		
 		
 		public function getDesktop() {
 
@@ -60,31 +55,6 @@
 			
 		} //end getDesktop()
 		
-		
-		
-		
-//		public function getIndex() {
-//		
-//			//get page data
-//			$pageData = parent::dataForFormId(self::FORM_HOME);
-//			
-//			//get background image
-//			$backgroundImage = safeArrayValue('background_image', $pageData);
-//			
-//			//render view
-//			return View::make('belif::pages.home')->with(Array (
-//				'pageName' => 'home',
-//				'pageData' => $pageData,
-//				'backgroundImage' => $backgroundImage
-//			));
-//			
-//		} //end getIndex()
-	
-	
-
-		
-		
-		
 		public function getEmail() {
 
 			//get page data
@@ -98,15 +68,11 @@
 				'pageName' => 'email',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-				//'backURL' => route('belif.home'),
 				'formURL' => route('belif.email'),
 				'termsURL' => 'https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/belif_in_hydration_terms_and_conditions.pdf'
 			));
 			
 		} //end getEmail()
-		
-			
-			
 			
 		public function postEmail() {
 	
@@ -115,12 +81,11 @@
 			
 			//get form values
 			$email = safeArrayValue('email', $_POST);
-			$confirmEmail = safeArrayValue('confirm-email', $_POST);
-			
+			$agree = safeArrayValue('agree', $_POST);
 			
 			//email exists
 			if (!$email || strlen(trim($email))<=0) {
-				$errors = 'Please specify a email address.';
+				$errors = 'Please specify an email address.';
 				$valid = false;
 			}
 			
@@ -129,8 +94,12 @@
 				$errors = 'Please specify a valid email address.';
 				$valid = false;
 			}
-			
-			
+
+			// valid terms
+			else if (!$agree) {
+				$errors = 'Please agree to the T&Cs';
+				$valid = false;
+			}
 			
 			//check if email used already
 			$user = User::where('email', '=', $email)->where('email_verified', '=', true)->first();
@@ -138,8 +107,6 @@
 				$errors = 'Sorry, looks like you\'ve already registered with that email';
 				$valid = false;
 			}
-			
-			
 			
 			//valid form
 			if ($valid) {
@@ -168,7 +135,6 @@
 					$user->email_registration_attempts += 1;
 					$user->save();
 				}
-	
 	
 				//clear any existing answers
 				$this->clearAnswers();

@@ -616,7 +616,12 @@ button:hover {
 .terms {
 	margin-top: 10px;
 	font-size: 3.5vw;
-	font-family: brandon-grotesque, sans-serif;
-	font-style: italic;
-	font-weight: 400;	
+	font-family: BrandonGrotesqueLightItalic, sans-serif;
+	line-height: 40px;
+}
+
+.terms input {
+	margin: 0;
+	line-height: 40px;
+	vertical-align: middle;
 }

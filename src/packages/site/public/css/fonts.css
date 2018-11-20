@@ -3,22 +3,65 @@
 /* 			FONT FACES			*/
 /********************************/
 
+@font-face {
+    font-family: BrandonGrotesqueLight;
+    src: url(../fonts/BrandonGrotesque-Light.otf);
+}
+
+@font-face {
+    font-family: BrandonGrotesqueLightItalic;
+    src: url(../fonts/BrandonGrotesque-LightItalic.otf);
+}
+
+@font-face {
+    font-family: MenoBannerSemiBold;
+    src: url(../fonts/MenoBanner-SemiBold.otf);
+}
+
 /********************************/
 /* 			FONT SIZING			*/
 /********************************/
 
 body {
-	font-family: brandon-grotesque, sans-serif;	
-	font-style: normal;
-	font-weight: 400;
+	font-family: BrandonGrotesqueLight, sans-serif;	
+}
+
+.font-1 {
+	font-family: BrandonGrotesqueLight !important;
+}
+
+.font-2 {
+	font-family: BrandonGrotesqueLightItalic !important;
+}
+
+.font-3 {
+	font-family: MenoBannerSemiBold !important;
+}
+
+.size-1 {
+	font-size: 1vw !important;
+}
+
+.size-2 {
+	font-size: 2vw !important;
+}
+
+.size-3 {
+	font-size: 3vw !important;
+}
+
+.size-4 {
+	font-size: 4vw !important;
+}
+
+.size-5 {
+	font-size: 5vw !important;
 }
 
 
 h1 {
 	font-size: 8vw;
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 700;
+	font-family: BrandonGrotesqueLight, sans-serif;
 }
 
 h1.small {
@@ -53,9 +96,7 @@ h1.font-header {
 
 h2 {
 	font-size: 4.8vw;
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 700;
+	font-family: BrandonGrotesqueLight, sans-serif;
 }
 
 h2.small {
@@ -63,7 +104,7 @@ h2.small {
 }
 
 h2.medium {
-	font-size: 10vw;
+	font-size: 8vw;
 }
 
 h2.large {
@@ -74,9 +115,7 @@ h2.large {
 
 h3 {
 	font-size: 4.2vw;
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 500;
+	font-family: BrandonGrotesqueLight, sans-serif;
 }
 
 h3.small {
@@ -90,9 +129,7 @@ h3.large {
 h4 {
 	font-size: 3.5vw;
 	line-height: 5vw;
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 500;
+	font-family: BrandonGrotesqueLight, sans-serif;
 }
 
 h4.large {
@@ -101,19 +138,13 @@ h4.large {
 
 h5 {
 	font-size: 3vw;
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 400;	
+	font-family: BrandonGrotesqueLight, sans-serif;
 }
 
 h5.font-header {
 	font-size: 2vw;
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 400;	
+	font-family: BrandonGrotesqueLight, sans-serif;
 }
-
-
 
 .page-text {
 	font-size: 2.5vw;
@@ -127,8 +158,6 @@ h5.font-header {
 	font-size: 4.6vw;
 }
 
-
-
 .page-link {
 	font-size: 3.5vw;
 	font-decoration: underline;	
@@ -140,15 +169,14 @@ a.page-link {
 
 .button-page {
 	font-size: 4vw;
-	font-family: brandon-grotesque, sans-serif;
+	font-family: BrandonGrotesqueLight, sans-serif;
 	font-style: normal;
 	font-weight: 500;	
 }
 
-
 .button-header {
 	font-size: 3vw;
-	font-family: brandon-grotesque, sans-serif;
+	font-family: BrandonGrotesqueLight, sans-serif;
 	font-style: normal;
 	font-weight: 500;	
 }
@@ -157,10 +185,9 @@ a.page-link {
 	font-size: 3.45vw;
 }
 
-
 .page-input-text {
 	font-size: 3.6vw;
-	font-family: brandon-grotesque, sans-serif;
+	font-family: BrandonGrotesqueLightItalic, sans-serif;
 	font-style: italic;
 	font-weight: 400;	
 }
@@ -171,7 +198,7 @@ a.page-link {
 
 .page-input-select {
 	font-size: 4vw;
-	font-family: brandon-grotesque, sans-serif;
+	font-family: BrandonGrotesqueLight, sans-serif;
 	font-style: normal;
 	font-weight: 400;	
 	height: 13vw;
@@ -181,9 +208,8 @@ a.page-link {
 	height: 8vw;
 }
 
-
 .bg-danger {
-	font-family: brandon-grotesque, sans-serif;
+	font-family: BrandonGrotesqueLight, sans-serif;
 	font-style: normal;
 	font-weight: 400;	
 	font-size: 4vw;	
@@ -214,30 +240,21 @@ a.page-link {
 /********************************/
 
 .title-bold {
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 700;	
+	font-family: MenoBannerSemiBold, sans-serif;
 }
 
 .title-semi-bold {
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 500;	
+	font-family: BrandonGrotesqueLight, sans-serif;
 }
 
 .title-light {
-	font-family: brandon-grotesque, sans-serif;
-	font-style: normal;
-	font-weight: 400;
+	font-family: BrandonGrotesqueLight, sans-serif;
 	line-height: 5vw;
 }
 
 .title-italic {
-	font-family: brandon-grotesque, sans-serif;
-	font-style: italic;
-	font-weight: 400;	
+	font-family: BrandonGrotesqueLightItalic, sans-serif;
 }
-
 
 .underline {
 	text-decoration: underline;	
@@ -258,6 +275,14 @@ a.page-link {
 .condensed {
 	transform:scale(0.8,1); 
     -webkit-transform:scale(0.8,1); 		
+}
+
+.meno {
+	font-family: MenoBannerSemiBold, sans-serif;
+}
+
+.small {
+	font-size: 3vw;
 }
 
 /********************************/

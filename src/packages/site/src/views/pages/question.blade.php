@@ -1,34 +1,17 @@
 @extends('belif::layouts.master')
 
-
 {{------------------ TITLE -------------------}}
 
 @section('title') Belif @stop
 
 {{---------------- END TITLE -----------------}}
 
-
-
-
 {{----------------- SCRIPTS ------------------}}
 
 @section('scripts')
 
-	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
-	
-	<?php
-	
-		//set custom page controllers
-		//$pageModules = Array('cms.form');
-	
-	?>
-	
 @stop
 {{--------------- END SCRIPTS ----------------}}
-
-
-
-
 
 {{----------------- CONTENT ------------------}}
 
@@ -67,12 +50,10 @@
 		<div class="row page-margin-small">
 		
 			{{-- question title --}}
-			<h2 class="title-semi-bold large color-2">Question {{ $questionNumber }}</h2>
-		
+			<h2 class="title-semi-bold large color-1">Question {{ $questionNumber }}</h2>
 		
 			<div class="spacer-medium"></div>
-		
-		
+
 			{{-- image --}}
 			@if ($image && strlen($image)>0) 
 				<div class="page-padding-larger-more">
@@ -82,25 +63,18 @@
 		
 			<div class="spacer-small"></div>
 		
-		
 			{{-- question --}}
-			<div class="question-text page-padding-medium">
+			<div class="question-text">
 			
 				<div class="spacer-medium"></div>
 			
-				<h3 class="title-light no-margins color-2">{!! $questionText !!}</h3>
-				
-				<div class="spacer-small-2"></div>
-				
-				<h3 class="title-semi-bold large no-margins color-2">{!! $question !!}</h3>
-				
-				<div class="spacer-large"></div>
-				<div class="spacer-small-2"></div>
+				<h2 class="no-margins title-bold medium color-1">{!! $question !!}</h2>
 				
 			</div>
 			
-			
-			
+			<div class="spacer-medium"></div>
+			<div class="spacer-large"></div>
+
 			{{-- video --}}
 			<div class="question-video-box">
 			
@@ -111,27 +85,22 @@
 				</button>
 			
 				{{-- text --}}
-				<h4 class="title-light color-2">{{ $text }}</h4>
+				<h4 class="title-light color-1">{{ $text }}</h4>
 				
 			</div>
 					
-
-		
 			<div class="spacer-medium"></div>
-			<div class="spacer-small-2"></div>
-			
+			<div class="spacer-large"></div>
 		
 			{{-- answer button --}}
-			<a href="{{ $buttonURL }}" class="button-page bg-color-3 color-2" label="{{ $button }}">
+			<a href="{{ $buttonURL }}" class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</a>
 		
-		
+			<div class="spacer-large"></div>
+			<div class="spacer-large"></div>
+
 		</div>
-	
-	
-		<div class="spacer-small">
-	
 	
 	</div>
 
