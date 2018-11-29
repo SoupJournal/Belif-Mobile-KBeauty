@@ -85,7 +85,7 @@
 		    @endif
 		
 			{{-- submit button --}}
-			<button class="button-page bg-color-1 color-2" label="{{ $button }}">
+			<button class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</button>
 			
