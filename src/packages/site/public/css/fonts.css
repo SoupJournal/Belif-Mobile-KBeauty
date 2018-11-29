@@ -9,6 +9,11 @@
 }
 
 @font-face {
+    font-family: BrandonGrotesqueMedium;
+    src: url(../fonts/BrandonGrotesque-Medium.otf);
+}
+
+@font-face {
     font-family: BrandonGrotesqueLightItalic;
     src: url(../fonts/BrandonGrotesque-LightItalic.otf);
 }
