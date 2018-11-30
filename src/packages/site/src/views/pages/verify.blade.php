@@ -1,34 +1,17 @@
 @extends('belif::layouts.master')
 
-
 {{------------------ TITLE -------------------}}
 
 @section('title') Belif @stop
 
 {{---------------- END TITLE -----------------}}
 
-
-
-
 {{----------------- SCRIPTS ------------------}}
 
 @section('scripts')
-
-	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
-	
-	<?php
-	
-		//set custom page controllers
-		//$pageModules = Array('cms.form');
-	
-	?>
 	
 @stop
 {{--------------- END SCRIPTS ----------------}}
-
-
-
-
 
 {{----------------- CONTENT ------------------}}
 
@@ -48,20 +31,14 @@
 
 <div class="text-center page-padding-small" id="modalContainer">
 	
-
-		
-	<div class="spacer-small-2"></div>
-	<div class="spacer-tiny"></div>
-	
 	<div class="page-padding-small">
 	
-	
+		<div class="spacer-large"></div>
+		
 		{{-- title --}}
-		<h2 class="medium page-padding-small">{{ $title }}</h2>
+		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
 	
-		<div class="spacer-medium"></div>
-		<div class="spacer-small"></div>	
-
+		<div class="spacer-large"></div>
 	
 		{{-- image --}}
 		@if ($image && strlen($image)>0) 
@@ -70,26 +47,19 @@
 			</div>
 		@endif
 		
-		
 		<div class="spacer-medium"></div>
-		
 		
 		<!-- load group -->
 		<div load-style="fade" load-group="page">
-	
 		
 			{{-- info --}}
-			<h3 class="title-light page-padding">{{ $text }}</h3>
+			<h3 class="title-light page-padding color-1">{!! $text !!}</h3>
 		
-			
 			<div class="spacer-medium"></div>
-			
-			
-			{{-- Next button --}}
-			<!-- a href="{{ $buttonURL }}" class="button-page bg-color-3">
-				<h4 class="button-link color-2">{{ $button }}</h4>
-			</a -->
-		
+
+			<a href="/" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}">
+				{{ $button }}
+			</a>
 		
 			{{-- Re-verify button --}}
 			<a href="{{ route('belif.reverify') }}" class="button-page color-1">
