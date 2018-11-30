@@ -517,10 +517,10 @@ a.no-underline-highlight:hover {
     padding-bottom: 3vw; 
     margin-top: 4vw; 
 /*	min-width: 150px; */
-	width: 90%;
+	width: 100%;
 	text-align: left;
 	background-color: transparent;
-	border: 0.5vw solid #dadada;
+	border: 0.5vw solid #000;
 /*	border-radius: 5px; */
 	-webkit-appearance: none;
 /*	border-color: transparent; */
@@ -564,8 +564,8 @@ a.no-underline-highlight:hover {
 }*/
 
 .page-input-place-holder {
-	padding-top: 4vw;
-	padding-bottom: 3.3vw;
+	padding-top: 3.5vw;
+	padding-bottom: 2.5vw;
 	margin-left: 2vw;
 }
 
