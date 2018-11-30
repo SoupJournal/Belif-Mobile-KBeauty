@@ -227,14 +227,7 @@
 			
 		} //end getUnavailable()
 		
-		
-			
-			
-			
 		public function getAddress() {
-			
-			//check if product available
-			//$available = $this->productAvailable($product);
 			
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_ADDRESS);
@@ -249,14 +242,11 @@
 				'states' => availableStates(),
 				'backgroundImage' => $backgroundImage,
 				'formURL' => route('belif.address'),
-				'backURL' => route('belif.product')
+				'backURL' => route('belif.results')
 			));
 			
 		} //end getAddress()
 			
-		
-		
-		
 		public function postAddress() {
 			
 			//get user email 
