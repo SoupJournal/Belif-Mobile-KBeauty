@@ -1,34 +1,17 @@
 @extends('belif::layouts.master')
 
-
 {{------------------ TITLE -------------------}}
 
 @section('title') Belif @stop
 
 {{---------------- END TITLE -----------------}}
 
-
-
-
 {{----------------- SCRIPTS ------------------}}
 
 @section('scripts')
-
-	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
-	
-	<?php
-	
-		//set custom page controllers
-		//$pageModules = Array('cms.form');
-	
-	?>
 	
 @stop
 {{--------------- END SCRIPTS ----------------}}
-
-
-
-
 
 {{----------------- CONTENT ------------------}}
 
@@ -47,10 +30,6 @@
 ?>
 
 <div class="text-center page-padding" id="modalContainer">
-	
-	{{ Form::open(Array('role' => 'form', 'name' => 'addressForm')) }}
-	
-
 	
 		<div class="spacer-larger"></div>
 		<div class="spacer-medium"></div>

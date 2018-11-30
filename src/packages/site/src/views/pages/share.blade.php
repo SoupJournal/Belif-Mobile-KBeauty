@@ -42,13 +42,11 @@
 
 		{{-- title --}}
 		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
-		
 	
 		<div class="page-padding-small">
 	
-			{{-- title --}}
-			<h2 class="large color-2 no-margins">{!! $title !!}</h2>
-		
+			<div class="spacer-small"></div>
+
 			<h3 class="title-light no-margins color-1">{!! $subtitle !!}</h3>
 			
 			<div class="spacer-small"></div>
