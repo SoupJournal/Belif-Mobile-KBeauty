@@ -55,7 +55,7 @@
 
 		<div class="spacer-small">
 	
-		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
+		<a href="/address" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
 			{{ $button }}
 		</a>
 
