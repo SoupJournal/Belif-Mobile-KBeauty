@@ -42,7 +42,7 @@
 
 		<div class="spacer-small"></div>
 		
-		<h3 class="title-light no-margins small color-1">{!! $subtitle !!}</h2>
+		<h3 class="title-light no-margins small color-1">{!! $subtitle !!}</h3>
 		
 		<div class="spacer-medium"></div>
 

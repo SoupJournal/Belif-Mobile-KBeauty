@@ -1,26 +1,17 @@
 @extends('belif::layouts.master')
 
-
 {{------------------ TITLE -------------------}}
 
 @section('title') Belif @stop
 
 {{---------------- END TITLE -----------------}}
 
-
-
-
 {{----------------- SCRIPTS ------------------}}
 
 @section('scripts')
-
 	
 @stop
 {{--------------- END SCRIPTS ----------------}}
-
-
-
-
 
 {{----------------- CONTENT ------------------}}
 
@@ -37,8 +28,6 @@
 
 <div class="text-center page-padding-small">
 	
-	
-	
 		<div class="container-top">
 		
 			<div class="spacer-medium"></div>
@@ -51,7 +40,6 @@
 				<div class="spacer-small"></div>
 			
 				<h4 class="title-4 color-1 page-padding-small">{!! $subtitle !!}</h4>
-			
 				
 				<div class="spacer-medium"></div>
 				
@@ -65,7 +53,6 @@
 			</div>
 	
 		</div>
-	
 
 </div>
 

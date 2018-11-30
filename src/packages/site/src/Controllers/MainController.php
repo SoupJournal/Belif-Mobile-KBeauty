@@ -716,10 +716,6 @@
 			
 		} //end getThanks()
 		
-			
-			
-			
-			
 		public function getUnsubscribe() {
 			
 			//get verification code
@@ -735,7 +731,6 @@
 					//update user
 					$user->unsubscribed = true;
 					$user->save();
-					
 			
 					//get page data
 					$pageData = $this->dataForPage(self::FORM_UNSUBSCRIBE);
@@ -757,13 +752,7 @@
 			//invalid code - show home page
 			return Redirect::route('belif.home');
 			
-			
 		} //end getUnsubscribe()
-		
-		
-		
-			
-					
 		
 		//==========================================================//
 		//====					EMAIL METHODS					====//
