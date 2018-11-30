@@ -32,7 +32,7 @@
 	
 ?>
 
-<div class="text-center" ng-controller="BelifController" id="modalContainer">
+<div class="text-center">
 
 	<div class="font-1 color-2 size-3 bg-color-1">Your email has been verified!</div>
 
@@ -43,15 +43,11 @@
 		{{-- title --}}
 		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
 	
-		<div class="page-padding-small">
-	
-			<div class="spacer-small"></div>
+		<div class="spacer-small"></div>
 
-			<h3 class="title-light no-margins color-1">{!! $subtitle !!}</h3>
-			
-			<div class="spacer-small"></div>
-
-		</div>
+		<h3 class="title-light no-margins color-1">{!! $subtitle !!}</h3>
+		
+		<div class="spacer-small"></div>
 
 		<div class="page-padding-large">
 	

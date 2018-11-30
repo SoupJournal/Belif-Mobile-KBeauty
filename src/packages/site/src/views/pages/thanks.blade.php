@@ -29,70 +29,47 @@
 	
 ?>
 
-<div class="text-center page-padding" id="modalContainer">
-	
-		<div class="spacer-larger"></div>
-		<div class="spacer-medium"></div>
-		
-		<div class="row page-margin">
-		
-			{{-- title --}}
-			<h2 class="large color-2">{{ $title }}</h2>
-		
-			{{-- <h4 class="color-2">{{ $subtitle }}</h4> --}}
-		
-		</div>
+<div class="text-center">
 
+	<div class="page-padding-small">
+	
+		<div class="spacer-large"></div>
+
+		{{-- title --}}
+		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+	
+		<div class="spacer-small"></div>
+
+		<h3 class="title-light no-margins color-1">{!! $subtitle !!}</h3>
 		
-		{{-- info --}}
-		<div class="page-margin-large">
-			<h4 class="title-light color-2 large">{!! $html !!}</h4>
-		</div>
-		
-		
+		<div class="spacer-small"></div>
+
 		{{-- image --}}
 		@if ($image && strlen($image)>0) 
 			<div class="page-padding-medium">
 				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 			</div>
 		@endif
+
+		{{-- info --}}
+		<div class="page-margin-large">
+			<h4 class="title-light color-1 large">{!! $html !!}</h4>
+		</div>
 		
 		
 		<div class="spacer-large"></div>
 		<div class="spacer-medium"></div>
+		
+		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
+			{{ $button }} <div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram.png" width="16" /></div>
+		</a>
+
 		<div class="spacer-tiny"></div>
-		
-		
-		<div class="page-padding-medium">
-		
-			{{-- Next button --}}
-			<a href="{{ $buttonURL }}" class="button-page bg-color-3 color-2" label="{{ $button }}">
-				{{ $button }}
-			</a>
-		
-		
-			{{-- Cancel button --}}
-			<a href ng-click="openModal('noFollow', 'modalContainer', 'NoFollow.html');" class="color-1"><h4 class="button-link">{{ $buttonNo }}</h4></a>
-				
-		
-		</div>
-	
-	
-		<div class="spacer-medium">
-	
 
-		
-	{{ Form::close() }}
-
-
-
-	{{-- modal popup --}}
-	<script type="text/ng-template" id="NoFollow.html">
-        <div class="modal-body" id="modal-body">
-            <h3>All good, we highly recommend this crystal ball that may or may not tell you if you've won 🔮!</h3>
-        </div>
-    </script>
-
+		{{-- Cancel button --}}
+		<a href="/" class="button-page-cancel button-next bg-color-2 color-1 font-3" innerclass="color-1" label="Quit Page">
+			QUIT PAGE
+		</a>
 
 </div>
 
