@@ -58,7 +58,7 @@
 		{{-- info --}}
 		<h2 class="bold color-1 font-3 box-padding">{!! $text !!}</h2>
 		
-		<div class="spacer-medium">
+		<div class="spacer-medium"></div>
 	
 		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
 			{{ $button }} <div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram.png" width="16" /></div>

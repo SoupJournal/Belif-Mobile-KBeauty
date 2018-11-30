@@ -177,32 +177,75 @@
 		
 		public function getResults() {
 
-			//get quiz results
-			$results = $this->answerResults();
+			$answers = Session::get('answers');
 
-			//number of correct answers
-			$correctAnswers = $this->correctAnswers($results);
+			$step4a = ['A','A','A'];
+			$step4b = ['B','B','B'];
+			$step4c = ['C','C','C'];
 
-			//get number of samples
-			$numberOfSamples = $this->numberOfSamples(count($results), $correctAnswers);
+			$step4aCount = $step4bCount = $step4cCount = $idx = 0;
+
+			foreach ($answers as $answer) {
+				if ($answer == $step4a[$idx]) {
+					$step4aCount++;
+				}
+				if ($answer == $step4b[$idx]) {
+					$step4bCount++;
+				}
+				if ($answer == $step4c[$idx]) {
+					$step4cCount++;
+				}
+				$idx++;
+			}
+
+			$answerCounts = [
+				'A' => $step4aCount,
+				'B' => $step4bCount,
+				'C' => $step4cCount
+			];
+			
+			$finalAnswer = array_search(max($answerCounts),$answerCounts);
+
+			$selectedProducts = [];
+			if ($finalAnswer == 'A') {
+				$sampleResult = self::FORM_RESULTS_A;
+				$productIdx = 0;
+				$selectedProducts[] = 1;
+				$selectedProducts[] = 0;
+			} elseif ($finalAnswer == 'B') {
+				$sampleResult = self::FORM_RESULTS_B;
+				$productIdx = 1;
+				$selectedProducts[] = 2;
+				$selectedProducts[] = 0;
+			} elseif ($finalAnswer == 'C') {
+				$sampleResult = self::FORM_RESULTS_C;
+				$productIdx = 2;
+				$selectedProducts[] = 3;
+				$selectedProducts[] = 0;
+			}
+
+			Session::set('selectedProducts', $selectedProducts);
 
 			//get page data
-			$pageData = $this->dataForPage(self::FORM_RESULTS);
+			$pageData = $this->dataForPage($sampleResult);
 			
 			//get background image
 			$backgroundImage = safeArrayValue('background_image', $pageData);
+
+			//get products
+			$products = Product::where('available', true)->get();
 		
 			//render view
 			return View::make('belif::pages.results')->with(Array (
 				'pageName' => 'results',
 				'pageData' => $pageData,
-				'results' => $results,
-				'correctAnswers' => $correctAnswers,
-				'numberOfSamples' => $numberOfSamples,
+				'products' => $products,
+				'productIdx' => $productIdx,
 				'backgroundImage' => $backgroundImage,
 				'backURL' => route('belif.question.previous'),
-				'buttonURL' => route('belif.product'),
-				'restartURL' => route('belif.guide')
+				'buttonURL' => route('belif.address'),
+				'restartURL' => route('belif.home'),
+				'sampleResult' => $sampleResult
 			));
 			
 		} //end getResults()

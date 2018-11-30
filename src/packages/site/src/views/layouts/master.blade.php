@@ -36,7 +36,7 @@
     <body ng-app="vdl">
    
 
-		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-5')">
+		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-2')">
 			
 			<div class="main-page-container fill-height @yield('background-color', 'bg-color-2') color-2">
 				
