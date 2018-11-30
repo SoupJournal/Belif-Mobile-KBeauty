@@ -13,7 +13,6 @@
     <head>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         
-        
         {{------------------ TITLE -------------------}}
         
         <title>{{ $pagetitle }}</title>
@@ -23,7 +22,6 @@
         
         {{----------------- SCRIPTS ------------------}}
 	    @include('belif::general.scripts')
-        
 
 		{{-- preloading (for modern browsers) --}}
 		@if (isset($backgroundImage) && strlen($backgroundImage)>0)
@@ -32,27 +30,22 @@
 
     </head>
     
-    
     <body ng-app="vdl">
    
-
 		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-2')">
 			
 			<div class="main-page-container fill-height @yield('background-color', 'bg-color-2') color-2">
-				
 	
 		   		{{----------------- HEADER -------------------}}
 		   		@if (!$fullScreen) 
 			    	@include('belif::layouts.header')
 		    	@endif
-		   		
 			
 				@if ($fillHeight)
 				<div class="page-body text-center @yield('background-color', 'bg-color-5')" fill-height>
 				@else 
 				<div class="page-body text-center @yield('background-color', 'bg-color-5')">				
 				@endif
-
 
 					@if (isset($backgroundImage) && strlen($backgroundImage)>0)
 						<img class="background-proportional" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
@@ -71,10 +64,8 @@
 				</div>
 			
 			</div>	        	
-	                
               
         </div>
- 
         
  		<div class="main-page">
 	 		<div class="main-page-container">
@@ -85,29 +76,6 @@
 
 			</div>
  		</div>
- 
-        
-        
-        {{-- load angular modules --}}
-        <script type="text/javascript">
-	     			     
-			//anonymous function to load features without name conflicts
-			(function() {
-		        
-				//load modules
-				var app = angular.module('belif', ['ngResource', 'ui.bootstrap', 'belif-core', 'belif-gui', 'swipe-gesture'],  
-				
-					//replace code brackets so as not to conflict with Blade
-					function($interpolateProvider) {
-					    $interpolateProvider.startSymbol('#{');
-					    $interpolateProvider.endSymbol('}#');
-					}
-				);   
-			
-			})();
-			//end anonymous function
-        
-        </script>
         
     </body>
 </html>
