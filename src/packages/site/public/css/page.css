@@ -78,6 +78,10 @@
 	height: auto;	
 }
 
+.button-instagram-icon {
+	display: inline;
+	padding-left: 4px;
+}
 /********************************/
 /* 			QUESTIONS 			*/
 /********************************/
@@ -377,6 +381,15 @@
 	padding-top: 3.2vw;	
 	padding-bottom: 3.2vw;
 	border: none;
+}
+
+.button-page-cancel {
+	display: inline-block;
+	width: 60%;
+	padding-top: 3.2vw;	
+	padding-bottom: 3.2vw;
+	border: 2px solid;
+	font-size: 4vw;
 }
 
 .button-page-border {

@@ -7,28 +7,12 @@
 
 {{---------------- END TITLE -----------------}}
 
-
-
-
 {{----------------- SCRIPTS ------------------}}
 
 @section('scripts')
-
-	{{-- HTML::script('packages/artisan/cms/js/cms/form/form.js') --}}	
-	
-	<?php
-	
-		//set custom page controllers
-		//$pageModules = Array('cms.form');
-	
-	?>
 	
 @stop
 {{--------------- END SCRIPTS ----------------}}
-
-
-
-
 
 {{----------------- CONTENT ------------------}}
 
@@ -91,7 +75,7 @@
 			
 		
 			{{-- title --}}
-			<h2 class="color-2 small-margins medium">{{ $correctAnswers>0 ? $title : $subtitle }}</h2>
+			<h2 class="no-margins title-bold medium color-1">{{ $correctAnswers>0 ? $title : $subtitle }}</h2>
 			<h2 class="color-2 small-margins medium">
 				You got {{ $correctAnswers }} out of {{ $numberOfQuestions }} correct!
 			</h2>
@@ -107,7 +91,7 @@
 			@if ($results) 
 				@for ($i=1; $i<=count($results); ++$i)
 				
-					<h4 class="title-semi-bold color-2 no-margins results-answer large">
+					<h4 class="title-semi-bold color-1 no-margins results-answer large">
 						<span class="results-item">
 							<img src="{{ safeArrayValue($i, $results) ? $imageRight : $imageWrong }}" class="results-value-image">
 						</span>
