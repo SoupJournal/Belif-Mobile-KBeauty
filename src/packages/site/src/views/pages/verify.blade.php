@@ -29,12 +29,12 @@
 	
 ?>
 
-<div class="text-center page-padding-small" id="modalContainer">
+<div class="text-center page-padding-small">
 	
 	<div class="page-padding-small">
 	
 		<div class="spacer-large"></div>
-		
+
 		{{-- title --}}
 		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
 	
@@ -67,31 +67,10 @@
 			</a>
 		
 		</div>
-		<!-- load group -->
-		
 	
 	</div>
 
 	<div class="spacer-larger"></div>
-		
-
-	
-	{{-- modal popup --}}
-	<script type="text/ng-template" id="ResentEmail.html">
-        <div class="modal-body" id="modal-body">
-            <h3 class="color-1">An email has been resent 
-            	@if (isset($verifyEmail) && $verifyEmail)
-		            to {{ $verifyEmail }}
-		        @endif
-            </h3>
-        </div>
-    </script>
-	
-	
-	{{-- show verify message --}}
-	@if (isset($verifyEmail) && $verifyEmail)
-		<div ng-controller="BelifController" ng-init="openModal('emailSent', 'modalContainer', 'ResentEmail.html');"></div>
-	@endif
 
 </div>
 

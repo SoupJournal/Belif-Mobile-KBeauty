@@ -189,10 +189,6 @@
 			
 		} //end getGuide()
 		
-			
-			
-			
-		
 		public function getUnavailable() {
 
 			
@@ -266,8 +262,6 @@
 				//trim strings
 				$address1 = $address1 ? trim($address1) : null;
 				$city = $city ? trim($city) : null;
-				
-				
 			
 				//get sample product
 				$products = $this->getSelectedProducts();
@@ -299,7 +293,6 @@
 						
 					} //end for()
 					
-					
 					try {
 						$answersJSON = json_encode($referencedArray);
 					}
@@ -307,10 +300,7 @@
 						//error processing JSON
 					}	
 				}	
-	
-	
-	
-	
+
 				//form validation
 				$valid = true;
 				//email exists
@@ -384,9 +374,7 @@
 							return Redirect::back()
 								->withInput()
 								->withErrors($errors);
-						
 						}
-						
 					}
 					//new user
 					else {
@@ -395,7 +383,6 @@
 						$user = new User();
 						
 					}
-					
 					
 					//valid user
 					if ($user) {
@@ -423,7 +410,6 @@
 						$user->product_2 = $product2;
 						$user->answers = $answersJSON;
 						
-						
 						//save user details
 						if (!$user->save()) {
 							
@@ -434,12 +420,10 @@
 							return Redirect::back()
 								->withInput()
 								->withErrors($errors);
-							
 						}
 						
 						//saved details
 						else {
-							
 							//send verification email
 							$this->sendVerifyEmail($user);
 								
@@ -466,9 +450,6 @@
 			
 			
 		} //end postAddress()
-		
-				
-			
 			
 		public function getVerify() {
 			
@@ -488,11 +469,7 @@
 			));
 			
 		} //end getVerify()
-		
-		
-		
-		
-		
+
 		public function getReverify() {
 			
 			//get session email
@@ -504,7 +481,6 @@
 				$this->sendVerifyEmail($user);
 			
 			}
-			
 			
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_VERIFY);
@@ -523,10 +499,6 @@
 			));
 			
 		} //end getReverify()
-		
-		
-		
-		
 		
 		public function getShare() {
 			
