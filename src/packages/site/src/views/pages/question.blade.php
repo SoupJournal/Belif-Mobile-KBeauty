@@ -78,7 +78,7 @@
 			{{-- video --}}
 			<div class="question-video-box">
 			
-				<video class="question-video" src="{{ $videoURL }}" controls hidden-video="video-button"></video>
+				<video id="video" class="question-video" src="{{ $videoURL }}" controls hidden-video="video-button"></video>
 				
 				<button id="video-button" class="video-button">
 					<img src="{{ asset($assetPath . '/images/icon-play.png') }}" class="image-video-play">
@@ -105,6 +105,17 @@
 	</div>
 
 </div>
-
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#video').css('display', 'none');
+	$("#video-button").click(function(){
+		$('#video').css('display', 'block');
+		$('#video')[0].play();
+		$('#video').on('ended',function(){
+			$('#video').css('display', 'none');
+		});
+	});
+});
+</script>
 @stop
 {{--------------- END CONTENT ----------------}}
