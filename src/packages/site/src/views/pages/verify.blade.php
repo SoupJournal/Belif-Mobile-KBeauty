@@ -57,10 +57,6 @@
 		
 			<div class="spacer-medium"></div>
 
-			<a href="/" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}">
-				{{ $button }}
-			</a>
-		
 			{{-- Re-verify button --}}
 			<a href="{{ route('belif.reverify') }}" class="button-page color-1">
 				<h4 class="button-link">{{ $buttonNo }}</h4>
