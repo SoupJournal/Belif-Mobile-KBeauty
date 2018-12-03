@@ -21,6 +21,7 @@
 
  	//ensure page properties are set
 	$buttonURL = isset($buttonURL) ? $buttonURL : null;
+	$formURL = isset($formURL) ? $formURL : '';
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
@@ -34,7 +35,7 @@
 
 <div class="text-center">
 
-	<div class="font-1 color-2 size-3 bg-color-1">Your email has been verified!</div>
+{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
 
 	<div class="page-padding-small">
 	
@@ -49,33 +50,40 @@
 		
 		<div class="spacer-small"></div>
 
-		<div class="page-padding-large">
+		{{-- enter email --}}
+		<div class="form-group page-padding-small"> 
+		
+			{{ Form::email('email', null, Array ('placeholder' => 'yourfriend@email.com', 'class' => 'page-input-text color-1', 'tabindex' => '1',  'autofocus' => '', 'auto-next-focus' => '')) }}
+			
+		</div>
 	
+		{{-- display form errors --}}
+	    @if ($errors->has())
+	        @foreach ($errors->all() as $error)
+	            <div class='bg-danger alert'>{{ $error }}</div>
+	        @endforeach
+	    @else
+	   	 	<div class="spacer-small-2"></div>
+	    @endif
+
 			{{-- image --}}
 			@if ($image && strlen($image)>0) 
 				<div class="page-padding-larger">
 					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 				</div>
 			@endif
-			
-		</div>
 
-		<div>{!! $text !!}</div>
+		{{-- submit button --}}
+		<button class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
+			{{ $button }}
+		</button>
 
-		<div class="spacer-large"></div>
-
-		<div class="page-padding-large">
-
-			<a href="/" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}">
-				{{ $button }}
-			</a>
+		{{-- Re-verify button --}}
+		<a href="{{ route('belif.reverify') }}" class="button-page color-1">
+			<h4 class="button-link">{{ $buttonNo }}</h4>
+		</a>
 		
-			{{-- Re-verify button --}}
-			<a href="{{ route('belif.reverify') }}" class="button-page color-1">
-				<h4 class="button-link">{{ $buttonNo }}</h4>
-			</a>
-		
-		</div>
+{{ Form::close() }}
 
 </div>
 

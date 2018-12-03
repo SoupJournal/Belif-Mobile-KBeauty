@@ -500,7 +500,7 @@
 			
 		} //end getReverify()
 		
-		public function getShare() {
+		public function getConfirm() {
 			
 			//get verification code
 			$code = safeArrayValue('code', $_GET, null);
@@ -526,7 +526,7 @@
 						}
 						
 						//jump to thanks page
-						return Redirect::route('belif.thanks');
+						return Redirect::route('belif.share');
 						
 					}
 					
@@ -537,19 +537,18 @@
 						$user->email_verified = true;
 						$user->save();
 				
-				
 						//get page data
-						$pageData = $this->dataForPage(self::FORM_SHARE);
+						$pageData = $this->dataForPage(self::FORM_CONFIRM);
 						
 						//get background image
 						$backgroundImage = safeArrayValue('background_image', $pageData);
 						
 						//render view
-						return View::make('belif::pages.share')->with(Array (
+						return View::make('belif::pages.confirm')->with(Array (
 							'pageName' => 'share',
 							'pageData' => $pageData,
-							'backgroundImage' => $backgroundImage,
-							//'backURL' => URL::to('/address'),
+							'code' => $code,
+							'backgroundImage' => $backgroundImage
 						));
 					
 					}
@@ -563,8 +562,67 @@
 			
 		} //end getShare()	
 			
+		public function getShare() {
 			
+			//get verification code
+			$code = safeArrayValue('code', $_GET, null);
 			
+			//valid code
+			if ($code && strlen($code)>0) { 
+			
+				//validate code
+				$user = User::where('verify_code', '=', $code)->first();
+				if ($user) {
+					
+					//store user
+					Session::set('userId', $user->id);
+				
+					//user already shared
+					if ($user->shared_email && strlen($user->shared_email)>0) {
+						
+						//ensure email is considered verified
+						if (!$user->email_verified) {
+							$user->email_verified = true;
+							$user->save();
+						}
+						
+						//jump to thanks page
+						return Redirect::route('belif.thanks');
+						
+					}
+					
+					//verify code
+					else {
+				
+						//indicate email is verified
+						$user->email_verified = true;
+						$user->save();
+				
+						//get page data
+						$pageData = $this->dataForPage(self::FORM_SHARE);
+						
+						//get background image
+						$backgroundImage = safeArrayValue('background_image', $pageData);
+						
+						//render view
+						return View::make('belif::pages.share')->with(Array (
+							'pageName' => 'share',
+							'pageData' => $pageData,
+							'backgroundImage' => $backgroundImage,
+							'formURL' => route('belif.share.submit'),
+						));
+					
+					}
+				
+				} //end if (valid code)
+				
+			} //end if (valid code)
+			
+			//invalid code - show home page
+			return Redirect::route('belif.home');
+			
+		} //end getShare()	
+
 			
 		public function postShare() {
 			
@@ -574,14 +632,12 @@
 			//validate user id
 			$user = User::find($userId);
 			if ($user) {
-				
 			
 				$valid = true;
 				$errors = null;
 				
 				//get form values
 				$email = safeArrayValue('email', $_POST);
-				
 				
 				//email exists
 				if (!$email || strlen(trim($email))<=0) {
@@ -594,7 +650,6 @@
 					$errors = 'Please specify a valid email address.';
 					$valid = false;
 				}
-				
 				
 				//valid form
 				if ($valid) {
@@ -634,7 +689,6 @@
 						$user->save();
 					
 					} //end if (new share)
-					
 	
 					//show next page
 					return Redirect::to('/thanks');
@@ -649,15 +703,10 @@
 			
 			} //end if (valid user)
 			
-			
 			//show home page
 			return Redirect::route('belif.home');
 			
 		} //end postShare()
-		
-		
-		
-		
 		
 		public function getThanks() {
 			

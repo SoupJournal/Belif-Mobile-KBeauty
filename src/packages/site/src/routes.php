@@ -90,9 +90,12 @@
 				//unavailable
 				Route::get('/unavailable', ['as' => 'belif.unavailable', 'uses' => 'MainController@getUnavailable']);
 				
+				// confirm
+				Route::get('/confirm', ['as' => 'belif.confirm', 'uses' => 'MainController@getConfirm']);			
+
 				//share
 				Route::get('/share', ['as' => 'belif.share', 'uses' => 'MainController@getShare']);			
-				Route::post('/share', ['as' => 'belif.share', 'uses' => 'MainController@postShare']);			
+				Route::post('/share', ['as' => 'belif.share.submit', 'uses' => 'MainController@postShare']);			
 	
 				//thanks
 				Route::get('/thanks', ['as' => 'belif.thanks', 'uses' => 'MainController@getThanks']);						

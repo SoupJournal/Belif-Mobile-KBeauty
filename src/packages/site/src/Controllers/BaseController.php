@@ -26,6 +26,7 @@
 		const FORM_PRODUCTS = 'page_products';
 		const FORM_ADDRESS = 'page_address';
 		const FORM_VERIFY = 'page_verify';
+		const FORM_CONFIRM = 'page_confirm';
 		const FORM_SHARE = 'page_share';
 		const FORM_THANKS = 'page_thanks';
 		const FORM_NO_SAMPLES = 'page_unavailable';
