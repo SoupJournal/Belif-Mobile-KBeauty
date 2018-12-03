@@ -179,9 +179,9 @@
 
 			$answers = Session::get('answers');
 
-			$step4a = ['A','A','A'];
-			$step4b = ['B','B','B'];
-			$step4c = ['C','C','C'];
+			$step4a = ['A','B','A']; // warm
+			$step4b = ['B','A','B']; // cool
+			$step4c = ['C','C','C']; // neutral
 
 			$step4aCount = $step4bCount = $step4cCount = $idx = 0;
 
