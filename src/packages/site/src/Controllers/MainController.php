@@ -69,7 +69,7 @@
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'formURL' => route('belif.email'),
-				'termsURL' => 'https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/belif_in_hydration_terms_and_conditions.pdf'
+				'termsURL' => "https://s3.amazonaws.com/soup-journal-app-storage/VDL/Images/Privacy+Policy+VDL's+Lumislayers.pdf"
 			));
 			
 		} //end getEmail()

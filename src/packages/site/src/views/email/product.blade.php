@@ -20,7 +20,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Belif EDM</title>
+<title>VDL</title>
 </head>
 <body style="border:0; margin:0; padding:0; background-color:#f5f5f5">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:{{ $productColour }}" bgcolor="{{ $productColour }}">
@@ -54,8 +54,8 @@
 														</tr>
 														<tr>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
-															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/logo-belif.png" width="102" height="107" alt="belif - believe in truth"/></td>
-															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="center"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/header-belif-white.png" width="250" height="76" alt="belif - believe in truth"/></td>
+															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="107" alt=""/></td>
+															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="center"><img src="https://s3.amazonaws.com/soup-journal-app-storage/VDL/Images/VDL+High+Res+Logo.png" width="250" height="76" alt="VDL"/></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="center" align="center"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/image-dna-2.png" width="120" height="35" alt=""/></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 														</tr>
@@ -112,26 +112,6 @@
 							<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="50"></td>
 						</tr>
 						
-						<!-- instagram -->
-						<!-- tr>
-							<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
-								<tbody>
-									<tr>
-										<td bgcolor="#000000" style="border:0; margin:0; padding:10px 45px 10px 45px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="https://www.instagram.com/belifusa/" target="_blank" style="text-decoration: none; color:#ffffff;">
-												<table border="0" cellspacing="0" cellpadding="0">
-													<tr>
-														<td align="left" valign="middle"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-instagram-large.png" width="40" height="40" alt="Belif Instagram" style="border: 0; margin: 8px 30px 10px 0; padding: 0 0 0 0;"/></td>
-														<td  align="left" valign="middle" style="color:#ffffff">follow belif</td>
-													</tr>
-												</table>
-												</a>
-										</td>
-									</tr>
-								</tbody>
-							</table></td>
-						</tr -->
-						<!-- end instagram -->
-						
 						<tr>
 							<td align="center" valign="top" bgcolor="#000000" style="border: 0; margin: 0; padding: 0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
@@ -145,15 +125,14 @@
 											<td height="21" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; text-align: center;">
-											<a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-instagram.gif" width="27" height="27" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/belifUSA/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-facebook.gif" width="27" height="27" alt="Belif Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/belifusa" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-twitter.gif" width="27" height="27" alt="Belif Twitter" style="border: 0; margin: 0; padding: 0;"/></a>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; text-align: center;"><a href="https://www.instagram.com/vdlus/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-instagram.gif" width="27" height="27" alt="VDL Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.instagram.com/vdlus/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-facebook.gif" width="27" height="27" alt="VDL Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/vdlus" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-twitter.gif" width="27" height="27" alt="VDL Twitter" style="border: 0; margin: 0; padding: 0;"/></a>
 											</td>
 										</tr>
 										<tr>
 											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #00aeef; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&reg;belif cosmetics</td>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #00aeef; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; VDL Cosmetics</td>
 										</tr>
 										<tr>
 											<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
