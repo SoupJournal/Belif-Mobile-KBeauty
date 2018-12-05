@@ -809,70 +809,6 @@
 				
 		} //end getEmailTest()
 		
-		/*
-		public function getEmailTest() {
-
-			//test properties
-			$view = 'belif::email.product';
-//			$view = 'belif::email.verify';
-//			$view = 'belif::email.share';
-			$pageId = self::EMAIL_PRODUCT;			
-//			$pageId = self::EMAIL_VERIFY;
-//			$pageId = self::EMAIL_SHARE;			
-			
-
-			
-			//get page data
-			$pageData = $this->dataForPage($pageId);
-			
-			//product image
-			$productImage = null;
-			
-			//test user
-			$user = User::find(1);
-			if ($user) {
-			
-				//get image data
-				$imageData = ProductImage::where(function ($query) use ($user) {
-											$query->where('product_1', $user->product_1)
-											  	  ->where('product_2', $user->product_2);
-										})
-										->orWhere(function ($query) use ($user) {
-											$query->where('product_2', $user->product_1)
-												  ->where('product_1', $user->product_2);
-										})
-										->first();
-			
-				//get product image
-				if ($imageData) {
-					$productImage = safeObjectValue('image', $imageData, null);
-				}
-			
-			}
-			
-			//determine if multiple samples sent
-			$multipleSamples = isset($user->product_1) && isset($user->product_2);
-			
-	//$productImage = "https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/share-background.png";
-
-			//get background image
-			//$productImage = safeArrayValue('background_image', $pageData);
-			
-			//render view
-			return View::make($view)->with(Array (
-				'unsubscribeLink' => 'testLINKtestLINKtestLINK',
-				'pageData' => $pageData,
-				'productImage' => $productImage,
-				'productColour' => '#125a7d',
-				'multipleSamples' => $multipleSamples
-			));
-			
-		} //end test()
-		*/
-		
-		
-		
-		
 		
 		private function generateVerifyCode($user) {
 			
@@ -934,7 +870,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_VERIFY, 
-							'name' => 'belif'
+							'name' => 'VDL'
 						],
 						"subject" => self::EMAIL_SUBJECT_VERIFY,
 						"view" => "belif::email.verify",
@@ -990,7 +926,7 @@
 							"recipient" => $shareUser->email, 
 							"sender" => [
 								'email' => self::EMAIL_SENDER_SHARE, 
-								'name' => 'belif'
+								'name' => 'VDL'
 							],
 							"subject" => $subject,
 							"view" => "belif::email.share",
@@ -1057,7 +993,6 @@
 					if ($imageData) {
 						$productImage = safeObjectValue('image', $imageData, null);
 					}
-			
 
 					//determine if multiple samples sent
 					$multipleSamples = isset($user->product_1) && isset($user->product_2);
@@ -1067,7 +1002,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_PRODUCT, 
-							'name' => 'belif'
+							'name' => 'VDL'
 						],
 						"subject" => self::EMAIL_SUBJECT_PRODUCT,
 						"view" => "belif::email.product",
@@ -1151,7 +1086,7 @@
 								"recipient" => $user->email, 
 								"sender" => [
 									'email' => self::EMAIL_SENDER_PRODUCT, 
-									'name' => 'belif'
+									'name' => 'VDL'
 								],
 								"subject" => self::EMAIL_SUBJECT_PRODUCT,
 								"view" => "belif::email.product",
