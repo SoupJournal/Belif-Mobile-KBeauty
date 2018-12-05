@@ -929,29 +929,6 @@
 						$address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
 					}
 					
-					
-//					//create view parameters
-//					$viewParams = Array(
-//						'name' => $user->name,
-//						'address1' => $user->address_1,
-//						'address2' => $user->address_2,
-//						'address3' => $address3,
-//						'pageData' => $pageData,
-//						'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
-//						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
-//					);
-					
-//					//create email view
-//					$view = View::make('belif::email.verify')->with($viewParams);
-					
-					
-//					//create headers
-//					$headers = "MIME-Version: 1.0\r\n"
-//							 . "Content-type: text/html;charset=UTF-8\r\n"
-//							 . "From: " . self::EMAIL_SENDER_VERIFY . "\r\n";
-					
-					
-					
 					//send confirm email (sent via queue to avoid delay loading next page)
 					$emailJob = new SendEmailJob([
 						"recipient" => $user->email, 
@@ -975,41 +952,13 @@
 					//$emailJob->handle();
 					$result = true;
 				
-					//send through Laravel
-				/*	try {
-						
-						//send email
-						$result = Mail::send('belif::email.verify', $viewParams, function ($data) use ($user) {
-							$data->from(self::EMAIL_SENDER_VERIFY, 'Belif');
-							$data->to($user->email, $user->name);
-							$data->subject(self::EMAIL_SUBJECT_VERIFY);
-						});
-						
-					}
-					//Laravel SMTP failed try alternate
-					catch (Exception $e) {
-				*/		
-						//send email through sendmail
-					//	$result = mail($user->email, self::EMAIL_SUBJECT_VERIFY, $view->render(), $headers);	
-										
-				//	}
-					
-						
-					
-				
 				} //end if (valid code)
 				
 			} //end if (valid user)
-		
 	
 			return $result;
 			
 		} //end sendVerifyEmail()
-		
-		
-		
-		
-		
 		
 		private function sendShareEmail($user, $shareUser) {
 			
@@ -1033,27 +982,8 @@
 						//get page data
 						$pageData = $this->dataForPage(self::EMAIL_SHARE);
 		
-		
-		
-//						//create view parameters
-//						$viewParams = Array(
-//							'unsubscribeLink' => URL::to('/unsubscribe?code=' . $shareUser->verify_code)
-//						);
-						
-//						//create email view
-//						$view = View::make('belif::email.share')->with(Array (
-//							'pageData' => $pageData,
-//							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $shareUser->verify_code])
-//						));
-			
 						//create subject line
 						$subject = $user->name . self::EMAIL_SUBJECT_SHARE;
-			
-//						//create headers
-//						$headers = "MIME-Version: 1.0\r\n"
-//								 . "Content-type: text/html;charset=UTF-8\r\n"
-//								 . "From: " . self::EMAIL_SENDER_SHARE . "\r\n";
-			
 			
 						//send share email (sent via queue to avoid delay loading next page)
 						$emailJob = new SendEmailJob([
@@ -1071,26 +1001,6 @@
 						]);
 						$this->dispatch($emailJob);
 						$result = true;
-			
-			/*
-						//send through Laravel
-						try {
-							
-							//send email
-							$result = Mail::send('belif::email.share', $viewParams, function ($data) use ($user) {
-								$data->from(self::EMAIL_SENDER_SHARE, 'Belif');
-								$data->to($shareUser->email);
-								$data->subject($user->name . self::EMAIL_SUBJECT_SHARE);
-							});
-							
-						}
-						//Laravel SMTP failed try alternate
-						catch (Exception $e) {
-				*/
-							//send email through sendmail
-							//$result = mail($shareUser->email, $subject, $view->render(), $headers);
-							
-				//		}
 					
 					}
 				
@@ -1102,11 +1012,6 @@
 			return $result;
 			
 		} //end sendShareEmail()
-		
-		
-		
-		
-		
 		
 		private function sendProductEmail($user) {
 			
@@ -1156,40 +1061,6 @@
 
 					//determine if multiple samples sent
 					$multipleSamples = isset($user->product_1) && isset($user->product_2);
-							
-					
-//					//create view parameters
-//					$viewParams = Array(
-//						'unsubscribeLink' => URL::to('/unsubscribe?code=' . $user->verify_code)
-//					);
-					
-					//create email view
-//					$view = View::make('belif::email.product')->with(Array (
-//						'pageData' => $pageData,
-//						'productImage' => $productImage,
-//						'productColour' => '#125a7d',
-//						'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
-//					));
-//					$view = null;
-//					if ($user->product==1) {
-//						$view = View::make('belif::email.product1')->with($viewParams);
-//					}
-//					else {
-//						$view = View::make('belif::email.product2')->with($viewParams);	
-//					}
-					
-					//valid view
-//					if ($view) {
-					
-//						//create headers
-//						$headers = "MIME-Version: 1.0\r\n"
-//								 . "Content-type: text/html;charset=UTF-8\r\n"
-//								 . "From: " . self::EMAIL_SENDER_PRODUCT . "\r\n";
-						
-						//send email through sendmail
-						//$result = mail($user->email, self::EMAIL_SUBJECT_PRODUCT, $view->render(), $headers);	
-						
-//					} //end if (valid view)
 
 					//send product sent email (sent via queue to avoid delay loading next page)
 					$emailJob = new SendEmailJob([
@@ -1211,8 +1082,6 @@
 					$this->dispatch($emailJob);
 					$result = true;
 
-
-				
 				} //end if (valid code)
 				
 			} //end if (valid user)
@@ -1221,10 +1090,6 @@
 			return $result;
 			
 		} //end sendProductEmail()
-		
-
-
-
 
 		//==========================================================//
 		//====					CMS METHODS					====//
