@@ -526,7 +526,7 @@
 						}
 						
 						//jump to thanks page
-						return Redirect::route('belif.share');
+						return Redirect::route('belif.share', ['code' => $code]);
 						
 					}
 					
@@ -609,6 +609,7 @@
 							'pageName' => 'share',
 							'pageData' => $pageData,
 							'backgroundImage' => $backgroundImage,
+							'backURL' => route('belif.confirm', ['code' => $code]),
 							'formURL' => route('belif.share.submit'),
 						));
 					
@@ -710,6 +711,12 @@
 		
 		public function getThanks() {
 			
+			$userId = Session::get('userId');
+
+			$user = User::find($userId);
+
+			$code = $user->verify_code;
+
 			//get page data
 			$pageData = $this->dataForPage(self::FORM_THANKS);
 			
@@ -721,8 +728,8 @@
 				'pageName' => 'thanks',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-				'buttonURL' => 'http://www.sephora.com/belif'
-				//'backURL' => URL::to('/share'),
+				'buttonURL' => 'http://www.sephora.com/belif',
+				'backURL' => route('belif.share', ['code' => $code])
 			));
 			
 		} //end getThanks()

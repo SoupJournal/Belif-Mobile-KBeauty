@@ -66,12 +66,12 @@
 	   	 	<div class="spacer-small-2"></div>
 	    @endif
 
-			{{-- image --}}
-			@if ($image && strlen($image)>0) 
-				<div class="page-padding-larger">
-					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
-				</div>
-			@endif
+		{{-- image --}}
+		@if ($image && strlen($image)>0) 
+			<div class="page-padding">
+				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
+			</div>
+		@endif
 
 		{{-- submit button --}}
 		<button class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
@@ -79,7 +79,7 @@
 		</button>
 
 		{{-- Re-verify button --}}
-		<a href="{{ route('belif.reverify') }}" class="button-page color-1">
+		<a href="{{ route('belif.thanks') }}" class="button-page color-1">
 			<h4 class="button-link">{{ $buttonNo }}</h4>
 		</a>
 		

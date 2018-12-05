@@ -20,6 +20,14 @@
 		//====					PAGE METHODS					====//
 		//==========================================================//	
 
+		public function getRetry() {
+			
+			$this->clearAnswers();
+
+			return Redirect::route('belif.question');
+
+		}
+
 		public function getQuestion() {
 
 			//get question index
@@ -244,7 +252,7 @@
 				'backgroundImage' => $backgroundImage,
 				'backURL' => route('belif.question.previous'),
 				'buttonURL' => route('belif.address'),
-				'restartURL' => route('belif.home'),
+				'restartURL' => route('belif.tryagain'),
 				'sampleResult' => $sampleResult
 			));
 			

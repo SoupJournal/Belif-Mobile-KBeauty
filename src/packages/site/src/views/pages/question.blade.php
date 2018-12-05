@@ -97,9 +97,6 @@
 				{{ $button }}
 			</a>
 		
-			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
-
 		</div>
 	
 	</div>

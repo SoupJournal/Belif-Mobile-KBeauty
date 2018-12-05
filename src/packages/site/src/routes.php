@@ -57,6 +57,7 @@
 						Route::get('/previousquestion', ['as' => 'belif.question.previous', 'uses' => 'ProductController@getPreviousQuestion']);		
 						Route::get('/answer', ['as' => 'belif.answer', 'uses' => 'ProductController@getAnswer']);	
 						Route::post('/answer/{id}', ['as' => 'belif.answer.id', 'uses' => 'ProductController@postAnswer']);	
+						Route::get('/tryagain', ['as' => 'belif.tryagain', 'uses' => 'ProductController@getRetry']);		
 						
 						//results
 						Route::get('/results', ['as' => 'belif.results', 'uses' => 'ProductController@getResults']);
