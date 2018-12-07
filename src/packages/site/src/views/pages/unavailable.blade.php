@@ -33,8 +33,6 @@
 	
 	<div class="page-padding-tiny">
 
-		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
 		<div class="spacer-small"></div>
 	
 		{{-- title --}}
