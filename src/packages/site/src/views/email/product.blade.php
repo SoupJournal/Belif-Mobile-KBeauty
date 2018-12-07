@@ -33,7 +33,7 @@
 							<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="14"></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="" bgcolor="{{ $productColour }}" valign="top">
+							<td style="border: 0; margin: 0; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="" bgcolor="#ffffff" valign="top">
 								<!--[if gte mso 9]>
 									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:570px;">
 										<v:fill type="tile" src="$productImage" color="#f0f9f8" />
@@ -56,7 +56,7 @@
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="107" alt=""/></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="center"><img src="https://s3.amazonaws.com/soup-journal-app-storage/VDL/Images/VDL+High+Res+Logo.png" width="250" height="76" alt="VDL"/></td>
-															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="center" align="center"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile-KBeauty/images/email/image-dna-2.png" width="120" height="35" alt=""/></td>
+															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="center" align="center"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="120" height="35" alt=""/></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 														</tr>
 
@@ -65,7 +65,7 @@
 											</tr>
 
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; text-transform:uppercase; font-size:28px; line-height:34px; font-weight:bold; letter-spacing:-0.4px;">{{ $multipleSamples ? $text : $title }}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; text-transform:uppercase; font-size:28px; line-height:34px; font-weight:bold; letter-spacing:-0.4px;">{{ $multipleSamples ? $text : $title }}</td>
 											</tr>
 											<tr>
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#00aeef; font-size:18px; line-height:32px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
@@ -96,7 +96,7 @@
 						<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="{{ $productColour }}">
 							<tbody>
 								<tr>
-									<td width="370" align="center" style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; font-size:14px; line-height:18px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{!! $html !!}</td>
+									<td width="370" align="center" style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:14px; line-height:18px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{!! $html !!}</td>
 								</tr>
 								
 							</tbody>

@@ -48,7 +48,7 @@
 		
 		//share email details
 		const EMAIL_SENDER_SHARE = 'team@lumislayers.com';
-		const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of belif.';
+		const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of VDL.';
 		
 		//product email details
 		const EMAIL_SENDER_PRODUCT = 'team@lumislayers.com';
