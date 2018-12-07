@@ -87,7 +87,7 @@
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" width="570px">
 											<tbody>
 												<tr>
-													<td bgcolor="#125a7d">
+													<td bgcolor="#ffffff">
 														<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
 														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
@@ -96,7 +96,7 @@
 														</table>
 													</td>
 													<td bgcolor="#824d9f" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
-													<td bgcolor="#125a7d">
+													<td bgcolor="#ffffff">
 														<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
 														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
@@ -115,7 +115,7 @@
 							<td style="border: 0; margin: 0 ; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $productImage }}" bgcolor="#fff" valign="top">
 								<!--[if gte mso 9]>
 									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:570px;">
-										<v:fill type="tile" src="{{ $productImage }}" color="#125a7d" />
+										<v:fill type="tile" src="{{ $productImage }}" color="#ffffff" />
 										<v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
 								<![endif]-->
 								<div>
@@ -154,7 +154,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td height="20" bgcolor="#125a7d" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td height="20" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
 										<td height="44" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
@@ -219,7 +219,7 @@
 							</table></td>
 						</tr>
 						<tr>
-							<td bgcolor="#125a7d" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
 										<td height="5" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>

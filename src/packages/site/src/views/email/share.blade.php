@@ -17,18 +17,18 @@
 <meta charset="UTF-8">
 <title>VDL</title>
 </head>
-<body style="border:0; margin:0; padding:0; background-color:#125a7d">
+<body style="border:0; margin:0; padding:0; background-color:#ffffff">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#f5f5f5" >
 	<tbody>
 		<tr>
-			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #125a7d;">
+			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #ffffff;">
 				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" >
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="14"></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; background-position:bottom center; background-size: contain; background-repeat: no-repeat;" background="{{ $backgroundImage }}" bgcolor="#125a7d" valign="top">
+							<td style="border: 0; margin: 0; padding: 0; background-position:bottom center; background-size: contain; background-repeat: no-repeat;" background="{{ $backgroundImage }}" bgcolor="#ffffff" valign="top">
 								<!--[if gte mso 9]>
 									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:570px;">
 										<v:fill type="tile" src="{{ $backgroundImage }}" color="#ecf4fa" />
@@ -101,7 +101,7 @@
 											</tr>
 											<tr>
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-												<table width="350px" border="0" cellspacing="0" cellpadding="0" style="background-color: #125a7d;">
+												<table width="350px" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
 													<tbody>
 														<tr>
 															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; font-size:14px; line-height:15px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">{{ $text }}</td>
