@@ -157,9 +157,6 @@
 							<td height="20" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
-										<td height="44" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-									</tr>
-									<tr>
 										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">{!! $text !!}</td>
 									</tr>
 									<tr>
