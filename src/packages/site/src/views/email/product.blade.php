@@ -78,7 +78,7 @@
 											
 											<tr>
 												<td style="border: 0; margin:0; padding: 0;" align="center">
-													<img src="{{ $image }}" width="520" height="376" alt=""/>
+													<img src="{{ $image }}" alt=""/>
 												</td>
 											</tr>
 											<tr>
@@ -121,7 +121,7 @@
 											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #00aeef; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; VDL Cosmetics</td>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; VDL Cosmetics</td>
 										</tr>
 										<tr>
 											<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
