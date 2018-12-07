@@ -51,16 +51,14 @@
     {{ HTML::style($assetPath . '/css/page.css') }} 
 	
 	{{-- Google Analytics --}}
-	<script type="text/javascript"> 
-		
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130640215-1"></script>
+	<script>
+	 window.dataLayer = window.dataLayer || [];
+	 function gtag(){dataLayer.push(arguments);}
+	 gtag('js', new Date());
 
-  		ga('create', 'UA-91272304-2', 'auto');
- 		ga('send', 'pageview', '{{ $pageName }}');
- 		
+	 gtag('config', 'UA-130640215-1');
 	</script>
 	
 	{{-- Facebook Pixel Code --}}
@@ -70,7 +68,7 @@
 		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 		document,'script','https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '220888885086120'); // Insert your pixel ID here.
+		fbq('init', '251006618914909'); // Insert your pixel ID here.
 		fbq('track', 'PageView');
 	</script>
 	<noscript>
