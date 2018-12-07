@@ -23,7 +23,7 @@
 <title>VDL</title>
 </head>
 <body style="border:0; margin:0; padding:0; background-color:#f5f5f5">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:{{ $productColour }}" bgcolor="{{ $productColour }}">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#ffffff" bgcolor="#ffffff">
 	<tbody>
 		<tr>
 			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #f5f5f5;">
