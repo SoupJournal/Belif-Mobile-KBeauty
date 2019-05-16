@@ -158,10 +158,10 @@
 					
 					//store question answer
 					$this->setAnswer($questionIndex, $value);
-					
+
 					//get number of questions
 					$numberOfQuestions = Question::count('id');
-				
+
 					//move product
 					if ($questionIndex>=$numberOfQuestions) {
 						return Redirect::route('belif.results');
@@ -187,11 +187,13 @@
 
 			$answers = Session::get('answers');
 
-			$step4a = ['A','B','A']; // warm
-			$step4b = ['B','A','B']; // cool
-			$step4c = ['C','C','C']; // neutral
+			$step4a = ['A','A','A','A','A']; //
+			$step4b = ['B','B','B','B','B']; //
+            $step4c = ['C','C','C','C','C']; //
+            $step4d = ['D','D','D','D','D']; //
+            $step4e = ['E','E','E','E','E']; //
 
-			$step4aCount = $step4bCount = $step4cCount = $idx = 0;
+			$step4aCount = $step4bCount = $step4cCount = $step4dCount = $step4eCount = $idx = 0;
 
 			foreach ($answers as $answer) {
 				if ($answer == $step4a[$idx]) {
@@ -200,16 +202,24 @@
 				if ($answer == $step4b[$idx]) {
 					$step4bCount++;
 				}
-				if ($answer == $step4c[$idx]) {
-					$step4cCount++;
-				}
+                if ($answer == $step4c[$idx]) {
+                    $step4cCount++;
+                }
+                if ($answer == $step4d[$idx]) {
+                    $step4dCount++;
+                }
+                if ($answer == $step4e[$idx]) {
+                    $step4eCount++;
+                }
 				$idx++;
 			}
 
 			$answerCounts = [
 				'A' => $step4aCount,
 				'B' => $step4bCount,
-				'C' => $step4cCount
+                'C' => $step4cCount,
+                'D' => $step4dCount,
+                'E' => $step4eCount,
 			];
 			
 			$finalAnswer = array_search(max($answerCounts),$answerCounts);
@@ -225,12 +235,22 @@
 				$productIdx = 1;
 				$selectedProducts[] = 2;
 				$selectedProducts[] = 0;
-			} elseif ($finalAnswer == 'C') {
-				$sampleResult = self::FORM_RESULTS_C;
-				$productIdx = 2;
-				$selectedProducts[] = 3;
-				$selectedProducts[] = 0;
-			}
+            } elseif ($finalAnswer == 'C') {
+                $sampleResult = self::FORM_RESULTS_C;
+                $productIdx = 2;
+                $selectedProducts[] = 3;
+                $selectedProducts[] = 0;
+            } elseif ($finalAnswer == 'D') {
+                $sampleResult = self::FORM_RESULTS_D;
+                $productIdx = 3;
+                $selectedProducts[] = 4;
+                $selectedProducts[] = 0;
+            } elseif ($finalAnswer == 'E') {
+                $sampleResult = self::FORM_RESULTS_E;
+                $productIdx = 4;
+                $selectedProducts[] = 5;
+                $selectedProducts[] = 0;
+            }
 
 			Session::set('selectedProducts', $selectedProducts);
 

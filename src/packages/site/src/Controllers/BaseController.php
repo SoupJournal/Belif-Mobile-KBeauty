@@ -22,7 +22,9 @@
 		const FORM_RESULTS = 'page_results';
 		const FORM_RESULTS_A = 'page_results_a';
 		const FORM_RESULTS_B = 'page_results_b';
-		const FORM_RESULTS_C = 'page_results_c';
+        const FORM_RESULTS_C = 'page_results_c';
+        const FORM_RESULTS_D = 'page_results_d';
+        const FORM_RESULTS_E = 'page_results_e';
 		const FORM_PRODUCTS = 'page_products';
 		const FORM_ADDRESS = 'page_address';
 		const FORM_VERIFY = 'page_verify';
@@ -55,7 +57,7 @@
 		const EMAIL_SUBJECT_PRODUCT = "Your sample is on its way!";
 		
 		//number of questions
-		private $numberOfQuestions = 3;
+		private $numberOfQuestions = 4;
 		
 		//catch all undefined request and route to home
 		public function missingMethod($parameters = array()) {
@@ -72,12 +74,12 @@
 			
 			//get current answers
 			$answers = Session::get('answers');
-			
+
 			//clear remaining answers
 			for ($i=$clearIndex; $i<=$this->numberOfQuestions; ++$i) {
 				unset($answers[$i]);
 			}
-			
+
 			//store answers
 			Session::set('answers', $answers);
 			
