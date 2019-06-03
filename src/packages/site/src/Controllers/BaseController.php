@@ -2,16 +2,14 @@
 
 	namespace Belif\Mobile\Controllers;
 
-
 	use Belif\Mobile\Models\Page;
 	use Belif\Mobile\Models\Product;
+    use Soup\CMS\Models\CMSApp;
 	
 	use Session;
 	use App\Http\Controllers\Controller;
 
-
 	class BaseController extends Controller {
-		
 
 		//page constants
 		//const FORM_HOME = 'page_home';
@@ -42,8 +40,7 @@
 		
 		//product email images
 		//const EMAIL_PRODUCT_IMAGES = 'email_images';
-		
-		
+
 		//verify email details
 		const EMAIL_SENDER_VERIFY = 'team@lumislayers.com';
 		const EMAIL_SUBJECT_VERIFY = 'Verify your email to claim your gift.';
@@ -58,7 +55,16 @@
 		
 		//number of questions
 		private $numberOfQuestions = 4;
-		
+
+        public function __construct() {
+
+            $application = CMSApp::get()->first();
+
+            $this->header_logo_url = $application->header_logo_url;
+            $this->terms_and_conditions_url = $application->terms_and_conditions_url;
+
+        } //end constructor()
+
 		//catch all undefined request and route to home
 		public function missingMethod($parameters = array()) {
 			

@@ -38,11 +38,13 @@
 	<div class="page-padding-tiny">
 
 		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
 	
 		{{-- title --}}
 		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
 	
-		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
 		<div class="page-padding-medium">
 
@@ -91,9 +93,11 @@
 		    @else
 		        <div class="spacer-large">
 		    @endif
-			
+
+			<div class="spacer-large">
+
 			{{-- submit button --}}
-			<button class="button-page button-next bg-color-1 color-2 font-3" label="{{ $button }}">
+			<button class="button-page button-next bg-color-2 color-1 size-6" label="{{ $button }}">
 				{{ $button }}
 			</button>
 

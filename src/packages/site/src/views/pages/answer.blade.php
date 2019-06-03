@@ -11,7 +11,7 @@
 @section('scripts')
 
 	<?php
-	
+
 		//ensure page data is set
 		$pageData = isset($pageData) ? $pageData : null;
 		$questionData = isset($questionData) ? $questionData : null;
@@ -65,7 +65,7 @@
 			<div class="spacer-large"></div>
 		
 		</div>
-		
+
 		<div class="page-padding-small">
 		
 			{{-- answers --}}
@@ -94,7 +94,7 @@
 				<button class="answer-box {{ $answerClass }}" name="value" value="D">
 					<h3 class="title-semi-bold color-2">{!! $answerD !!}</h3>
 				</button>
-				<div class="spacer-medium"></div>
+
 			@endif
 
 			@if ($answerE && strlen($answerE)>0)

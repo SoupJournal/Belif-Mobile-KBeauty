@@ -1,12 +1,10 @@
 <?php
-
-	//define variables
 	$fullScreen = isset($fullScreen) ? $fullScreen : false;
-	$pagetitle = isset($pagetitle) ? $pagetitle : 'VDL';
+	$pagetitle = isset($pagetitle) ? $pagetitle : 'Sulwhasoo';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
 	$backgroundFill = isset($backgroundFill) ? $backgroundFill : false;
-
+	$themeColor = isset($themeColor) ? $themeColor : 1;
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -40,11 +38,11 @@
 		   		@if (!$fullScreen) 
 			    	@include('belif::layouts.header')
 		    	@endif
-			
+
 				@if ($fillHeight)
-				<div class="page-body text-center @yield('background-color', 'bg-color-5')" fill-height>
-				@else 
-				<div class="page-body text-center @yield('background-color', 'bg-color-5')">				
+					<div class="page-body text-center @yield('background-color', 'bg-color-1')" fill-height>
+				@else
+					<div class="page-body text-center @yield('background-color', 'bg-color-2')">
 				@endif
 
 					@if (isset($backgroundImage) && strlen($backgroundImage)>0)
@@ -54,6 +52,8 @@
 					@endif
 					
 					<div class="stretch-to-fit">
+
+						{{--<div class="header-logo"><img alt="{{ $pagetitle }}" src="{{ $headerLogoUrl }}" load-style1="fade"/></div>--}}
 
 	        		{{----------------- CONTENT ------------------}}
 	        		@yield('content', '')
@@ -66,16 +66,6 @@
 			</div>	        	
               
         </div>
-        
- 		<div class="main-page">
-	 		<div class="main-page-container">
 
-		  		{{----------------- FOOTER ------------------}}
-		   		@yield('footer', '')
-		   		{{--------------- END FOOTER ----------------}}
-
-			</div>
- 		</div>
-        
     </body>
 </html>

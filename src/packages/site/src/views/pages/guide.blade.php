@@ -36,43 +36,37 @@
 	<div class="container-top">
 		
 		<div class="row page-margin-small">
-		
+
 			<div class="spacer-large"></div>
 			<div class="spacer-large"></div>
-			
+			<div class="spacer-large"></div>
+
 			{{-- title --}}
 			<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
 		
-			<div class="spacer-large"></div>
-			
-			{{-- image --}}
-			@if ($image && strlen($image)>0) 
-				<div class="page-padding-medium title-light">
-					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
-				</div>
-			@endif
+			<div class="spacer-small"></div>
 			
 			<!-- load group -->
 			<div load-style="fade" load-group="page">
 
 				{{-- html --}}
 				@if ($html && strlen($html)>0) 
-					<div class="bg-color-1 row-left guide-block">
-						<h4 class="title-3 color-2 guide-text no-margins">{!! $html !!}</h4>
+					<div class="bg-color-2 row-left guide-block">
+						<h4 class="title-bold color-1 guide-text">{!! $html !!}</h4>
 					</div>
 				@endif
 		
 				<div class="spacer-tiny"></div>
 	
 				{{-- text --}}
-				<h4 class="title-light color-1 page-margin-large">
+				<h4 class="title-bold color-2 page-margin-large">
 					{!! $text !!}
 				</h4>
 	
 				<div class="spacer-large"></div>
 			
 				{{-- next button --}}
-				<a href="{{ $buttonURL }}" class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
+				<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
 					{{ $button }}
 				</a>
 					

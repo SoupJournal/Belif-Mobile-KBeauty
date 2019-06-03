@@ -4,7 +4,6 @@
 
 	use Soup\CMS\Lib\CMSTrigger;
 
-	use Belif\Mobile\Controllers\BaseController;
 	use Belif\Mobile\Models\User;
 	use Belif\Mobile\Models\Question;
 	use Belif\Mobile\Models\ProductImage;
@@ -17,7 +16,7 @@
 	use Illuminate\Support\Facades\Auth;
 
 	class MainController extends BaseController implements CMSTrigger {
-		
+
 		//==========================================================//
 		//====					PAGE METHODS					====//
 		//==========================================================//	
@@ -69,7 +68,8 @@
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'formURL' => route('belif.email'),
-				'termsURL' => "https://s3.amazonaws.com/soup-journal-app-storage/VDL/Images/Privacy+Policy+VDL's+Lumislayers.pdf"
+				'headerLogoUrl' => $this->header_logo_url,
+				'termsURL' => $this->terms_and_conditions_url
 			));
 			
 		} //end getEmail()
@@ -77,8 +77,7 @@
 		public function postEmail() {
 	
 			$valid = true;
-			$errors = null;
-			
+
 			//get form values
 			$email = safeArrayValue('email', $_POST);
 			$agree = safeArrayValue('agree', $_POST);
@@ -107,34 +106,31 @@
 				$errors = 'Sorry, looks like you\'ve already registered with that email';
 				$valid = false;
 			}
-			
+
 			//valid form
 			if ($valid) {
 				
-				//clear selected products
+				// clear selected products
 				Session::set('selectedProducts', null);
 				
-				//store email
+				// store email
 				Session::set('email', trim($email));
 	
-				//find existing user
+				// find existing user
 				$user = User::where('email', $email)->first();
 				
-				//no user exists so create new user to store email
-				if (!$user) {
-					
-					//create user
-					$user = new User();
-					$user->email = $email;
-					$user->email_registration_attempts = 1;
-					$user->save();
-					
-				}
-				//user already exists
-				else {
+				// no user exists so create new user to store email
+                if (!$user) {
+                    $user = new User();
+                    $user->email = $email;
+                    $user->email_registration_attempts = 1;
+                    $user->save();
+			    }
+				// user already exists
+                else {
 					$user->email_registration_attempts += 1;
 					$user->save();
-				}
+                }
 	
 				//clear any existing answers
 				$this->clearAnswers();
@@ -143,13 +139,13 @@
 				$available = $this->productAvailable();
 				if ($available) {
 	
-					//move to first question
+					// move to guide
 					return Redirect::route('belif.guide');
 				
 				}
 				else {
 					
-					//show unavailable
+					// show unavailable
 					return Redirect::route('belif.unavailable');
 					
 				}
@@ -163,10 +159,7 @@
 			}
 			
 		} //end postEmail()
-		
-			
-			
-			
+
 		public function getGuide() {
 
 			//get page data
@@ -183,6 +176,7 @@
 				'pageName' => 'guide',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
+                'headerLogoUrl' => $this->header_logo_url,
 				'buttonURL' => route('belif.question'),
 				'backURL' => route('belif.home'),
 			));
@@ -191,7 +185,6 @@
 		
 		public function getUnavailable() {
 
-			
 			//check if product available
 			$available = $this->productAvailable(); 
 			
@@ -199,7 +192,7 @@
 			if ($available) {
 				
 				//show quiz
-				return Redirect::route('belif.home');
+				//return Redirect::route('belif.home');
 				
 			}
 			//not available
@@ -237,6 +230,7 @@
 				'pageData' => $pageData,
 				'states' => availableStates(),
 				'backgroundImage' => $backgroundImage,
+                'headerLogoUrl' => $this->header_logo_url,
 				'formURL' => route('belif.address'),
 				'backURL' => route('belif.results')
 			));

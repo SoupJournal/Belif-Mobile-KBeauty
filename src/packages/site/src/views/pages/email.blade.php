@@ -27,6 +27,7 @@
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
+	$html = safeArrayValue('html', $pageData, "");
 	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$buttonNo = safeArrayValue('button_cancel', $pageData, "");
@@ -44,29 +45,32 @@
 			<div class="spacer-small"></div>
 		
 			{{-- title --}}
-			<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+			<h1 class="no-margins title-light large color-2">{!! $title !!}</h1>
 
 			<div class="spacer-small"></div>
-			
-			<h3 class="title-light no-margins small color-1">{!! $subtitle !!}</h3>
-			
+
+			<h2 class="no-margins title-light small color-2">{!! $subtitle !!}</h2>
+
+			<div class="spacer-medium"></div>
+
+			{{-- text --}}
+			<img src="https://s3.amazonaws.com/soup-journal-app-storage/Sulwhasoo/star_icon.png" width="25" />
+
 			<div class="spacer-small"></div>
-		
-		</div>	
-			
-		{{-- image --}}
-		@if ($image && strlen($image)>0) 
-			<div class="page-padding-large">
-				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
-			</div>
-		@endif
-		
+
+			<h3 class="no-margins title-light color-2 size-6">{!! $text !!}</h3>
+
+			<div class="spacer-small"></div>
+
+			<p class="no-margins title-light color-2 size-4">{!! $html !!}</p>
+
+			<div class="spacer-small"></div>
+
+		</div>
+
 		<!-- load group -->
 		<div class="page-padding-medium" load-style="fade" load-group="page">
-			
-			{{-- text --}}
-			<h3 class="title-light no-margins small color-1">{!! $text !!}</h3>
-			
+
 			{{-- enter email --}}
 			<div class="form-group"> 
 			

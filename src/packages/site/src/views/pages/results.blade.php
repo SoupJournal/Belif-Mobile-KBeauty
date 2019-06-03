@@ -28,18 +28,26 @@
 
 	$products = isset($products) ? $products : null;
 	$productIdx = isset($productIdx) ? $productIdx : 0;
+	$theme = isset($theme) ? $theme : 1;
 ?>
 
 <div class="text-center page-padding">
 	
 	<div class="page-padding-tiny">
 
-		<div class="spacer-small"></div>
+		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
 	
 		{{-- title --}}
-		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+		<h2 class="no-margins size-5 color-{{ $theme }}">Your scent result is:</h2>
 
-		<h3 class="no-margins font-4 bold color-1 size-6">{!! $subtitle !!}</h3>
+		<div class="spacer-small"></div>
+
+		<h1 class="no-margins title large color-{{ $theme }}">{!! $title !!}</h1>
+
+		<div class="spacer-small"></div>
+
+		<h3 class="no-margins font-4 bold color-{{ $theme }} size-6">{!! $subtitle !!}</h3>
 		
 		<div class="spacer-medium"></div>
 
@@ -49,13 +57,11 @@
 		<div class="spacer-medium"></div>
 
 		{{-- info --}}
-		<h2 class="no-margins font-3 color-1 size-4">You'll receive</h2>
-		<h2 class="no-margins title-bold medium color-1 size-7">{{ safeObjectValue('name', $products[$productIdx], '') }}</h2>
-		<div class="page-padding-small size-4 color-1">{{ safeObjectValue('description', $products[$productIdx], '') }}</div>
+		<div class="page-padding-small size-5 color-{{ $theme }}">{!! $text !!}</div>
 
 		<div class="spacer-small">
 	
-		<a href="/address" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}">
+		<a href="/address" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
 		</a>
 
@@ -63,10 +69,10 @@
 
 		{{-- restart --}}
 		<a href="{{ $restartURL }}">
-			<h4 class="title-regular color-1 box-padding">{{ $buttonNo }}</h4>
+			<h4 class="title-regular color-2 box-padding">{{ $buttonNo }}</h4>
 		</a>
-	
-	</div>	
+
+	</div>
 
 </div>
 

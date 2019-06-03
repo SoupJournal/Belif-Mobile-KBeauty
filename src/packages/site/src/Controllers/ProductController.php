@@ -4,17 +4,12 @@
 	
 	use Belif\Mobile\Models\Question;
 	use Belif\Mobile\Models\Product;
-	use Belif\Mobile\Controllers\BaseController;
-	
+
 	use View;
 	use Session;
 	use Redirect;
 
 	class ProductController extends BaseController {
-		
-		public function __construct() {
-			
-		} //end constructor()
 		
 		//==========================================================//
 		//====					PAGE METHODS					====//
@@ -52,6 +47,8 @@
 					'questionData' => $questionData,
 					'questionNumber' => $questionIndex,
 					'backgroundImage' => $backgroundImage,
+                    'formURL' => route('belif.answer.id', ['questionIndex' => $questionIndex]),
+                    'headerLogoUrl' => $this->header_logo_url,
 					'buttonURL' => route('belif.answer'),
 					'backURL' => $questionIndex>1 ? route('belif.question.previous') : route('belif.guide')
 				));
@@ -123,7 +120,7 @@
 		
 					//get background image
 					$backgroundImage = safeArrayValue('answer_background_image', $questionData);
-					
+
 					//render view
 					return View::make('belif::pages.answer')->with(Array (
 						'pageName' => 'answer_' . $questionIndex,
@@ -224,32 +221,39 @@
 			
 			$finalAnswer = array_search(max($answerCounts),$answerCounts);
 
+			$themeColor = 1;
+
 			$selectedProducts = [];
 			if ($finalAnswer == 'A') {
 				$sampleResult = self::FORM_RESULTS_A;
 				$productIdx = 0;
 				$selectedProducts[] = 1;
 				$selectedProducts[] = 0;
+				$themeColor = 2;
 			} elseif ($finalAnswer == 'B') {
 				$sampleResult = self::FORM_RESULTS_B;
 				$productIdx = 1;
 				$selectedProducts[] = 2;
 				$selectedProducts[] = 0;
+                $themeColor = 1;
             } elseif ($finalAnswer == 'C') {
                 $sampleResult = self::FORM_RESULTS_C;
                 $productIdx = 2;
                 $selectedProducts[] = 3;
                 $selectedProducts[] = 0;
+                $themeColor = 2;
             } elseif ($finalAnswer == 'D') {
                 $sampleResult = self::FORM_RESULTS_D;
                 $productIdx = 3;
                 $selectedProducts[] = 4;
                 $selectedProducts[] = 0;
+                $themeColor = 2;
             } elseif ($finalAnswer == 'E') {
                 $sampleResult = self::FORM_RESULTS_E;
                 $productIdx = 4;
                 $selectedProducts[] = 5;
                 $selectedProducts[] = 0;
+                $themeColor = 2;
             }
 
 			Session::set('selectedProducts', $selectedProducts);
@@ -273,7 +277,9 @@
 				'backURL' => route('belif.question.previous'),
 				'buttonURL' => route('belif.address'),
 				'restartURL' => route('belif.tryagain'),
-				'sampleResult' => $sampleResult
+				'sampleResult' => $sampleResult,
+                'headerLogoUrl' => $this->header_logo_url,
+                'theme' => $themeColor
 			));
 			
 		} //end getResults()

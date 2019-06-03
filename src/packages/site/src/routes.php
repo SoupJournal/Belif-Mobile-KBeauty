@@ -76,18 +76,14 @@
 							
 						});
 						
-						
 						//verfication
 						Route::get('/verify', ['as' => 'belif.verify', 'uses' => 'MainController@getVerify']);
 						Route::get('/reverify', ['as' => 'belif.reverify', 'uses' => 'MainController@getReverify']);
 					
 					}); //end middleware (Email required)
-					
-								
-					
+
 				}); //end middleware (Product is available)
-				
-				
+
 				//unavailable
 				Route::get('/unavailable', ['as' => 'belif.unavailable', 'uses' => 'MainController@getUnavailable']);
 				
@@ -106,16 +102,9 @@
 					
 				
 			}); //end middleware (HTTPS only)
-		
-		
-		
-			//TEST EMAIL
-			//Route::get('/testemail', ['as' => 'belif.email.test', 'uses' => 'MainController@getEmailTest']);						
-		
+
 		}); //end middleware (mobile only)
-	
-	
+
 	}); //end namespace group
-	
 
 ?>

@@ -33,14 +33,16 @@
 	
 	<div class="page-padding-tiny">
 
-		<div class="spacer-small"></div>
+		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 	
 		{{-- title --}}
 		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
 
 		<div class="spacer-small"></div>
 		
-		<h3 class="title-light no-margins small color-1">{!! $subtitle !!}</h3>
+		<h3 class="title-light no-margins small color-1 size-5">{!! $subtitle !!}</h3>
 		
 		<div class="spacer-medium"></div>
 
@@ -51,21 +53,22 @@
 			</div>
 		@endif
 
-		<div class="spacer-medium"></div>
+		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
 
 		{{-- info --}}
 		<h2 class="bold color-1 font-3 box-padding">{!! $text !!}</h2>
 		
 		<div class="spacer-medium"></div>
 	
-		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
-			{{ $button }} <div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram.png" width="16" /></div>
+		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-2 color-1 font-3 size-5" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram-black.png" target="_blank">
+			{{ $button }} <div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram-black.png" width="24" /></div>
 		</a>
 
-		<div class="spacer-tiny"></div>
+		<div class="spacer-medium"></div>
 
 		{{-- Cancel button --}}
-		<a href="/" class="button-page-cancel button-next bg-color-2 color-1 font-3" innerclass="color-1" label="Quit Page">
+		<a href="/" class="button-page-cancel button-next bg-color-clear color-1 font-3" innerclass="color-1" label="Quit Page">
 			QUIT PAGE
 		</a>
 	
