@@ -1,0 +1,217 @@
+
+/* TODO - move to layout.css */
+
+
+/***********************************/
+/**** 			ALIGNMENT 		****/
+/***********************************/
+
+.center {
+	display: table;
+	margin: 0 auto;	
+}
+
+.inline {
+	display: inline;	
+}
+
+/***********************************/
+/**** 	 BACKGROUND COLOURS 	****/
+/***********************************/
+
+
+/* blue */
+.bg-color-1 {
+	background-color: #55AAFF;
+}
+
+
+
+/***********************************/
+/**** 			COLOURS 		****/
+/***********************************/
+
+
+/* white */
+.color-1 {
+	color: #FEFEFE;
+}
+
+
+
+/***********************************/
+/**** 			INPUT	 		****/
+/***********************************/
+
+
+.input-small {
+	width: 60px;	
+	padding-left: 5px;
+}
+
+.cms-input-checkbox {
+	width: 25px;
+	height: auto;	
+	zoom: 1.5;
+/*	transform: scale(2);
+	-webkit-transform: scale(2,2);*/
+}
+
+.cms-input-image {
+	display: block;
+	width: 100%;
+	margin-bottom: 8px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: 2px dashed grey;
+}
+
+.cms-input-image-preview {
+	display: block;
+	margin: 0 auto;
+	width: auto;
+	height: 200px;
+}
+
+
+/***********************************/
+/**** 			BUTTONS 		****/
+/***********************************/
+
+.cms-form-button {	
+	padding: 5px 10px 5px 10px;
+	border: 2px solid grey;
+	border-radius: 10px;
+	color: #1166AA;
+	background-color: white;
+}
+
+
+.cms-form-button.btn-secondary {
+	background-color: transparent;
+}
+
+
+.cms-form-button.btn-positive {
+	background-color: #4F9148;
+	color: white;
+}
+
+.cms-form-button.btn-negative {
+	background-color: #B4140A;
+	color: white;
+}
+
+
+.cms-form-button:hover {
+	text-decoration: none;
+	background-color: #55AAFF;
+	color: #FEFEFE;
+}
+
+.cms-form-button.btn-positive:hover {
+	background-color: #376732;
+}
+
+.cms-form-button.btn-negative:hover {
+	background-color: #640909;
+}
+
+
+.cms-save-button:hover {
+	text-decoration: none;	
+	background-color: #55AAFF;
+	color: #FEFEFE;
+}
+
+.cms-button-margin-left {
+	margin-left: 10px;	
+}
+
+.cms-button-margin-right {
+	margin-right: 10px;	
+}
+
+/***********************************/
+/**** 			MENU	 		****/
+/***********************************/
+
+.nav-menu li a {
+	border-radius: 10px;	
+}
+
+
+.menu-pages a {
+	color: #654e7c;	
+}
+
+
+.menu-pages li a:hover {
+	color: #FFFFFF;	
+	background-color: #55AAFF;
+}
+
+
+.menu-pages li a.form_link_1 {
+	color: #000000;	
+}
+
+.menu-pages li a.form_link_1:hover {
+	background-color: #FFAA55;
+}
+
+/***********************************/
+/**** 			TABLE	 		****/
+/***********************************/
+
+.table-header {
+	display: inline-block;
+	width: 100%;	
+}
+
+
+.table-footer {
+	display: inline-block;
+	width: 100%;	
+}
+
+
+.pagination-settings {
+	margin-bottom: 20px;
+}
+
+
+.pagination-label {
+	font-size: 0.8em;
+}
+
+
+/***********************************/
+/**** 			SPACERS	 		****/
+/***********************************/
+
+
+.top-margin-small {
+	margin-top: 30px;	
+}
+
+
+.spacer-medium {
+	padding-top: 5%;	
+}
+
+
+
+
+/***********************************/
+/**** 			BOOTSTRAP 		****/
+/***********************************/
+
+.container {
+	width: 1080px;	
+}
+
+
+
+
+

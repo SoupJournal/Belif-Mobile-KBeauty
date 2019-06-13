@@ -1,0 +1,470 @@
+
+/********************************/
+/* 			FONT FACES			*/
+/********************************/
+
+@font-face {
+    font-family: AritaLight;
+    src: url(../fonts/Arita-buriL.otf);
+}
+
+@font-face {
+    font-family: AritaMedium;
+    src: url(../fonts/Arita-buriM.otf);
+}
+
+@font-face {
+    font-family: AritaBold;
+    src: url(../fonts/Arita-buriB.otf);
+}
+
+@font-face {
+	font-family: AritaSemiBold;
+	src: url(../fonts/Arita-buriSB.otf);
+}
+
+@font-face {
+	font-family: AritaHairLine;
+	src: url(../fonts/Arita-buriHL.otf);
+}
+
+/********************************/
+/* 			FONT SIZING			*/
+/********************************/
+
+body {
+	font-family: AritaLight, sans-serif;	
+}
+
+.font-1 {
+	font-family: AritaLight !important;
+}
+
+.font-2 {
+	font-family: AritaLight !important;
+}
+
+.font-3 {
+	font-family: AritaSemiBold !important;
+}
+
+.font-4 {
+	font-family: AritaMedium !important;
+}
+
+.size-1 {
+	font-size: 1vw !important;
+}
+
+.size-2 {
+	font-size: 2vw !important;
+}
+
+.size-3 {
+	font-size: 3vw !important;
+}
+
+.size-4 {
+	font-size: 4vw !important;
+}
+
+.size-5 {
+	font-size: 5vw !important;
+}
+
+.size-6 {
+	font-size: 6vw !important;
+}
+
+.size-7 {
+	font-size: 7vw !important;
+}
+
+.size-8 {
+	font-size: 8vw !important;
+}
+
+.size-9 {
+	font-size: 9vw !important;
+}
+
+.size-10 {
+	font-size: 10vw !important;
+}
+
+
+h1 {
+	font-size: 8vw;
+	font-family: AritaLight, sans-serif;
+}
+
+h1.small {
+	font-size: 6.7vw;
+}
+
+h1.small-2 {
+	font-size: 7.6vw;
+}
+
+h1.medium {
+	font-size: 9vw;
+}
+
+h1.medium-1 {
+	font-size: 10vw;
+}
+
+h1.medium-2 {
+	font-size: 11vw;
+}
+
+h1.large {
+	font-size: 12vw;
+	line-height: 14vw;
+}
+
+
+h1.font-header {
+	font-size: 5vw;
+}
+
+
+h2 {
+	font-size: 4.8vw;
+	font-family: AritaLight, sans-serif;
+}
+
+h2.small {
+	font-size: 4vw;
+	line-height: 5vw;
+}
+
+h2.medium {
+	font-size: 8vw;
+}
+
+h2.large {
+	font-size: 5.5vw;
+	/*line-height: 8vw;*/
+}
+
+
+h3 {
+	font-size: 4.2vw;
+	font-family: AritaLight, sans-serif;
+}
+
+h3.small {
+	font-size: 3.6vw;
+}
+
+h3.large {
+	font-size: 4.4vw;
+}
+
+h4 {
+	font-size: 3.5vw;
+	line-height: 5vw;
+	font-family: AritaLight, sans-serif;
+}
+
+h4.large {
+	font-size: 3.7vw;
+}
+
+h5 {
+	font-size: 3vw;
+	font-family: AritaLight, sans-serif;
+}
+
+h5.font-header {
+	font-size: 2vw;
+	font-family: AritaLight, sans-serif;
+}
+
+.page-text {
+	font-size: 2.5vw;
+}
+
+.page-text-large {
+	font-size: 3.5vw;
+}
+
+.page-text-larger {
+	font-size: 4.6vw;
+}
+
+.page-link {
+	font-size: 3.5vw;
+	font-decoration: underline;	
+}
+
+a.page-link {
+	font-decoration: underline;	
+}
+
+.button-page {
+	font-size: 4vw;
+	font-family: AritaLight, sans-serif;
+	font-style: normal;
+	font-weight: 500;	
+}
+
+.button-header {
+	font-size: 3vw;
+	font-family: AritaLight, sans-serif;
+	font-style: normal;
+	font-weight: 500;	
+}
+
+.button-question.small {
+	font-size: 3.45vw;
+}
+
+.page-input-text {
+	font-size: 3.6vw;
+	font-family: AritaLight, sans-serif;
+	font-style: italic;
+	font-weight: 400;	
+}
+
+.page-input-text.small {
+	font-size: 3vw;
+}
+
+.page-input-select {
+	font-family: AritaLight, sans-serif;
+	font-style: normal;
+	font-weight: 400;	
+	height: 13vw;
+}
+
+.page-input-select.small {
+	height: 8vw;
+}
+
+.bg-danger {
+	font-family: AritaLight, sans-serif;
+	font-style: normal;
+	font-weight: 400;	
+	font-size: 4vw;	
+}
+
+/********************************/
+/* 			LINE SPACING		*/
+/********************************/
+
+.extra-padding {
+	line-height: 1.5em;	
+}
+
+.extra-padding-small {
+	line-height: 1.3em;	
+}
+
+/********************************/
+/* 			ALIGNMENT			*/
+/********************************/
+
+.text-align-left {
+	text-align: left;
+}
+
+/********************************/
+/* 			FONT STYLES			*/
+/********************************/
+
+.title-bold {
+	font-family: AritaSemiBold, sans-serif;
+}
+
+.title-semi-bold {
+	font-family: AritaLight, sans-serif;
+}
+
+.title-light {
+	font-family: AritaLight, sans-serif;
+}
+
+.title-italic {
+	font-family: AritaLight, sans-serif;
+}
+
+.underline {
+	text-decoration: underline;	
+}
+
+.lowercase {
+	text-transform: lowercase;	
+}
+
+.uppercase {
+	text-transform: uppercase;	
+}
+
+.capitalize {
+	text-transform: capitalize;	
+}
+
+.condensed {
+	transform:scale(0.8,1); 
+    -webkit-transform:scale(0.8,1); 		
+}
+
+.meno {
+	font-family: AritaSemiBold, sans-serif;
+}
+
+.small {
+	font-size: 3vw;
+}
+
+/********************************/
+/* 			MAX SIZE 			*/
+/********************************/
+
+
+@media all and (min-width: 960px) {
+	
+	h1 {
+		font-size: 75px;
+	}
+	
+	h1.small {
+		font-size: 60px;
+	}
+	
+	h1.small-2 {
+		font-size: 70px;
+	}
+	
+	h1.medium {
+		font-size: 90px;
+	}
+	
+	h1.medium-1 {
+		font-size: 100px;
+	}
+	
+	h1.medium-2 {
+		font-size: 110px;
+	}
+	
+	h1.large {
+		font-size: 120px;
+	}
+	
+	
+	h1.font-header {
+		font-size: 49px;
+	}
+	
+	
+	h2 {
+		font-size: 49px;
+	}
+	
+	h2.medium {
+		font-size: 52px;
+	}
+	
+	h2.large {
+		font-size: 55px;
+	}
+	
+	
+	h3 {
+		font-size: 40px;
+	}
+	
+	h3.small {
+		font-size: 36px;
+	}
+	
+	h3.large {
+		font-size: 44px;
+	}	
+	
+	h4 {
+		font-size: 34.1px;
+		line-height: 48.75px;
+	}
+
+	h4.large {
+		font-size: 37px;
+	}
+	
+	h5.font-header {
+		font-size: 29.5px;
+	}	
+	
+	.button-header {
+		font-size: 29.5px;
+	}
+	
+	
+	.page-text {
+		font-size: 20px;
+	}
+	
+	.page-text-large {
+		font-size: 35px;
+	}
+
+	.page-text-larger {
+		font-size: 45px;
+	}
+	
+	
+	.page-link {
+		font-size: 35px;		
+	}
+	
+	
+	.button-page {
+		font-size: 39px;
+	}
+	
+	
+	.button-back {
+		font-size: 29.5px;
+	}
+	
+/*		
+	.button-question {
+		font-size: 25px;	
+	}
+*/	
+	
+	.page-input-text {
+		font-size: 36px;
+	}
+	
+	.page-input-text.small {
+		font-size: 29.5px;
+	}
+	
+	.page-input-select {
+		font-size: 40px;
+		height: 107px;
+	}
+	
+	.page-input-select.small {
+		height: 80px;
+	}
+	
+	.bg-danger {
+		font-size: 39px;
+	}
+	
+	
+	.button-question {
+		font-size: 44px;
+	}
+	
+	.button-question.small {
+		font-size: 34px;
+	}
+	
+	
+}
