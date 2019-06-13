@@ -28,7 +28,7 @@
 
     </head>
     
-    <body ng-app="vdl">
+    <body ng-app="sulwhasoo">
    
 		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-2')">
 			

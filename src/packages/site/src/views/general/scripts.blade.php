@@ -52,28 +52,27 @@
 	
 	{{-- Google Analytics --}}
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130640215-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140303151-1"></script>
 	<script>
-	 window.dataLayer = window.dataLayer || [];
-	 function gtag(){dataLayer.push(arguments);}
-	 gtag('js', new Date());
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-140303151-1');
+	</script>
 
-	 gtag('config', 'UA-130640215-1');
-	</script>
-	
 	{{-- Facebook Pixel Code --}}
-	<script>
-		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?			
-		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-		document,'script','https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '251006618914909'); // Insert your pixel ID here.
-		fbq('track', 'PageView');
-	</script>
-	<noscript>
-		<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=220888885086120&ev=PageView&noscript=1"/>
-	</noscript>
+{{--	<script>--}}
+{{--		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?			--}}
+{{--		n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;--}}
+{{--		n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;--}}
+{{--		t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,--}}
+{{--		document,'script','https://connect.facebook.net/en_US/fbevents.js');--}}
+{{--		fbq('init', '251006618914909'); // Insert your pixel ID here.--}}
+{{--		fbq('track', 'PageView');--}}
+{{--	</script>--}}
+{{--	<noscript>--}}
+{{--		<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=220888885086120&ev=PageView&noscript=1"/>--}}
+{{--	</noscript>--}}
 	{{-- DO NOT MODIFY --}}
 	{{-- End Facebook Pixel Code --}}
 	
