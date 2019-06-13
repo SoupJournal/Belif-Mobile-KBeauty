@@ -44,7 +44,8 @@
 					'fullScreen' => true,
 					'pageName' => 'home',
 					'pageData' => $pageData,
-					'backgroundImage' => $backgroundImage
+					'backgroundImage' => $backgroundImage,
+                    'headerLogoUrl' => $this->header_logo_url,
 				));
 			
 	    	} //end if (is desktop)
@@ -833,10 +834,6 @@
 			
 		} //end generateVerifyCode()
 		
-		
-
-	
-		
 		private function sendVerifyEmail($user) {
 			
 			$result = false;
@@ -853,8 +850,7 @@
 				
 					//get page data
 					$pageData = $this->dataForPage(self::EMAIL_VERIFY);
-					
-				
+
 					//compile last address line
 					$address3 = $user->city;
 					if ($user->state && strlen($user->state)>0) {
@@ -869,7 +865,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_VERIFY, 
-							'name' => 'VDL'
+							'name' => 'Sulwhasoo'
 						],
 						"subject" => self::EMAIL_SUBJECT_VERIFY,
 						"view" => "belif::email.verify",
@@ -879,7 +875,7 @@
 							'address2' => $user->address_2,
 							'address3' => $address3,
 							'pageData' => $pageData,
-							'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
+							'verifyLink' => route('belif.confirm', ['code' => $user->verify_code]),
 							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
 						]
 					]);
