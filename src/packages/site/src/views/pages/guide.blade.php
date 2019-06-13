@@ -51,7 +51,7 @@
 
 				{{-- html --}}
 				@if ($html && strlen($html)>0) 
-					<div class="bg-color-2 row-left guide-block">
+					<div class="row-left guide-block">
 						<h4 class="title-bold color-1 guide-text">{!! $html !!}</h4>
 					</div>
 				@endif
