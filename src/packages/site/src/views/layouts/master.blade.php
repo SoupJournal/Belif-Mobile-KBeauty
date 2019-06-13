@@ -53,7 +53,7 @@
 					
 					<div class="stretch-to-fit">
 
-						{{--<div class="header-logo"><img alt="{{ $pagetitle }}" src="{{ $headerLogoUrl }}" load-style1="fade"/></div>--}}
+						<div class="header-logo"><img alt="{{ $pagetitle }}" src="{{ $headerLogoUrl }}" load-style1="fade"/></div>
 
 	        		{{----------------- CONTENT ------------------}}
 	        		@yield('content', '')

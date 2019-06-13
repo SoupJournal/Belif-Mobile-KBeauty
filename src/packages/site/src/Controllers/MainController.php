@@ -458,6 +458,7 @@
 				'pageName' => 'verify',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
+                'headerLogoUrl' => $this->header_logo_url,
 				'backURL' => route('belif.address'),
 				'buttonURL' => route('belif.share')
 			));
@@ -487,6 +488,7 @@
 				'pageName' => 'reverify',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
+                'headerLogoUrl' => $this->header_logo_url,
 				'backURL' => route('belif.address'),
 				'buttonURL' => route('belif.share'),				
 				'verifyEmail' => $user->email
@@ -542,7 +544,8 @@
 							'pageName' => 'share',
 							'pageData' => $pageData,
 							'code' => $code,
-							'backgroundImage' => $backgroundImage
+							'backgroundImage' => $backgroundImage,
+                            'headerLogoUrl' => $this->header_logo_url,
 						));
 					
 					}
@@ -555,7 +558,7 @@
 			return Redirect::route('belif.home');
 			
 		} //end getShare()	
-			
+/*
 		public function getShare() {
 			
 			//get verification code
@@ -702,7 +705,7 @@
 			return Redirect::route('belif.home');
 			
 		} //end postShare()
-		
+*/
 		public function getThanks() {
 			
 			$userId = Session::get('userId');
@@ -722,6 +725,7 @@
 				'pageName' => 'thanks',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
+                'headerLogoUrl' => $this->header_logo_url,
 				'buttonURL' => 'http://www.sephora.com/belif',
 				'backURL' => route('belif.share', ['code' => $code])
 			));
@@ -755,6 +759,7 @@
 						'pageName' => 'unsubscribe',
 						'pageData' => $pageData,
 						'backgroundImage' => $backgroundImage,
+                        'headerLogoUrl' => $this->header_logo_url,
 					));
 					
 				} //end if (valid code)
