@@ -11,8 +11,8 @@ Homestead.json
 # Application
 ######################
 app/config/database.php
-#public/*
-#public/**
+public/*
+public/**
 !public/index.php
 vendor/
 node_modules/

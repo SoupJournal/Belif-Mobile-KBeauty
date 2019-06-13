@@ -4,23 +4,28 @@
 /********************************/
 
 @font-face {
-    font-family: BrandonGrotesqueLight;
-    src: url(../fonts/BrandonGrotesque-Light.otf);
+    font-family: AritaLight;
+    src: url(../fonts/Arita-buriL.otf);
 }
 
 @font-face {
-    font-family: BrandonGrotesqueMedium;
-    src: url(../fonts/BrandonGrotesque-Medium.otf);
+    font-family: AritaMedium;
+    src: url(../fonts/Arita-buriM.otf);
 }
 
 @font-face {
-    font-family: BrandonGrotesqueLightItalic;
-    src: url(../fonts/BrandonGrotesque-LightItalic.otf);
+    font-family: AritaBold;
+    src: url(../fonts/Arita-buriB.otf);
 }
 
 @font-face {
-    font-family: MenoBannerSemiBold;
-    src: url(../fonts/MenoBanner-SemiBold.otf);
+	font-family: AritaSemiBold;
+	src: url(../fonts/Arita-buriSB.otf);
+}
+
+@font-face {
+	font-family: AritaHairLine;
+	src: url(../fonts/Arita-buriHL.otf);
 }
 
 /********************************/
@@ -28,23 +33,23 @@
 /********************************/
 
 body {
-	font-family: BrandonGrotesqueLight, sans-serif;	
+	font-family: AritaLight, sans-serif;	
 }
 
 .font-1 {
-	font-family: BrandonGrotesqueLight !important;
+	font-family: AritaLight !important;
 }
 
 .font-2 {
-	font-family: BrandonGrotesqueLightItalic !important;
+	font-family: AritaLight !important;
 }
 
 .font-3 {
-	font-family: MenoBannerSemiBold !important;
+	font-family: AritaSemiBold !important;
 }
 
 .font-4 {
-	font-family: BrandonGrotesqueMedium !important;
+	font-family: AritaMedium !important;
 }
 
 .size-1 {
@@ -90,7 +95,7 @@ body {
 
 h1 {
 	font-size: 8vw;
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 }
 
 h1.small {
@@ -115,6 +120,7 @@ h1.medium-2 {
 
 h1.large {
 	font-size: 12vw;
+	line-height: 14vw;
 }
 
 
@@ -125,11 +131,12 @@ h1.font-header {
 
 h2 {
 	font-size: 4.8vw;
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 }
 
 h2.small {
 	font-size: 4vw;
+	line-height: 5vw;
 }
 
 h2.medium {
@@ -144,7 +151,7 @@ h2.large {
 
 h3 {
 	font-size: 4.2vw;
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 }
 
 h3.small {
@@ -158,7 +165,7 @@ h3.large {
 h4 {
 	font-size: 3.5vw;
 	line-height: 5vw;
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 }
 
 h4.large {
@@ -167,12 +174,12 @@ h4.large {
 
 h5 {
 	font-size: 3vw;
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 }
 
 h5.font-header {
 	font-size: 2vw;
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 }
 
 .page-text {
@@ -198,14 +205,14 @@ a.page-link {
 
 .button-page {
 	font-size: 4vw;
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 	font-style: normal;
 	font-weight: 500;	
 }
 
 .button-header {
 	font-size: 3vw;
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 	font-style: normal;
 	font-weight: 500;	
 }
@@ -216,7 +223,7 @@ a.page-link {
 
 .page-input-text {
 	font-size: 3.6vw;
-	font-family: BrandonGrotesqueLightItalic, sans-serif;
+	font-family: AritaLight, sans-serif;
 	font-style: italic;
 	font-weight: 400;	
 }
@@ -226,8 +233,7 @@ a.page-link {
 }
 
 .page-input-select {
-	/*font-size: 4vw;*/
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 	font-style: normal;
 	font-weight: 400;	
 	height: 13vw;
@@ -238,7 +244,7 @@ a.page-link {
 }
 
 .bg-danger {
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 	font-style: normal;
 	font-weight: 400;	
 	font-size: 4vw;	
@@ -269,20 +275,19 @@ a.page-link {
 /********************************/
 
 .title-bold {
-	font-family: MenoBannerSemiBold, sans-serif;
+	font-family: AritaSemiBold, sans-serif;
 }
 
 .title-semi-bold {
-	font-family: BrandonGrotesqueLight, sans-serif;
+	font-family: AritaLight, sans-serif;
 }
 
 .title-light {
-	font-family: BrandonGrotesqueLight, sans-serif;
-	line-height: 5vw;
+	font-family: AritaLight, sans-serif;
 }
 
 .title-italic {
-	font-family: BrandonGrotesqueLightItalic, sans-serif;
+	font-family: AritaLight, sans-serif;
 }
 
 .underline {
@@ -307,7 +312,7 @@ a.page-link {
 }
 
 .meno {
-	font-family: MenoBannerSemiBold, sans-serif;
+	font-family: AritaSemiBold, sans-serif;
 }
 
 .small {
