@@ -630,7 +630,7 @@ button:hover {
 
 .header-logo {
 	width: 100%;
-	position: fixed;
+	position: absolute;
 	top: 8%;
 }
 

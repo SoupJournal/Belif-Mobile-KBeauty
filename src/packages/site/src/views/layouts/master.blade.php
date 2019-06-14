@@ -46,7 +46,7 @@
 				@endif
 
 					@if (isset($backgroundImage) && strlen($backgroundImage)>0)
-						<img class="background-proportional" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
+						<img class="background-scale-fill" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
 					@else
 						<div class="background-fill"></div>
 					@endif
