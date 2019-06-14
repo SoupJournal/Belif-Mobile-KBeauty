@@ -39,8 +39,7 @@
 
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
-	
+
 		{{-- title --}}
 		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
 	
@@ -94,7 +93,7 @@
 		        <div class="spacer-large">
 		    @endif
 
-			<div class="spacer-large">
+			<div class="spacer-small">
 
 			{{-- submit button --}}
 			<button class="button-page button-next bg-color-2 color-1 size-6" label="{{ $button }}">
