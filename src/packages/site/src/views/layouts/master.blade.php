@@ -53,7 +53,9 @@
 					
 					<div class="stretch-to-fit">
 
+						<?php if ($_SERVER['REQUEST_URI'] != '/desktop') { ?>
 						<div class="header-logo"><img alt="{{ $pagetitle }}" src="{{ $headerLogoUrl }}" load-style1="fade"/></div>
+						<?php } ?>
 
 	        		{{----------------- CONTENT ------------------}}
 	        		@yield('content', '')
