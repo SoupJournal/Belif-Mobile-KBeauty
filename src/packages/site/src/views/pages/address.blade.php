@@ -102,9 +102,7 @@
 			</button>
 
 		</div>
-		
-		<div class="spacer-small"></div>
-		
+
 	{{ Form::close() }}
 
 </div>

@@ -73,8 +73,6 @@
 			</div>
 			<!-- load group -->
 					
-			<div class="spacer-small"></div>
-		
 		</div>
 
 	</div>

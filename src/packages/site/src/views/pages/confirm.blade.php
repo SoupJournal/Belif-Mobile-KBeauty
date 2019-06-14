@@ -74,7 +74,6 @@
 		<a href="{{ route('belif.reverify') }}" class="button-page color-1">
 			<h4 class="button-link">{{ $buttonNo }}</h4>
 		</a>
-		
 
 </div>
 
