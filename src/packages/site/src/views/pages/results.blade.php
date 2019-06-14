@@ -37,42 +37,46 @@
 
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
+
+		<div class="row page-margin-small">
 	
-		{{-- title --}}
-		<h2 class="no-margins size-5 color-{{ $theme }}">Your scent result is:</h2>
+			{{-- title --}}
+			<h2 class="no-margins size-5 color-{{ $theme }}">Your scent result is:</h2>
 
-		<div class="spacer-small"></div>
+			<div class="spacer-small"></div>
 
-		<h1 class="no-margins title large color-{{ $theme }}">{!! $title !!}</h1>
+			<h1 class="no-margins title large color-{{ $theme }}">{!! $title !!}</h1>
 
-		<div class="spacer-small"></div>
+			<div class="spacer-small"></div>
 
-		<h3 class="no-margins font-4 bold color-{{ $theme }} size-6">{!! $subtitle !!}</h3>
-		
-		<div class="spacer-medium"></div>
+			<h3 class="no-margins font-4 bold color-{{ $theme }} size-6">{!! $subtitle !!}</h3>
 
-		{{-- product image --}}
-		<img class="product-image" src="{{ safeObjectValue('sample_image', $products[$productIdx], '') }}" load-style="fade" load-group="product_{{ $productIdx }}">
+			<div class="spacer-medium"></div>
 
-		<div class="spacer-medium"></div>
+			{{-- product image --}}
+			<img class="product-image" src="{{ safeObjectValue('sample_image', $products[$productIdx], '') }}" load-style="fade" load-group="product_{{ $productIdx }}">
 
-		{{-- info --}}
-		<div class="page-padding-small size-5 color-{{ $theme }}">{!! $text !!}</div>
+			<div class="spacer-medium"></div>
 
-		<div class="spacer-small"></div>
-	
-		<a href="/address" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
-			{{ $button }}
-		</a>
+			{{-- info --}}
+			<div class="page-padding-small size-5 color-{{ $theme }}">{!! $text !!}</div>
 
-		<div class="spacer-tiny"></div>
+			<div class="spacer-small"></div>
 
-		{{-- restart --}}
-		<a href="{{ $restartURL }}">
-			<h4 class="title-regular color-2 box-padding">{{ $buttonNo }}</h4>
-		</a>
+			<a href="/address" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
+				{{ $button }}
+			</a>
 
-		<div class="spacer-tiny"></div>
+			<div class="spacer-tiny"></div>
+
+			{{-- restart --}}
+			<a href="{{ $restartURL }}">
+				<h4 class="title-regular color-2 box-padding">{{ $buttonNo }}</h4>
+			</a>
+
+			<div class="spacer-tiny"></div>
+
+		</div>
 
 	</div>
 
