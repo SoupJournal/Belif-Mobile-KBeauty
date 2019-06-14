@@ -31,9 +31,9 @@
 	$theme = isset($theme) ? $theme : 1;
 ?>
 
-<div class="text-center page-padding">
-	
-	<div class="page-padding-tiny">
+<div class="text-center">
+
+	<div class="container-top">
 
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
