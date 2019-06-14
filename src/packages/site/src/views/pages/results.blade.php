@@ -59,7 +59,7 @@
 		{{-- info --}}
 		<div class="page-padding-small size-5 color-{{ $theme }}">{!! $text !!}</div>
 
-		<div class="spacer-small">
+		<div class="spacer-small"></div>
 	
 		<a href="/address" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
@@ -71,6 +71,8 @@
 		<a href="{{ $restartURL }}">
 			<h4 class="title-regular color-2 box-padding">{{ $buttonNo }}</h4>
 		</a>
+
+		<div class="spacer-tiny"></div>
 
 	</div>
 
