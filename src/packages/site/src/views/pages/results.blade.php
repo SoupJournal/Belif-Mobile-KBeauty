@@ -36,6 +36,7 @@
 	<div class="container-top">
 
 		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
 		<div class="row page-margin-small">
 
