@@ -49,9 +49,6 @@
 			</div>
 		@endif
 
-		<div class="spacer-large"></div>
-		<div class="spacer-medium"></div>
-
 		{{-- info --}}
 		<div class="page-margin-large">
 			<h4 class="title-light color-1 size-4">{!! $html !!}</h4>
