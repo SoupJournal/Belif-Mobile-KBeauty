@@ -37,8 +37,6 @@
 
 	{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
 
-	<div class="font-1 color-2 size-3 bg-color-1">Your email has been verified!</div>
-
 	<div class="page-padding-small">
 
 		<div class="spacer-large"></div>
