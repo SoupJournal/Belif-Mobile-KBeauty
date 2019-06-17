@@ -921,7 +921,7 @@
 							"recipient" => $shareUser->email, 
 							"sender" => [
 								'email' => self::EMAIL_SENDER_SHARE, 
-								'name' => 'VDL'
+								'name' => 'Sulwhasoo'
 							],
 							"subject" => $subject,
 							"view" => "belif::email.share",
@@ -997,7 +997,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_PRODUCT, 
-							'name' => 'VDL'
+							'name' => 'Sulwhasoo'
 						],
 						"subject" => self::EMAIL_SUBJECT_PRODUCT,
 						"view" => "belif::email.product",
@@ -1081,7 +1081,7 @@
 								"recipient" => $user->email, 
 								"sender" => [
 									'email' => self::EMAIL_SENDER_PRODUCT, 
-									'name' => 'VDL'
+									'name' => 'Sulwhasoo'
 								],
 								"subject" => self::EMAIL_SUBJECT_PRODUCT,
 								"view" => "belif::email.product",
