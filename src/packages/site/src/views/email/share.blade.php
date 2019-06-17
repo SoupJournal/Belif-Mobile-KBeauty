@@ -52,7 +52,7 @@
 															<tr>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="107" alt=""/></td>
-																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/VDL/Images/VDL+High+Res+Logo.png" width="250" height="76" alt="VDL"/></td>
+																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/Sulwhasoo/sulwhasoo_logo.png" alt="Sulwhasoo"/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="1" alt=""/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 																</tr>

@@ -558,8 +558,8 @@
 			//invalid code - show home page
 			return Redirect::route('belif.home');
 			
-		} //end getShare()	
-/*
+		} //end getConfirm()
+
 		public function getShare() {
 			
 			//get verification code
@@ -622,7 +622,6 @@
 			
 		} //end getShare()	
 
-			
 		public function postShare() {
 			
 			//get user id
@@ -706,7 +705,7 @@
 			return Redirect::route('belif.home');
 			
 		} //end postShare()
-*/
+
 		public function getThanks() {
 			
 			$userId = Session::get('userId');
@@ -875,7 +874,7 @@
 							'address2' => $user->address_2,
 							'address3' => $address3,
 							'pageData' => $pageData,
-							'verifyLink' => route('belif.confirm', ['code' => $user->verify_code]),
+							'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
 							'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
 						]
 					]);
