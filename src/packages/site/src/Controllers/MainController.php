@@ -607,6 +607,7 @@
 							'pageName' => 'share',
 							'pageData' => $pageData,
 							'backgroundImage' => $backgroundImage,
+                            'headerLogoUrl' => $this->header_logo_url,
 							'backURL' => route('belif.confirm', ['code' => $code]),
 							'formURL' => route('belif.share.submit'),
 						));
