@@ -21,6 +21,7 @@
 
  	//ensure page properties are set
 	$buttonURL = isset($buttonURL) ? $buttonURL : null;
+	$code = isset($code) ? $code : '';
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
@@ -66,7 +67,7 @@
 
 		<div class="spacer-large"></div>
 
-		<a href="{{ route('belif.share') }}" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
+		<a href="{{ route('belif.share', ['code' => $code]) }}" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
 		</a>
 
