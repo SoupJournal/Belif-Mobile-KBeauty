@@ -69,7 +69,9 @@
 				<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
 					{{ $button }}
 				</a>
-					
+
+				<div class="spacer-medium"></div>
+
 			</div>
 			<!-- load group -->
 					

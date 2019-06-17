@@ -35,11 +35,15 @@
 
 <div class="text-center">
 
-{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
+	{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
+
+	<div class="font-1 color-2 size-3 bg-color-1">Your email has been verified!</div>
 
 	<div class="page-padding-small">
-	
+
 		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
 		{{-- title --}}
 		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
@@ -74,7 +78,7 @@
 		@endif
 
 		{{-- submit button --}}
-		<button class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
+		<button class="button-page button-next bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
 			{{ $button }}
 		</button>
 

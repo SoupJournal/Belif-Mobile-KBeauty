@@ -111,6 +111,8 @@
 			@endif
 
 			{{ Form::close() }}
+
+			<div class="spacer-medium"></div>
 		
 		</div>
 	
