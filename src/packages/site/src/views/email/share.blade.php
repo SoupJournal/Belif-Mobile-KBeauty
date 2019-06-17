@@ -90,7 +90,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#824d9f; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
+															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -121,7 +121,7 @@
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
 													<tbody>
 														<tr>
-															<td bgcolor="#824d9f" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.lumislayers.com" target="_blank" style="text-decoration: none; color:#ffffff;">Claim Gift Now</a></td>
+															<td bgcolor="#404041" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.sulwhasoo5scents.com" target="_blank" style="text-decoration: none; color:#ffffff;">Claim Gift Now</a></td>
 														</tr>
 													</tbody>
 												</table></td>

@@ -69,7 +69,7 @@
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; text-transform:uppercase; font-size:28px; line-height:34px; font-weight:bold; letter-spacing:-0.4px;">{{ $title }}</td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#824d9f; font-size:18px; line-height:32px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:18px; line-height:32px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
 											</tr>
 											
 											<tr>
