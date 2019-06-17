@@ -90,15 +90,18 @@
 		        @endforeach
 		        
 		    @else
-		        <div class="spacer-large">
+				<div class="spacer-large"></div>
 		    @endif
 
-			<div class="spacer-small">
+			<div class="spacer-small"></div>
 
 			{{-- submit button --}}
 			<button class="button-page button-next bg-color-2 color-1 size-6" label="{{ $button }}">
 				{{ $button }}
 			</button>
+
+			<div class="spacer-large"></div>
+			<div class="spacer-large"></div>
 
 		</div>
 
