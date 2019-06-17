@@ -47,7 +47,7 @@
 		
 		//share email details
 		const EMAIL_SENDER_SHARE = 'team@sulwhasoo5scents.com';
-		const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of VDL.';
+		const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of Sulwhasoo.';
 		
 		//product email details
 		const EMAIL_SENDER_PRODUCT = 'team@sulwhasoo5scents.com';
