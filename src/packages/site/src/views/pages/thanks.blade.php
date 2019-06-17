@@ -71,6 +71,7 @@
 			Quit Page
 		</a>
 
+		<div class="spacer-medium"></div>
 </div>
 
 @stop
