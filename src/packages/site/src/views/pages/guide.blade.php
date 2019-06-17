@@ -59,7 +59,7 @@
 				<div class="spacer-tiny"></div>
 	
 				{{-- text --}}
-				<h4 class="title-bold color-2 page-margin-large">
+				<h4 class="title-bold color-1 page-margin-large">
 					{!! $text !!}
 				</h4>
 	
