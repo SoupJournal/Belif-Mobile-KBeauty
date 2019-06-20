@@ -47,11 +47,11 @@
 			<p class="no-margins title-bold color-2 size-6">First Care Activating Serum</p>
 
 			{{-- title --}}
-			<h1 class="no-margins title-light large color-12">{!! $title !!}</h1>
+			<h1 class="no-margins title-bold large color-12">{!! $title !!}</h1>
 
 			<div class="spacer-small"></div>
 
-			<h2 class="no-margins title-light small color-2">{!! $subtitle !!}</h2>
+			<h2 class="no-margins title-bold small color-2">{!! $subtitle !!}</h2>
 
 			<div class="spacer-medium"></div>
 
@@ -60,11 +60,11 @@
 
 			<div class="spacer-small"></div>
 
-			<h3 class="no-margins title-light color-12 size-6">{!! $text !!}</h3>
+			<h3 class="no-margins title-bold color-12 size-6">{!! $text !!}</h3>
 
 			<div class="spacer-small"></div>
 
-			<p class="no-margins title-light color-1 size-4">{!! $html !!}</p>
+			<p class="no-margins title-bold color-1 size-4">{!! $html !!}</p>
 
 			<div class="spacer-small"></div>
 
