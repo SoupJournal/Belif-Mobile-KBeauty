@@ -82,7 +82,7 @@
 
 		{{-- Re-verify button --}}
 		<a href="{{ route('belif.thanks') }}" class="button-page color-1 font-3">
-			<h4 class="button-link">{{ $buttonNo }}</h4>
+			<h4 class="button-link font-3">{{ $buttonNo }}</h4>
 		</a>
 		
 {{ Form::close() }}
