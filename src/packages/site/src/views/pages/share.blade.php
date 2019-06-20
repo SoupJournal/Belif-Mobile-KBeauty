@@ -44,11 +44,11 @@
 		<div class="spacer-medium"></div>
 
 		{{-- title --}}
-		<h1 class="no-margins title-light large color-1">{!! $title !!}</h1>
+		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 	
 		<div class="spacer-small"></div>
 
-		<h3 class="title-light no-margins color-1">{!! $subtitle !!}</h3>
+		<h3 class="title-bold no-margins color-1">{!! $subtitle !!}</h3>
 		
 		<div class="spacer-small"></div>
 
@@ -62,7 +62,7 @@
 		{{-- display form errors --}}
 	    @if ($errors->has())
 	        @foreach ($errors->all() as $error)
-	            <div class='bg-danger alert'>{{ $error }}</div>
+	            <div class='bg-danger alert font-3'>{{ $error }}</div>
 	        @endforeach
 	    @else
 	   	 	<div class="spacer-small-2"></div>
@@ -81,7 +81,7 @@
 		</button>
 
 		{{-- Re-verify button --}}
-		<a href="{{ route('belif.thanks') }}" class="button-page color-1">
+		<a href="{{ route('belif.thanks') }}" class="button-page color-1 font-3">
 			<h4 class="button-link">{{ $buttonNo }}</h4>
 		</a>
 		
