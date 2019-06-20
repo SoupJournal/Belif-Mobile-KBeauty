@@ -38,11 +38,11 @@
 		<div class="spacer-medium"></div>
 	
 		{{-- title --}}
-		<h1 class="no-margins title-light large color-1">{!! $title !!}</h1>
+		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 
 		<div class="spacer-small"></div>
 		
-		<h3 class="title-light no-margins small color-1 size-5">{!! $subtitle !!}</h3>
+		<h3 class="title-bold no-margins small color-1 size-5">{!! $subtitle !!}</h3>
 		
 		<div class="spacer-medium"></div>
 

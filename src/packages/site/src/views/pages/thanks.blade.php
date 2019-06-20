@@ -37,7 +37,7 @@
 		<div class="spacer-large"></div>
 
 		{{-- title --}}
-		<h1 class="no-margins title-light large color-1">{!! $title !!}</h1>
+		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 
 		<div class="spacer-small"></div>
 
@@ -50,7 +50,7 @@
 
 		{{-- info --}}
 		<div class="page-margin-large">
-			<h4 class="title-light color-1 size-4">{!! $html !!}</h4>
+			<h4 class="title-bold color-1 size-4">{!! $html !!}</h4>
 		</div>
 		
 		<div class="spacer-medium"></div>
