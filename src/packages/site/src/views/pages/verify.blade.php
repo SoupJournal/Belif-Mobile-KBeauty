@@ -34,13 +34,12 @@
 	<div class="page-padding-small">
 	
 		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
 		{{-- title --}}
 		<h1 class="no-margins title-light large color-1">{!! $title !!}</h1>
 	
-		<div class="spacer-large"></div>
+		<div class="spacer-small"></div>
 	
 		{{-- image --}}
 		@if ($image && strlen($image)>0) 
@@ -54,8 +53,6 @@
 		
 			{{-- info --}}
 			<h3 class="title-light page-padding color-1">{!! $text !!}</h3>
-
-			<div class="spacer-large"></div>
 
 			{{-- Re-verify button --}}
 			<a href="{{ route('belif.reverify') }}" class="button-page color-1">
