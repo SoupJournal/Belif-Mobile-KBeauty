@@ -42,7 +42,7 @@
 			<div class="spacer-large"></div>
 
 			{{-- title --}}
-			<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+			<h1 class="no-margins title-bold medium color-12">{!! $title !!}</h1>
 		
 			<div class="spacer-small"></div>
 			
@@ -52,14 +52,14 @@
 				{{-- html --}}
 				@if ($html && strlen($html)>0) 
 					<div class="row-left guide-block">
-						<h4 class="title-bold color-1 guide-text">{!! $html !!}</h4>
+						<h4 class="title-bold color-12 guide-text">{!! $html !!}</h4>
 					</div>
 				@endif
 		
 				<div class="spacer-tiny"></div>
 	
 				{{-- text --}}
-				<h4 class="title-bold color-1 page-margin-large">
+				<h4 class="title-bold color-12 page-margin-large">
 					{!! $text !!}
 				</h4>
 	

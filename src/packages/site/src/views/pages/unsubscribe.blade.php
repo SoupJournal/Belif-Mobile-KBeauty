@@ -35,7 +35,7 @@
 		<div class="spacer-small"></div>
 	
 		{{-- title --}}
-		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+		<h1 class="no-margins title-bold medium color-1">{!! $title !!}</h1>
 
 		<div class="spacer-small"></div>
 		
