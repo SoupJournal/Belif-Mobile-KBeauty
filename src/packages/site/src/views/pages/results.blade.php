@@ -49,7 +49,7 @@
 
 			<div class="spacer-small"></div>
 
-			<h3 class="no-margins font-4 bold color-{{ $theme }} size-6">{!! $subtitle !!}</h3>
+			<h3 class="no-margins font-3 bold color-{{ $theme }} size-6">{!! $subtitle !!}</h3>
 
 			<div class="spacer-small"></div>
 
@@ -59,7 +59,7 @@
 			<div class="spacer-small"></div>
 
 			{{-- info --}}
-			<div class="page-padding-small size-5 color-{{ $theme }}">{!! $text !!}</div>
+			<div class="page-padding-small size-5 color-{{ $theme }} font-3">{!! $text !!}</div>
 
 			<div class="spacer-small"></div>
 
@@ -71,7 +71,7 @@
 
 			{{-- restart --}}
 			<div><a href="{{ $restartURL }}">
-				<h4 class="title-regular color-2 box-padding">{{ $buttonNo }}</h4>
+				<h4 class="title-regular color-2 box-padding font-3">{{ $buttonNo }}</h4>
 			</a></div>
 
 		</div>
