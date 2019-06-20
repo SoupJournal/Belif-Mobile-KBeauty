@@ -85,8 +85,6 @@
 		        @foreach ($errors->all() as $error)
 		            <div class='bg-danger alert'>{{ $error }}</div>
 		        @endforeach
-		    @else
-		   	 	<div class="spacer-small-2"></div>
 		    @endif
 
 			{{-- Terms & Conditions --}}
@@ -98,6 +96,8 @@
 			<button class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</button>
+
+			<div class="spacer-small-2"></div>
 			
 		</div>
 		<!-- load group -->
