@@ -43,11 +43,11 @@
 		<div class="spacer-medium"></div>
 
 		{{-- title --}}
-		<h1 class="no-margins title-light large color-1">{!! $title !!}</h1>
+		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 	
 		<div class="spacer-small"></div>
 
-		<h3 class="title-light no-margins color-1 size-5">{!! $subtitle !!}</h3>
+		<h3 class="title-bold no-margins color-1 size-5">{!! $subtitle !!}</h3>
 		
 		<div class="spacer-small"></div>
 
@@ -62,7 +62,7 @@
 			
 		</div>
 
-		<div class="color-1 size-6">{!! $text !!}</div>
+		<div class="color-1 size-6 font-3">{!! $text !!}</div>
 
 		<div class="spacer-large"></div>
 

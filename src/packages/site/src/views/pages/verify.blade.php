@@ -37,7 +37,7 @@
 		<div class="spacer-medium"></div>
 
 		{{-- title --}}
-		<h1 class="no-margins title-light large color-1">{!! $title !!}</h1>
+		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 	
 		<div class="spacer-small"></div>
 	
@@ -52,10 +52,10 @@
 		<div load-style="fade" load-group="page">
 		
 			{{-- info --}}
-			<h3 class="title-light page-padding color-1">{!! $text !!}</h3>
+			<h3 class="title-bold page-padding color-1">{!! $text !!}</h3>
 
 			{{-- Re-verify button --}}
-			<a href="{{ route('belif.reverify') }}" class="button-page color-1">
+			<a href="{{ route('belif.reverify') }}" class="button-page color-1 font-3">
 				<h4 class="button-link">{{ $buttonNo }}</h4>
 			</a>
 		
