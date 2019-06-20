@@ -45,7 +45,7 @@
 					'pageName' => 'home',
 					'pageData' => $pageData,
 					'backgroundImage' => $backgroundImage,
-                    'headerLogoUrl' => $this->header_logo_url,
+                    'headerLogoUrl' => $this->header_logo_url_black,
 				));
 			
 	    	} //end if (is desktop)
@@ -69,7 +69,7 @@
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'formURL' => route('belif.email'),
-				'headerLogoUrl' => $this->header_logo_url,
+				'headerLogoUrl' => $this->header_logo_url_black,
 				'termsURL' => $this->terms_and_conditions_url
 			));
 			
@@ -177,7 +177,7 @@
 				'pageName' => 'guide',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-                'headerLogoUrl' => $this->header_logo_url,
+                'headerLogoUrl' => $this->header_logo_url_black,
 				'buttonURL' => route('belif.question'),
 				'backURL' => route('belif.home'),
 			));
@@ -231,7 +231,7 @@
 				'pageData' => $pageData,
 				'states' => availableStates(),
 				'backgroundImage' => $backgroundImage,
-                'headerLogoUrl' => $this->header_logo_url,
+                'headerLogoUrl' => $this->header_logo_url_black,
 				'formURL' => route('belif.address'),
 				'backURL' => route('belif.results')
 			));
@@ -459,7 +459,7 @@
 				'pageName' => 'verify',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-                'headerLogoUrl' => $this->header_logo_url,
+                'headerLogoUrl' => $this->header_logo_url_black,
 				'backURL' => route('belif.address'),
 				'buttonURL' => route('belif.share')
 			));
@@ -489,7 +489,7 @@
 				'pageName' => 'reverify',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-                'headerLogoUrl' => $this->header_logo_url,
+                'headerLogoUrl' => $this->header_logo_url_black,
 				'backURL' => route('belif.address'),
 				'buttonURL' => route('belif.share'),				
 				'verifyEmail' => $user->email
@@ -546,7 +546,7 @@
 							'pageData' => $pageData,
 							'code' => $code,
 							'backgroundImage' => $backgroundImage,
-                            'headerLogoUrl' => $this->header_logo_url,
+                            'headerLogoUrl' => $this->header_logo_url_black,
 						));
 					
 					}
@@ -607,7 +607,7 @@
 							'pageName' => 'share',
 							'pageData' => $pageData,
 							'backgroundImage' => $backgroundImage,
-                            'headerLogoUrl' => $this->header_logo_url,
+                            'headerLogoUrl' => $this->header_logo_url_black,
 							'backURL' => route('belif.confirm', ['code' => $code]),
 							'formURL' => route('belif.share.submit'),
 						));
@@ -726,7 +726,7 @@
 				'pageName' => 'thanks',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-                'headerLogoUrl' => $this->header_logo_url,
+                'headerLogoUrl' => $this->header_logo_url_black,
 				'buttonURL' => 'http://www.sephora.com/belif',
 				'backURL' => route('belif.share', ['code' => $code])
 			));
@@ -760,7 +760,7 @@
 						'pageName' => 'unsubscribe',
 						'pageData' => $pageData,
 						'backgroundImage' => $backgroundImage,
-                        'headerLogoUrl' => $this->header_logo_url,
+                        'headerLogoUrl' => $this->header_logo_url_black,
 					));
 					
 				} //end if (valid code)

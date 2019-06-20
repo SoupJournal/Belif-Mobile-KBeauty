@@ -60,7 +60,8 @@
 
             $application = CMSApp::get()->first();
 
-            $this->header_logo_url = $application->header_logo_url;
+            $this->header_logo_url_black = $application->header_logo_url_black;
+            $this->header_logo_url_white = $application->header_logo_url_white;
             $this->terms_and_conditions_url = $application->terms_and_conditions_url;
 
         } //end constructor()

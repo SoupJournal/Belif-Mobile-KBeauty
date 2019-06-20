@@ -48,7 +48,7 @@
 					'questionNumber' => $questionIndex,
 					'backgroundImage' => $backgroundImage,
                     'formURL' => route('belif.answer.id', ['questionIndex' => $questionIndex]),
-                    'headerLogoUrl' => $this->header_logo_url,
+                    'headerLogoUrl' => $this->header_logo_url_black,
 					'buttonURL' => route('belif.answer'),
 					'backURL' => $questionIndex>1 ? route('belif.question.previous') : route('belif.guide')
 				));
@@ -278,7 +278,7 @@
 				'buttonURL' => route('belif.address'),
 				'restartURL' => route('belif.tryagain'),
 				'sampleResult' => $sampleResult,
-                'headerLogoUrl' => $this->header_logo_url,
+                'headerLogoUrl' => $this->header_logo_url_black,
                 'theme' => $themeColor
 			));
 			
