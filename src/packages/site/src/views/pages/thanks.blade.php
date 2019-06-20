@@ -35,10 +35,9 @@
 
 		<div class="spacer-large"></div>
 		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
 
 		{{-- title --}}
-		<h1 class="no-margins title-light large color-1 size-6">{!! $title !!}</h1>
+		<h1 class="no-margins title-light large color-1">{!! $title !!}</h1>
 
 		<div class="spacer-small"></div>
 
@@ -54,11 +53,10 @@
 			<h4 class="title-light color-1 size-4">{!! $html !!}</h4>
 		</div>
 		
-		<div class="spacer-large"></div>
 		<div class="spacer-medium"></div>
 		
 		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-2 color-1 font-3 size-5" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram-black.png" target="_blank">
-			{{ $button }} <div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram-black.png" width="24" /></div>
+			<div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram-black.png" width="24" /> {{ $button }}</div>
 		</a>
 
 		<div class="spacer-medium"></div>
