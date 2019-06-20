@@ -229,31 +229,31 @@
 				$productIdx = 0;
 				$selectedProducts[] = 1;
 				$selectedProducts[] = 0;
-				$themeColor = 2;
+				$headerLogoUrl = $this->header_logo_url_white;
 			} elseif ($finalAnswer == 'B') {
 				$sampleResult = self::FORM_RESULTS_B;
 				$productIdx = 1;
 				$selectedProducts[] = 2;
 				$selectedProducts[] = 0;
-                $themeColor = 1;
+                $headerLogoUrl = $this->header_logo_url_black;
             } elseif ($finalAnswer == 'C') {
                 $sampleResult = self::FORM_RESULTS_C;
                 $productIdx = 2;
                 $selectedProducts[] = 3;
                 $selectedProducts[] = 0;
-                $themeColor = 2;
+                $headerLogoUrl = $this->header_logo_url_white;
             } elseif ($finalAnswer == 'D') {
                 $sampleResult = self::FORM_RESULTS_D;
                 $productIdx = 3;
                 $selectedProducts[] = 4;
                 $selectedProducts[] = 0;
-                $themeColor = 2;
+                $headerLogoUrl = $this->header_logo_url_white;
             } elseif ($finalAnswer == 'E') {
                 $sampleResult = self::FORM_RESULTS_E;
                 $productIdx = 4;
                 $selectedProducts[] = 5;
                 $selectedProducts[] = 0;
-                $themeColor = 2;
+                $headerLogoUrl = $this->header_logo_url_white;
             }
 
 			Session::set('selectedProducts', $selectedProducts);
@@ -278,8 +278,7 @@
 				'buttonURL' => route('belif.address'),
 				'restartURL' => route('belif.tryagain'),
 				'sampleResult' => $sampleResult,
-                'headerLogoUrl' => $this->header_logo_url_black,
-                'theme' => $themeColor
+                'headerLogoUrl' => $headerLogoUrl
 			));
 			
 		} //end getResults()

@@ -177,7 +177,7 @@
 				'pageName' => 'guide',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
-                'headerLogoUrl' => $this->header_logo_url_black,
+                'headerLogoUrl' => $this->header_logo_url_white,
 				'buttonURL' => route('belif.question'),
 				'backURL' => route('belif.home'),
 			));

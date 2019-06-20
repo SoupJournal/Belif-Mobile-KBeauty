@@ -4,7 +4,6 @@
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
 	$backgroundFill = isset($backgroundFill) ? $backgroundFill : false;
-	$themeColor = isset($themeColor) ? $themeColor : 1;
 ?>
 <!DOCTYPE html>
 <html lang='en'>
