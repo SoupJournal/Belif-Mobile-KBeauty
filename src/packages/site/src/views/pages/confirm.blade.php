@@ -40,6 +40,7 @@
 	<div class="page-padding-small">
 
 		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
 		{{-- title --}}
 		<h1 class="no-margins title-light large color-1">{!! $title !!}</h1>
