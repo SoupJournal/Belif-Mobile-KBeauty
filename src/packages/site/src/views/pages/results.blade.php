@@ -28,7 +28,7 @@
 
 	$products = isset($products) ? $products : null;
 	$productIdx = isset($productIdx) ? $productIdx : 0;
-	$theme = isset($theme) ? $theme : 1;
+	$theme = in_array($productIdx, array(0,2,3,4)) ? 2 : 1;
 ?>
 
 <div class="text-center">
