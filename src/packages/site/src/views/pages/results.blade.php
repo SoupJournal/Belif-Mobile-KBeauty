@@ -41,7 +41,7 @@
 		<div class="row page-margin-small">
 
 			{{-- title --}}
-			<h1 class="no-margins size-5 color-{{ $theme }}">Your scent result is:</h1>
+			<h1 class="no-margins size-5 color-{{ $theme }} font-3">Your scent result is:</h1>
 
 			<div class="spacer-small"></div>
 
