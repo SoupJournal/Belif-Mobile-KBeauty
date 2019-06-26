@@ -90,8 +90,8 @@
 													<td bgcolor="#ffffff">
 														<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
-														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
-														<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></td></tr>
+														<tr><td style="border:0; margin:0; padding:16px 70px;"></td></tr>
 														</tbody>
 														</table>
 													</td>
@@ -99,8 +99,8 @@
 													<td bgcolor="#ffffff">
 														<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
-														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></td></tr>
-														<tr><td style="border:0; margin:0; padding:16px 70px;"></td></tr>
+														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;">&nbsp;</td></tr>
+														<tr><td style="border:0; margin:0; padding:16px 70px;">&nbsp;</td></tr>
 														</tbody>
 														</table>
 													</td>
