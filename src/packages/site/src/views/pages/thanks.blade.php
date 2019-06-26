@@ -62,8 +62,8 @@
 		<div class="spacer-medium"></div>
 
 		{{-- Cancel button --}}
-		<a href="/" class="button-page-cancel button-next bg-color-clear color-1 font-3" innerclass="color-1" label="Quit Page">
-			Quit Page
+		<a href="https://us.sulwhasoo.com?utm_source=5scentsminisite&utm_medium=sampling&utm_campaign=5scents&utm_content=shopnow" class="button-page-cancel button-next bg-color-clear color-1 font-3" innerclass="color-1" label="Shop Now">
+			Shop Now
 		</a>
 
 		<div class="spacer-medium"></div>
