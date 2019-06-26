@@ -112,7 +112,7 @@
 							</table></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0 ; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $productImage }}" bgcolor="#fff" valign="top">
+							<td style="height: 1550px;border: 0; margin: 0 ; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $productImage }}" bgcolor="#fff" valign="top">
 								<!--[if gte mso 9]>
 									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:570px;">
 										<v:fill type="tile" src="{{ $productImage }}" color="#ffffff" />
