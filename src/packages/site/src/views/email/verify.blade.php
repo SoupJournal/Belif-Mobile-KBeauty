@@ -99,8 +99,8 @@
 													<td bgcolor="#ffffff">
 														<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
-														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;">&nbsp;</td></tr>
-														<tr><td style="border:0; margin:0; padding:16px 70px;">&nbsp;</td></tr>
+														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></td></tr>
+														<tr><td style="border:0; margin:0; padding:16px 70px;"></td></tr>
 														</tbody>
 														</table>
 													</td>
@@ -109,7 +109,7 @@
 										</table></td>
 									</tr>
 								</tbody>
-							</table></td>
+							</table><br/></td>
 						</tr>
 						<tr>
 							<td style="height: 1550px;border: 0; margin: 0 ; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $productImage }}" bgcolor="#fff" valign="top">
