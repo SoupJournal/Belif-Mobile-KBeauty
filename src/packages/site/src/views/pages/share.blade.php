@@ -77,12 +77,12 @@
 
 		{{-- submit button --}}
 		<button class="button-page button-next bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
-			{{ $button }}
+			{!! $button !!}
 		</button>
 
 		{{-- Re-verify button --}}
 		<a href="{{ route('belif.thanks') }}" class="button-page color-1 font-3">
-			<h4 class="button-link font-3">{{ $buttonNo }}</h4>
+			<h4 class="button-link font-3">{!! $buttonNo !!}</h4>
 		</a>
 		
 {{ Form::close() }}
