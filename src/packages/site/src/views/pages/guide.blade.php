@@ -39,7 +39,6 @@
 
 			<div class="spacer-large"></div>
 			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
 
 			{{-- title --}}
 			<h1 class="no-margins title-bold large color-12">{!! $title !!}</h1>
