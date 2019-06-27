@@ -45,22 +45,24 @@
 			<p class="no-margins title-bold color-2 size-6">First Care Activating Serum</p>
 
 			{{-- title --}}
-			<h1 class="no-margins title-bold large color-12">{!! $title !!}</h1>
+			<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 
 			<div class="spacer-small"></div>
 
-			<h2 class="no-margins title-bold small color-2">{!! $subtitle !!}</h2>
+			<h2 class="no-margins title-bold small color-1">{!! $subtitle !!}</h2>
 
 			<div class="spacer-medium"></div>
 
 			<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Sulwhasoo+Screen+1+Image.jpg" border="0" style="width: 100%;" />
+
+			<div class="spacer-small"></div>
 
 			{{-- text --}}
 			<img src="https://s3.amazonaws.com/soup-journal-app-storage/Sulwhasoo/star_icon.png" width="25" />
 
 			<div class="spacer-small"></div>
 
-			<h3 class="no-margins title-bold color-12 size-6">{!! $text !!}</h3>
+			<h3 class="no-margins title-bold color-1 size-6">{!! $text !!}</h3>
 
 			<div class="spacer-small"></div>
 
@@ -93,7 +95,7 @@
 			</div>
 
 			{{-- submit button --}}
-			<button class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
+			<button class="button-page bg-color-11 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</button>
 
