@@ -41,8 +41,7 @@
 		<div class="page-padding-tiny">
 	
 			<div class="spacer-large"></div>
-
-			<p class="no-margins title-bold color-2 size-6">First Care Activating Serum</p>
+			<div class="spacer-small"></div>
 
 			{{-- title --}}
 			<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
