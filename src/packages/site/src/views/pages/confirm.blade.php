@@ -69,6 +69,8 @@
 
 		<div class="color-1 size-6 font-3">{!! $html !!}</div>
 
+		<div class="spacer-small"></div>
+
 		<a href="{{ route('belif.share', ['code' => $code]) }}" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
 		</a>
