@@ -62,7 +62,7 @@
 					{{ $button }}
 				</a>
 	
-				<div class="spacer-large"></div>
+				<div class="spacer-medium"></div>
 
 				{{-- text --}}
 				<p class="title-bold color-12 page-margin-large">
