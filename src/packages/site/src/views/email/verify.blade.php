@@ -105,6 +105,17 @@
 														</table>
 													</td>
 												</tr>
+												<tr>
+													<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
+															<tbody>
+															<tr>
+																<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+																<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:32px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $productTitle !!}</td>
+																<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+															</tr>
+															</tbody>
+														</table></td>
+												</tr>
 											</tbody>
 										</table></td>
 									</tr>
@@ -124,17 +135,17 @@
 											<tr>
 												<td height="54" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 											</tr>
-											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:32px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $productTitle !!}</td>
-															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-														</tr>
-													</tbody>
-												</table></td>
-											</tr>
+{{--											<tr>--}}
+{{--												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">--}}
+{{--													<tbody>--}}
+{{--														<tr>--}}
+{{--															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>--}}
+{{--															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:32px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $productTitle !!}</td>--}}
+{{--															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>--}}
+{{--														</tr>--}}
+{{--													</tbody>--}}
+{{--												</table></td>--}}
+{{--											</tr>--}}
 											<tr>
 												<td height="367" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
