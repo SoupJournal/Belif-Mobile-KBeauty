@@ -41,8 +41,6 @@
 		<div class="page-padding-tiny">
 	
 			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
-			<div class="spacer-small"></div>
 
 			<p class="no-margins title-bold color-2 size-6">First Care Activating Serum</p>
 
@@ -54,6 +52,8 @@
 			<h2 class="no-margins title-bold small color-2">{!! $subtitle !!}</h2>
 
 			<div class="spacer-medium"></div>
+
+			<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Sulwhasoo+Screen+1+Image.jpg" border="0" style="width: 100%;" />
 
 			{{-- text --}}
 			<img src="https://s3.amazonaws.com/soup-journal-app-storage/Sulwhasoo/star_icon.png" width="25" />
@@ -101,6 +101,9 @@
 			
 		</div>
 		<!-- load group -->
+
+		<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/SWS_Email_FCAS_02.jpg" border="0" style="width: 100%;" />
+		<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/SWS_Email_FCAS_03.jpg" border="0" style="width: 100%;" />
 
 	{{ Form::close() }}
 

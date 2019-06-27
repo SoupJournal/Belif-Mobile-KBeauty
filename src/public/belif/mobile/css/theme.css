@@ -491,6 +491,7 @@
 	top:0;
 	left:0;
 	right:0;
+	overflow: auto;
 }
 
 .stretch-to-width {
@@ -616,7 +617,7 @@ button:hover {
 }
 
 .terms {
-	margin-top: 10px;
+	margin-top: 0px;
 	font-size: 3.5vw;
 	font-family: BrandonGrotesqueLightItalic, sans-serif;
 	line-height: 40px;
