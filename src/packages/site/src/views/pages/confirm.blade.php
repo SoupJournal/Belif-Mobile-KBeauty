@@ -27,6 +27,7 @@
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
+	$html = safeArrayValue('html', $pageData, "");
 	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$buttonNo = safeArrayValue('button_cancel', $pageData, "");
@@ -64,7 +65,9 @@
 
 		<div class="color-1 size-6 font-3">{!! $text !!}</div>
 
-		<div class="spacer-large"></div>
+		<div class="spacer-small"></div>
+
+		<div class="color-1 size-6 font-3">{!! $html !!}</div>
 
 		<a href="{{ route('belif.share', ['code' => $code]) }}" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
