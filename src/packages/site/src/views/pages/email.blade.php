@@ -52,7 +52,7 @@
 
 			<div class="spacer-medium"></div>
 
-			<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Sulwhasoo+Screen+1+Image.jpg" border="0" style="width: 100%;" />
+			<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Homescreen-GIF.gif" border="0" style="width: 100%;" />
 
 			<div class="spacer-small"></div>
 
