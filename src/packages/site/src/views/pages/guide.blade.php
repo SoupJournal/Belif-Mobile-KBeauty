@@ -38,13 +38,11 @@
 		<div class="row page-margin-small">
 
 			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
+			<div class="spacer-medium"></div>
 
 			{{-- title --}}
 			<h1 class="no-margins title-bold large color-12">{!! $title !!}</h1>
 		
-			<div class="spacer-small"></div>
-			
 			<!-- load group -->
 			<div load-style="fade" load-group="page">
 
@@ -55,12 +53,12 @@
 					</div>
 				@endif
 		
-				<div class="spacer-medium"></div>
-
 				{{-- text --}}
-				<p class="title-bold color-12 page-margin-large">
+				<p class="title-bold color-12 page-margin-large size-3">
 					{!! $text !!}
 				</p>
+
+				<div class="spacer-small"></div>
 
 				{{-- next button --}}
 				<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
