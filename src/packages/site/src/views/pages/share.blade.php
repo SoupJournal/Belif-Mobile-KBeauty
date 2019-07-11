@@ -40,7 +40,6 @@
 	<div class="page-padding-small">
 
 		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
 		<div class="spacer-medium"></div>
 
 		{{-- title --}}
