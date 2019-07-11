@@ -87,24 +87,6 @@
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" width="570px">
 											<tbody>
 												<tr>
-													<td bgcolor="#ffffff">
-														<table border="0" cellspacing="0" cellpadding="0">
-														<tbody>
-														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></td></tr>
-														<tr><td style="border:0; margin:0; padding:16px 70px;"></td></tr>
-														</tbody>
-														</table>
-													</td>
-													<td bgcolor="#ffffff">
-														<table border="0" cellspacing="0" cellpadding="0">
-														<tbody>
-														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></td></tr>
-														<tr><td style="border:0; margin:0; padding:16px 70px;"></td></tr>
-														</tbody>
-														</table>
-													</td>
-												</tr>
-												<tr>
 													<td align="center" colspan="3" valign="middle" style="border: 0; margin: 0; padding: 0;"><br/><table border="0" cellspacing="0" cellpadding="0">
 															<tbody>
 															<tr>
@@ -173,7 +155,30 @@
 										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td bgcolor="#404041" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FOEAE4; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" width="570px">
+											<tbody>
+												<tr>
+													<td bgcolor="#ffffff">
+														<table border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></td></tr>
+														<tr><td style="border:0; margin:0; padding:16px 70px;"></td></tr>
+														</tbody>
+														</table>
+													</td>
+													<td bgcolor="#404041" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FOEAE4; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
+													<td bgcolor="#ffffff">
+														<table border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+														<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></td></tr>
+														<tr><td style="border:0; margin:0; padding:16px 70px;"></td></tr>
+														</tbody>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									  </td>
 									</tr>
 									<tr>
 										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
