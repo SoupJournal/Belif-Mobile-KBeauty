@@ -55,15 +55,14 @@
 		
 		<div class="spacer-medium"></div>
 		
-		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-2 color-1 font-3 size-5" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram-black.png" target="_blank">
-			<div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram-black.png" width="24" /> {{ $button }}</div>
+		<a href="https://sulwhasoo.attn.tv/p/landing" class="button-page-cancel button-next bg-color-clear color-1 font-3" innerclass="color-1" label="Shop & Save">
+			Shop &amp; Save
 		</a>
 
 		<div class="spacer-medium"></div>
 
-		{{-- Cancel button --}}
-		<a href="https://us.sulwhasoo.com?utm_source=5scentsminisite&utm_medium=sampling&utm_campaign=5scents&utm_content=shopnow" class="button-page-cancel button-next bg-color-clear color-1 font-3" innerclass="color-1" label="Shop Now">
-			Shop Now
+		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-2 color-1 font-3 size-5" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram-black.png" target="_blank">
+			<div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram-black.png" width="24" /> {{ $button }}</div>
 		</a>
 
 		<div class="spacer-medium"></div>
