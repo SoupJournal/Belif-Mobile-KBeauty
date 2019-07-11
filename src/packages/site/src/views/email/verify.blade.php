@@ -95,7 +95,6 @@
 														</tbody>
 														</table>
 													</td>
-													<td bgcolor="#404041" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FOEAE4; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
 													<td bgcolor="#ffffff">
 														<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
@@ -169,6 +168,12 @@
 								<tbody>
 									<tr>
 										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">{!! $text !!}</td>
+									</tr>
+									<tr>
+										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
+									</tr>
+									<tr>
+										<td bgcolor="#404041" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FOEAE4; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
 									</tr>
 									<tr>
 										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
