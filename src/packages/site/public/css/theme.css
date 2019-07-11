@@ -617,16 +617,20 @@ button:hover {
 }
 
 .terms {
-	margin-top: 0px;
+	margin: 10px 0;
 	font-size: 3.5vw;
 	font-family: BrandonGrotesqueLightItalic, sans-serif;
-	line-height: 40px;
 }
 
 .terms input {
 	margin: 0;
 	line-height: 40px;
 	vertical-align: middle;
+}
+
+.terms a {
+	text-decoration: underline;
+	color: #3069AD;
 }
 
 .header-logo {

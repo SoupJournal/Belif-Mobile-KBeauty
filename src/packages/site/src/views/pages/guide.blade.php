@@ -55,7 +55,12 @@
 					</div>
 				@endif
 		
-				<div class="spacer-tiny"></div>
+				<div class="spacer-medium"></div>
+
+				{{-- text --}}
+				<p class="title-bold color-12 page-margin-large">
+					{!! $text !!}
+				</p>
 
 				{{-- next button --}}
 				<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
@@ -63,11 +68,6 @@
 				</a>
 	
 				<div class="spacer-medium"></div>
-
-				{{-- text --}}
-				<p class="title-bold color-12 page-margin-large">
-					{!! $text !!}
-				</p>
 
 				<div class="spacer-medium"></div>
 
