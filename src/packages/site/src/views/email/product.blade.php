@@ -94,7 +94,7 @@
 							</td>
 						</tr>
 						<tr>
-						<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
 							<tbody>
 								<tr>
 									<td width="370" align="center" style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:14px; line-height:18px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{!! $html !!}</td>
