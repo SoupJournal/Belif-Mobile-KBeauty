@@ -29,6 +29,10 @@
 	$products = isset($products) ? $products : null;
 	$productIdx = isset($productIdx) ? $productIdx : 0;
 	$theme = in_array($productIdx, array(0,2,3,4)) ? 2 : 1;
+
+	$currentProduct = $products[$productIdx];
+	// echo $currentProduct->available;exit;
+	// var_dump($currentProduct);exit;
 ?>
 
 <div class="text-center">
@@ -63,9 +67,15 @@
 
 			<div class="spacer-small"></div>
 
+			@if ($currentProduct->available)
 			<div><a href="/address" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
 				{{ $button }}
 			</a></div>
+			@else
+			<div class="large font-3 size-5">
+				We're Sorry. This sample is no longer available. Please <a href="{{ $restartURL }}"><span class="color-2">try again</span></a>.
+			</div>
+			@endif
 
 			<div class="spacer-tiny"></div>
 

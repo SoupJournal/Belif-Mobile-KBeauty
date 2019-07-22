@@ -269,7 +269,7 @@
 			$backgroundImage = safeArrayValue('background_image', $pageData);
 
 			//get products
-			$products = Product::where('available', true)->get();
+			$products = Product::all();
 		
 			//render view
 			return View::make('belif::pages.results')->with(Array (
