@@ -73,7 +73,7 @@
 			</a></div>
 			@else
 			<div class="large font-3 size-5">
-				We're Sorry. This sample is no longer available. Please <a href="{{ $restartURL }}"><span class="color-2">try again</span></a>.
+				We're sorry. This sample is no longer available. Please <a href="{{ $restartURL }}"><span class="color-2">try again</span></a>.
 			</div>
 			@endif
 
