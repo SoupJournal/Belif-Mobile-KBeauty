@@ -210,6 +210,7 @@
 					'pageName' => 'unavailable',
 					'pageData' => $pageData,
 					'backgroundImage' => $backgroundImage,
+					'headerLogoUrl' => $this->header_logo_url_black,
 					//'backURL' => URL::to('/email'),
 				));
 			
