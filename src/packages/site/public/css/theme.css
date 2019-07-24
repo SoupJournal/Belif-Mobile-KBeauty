@@ -632,3 +632,7 @@ hr.divider {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.width-40 {
+	width: 40% !important;
+}

@@ -49,9 +49,11 @@
 			
 			<div class="no-margins size-5 color-2">{!! $subtitle !!}</div>
 			
-			<div class="spacer-small"></div>
+			<div class="spacer-tiny"></div>
 			
 			<div class="no-margins size-5 color-2">{!! $text !!}</div>
+
+			<div class="spacer-small"></div>
 
 			{{-- image --}}
 			@if ($image && strlen($image) > 0) 
