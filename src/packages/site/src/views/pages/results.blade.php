@@ -1,25 +1,20 @@
 @extends('belif::layouts.master')
 
-
 {{------------------ TITLE -------------------}}
 
 @section('title') Belif @stop
-
 {{---------------- END TITLE -----------------}}
 
 {{----------------- SCRIPTS ------------------}}
-
 @section('scripts')
 	
 @stop
 {{--------------- END SCRIPTS ----------------}}
 
 {{----------------- CONTENT ------------------}}
-
 @section('content')
 
 <?php
-	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
@@ -36,35 +31,29 @@
 
 		<div class="spacer-small"></div>
 	
-		{{-- title --}}
-		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+		<div class="no-margins font-4 color-2 size-6">{!! $title !!}</div>
 
-		<h3 class="no-margins font-4 bold color-1 size-6">{!! $subtitle !!}</h3>
+		<div class="no-margins font-4 color-2 size-6">{!! $subtitle !!}</div>
 		
 		<div class="spacer-medium"></div>
 
-		{{-- product image --}}
-		<img class="product-image" src="{{ safeObjectValue('sample_image', $products[$productIdx], '') }}" load-style="fade" load-group="product_{{ $productIdx }}">
+		<div class="page-padding-medium">
+			<img class="page-image" src="{{ safeObjectValue('sample_image', $products[$productIdx], '') }}" load-style="fade">
+		</div>
 
 		<div class="spacer-medium"></div>
 
-		{{-- info --}}
-		<h2 class="no-margins font-3 color-1 size-4">You'll receive</h2>
-		<h2 class="no-margins title-bold medium color-1 size-7">{{ safeObjectValue('name', $products[$productIdx], '') }}</h2>
-		<div class="page-padding-small size-4 color-1">{{ safeObjectValue('description', $products[$productIdx], '') }}</div>
+		<div class="page-padding-small font-4 color-2 size-5">{!! $text !!}</div>
 
 		<div class="spacer-small">
 	
-		<a href="/address" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}">
+		<a href="#" class="button-page button-next bg-color-12 color-2 font-3" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
 		</a>
 
-		<div class="spacer-tiny"></div>
+		<div class="spacer-small"></div>
 
-		{{-- restart --}}
-		<a href="{{ $restartURL }}">
-			<h4 class="title-regular color-1 box-padding">{{ $buttonNo }}</h4>
-		</a>
+		<div class="font-2 color-2 size-4">{{ $buttonNo }}</div>
 	
 	</div>	
 

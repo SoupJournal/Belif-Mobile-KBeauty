@@ -12,10 +12,6 @@
 
 	class ProductController extends BaseController {
 		
-		public function __construct() {
-			
-		} //end constructor()
-		
 		//==========================================================//
 		//====					PAGE METHODS					====//
 		//==========================================================//	
@@ -52,6 +48,7 @@
 					'questionData' => $questionData,
 					'questionNumber' => $questionIndex,
 					'backgroundImage' => $backgroundImage,
+					'headerLogoUrl' => $this->header_logo_url_black,
 					'buttonURL' => route('belif.answer'),
 					'backURL' => $questionIndex>1 ? route('belif.question.previous') : route('belif.guide')
 				));
@@ -131,6 +128,7 @@
 						'questionData' => $questionData,
 						'questionNumber' => $questionIndex,
 						'backgroundImage' => $backgroundImage,
+						'headerLogoUrl' => $this->header_logo_url_black,
 						'backURL' => route('belif.question', ['previous' => true]),
 						'formURL' => route('belif.answer.id', ['questionIndex' => $questionIndex])
 						//'questionId' => $questionId
@@ -187,32 +185,34 @@
 
 			$answers = Session::get('answers');
 
-			$step4a = ['A','B','A']; // warm
-			$step4b = ['B','A','B']; // cool
-			$step4c = ['C','C','C']; // neutral
+			// $step4a = ['A','B','A']; // warm
+			// $step4b = ['B','A','B']; // cool
+			// $step4c = ['C','C','C']; // neutral
 
-			$step4aCount = $step4bCount = $step4cCount = $idx = 0;
+			// $step4aCount = $step4bCount = $step4cCount = $idx = 0;
 
-			foreach ($answers as $answer) {
-				if ($answer == $step4a[$idx]) {
-					$step4aCount++;
-				}
-				if ($answer == $step4b[$idx]) {
-					$step4bCount++;
-				}
-				if ($answer == $step4c[$idx]) {
-					$step4cCount++;
-				}
-				$idx++;
-			}
+			// foreach ($answers as $answer) {
+			// 	if ($answer == $step4a[$idx]) {
+			// 		$step4aCount++;
+			// 	}
+			// 	if ($answer == $step4b[$idx]) {
+			// 		$step4bCount++;
+			// 	}
+			// 	if ($answer == $step4c[$idx]) {
+			// 		$step4cCount++;
+			// 	}
+			// 	$idx++;
+			// }
 
-			$answerCounts = [
-				'A' => $step4aCount,
-				'B' => $step4bCount,
-				'C' => $step4cCount
-			];
+			// $answerCounts = [
+			// 	'A' => $step4aCount,
+			// 	'B' => $step4bCount,
+			// 	'C' => $step4cCount
+			// ];
 			
-			$finalAnswer = array_search(max($answerCounts),$answerCounts);
+			// $finalAnswer = array_search(max($answerCounts),$answerCounts);
+
+			$finalAnswer = 'A';
 
 			$selectedProducts = [];
 			if ($finalAnswer == 'A') {
@@ -250,6 +250,7 @@
 				'products' => $products,
 				'productIdx' => $productIdx,
 				'backgroundImage' => $backgroundImage,
+				'headerLogoUrl' => $this->header_logo_url_black,
 				'backURL' => route('belif.question.previous'),
 				'buttonURL' => route('belif.address'),
 				'restartURL' => route('belif.tryagain'),
@@ -289,6 +290,7 @@
 				'numberOfSamples' => $numberOfSamples,
 				'selectedProducts' => $selectedProducts,
 				'backgroundImage' => $backgroundImage,
+				'headerLogoUrl' => $this->header_logo_url_black,
 				'backgroundFill' => true,
 				'formURL' => route('belif.product.submit'),
 				'backURL' => route('belif.results')

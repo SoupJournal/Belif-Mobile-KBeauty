@@ -52,6 +52,9 @@
 	color: #9A9B9C;	/* light-grey */
 }
 
+.color-12 {
+	color: #33ccff;
+}
 
 /********************************/
 /* 			ARROW COLOURS 		*/
@@ -120,6 +123,10 @@ a:hover {
 
 .bg-color-10 {
 	background-color: #F1F2F3;	
+}
+
+.bg-color-12 {
+	background-color: #33ccff;
 }
 
 /********************************/

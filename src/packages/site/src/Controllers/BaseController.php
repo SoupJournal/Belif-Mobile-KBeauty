@@ -5,13 +5,14 @@
 
 	use Belif\Mobile\Models\Page;
 	use Belif\Mobile\Models\Product;
+	use Soup\CMS\Models\CMSApp;
 	
 	use Session;
 	use App\Http\Controllers\Controller;
 
 
-	class BaseController extends Controller {
-		
+	class BaseController extends Controller 
+	{
 
 		//page constants
 		//const FORM_HOME = 'page_home';
@@ -41,21 +42,30 @@
 		//product email images
 		//const EMAIL_PRODUCT_IMAGES = 'email_images';
 		
-		
 		//verify email details
-		const EMAIL_SENDER_VERIFY = 'team@lumislayers.com';
+		const EMAIL_SENDER_VERIFY = 'team@aquabombsurfsup.com';
 		const EMAIL_SUBJECT_VERIFY = 'Verify your email to claim your gift.';
 		
 		//share email details
-		const EMAIL_SENDER_SHARE = 'team@lumislayers.com';
-		const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of VDL.';
+		const EMAIL_SENDER_SHARE = 'team@aquabombsurfsup.com';
+		const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of Belif.';
 		
 		//product email details
-		const EMAIL_SENDER_PRODUCT = 'team@lumislayers.com';
+		const EMAIL_SENDER_PRODUCT = 'team@aquabombsurfsup.com';
 		const EMAIL_SUBJECT_PRODUCT = "Your sample is on its way!";
 		
 		//number of questions
 		private $numberOfQuestions = 3;
+
+        public function __construct() {
+
+            $application = CMSApp::get()->first();
+
+            $this->header_logo_url_black = $application->header_logo_url_black;
+            $this->header_logo_url_white = $application->header_logo_url_white;
+            $this->terms_and_conditions_url = $application->terms_and_conditions_url;
+
+        } //end constructor()
 		
 		//catch all undefined request and route to home
 		public function missingMethod($parameters = array()) {

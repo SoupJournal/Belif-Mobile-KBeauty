@@ -69,7 +69,8 @@
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'formURL' => route('belif.email'),
-				'termsURL' => "https://s3.amazonaws.com/soup-journal-app-storage/VDL/Images/Privacy+Policy+VDL's+Lumislayers.pdf"
+				'headerLogoUrl' => $this->header_logo_url_black,
+				'termsURL' => $this->terms_and_conditions_url
 			));
 			
 		} //end getEmail()
@@ -185,6 +186,8 @@
 				'backgroundImage' => $backgroundImage,
 				'buttonURL' => route('belif.question'),
 				'backURL' => route('belif.home'),
+				'nextURL' => route('belif.question'),
+				'headerLogoUrl' => $this->header_logo_url_black
 			));
 			
 		} //end getGuide()
@@ -216,7 +219,7 @@
 					'pageName' => 'unavailable',
 					'pageData' => $pageData,
 					'backgroundImage' => $backgroundImage,
-					//'backURL' => URL::to('/email'),
+					'headerLogoUrl' => $this->header_logo_url_black
 				));
 			
 			}
@@ -237,6 +240,7 @@
 				'pageData' => $pageData,
 				'states' => availableStates(),
 				'backgroundImage' => $backgroundImage,
+				'headerLogoUrl' => $this->header_logo_url_black,
 				'formURL' => route('belif.address'),
 				'backURL' => route('belif.results')
 			));
@@ -464,6 +468,7 @@
 				'pageName' => 'verify',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
+				'headerLogoUrl' => $this->header_logo_url_black,
 				'backURL' => route('belif.address'),
 				'buttonURL' => route('belif.share')
 			));
@@ -493,6 +498,7 @@
 				'pageName' => 'reverify',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
+				'headerLogoUrl' => $this->header_logo_url_black,
 				'backURL' => route('belif.address'),
 				'buttonURL' => route('belif.share'),				
 				'verifyEmail' => $user->email
@@ -548,7 +554,8 @@
 							'pageName' => 'share',
 							'pageData' => $pageData,
 							'code' => $code,
-							'backgroundImage' => $backgroundImage
+							'backgroundImage' => $backgroundImage,
+							'headerLogoUrl' => $this->header_logo_url_black
 						));
 					
 					}
@@ -609,6 +616,7 @@
 							'pageName' => 'share',
 							'pageData' => $pageData,
 							'backgroundImage' => $backgroundImage,
+							'headerLogoUrl' => $this->header_logo_url_black,
 							'backURL' => route('belif.confirm', ['code' => $code]),
 							'formURL' => route('belif.share.submit'),
 						));
@@ -728,6 +736,7 @@
 				'pageName' => 'thanks',
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
+				'headerLogoUrl' => $this->header_logo_url_black,
 				'buttonURL' => 'http://www.sephora.com/belif',
 				'backURL' => route('belif.share', ['code' => $code])
 			));
@@ -761,6 +770,7 @@
 						'pageName' => 'unsubscribe',
 						'pageData' => $pageData,
 						'backgroundImage' => $backgroundImage,
+						'headerLogoUrl' => $this->header_logo_url_black
 					));
 					
 				} //end if (valid code)
@@ -834,10 +844,6 @@
 			
 		} //end generateVerifyCode()
 		
-		
-
-	
-		
 		private function sendVerifyEmail($user) {
 			
 			$result = false;
@@ -870,7 +876,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_VERIFY, 
-							'name' => 'VDL'
+							'name' => 'Belif'
 						],
 						"subject" => self::EMAIL_SUBJECT_VERIFY,
 						"view" => "belif::email.verify",
@@ -900,14 +906,11 @@
 			
 			$result = false;
 			
-			
 			//valid user
 			if ($user && $user->email && strlen($user->email)>0) {
 		
-		
 				//valid share address
 				if ($shareUser && $shareUser->email && strlen($shareUser->email)>0) {
-		
 		
 					//shared user has not unsubscribed
 					if (!$shareUser->unsubscribed) {
@@ -926,7 +929,7 @@
 							"recipient" => $shareUser->email, 
 							"sender" => [
 								'email' => self::EMAIL_SENDER_SHARE, 
-								'name' => 'VDL'
+								'name' => 'Belif'
 							],
 							"subject" => $subject,
 							"view" => "belif::email.share",
@@ -1002,7 +1005,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_PRODUCT, 
-							'name' => 'VDL'
+							'name' => 'Belif'
 						],
 						"subject" => self::EMAIL_SUBJECT_PRODUCT,
 						"view" => "belif::email.product",
@@ -1086,7 +1089,7 @@
 								"recipient" => $user->email, 
 								"sender" => [
 									'email' => self::EMAIL_SENDER_PRODUCT, 
-									'name' => 'VDL'
+									'name' => 'Belif'
 								],
 								"subject" => self::EMAIL_SUBJECT_PRODUCT,
 								"view" => "belif::email.product",

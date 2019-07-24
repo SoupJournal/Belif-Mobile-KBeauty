@@ -11,17 +11,15 @@
 
 	{{-- title --}}
 	<div class="page-header-center text-center">
-		<img class="logo-title-image" alt="belif" src="{{ $assetPath }}/images/logo-top.png" load-style1="fade"/>
+		<img class="logo-title-image" alt="belif" src="{{ $headerLogoUrl }}" load-style1="fade"/>
 	</div>
    	
    	{{-- next button --}}
    	<div class="page-header-side">
 		@if (isset($nextURL) && strlen($nextURL)>0)
-			<a href="{{ $nextURL }}" class="color-2 button-next">BACK</a>
+			<h4 class="title-light button-back"><a href="{{ $nextURL }}" class="color-2 button-next">SKIP</a></h4>
 		@endif
 		@yield('header-right', '')
    	</div>
 
 </div>
-
-    	

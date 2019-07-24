@@ -44,56 +44,43 @@
 <div class="text-center">
 	
 	<div class="container-top">
+
+		<div class="spacer-medium"></div>
 	
-		<div class="spacer-small-2">
-		
 		<div class="row page-margin-small">
 		
-			{{-- question title --}}
-			<h2 class="title-semi-bold large color-1">Question {{ $questionNumber }}</h2>
+			<div class="font-4 color-2 size-6">Question {{ $questionNumber }}</div>
 		
-			<div class="spacer-medium"></div>
+			<div class="spacer-large"></div>
 
-			{{-- image --}}
-			@if ($image && strlen($image)>0) 
-				<div class="page-padding-larger-more">
-					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
-				</div>
-			@endif
-		
-			<div class="spacer-small"></div>
-		
-			{{-- question --}}
 			<div class="question-text">
 			
 				<div class="spacer-medium"></div>
 			
-				<h2 class="no-margins title-bold medium color-1">{!! $question !!}</h2>
+				<div class="no-margins font-4 size-5 color-2">{!! $question !!}</div>
 				
 			</div>
 			
 			<div class="spacer-medium"></div>
 			<div class="spacer-large"></div>
 
-			{{-- video --}}
 			<div class="question-video-box">
 			
 				<video id="video" class="question-video" src="{{ $videoURL }}" controls hidden-video="video-button"></video>
 				
+				<div class="spacer-large"></div>
+
 				<button id="video-button" class="video-button">
 					<img src="{{ asset($assetPath . '/images/icon-play.png') }}" class="image-video-play">
 				</button>
 			
-				{{-- text --}}
-				<h4 class="title-light color-1">{{ $text }}</h4>
+				<div class="font-4 color-2 size-4">{{ $text }}</div>
 				
 			</div>
 					
-			<div class="spacer-medium"></div>
 			<div class="spacer-large"></div>
 		
-			{{-- answer button --}}
-			<a href="{{ $buttonURL }}" class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
+			<a href="{{ $buttonURL }}" class="button-page bg-color-12 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</a>
 		
@@ -114,5 +101,6 @@ $(document).ready(function() {
 	});
 });
 </script>
+
 @stop
 {{--------------- END CONTENT ----------------}}
