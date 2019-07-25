@@ -42,9 +42,9 @@
 		    	@endif
 			
 				@if ($fillHeight)
-					<div class="page-body text-center @yield('background-color', 'bg-color-5')" fill-height>
+					<div class="page-body text-center @yield('background-color', 'bg-color-2')" fill-height>
 				@else 
-					<div class="page-body text-center @yield('background-color', 'bg-color-5')">				
+					<div class="page-body text-center @yield('background-color', 'bg-color-2')">				
 				@endif
 
 				@if ($backgroundImage)
