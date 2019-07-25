@@ -47,7 +47,7 @@
 
 			<div class="spacer-small"></div>
 			
-			<div class="no-margins size-5 color-2">{!! $subtitle !!}</div>
+			<div class="no-margins size-4 color-2 font-7">{!! $subtitle !!}</div>
 			
 			<div class="spacer-tiny"></div>
 			
@@ -57,14 +57,14 @@
 
 			{{-- image --}}
 			@if ($image && strlen($image) > 0) 
-				<div class="page-padding-large">
+				<div class="page-padding-small">
 					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 				</div>
 			@endif
 		
 			<div class="spacer-small"></div>
 			
-			<div class="no-margins size-5 color-2">{!! $html !!}</div>
+			<div class="no-margins size-4 color-2 font-7">{!! $html !!}</div>
 
 			{{-- enter email --}}
 			<div class="form-group page-padding-small"> 

@@ -47,7 +47,7 @@
 
 		<div class="spacer-small">
 	
-		<a href="#" class="button-page button-next bg-color-12 color-2 font-3" innerclass="color-2" label="{{ $button }}">
+		<a href="https://seph.me/2M8ae0S" class="button-page button-next bg-color-12 color-2 font-3" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
 		</a>
 
