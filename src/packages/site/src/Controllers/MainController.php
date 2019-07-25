@@ -583,44 +583,11 @@
 					//store user
 					Session::set('userId', $user->id);
 				
-					//user already shared
-					if ($user->shared_email && strlen($user->shared_email)>0) {
-						
-						//ensure email is considered verified
-						if (!$user->email_verified) {
-							$user->email_verified = true;
-							$user->save();
-						}
-						
-						//jump to thanks page
-						return Redirect::route('belif.thanks');
-						
-					}
-					
-					//verify code
-					else {
-				
-						//indicate email is verified
-						$user->email_verified = true;
-						$user->save();
-				
-						//get page data
-						$pageData = $this->dataForPage(self::FORM_SHARE);
-						
-						//get background image
-						$backgroundImage = safeArrayValue('background_image', $pageData);
-						
-						//render view
-						return View::make('belif::pages.share')->with(Array (
-							'pageName' => 'share',
-							'pageData' => $pageData,
-							'backgroundImage' => $backgroundImage,
-							'headerLogoUrl' => $this->header_logo_url_white,
-							'backURL' => route('belif.confirm', ['code' => $code]),
-							'formURL' => route('belif.share.submit'),
-						));
-					
-					}
+					//indicate email is verified
+					$user->email_verified = true;
+					$user->save();
+
+					return Redirect::route('belif.results');
 				
 				} //end if (valid code)
 				
