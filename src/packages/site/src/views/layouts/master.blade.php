@@ -40,27 +40,29 @@
 		   		@if (!$fullScreen) 
 			    	@include('belif::layouts.header')
 		    	@endif
-			
-				@if ($fillHeight)
+
+		    	
+
+					@if ($fillHeight)
 					<div class="page-body text-center @yield('background-color', 'bg-color-2')" fill-height>
-				@else 
-					<div class="page-body text-center @yield('background-color', 'bg-color-2')">				
-				@endif
+					@else 
+					<div class="page-body text-center @yield('background-color', 'bg-color-2')">
+					@endif
 
-				@if ($backgroundImage)
-					<img class="background-scale-fill" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
-				@endif
-					
-					<div class="stretch-to-fit">
+					@if ($backgroundImage)
+						<img class="background-scale-fill" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
+					@endif
+						
+						<div class="stretch-to-fit">
 
-		        		{{----------------- CONTENT ------------------}}
-		        		@yield('content', '')
-		        		{{--------------- END CONTENT ----------------}}
+			        		{{----------------- CONTENT ------------------}}
+			        		@yield('content', '')
+			        		{{--------------- END CONTENT ----------------}}
 
+						</div>
+									
 					</div>
-								
-				</div>
-			
+
 			</div>	        	
               
         </div>

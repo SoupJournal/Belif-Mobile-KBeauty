@@ -464,7 +464,7 @@
 
 .background-scale-fill {
 	background: no-repeat;
-  	background-size: 100% 100%;
+  	background-size: cover; /*100% 100%;*/
   	background-position: center center;
   	width: 100%;
   	height: 100%;
