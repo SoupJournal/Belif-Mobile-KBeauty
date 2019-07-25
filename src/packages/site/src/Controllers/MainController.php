@@ -44,8 +44,7 @@
 				return View::make('belif::pages.desktop')->with(Array (
 					'fullScreen' => true,
 					'pageName' => 'home',
-					'pageData' => $pageData,
-					'backgroundImage' => $backgroundImage
+					'pageData' => $pageData
 				));
 			
 	    	} //end if (is desktop)

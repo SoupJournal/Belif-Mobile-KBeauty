@@ -47,7 +47,9 @@
 					<div class="page-body text-center @yield('background-color', 'bg-color-5')">				
 				@endif
 
+				@if ($backgroundImage)
 					<img class="background-scale-fill" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
+				@endif
 					
 					<div class="stretch-to-fit">
 
