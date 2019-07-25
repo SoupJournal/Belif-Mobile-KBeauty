@@ -65,21 +65,21 @@
 			{{-- answers --}}
 			@if ($answerA && strlen($answerA)>0)
 				<button class="answer-box {{ $answerClass }} text-center" name="value" value="A">
-					<h3 class="font-4 color-2 size-4">{!! $answerA !!}</h3>
+					<h3 class="font-3 color-2 size-4">{!! $answerA !!}</h3>
 				</button>
 				<div class="spacer-medium"></div>
 			@endif
 			
 			@if ($answerB && strlen($answerB)>0)
 				<button class="answer-box {{ $answerClass }}" name="value" value="B">
-					<h3 class="font-4 color-2 size-4">{!! $answerB !!}</h3>
+					<h3 class="font-3 color-2 size-4">{!! $answerB !!}</h3>
 				</button>
 				<div class="spacer-medium"></div>
 			@endif
 			
 			@if ($answerC && strlen($answerC)>0)
 				<button class="answer-box {{ $answerClass }}" name="value" value="C">
-					<h3 class="font-4 color-2 size-4">{!! $answerC !!}</h3>
+					<h3 class="font-3 color-2 size-4">{!! $answerC !!}</h3>
 				</button>
 			@endif
 			
