@@ -67,6 +67,8 @@
 				<a href="{{ $buttonURL }}" class="button-page bg-color-12 color-2 font-3" label="{{ $button }}">
 					{{ $button }}
 				</a>
+
+				<div class="spacer-medium"></div>
 					
 			</div>
 					

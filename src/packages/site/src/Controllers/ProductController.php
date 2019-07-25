@@ -162,7 +162,7 @@
 				
 					//move product
 					if ($questionIndex>=$numberOfQuestions) {
-						return Redirect::route('belif.results');
+						return Redirect::route('belif.verify');
 					}
 					//move to next question
 					else {
