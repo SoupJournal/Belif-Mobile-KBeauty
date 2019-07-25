@@ -32,36 +32,32 @@
     
     <body ng-app="belif">
    
-		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit @yield('background-color', 'bg-color-2')">
+		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit" 
+			 style="background: url({{ $backgroundImage }}) no-repeat center center; background-size:cover;"
+		>
 			
-			<div class="main-page-container fill-height @yield('background-color', 'bg-color-2') color-2">
+			<div class="main-page-container fill-height color-2">
 	
 		   		{{----------------- HEADER -------------------}}
 		   		@if (!$fullScreen) 
 			    	@include('belif::layouts.header')
 		    	@endif
 
-		    	
+				@if ($fillHeight)
+				<div class="page-body text-center" fill-height>
+				@else 
+				<div class="page-body text-center">
+				@endif
+					
+					<div class="stretch-to-fit">
 
-					@if ($fillHeight)
-					<div class="page-body text-center @yield('background-color', 'bg-color-2')" fill-height>
-					@else 
-					<div class="page-body text-center @yield('background-color', 'bg-color-2')">
-					@endif
+		        		{{----------------- CONTENT ------------------}}
+		        		@yield('content', '')
+		        		{{--------------- END CONTENT ----------------}}
 
-					@if ($backgroundImage)
-						<img class="background-scale-fill" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
-					@endif
-						
-						<div class="stretch-to-fit">
-
-			        		{{----------------- CONTENT ------------------}}
-			        		@yield('content', '')
-			        		{{--------------- END CONTENT ----------------}}
-
-						</div>
-									
 					</div>
+								
+				</div>
 
 			</div>	        	
               
