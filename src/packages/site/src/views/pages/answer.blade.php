@@ -54,7 +54,7 @@
 	
 			<div class="spacer-large"></div>
 		
-			<div class="font-4 color-2 size-6">{!! $question !!}</div>
+			<div class="font-3 color-2 size-4">{!! $question !!}</div>
 		
 			<div class="spacer-large"></div>
 		

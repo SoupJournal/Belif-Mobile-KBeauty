@@ -49,7 +49,7 @@
 	
 		<div class="row page-margin-small">
 		
-			<div class="font-4 color-2 size-6">Question {{ $questionNumber }}</div>
+			<div class="font-3 color-2 size-6">Question {{ $questionNumber }}</div>
 		
 			<div class="spacer-large"></div>
 
@@ -57,7 +57,7 @@
 			
 				<div class="spacer-medium"></div>
 			
-				<div class="no-margins font-4 size-5 color-2">{!! $question !!}</div>
+				<div class="no-margins font-3 size-5 color-2">{!! $question !!}</div>
 				
 			</div>
 			
@@ -73,8 +73,10 @@
 				<button id="video-button" class="video-button">
 					<img src="{{ asset($assetPath . '/images/icon-play.png') }}" class="image-video-play">
 				</button>
+
+				<div class="spacer-small"></div>
 			
-				<div class="font-4 color-2 size-4">{{ $text }}</div>
+				<div class="font-7 color-2 size-4">{{ $text }}</div>
 				
 			</div>
 					

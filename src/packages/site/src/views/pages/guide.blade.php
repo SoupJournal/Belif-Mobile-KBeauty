@@ -39,7 +39,7 @@
 	
 			<div class="spacer-medium"></div>
 			
-			<div class="font-4 color-2 size-6">{!! $title !!}</div>
+			<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
 		
 			<div class="spacer-small"></div>
 			
@@ -57,7 +57,7 @@
 				<div class="spacer-small"></div>
 	
 				{{-- text --}}
-				<div class="font-1 color-2 size-6 page-margin-large">
+				<div class="font-7 color-2 size-6">
 					{!! $text !!}
 				</div>
 	

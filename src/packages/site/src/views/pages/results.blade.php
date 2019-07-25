@@ -31,9 +31,11 @@
 
 		<div class="spacer-small"></div>
 	
-		<div class="no-margins font-4 color-2 size-6">{!! $title !!}</div>
+		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
 
-		<div class="no-margins font-4 color-2 size-6">{!! $subtitle !!}</div>
+		<div class="spacer-tiny"></div>
+
+		<div class="no-margins font-7 color-2 size-4">{!! $subtitle !!}</div>
 		
 		<div class="spacer-medium"></div>
 
@@ -43,7 +45,7 @@
 
 		<div class="spacer-medium"></div>
 
-		<div class="page-padding-small font-4 color-2 size-5">{!! $text !!}</div>
+		<div class="page-padding-small font-7 color-2 size-4">{!! $text !!}</div>
 
 		<div class="spacer-small">
 	
@@ -53,7 +55,7 @@
 
 		<div class="spacer-small"></div>
 
-		<div class="font-2 color-2 size-4">{{ $buttonNo }}</div>
+		<div class="font-7 color-2 size-4">{{ $buttonNo }}</div>
 	
 	</div>	
 

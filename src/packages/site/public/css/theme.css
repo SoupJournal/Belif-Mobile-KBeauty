@@ -636,3 +636,8 @@ hr.divider {
 .width-40 {
 	width: 40% !important;
 }
+
+.sephora-image {
+	vertical-align: unset;
+	top: 3px;
+}
