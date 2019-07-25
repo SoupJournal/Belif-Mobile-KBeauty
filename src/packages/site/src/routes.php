@@ -103,6 +103,7 @@
 	
 				//unsubscribe
 				Route::get('/unsubscribe', ['as' => 'belif.unsubscribe', 'uses' => 'MainController@getUnsubscribe']);	
+				Route::post('/unsubscribe', ['as' => 'belif.unsubscribe', 'uses' => 'MainController@postUnsubscribe']);	
 					
 				
 			}); //end middleware (HTTPS only)

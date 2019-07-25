@@ -746,6 +746,14 @@
 			
 			//get verification code
 			$code = safeArrayValue('code', $_GET, null);
+
+			//get page data
+			$pageData = $this->dataForPage(self::FORM_UNSUBSCRIBE);
+			
+			//get background image
+			$backgroundImage = safeArrayValue('background_image', $pageData);
+
+			$unsubscribed = safeArrayValue('unsubscribe', $_GET, 0);
 			
 			//valid code
 			if ($code && strlen($code)>0) { 
@@ -756,31 +764,50 @@
 			
 					//update user
 					$user->unsubscribed = true;
+					$unsubscribed = 1;
 					$user->save();
-			
-					//get page data
-					$pageData = $this->dataForPage(self::FORM_UNSUBSCRIBE);
-					
-					//get background image
-					$backgroundImage = safeArrayValue('background_image', $pageData);
-					
-					//render view
-					return View::make('belif::pages.unsubscribe')->with(Array (
-						'pageName' => 'unsubscribe',
-						'pageData' => $pageData,
-						'backgroundImage' => $backgroundImage,
-						'headerLogoUrl' => $this->header_logo_url_white
-					));
 					
 				} //end if (valid code)
 				
 			} //end if (valid code)
 			
-			//invalid code - show home page
-			return Redirect::route('belif.home');
+			//render view
+			return View::make('belif::pages.unsubscribe')->with(Array (
+				'pageName' => 'unsubscribe',
+				'pageData' => $pageData,
+				'formURL' => route('belif.unsubscribe'),
+				'backgroundImage' => $backgroundImage,
+				'unsubscribed' => $unsubscribed,
+				'headerLogoUrl' => $this->header_logo_url_white
+			));
 			
 		} //end getUnsubscribe()
 		
+		public function postUnsubscribe() {
+
+			//get verification code
+			$email = safeArrayValue('email', $_POST, null);
+
+			if ($email && strlen($email)>0) { 
+			
+				//validate code
+				$user = User::where('email', '=', $email)->first();
+				if ($user) {
+			
+					//update user
+					$user->unsubscribed = true;
+					$unsubscribed = 1;
+					$user->save();
+					
+					return Redirect::route('belif.unsubscribe', ['unsubscribe' => 1]);
+
+				} //end if (valid code)
+				
+			} //end if (valid code)
+
+			return Redirect::route('belif.unsubscribe', ['unsubscribe' => 0]);
+		}
+
 		//==========================================================//
 		//====					EMAIL METHODS					====//
 		//==========================================================//

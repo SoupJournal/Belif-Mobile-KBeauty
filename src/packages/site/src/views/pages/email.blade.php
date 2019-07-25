@@ -89,7 +89,7 @@
 			
 			<div class="spacer-small"></div>
 
-			<div class="color-2 size-4"><a href="#" class="color-2">I want to unregister myself.</a></div>
+			<div class="color-2 size-4"><a href="{{ route('belif.unsubscribe') }}" class="color-2">I want to unregister myself.</a></div>
 
 			{{-- Terms & Conditions --}}
 			<div class="terms">
