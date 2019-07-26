@@ -44,7 +44,7 @@
 		
 		//verify email details
 		const EMAIL_SENDER_VERIFY = 'team@aquabombsurfsup.com';
-		const EMAIL_SUBJECT_VERIFY = 'Verify your email to claim your gift.';
+		const EMAIL_SUBJECT_VERIFY = 'Please confirm your email for the Aqua Surf\'s Up Quiz!';
 		
 		//share email details
 		const EMAIL_SENDER_SHARE = 'team@aquabombsurfsup.com';
