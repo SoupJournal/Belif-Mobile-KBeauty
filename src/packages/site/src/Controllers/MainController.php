@@ -478,8 +478,8 @@
 				'pageData' => $pageData,
 				'backgroundImage' => $backgroundImage,
 				'headerLogoUrl' => $this->header_logo_url_white,
-				'backURL' => route('belif.address'),
-				'buttonURL' => route('belif.share')
+				//'backURL' => route('belif.address'),
+				//'buttonURL' => route('belif.share')
 			));
 			
 		} //end getVerify()
