@@ -112,12 +112,7 @@
 							</table></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0 ; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="" bgcolor="#fff" valign="top">
-								<!--[if gte mso 9]>
-									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:570px;">
-										<v:fill type="tile" src="{{ $productImage }}" color="#ffffff" />
-										<v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
-								<![endif]-->
+							<td style="border: 0; margin: 0 ; padding: 0; text-align: center;" bgcolor="#fff" valign="top">
 								<div>
 									<table width="570" border="0" cellspacing="0" cellpadding="0">
 										<tbody>
@@ -136,7 +131,7 @@
 												</table></td>
 											</tr>
 											<tr>
-												<td height="367" style="border: 0; margin:0; padding: 0;">
+												<td height="367" width="570" style="border: 0; margin:0; padding: 0;">
 													<img src="{{ $productImage }}" />
 												</td>
 											</tr>
