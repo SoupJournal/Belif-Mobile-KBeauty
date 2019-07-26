@@ -461,6 +461,16 @@
 			
 			//get background image
 			$backgroundImage = safeArrayValue('background_image', $pageData);
+
+			//get session email
+			$email = Session::get('email');
+			if ($email && strlen($email)>0) {
+				
+				//get user details
+				$user = User::where('email', '=', $email)->first();
+				$this->sendVerifyEmail($user);
+			
+			}
 			
 			//render view
 			return View::make('belif::pages.verify')->with(Array (
