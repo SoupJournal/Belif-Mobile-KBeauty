@@ -879,7 +879,7 @@
 						"recipient" => $user->email, 
 						"sender" => [
 							'email' => self::EMAIL_SENDER_VERIFY, 
-							'name' => 'Belif'
+							'name' => 'belif'
 						],
 						"subject" => self::EMAIL_SUBJECT_VERIFY,
 						"view" => "belif::email.verify",
