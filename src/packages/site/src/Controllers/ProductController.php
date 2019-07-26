@@ -162,7 +162,57 @@
 				
 					//move product
 					if ($questionIndex>=$numberOfQuestions) {
-						return Redirect::route('belif.verify');
+
+						$answers = Session::get('answers');
+
+						$correctAnswers = array(1 => 'C', 2 => 'A', 3 => 'B');
+
+						if (($answers === $correctAnswers)) {
+							return Redirect::route('belif.verify');
+						} else {
+
+							$finalAnswer = 'B';
+
+							$selectedProducts = [];
+							if ($finalAnswer == 'A') {
+								$sampleResult = self::FORM_RESULTS_A;
+								$productIdx = 0;
+								$selectedProducts[] = 1;
+								$selectedProducts[] = 0;
+							} elseif ($finalAnswer == 'B') {
+								$sampleResult = self::FORM_RESULTS_B;
+								$productIdx = 1;
+								$selectedProducts[] = 2;
+								$selectedProducts[] = 0;
+							} elseif ($finalAnswer == 'C') {
+								$sampleResult = self::FORM_RESULTS_C;
+								$productIdx = 2;
+								$selectedProducts[] = 3;
+								$selectedProducts[] = 0;
+							}
+
+							Session::set('selectedProducts', $selectedProducts);
+
+							//get page data
+							$pageData = $this->dataForPage($sampleResult);
+							
+							//get background image
+							$backgroundImage = safeArrayValue('background_image', $pageData);
+
+							//get products
+							$products = Product::where('available', true)->get();
+
+							return View::make('belif::pages.results')->with(Array (
+								'pageName' => 'results',
+								'pageData' => $pageData,
+								'products' => $products,
+								'productIdx' => $productIdx,
+								'backgroundImage' => $backgroundImage,
+								'headerLogoUrl' => $this->header_logo_url_white,
+								'restartURL' => route('belif.tryagain'),
+								'sampleResult' => $sampleResult
+							));
+						}
 					}
 					//move to next question
 					else {
@@ -253,7 +303,6 @@
 				'headerLogoUrl' => $this->header_logo_url_white,
 				'backURL' => route('belif.question.previous'),
 				'buttonURL' => route('belif.address'),
-				'restartURL' => route('belif.tryagain'),
 				'sampleResult' => $sampleResult
 			));
 			

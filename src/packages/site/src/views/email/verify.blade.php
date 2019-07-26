@@ -112,7 +112,7 @@
 							</table></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0 ; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $productImage }}" bgcolor="#fff" valign="top">
+							<td style="border: 0; margin: 0 ; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="" bgcolor="#fff" valign="top">
 								<!--[if gte mso 9]>
 									<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:570px;">
 										<v:fill type="tile" src="{{ $productImage }}" color="#ffffff" />
@@ -136,7 +136,9 @@
 												</table></td>
 											</tr>
 											<tr>
-												<td height="367" style="border: 0; margin:0; padding: 0;"></td>
+												<td height="367" style="border: 0; margin:0; padding: 0;">
+													<img src="{{ $productImage }}" />
+												</td>
 											</tr>
 											<tr>
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $html !!}</td>

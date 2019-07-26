@@ -23,6 +23,7 @@
 
 	$products = isset($products) ? $products : null;
 	$productIdx = isset($productIdx) ? $productIdx : 0;
+	$restartURL = isset($restartURL) ? $restartURL : null;
 ?>
 
 <div class="text-center page-padding">
@@ -49,14 +50,18 @@
 
 		<div class="spacer-small">
 	
+		@if ($restartURL)
+		<a href="{{ $restartURL }}" class="button-page button-next bg-color-12 color-2 font-3" innerclass="color-2" label="{{ $buttonNo }}">
+			{{ $buttonNo }}
+		</a>
+		@else
 		<a href="https://seph.me/2M8ae0S" class="button-page button-next bg-color-12 color-2 font-3" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
 		</a>
+		@endif
 
 		<div class="spacer-small"></div>
 
-		<div class="font-7 color-2 size-4">{{ $buttonNo }}</div>
-	
 	</div>	
 
 </div>
