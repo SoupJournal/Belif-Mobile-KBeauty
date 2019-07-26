@@ -131,8 +131,8 @@
 												</table></td>
 											</tr>
 											<tr>
-												<td height="367" width="570" style="border: 0; margin:0; padding: 0;">
-													<img src="{{ $productImage }}" />
+												<td height="367" style="border: 0; margin:0; padding: 0;">
+													<img src="{{ $productImage }}" width="500" />
 												</td>
 											</tr>
 											<tr>
