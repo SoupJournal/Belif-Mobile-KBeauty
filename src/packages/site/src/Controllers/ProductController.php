@@ -161,8 +161,11 @@
 					$numberOfQuestions = Question::count('id');
 				
 					//move product
-					if ($questionIndex>=$numberOfQuestions) {
+					if ($questionIndex >= $numberOfQuestions) {
 
+                        // always go to verify
+                        return Redirect::route('belif.verify');
+					    /*
 						$answers = Session::get('answers');
 
 						$correctAnswers = array(1 => 'C', 2 => 'A', 3 => 'B');
@@ -213,6 +216,7 @@
 								'sampleResult' => $sampleResult
 							));
 						}
+					    */
 					}
 					//move to next question
 					else {
@@ -233,7 +237,7 @@
 		
 		public function getResults() {
 
-			$answers = Session::get('answers');
+			// $answers = Session::get('answers');
 
 			// $step4a = ['A','B','A']; // warm
 			// $step4b = ['B','A','B']; // cool
