@@ -592,6 +592,7 @@
 					
 					//store user
 					Session::set('userId', $user->id);
+                    Session::set('email', trim($user->email));
 				
 					//indicate email is verified
 					$user->email_verified = true;
