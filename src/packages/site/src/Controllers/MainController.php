@@ -29,7 +29,25 @@ class MainController extends BaseController implements CMSTrigger {
     } //end missingMethod()
 
     public function getSephora() {
-        return View::make('belif::pages.sephora');
+
+        $campaign = safeArrayValue('campaign', $_GET, null);
+
+        $redirectUrls = [
+            1 => 'https://www.ulta.com/true-cream-aqua-bomb?productId=pimprod2013170',
+            2 => 'https://www.ulta.com/true-cream-moisturizing-bomb?productId=pimprod2013178',
+            3 => 'https://www.ulta.com/aqua-bomb-sleeping-mask?productId=pimprod2013175'
+        ];
+
+        $redirectUrl = 'https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514';
+        if (isset($campaign)) {
+            if (isset($redirectUrls[trim($campaign)])) {
+                $redirectUrl = $redirectUrls[trim($campaign)];
+            }
+        }
+
+        return View::make('belif::pages.sephora')->with([
+            'redirectUrl' => $redirectUrl
+        ]);
     }
 
     public function getDesktop() {
