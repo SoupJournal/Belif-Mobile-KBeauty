@@ -25,7 +25,9 @@
                     <h2>The True Cream Aqua Bomb Aloe Vera</h2>
                     <h3>limited edition &bull; exclusive</h3>
 
-                    <div class="image"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/sephora/aloe_sephora_product.jpg" /></div>
+                    <div class="image">
+                        &nbsp;
+                    </div>
 
                     <div class="price">$38.00</div>
                     <div class="description">SIZE 1.68 oz/ 50mL</div>
