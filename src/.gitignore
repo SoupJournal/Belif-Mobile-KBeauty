@@ -22,7 +22,6 @@ composer.lock
 .env.php
 nohup.out
 
-
 # Laravel 4 specific
 ######################
 bootstrap/compiled.php
