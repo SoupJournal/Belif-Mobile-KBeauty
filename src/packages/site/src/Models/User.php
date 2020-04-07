@@ -21,14 +21,9 @@ class User extends Model implements AuthenticatableContract {
 	//set model table name
     protected $table = 'user';
 
-
-
-	
 		//==========================================================//
 		//====				AUTHENTICATION METHODS				====//
 		//==========================================================//	
-			
-
 
     /**
 	 * Get the unique identifier name for the user.

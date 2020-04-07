@@ -37,7 +37,15 @@
 	//get question data
 	$question = safeArrayValue('question', $questionData, "");
 	$questionText = safeArrayValue('text', $questionData, "");
-	$videoURL = safeArrayValue('video', $questionData, $assetPath . '/videos/test.3gpp');
+	$answerA = safeArrayValue('answer_A', $questionData, null);
+	$answerB = safeArrayValue('answer_B', $questionData, null);
+	$answerC = safeArrayValue('answer_C', $questionData, null);
+	$answerD = safeArrayValue('answer_D', $questionData, null);
+	$answerE = safeArrayValue('answer_E', $questionData, null);
+	$theme = safeArrayValue('theme', $questionData, 0);
+
+	// determine button colours
+	$answerClass = "answer-theme-" . $theme;
 
 ?>
 
@@ -45,64 +53,72 @@
 	
 	<div class="container-top">
 
-		<div class="spacer-medium"></div>
-	
+		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
+		
 		<div class="row page-margin-small">
-		
-			<div class="font-3 color-2 size-6">Question {{ $questionNumber }}</div>
-		
-			<div class="spacer-large"></div>
 
+			{{-- question --}}
 			<div class="question-text">
-			
-				<div class="spacer-medium"></div>
-			
-				<div class="no-margins font-3 size-5 color-2">{!! $question !!}</div>
+
+				<h2 class="no-margins title-bold medium color-1">{!! $question !!}</h2>
 				
 			</div>
-			
+
 			<div class="spacer-medium"></div>
-			<div class="spacer-large"></div>
 
-			<div class="question-video-box">
-			
-				<video id="video" class="question-video" src="{{ $videoURL }}" controls hidden-video="video-button"></video>
-				
-				<div class="spacer-large"></div>
+			<h3 class="no-margins title-light medium color-1">
+				<img src="https://s3.amazonaws.com/soup-journal-app-storage/Sulwhasoo/star_icon.png" width="25" />
+			</h3>
 
-				<button id="video-button" class="video-button">
-					<img src="{{ asset($assetPath . '/images/icon-play.png') }}" class="image-video-play">
+			<div class="spacer-small"></div>
+
+			{{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL)) }}
+
+			{{-- answers --}}
+			@if ($answerA && strlen($answerA)>0)
+				<button class="answer-box {{ $answerClass }} text-center" name="value" value="A">
+					<h3 class="title-semi-bold color-1">{!! $answerA !!}</h3>
 				</button>
-
 				<div class="spacer-small"></div>
-			
-				<div class="font-7 color-2 size-4">{{ $text }}</div>
-				
-			</div>
-					
-			<div class="spacer-large"></div>
-		
-			<a href="{{ $buttonURL }}" class="button-page bg-color-12 color-2 font-3" label="{{ $button }}">
-				{{ $button }}
-			</a>
+			@endif
+
+			@if ($answerB && strlen($answerB)>0)
+				<button class="answer-box {{ $answerClass }}" name="value" value="B">
+					<h3 class="title-semi-bold color-1">{!! $answerB !!}</h3>
+				</button>
+				<div class="spacer-small"></div>
+			@endif
+
+			@if ($answerC && strlen($answerC)>0)
+				<button class="answer-box {{ $answerClass }}" name="value" value="C">
+					<h3 class="title-semi-bold color-1">{!! $answerC !!}</h3>
+				</button>
+				<div class="spacer-small"></div>
+			@endif
+
+			@if ($answerD && strlen($answerD)>0)
+				<button class="answer-box {{ $answerClass }}" name="value" value="D">
+					<h3 class="title-semi-bold color-1">{!! $answerD !!}</h3>
+				</button>
+				<div class="spacer-small"></div>
+			@endif
+
+			@if ($answerE && strlen($answerE)>0)
+				<button class="answer-box {{ $answerClass }}" name="value" value="E">
+					<h3 class="title-semi-bold color-1">{!! $answerE !!}</h3>
+				</button>
+			@endif
+
+			{{ Form::close() }}
+
+			<div class="spacer-medium"></div>
 		
 		</div>
 	
 	</div>
 
 </div>
-<script type="text/javascript">
-$(document).ready(function() {
-	$('#video').css('display', 'none');
-	$("#video-button").click(function(){
-		$('#video').css('display', 'block');
-		$('#video')[0].play();
-		$('#video').on('ended',function(){
-			$('#video').css('display', 'none');
-		});
-	});
-});
-</script>
 
 @stop
 {{--------------- END CONTENT ----------------}}

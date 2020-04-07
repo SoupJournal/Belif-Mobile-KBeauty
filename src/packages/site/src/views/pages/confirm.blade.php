@@ -21,11 +21,13 @@
 
  	//ensure page properties are set
 	$buttonURL = isset($buttonURL) ? $buttonURL : null;
+	$code = isset($code) ? $code : '';
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
+	$html = safeArrayValue('html', $pageData, "");
 	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$buttonNo = safeArrayValue('button_cancel', $pageData, "");
@@ -34,18 +36,19 @@
 
 <div class="text-center">
 
-	<div class="font-1 color-2 size-3 bg-color-1">Your email has been verified!</div>
+{{--	<div class="font-1 color-2 size-3 bg-color-1">Your email has been verified!</div>--}}
 
 	<div class="page-padding-small">
-	
+
 		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
 		{{-- title --}}
-		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 	
 		<div class="spacer-small"></div>
 
-		<h3 class="title-light no-margins color-1">{!! $subtitle !!}</h3>
+		<h3 class="title-bold no-margins color-1 size-5">{!! $subtitle !!}</h3>
 		
 		<div class="spacer-small"></div>
 
@@ -60,22 +63,22 @@
 			
 		</div>
 
-		<div>{!! $text !!}</div>
+		<div class="color-1 size-6 font-3">{!! $text !!}</div>
 
-		<div class="spacer-large"></div>
+		<div class="spacer-small"></div>
 
-		<div class="page-padding-large">
+		<div class="color-1 size-6 font-3">{!! $html !!}</div>
 
-			<a href="/share?code={{ $code }}" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}">
-				{{ $button }}
-			</a>
-		
-			{{-- Re-verify button --}}
-			<a href="{{ route('belif.reverify') }}" class="button-page color-1">
-				<h4 class="button-link">{{ $buttonNo }}</h4>
-			</a>
-		
-		</div>
+		<div class="spacer-small"></div>
+
+		<a href="{{ route('belif.share', ['code' => $code]) }}" class="button-page button-next bg-color-2 color-1 font-3 size-6" innerclass="color-2" label="{{ $button }}">
+			{{ $button }}
+		</a>
+
+		{{-- Re-verify button --}}
+		<a href="{{ route('belif.reverify') }}" class="button-page color-1">
+			<h4 class="button-link">{{ $buttonNo }}</h4>
+		</a>
 
 </div>
 

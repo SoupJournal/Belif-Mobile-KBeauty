@@ -4,7 +4,7 @@
 /********************************/
 
 .color-1 {
-	color: #000000; /* black */
+	color: #404041; /* black */
 }
 
 
@@ -53,7 +53,7 @@
 }
 
 .color-12 {
-	color: #33ccff;
+	color: #F0EAE4;
 }
 
 /********************************/
@@ -85,7 +85,7 @@ a:hover {
 
 
 .bg-color-1 {
-	background-color: #000000;	
+	background-color: #404041;
 }
 
 
@@ -122,7 +122,11 @@ a:hover {
 }
 
 .bg-color-10 {
-	background-color: #F1F2F3;	
+	background-color: #F1F2F3;
+}
+
+.bg-color-11 {
+	background-color: #B1B4B0;
 }
 
 .bg-color-12 {
@@ -135,7 +139,7 @@ a:hover {
 
 
 .border-color-1 {
-	border-color: #000000;	
+	border-color: #404041;
 }
 
 
@@ -185,6 +189,6 @@ a:hover {
 /********************************/
 
 h5 a {
-	color: #000000;
+	color: #404041;
 	text-decoration: underline;
 }

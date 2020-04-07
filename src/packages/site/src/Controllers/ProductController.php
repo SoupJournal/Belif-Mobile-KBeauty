@@ -4,8 +4,7 @@
 	
 	use Belif\Mobile\Models\Question;
 	use Belif\Mobile\Models\Product;
-	use Belif\Mobile\Controllers\BaseController;
-	
+
 	use View;
 	use Session;
 	use Redirect;
@@ -48,7 +47,8 @@
 					'questionData' => $questionData,
 					'questionNumber' => $questionIndex,
 					'backgroundImage' => $backgroundImage,
-					'headerLogoUrl' => $this->header_logo_url_white,
+                    'formURL' => route('belif.answer.id', ['questionIndex' => $questionIndex]),
+                    'headerLogoUrl' => $this->header_logo_url_black,
 					'buttonURL' => route('belif.answer'),
 					'backURL' => $questionIndex>1 ? route('belif.question.previous') : route('belif.guide')
 				));
@@ -120,7 +120,7 @@
 		
 					//get background image
 					$backgroundImage = safeArrayValue('answer_background_image', $questionData);
-					
+
 					//render view
 					return View::make('belif::pages.answer')->with(Array (
 						'pageName' => 'answer_' . $questionIndex,
@@ -156,10 +156,10 @@
 					
 					//store question answer
 					$this->setAnswer($questionIndex, $value);
-					
+
 					//get number of questions
 					$numberOfQuestions = Question::count('id');
-				
+
 					//move product
 					if ($questionIndex >= $numberOfQuestions) {
 
@@ -239,34 +239,46 @@
 
 			// $answers = Session::get('answers');
 
-			// $step4a = ['A','B','A']; // warm
-			// $step4b = ['B','A','B']; // cool
-			// $step4c = ['C','C','C']; // neutral
+			$step4a = ['A','A','A','A','A']; //
+			$step4b = ['B','B','B','B','B']; //
+            $step4c = ['C','C','C','C','C']; //
+            $step4d = ['D','D','D','D','D']; //
+            $step4e = ['E','E','E','E','E']; //
 
-			// $step4aCount = $step4bCount = $step4cCount = $idx = 0;
+			$step4aCount = $step4bCount = $step4cCount = $step4dCount = $step4eCount = $idx = 0;
 
-			// foreach ($answers as $answer) {
-			// 	if ($answer == $step4a[$idx]) {
-			// 		$step4aCount++;
-			// 	}
-			// 	if ($answer == $step4b[$idx]) {
-			// 		$step4bCount++;
-			// 	}
-			// 	if ($answer == $step4c[$idx]) {
-			// 		$step4cCount++;
-			// 	}
-			// 	$idx++;
-			// }
+			foreach ($answers as $answer) {
+				if ($answer == $step4a[$idx]) {
+					$step4aCount++;
+				}
+				if ($answer == $step4b[$idx]) {
+					$step4bCount++;
+				}
+                if ($answer == $step4c[$idx]) {
+                    $step4cCount++;
+                }
+                if ($answer == $step4d[$idx]) {
+                    $step4dCount++;
+                }
+                if ($answer == $step4e[$idx]) {
+                    $step4eCount++;
+                }
+				$idx++;
+			}
 
-			// $answerCounts = [
-			// 	'A' => $step4aCount,
-			// 	'B' => $step4bCount,
-			// 	'C' => $step4cCount
-			// ];
+			$answerCounts = [
+				'A' => $step4aCount,
+				'B' => $step4bCount,
+                'C' => $step4cCount,
+                'D' => $step4dCount,
+                'E' => $step4eCount,
+			];
 			
 			// $finalAnswer = array_search(max($answerCounts),$answerCounts);
 
 			$finalAnswer = 'A';
+
+			$themeColor = 1;
 
 			$selectedProducts = [];
 			if ($finalAnswer == 'A') {
@@ -274,17 +286,36 @@
 				$productIdx = 0;
 				$selectedProducts[] = 1;
 				$selectedProducts[] = 0;
+				$themeColor = 2;
+				$headerLogoUrl = $this->header_logo_url_white;
 			} elseif ($finalAnswer == 'B') {
 				$sampleResult = self::FORM_RESULTS_B;
 				$productIdx = 1;
 				$selectedProducts[] = 2;
 				$selectedProducts[] = 0;
-			} elseif ($finalAnswer == 'C') {
-				$sampleResult = self::FORM_RESULTS_C;
-				$productIdx = 2;
-				$selectedProducts[] = 3;
-				$selectedProducts[] = 0;
-			}
+                $headerLogoUrl = $this->header_logo_url_black;
+            } elseif ($finalAnswer == 'C') {
+                $sampleResult = self::FORM_RESULTS_C;
+                $productIdx = 2;
+                $selectedProducts[] = 3;
+                $selectedProducts[] = 0;
+                $themeColor = 2;
+                $headerLogoUrl = $this->header_logo_url_white;
+            } elseif ($finalAnswer == 'D') {
+                $sampleResult = self::FORM_RESULTS_D;
+                $productIdx = 3;
+                $selectedProducts[] = 4;
+                $selectedProducts[] = 0;
+                $themeColor = 2;
+                $headerLogoUrl = $this->header_logo_url_white;
+            } elseif ($finalAnswer == 'E') {
+                $sampleResult = self::FORM_RESULTS_E;
+                $productIdx = 4;
+                $selectedProducts[] = 5;
+                $selectedProducts[] = 0;
+                $themeColor = 2;
+                $headerLogoUrl = $this->header_logo_url_white;
+            }
 
 			Session::set('selectedProducts', $selectedProducts);
 
@@ -295,7 +326,7 @@
 			$backgroundImage = safeArrayValue('background_image', $pageData);
 
 			//get products
-			$products = Product::where('available', true)->get();
+			$products = Product::all();
 		
 			//render view
 			return View::make('belif::pages.results')->with(Array (
@@ -307,7 +338,10 @@
 				'headerLogoUrl' => $this->header_logo_url_white,
 				'backURL' => route('belif.question.previous'),
 				'buttonURL' => route('belif.address'),
-				'sampleResult' => $sampleResult
+				'restartURL' => route('belif.tryagain'),
+				'sampleResult' => $sampleResult,
+                'theme' => $themeColor,
+                'headerLogoUrl' => $headerLogoUrl
 			));
 			
 		} //end getResults()

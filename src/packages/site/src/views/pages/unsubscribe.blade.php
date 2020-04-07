@@ -35,11 +35,12 @@
 		
 		<div class="page-padding-small">
 	
-			<div class="spacer-medium"></div>
-			
-			<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
+		{{-- title --}}
+		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 
-			<div class="spacer-small"></div>
+		<div class="spacer-small"></div>
+		
+		<h3 class="title-bold no-margins small color-1">{!! $subtitle !!}</h3>
 		
 			@if ($unsubscribed == true)
 				<div class="no-margins size-6 color-2 font-3">You've been unsubscribed.</div>

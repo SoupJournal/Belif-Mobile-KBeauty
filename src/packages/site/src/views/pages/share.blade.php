@@ -35,18 +35,19 @@
 
 <div class="text-center">
 
-{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
+	{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
 
 	<div class="page-padding-small">
-	
+
 		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
 		{{-- title --}}
-		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 	
 		<div class="spacer-small"></div>
 
-		<h3 class="title-light no-margins color-1">{!! $subtitle !!}</h3>
+		<h3 class="title-bold no-margins color-1">{!! $subtitle !!}</h3>
 		
 		<div class="spacer-small"></div>
 
@@ -60,7 +61,7 @@
 		{{-- display form errors --}}
 	    @if ($errors->has())
 	        @foreach ($errors->all() as $error)
-	            <div class='bg-danger alert'>{{ $error }}</div>
+	            <div class='bg-danger alert font-3'>{{ $error }}</div>
 	        @endforeach
 	    @else
 	   	 	<div class="spacer-small-2"></div>
@@ -74,13 +75,13 @@
 		@endif
 
 		{{-- submit button --}}
-		<button class="button-page bg-color-1 color-2 font-3" label="{{ $button }}">
-			{{ $button }}
+		<button class="button-page button-next bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
+			{!! $button !!}
 		</button>
 
 		{{-- Re-verify button --}}
-		<a href="{{ route('belif.thanks') }}" class="button-page color-1">
-			<h4 class="button-link">{{ $buttonNo }}</h4>
+		<a href="{{ route('belif.thanks') }}" class="button-page color-1 font-3">
+			<h4 class="button-link font-3">{!! $buttonNo !!}</h4>
 		</a>
 		
 {{ Form::close() }}

@@ -55,7 +55,7 @@
 
 
 .page-body {
-	position: relative;	
+	position: relative;
 	height: 100%;
 }
 
@@ -458,7 +458,8 @@
 	background: no-repeat;
   	background-size: cover;
   	background-position: center center;
-  	width: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 
@@ -467,7 +468,7 @@
   	background-size: cover; /*100% 100%;*/
   	background-position: center center;
   	width: 100%;
-  	height: 100%;
+    height: 100%;
 }
 
 
@@ -490,6 +491,7 @@
 	top:0;
 	left:0;
 	right:0;
+	overflow: auto;
 }
 
 .stretch-to-width {
@@ -561,7 +563,7 @@
 }
 
 button:hover {
-	color: rgb(35, 82, 124);	
+	color: rgb(64, 64, 65);
 }
 
 
@@ -615,9 +617,9 @@ button:hover {
 }
 
 .terms {
+	margin: 10px 0;
 	font-size: 3.5vw;
 	font-family: BrandonGrotesqueLightItalic, sans-serif;
-	line-height: 30px;
 }
 
 .terms input {
@@ -626,18 +628,18 @@ button:hover {
 	vertical-align: middle;
 }
 
-hr.divider {
-	width: 65%;
-    border-top: 2px solid #fff;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.terms a {
+	text-decoration: underline;
+	color: #3069AD;
 }
 
-.width-40 {
-	width: 40% !important;
+.header-logo {
+	width: 100%;
+	position: absolute;
+	top: 3%;
 }
 
-.sephora-image {
-	vertical-align: unset;
-	top: 3px;
+.header-logo img {
+	text-align: center;
+	width: 50%;
 }

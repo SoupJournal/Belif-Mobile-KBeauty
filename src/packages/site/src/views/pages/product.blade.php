@@ -118,8 +118,6 @@
 			{{ $button }}
 		</button>
 		
-		<div class="spacer-small">
-		
 	{{ Form::close() }}
 		
 </div>
