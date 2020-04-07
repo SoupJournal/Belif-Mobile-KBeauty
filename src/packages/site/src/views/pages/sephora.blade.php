@@ -5,6 +5,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="robots" content="noindex,nofollow">
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -16,6 +17,33 @@
     </head>
 
     <body>
+
+        <!-- Global site tag (gtag.js) - Google Ads: 711349582 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-711349582"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-711349582');
+        </script>
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '220888885086120');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+                       src="https://www.facebook.com/tr?id=220888885086120&ev=PageView&noscript=1"
+            /></noscript>
+        <!-- End Facebook Pixel Code -->
 
         <div class="container-fluid">
             <div class="container">
@@ -33,7 +61,7 @@
                     <div class="description">SIZE 1.68 oz/ 50mL</div>
                 </div>
                 <div class="row justify-content-md-center buttons">
-                    <button class="button red"><a href="#">BUY FROM SEPHORA</a></button>
+                    <button class="button red"><a href="{{ $redirectUrl }}">BUY FROM SEPHORA</a></button>
                     <button class="button"><a href="#">BUY FROM BELIFUSA.COM</a></button>
                 </div>
             </div>
