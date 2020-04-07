@@ -60,10 +60,10 @@
                     <div class="price">$38.00</div>
                     <div class="description">SIZE 1.68 oz/ 50mL</div>
                 </div>
-                <div class="row justify-content-md-center buttons">
-                    <button class="button red"><a href="{{ $redirectUrl }}">BUY FROM SEPHORA</a></button>
-                    <button class="button"><a href="#">BUY FROM BELIFUSA.COM</a></button>
-                </div>
+            </div>
+            <div class="buttons">
+                <button class="button red"><a href="{{ $redirectUrl }}">BUY FROM SEPHORA</a></button>
+                <button class="button"><a href="#">BUY FROM BELIFUSA.COM</a></button>
             </div>
         </div>
 

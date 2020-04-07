@@ -67,6 +67,10 @@ h3 {
     margin-top: 20px;
 }
 
+.container {
+    height: 775px;
+}
+
 .top-spacer
 {
     width: 100%;
@@ -102,6 +106,10 @@ h3 {
     margin-top: 20px;
     padding: 20px;
     border-top: 3px solid #e6e6e6;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
 }
 
 .button {
