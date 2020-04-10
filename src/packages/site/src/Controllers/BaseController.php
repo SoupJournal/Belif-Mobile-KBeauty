@@ -42,15 +42,15 @@ class BaseController extends Controller
     //const EMAIL_PRODUCT_IMAGES = 'email_images';
 
     //verify email details
-    const EMAIL_SENDER_VERIFY = 'team@sulwhasoo5scents.com';
+    const EMAIL_SENDER_VERIFY = 'team@aloeaquabomb.com';
     const EMAIL_SUBJECT_VERIFY = 'Verify your email to claim your gift.';
 
     //share email details
-    const EMAIL_SENDER_SHARE = 'team@sulwhasoo5scents.com';
-    const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of Sulwhasoo.';
+    const EMAIL_SENDER_SHARE = 'team@aloeaquabomb.com';
+    const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of Belif.';
 
     //product email details
-    const EMAIL_SENDER_PRODUCT = 'team@sulwhasoo5scents.com';
+    const EMAIL_SENDER_PRODUCT = 'team@aloeaquabomb.com';
     const EMAIL_SUBJECT_PRODUCT = "Your sample is on its way!";
 
     //number of questions
