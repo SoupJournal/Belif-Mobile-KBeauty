@@ -1,8 +1,6 @@
 <?php
 
 	//validate properties
-	//if (!isset($productImage)) $productImage = "";
-	//if (!isset($productColour)) $productColour = "";
 	if (!isset($pageData)) $pageData = null;
 	if (!isset($name)) $name = "";
 	if (!isset($address1)) $address1 = "";
@@ -14,10 +12,10 @@
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
-	$productTitle = safeArrayValue('button', $pageData, "");
+	$button = safeArrayValue('button', $pageData, "");
 	$html = safeArrayValue('html', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
-	$text2 = safeArrayValue('button_cancel', $pageData, "");
+	$buttonCancel = safeArrayValue('button_cancel', $pageData, "");
 	$productImage = safeArrayValue('image', $pageData, "");
 		
 
@@ -124,11 +122,14 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:32px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $productTitle !!}</td>
+															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:32px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $button !!}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
 												</table></td>
+											</tr>
+											<tr>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $html !!}</td>
 											</tr>
 											<tr>
 												<td height="367" style="border: 0; margin:0; padding: 0;">
@@ -175,7 +176,9 @@
 							<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;">&nbsp;											  <unsubscribe> Need to change your address or report spam? &nbsp;Contact us at <a href="mailto:cs@belifusa.com?Subject=Change%2address" target="_top">cs@belifusa.com</a></unsubscribe></td>
+							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;">
+								<unsubscribe> Need to change your address or report spam? &nbsp;Contact us at <a href="mailto:cs@belifusa.com?Subject=Change%2address" target="_top">cs@belifusa.com</a></unsubscribe>
+							</td>
 						</tr>
                         <tr>
 							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="{{ $unsubscribeLink }}" style="text-decoration:none; color:#000000;"><unsubscribe>unsubscribe</unsubscribe></a></td>
