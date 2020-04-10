@@ -26,33 +26,29 @@
 	
 ?>
 
-<div class="text-center page-padding-small">
-	
-		<div class="container-top">
-		
-			<div class="spacer-medium"></div>
-			
-			<div class="page-padding-medium">
-			
-				{{-- title --}}
-				<h3 class="title-2 color-1 page-padding-small">{!! $title !!}</h3>
-			
-				<div class="spacer-small"></div>
-			
-				<h4 class="title-4 color-1 page-padding-small">{!! $subtitle !!}</h4>
-				
-				<div class="spacer-medium"></div>
-				
-				{{-- image --}}
-				@if ($image && strlen($image)>0) 
-					<div class="page-padding-very-large">
-						<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
-					</div>
-				@endif
-			
+<div class="text-center">
+
+	<div class="spacer-medium"></div>
+
+	<div class="page-padding-medium">
+
+		{{-- title --}}
+		<h3 class="title-2 color-1 page-padding-small">{!! $title !!}</h3>
+
+		<div class="spacer-small"></div>
+
+		<h4 class="title-4 color-1 page-padding-small">{!! $subtitle !!}</h4>
+
+		<div class="spacer-medium"></div>
+
+		{{-- image --}}
+		@if ($image && strlen($image)>0)
+			<div class="page-padding-very-large">
+				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 			</div>
-	
-		</div>
+		@endif
+
+	</div>
 
 </div>
 
