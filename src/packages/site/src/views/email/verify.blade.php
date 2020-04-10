@@ -145,6 +145,36 @@
 												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 											<tr>
+												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
+													<table border="0" cellspacing="0" cellpadding="0" width="570px">
+														<tbody>
+														<tr>
+															<td bgcolor="#ffffff">
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tbody>
+																	<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
+																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+																	</tbody>
+																</table>
+															</td>
+															<td bgcolor="#33ccff" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="#" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a></td>
+															<td bgcolor="#ffffff">
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tbody>
+																	<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
+																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
+											</tr>
+											<tr>
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $buttonCancel !!}</td>
 											</tr>
 										</tbody>
@@ -171,7 +201,7 @@
 										<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; 2019 BELIF. ALL RIGHTS RESERVED.</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; belif cosmetics</td>
 									</tr>
 									<tr>
 										<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
@@ -184,7 +214,7 @@
 						</tr>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;">
-								<unsubscribe> Need to change your address or report spam? &nbsp;Contact us at <a href="mailto:cs@belifusa.com?Subject=Change%2address" target="_top">cs@belifusa.com</a></unsubscribe>
+								<unsubscribe> Need to change your address or report spam?<br/>Contact us at <a href="mailto:contact@belifinhydration.com" target="_top">contact@belifinhydration.com</a></unsubscribe>
 							</td>
 						</tr>
                         <tr>
