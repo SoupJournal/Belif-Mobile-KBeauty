@@ -4,28 +4,53 @@
 /********************************/
 
 @font-face {
-    font-family: AritaLight;
-    src: url(../fonts/Arita-buriL.otf);
+    font-family: SansaPro-Black;
+    src: url(../fonts/SansaPro-Black.otf);
 }
 
 @font-face {
-    font-family: AritaMedium;
-    src: url(../fonts/Arita-buriM.otf);
+    font-family: SansaPro-BlackItalic;
+    src: url(../fonts/SansaPro-BlackItalic.otf);
 }
 
 @font-face {
-    font-family: AritaBold;
-    src: url(../fonts/Arita-buriB.otf);
+    font-family: SansaPro-Bold;
+    src: url(../fonts/SansaPro-Bold.otf);
 }
 
 @font-face {
-	font-family: AritaSemiBold;
-	src: url(../fonts/Arita-buriSB.otf);
+    font-family: SansaPro-BoldItalic;
+    src: url(../fonts/SansaPro-BoldItalic.otf);
 }
 
 @font-face {
-	font-family: AritaHairLine;
-	src: url(../fonts/Arita-buriHL.otf);
+    font-family: SansaPro-Light;
+    src: url(../fonts/SansaPro-Light.otf);
+}
+
+@font-face {
+    font-family: SansaPro-LightItalic;
+    src: url(../fonts/SansaPro-LightItalic.otf);
+}
+
+@font-face {
+    font-family: SansaPro-Normal;
+    src: url(../fonts/SansaPro-Normal.otf);
+}
+
+@font-face {
+    font-family: SansaPro-NormalItalic;
+    src: url(../fonts/SansaPro-NormalItalic.otf);
+}
+
+@font-face {
+    font-family: SansaPro-SemiBold;
+    src: url(../fonts/SansaPro-SemiBold.otf);
+}
+
+@font-face {
+    font-family: SansaPro-SemiBoldItalic;
+    src: url(../fonts/SansaPro-SemiBoldItalic.otf);
 }
 
 /********************************/
@@ -33,23 +58,47 @@
 /********************************/
 
 body {
-	font-family: AritaLight, sans-serif;	
+	font-family: SansaPro-Normal, sans-serif;	
 }
 
 .font-1 {
-	font-family: AritaLight !important;
+	font-family: SansaPro-Black !important;
 }
 
 .font-2 {
-	font-family: AritaLight !important;
+	font-family: SansaPro-BlackItalic !important;
 }
 
 .font-3 {
-	font-family: AritaSemiBold !important;
+	font-family: SansaPro-Bold !important;
 }
 
 .font-4 {
-	font-family: AritaMedium !important;
+	font-family: SansaPro-BoldItalic !important;
+}
+
+.font-5 {
+	font-family: SansaPro-Light !important;
+}
+
+.font-6 {
+	font-family: SansaPro-LightItalic !important;
+}
+
+.font-7 {
+	font-family: SansaPro-Normal !important;
+}
+
+.font-8 {
+	font-family: SansaPro-NormalItalic !important;
+}
+
+.font-9 {
+	font-family: SansaPro-SemiBold !important;
+}
+
+.font-10 {
+	font-family: SansaPro-SemiBoldItalic !important;
 }
 
 .size-1 {
@@ -62,6 +111,10 @@ body {
 
 .size-3 {
 	font-size: 3vw !important;
+}
+
+.size-3-4 {
+	font-size: 3.4vw !important;
 }
 
 .size-4 {
@@ -95,7 +148,7 @@ body {
 
 h1 {
 	font-size: 8vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 }
 
 h1.small {
@@ -120,7 +173,6 @@ h1.medium-2 {
 
 h1.large {
 	font-size: 12vw;
-	line-height: 14vw;
 }
 
 
@@ -131,12 +183,11 @@ h1.font-header {
 
 h2 {
 	font-size: 4.8vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 }
 
 h2.small {
 	font-size: 4vw;
-	line-height: 5vw;
 }
 
 h2.medium {
@@ -151,7 +202,7 @@ h2.large {
 
 h3 {
 	font-size: 4.2vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 }
 
 h3.small {
@@ -165,7 +216,7 @@ h3.large {
 h4 {
 	font-size: 3.5vw;
 	line-height: 5vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 }
 
 h4.large {
@@ -174,12 +225,12 @@ h4.large {
 
 h5 {
 	font-size: 3vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 }
 
 h5.font-header {
 	font-size: 2vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 }
 
 .page-text {
@@ -205,14 +256,14 @@ a.page-link {
 
 .button-page {
 	font-size: 4vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 	font-style: normal;
 	font-weight: 500;	
 }
 
 .button-header {
 	font-size: 3vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 	font-style: normal;
 	font-weight: 500;	
 }
@@ -223,7 +274,7 @@ a.page-link {
 
 .page-input-text {
 	font-size: 3.6vw;
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-NormalItalic, sans-serif;
 	font-style: italic;
 	font-weight: 400;	
 }
@@ -233,7 +284,8 @@ a.page-link {
 }
 
 .page-input-select {
-	font-family: AritaLight, sans-serif;
+	/*font-size: 4vw;*/
+	font-family: SansaPro-Normal, sans-serif;
 	font-style: normal;
 	font-weight: 400;	
 	height: 13vw;
@@ -244,7 +296,7 @@ a.page-link {
 }
 
 .bg-danger {
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 	font-style: normal;
 	font-weight: 400;	
 	font-size: 4vw;	
@@ -275,19 +327,20 @@ a.page-link {
 /********************************/
 
 .title-bold {
-	font-family: AritaSemiBold, sans-serif;
+	font-family: MenoBannerSemiBold, sans-serif;
 }
 
 .title-semi-bold {
-	font-family: AritaSemiBold, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
 }
 
 .title-light {
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-Normal, sans-serif;
+	line-height: 5vw;
 }
 
 .title-italic {
-	font-family: AritaLight, sans-serif;
+	font-family: SansaPro-NormalItalic, sans-serif;
 }
 
 .underline {
@@ -312,7 +365,7 @@ a.page-link {
 }
 
 .meno {
-	font-family: AritaSemiBold, sans-serif;
+	font-family: MenoBannerSemiBold, sans-serif;
 }
 
 .small {

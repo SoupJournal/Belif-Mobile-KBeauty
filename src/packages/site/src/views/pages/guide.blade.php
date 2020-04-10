@@ -35,42 +35,42 @@
 	
 	<div class="container-top">
 		
-		<div class="row page-margin-small">
-
-			<div class="spacer-large"></div>
+		<div>
+	
 			<div class="spacer-medium"></div>
-
-			{{-- title --}}
-			<h1 class="no-margins title-bold large color-12">{!! $title !!}</h1>
+			
+			<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
 		
-			<!-- load group -->
+			<div class="spacer-small"></div>
+			
 			<div load-style="fade" load-group="page">
+
+				<div><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/guide_image.png" class="page-image" /></div>
 
 				{{-- html --}}
 				@if ($html && strlen($html)>0) 
-					<div class="row-left guide-block">
-						<h4 class="title-bold color-12 guide-text">{!! $html !!}</h4>
+					<div class="bg-color-2 row-left guide-block">
+						<div class="color-13 guide-text no-margins">{!! $html !!}</div>
 					</div>
 				@endif
 		
-				{{-- text --}}
-				<p class="title-bold color-12 page-margin-large size-3">
-					{!! $text !!}
-				</p>
-
 				<div class="spacer-small"></div>
-
+	
+				{{-- text --}}
+				<div class="font-7 color-2 size-6">
+					{!! $text !!}
+				</div>
+	
+				<div class="spacer-small"></div>
+			
 				{{-- next button --}}
-				<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
+				<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-13 font-3" label="{{ $button }}">
 					{{ $button }}
 				</a>
-	
-				<div class="spacer-medium"></div>
 
 				<div class="spacer-medium"></div>
-
+					
 			</div>
-			<!-- load group -->
 					
 		</div>
 

@@ -34,11 +34,13 @@
 	<div class="page-padding-small">
 	
 		<div class="spacer-large"></div>
-		<div class="spacer-medium"></div>
 
-		{{-- title --}}
-		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
-	
+		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
+
+		<div class="spacer-small"></div>
+
+		<div class="no-margins size-4 color-2 font-9">{!! $subtitle !!}</div>
+
 		<div class="spacer-small"></div>
 	
 		{{-- image --}}
@@ -47,16 +49,20 @@
 				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 			</div>
 		@endif
-
+		
+		<div class="spacer-medium"></div>
+		
 		<!-- load group -->
 		<div load-style="fade" load-group="page">
 		
 			{{-- info --}}
-			<h3 class="title-bold page-padding color-1">{!! $text !!}</h3>
+			<div class="no-margins size-5 color-2 font-7">{!! $text !!}</div>
+		
+			<div class="spacer-small"></div>
 
 			{{-- Re-verify button --}}
-			<a href="{{ route('belif.reverify') }}" class="button-page color-1 font-3">
-				<h4 class="button-link">{{ $buttonNo }}</h4>
+			<a href="{{ route('belif.reverify') }}" class="button-page color-2">
+				<h4 class="button-link">{!! $buttonNo !!}</h4>
 			</a>
 		
 		</div>

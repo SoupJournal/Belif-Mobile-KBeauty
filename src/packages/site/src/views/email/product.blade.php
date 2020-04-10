@@ -21,7 +21,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sulwhasoo</title>
+<title>VDL</title>
 </head>
 <body style="border:0; margin:0; padding:0; background-color:#f5f5f5">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#ffffff" bgcolor="#ffffff">
@@ -56,7 +56,7 @@
 														<tr>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="107" alt=""/></td>
-															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/Sulwhasoo/sulwhasoo_logo.png" alt="Sulwhasoo"/></td>
+															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="center"><img src="https://s3.amazonaws.com/soup-journal-app-storage/VDL/Images/VDL+High+Res+Logo.png" width="250" height="76" alt="VDL"/></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="center" align="center"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="120" height="35" alt=""/></td>
 															<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 														</tr>
@@ -66,10 +66,10 @@
 											</tr>
 
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; text-transform:uppercase; font-size:28px; line-height:34px; font-weight:bold; letter-spacing:-0.4px;">{{ $title }}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; text-transform:uppercase; font-size:28px; line-height:34px; font-weight:bold; letter-spacing:-0.4px;">{{ $title }}</td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:18px; line-height:32px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#824d9f; font-size:18px; line-height:32px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
 											</tr>
 											
 											<tr>
@@ -94,10 +94,10 @@
 							</td>
 						</tr>
 						<tr>
-						<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
+						<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
 							<tbody>
 								<tr>
-									<td width="370" align="center" style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:14px; line-height:18px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{!! $html !!}</td>
+									<td width="370" align="center" style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:14px; line-height:18px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{!! $html !!}</td>
 								</tr>
 								
 							</tbody>
@@ -108,23 +108,23 @@
 						</tr>
 						
 						<tr>
-							<td align="center" valign="top" bgcolor="#404041" style="border: 0; margin: 0; padding: 0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td align="center" valign="top" bgcolor="#000000" style="border: 0; margin: 0; padding: 0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 										<tr>
-											<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; font-size:0; line-height: 0;"></td>
+											<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; color: #fff; text-align: center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; text-align: center;"><a href="https://www.instagram.com/sulwhasoo.us/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Email+Images/instagram-logo-transparent.png" width="27" height="27" alt="Sulwhasoo Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/us.sulwhasoo" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Email+Images/facebook-logo-transparent.png" width="27" height="27" alt="Sulwhasoo Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/sulwhasoous" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Email+Images/twitter-logo.png" width="27" height="27" alt="Sulwhasoo Twitter" style="border: 0; margin: 0; padding: 0;"/></a></td>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; text-align: center;"><a href="https://www.instagram.com/vdlus/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-instagram.gif" width="27" height="27" alt="VDL Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/vdlus/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-facebook.gif" width="27" height="27" alt="VDL Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/vdlus" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-twitter.gif" width="27" height="27" alt="VDL Twitter" style="border: 0; margin: 0; padding: 0;"/></a>
 											</td>
 										</tr>
 										<tr>
-											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; font-size:0; line-height: 0;"></td>
+											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">Sulwhasoo &reg;</td>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #ffffff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; VDL Cosmetics</td>
 										</tr>
 										<tr>
-											<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; font-size:0; line-height: 0;"></td>
+											<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 										</tr>
 										<tr>
 											<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>

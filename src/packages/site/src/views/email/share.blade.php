@@ -52,7 +52,7 @@
 															<tr>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="107" alt=""/></td>
-																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/Sulwhasoo/sulwhasoo_logo.png" alt="Sulwhasoo"/></td>
+																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="bottom"><img src="https://s3.amazonaws.com/soup-journal-app-storage/VDL/Images/VDL+High+Res+Logo.png" width="250" height="76" alt="VDL"/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="top" align="left"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="102" height="1" alt=""/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 																</tr>
@@ -90,7 +90,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
+															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#824d9f; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -105,7 +105,7 @@
 												<table width="350px" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
 													<tbody>
 														<tr>
-															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#404041; font-size:14px; line-height:15px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">{{ $text }}</td>
+															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:14px; line-height:15px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">{{ $text }}</td>
 														</tr>
 													</tbody>
 												</table></td>
@@ -121,7 +121,7 @@
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
 													<tbody>
 														<tr>
-															<td bgcolor="#404041" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="https://sulwhasoo5scents.com" target="_blank" style="text-decoration: none; color:#ffffff;">Claim Gift Now</a></td>
+															<td bgcolor="#824d9f" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.lumislayers.com" target="_blank" style="text-decoration: none; color:#ffffff;">Claim Gift Now</a></td>
 														</tr>
 													</tbody>
 												</table></td>
@@ -142,22 +142,22 @@
 							<td style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;" height="19"></td>
 						</tr>
 						<tr>
-							<td align="center" valign="top" bgcolor="#404041" style="border: 0; margin: 0; padding: 0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td align="center" valign="top" bgcolor="#000000" style="border: 0; margin: 0; padding: 0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
-										<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; font-size:0; line-height: 0;"></td>
+										<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; color: #fff; text-align: center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; text-align: center;"><a href="https://www.instagram.com/sulwhasoo.us/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Email+Images/instagram-logo-transparent.png" width="27" height="27" alt="Sulwhasoo Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/us.sulwhasoo" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Email+Images/facebook-logo-transparent.png" width="27" height="27" alt="Sulwhasoo Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/sulwhasoous" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Email+Images/twitter-logo.png" width="27" height="27" alt="Sulwhasoo Twitter" style="border: 0; margin: 0; padding: 0;"/></a></td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; text-align: center;"><a href="https://www.instagram.com/vdlus/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-instagram.gif" width="27" height="27" alt="VDL Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/vdlus/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-facebook.gif" width="27" height="27" alt="VDL Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/vdlus" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-twitter.gif" width="27" height="27" alt="VDL Twitter" style="border: 0; margin: 0; padding: 0;"/></a></td>
 									</tr>
 									<tr>
-										<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; font-size:0; line-height: 0;"></td>
+										<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">Sulwhasoo &reg;</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; VDL Cosmetics</td>
 									</tr>
 									<tr>
-										<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #404041; font-size:0; line-height: 0;"></td>
+										<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 									</tr>
 									</tbody>
 							</table></td>
@@ -166,7 +166,7 @@
 							<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="{{ $unsubscribeLink }}" style="text-decoration:none; color:#404041;"><unsubscribe>unsubscribe</unsubscribe></a></td>
+							<td style="border: 0; margin: 0; padding: 0; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; font-size:14px; line-height: 20px; font-style:italic;"><a href="{{ $unsubscribeLink }}" style="text-decoration:none; color:#000000;"><unsubscribe>unsubscribe</unsubscribe></a></td>
 						</tr>
 						<tr>
 							<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>

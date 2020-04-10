@@ -38,46 +38,25 @@
 	
 	{{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL)) }}
 	
-		<div class="page-padding-tiny">
+		<div>
 	
-			<div class="spacer-large"></div>
-			<div class="spacer-small"></div>
-
+			<div class="spacer-tiny"></div>
+		
 			{{-- title --}}
-			<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
+			<div class="no-margins size-6 color-13 font-3">{!! $title !!}</div>
 
+			<hr class="hr-white"/>
+
+			<div class="no-margins size-3-4 color-2 font-9">{!! $subtitle !!}</div>
+			
 			<div class="spacer-small"></div>
-
-			<h2 class="no-margins title-bold small color-1">{!! $subtitle !!}</h2>
-
-			<div class="spacer-medium"></div>
-
-			<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/Homescreen-GIF.gif" border="0" style="width: 100%;" />
-
-			<div class="spacer-small"></div>
-
-			{{-- text --}}
-			<img src="https://s3.amazonaws.com/soup-journal-app-storage/Sulwhasoo/star_icon.png" width="25" />
-
-			<div class="spacer-small"></div>
-
-			<h3 class="no-margins title-bold color-1 size-6">{!! $text !!}</h3>
-
-			<div class="spacer-small"></div>
-
-			<p class="no-margins title-bold color-1 size-4">{!! $html !!}</p>
-
-			<div class="spacer-small"></div>
-
-		</div>
-
-		<!-- load group -->
-		<div class="page-padding-medium" load-style="fade" load-group="page">
+			
+			<div class="no-margins size-4 color-2 font-5">{!! $html !!}</div>
 
 			{{-- enter email --}}
-			<div class="form-group"> 
+			<div class="form-group page-padding-small"> 
 			
-				{{ Form::email('email', null, Array ('placeholder' => 'email', 'class' => 'page-input-text large color-1', 'tabindex' => '1')) }}
+				{{ Form::email('email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text large color-2', 'tabindex' => '1')) }}
 				
 			</div>
 		
@@ -86,26 +65,26 @@
 		        @foreach ($errors->all() as $error)
 		            <div class='bg-danger alert'>{{ $error }}</div>
 		        @endforeach
+		    @else
+		   	 	<div class="spacer-small"></div>
 		    @endif
+		
+			{{-- submit button --}}
+			<button class="button-page bg-color-13 color-2 font-3" label="{{ $button }}">
+				{{ $button }}
+			</button>
+			
+			<div class="spacer-small"></div>
+
+			<div class="color-2 size-4"><a href="{{ route('belif.unsubscribe') }}" class="color-2">I want to unregister myself.</a></div>
 
 			{{-- Terms & Conditions --}}
 			<div class="terms">
-				<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1 small" target="_blank">{{ $buttonNo }}</a>
+				<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-2 small" target="_blank">{{ $buttonNo }}</a>
 			</div>
-
-			{{-- submit button --}}
-			<button class="button-page bg-color-11 color-2 font-3" label="{{ $button }}">
-				{{ $button }}
-			</button>
-
-			<div class="spacer-small-2"></div>
 			
 		</div>
-		<!-- load group -->
-
-		<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/SWS_Email_FCAS_02.jpg" border="0" style="width: 100%;" />
-		<img src="https://soup-journal-app-storage.s3.amazonaws.com/Sulwhasoo/SWS_Email_FCAS_03.jpg" border="0" style="width: 100%;" />
-
+		
 	{{ Form::close() }}
 
 </div>

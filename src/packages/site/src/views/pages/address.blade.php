@@ -38,12 +38,11 @@
 	<div class="page-padding-tiny">
 
 		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
-
-		{{-- title --}}
-		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
 	
-		<div class="spacer-medium"></div>
+		{{-- title --}}
+		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
+	
+		<div class="spacer-large"></div>
 
 		<div class="page-padding-medium">
 
@@ -86,25 +85,22 @@
 			{{-- display form errors --}}
 		    @if ($errors->has())
 		        @foreach ($errors->all() as $error)
-		            <div class='bg-danger alert font-3'>{{ $error }}</div>
+		            <div class='bg-danger alert'>{{ $error }}</div>
 		        @endforeach
 		        
 		    @else
-				<div class="spacer-large"></div>
+		        <div class="spacer-large">
 		    @endif
-
-			<div class="spacer-small"></div>
-
+			
 			{{-- submit button --}}
-			<button class="button-page button-next bg-color-2 color-1 size-6 font-3" label="{{ $button }}">
+			<button class="button-page button-next bg-color-1 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</button>
 
-			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
-
 		</div>
-
+		
+		<div class="spacer-small"></div>
+		
 	{{ Form::close() }}
 
 </div>
