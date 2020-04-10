@@ -895,7 +895,7 @@ class MainController extends BaseController implements CMSTrigger {
                     "recipient" => $user->email,
                     "sender" => [
                         'email' => self::EMAIL_SENDER_VERIFY,
-                        'name' => 'Sulwhasoo'
+                        'name' => 'belif'
                     ],
                     "subject" => self::EMAIL_SUBJECT_VERIFY,
                     "view" => "belif::email.verify",
@@ -951,7 +951,7 @@ class MainController extends BaseController implements CMSTrigger {
                         "recipient" => $shareUser->email,
                         "sender" => [
                             'email' => self::EMAIL_SENDER_SHARE,
-                            'name' => 'Sulwhasoo'
+                            'name' => 'belif'
                         ],
                         "subject" => $subject,
                         "view" => "belif::email.share",
@@ -1027,7 +1027,7 @@ class MainController extends BaseController implements CMSTrigger {
                     "recipient" => $user->email,
                     "sender" => [
                         'email' => self::EMAIL_SENDER_PRODUCT,
-                        'name' => 'Sulwhasoo'
+                        'name' => 'belif'
                     ],
                     "subject" => self::EMAIL_SUBJECT_PRODUCT,
                     "view" => "belif::email.product",
@@ -1111,7 +1111,7 @@ class MainController extends BaseController implements CMSTrigger {
                             "recipient" => $user->email,
                             "sender" => [
                                 'email' => self::EMAIL_SENDER_PRODUCT,
-                                'name' => 'Sulwhasoo'
+                                'name' => 'belif'
                             ],
                             "subject" => self::EMAIL_SUBJECT_PRODUCT,
                             "view" => "belif::email.product",
