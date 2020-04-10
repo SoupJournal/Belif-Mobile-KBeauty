@@ -252,9 +252,9 @@
 	function isMobileDevice()
     {
 
-	    if (env('APP_ENV') == 'local') {
-            return true;
-        }
+//	    if (env('APP_ENV') == 'local') {
+//            return true;
+//        }
 
 		//mobile user agents
 	    $mobileUserAgents = array(

@@ -1,7 +1,7 @@
 <?php
 
 	//define variables
-	$fullScreen = false; //isset($fullScreen) ? $fullScreen : false;
+	$fullScreen = isset($fullScreen) ? $fullScreen : false;
 	$pagetitle = isset($pagetitle) ? $pagetitle : 'Belif';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
