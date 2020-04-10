@@ -11,7 +11,7 @@
 @section('scripts')
 
 	<?php
-
+	
 		//ensure page data is set
 		$pageData = isset($pageData) ? $pageData : null;
 		$questionData = isset($questionData) ? $questionData : null;
@@ -28,8 +28,6 @@
 		$answerA = safeArrayValue('answer_A', $questionData, null);
 		$answerB = safeArrayValue('answer_B', $questionData, null);
 		$answerC = safeArrayValue('answer_C', $questionData, null);
-		$answerD = safeArrayValue('answer_D', $questionData, null);
-		$answerE = safeArrayValue('answer_E', $questionData, null);
 		$theme = safeArrayValue('theme', $questionData, 0);
 	
 		//form submit URL
@@ -61,7 +59,7 @@
 			<div class="spacer-large"></div>
 		
 		</div>
-
+		
 		<div class="page-padding-small">
 		
 			{{-- answers --}}
@@ -78,24 +76,10 @@
 				</button>
 				<div class="spacer-medium"></div>
 			@endif
-
+			
 			@if ($answerC && strlen($answerC)>0)
 				<button class="answer-box {{ $answerClass }}" name="value" value="C">
 					<h3 class="font-3 color-2 size-4">{!! $answerC !!}</h3>
-				</button>
-				<div class="spacer-medium"></div>
-			@endif
-
-			@if ($answerD && strlen($answerD)>0)
-				<button class="answer-box {{ $answerClass }}" name="value" value="D">
-					<h3 class="title-semi-bold color-2">{!! $answerD !!}</h3>
-				</button>
-
-			@endif
-
-			@if ($answerE && strlen($answerE)>0)
-				<button class="answer-box {{ $answerClass }}" name="value" value="E">
-					<h3 class="title-semi-bold color-2">{!! $answerE !!}</h3>
 				</button>
 			@endif
 			

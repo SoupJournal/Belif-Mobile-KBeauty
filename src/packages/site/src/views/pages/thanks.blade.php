@@ -32,12 +32,19 @@
 <div class="text-center">
 
 	<div class="page-padding-small">
-
-		<div class="spacer-large"></div>
-		<div class="spacer-large"></div>
+	
+		<div class="spacer-medium"></div>
 
 		{{-- title --}}
-		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
+		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
+
+		<div class="spacer-medium"></div>
+
+		<div class="no-margins size-4 color-2 font-9">{!! $subtitle !!}</div>
+		
+		<div class="spacer-medium"></div>
+
+		<div class="no-margins size-6 color-2 font-3">{!! $html !!}</div>
 
 		<div class="spacer-small"></div>
 
@@ -48,24 +55,19 @@
 			</div>
 		@endif
 
-		{{-- info --}}
-		<div class="page-margin-large">
-			<h4 class="title-bold color-1 size-4">{!! $html !!}</h4>
-		</div>
-		
 		<div class="spacer-medium"></div>
 		
-		<a href="https://sulwhasoo.attn.tv/p/landing" class="button-page-cancel button-next bg-color-clear color-1 font-3" innerclass="color-1" label="Shop & Save">
-			Shop &amp; Save
+		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-2 color-13 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
+			{{ $button }} <div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram.png" width="16" /></div>
 		</a>
 
-		<div class="spacer-medium"></div>
+		<div class="spacer-tiny"></div>
 
-		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-2 color-1 font-3 size-5" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram-black.png" target="_blank">
-			<div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram-black.png" width="24" /> {{ $button }}</div>
+		{{-- Cancel button --}}
+		<a href="/" class="button-page-cancel button-next bg-color-clear color-2 font-3" innerclass="color-1" label="Quit Page">
+			QUIT PAGE
 		</a>
 
-		<div class="spacer-medium"></div>
 </div>
 
 @stop

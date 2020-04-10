@@ -54,7 +54,7 @@ class BaseController extends Controller
     const EMAIL_SUBJECT_PRODUCT = "Your sample is on its way!";
 
     //number of questions
-    private $numberOfQuestions = 4;
+    private $numberOfQuestions = 7;
 
     public function __construct()
     {

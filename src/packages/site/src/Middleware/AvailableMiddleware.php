@@ -7,8 +7,9 @@
 	use Closure;
 	use Redirect;
 	use Illuminate\Support\Facades\Auth;
+    use Soup\CMS\Models\CMSApp;
 
-	class AvailableMiddleware { 
+    class AvailableMiddleware {
 
 	    /**
 	     * Handle an incoming request.
@@ -19,6 +20,12 @@
 	     */
 	    public function handle($request, Closure $next)
 	    {
+
+            $application = CMSApp::get()->first();
+
+            if (!$application->status) {
+                return Redirect::route('belif.unavailable');
+            }
 	    	
 			//get available products
 			$products = Product::where('available', true)->get();

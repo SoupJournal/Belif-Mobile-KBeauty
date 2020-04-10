@@ -1,9 +1,12 @@
 <?php
-	$fullScreen = isset($fullScreen) ? $fullScreen : false;
-	$pagetitle = isset($pagetitle) ? $pagetitle : 'Sulwhasoo';
+
+	//define variables
+	$fullScreen = false; //isset($fullScreen) ? $fullScreen : false;
+	$pagetitle = isset($pagetitle) ? $pagetitle : 'Belif';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
 	$backgroundFill = isset($backgroundFill) ? $backgroundFill : false;
+
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -27,40 +30,30 @@
 
     </head>
     
-    <body ng-app="sulwhasoo">
+    <body ng-app="belif">
    
-		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit" 
+		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit"
 			 style="background: url({{ $backgroundImage }}) no-repeat center center; background-size:cover;"
 		>
 			
 			<div class="main-page-container fill-height color-2">
 	
 		   		{{----------------- HEADER -------------------}}
-		   		@if (!$fullScreen) 
+		   		@if (!$fullScreen)
 			    	@include('belif::layouts.header')
 		    	@endif
 
 				@if ($fillHeight)
-					<div class="page-body text-center @yield('background-color', 'bg-color-2')" fill-height>
-				@else
-					<div class="page-body text-center @yield('background-color', 'bg-color-2')">
+				<div class="page-body text-center" fill-height>
+				@else 
+				<div class="page-body text-center">
 				@endif
-
-					@if (isset($backgroundImage) && strlen($backgroundImage)>0)
-						<img class="background-scale-fill" src="{{ $backgroundImage }}" load-style="fade" load-group="background">
-					@else
-						<div class="background-fill"></div>
-					@endif
 					
 					<div class="stretch-to-fit">
 
-						<?php if ($_SERVER['REQUEST_URI'] != '/desktop') { ?>
-						<div class="header-logo"><img alt="{{ $pagetitle }}" src="{{ $headerLogoUrl }}" load-style1="fade"/></div>
-						<?php } ?>
-
-	        		{{----------------- CONTENT ------------------}}
-	        		@yield('content', '')
-	        		{{--------------- END CONTENT ----------------}}
+		        		{{----------------- CONTENT ------------------}}
+		        		@yield('content', '')
+		        		{{--------------- END CONTENT ----------------}}
 
 					</div>
 								
@@ -69,7 +62,7 @@
 			</div>	        	
               
         </div>
-
+        
     </body>
     
 </html>

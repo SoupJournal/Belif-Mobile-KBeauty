@@ -4,7 +4,7 @@
 /********************************/
 
 .color-1 {
-	color: #404041; /* black */
+	color: #000000; /* black */
 }
 
 
@@ -53,7 +53,11 @@
 }
 
 .color-12 {
-	color: #F0EAE4;
+	color: #33ccff;
+}
+
+.color-13 {
+	color: #1d5c58; /* set to soothe green */
 }
 
 /********************************/
@@ -85,7 +89,7 @@ a:hover {
 
 
 .bg-color-1 {
-	background-color: #404041;
+	background-color: #000000;	
 }
 
 
@@ -122,11 +126,15 @@ a:hover {
 }
 
 .bg-color-10 {
-	background-color: #F1F2F3;
+	background-color: #F1F2F3;	
 }
 
-.bg-color-11 {
-	background-color: #B1B4B0;
+.bg-color-12 {
+	background-color: #33ccff;
+}
+
+.bg-color-13 {
+	background-color: #1d5c58; /* set to soothe green */
 }
 
 .bg-color-12 {
@@ -139,7 +147,7 @@ a:hover {
 
 
 .border-color-1 {
-	border-color: #404041;
+	border-color: #000000;	
 }
 
 
@@ -189,6 +197,6 @@ a:hover {
 /********************************/
 
 h5 a {
-	color: #404041;
+	color: #000000;
 	text-decoration: underline;
 }

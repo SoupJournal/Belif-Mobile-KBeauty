@@ -35,53 +35,54 @@
 
 <div class="text-center">
 
-	{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
+{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
 
 	<div class="page-padding-small">
-
+	
 		<div class="spacer-large"></div>
-		<div class="spacer-medium"></div>
 
 		{{-- title --}}
-		<h1 class="no-margins title-bold large color-1">{!! $title !!}</h1>
+		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
 	
 		<div class="spacer-small"></div>
 
-		<h3 class="title-bold no-margins color-1">{!! $subtitle !!}</h3>
+		<div class="no-margins size-4 color-2 font-9">{!! $subtitle !!}</div>
 		
 		<div class="spacer-small"></div>
+
+		{{-- image --}}
+		@if ($image && strlen($image)>0)
+			<div class="page-padding">
+				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
+			</div>
+		@endif
 
 		{{-- enter email --}}
 		<div class="form-group page-padding-small"> 
 		
-			{{ Form::email('email', null, Array ('placeholder' => 'yourfriend@email.com', 'class' => 'page-input-text color-1', 'tabindex' => '1',  'autofocus' => '', 'auto-next-focus' => '')) }}
+			{{ Form::email('email', null, Array ('placeholder' => 'Yourfriend@email.com', 'class' => 'page-input-text color-2', 'tabindex' => '1',  'autofocus' => '', 'auto-next-focus' => '')) }}
 			
 		</div>
 	
 		{{-- display form errors --}}
 	    @if ($errors->has())
 	        @foreach ($errors->all() as $error)
-	            <div class='bg-danger alert font-3'>{{ $error }}</div>
+	            <div class='bg-danger alert'>{{ $error }}</div>
 	        @endforeach
 	    @else
 	   	 	<div class="spacer-small-2"></div>
 	    @endif
 
-		{{-- image --}}
-		@if ($image && strlen($image)>0) 
-			<div class="page-padding">
-				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
-			</div>
-		@endif
+		<div class="spacer-large"></div>
 
 		{{-- submit button --}}
-		<button class="button-page button-next bg-color-2 color-1 font-3 size-6" label="{{ $button }}">
-			{!! $button !!}
+		<button class="button-page bg-color-2 color-13 font-3" label="{{ $button }}">
+			{{ $button }}
 		</button>
 
 		{{-- Re-verify button --}}
-		<a href="{{ route('belif.thanks') }}" class="button-page color-1 font-3">
-			<h4 class="button-link font-3">{!! $buttonNo !!}</h4>
+		<a href="{{ route('belif.thanks') }}" class="button-page color-2">
+			<h4 class="button-link">{{ $buttonNo }}</h4>
 		</a>
 		
 {{ Form::close() }}

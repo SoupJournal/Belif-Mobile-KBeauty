@@ -68,7 +68,7 @@ class MainController extends BaseController implements CMSTrigger {
                 'pageName' => 'home',
                 'pageData' => $pageData,
                 'backgroundImage' => $backgroundImage,
-                'headerLogoUrl' => $this->header_logo_url_black,
+                'headerLogoUrl' => $this->header_logo_url_white,
             ));
 
         } //end if (is desktop)
@@ -92,7 +92,7 @@ class MainController extends BaseController implements CMSTrigger {
             'pageData' => $pageData,
             'backgroundImage' => $backgroundImage,
             'formURL' => route('belif.email'),
-            'headerLogoUrl' => $this->header_logo_url_black,
+            'headerLogoUrl' => $this->header_logo_url_white,
             'termsURL' => $this->terms_and_conditions_url
         ));
 
@@ -207,38 +207,22 @@ class MainController extends BaseController implements CMSTrigger {
 
     } //end getGuide()
 
-    public function getUnavailable() {
+    public function getUnavailable()
+    {
+        //get page data
+        $pageData = $this->dataForPage(self::FORM_NO_SAMPLES);
 
-        //check if product available
-        $available = $this->productAvailable();
+        //get background image
+        $backgroundImage = safeArrayValue('background_image', $pageData);
 
-        //available
-        if ($available) {
-
-            //show quiz
-            //return Redirect::route('belif.home');
-
-        }
-        //not available
-        else {
-
-            //get page data
-            $pageData = $this->dataForPage(self::FORM_NO_SAMPLES);
-
-            //get background image
-            $backgroundImage = safeArrayValue('background_image', $pageData);
-
-            //render view
-            return View::make('belif::pages.unavailable')->with(Array (
-                'pageName' => 'unavailable',
-                'pageData' => $pageData,
-                'backgroundImage' => $backgroundImage,
-                'headerLogoUrl' => $this->header_logo_url_black,
-                //'backURL' => URL::to('/email'),
-            ));
-
-        }
-
+        //render view
+        return View::make('belif::pages.unavailable')->with(Array (
+            'pageName' => 'unavailable',
+            'pageData' => $pageData,
+            'backgroundImage' => $backgroundImage,
+            'headerLogoUrl' => $this->header_logo_url_white,
+            //'backURL' => URL::to('/email'),
+        ));
     } //end getUnavailable()
 
     public function getAddress() {
@@ -255,7 +239,7 @@ class MainController extends BaseController implements CMSTrigger {
             'pageData' => $pageData,
             'states' => availableStates(),
             'backgroundImage' => $backgroundImage,
-            'headerLogoUrl' => $this->header_logo_url_black,
+            'headerLogoUrl' => $this->header_logo_url_white,
             'formURL' => route('belif.address'),
             'backURL' => route('belif.results')
         ));
@@ -483,9 +467,9 @@ class MainController extends BaseController implements CMSTrigger {
             'pageName' => 'verify',
             'pageData' => $pageData,
             'backgroundImage' => $backgroundImage,
-            'headerLogoUrl' => $this->header_logo_url_black,
-            'backURL' => route('belif.address'),
-            'buttonURL' => route('belif.share')
+            'headerLogoUrl' => $this->header_logo_url_white,
+            //'backURL' => route('belif.verify'),
+            //'buttonURL' => route('belif.share')
         ));
 
     } //end getVerify()
@@ -513,9 +497,9 @@ class MainController extends BaseController implements CMSTrigger {
             'pageName' => 'reverify',
             'pageData' => $pageData,
             'backgroundImage' => $backgroundImage,
-            'headerLogoUrl' => $this->header_logo_url_black,
-            'backURL' => route('belif.address'),
-            'buttonURL' => route('belif.share'),
+            'headerLogoUrl' => $this->header_logo_url_white,
+            //'backURL' => route('belif.verify'),
+            //'buttonURL' => route('belif.share'),
             'verifyEmail' => $user->email
         ));
 
@@ -570,7 +554,7 @@ class MainController extends BaseController implements CMSTrigger {
                         'pageData' => $pageData,
                         'code' => $code,
                         'backgroundImage' => $backgroundImage,
-                        'headerLogoUrl' => $this->header_logo_url_black,
+                        'headerLogoUrl' => $this->header_logo_url_white,
                     ));
 
                 }
@@ -631,8 +615,8 @@ class MainController extends BaseController implements CMSTrigger {
                         'pageName' => 'share',
                         'pageData' => $pageData,
                         'backgroundImage' => $backgroundImage,
-                        'headerLogoUrl' => $this->header_logo_url_black,
-                        'backURL' => route('belif.confirm', ['code' => $code]),
+                        'headerLogoUrl' => $this->header_logo_url_white,
+//                        'backURL' => route('belif.confirm', ['code' => $code]),
                         'formURL' => route('belif.share.submit'),
                     ));
 
@@ -664,7 +648,7 @@ class MainController extends BaseController implements CMSTrigger {
 
             //email exists
             if (!$email || strlen(trim($email))<=0) {
-                $errors = 'Please specify a email address.';
+                $errors = 'Please specify an email address.';
                 $valid = false;
             }
 
@@ -750,17 +734,23 @@ class MainController extends BaseController implements CMSTrigger {
             'pageName' => 'thanks',
             'pageData' => $pageData,
             'backgroundImage' => $backgroundImage,
-            'headerLogoUrl' => $this->header_logo_url_black,
+            'headerLogoUrl' => $this->header_logo_url_white,
             'buttonURL' => 'http://www.sephora.com/belif',
-            'backURL' => route('belif.share', ['code' => $code])
+            //'backURL' => route('belif.share', ['code' => $code])
         ));
 
     } //end getThanks()
 
-    public function getUnsubscribe() {
+    public function getUnsubscribe()
+    {
 
-        //get verification code
+        $unsubscribed = false;
+
+        // get verification code
         $code = safeArrayValue('code', $_GET, null);
+
+        // get email
+        $email = safeArrayValue('email', $_GET, null);
 
         //valid code
         if ($code && strlen($code)>0) {
@@ -772,24 +762,40 @@ class MainController extends BaseController implements CMSTrigger {
                 //update user
                 $user->unsubscribed = true;
                 $user->save();
-
-                //get page data
-                $pageData = $this->dataForPage(self::FORM_UNSUBSCRIBE);
-
-                //get background image
-                $backgroundImage = safeArrayValue('background_image', $pageData);
-
-                //render view
-                return View::make('belif::pages.unsubscribe')->with(Array (
-                    'pageName' => 'unsubscribe',
-                    'pageData' => $pageData,
-                    'backgroundImage' => $backgroundImage,
-                    'headerLogoUrl' => $this->header_logo_url_black,
-                ));
+                $unsubscribed = true;
 
             } //end if (valid code)
 
-        } //end if (valid code)
+        } else if ($email && strlen($email)>0) {
+
+            // get user
+            $user = User::where('email', '=', $email)->first();
+
+            if ($user) {
+
+                // update user
+                $user->unsubscribed = true;
+                $user->save();
+                $unsubscribed = true;
+
+            }
+        }
+
+        //get page data
+        $pageData = $this->dataForPage(self::FORM_UNSUBSCRIBE);
+
+        //get background image
+        $backgroundImage = safeArrayValue('background_image', $pageData);
+
+        //render view
+        return View::make('belif::pages.unsubscribe')->with(Array (
+            'pageName' => 'unsubscribe',
+            'pageData' => $pageData,
+            'backgroundImage' => $backgroundImage,
+            'formURL' => route('belif.unsubscribe'),
+            'headerLogoUrl' => $this->header_logo_url_white,
+            'unsubscribed' => $unsubscribed
+        ));
 
         //invalid code - show home page
         return Redirect::route('belif.home');

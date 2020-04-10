@@ -121,22 +121,34 @@
 .answer-box {
 	display: flex;
 	width: 100%;
-	padding-top: 2.5%;
-	padding-bottom: 2.5%;
-	background-color: rgba(255, 255, 255, 1.0);
+	padding-top: 3.4%;
+	padding-bottom: 3.4%;
+	background-color: rgba(27, 148, 224, 1.0);
 	border: none;
-	/*border-radius: 2vw;*/
-	/*text-align: left;*/
+	border-radius: 2vw;
+	background-image: url('https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/aqua_default_icon.png');
+	background-color: transparent;
+  	background-size: 30px 40px;
+    background-position: 7% center;
+    background-repeat: no-repeat;
 }
 
 .answer-box:active, .answer-box:hover {
-	background-color: rgba(197, 198, 195, 1.0);
+	background-color: rgba(41, 211, 249, 1.0);
+	background-image: url('https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/aqua_drop_icon.png');
+	background-color: transparent;
+  	background-size: 30px 40px;
+    background-position: 7% center;
+    background-repeat: no-repeat;
 }
 
 .answer-box h3 {
 	width: 100%;
 	font-size: 5vw;
-	margin: 5px 0;
+	font-weight: bold;
+	margin: 10px 0;
+	text-align: left;
+    padding-left: 60px;
 }
 
 .answer-check {
@@ -165,28 +177,43 @@
 	margin-top: 0vw;
 }
 
-/* themes */
-.answer-theme-1,
-.answer-theme-2,
-.answer-theme-3,
-.answer-theme-4 {
-	background-color: rgba(240, 234, 228, 1.0);
+/* theme 1 */
+.answer-theme-1 {
+	background-color: rgba(27, 148, 224, 1.0);
 }
 
 .answer-theme-1:active, .answer-theme-1:hover {
-	background-color: rgba(197, 198, 195, 1.0);
+	background-color: rgba(41, 211, 249, 1.0);
+}
+
+.answer-check-theme-1 {
+	background-color: rgba(41, 211, 249, 1.0);
+}
+
+/* theme 2 */
+.answer-theme-2 {
+	background-color: rgba(27, 148, 224, 1.0);
 }
 
 .answer-theme-2:active, .answer-theme-2:hover {
-	background-color: rgba(188, 208, 199, 1.0);
+	background-color: rgba(41, 211, 249, 1.0);
 }
 
-.answer-theme-3:active, .answer-theme-3:hover {
-	background-color: rgba(234, 220, 223, 1.0);
+.answer-check-theme-2 {
+	background-color: rgba(41, 211, 249, 1.0);
 }
 
-.answer-theme-4:active, .answer-theme-4:hover {
-	background-color: rgba(221, 203, 208, 1.0);
+/* theme 3 */
+.answer-theme-3 {
+	background-color: rgba(27, 148, 224, 1.0);
+}
+
+.answer-theme-3:active, .answer-theme-2:hover {
+	background-color: rgba(41, 211, 249, 1.0);
+}
+
+.answer-check-theme-3 {
+	background-color: rgba(41, 211, 249, 1.0);
 }
 
 /********************************/
@@ -194,15 +221,14 @@
 /********************************/
 
 .guide-block {
-	margin-top: 0;	
+	margin: 0 15px;
 }
 
 
 .guide-text {
-	padding: 8% 4%;
-	font-size: 4vw;
+	padding: 2% 4%;
+	font-size: 3vw;
 	font-weight: bold;
-	text-align: center;
 }
 
 .guide-text ul {
@@ -280,10 +306,6 @@
 	width: 70vw;	
 	margin-left: -10vw;
 	margin-right: -10vw; 
-}
-
-.product-image {
-	max-height: 200px;
 }
 
 .product-image-padding {
@@ -377,7 +399,7 @@
 
 .button-page {
 	display: inline-block;
-	width: 60%;
+	width: 75%;
 	padding-top: 3.2vw;	
 	padding-bottom: 3.2vw;
 	border: none;
@@ -477,7 +499,7 @@
 
 .button-checkbox label input:checked + h1 {
     background-color: #FFFFFF;
-    color: #404041;
+    color: #000000;
 }
 
 
@@ -520,7 +542,7 @@ a.no-underline-highlight:hover {
 	width: 100%;
 	text-align: left;
 	background-color: transparent;
-	border: 0.5vw solid #000;
+	border: 0.5vw solid #fff;
 /*	border-radius: 5px; */
 	/*-webkit-appearance: none;*/
 /*	border-color: transparent; */
@@ -528,21 +550,21 @@ a.no-underline-highlight:hover {
 
 /* adjust input placeholder text */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-   color: #404041 !important;
+   color: #ffffff !important;
 }
 :-moz-placeholder {  /* Mozilla Firefox 4 to 18 */
-   color: #404041 !important;
+   color: #ffffff !important;
    opacity: 1;
 }
 ::-moz-placeholder {  /* Mozilla Firefox 19+ */
-   color: #404041 !important;
+   color: #ffffff !important;
    opacity: 1;
 }
 :-ms-input-placeholder {  /* Internet Explorer 10-11 */
-   color: #404041 !important;
+   color: #ffffff !important;
 }
 ::-ms-input-placeholder {  /* Microsoft Edge */
-   color: #404041 !important;
+   color: #ffffff !important;
    opacity: 1;
 }
 
@@ -610,12 +632,12 @@ a.no-underline-highlight:hover {
 }
 
 .input-city-left {
-	width: 70%;
+	width: 78%;
 	margin-right: 2%;
 }
 
 .input-city-right {
-	width: 26%;
+	width: 18%;	
 	margin-left: 0px;
 }
 
@@ -639,7 +661,7 @@ a.no-underline-highlight:hover {
 .page-input-text:focus {
 	outline: none;
 	box-shadow: 0px 0px 2px #dadada;
-/*	outline-color: #404041;
+/*	outline-color: #000000;
 	outline: 1px auto black;
 	border-radius: 5px;*/
 }
