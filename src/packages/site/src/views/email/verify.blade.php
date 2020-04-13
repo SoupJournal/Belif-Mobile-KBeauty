@@ -70,13 +70,13 @@
 										<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#000000; font-size:28px; line-height:30px; font-weight:bold; letter-spacing:-0.8px; word-spacing:-0.2px;">{!! $title !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; letter-spacing:-0.8px; word-spacing:-0.2px;">{!! $title !!}</td>
 									</tr>
 									<tr>
 										<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#000000; font-size:18px; line-height:20px; font-style:italic; letter-spacing:-0.8px;">{!! $subtitle !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px; font-style:italic; letter-spacing:-0.8px;">{!! $subtitle !!}</td>
 									</tr>
 									<tr>
 										<td height="18" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
@@ -127,7 +127,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:32px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $button !!}</td>
+															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $button !!}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -139,7 +139,7 @@
 												</td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#000000; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $text !!}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $text !!}</td>
 											</tr>
 											<tr>
 												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
@@ -149,7 +149,7 @@
 													<table border="0" cellspacing="0" cellpadding="0" width="570px">
 														<tbody>
 														<tr>
-															<td bgcolor="#ffffff">
+															<td>
 																<table border="0" cellspacing="0" cellpadding="0">
 																	<tbody>
 																	<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
@@ -157,8 +157,8 @@
 																	</tbody>
 																</table>
 															</td>
-															<td bgcolor="#33ccff" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="#" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a></td>
-															<td bgcolor="#ffffff">
+															<td bgcolor="#1d5c58" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; letter-spacing:-0.2px; font-weight:bold;"><a href="#" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a></td>
+															<td>
 																<table border="0" cellspacing="0" cellpadding="0">
 																	<tbody>
 																	<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
