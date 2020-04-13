@@ -85,7 +85,7 @@
 									</tr>
 									<tr>
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" width="570px">
+											<table border="0" cellspacing="0" cellpadding="0" width="570px" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_confirm_bg.png') no-repeat bottom left;">
 												<tbody>
 													<tr>
 														<td>
