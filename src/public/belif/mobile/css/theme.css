@@ -644,7 +644,7 @@ hr.divider {
 
 hr.white {
 	color: #ffffff;
-	width: 80%;
+	width: 60%;
 }
 
 .dirty-lemon {
@@ -673,4 +673,8 @@ button.question
 	width: 150px;
 	height: 150px;
 	border: none;
+}
+
+button.question:active {
+	border: 5px solid #fff;
 }

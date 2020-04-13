@@ -673,4 +673,9 @@ button.question
 	width: 150px;
 	height: 150px;
 	border: none;
+	outline: none;
+}
+
+button.question:active {
+	border: 5px solid #fff;
 }

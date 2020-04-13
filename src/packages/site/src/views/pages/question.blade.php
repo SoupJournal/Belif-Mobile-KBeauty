@@ -92,9 +92,9 @@
 
 			<div class="spacer-small"></div>
 
-			<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-13 font-3" label="{{ $button }}">
-				{{ $button }}
-			</a>
+{{--			<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-13 font-3" label="{{ $button }}">--}}
+{{--				{{ $button }}--}}
+{{--			</a>--}}
 		
 		</div>
 	
