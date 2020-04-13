@@ -91,7 +91,7 @@
 												</td>
 											</tr>
 											<tr>
-												<td height="440" style="border: 0; margin:0; padding: 0;"><img src="{{ $image }}" border="0" /></td>
+												<td height="440" style="border: 0; margin:0; padding: 0;"><img src="{{ $image }}" border="0" width="570" /></td>
 											</tr>
 											<tr>
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
