@@ -294,7 +294,6 @@
 
             return Redirect::route('belif.verify');
 
-
 		} //end getResults()
 			
 		//==========================================================//
