@@ -27,9 +27,6 @@
 				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" >
 					<tbody>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="14"></td>
-						</tr>
-						<tr>
 							<td style="border: 0; margin: 0; padding: 0; background-position:bottom center; background-size: contain; background-repeat: no-repeat;" background="{{ $backgroundImage }}" bgcolor="#ffffff" valign="top">
 								<div>
 									<table width="570" border="0" cellspacing="0" cellpadding="0" >
@@ -48,7 +45,7 @@
 															<tr>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
-																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="middle"><img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO.png" width="150" alt="Belif"/></td>
+																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="middle"><img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO_WHITE.png" width="150" alt="Belif"/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_sts_top.png" width="100" alt=""/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 																</tr>
@@ -71,7 +68,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#FFFFFF; text-transform:uppercase; font-size:36px; line-height:54px; font-weight:bold; letter-spacing:-1.5px; word-spacing:-1px;">{{ $title }}</td>
+															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:30px; font-weight:bold;">{{ $title }}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -86,7 +83,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#824d9f; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
+															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#336666; font-size:14px; font-weight:bold;">{{ $subtitle }}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -98,10 +95,10 @@
 											</tr>
 											<tr>
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-												<table width="350px" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
+												<table width="350px" border="0" cellspacing="0" cellpadding="0">
 													<tbody>
 														<tr>
-															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:{{ $fontDefinitions }}; color:#000000; font-size:14px; line-height:15px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">{{ $text }}</td>
+															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px;">{{ $text }}</td>
 														</tr>
 													</tbody>
 												</table></td>
