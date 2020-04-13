@@ -89,7 +89,7 @@
 														<td>
 															<table border="0" cellspacing="0" cellpadding="0">
 															<tbody>
-															<tr><td style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
+															<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
 															<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
 															</tbody>
 															</table>
@@ -98,7 +98,7 @@
 														<td>
 															<table border="0" cellspacing="0" cellpadding="0">
 															<tbody>
-															<tr><td style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
+															<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
 															<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
 															</tbody>
 															</table>
