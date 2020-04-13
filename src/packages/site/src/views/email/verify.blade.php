@@ -37,8 +37,8 @@
 							<td style="border: 0; margin: 0; padding: 0; line-height:0; font-size:0;" height="14"></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0;" >
-								<table width="570" border="0" cellspacing="0" cellpadding="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_confirm_bg.png') no-repeat bottom left;">
+							<td style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_confirm_bg.png') no-repeat bottom left; border: 0; margin: 0; padding: 0;" >
+								<table width="570" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
