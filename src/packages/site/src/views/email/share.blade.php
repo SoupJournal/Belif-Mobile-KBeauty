@@ -10,8 +10,8 @@
 	$text = safeArrayValue('text', $pageData, "");
 	$image = safeArrayValue('image', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
-	$fontDefinitions = "{{ $fontDefinitions }}";
-	
+	$fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif";
+
 ?>
 <!doctype html>
 <html>
