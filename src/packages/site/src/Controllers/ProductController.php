@@ -164,7 +164,8 @@
 					if ($questionIndex >= $numberOfQuestions) {
 
                         // always go to verify
-                        return Redirect::route('belif.verify');
+                        return Redirect::route('belif.results');
+
 					    /*
 						$answers = Session::get('answers');
 
@@ -238,7 +239,7 @@
 		public function getResults()
         {
 
-			// $answers = Session::get('answers');
+			$answers = Session::get('answers');
 
 			$step4a = ['A','A','A','A','A','A','A']; //
 			$step4b = ['B','B','B','B','B','B','B']; //
@@ -275,9 +276,7 @@
                 'E' => $step4eCount,
 			];
 			
-			// $finalAnswer = array_search(max($answerCounts),$answerCounts);
-
-			$finalAnswer = 'A';
+			$finalAnswer = array_search(max($answerCounts),$answerCounts);
 
             // store email
             $email = Session::get('email');
