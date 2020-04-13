@@ -76,7 +76,7 @@
 										<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px; font-style:italic;">{!! $subtitle !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px;">{!! $subtitle !!}</td>
 									</tr>
 									<tr>
 										<td height="18" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
@@ -109,7 +109,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px; font-style:italic; background-color: #1d5c58;">{!! $html !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background-color: #1d5c58;">{!! $html !!}</td>
 									</tr>
 								</tbody>
 							</table></td>
@@ -191,11 +191,11 @@
 										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
+										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
 											<a href="https://belifusa.com" style="color: #8ad6cf; font-style: italic;">belifusa.com</a>
 										</td>
-										<td width="50">&nbsp;</td>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
+										<td style="width: 10%;">&nbsp;</td>
+										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
 											<a href="#" style="color: #8ad6cf; font-style: italic;">belif at sephora</a>
 										</td>
 									</tr>
