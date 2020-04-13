@@ -94,7 +94,7 @@
 															</tbody>
 															</table>
 														</td>
-														<td bgcolor="#33ccff" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
+														<td bgcolor="#33ccff" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:21px; line-height:21px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
 														<td bgcolor="#ffffff">
 															<table border="0" cellspacing="0" cellpadding="0">
 															<tbody>
@@ -152,16 +152,16 @@
 															<td>
 																<table border="0" cellspacing="0" cellpadding="0">
 																	<tbody>
-																	<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
+																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
 																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
 																	</tbody>
 																</table>
 															</td>
-															<td bgcolor="#1d5c58" style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; letter-spacing:-0.2px; font-weight:bold;"><a href="#" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a></td>
+															<td bgcolor="#1d5c58" style="border:0; margin:0; padding:10px 5px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;"><a href="#" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a></td>
 															<td>
 																<table border="0" cellspacing="0" cellpadding="0">
 																	<tbody>
-																	<tr><td bgcolor="#FFFFFF" style="border:0; margin:0; padding:16px 70px; box-shadow: 0px -1px 0px white;"></tr>
+																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
 																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
 																	</tbody>
 																</table>
@@ -175,7 +175,7 @@
 												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#000000; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $buttonCancel !!}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $buttonCancel !!}</td>
 											</tr>
 										</tbody>
 									</table>
