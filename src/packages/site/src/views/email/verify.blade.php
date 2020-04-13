@@ -70,13 +70,13 @@
 										<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; letter-spacing:-0.8px; word-spacing:-0.2px;">{!! $title !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; word-spacing:-0.2px;">{!! $title !!}</td>
 									</tr>
 									<tr>
 										<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px; font-style:italic; letter-spacing:-0.8px;">{!! $subtitle !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px; font-style:italic;">{!! $subtitle !!}</td>
 									</tr>
 									<tr>
 										<td height="18" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
@@ -109,7 +109,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px; background-color: #1d5c58;">{!! $html !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px; font-style:italic; background-color: #1d5c58;">{!! $html !!}</td>
 									</tr>
 								</tbody>
 							</table></td>
@@ -127,7 +127,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:36px; font-weight:bold; letter-spacing:-0.8px;">{!! $button !!}</td>
+															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:36px; font-weight:bold;">{!! $button !!}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -139,7 +139,7 @@
 												</td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $text !!}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px;">{!! $text !!}</td>
 											</tr>
 											<tr>
 												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
@@ -175,7 +175,7 @@
 												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px; font-style:italic; letter-spacing:-0.8px;">{!! $buttonCancel !!}</td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:16px; line-height:18px;">{!! $buttonCancel !!}</td>
 											</tr>
 										</tbody>
 									</table>
