@@ -109,7 +109,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background-color: #1d5c58;">{!! $html !!}</td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_verify_prize_bg.png') no-repeat bottom center #1d5c58;">{!! $html !!}</td>
 									</tr>
 								</tbody>
 							</table></td>
@@ -195,7 +195,7 @@
 											<a href="https://belifusa.com" style="color: #8ad6cf; font-style: italic;">belifusa.com</a>
 										</td>
 										<td style="width: 10%;">&nbsp;</td>
-										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: right; font-family:{{ $fontDefinitions }};">
+										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: left; font-family:{{ $fontDefinitions }};">
 											<a href="#" style="color: #8ad6cf; font-style: italic;">belif at sephora</a>
 										</td>
 									</tr>
