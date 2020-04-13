@@ -41,41 +41,29 @@
 		<div class="spacer-large"></div>
 
 		{{-- title --}}
-		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
-	
+		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
+
 		<div class="spacer-small"></div>
 
-		<h3 class="title-light no-margins color-1">{!! $subtitle !!}</h3>
-		
+		<div class="no-margins size-4 color-2 font-9">{!! $subtitle !!}</div>
+
 		<div class="spacer-small"></div>
 
-		<div class="page-padding-large">
-	
-			{{-- image --}}
-			@if ($image && strlen($image)>0) 
-				<div class="page-padding-larger">
-					<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
-				</div>
-			@endif
-			
-		</div>
+		{{-- image --}}
+		@if ($image && strlen($image)>0)
+			<div class="page-padding-larger">
+				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
+			</div>
+		@endif
 
 		<div>{!! $text !!}</div>
 
 		<div class="spacer-large"></div>
 
-		<div class="page-padding-large">
-
-			<a href="/share?code={{ $code }}" class="button-page button-next bg-color-1 color-2 font-3" innerclass="color-2" label="{{ $button }}">
-				{{ $button }}
-			</a>
+		<a href="/share?code={{ $code }}" class="button-page button-next bg-color-2 color-13 font-3" innerclass="color-2" label="{{ $button }}">
+			{{ $button }}
+		</a>
 		
-			{{-- Re-verify button --}}
-			<a href="{{ route('belif.reverify') }}" class="button-page color-1">
-				<h4 class="button-link">{{ $buttonNo }}</h4>
-			</a>
-		
-		</div>
 
 </div>
 
