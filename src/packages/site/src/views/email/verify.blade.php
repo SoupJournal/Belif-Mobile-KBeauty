@@ -114,11 +114,11 @@
 															</table>
 														</td>
 													</tr>
-													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_verify_prize_bg.png') no-repeat bottom center #1d5c58; background-size: contain;">{!! $html !!}</td>
-													</tr>
 												</table>
 											</td>
+										</tr>
+										<tr>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_verify_prize_bg.png') no-repeat bottom center #1d5c58; background-size: contain;">{!! $html !!}</td>
 										</tr>
 									</tbody>
 								</table>
