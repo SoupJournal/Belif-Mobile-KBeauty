@@ -182,7 +182,6 @@ class BaseController extends Controller
                     ]
                 ]);
                 $this->dispatch($emailJob);
-                //$emailJob->handle();
                 $result = true;
 
             } //end if (valid code)
@@ -196,7 +195,6 @@ class BaseController extends Controller
     public function sendShareEmail($user, $shareUser)
     {
         $result = false;
-
 
         //valid user
         if ($user && $user->email && strlen($user->email)>0) {

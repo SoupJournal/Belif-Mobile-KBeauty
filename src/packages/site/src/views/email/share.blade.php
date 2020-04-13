@@ -10,7 +10,8 @@
 	$text = safeArrayValue('text', $pageData, "");
 	$image = safeArrayValue('image', $pageData, "");
 	$backgroundImage = safeArrayValue('background_image', $pageData, "");
-
+	$fontDefinitions = "{{ $fontDefinitions }}";
+	
 ?>
 <!doctype html>
 <html>
@@ -70,7 +71,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#FFFFFF; text-transform:uppercase; font-size:36px; line-height:54px; font-weight:bold; letter-spacing:-1.5px; word-spacing:-1px;">{{ $title }}</td>
+															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#FFFFFF; text-transform:uppercase; font-size:36px; line-height:54px; font-weight:bold; letter-spacing:-1.5px; word-spacing:-1px;">{{ $title }}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -85,7 +86,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#824d9f; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
+															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#824d9f; font-size:24px; line-height:35px; font-weight:bold; letter-spacing:-0.8px;">{{ $subtitle }}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -100,7 +101,7 @@
 												<table width="350px" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
 													<tbody>
 														<tr>
-															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:14px; line-height:15px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">{{ $text }}</td>
+															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:{{ $fontDefinitions }}; color:#000000; font-size:14px; line-height:15px; font-style:italic; letter-spacing:-0.5px; word-spacing: -0.8px;">{{ $text }}</td>
 														</tr>
 													</tbody>
 												</table></td>
@@ -116,7 +117,7 @@
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
 													<tbody>
 														<tr>
-															<td bgcolor="#336666" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.aloeaquabomb.com" target="_blank" style="text-decoration: none; color:#ffffff;">ENTER TO WIN</a></td>
+															<td bgcolor="#336666" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.aloeaquabomb.com" target="_blank" style="text-decoration: none; color:#ffffff;">ENTER TO WIN</a></td>
 														</tr>
 													</tbody>
 												</table></td>
