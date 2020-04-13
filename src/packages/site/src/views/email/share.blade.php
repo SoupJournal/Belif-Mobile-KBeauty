@@ -19,15 +19,15 @@
 <meta charset="UTF-8">
 <title>VDL</title>
 </head>
-<body style="border:0; margin:0; padding:0; background-color:#ffffff">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#f5f5f5" >
+<body style="border:0; margin:0; padding:0;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;" >
 	<tbody>
 		<tr>
-			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #ffffff;">
-				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" >
+			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0;">
+				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center">
 					<tbody>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; background-position:bottom center; background-size: contain; background-repeat: no-repeat;" background="{{ $backgroundImage }}" bgcolor="#ffffff" valign="top">
+							<td style="border: 0; margin: 0; padding: 0; background-position:bottom center; background-size: contain; background-repeat: no-repeat;" background="{{ $backgroundImage }}" valign="top">
 								<div>
 									<table width="570" border="0" cellspacing="0" cellpadding="0" >
 										<tbody>
@@ -79,29 +79,33 @@
 											</tr>
 											<tr>
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
-												<table border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#336666; font-size:14px; font-weight:bold;">{!! $subtitle !!}</td>
-															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-														</tr>
-													</tbody>
-												</table>
+													<table border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+															<tr>
+																<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+																<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#336666; font-size:14px; font-weight:bold;">{!! $subtitle !!}</td>
+																<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+															</tr>
+														</tbody>
+													</table>
 												</td>
 											</tr>
 											<tr>
 												<td height="440" style="border: 0; margin:0; padding: 0;"><img src="{{ $image }}" border="0" width="570" /></td>
 											</tr>
 											<tr>
+												<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="50"></td>
+											</tr>
+											<tr>
 												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-												<table width="350px" border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px;">{!! $text !!}</td>
-														</tr>
-													</tbody>
-												</table></td>
+													<table width="350px" border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+															<tr>
+																<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px;">{!! $text !!}</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
 											</tr>
 											<tr>
 												<td height="2" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="1" height="1" alt=""/></td>
@@ -118,9 +122,6 @@
 														</tr>
 													</tbody>
 												</table></td>
-											</tr>
-											<tr>
-												<td height="27" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 										</tbody>
 									</table>
