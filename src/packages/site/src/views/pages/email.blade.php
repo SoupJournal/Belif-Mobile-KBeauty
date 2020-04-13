@@ -40,12 +40,12 @@
 	
 		<div>
 	
-			<div class="spacer-tiny"></div>
+			<div class="spacer-small"></div>
 		
 			{{-- title --}}
 			<div class="no-margins size-6 color-13 font-3">{!! $title !!}</div>
 
-			<hr class="hr-white"/>
+			<hr class="white"/>
 
 			<div class="no-margins size-3-4 color-2 font-9">{!! $subtitle !!}</div>
 			
