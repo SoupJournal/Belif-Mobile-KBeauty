@@ -68,7 +68,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:30px; font-weight:bold;">{{ $title }}</td>
+															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:30px; font-weight:bold;">{!! $title !!}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -83,7 +83,7 @@
 													<tbody>
 														<tr>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#336666; font-size:14px; font-weight:bold;">{{ $subtitle }}</td>
+															<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#336666; font-size:14px; font-weight:bold;">{!! $subtitle !!}</td>
 															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 														</tr>
 													</tbody>
@@ -98,7 +98,7 @@
 												<table width="350px" border="0" cellspacing="0" cellpadding="0">
 													<tbody>
 														<tr>
-															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px;">{{ $text }}</td>
+															<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px;">{!! $text !!}</td>
 														</tr>
 													</tbody>
 												</table></td>
