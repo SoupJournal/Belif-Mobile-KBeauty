@@ -26,45 +26,47 @@
 <meta charset="UTF-8">
 <title>Belif</title>
 </head>
-<body style="border:0; margin:0; padding:0; background-color:#f5f5f5">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#f5f5f5">
+<body style="border:0; margin:0; padding:0; background-color:#ffffff">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#ffffff">
 	<tbody>
 		<tr>
-			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #f5f5f5;">
+			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #ffffff;">
 				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center">
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0; line-height:0; font-size:0;" height="14"></td>
 						</tr>
 						<tr>
-							<td bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0;" ><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td style="border: 0; margin: 0; padding: 0;" ><table width="570" border="0" cellspacing="0" cellpadding="0">
 								<tbody>
 									<tr>
-										<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
-											<tbody>
-												<tr>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19" height="22"></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
-													<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19"></td>
-												</tr>
-												<tr>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="middle"><img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO.png" width="150" alt="Belif"/></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_sts_top.png" width="100" alt=""/></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-												</tr>
-												<tr>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-													<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-													<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-												</tr>
-											</tbody>
-										</table></td>
+										<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
+											<table width="100%" border="0" cellpadding="0" cellspacing="0">
+												<tbody>
+													<tr>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19" height="22"></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
+														<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19"></td>
+													</tr>
+													<tr>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="middle"><img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO.png" width="150" alt="Belif"/></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_sts_top.png" width="100" alt=""/></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+													</tr>
+													<tr>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+														<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
 									</tr>	
 									<tr>
 										<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
@@ -83,7 +85,7 @@
 									</tr>
 									<tr>
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" width="570px" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belify_verify_button_bg.png') repeat-x bottom center #1d5c58;">
+											<table border="0" cellspacing="0" cellpadding="0" width="570px" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belify_verify_button_bg.png') repeat-x bottom center;">
 												<tbody>
 													<tr>
 														<td>
@@ -115,7 +117,7 @@
 							</table></td>
 						</tr>
 						<tr>
-							<td style="border: 0; margin: 0 ; padding: 0; text-align: center;" bgcolor="#fff" valign="top">
+							<td style="border: 0; margin: 0 ; padding: 0; text-align: center;" valign="top">
 								<div>
 									<table width="570" border="0" cellspacing="0" cellpadding="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/backgrounds/soothe_default.png') no-repeat top center;">
 										<tbody>
@@ -123,15 +125,17 @@
 												<td height="54" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 											</tr>
 											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-															<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:36px; font-weight:bold;">{!! $button !!}</td>
-															<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-														</tr>
-													</tbody>
-												</table></td>
+												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
+													<table border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+															<tr>
+																<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+																<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:36px; font-weight:bold;">{!! $button !!}</td>
+																<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
 											</tr>
 											<tr>
 												<td height="367" style="border: 0; margin:0; padding: 0;">
