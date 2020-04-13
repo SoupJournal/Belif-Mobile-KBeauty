@@ -36,13 +36,6 @@
 													<table width="100%" border="0" cellpadding="0" cellspacing="0">
 														<tbody>
 															<tr>
-																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19" height="22"></td>
-																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
-																<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
-																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19"></td>
-																</tr>
-															<tr>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
 																<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" align="center" valign="middle"><img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO_WHITE.png" width="150" alt="Belif"/></td>
@@ -115,21 +108,21 @@
 												<td height="31" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
 											</tr>
 											<tr>
-												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
-													<tbody>
-														<tr>
-															<td bgcolor="#336666" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.aloeaquabomb.com" target="_blank" style="text-decoration: none; color:#ffffff;">ENTER TO WIN</a></td>
-														</tr>
-													</tbody>
-												</table></td>
+												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
+													<table border="0" cellspacing="0" cellpadding="0">
+														<tbody>
+															<tr>
+																<td bgcolor="#336666" style="border:0; margin:0; padding:21px 39px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:21px; line-height:21px; letter-spacing:-0.2px; text-transform: uppercase; font-weight:bold;"><a href="http://www.aloeaquabomb.com" target="_blank" style="text-decoration: none; color:#ffffff;">ENTER TO WIN</a></td>
+															</tr>
+														</tbody>
+													</table>
+													<br/><br/>
+												</td>
 											</tr>
 										</tbody>
 									</table>
 								</div>
 							</td>
-						</tr>
-						<tr>
-							<td style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;" height="19"></td>
 						</tr>
 
 						{{-- Social Links Below --}}
