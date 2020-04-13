@@ -73,7 +73,7 @@
 	   	 	<div class="spacer-small-2"></div>
 	    @endif
 
-		<div class="spacer-large"></div>
+		<div class="spacer-small"></div>
 
 		{{-- submit button --}}
 		<button class="button-page bg-color-2 color-13 font-3" label="{{ $button }}">
