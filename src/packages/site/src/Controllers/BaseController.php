@@ -2,8 +2,10 @@
 
 namespace Belif\Mobile\Controllers;
 
+use Belif\Mobile\Jobs\SendEmailJob;
 use Belif\Mobile\Models\Page;
 use Belif\Mobile\Models\Product;
+use Belif\Mobile\Models\ProductImage;
 use Soup\CMS\Models\CMSApp;
 
 use Session;
@@ -130,6 +132,220 @@ class BaseController extends Controller
         return $pageData;
 
     } //end dataForPage()
+
+    //==========================================================//
+    //====					EMAIL METHODS					====//
+    //==========================================================//
+
+    public function sendVerifyEmail($user) {
+
+        $result = false;
+
+        //valid user
+        if ($user && $user->email && strlen($user->email)>0) {
+
+            //generate and store unique code
+            $this->generateVerifyCode($user);
+
+            //valid code
+            if ($user->verify_code && strlen($user->verify_code)>0) {
+
+                //get page data
+                $pageData = $this->dataForPage(self::EMAIL_VERIFY);
+
+                //compile last address line
+                $address3 = $user->city;
+                if ($user->state && strlen($user->state)>0) {
+                    $address3 .= strlen($address3)>0 ? ', ' . $user->state : $user.state;
+                }
+                if ($user->zip_code && strlen($user->zip_code)>0) {
+                    $address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
+                }
+
+                //send confirm email (sent via queue to avoid delay loading next page)
+                $emailJob = new SendEmailJob([
+                    "recipient" => $user->email,
+                    "sender" => [
+                        'email' => self::EMAIL_SENDER_VERIFY,
+                        'name' => 'belif'
+                    ],
+                    "subject" => self::EMAIL_SUBJECT_VERIFY,
+                    "view" => "belif::email.verify",
+                    "view_properties" => [
+                        'name' => $user->name,
+                        'address1' => $user->address_1,
+                        'address2' => $user->address_2,
+                        'address3' => $address3,
+                        'pageData' => $pageData,
+                        'verifyLink' => route('belif.confirm', ['code' => $user->verify_code]),
+                        'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+                    ]
+                ]);
+                $this->dispatch($emailJob);
+                //$emailJob->handle();
+                $result = true;
+
+            } //end if (valid code)
+
+        } //end if (valid user)
+
+        return $result;
+
+    } //end sendVerifyEmail()
+
+    public function sendShareEmail($user, $shareUser)
+    {
+        $result = false;
+
+
+        //valid user
+        if ($user && $user->email && strlen($user->email)>0) {
+
+
+            //valid share address
+            if ($shareUser && $shareUser->email && strlen($shareUser->email)>0) {
+
+
+                //shared user has not unsubscribed
+                if (!$shareUser->unsubscribed) {
+
+                    //generate and store unique code (if one doesn't already exist)
+                    $this->generateVerifyCode($shareUser);
+
+                    //get page data
+                    $pageData = $this->dataForPage(self::EMAIL_SHARE);
+
+                    //create subject line
+                    $subject = $user->name . self::EMAIL_SUBJECT_SHARE;
+
+                    //send share email (sent via queue to avoid delay loading next page)
+                    $emailJob = new SendEmailJob([
+                        "recipient" => $shareUser->email,
+                        "sender" => [
+                            'email' => self::EMAIL_SENDER_SHARE,
+                            'name' => 'belif'
+                        ],
+                        "subject" => $subject,
+                        "view" => "belif::email.share",
+                        "view_properties" => [
+                            'pageData' => $pageData,
+                            'unsubscribeLink' => route('belif.unsubscribe', ['code' => $shareUser->verify_code])
+                        ]
+                    ]);
+                    $this->dispatch($emailJob);
+                    $result = true;
+
+                }
+
+            } //end if (valid share address)
+
+        } //end if (valid user)
+
+
+        return $result;
+
+    } //end sendShareEmail()
+
+    public function sendProductEmail($user)
+    {
+        $result = false;
+
+        //valid user
+        if ($user && $user->email && strlen($user->email)>0) {
+
+            //generate and store unique code
+            $this->generateVerifyCode($user);
+
+
+            //valid code
+            if ($user->verify_code && strlen($user->verify_code)>0) {
+
+
+                //get page data
+                $pageData = $this->dataForPage(self::EMAIL_PRODUCT);
+
+
+                //compile last address line
+                $address3 = $user->city;
+                if ($user->state && strlen($user->state)>0) {
+                    $address3 .= strlen($address3)>0 ? ', ' . $user->state : $user.state;
+                }
+                if ($user->zip_code && strlen($user->zip_code)>0) {
+                    $address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
+                }
+
+                //get image data
+                $imageData = ProductImage::where(function ($query) use ($user) {
+                    $query->where('product_1', $user->product_1)
+                        ->where('product_2', $user->product_2);
+                })
+                    ->orWhere(function ($query) use ($user) {
+                        $query->where('product_2', $user->product_1)
+                            ->where('product_1', $user->product_2);
+                    })
+                    ->first();
+
+                //get product image
+                $productImage = null;
+                if ($imageData) {
+                    $productImage = safeObjectValue('image', $imageData, null);
+                }
+
+                //determine if multiple samples sent
+                $multipleSamples = isset($user->product_1) && isset($user->product_2);
+
+                //send product sent email (sent via queue to avoid delay loading next page)
+                $emailJob = new SendEmailJob([
+                    "recipient" => $user->email,
+                    "sender" => [
+                        'email' => self::EMAIL_SENDER_PRODUCT,
+                        'name' => 'belif'
+                    ],
+                    "subject" => self::EMAIL_SUBJECT_PRODUCT,
+                    "view" => "belif::email.product",
+                    "view_properties" => [
+                        'pageData' => $pageData,
+                        'productImage' => $productImage,
+                        'productColour' => '#125a7d',
+                        'multipleSamples' => $multipleSamples,
+                        'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+                    ]
+                ]);
+                $this->dispatch($emailJob);
+                $result = true;
+
+            } //end if (valid code)
+
+        } //end if (valid user)
+
+
+        return $result;
+
+    } //end sendProductEmail()
+
+    public function generateVerifyCode($user) {
+
+        //valid user
+        if ($user) {
+
+            //generate unique code
+            if (!$user->verify_code || strlen($user->verify_code)==0) {
+
+                //create unique string
+                $userString = $user->email . microtime() . uniqid();
+
+                //encrypt code
+                $user->verify_code = hash('sha256', $userString);
+
+                //save code
+                $user->save();
+
+            }
+
+
+        } //end if (valid user)
+
+    } //end generateVerifyCode()
 
 } //end class BaseController
 
