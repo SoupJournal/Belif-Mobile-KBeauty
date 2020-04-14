@@ -88,16 +88,16 @@
 														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 													</tr>
 													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; background-color: #1d5c58;">{!! $subtitle !!}</td>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px;">{!! $subtitle !!}</td>
 													</tr>
 													<tr>
 														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 													</tr>
 													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background-color: #1d5c58;">{!! $html !!}</td>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px;">{!! $html !!}</td>
 													</tr>
 													<tr>
-														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="500">&nbsp;</td>
 													</tr>
 												</table>
 											</td>
