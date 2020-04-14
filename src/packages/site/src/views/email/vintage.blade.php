@@ -68,7 +68,7 @@
 										</tr>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-												<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_confirm_bg.png') no-repeat left 80px;">
+												<table width="100%" border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 													</tr>
@@ -78,41 +78,11 @@
 													<tr>
 														<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 													</tr>
-													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px;">{!! $subtitle !!}</td>
-													</tr>
-													<tr>
-														<td height="18" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
-													</tr>
-													<tr>
-														<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-															<table border="0" cellspacing="0" cellpadding="0" width="570px">
-																<tbody>
-																<tr>
-																	<td>
-																		<table border="0" cellspacing="0" cellpadding="0">
-																			<tbody>
-																			<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																			<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																			</tbody>
-																		</table>
-																	</td>
-																	<td style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:21px; line-height:21px; font-weight:bold; background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/confirm_button_bg.png') repeat-x center center;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
-																	<td>
-																		<table border="0" cellspacing="0" cellpadding="0">
-																			<tbody>
-																			<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																			<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																			</tbody>
-																		</table>
-																	</td>
-																</tr>
-																</tbody>
-															</table>
-														</td>
-													</tr>
 												</table>
 											</td>
+										</tr>
+										<tr>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px;">{!! $subtitle !!}</td>
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_verify_prize_bg.png') no-repeat bottom center #1d5c58; background-size: contain;">{!! $html !!}</td>
