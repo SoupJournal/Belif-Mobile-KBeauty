@@ -82,10 +82,25 @@
 											</td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; background-color: #1d5c58;">{!! $subtitle !!}</td>
-										</tr>
-										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background-color: #1d5c58;">{!! $html !!}</td>
+											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/playlist/playlist_twenty.jpg') no-repeat center bottom #1d5c58;">
+												<table width="100%" height="781" border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
+													</tr>
+													<tr>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; background-color: #1d5c58;">{!! $subtitle !!}</td>
+													</tr>
+													<tr>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
+													</tr>
+													<tr>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background-color: #1d5c58;">{!! $html !!}</td>
+													</tr>
+													<tr>
+														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
+													</tr>
+												</table>
+											</td>
 										</tr>
 									</tbody>
 								</table>
