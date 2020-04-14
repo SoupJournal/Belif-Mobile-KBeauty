@@ -28,14 +28,14 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 	<tbody>
 	<tr>
 		<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #ffffff;">
-			<table width="570" border="0" cellspacing="0" cellpadding="0" align="center">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
 				<tbody>
 				<tr>
 					<td style="border: 0; margin: 0; padding: 0; line-height:0; font-size:0;" height="14"></td>
 				</tr>
 				<tr>
 					<td style="border: 0; margin: 0; padding: 0;">
-						<table width="570" border="0" cellspacing="0" cellpadding="0">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tbody>
 							<tr>
 								<td style="border: 0; margin: 0; padding: 0;">
