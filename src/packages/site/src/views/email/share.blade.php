@@ -17,10 +17,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>VDL</title>
+<title>belif</title>
 </head>
 <body style="border:0; margin:0; padding:0;">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;" >
+<table width="570" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;" >
 	<tbody>
 		<tr>
 			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0;">
@@ -84,7 +84,7 @@
 												</td>
 											</tr>
 											<tr>
-												<td height="440" style="border: 0; margin:0; padding: 0; width: 100%; max-width: 100%;"><img src="{{ $image }}" border="0" /></td>
+												<td height="440" style="border: 0; margin:0; padding: 0; width: 100%; max-width: 100%;"><img src="{{ $image }}" border="0" width="570" /></td>
 											</tr>
 											<tr>
 												<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="50"></td>
@@ -127,7 +127,8 @@
 
 						{{-- Social Links Below --}}
 						<tr>
-							<td align="center" valign="top" bgcolor="#000000" style="border: 0; margin: 0; padding: 0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td align="center" valign="top" bgcolor="#000000" style="border: 0; margin: 0; padding: 0;">
+								<table width="570" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 									<tr>
 										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
@@ -145,10 +146,12 @@
 										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 									</tr>
 									</tbody>
-								</table></td>
+								</table>
+							</td>
 						</tr>
 						<tr>
-							<td align="center" valign="top" bgcolor="#000000" style="border: 0; margin: 0; padding: 0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+							<td align="center" valign="top" bgcolor="#000000" style="border: 0; margin: 0; padding: 0;">
+								<table width="570" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 									<tr>
 										<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
@@ -166,7 +169,8 @@
 										<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 									</tr>
 									</tbody>
-								</table></td>
+								</table>
+							</td>
 						</tr>
 						<tr>
 							<td height="8" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>

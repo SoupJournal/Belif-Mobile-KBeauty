@@ -45,7 +45,7 @@ class BaseController extends Controller
 
     //verify email details
     const EMAIL_SENDER_VERIFY = 'team@aloeaquabomb.com';
-    const EMAIL_SUBJECT_VERIFY = 'Verify your email to claim your gift.';
+    const EMAIL_SUBJECT_VERIFY = 'Verify your email and get ready to Set to Soothe';
 
     //share email details
     const EMAIL_SENDER_SHARE = 'team@aloeaquabomb.com';
