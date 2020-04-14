@@ -391,8 +391,6 @@ class BaseController extends Controller
             $this->dispatch($emailJob);
             $result = true;
 
-            } //end if (valid code)
-
         } //end if (valid user)
 
         return $result;
