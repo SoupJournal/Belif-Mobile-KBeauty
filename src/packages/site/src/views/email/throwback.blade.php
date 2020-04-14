@@ -38,8 +38,8 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 						<table width="570" border="0" cellspacing="0" cellpadding="0">
 							<tbody>
 							<tr>
-								<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<td style="border: 0; margin: 0; padding: 0;">
+									<table width="570" border="0" cellpadding="0" cellspacing="0">
 										<tbody>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19" height="22"></td>
@@ -67,8 +67,8 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 								</td>
 							</tr>
 							<tr>
-								<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+								<td style="border: 0; margin: 0; padding: 0;">
+									<table width="570" border="0" cellpadding="0" cellspacing="0">
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 										</tr>
@@ -76,14 +76,14 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; word-spacing:-0.2px;">{!! $title !!}</td>
 										</tr>
 										<tr>
-											<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+											<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
 										</tr>
 									</table>
 								</td>
 							</tr>
 							<tr>
 								<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-									<table width="100%" height="781" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/playlist/playlist_throwback.jpg') no-repeat center bottom #1d5c58;">
+									<table width="570" height="781" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/playlist/playlist_throwback.jpg') no-repeat center bottom #1d5c58;">
 										<tr>
 											<td align="center" valign="top" height="281" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px;">
 												<div style="width: 100%;padding-top:20px;font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:24px; font-weight: bold;">{!! $subtitle !!}</div>
