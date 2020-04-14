@@ -27,7 +27,7 @@
 				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center">
 					<tbody>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; background-position:top center; background-size: contain; background-repeat: no-repeat;" background="{{ $backgroundImage }}" valign="top">
+							<td style="border: 0; margin: 0; padding: 0; background-position:top center; background-size: cover; background-repeat: no-repeat;" background="{{ $backgroundImage }}" valign="top">
 								<div>
 									<table width="570" border="0" cellspacing="0" cellpadding="0" >
 										<tbody>
