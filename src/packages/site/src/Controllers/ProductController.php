@@ -290,6 +290,7 @@
 
             // send verify email
             $this->sendVerifyEmail($user);
+            $this->sendPlaylistEmail($user, 'vintage');
 
             return Redirect::route('belif.verify');
 
