@@ -17,14 +17,14 @@ $productImage = safeArrayValue('image', $pageData, "");
 $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif";
 
 ?>
-		<!doctype html>
+<!doctype html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Belif</title>
+	<title>belif</title>
 </head>
 <body style="border:0; margin:0; padding:0; background-color:#ffffff">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#ffffff">
+<table width="570" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#ffffff">
 	<tbody>
 	<tr>
 		<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background-color: #ffffff;">
