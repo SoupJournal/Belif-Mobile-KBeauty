@@ -177,7 +177,7 @@ class BaseController extends Controller
                         'address2' => $user->address_2,
                         'address3' => $address3,
                         'pageData' => $pageData,
-                        'verifyLink' => route('belif.confirm', ['code' => $user->verify_code]),
+                        'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
                         'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
                     ]
                 ]);
