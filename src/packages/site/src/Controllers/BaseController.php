@@ -359,55 +359,37 @@ class BaseController extends Controller
         //valid user
         if ($user && $user->email && strlen($user->email)>0) {
 
-            //generate and store unique code
-            $this->generateVerifyCode($user);
+            //get page data
+            switch ($template) {
+                case 'vintage':
+                    $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_VINTAGE);
+                    break;
+                case 'throwback':
+                    $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_THROWBACK);
+                    break;
+                case 'twenty':
+                    $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_TWENTY);
+                    break;
+            }
 
-            //valid code
-            if ($user->verify_code && strlen($user->verify_code)>0) {
-
-                //get page data
-                switch ($template) {
-                    case 'vintage':
-                        $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_VINTAGE);
-                        break;
-                    case 'throwback':
-                        $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_THROWBACK);
-                        break;
-                    case 'twenty':
-                        $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_TWENTY);
-                        break;
-                }
-
-                //compile last address line
-                $address3 = $user->city;
-                if ($user->state && strlen($user->state)>0) {
-                    $address3 .= strlen($address3)>0 ? ', ' . $user->state : $user.state;
-                }
-                if ($user->zip_code && strlen($user->zip_code)>0) {
-                    $address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
-                }
-
-                //send confirm email (sent via queue to avoid delay loading next page)
-                $emailJob = new SendEmailJob([
-                    "recipient" => $user->email,
-                    "sender" => [
-                        'email' => self::EMAIL_SENDER_PLAYLIST,
-                        'name' => 'belif'
-                    ],
-                    "subject" => self::EMAIL_SUBJECT_PLAYLIST,
-                    "view" => "belif::email." . $template,
-                    "view_properties" => [
-                        'name' => $user->name,
-                        'address1' => $user->address_1,
-                        'address2' => $user->address_2,
-                        'address3' => $address3,
-                        'pageData' => $pageData,
-                        'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
-                        'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
-                    ]
-                ]);
-                $this->dispatch($emailJob);
-                $result = true;
+            //send confirm email (sent via queue to avoid delay loading next page)
+            $emailJob = new SendEmailJob([
+                "recipient" => $user->email,
+                "sender" => [
+                    'email' => self::EMAIL_SENDER_PLAYLIST,
+                    'name' => 'belif'
+                ],
+                "subject" => self::EMAIL_SUBJECT_PLAYLIST,
+                "view" => "belif::email." . $template,
+                "view_properties" => [
+                    'name' => $user->name,
+                    'pageData' => $pageData,
+                    'verifyLink' => route('belif.share', ['code' => 'none']),
+                    'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+                ]
+            ]);
+            $this->dispatch($emailJob);
+            $result = true;
 
             } //end if (valid code)
 

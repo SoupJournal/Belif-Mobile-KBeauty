@@ -3,9 +3,6 @@
 	//validate properties
 	if (!isset($pageData)) $pageData = null;
 	if (!isset($name)) $name = "";
-	if (!isset($address1)) $address1 = "";
-	if (!isset($address2)) $address2 = "";
-	if (!isset($address3)) $address3 = "";
 	if (!isset($verifyLink)) $verifyLink = "";
 	if (!isset($unsubscribeLink)) $unsubscribeLink = "";
 	

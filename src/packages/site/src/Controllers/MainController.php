@@ -429,7 +429,6 @@ class MainController extends BaseController implements CMSTrigger {
                     else {
                         //send verification email
                         $this->sendVerifyEmail($user);
-
                     }
 
                 }
@@ -483,6 +482,7 @@ class MainController extends BaseController implements CMSTrigger {
             //get user details
             $user = User::where('email', '=', $email)->first();
             $this->sendVerifyEmail($user);
+            // remove below
             $this->sendPlaylistEmail($user, 'vintage');
 
         }
