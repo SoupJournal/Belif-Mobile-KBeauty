@@ -238,14 +238,11 @@
 		
 		public function getResults()
         {
-
 			$answers = Session::get('answers');
 
-			$step4a = ['A','A','A','A','A','A','A']; //
-			$step4b = ['B','B','B','B','B','B','B']; //
-            $step4c = ['C','C','C','C','C','C','C']; //
-            $step4d = ['D','D','D','D','D','D','D']; //
-            $step4e = ['E','E','E','E','E','E','E']; //
+			$step4a = ['C','C','B','B','B','C','A']; // 2020
+			$step4b = ['A','A','A','A','A','B','B']; // THROWBACK
+            $step4c = ['B','B','C','C','C','A','C']; // VINTAGE
 
 			$step4aCount = $step4bCount = $step4cCount = $step4dCount = $step4eCount = $idx = 0;
 
@@ -259,21 +256,13 @@
                 if ($answer == $step4c[$idx]) {
                     $step4cCount++;
                 }
-                if ($answer == $step4d[$idx]) {
-                    $step4dCount++;
-                }
-                if ($answer == $step4e[$idx]) {
-                    $step4eCount++;
-                }
 				$idx++;
 			}
 
 			$answerCounts = [
 				'A' => $step4aCount,
 				'B' => $step4bCount,
-                'C' => $step4cCount,
-                'D' => $step4dCount,
-                'E' => $step4eCount,
+                'C' => $step4cCount
 			];
 			
 			$finalAnswer = array_search(max($answerCounts),$answerCounts);
@@ -290,7 +279,17 @@
 
             // send verify email
             $this->sendVerifyEmail($user);
-            $this->sendPlaylistEmail($user, 'vintage');
+            switch ($finalAnswer) {
+                case 'A':
+                    $this->sendPlaylistEmail($user, 'twenty');
+                    break;
+                case 'B':
+                    $this->sendPlaylistEmail($user, 'throwback');
+                    break;
+                case 'C':
+                    $this->sendPlaylistEmail($user, 'vintage');
+                    break;
+            }
 
             return Redirect::route('belif.verify');
 

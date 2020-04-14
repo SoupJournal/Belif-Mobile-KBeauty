@@ -477,14 +477,10 @@ class MainController extends BaseController implements CMSTrigger {
 
         //get session email
         $email = Session::get('email');
-        if ($email && strlen($email)>0) {
-
+        if ($email && strlen($email) > 0) {
             //get user details
             $user = User::where('email', '=', $email)->first();
             $this->sendVerifyEmail($user);
-            // remove below
-            $this->sendPlaylistEmail($user, 'vintage');
-
         }
 
         //get page data
