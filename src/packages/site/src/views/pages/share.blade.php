@@ -62,7 +62,7 @@
 		{{-- enter email --}}
 		<div class="form-group page-padding-small"> 
 		
-			{{ Form::email('email', null, Array ('placeholder' => 'Yourfriend@email.com', 'class' => 'page-input-text color-2', 'tabindex' => '1',  'autofocus' => '', 'auto-next-focus' => '')) }}
+			{{ Form::email('email', null, Array ('placeholder' => 'Yourfriend@email.com', 'class' => 'page-input-text color-2', 'tabindex' => '1')) }}
 			
 		</div>
 	
