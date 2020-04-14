@@ -88,13 +88,18 @@
 														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 													</tr>
 													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px;">{!! $subtitle !!}</td>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; font-weight: bold;">{!! $subtitle !!}</td>
 													</tr>
 													<tr>
 														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 													</tr>
 													<tr>
 														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px;">{!! $html !!}</td>
+													</tr>
+													<tr>
+														<td bgcolor="#1d5c58" style="border:0; margin:0; padding:10px 5px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;">
+															<a href="#" target="_blank" style="text-decoration: none; color:#1d5c58;">Follow your Playlist on Spotify</a>
+														</td>
 													</tr>
 													<tr>
 														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="500">&nbsp;</td>
