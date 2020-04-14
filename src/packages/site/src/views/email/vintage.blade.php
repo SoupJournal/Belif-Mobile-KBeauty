@@ -85,20 +85,16 @@
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
 												<table width="100%" height="781" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/playlist/playlist_twenty.jpg') no-repeat center bottom #1d5c58;">
 													<tr>
-														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
-													</tr>
-													<tr>
 														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; font-weight: bold;">{!! $subtitle !!}</td>
 													</tr>
 													<tr>
-														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px;">
+															<div style="width: 350px;">{!! $html !!}</div>
+														</td>
 													</tr>
 													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px;">{!! $html !!}</td>
-													</tr>
-													<tr>
-														<td bgcolor="#1d5c58" style="border:0; margin:0; padding:10px 5px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;">
-															<a href="#" target="_blank" style="text-decoration: none; color:#1d5c58;">Follow your Playlist on Spotify</a>
+														<td style="border:0; margin:0; padding:10px 5px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;">
+															<a href="#" target="_blank" style="text-decoration: none; color:#1d5c58; background-color: #ffffff; padding: 10px;">Follow your Playlist on Spotify</a>
 														</td>
 													</tr>
 													<tr>
