@@ -86,9 +86,9 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 									<table width="570" height="781" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/playlist/playlist_throwback.jpg') no-repeat center bottom #1d5c58;">
 										<tr>
 											<td align="center" valign="top" height="281" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px;">
-												<div style="width: 100%;padding-top:20px;font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:24px; font-weight: bold;">{!! $subtitle !!}</div>
+												<div style="width: 570px;padding-top:20px;font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:24px; font-weight: bold;">{!! $subtitle !!}</div>
 												<div style="width: 350px;padding-top:20px;font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px;">{!! $html !!}</div>
-												<div style="width: 100%;padding-top:40px;"><a href="https://open.spotify.com/playlist/4zLvTSzlm0TBkEFjw17TKg?si=Xyz8RYBSTDym1FOxzbQrPQ" target="_blank" style="text-decoration: none; color:#1d5c58; background-color: #ffffff; padding: 10px; font-weight: bold;">Follow your Playlist on Spotify</a></div>
+												<div style="width: 570px;padding-top:40px;"><a href="https://open.spotify.com/playlist/4zLvTSzlm0TBkEFjw17TKg?si=Xyz8RYBSTDym1FOxzbQrPQ" target="_blank" style="text-decoration: none; color:#1d5c58; background-color: #ffffff; padding: 10px; font-weight: bold;">Follow your Playlist on Spotify</a></div>
 											</td>
 										</tr>
 										<tr>
