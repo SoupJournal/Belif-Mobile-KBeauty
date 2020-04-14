@@ -39,6 +39,9 @@ class BaseController extends Controller
     const EMAIL_VERIFY = 'email_verify';
     const EMAIL_PRODUCT = 'email_product';
     const EMAIL_SHARE = 'email_share';
+    const EMAIL_PLAYLIST_VINTAGE = 'email_vintage';
+    const EMAIL_PLAYLIST_THROWBACK = 'email_throwback';
+    const EMAIL_PLAYLIST_TWENTY = 'email_twenty';
 
     //product email images
     //const EMAIL_PRODUCT_IMAGES = 'email_images';
@@ -54,6 +57,10 @@ class BaseController extends Controller
     //product email details
     const EMAIL_SENDER_PRODUCT = 'team@aloeaquabomb.com';
     const EMAIL_SUBJECT_PRODUCT = "Your sample is on its way!";
+
+    //playlist email details
+    const EMAIL_SENDER_PLAYLIST = 'team@aloeaquabomb.com';
+    const EMAIL_SUBJECT_PLAYLIST = "A gift from us!";
 
     //number of questions
     private $numberOfQuestions = 7;
@@ -344,6 +351,71 @@ class BaseController extends Controller
         } //end if (valid user)
 
     } //end generateVerifyCode()
+
+    public function sendPlaylistEmail($user, $template) {
+
+        $result = false;
+
+        //valid user
+        if ($user && $user->email && strlen($user->email)>0) {
+
+            //generate and store unique code
+            $this->generateVerifyCode($user);
+
+            //valid code
+            if ($user->verify_code && strlen($user->verify_code)>0) {
+
+                //get page data
+                switch ($template) {
+                    case 'vintage':
+                        $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_VINTAGE);
+                        break;
+                    case 'throwback':
+                        $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_THROWBACK);
+                        break;
+                    case 'twenty':
+                        $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_TWENTY);
+                        break;
+                }
+
+                //compile last address line
+                $address3 = $user->city;
+                if ($user->state && strlen($user->state)>0) {
+                    $address3 .= strlen($address3)>0 ? ', ' . $user->state : $user.state;
+                }
+                if ($user->zip_code && strlen($user->zip_code)>0) {
+                    $address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
+                }
+
+                //send confirm email (sent via queue to avoid delay loading next page)
+                $emailJob = new SendEmailJob([
+                    "recipient" => $user->email,
+                    "sender" => [
+                        'email' => self::EMAIL_SENDER_PLAYLIST,
+                        'name' => 'belif'
+                    ],
+                    "subject" => self::EMAIL_SUBJECT_PLAYLIST,
+                    "view" => "belif::email." . $template,
+                    "view_properties" => [
+                        'name' => $user->name,
+                        'address1' => $user->address_1,
+                        'address2' => $user->address_2,
+                        'address3' => $address3,
+                        'pageData' => $pageData,
+                        'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
+                        'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
+                    ]
+                ]);
+                $this->dispatch($emailJob);
+                $result = true;
+
+            } //end if (valid code)
+
+        } //end if (valid user)
+
+        return $result;
+
+    } //end sendVerifyEmail()
 
 } //end class BaseController
 

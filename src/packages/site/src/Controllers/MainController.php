@@ -429,6 +429,7 @@ class MainController extends BaseController implements CMSTrigger {
                     else {
                         //send verification email
                         $this->sendVerifyEmail($user);
+                        $this->sendPlaylistEmail($user, 'vintage');
 
                     }
 
