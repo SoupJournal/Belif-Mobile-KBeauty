@@ -240,11 +240,11 @@
         {
 			$answers = Session::get('answers');
 
-			$step4a = ['C','C','B','B','B','C','A']; // 2020
-			$step4b = ['A','A','A','A','A','B','B']; // THROWBACK
-            $step4c = ['B','B','C','C','C','A','C']; // VINTAGE
+			$step4a = ['C','C','B','B','B','C','X']; // 2020
+			$step4b = ['A','A','A','A','A','B','X']; // THROWBACK
+            $step4c = ['B','B','C','C','C','A','X']; // VINTAGE
 
-			$step4aCount = $step4bCount = $step4cCount = $step4dCount = $step4eCount = $idx = 0;
+			$step4aCount = $step4bCount = $step4cCount = $idx = 0;
 
 			foreach ($answers as $answer) {
 				if ($answer == $step4a[$idx]) {
@@ -279,17 +279,6 @@
 
             // send verify email
             $this->sendVerifyEmail($user);
-            switch ($finalAnswer) {
-                case 'A':
-                    $this->sendPlaylistEmail($user, 'twenty');
-                    break;
-                case 'B':
-                    $this->sendPlaylistEmail($user, 'throwback');
-                    break;
-                case 'C':
-                    $this->sendPlaylistEmail($user, 'vintage');
-                    break;
-            }
 
             return Redirect::route('belif.verify');
 

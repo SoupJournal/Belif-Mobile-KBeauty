@@ -597,9 +597,23 @@ class MainController extends BaseController implements CMSTrigger {
                 //verify code
                 else {
 
-                    //indicate email is verified
+                    // indicate email is verified
                     $user->email_verified = true;
                     $user->save();
+
+                    $finalAnswer = $user->answers;
+
+                    switch ($finalAnswer) {
+                        case 'A':
+                            $this->sendPlaylistEmail($user, 'twenty');
+                            break;
+                        case 'B':
+                            $this->sendPlaylistEmail($user, 'throwback');
+                            break;
+                        case 'C':
+                            $this->sendPlaylistEmail($user, 'vintage');
+                            break;
+                    }
 
                     //get page data
                     $pageData = $this->dataForPage(self::FORM_SHARE);
