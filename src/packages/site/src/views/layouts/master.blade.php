@@ -2,7 +2,7 @@
 
 	//define variables
 	$fullScreen = isset($fullScreen) ? $fullScreen : false;
-	$pagetitle = isset($pagetitle) ? $pagetitle : 'Belif';
+	$pagetitle = isset($pagetitle) ? $pagetitle : 'belif';
 	$fillHeight = isset($fillHeight) ? $fillHeight : true;
 	$backgroundImage = isset($backgroundImage) ? $backgroundImage : null;
 	$backgroundFill = isset($backgroundFill) ? $backgroundFill : false;
@@ -33,8 +33,7 @@
     <body ng-app="belif">
    
 		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit"
-			 style="background: url({{ $backgroundImage }}) no-repeat center center; background-size:cover;"
-		>
+			 style="background: url({{ $backgroundImage }}) no-repeat center center; background-size:cover;">
 			
 			<div class="main-page-container fill-height color-2">
 	
