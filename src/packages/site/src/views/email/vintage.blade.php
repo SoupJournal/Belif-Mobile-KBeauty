@@ -82,8 +82,8 @@
 											</td>
 										</tr>
 										<tr>
-											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/playlist/playlist_twenty.jpg') no-repeat center bottom #1d5c58;">
-												<table width="100%" height="781" border="0" cellpadding="0" cellspacing="0">
+											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
+												<table width="100%" height="781" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/playlist/playlist_twenty.jpg') no-repeat center bottom #1d5c58;">
 													<tr>
 														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 													</tr>
