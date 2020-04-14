@@ -78,6 +78,8 @@
 
 			<div class="color-2 size-4"><a href="{{ route('belif.unsubscribe') }}" class="color-2">I want to unregister myself.</a></div>
 
+			<div class="spacer-tiny"></div>
+
 			{{-- Terms & Conditions --}}
 			<div class="terms">
 				<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-2 small" target="_blank">{{ $buttonNo }}</a>

@@ -83,7 +83,7 @@
 		</button>
 
 		{{-- Re-verify button --}}
-		<a href="{{ route('belif.thanks') }}" class="button-page color-2">
+		<a href="{{ route('belif.home') }}" class="button-page color-2">
 			<h4 class="button-link">{{ $buttonNo }}</h4>
 		</a>
 		
