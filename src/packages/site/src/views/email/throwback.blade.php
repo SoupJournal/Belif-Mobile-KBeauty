@@ -42,11 +42,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 									<table width="570" border="0" cellpadding="0" cellspacing="0">
 										<tbody>
 										<tr>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19" height="22"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
-											<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19"></td>
+											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="570" height="22" colspan="5">&nsbp;</td>
 										</tr>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
@@ -56,11 +52,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 										</tr>
 										<tr>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="570" height="22" colspan="5">&nsbp;</td>
 										</tr>
 										</tbody>
 									</table>
@@ -70,19 +62,19 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 								<td style="border: 0; margin: 0; padding: 0;">
 									<table width="570" border="0" cellpadding="0" cellspacing="0">
 										<tr>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
+											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="570" height="30"></td>
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; word-spacing:-0.2px;">{!! $title !!}</td>
 										</tr>
 										<tr>
-											<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
+											<td width="570" height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
 										</tr>
 									</table>
 								</td>
 							</tr>
 							<tr>
-								<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
+								<td style="border: 0; margin: 0; padding: 0;" width="570">
 									<table width="570" height="781" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/playlist/playlist_throwback.jpg') no-repeat center bottom #1d5c58;">
 										<tr>
 											<td align="center" valign="top" height="281" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px;">
