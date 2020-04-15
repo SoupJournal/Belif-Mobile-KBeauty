@@ -136,7 +136,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 													</table>
 												</td>
 												<td bgcolor="#1d5c58" style="width: 50%; border:0; margin:0; padding:10px 5px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;">
-													<a href="https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a>
+													<div style="white-space: nowrap;"><a href="https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a></div>
 												</td>
 												<td>
 													<table border="0" cellspacing="0" cellpadding="0">
