@@ -39,14 +39,10 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 							<tbody>
 							<tr>
 								<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<table width="570" border="0" cellpadding="0" cellspacing="0">
 										<tbody>
 										<tr>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19" height="22"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
-											<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="102"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="19"></td>
+											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="570" height="22" colspan="5"></td>
 										</tr>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="107"></td>
@@ -56,11 +52,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 										</tr>
 										<tr>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
+											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="570" height="22" colspan="5"></td>
 										</tr>
 										</tbody>
 									</table>
@@ -68,7 +60,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 							</tr>
 							<tr>
 								<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-									<table width="100%" border="0" cellpadding="0" cellspacing="0">
+									<table width="570" border="0" cellpadding="0" cellspacing="0">
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 										</tr>
