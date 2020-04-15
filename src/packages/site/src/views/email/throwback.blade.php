@@ -51,9 +51,6 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" valign="middle" align="center"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_sts_top.png" width="100" alt=""/></td>
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;"></td>
 										</tr>
-										<tr>
-											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" width="570" height="22" colspan="5"></td>
-										</tr>
 										</tbody>
 									</table>
 								</td>
@@ -138,7 +135,9 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 														</tbody>
 													</table>
 												</td>
-												<td bgcolor="#1d5c58" style="border:0; margin:0; padding:10px 5px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;"><a href="https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a></td>
+												<td bgcolor="#1d5c58" style="border:0; margin:0; padding:10px 5px; text-align:center; white-space: nowrap; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;">
+													<a href="https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a>
+												</td>
 												<td>
 													<table border="0" cellspacing="0" cellpadding="0">
 														<tbody>
@@ -177,7 +176,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 								</td>
 								<td style="width: 10%;">&nbsp;</td>
 								<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: left; font-family:{{ $fontDefinitions }};">
-									<a href="#" style="color: #8ad6cf; font-style: italic;">belif at sephora</a>
+									<a href="#" style="white-space: nowrap; color: #8ad6cf; font-style: italic;">belif at sephora</a>
 								</td>
 							</tr>
 							<tr>
