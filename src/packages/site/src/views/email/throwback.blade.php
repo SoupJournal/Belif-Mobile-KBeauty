@@ -62,7 +62,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 											<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; word-spacing:-0.2px;">{!! $title !!}</td>
+											<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; word-spacing:-0.2px;">{!! $title !!}</td>
 										</tr>
 										<tr>
 											<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
@@ -135,7 +135,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 														</tbody>
 													</table>
 												</td>
-												<td bgcolor="#1d5c58" style="border:0; margin:0; padding:10px 5px; text-align:center; white-space: nowrap; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;">
+												<td bgcolor="#1d5c58" style="border:0; margin:0; padding:10px 5px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;">
 													<a href="https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a>
 												</td>
 												<td>
