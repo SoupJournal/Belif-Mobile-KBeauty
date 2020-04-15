@@ -176,7 +176,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 										</td>
 										<td style="width: 10%;">&nbsp;</td>
 										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: left; font-family:{{ $fontDefinitions }};">
-											<a href="#" style="color: #8ad6cf; font-style: italic;">belif at sephora</a>
+											<a href="#" style="white-space: nowrap; color: #8ad6cf; font-style: italic;">belif at sephora</a>
 										</td>
 									</tr>
 									<tr>
