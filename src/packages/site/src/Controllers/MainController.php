@@ -31,25 +31,25 @@ class MainController extends BaseController implements CMSTrigger {
     public function getSephora()
     {
 
-        $campaign = safeArrayValue('campaign', $_GET, null);
-
-        $redirectUrls = [
-            1 => 'http://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514',
-            2 => 'https://www.sephora.com/product/aqua-bomb-jelly-cleanser-P444057?icid2=products%20grid:p444057',
-            3 => 'https://www.sephora.com/product/aqua-bomb-sleeping-mask-P433443?icid2=products%20grid:p433443',
-            4 => 'https://www.sephora.com/product/belif-aqua-bomb-deep-hydration-set-P457857',
-            5 => 'https://www.sephora.com/product/moisturizing-eye-bomb-P422905?icid2=products%20grid:p422905',
-            6 => 'https://www.sephora.com/product/the-true-cream-aqua-bomb-P394639?icid2=products%20grid:p394639',
-            7 => 'https://www.sephora.com/product/the-true-cream-moisturizing-bomb-deco-P425444?icid2=products%20grid:p425444',
-            8 => 'https://www.sephora.com/product/the-true-cream-moisturizing-bomb-P394624?icid2=products%20grid:p394624'
-        ];
+//        $campaign = safeArrayValue('campaign', $_GET, null);
+//
+//        $redirectUrls = [
+//            1 => 'http://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514',
+//            2 => 'https://www.sephora.com/product/aqua-bomb-jelly-cleanser-P444057?icid2=products%20grid:p444057',
+//            3 => 'https://www.sephora.com/product/aqua-bomb-sleeping-mask-P433443?icid2=products%20grid:p433443',
+//            4 => 'https://www.sephora.com/product/belif-aqua-bomb-deep-hydration-set-P457857',
+//            5 => 'https://www.sephora.com/product/moisturizing-eye-bomb-P422905?icid2=products%20grid:p422905',
+//            6 => 'https://www.sephora.com/product/the-true-cream-aqua-bomb-P394639?icid2=products%20grid:p394639',
+//            7 => 'https://www.sephora.com/product/the-true-cream-moisturizing-bomb-deco-P425444?icid2=products%20grid:p425444',
+//            8 => 'https://www.sephora.com/product/the-true-cream-moisturizing-bomb-P394624?icid2=products%20grid:p394624'
+//        ];
 
         $redirectUrl = 'https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514';
-        if (isset($campaign)) {
-            if (isset($redirectUrls[trim($campaign)])) {
-                $redirectUrl = $redirectUrls[trim($campaign)];
-            }
-        }
+//        if (isset($campaign)) {
+//            if (isset($redirectUrls[trim($campaign)])) {
+//                $redirectUrl = $redirectUrls[trim($campaign)];
+//            }
+//        }
 
         return View::make('belif::pages.sephora')->with([
             'redirectUrl' => $redirectUrl
