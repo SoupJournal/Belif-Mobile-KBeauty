@@ -275,6 +275,7 @@
 
             // save result for later
             $user->answers = $finalAnswer;
+            $user->all_answers = implode(',', $answers);
             $user->save();
 
             // send verify email
