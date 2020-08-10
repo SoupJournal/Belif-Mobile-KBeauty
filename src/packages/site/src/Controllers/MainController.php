@@ -770,7 +770,7 @@ class MainController extends BaseController implements CMSTrigger {
         // get email
         $email = safeArrayValue('email', $_GET, null);
 
-        //valid code
+        // valid code
         if ($code && strlen($code)>0) {
 
             //validate code
@@ -784,7 +784,7 @@ class MainController extends BaseController implements CMSTrigger {
 
             } //end if (valid code)
 
-        } else if ($email && strlen($email)>0) {
+        } else if ($email && strlen($email) > 0) {
 
             // get user
             $user = User::where('email', '=', $email)->first();
