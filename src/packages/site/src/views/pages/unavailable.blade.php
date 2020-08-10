@@ -36,7 +36,7 @@
 		<div class="spacer-medium"></div>
 	
 		{{-- title --}}
-		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
+		<div class="no-margins size-7 color-2 font-3 stroke">{!! $title !!}</div>
 
 		<div class="spacer-medium"></div>
 
