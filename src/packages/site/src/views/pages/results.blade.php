@@ -24,6 +24,8 @@
 	$products = isset($products) ? $products : null;
 	$productIdx = isset($productIdx) ? $productIdx : 0;
 	$restartURL = isset($restartURL) ? $restartURL : null;
+	$sampleResult = isset($sampleResult) ? $sampleResult : null;
+	$resultImage = isset($resultImage) ? $resultImage : null;
 ?>
 
 <div class="text-center page-padding">
@@ -32,32 +34,36 @@
 
 		<div class="spacer-small"></div>
 	
-		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
+		<div class="no-margins size-7 color-2 font-3 stroke">{!! $title !!}</div>
 
 		<div class="spacer-tiny"></div>
 
-		<div class="no-margins font-7 color-2 size-4">{!! $subtitle !!}</div>
+		<div class="no-margins font-7 color-14 size-4">{!! $subtitle !!}</div>
 		
-		<div class="spacer-medium"></div>
-
-		<div class="page-padding-medium">
-			<img class="page-image" src="{{ safeObjectValue('sample_image', $products[$productIdx], '') }}" load-style="fade">
-		</div>
-
-		<div class="spacer-medium"></div>
+		<img class="page-image" src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/{{ $resultImage }}.png" load-style="fade">
 
 		<div class="page-padding-small font-7 color-2 size-4">{!! $text !!}</div>
 
 		<div class="spacer-small">
-	
-		@if ($restartURL)
-		<a href="{{ $restartURL }}" class="button-page button-next bg-color-12 color-2 font-3" innerclass="color-2" label="{{ $buttonNo }}">
+
+		@if ($sampleResult == 'page_results_a')
+
+		<a href="{{ $restartURL }}" class="button-page button-next bg-color-14 color-2 font-3" innerclass="color-2" label="{{ $buttonNo }}">
 			{{ $buttonNo }}
 		</a>
+
 		@else
-		<a href="https://seph.me/2M8ae0S" class="button-page button-next bg-color-12 color-2 font-3" innerclass="color-2" label="{{ $button }}">
+
+		<a href="/verify" class="button-page button-next bg-color-14 color-2 font-3" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
 		</a>
+
+		<div class="spacer-tiny"></div>
+
+		<a href="{{ $restartURL }}" class="button-page button-next bg-color-clear color-15 font-3" innerclass="color-2" label="{{ $buttonNo }}">
+			{{ $buttonNo }}
+		</a>
+
 		@endif
 
 		<div class="spacer-small"></div>

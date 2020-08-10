@@ -618,6 +618,9 @@ button:hover {
 	font-size: 3.5vw;
 	font-family: BrandonGrotesqueLightItalic, sans-serif;
 	line-height: 30px;
+	width: 50%;
+	text-align: center;
+	margin: 0 auto;
 }
 
 .terms input {
@@ -673,8 +676,13 @@ button.question
 	width: 150px;
 	height: 150px;
 	border: none;
+	outline: none;
 }
 
 button.question:active {
 	border: 5px solid #fff;
+}
+
+a.button-next {
+	border: 3px solid #ff76a7;
 }

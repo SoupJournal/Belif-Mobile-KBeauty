@@ -43,13 +43,17 @@
 			<div class="spacer-small"></div>
 		
 			{{-- title --}}
-			<div class="no-margins size-6 color-13 font-3">{!! $title !!}</div>
+			<div class="no-margins size-9 color-2 font-3 stroke">{!! $title !!}</div>
 
-			<hr class="white"/>
-
-			<div class="no-margins size-3-4 color-2 font-9">{!! $subtitle !!}</div>
-			
 			<div class="spacer-small"></div>
+
+			<div class="no-margins size-4 color-14 font-5">{!! $subtitle !!}</div>
+
+			<div class="spacer-small"></div>
+
+			<div class="no-margins size-4 color-2 font-5"><img src="{!! $image !!}" class="page-image" /></div>
+
+			<div class="spacer-large"></div>
 			
 			<div class="no-margins size-4 color-2 font-5">{!! $html !!}</div>
 
@@ -70,7 +74,7 @@
 		    @endif
 		
 			{{-- submit button --}}
-			<button class="button-page bg-color-13 color-2 font-3" label="{{ $button }}">
+			<button class="button-page bg-color-14 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</button>
 			

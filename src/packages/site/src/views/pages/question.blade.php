@@ -56,45 +56,29 @@
 	
 		<div class="row page-margin-small">
 		
-			<div class="font-3 color-2 size-6">Question {{ $questionNumber }}</div>
-		
+			<div class="no-margins size-9 color-2 font-3 stroke">Search {!! $questionNumber !!}:</div>
+
+			<div>
+				<img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/question-{{ $questionNumber }}.png" class="question-image" />
+			</div>
+
 			<div class="question-text">
 			
-				<div class="spacer-medium"></div>
+				<div class="spacer-large"></div>
 			
 				<div class="no-margins font-3 size-4 color-2">{!! $question !!}</div>
 
 				<div class="spacer-medium"></div>
 
+				<div class="no-margins font-5 size-4 color-2">{!! $text !!}</div>
+
 			</div>
-
-			{{-- answers --}}
-			@if ($answerA && strlen($answerA)>0)
-				<div class="answer-block">
-					<button class="question question-{{ $questionNumber }}-A" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/gifs/question-{{ $questionNumber }}-A.gif) no-repeat center center;" name="value" value="A"></button>
-					<h3 class="title-semi-bold color-2">{!! $answerA !!}</h3>
-				</div>
-			@endif
-
-			@if ($answerB && strlen($answerB)>0)
-				<div class="answer-block">
-					<button class="question question-{{ $questionNumber }}-B" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/gifs/question-{{ $questionNumber }}-B.gif) no-repeat center center;" name="value" value="B"></button>
-					<h3 class="title-semi-bold color-2">{!! $answerB !!}</h3>
-				</div>
-			@endif
-
-			@if ($answerC && strlen($answerC)>0)
-				<div class="answer-block-full">
-					<button class="question question-{{ $questionNumber }}-C" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/gifs/question-{{ $questionNumber }}-C.gif) no-repeat center center;" name="value" value="C"></button>
-					<h3 class="title-semi-bold color-2">{!! $answerC !!}</h3>
-				</div>
-			@endif
 
 			<div class="spacer-small"></div>
 
-{{--			<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-13 font-3" label="{{ $button }}">--}}
-{{--				{{ $button }}--}}
-{{--			</a>--}}
+			<a href="{{ $buttonURL }}" class="button-page bg-color-14 color-2 font-3" label="Let's Find It!">
+				Let's Find It!
+			</a>
 		
 		</div>
 	

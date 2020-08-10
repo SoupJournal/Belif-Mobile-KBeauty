@@ -60,6 +60,14 @@
 	color: #1d5c58; /* set to soothe green */
 }
 
+.color-14 {
+	color: #33ccff; /* aqualand blue */
+}
+
+.color-15 {
+	color: #ff76a7; /* aqualand pink */
+}
+
 /********************************/
 /* 			ARROW COLOURS 		*/
 /********************************/
@@ -137,8 +145,8 @@ a:hover {
 	background-color: #1d5c58; /* set to soothe green */
 }
 
-.bg-color-12 {
-	background-color: #33ccff;
+.bg-color-14 {
+	background-color: #ff76a7; /* aqualand pink */
 }
 
 /********************************/

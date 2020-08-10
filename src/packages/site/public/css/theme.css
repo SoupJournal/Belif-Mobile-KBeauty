@@ -618,7 +618,6 @@ button:hover {
 	font-size: 3.5vw;
 	font-family: BrandonGrotesqueLightItalic, sans-serif;
 	line-height: 30px;
-	background-color: #1d5c58;
 	width: 50%;
 	text-align: center;
 	margin: 0 auto;
@@ -682,4 +681,8 @@ button.question
 
 button.question:active {
 	border: 5px solid #fff;
+}
+
+a.button-next {
+	border: 3px solid #ff76a7;
 }

@@ -35,11 +35,11 @@
 	
 		<div class="spacer-large"></div>
 
-		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
+		<div class="no-margins size-7 color-2 font-3 stroke">{!! $title !!}</div>
 
 		<div class="spacer-small"></div>
 
-		<div class="no-margins size-4 color-2 font-9">{!! $subtitle !!}</div>
+		<div class="no-margins size-4 color-14 font-9">{!! $subtitle !!}</div>
 
 		<div class="spacer-small"></div>
 	
@@ -56,7 +56,7 @@
 		<div load-style="fade" load-group="page">
 		
 			{{-- info --}}
-			<div class="no-margins size-5 color-2 font-7">{!! $text !!}</div>
+			<div class="no-margins size-5 color-14 font-7">{!! $text !!}</div>
 		
 			<div class="spacer-small"></div>
 

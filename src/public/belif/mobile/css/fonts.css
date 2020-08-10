@@ -518,6 +518,12 @@ a.page-link {
 	.button-question.small {
 		font-size: 34px;
 	}
-	
-	
+
+}
+
+@supports (-webkit-text-stroke: 2px black) {
+	.stroke {
+		-webkit-text-stroke: 2px black;
+		-webkit-text-fill-color: white;
+	}
 }

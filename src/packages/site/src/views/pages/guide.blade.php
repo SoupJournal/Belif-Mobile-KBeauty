@@ -39,38 +39,30 @@
 	
 			<div class="spacer-medium"></div>
 			
-			<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
-		
-			<div class="spacer-small"></div>
-			
-			<div load-style="fade" load-group="page">
+			<div class="no-margins size-9 color-2 font-3 stroke">{!! $title !!}</div>
 
-				<div><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/guide_image.png" class="page-image" /></div>
-
+			<div class="guide-block-image">
+				<img src="{!! $image !!}" class="page-image" />
 				{{-- html --}}
-				@if ($html && strlen($html)>0) 
-					<div class="bg-color-2 row-left guide-block">
-						<div class="color-13 guide-text no-margins">{!! $html !!}</div>
+				@if ($html && strlen($html) > 0)
+					<div class="bg-color-14 row-left guide-block">
+						<div class="color-2 guide-text no-margins">{!! $html !!}</div>
 					</div>
 				@endif
-		
-				<div class="spacer-small"></div>
-	
-				{{-- text --}}
-				<div class="font-7 color-2 size-6">
-					{!! $text !!}
-				</div>
-	
-				<div class="spacer-small"></div>
-			
-				{{-- next button --}}
-				<a href="{{ $buttonURL }}" class="button-page bg-color-2 color-13 font-3" label="{{ $button }}">
-					{{ $button }}
-				</a>
-
-				<div class="spacer-medium"></div>
-					
 			</div>
+
+			<div class="spacer-large"></div>
+			<div class="spacer-large"></div>
+			<div class="spacer-large"></div>
+
+			<div class="spacer-small"></div>
+
+			{{-- next button --}}
+			<a href="{{ $buttonURL }}" class="button-page bg-color-14 color-2 font-3" label="{{ $button }}">
+				{{ $button }}
+			</a>
+
+			<div class="spacer-medium"></div>
 					
 		</div>
 

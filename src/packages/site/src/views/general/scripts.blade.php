@@ -58,7 +58,7 @@
 	 function gtag(){dataLayer.push(arguments);}
 	 gtag('js', new Date());
 
-	 gtag('config', 'UA-145757171-1');
+	 gtag('config', '');
 	</script>
 
 	{{-- Facebook Pixel Code --}}
@@ -68,11 +68,11 @@
 			n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 			t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 				document,'script','https://connect.facebook.net/en_US/fbevents.js');
-		fbq('init', '2333564013573625'); // Insert your pixel ID here.
+		fbq('init', '\'); // Insert your pixel ID here.
 		fbq('track', 'PageView');
 	</script>
 	<noscript>
-		<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2333564013573625&ev=PageView&noscript=1"/>
+		<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"/>
 	</noscript>
 	{{-- DO NOT MODIFY --}}
 	{{-- End Facebook Pixel Code --}}

@@ -48,48 +48,27 @@
 
 <div class="text-center">
 	
-	{{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL)) }}
-		
-		<div class="row page-margin-small">
-	
-			<div class="spacer-large"></div>
-		
-			<div class="font-3 color-2 size-4">{!! $question !!}</div>
-		
-			<div class="spacer-large"></div>
-		
-		</div>
-		
-		<div class="page-padding-small">
-		
-			{{-- answers --}}
-			@if ($answerA && strlen($answerA)>0)
-				<button class="answer-box {{ $answerClass }} text-center" name="value" value="A">
-					<h3 class="font-3 color-2 size-4">{!! $answerA !!}</h3>
-				</button>
-				<div class="spacer-medium"></div>
-			@endif
-			
-			@if ($answerB && strlen($answerB)>0)
-				<button class="answer-box {{ $answerClass }}" name="value" value="B">
-					<h3 class="font-3 color-2 size-4">{!! $answerB !!}</h3>
-				</button>
-				<div class="spacer-medium"></div>
-			@endif
-			
-			@if ($answerC && strlen($answerC)>0)
-				<button class="answer-box {{ $answerClass }}" name="value" value="C">
-					<h3 class="font-3 color-2 size-4">{!! $answerC !!}</h3>
-				</button>
-			@endif
-			
-			<div class="spacer-small"></div>
-		
-		</div>
-	
+	{{ Form::open(Array('role' => 'form', 'name' => 'answer-form', 'id' => 'answer-form', 'url' => $formURL)) }}
+
+	<div>
+		<img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/countdown-GIF.gif" class="countdown-image" />
+	</div>
+
+	<button class="answer-box answer-location-{{ $questionNumber }}"></button>
+	<input type="hidden" name="value" id="answer-field" value="A" />
+
 	{{ Form::close() }}
 
 </div>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+		setTimeout(function() {
+			$('.countdown-image').hide();
+			$('#answer-field').val('F');
+			$('#answer-form').submit();
+		}, 30000);
+	});
+</script>
 @stop
 {{--------------- END CONTENT ----------------}}

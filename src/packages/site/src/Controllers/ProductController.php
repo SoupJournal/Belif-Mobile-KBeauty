@@ -98,28 +98,28 @@
 			$questionIndex = $this->currentQuestionIndex();
 			
 			//valid question id
-			if ($questionIndex>0) {
+			if ($questionIndex > 0) {
 			
 				//get number of questions
 				$numberOfQuestions = Question::count('id');
 			
 				//all questions answered
-				if ($questionIndex>$numberOfQuestions) {
+				if ($questionIndex > $numberOfQuestions) {
 					
-					//show product
-					return Redirect::route('belif.product');
+					// show results
+					return Redirect::route('belif.results');
 					
 				}
-				//show question
+				// show question
 				else {
 			
-					//get question data
+					// get question data
 					$questionData = $this->questionData($questionIndex);
 
-					//get page data
+					// get page data
 					$pageData = $this->dataForPage(self::FORM_ANSWER);
 		
-					//get background image
+					// get background image
 					$backgroundImage = safeArrayValue('answer_background_image', $questionData);
 
 					//render view
@@ -145,127 +145,83 @@
 			
 		public function postAnswer($questionIndex = null) {
 		
-			//valid question id
-			if ($questionIndex>0) {
+			// valid question id
+			if ($questionIndex > 0) {
 			
-				//get answer
+				// get answer
 				$value = safeArrayValue('value', $_POST, null);
-				
-				//valid answer
-				if ($value!=null) {
+
+				// valid answer
+				if ($value != null) {
 					
-					//store question answer
+					// store question answer
 					$this->setAnswer($questionIndex, $value);
 
-					//get number of questions
+					// get number of questions
 					$numberOfQuestions = Question::count('id');
 
-					//move product
+					// move product
 					if ($questionIndex >= $numberOfQuestions) {
 
-                        // always go to verify
+                        // show results
                         return Redirect::route('belif.results');
-
-					    /*
-						$answers = Session::get('answers');
-
-						$correctAnswers = array(1 => 'C', 2 => 'A', 3 => 'B');
-
-						if (($answers === $correctAnswers)) {
-							return Redirect::route('belif.verify');
-						} else {
-
-							$finalAnswer = 'B';
-
-							$selectedProducts = [];
-							if ($finalAnswer == 'A') {
-								$sampleResult = self::FORM_RESULTS_A;
-								$productIdx = 0;
-								$selectedProducts[] = 1;
-								$selectedProducts[] = 0;
-							} elseif ($finalAnswer == 'B') {
-								$sampleResult = self::FORM_RESULTS_B;
-								$productIdx = 1;
-								$selectedProducts[] = 2;
-								$selectedProducts[] = 0;
-							} elseif ($finalAnswer == 'C') {
-								$sampleResult = self::FORM_RESULTS_C;
-								$productIdx = 2;
-								$selectedProducts[] = 3;
-								$selectedProducts[] = 0;
-							}
-
-							Session::set('selectedProducts', $selectedProducts);
-
-							//get page data
-							$pageData = $this->dataForPage($sampleResult);
-							
-							//get background image
-							$backgroundImage = safeArrayValue('background_image', $pageData);
-
-							//get products
-							$products = Product::where('available', true)->get();
-
-							return View::make('belif::pages.results')->with(Array (
-								'pageName' => 'results',
-								'pageData' => $pageData,
-								'products' => $products,
-								'productIdx' => $productIdx,
-								'backgroundImage' => $backgroundImage,
-								'headerLogoUrl' => $this->header_logo_url_white,
-								'restartURL' => route('belif.tryagain'),
-								'sampleResult' => $sampleResult
-							));
-						}
-					    */
 					}
-					//move to next question
+					// move to next question
 					else {
 						return Redirect::route('belif.question');
 					}
 					
 				}
 				
-				//question not answered
+				// question not answered
 				return Redirect::back();
 			
-			} //end if (valid question id)
+			} // end if (valid question id)
 			
-			//no question specified
+			// no question specified
 			return Redirect::route('belif.home');
 			
 		} //end postAnswer()
 		
 		public function getResults()
         {
-			$answers = Session::get('answers');
+            $answers = Session::get('answers');
 
-			$step4a = ['C','C','B','B','B','C','X']; // 2020
-			$step4b = ['A','A','A','A','A','B','X']; // THROWBACK
-            $step4c = ['B','B','C','C','C','A','X']; // VINTAGE
-
-			$step4aCount = $step4bCount = $step4cCount = $idx = 0;
-
-			foreach ($answers as $answer) {
-				if ($answer == $step4a[$idx]) {
-					$step4aCount++;
-				}
-				if ($answer == $step4b[$idx]) {
-					$step4bCount++;
-				}
-                if ($answer == $step4c[$idx]) {
-                    $step4cCount++;
+            $sampleCount = 0;
+            foreach($answers as $answer) {
+                if ($answer == 'A') {
+                    $sampleCount++;
                 }
-				$idx++;
-			}
+            }
 
-			$answerCounts = [
-				'A' => $step4aCount,
-				'B' => $step4bCount,
-                'C' => $step4cCount
-			];
-			
-			$finalAnswer = array_search(max($answerCounts),$answerCounts);
+            $sampleResult = self::FORM_RESULTS_A;
+            $resultImage = 'results_a';
+
+            if ($sampleCount == 0) { // 0
+                $sampleResult = self::FORM_RESULTS_A;
+                $resultImage = 'results_a';
+            } elseif ($sampleCount == 3) { // 3
+                $sampleResult = self::FORM_RESULTS_B;
+                $resultImage = 'results_b';
+            } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == '') { // 1
+                $sampleResult = self::FORM_RESULTS_C;
+                $resultImage = 'results_c';
+            } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'F') { // 1
+                $sampleResult = self::FORM_RESULTS_D;
+                $resultImage = 'results_d';
+            } elseif ($answers[1] == 'F' && $answers[2] == 'F' && $answers[3] == 'A') { // 1
+                $sampleResult = self::FORM_RESULTS_E;
+                $resultImage = 'results_e';
+            } elseif ($answers[1] == 'A' && $answers[2] == 'A' && $answers[3] == 'F') { // 2
+                $sampleResult = self::FORM_RESULTS_F;
+                $resultImage = 'results_f';
+            } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'A') { // 2
+                $sampleResult = self::FORM_RESULTS_G;
+                $resultImage = 'results_g';
+            } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'A') { // 2
+                $sampleResult = self::FORM_RESULTS_H;
+                $resultImage = 'results_h';
+            }
 
             // store email
             $email = Session::get('email');
@@ -274,14 +230,28 @@
             $user = User::where('email', $email)->first();
 
             // save result for later
-            $user->answers = $finalAnswer;
+            $user->answers = implode(',', $answers);
             $user->all_answers = implode(',', $answers);
             $user->save();
 
-            // send verify email
-            $this->sendVerifyEmail($user);
+            //get page data
+            $pageData = $this->dataForPage($sampleResult);
 
-            return Redirect::route('belif.verify');
+            //get background image
+            $backgroundImage = safeArrayValue('background_image', $pageData);
+
+            //get products
+            $products = Product::where('available', true)->get();
+
+            return View::make('belif::pages.results')->with(Array (
+                'pageName' => 'results',
+                'pageData' => $pageData,
+                'backgroundImage' => $backgroundImage,
+                'headerLogoUrl' => $this->header_logo_url_white,
+                'restartURL' => route('belif.tryagain'),
+                'sampleResult' => $sampleResult,
+                'resultImage' => $resultImage
+            ));
 
 		} //end getResults()
 			

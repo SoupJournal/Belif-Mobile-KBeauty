@@ -25,6 +25,9 @@ class BaseController extends Controller
     const FORM_RESULTS_C = 'page_results_c';
     const FORM_RESULTS_D = 'page_results_d';
     const FORM_RESULTS_E = 'page_results_e';
+    const FORM_RESULTS_F = 'page_results_f';
+    const FORM_RESULTS_G = 'page_results_g';
+    const FORM_RESULTS_H = 'page_results_h';
     const FORM_PRODUCTS = 'page_products';
     const FORM_ADDRESS = 'page_address';
     const FORM_VERIFY = 'page_verify';
@@ -63,7 +66,7 @@ class BaseController extends Controller
     const EMAIL_SUBJECT_PLAYLIST = "A gift from us!";
 
     //number of questions
-    private $numberOfQuestions = 7;
+    private $numberOfQuestions = 3;
 
     public function __construct()
     {

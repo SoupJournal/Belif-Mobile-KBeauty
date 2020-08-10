@@ -7,8 +7,25 @@
 .page-image {
 	display: inline-block;
 	position: relative;
-  	width: 100%;
+	width: 100%;
 	height: auto;
+	top: 10px;
+}
+
+.question-image {
+	display: inline-block;
+	position: relative;
+	width: 90%;
+	height: auto;
+	top: 10px;
+}
+
+.countdown-image {
+	position: absolute;
+	width: 40%;
+	height: auto;
+	left: 10px;
+	top: 20px;
 }
 
 /*
@@ -126,21 +143,45 @@
 	background-color: rgba(27, 148, 224, 1.0);
 	border: none;
 	border-radius: 2vw;
-	background-image: url('https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/aqua_default_icon.png');
+	/*background-image: url('https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/aqua_default_icon.png');*/
 	background-color: transparent;
   	background-size: 30px 40px;
     background-position: 7% center;
     background-repeat: no-repeat;
 }
 
-.answer-box:active, .answer-box:hover {
-	background-color: rgba(41, 211, 249, 1.0);
-	background-image: url('https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/aqua_drop_icon.png');
-	background-color: transparent;
-  	background-size: 30px 40px;
-    background-position: 7% center;
-    background-repeat: no-repeat;
+.answer-location-1 {
+	position: absolute;
+	top: 80%;
+	right: 0;
+	width: 100px;
+	height: 100px;
 }
+
+.answer-location-2 {
+	position: absolute;
+	top: 15%;
+	left: 25%;
+	width: 100px;
+	height: 100px;
+}
+
+.answer-location-3 {
+	position: absolute;
+	top: 35%;
+	left: 30%;
+	width: 100px;
+	height: 100px;
+}
+
+/*.answer-box:active, .answer-box:hover {*/
+/*	background-color: rgba(41, 211, 249, 1.0);*/
+/*	background-image: url('https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/aqua_drop_icon.png');*/
+/*	background-color: transparent;*/
+/*  	background-size: 30px 40px;*/
+/*    background-position: 7% center;*/
+/*    background-repeat: no-repeat;*/
+/*}*/
 
 .answer-box h3 {
 	width: 100%;
@@ -224,10 +265,14 @@
 	margin: 0 15px;
 }
 
+.guide-block-image {
+	position: relative;
+	top: -35px;
+}
 
 .guide-text {
 	padding: 2% 4%;
-	font-size: 3vw;
+	font-size: 4vw;
 	font-weight: bold;
 }
 
@@ -403,6 +448,7 @@
 	padding-top: 3.2vw;	
 	padding-bottom: 3.2vw;
 	border: none;
+	text-transform: uppercase;
 }
 
 .button-page-cancel {
