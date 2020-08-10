@@ -54,7 +54,7 @@
 		
 		<div class="spacer-medium"></div>
 	
-		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-2 color-13 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
+		<a href="{{ $buttonNo }}" class="button-page button-next bg-color-14 color-2 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank">
 			{{ $button }} <div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram.png" width="16" /></div>
 		</a>
 
