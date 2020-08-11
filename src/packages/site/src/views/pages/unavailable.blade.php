@@ -50,7 +50,7 @@
 		<div class="spacer-medium"></div>
 
 		{{-- info --}}
-		<div class="no-margins size-6 color-2 font-3">{!! $text !!}</div>
+		<div class="no-margins size-6 color-2 font-3 stroke">{!! $text !!}</div>
 		
 		<div class="spacer-medium"></div>
 	
