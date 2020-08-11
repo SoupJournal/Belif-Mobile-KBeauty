@@ -253,13 +253,13 @@ class MainController extends BaseController implements CMSTrigger {
 
     public function postAddress() {
 
-        //get user email
+        // get user email
         $email = Session::get('email');
 
-        //valid email
-        if ($email && strlen($email)>0 && validEmail($email)) {
+        // valid email
+        if ($email && strlen($email) > 0 && validEmail($email)) {
 
-            //get form values
+            // get form values
             $name = safeArrayValue('name', $_POST, null);
             $address1 = safeArrayValue('address_1', $_POST, null);
             $address2 = safeArrayValue('address_2', $_POST, null);
@@ -267,87 +267,90 @@ class MainController extends BaseController implements CMSTrigger {
             $stateId = safeArrayValue('state', $_POST, null);
             $zipCode = safeArrayValue('zip_code', $_POST, null);
 
-            //trim strings
+            // trim strings
             $address1 = $address1 ? trim($address1) : null;
             $city = $city ? trim($city) : null;
 
-            //get sample product
-            $products = $this->getSelectedProducts();
+            // get sample product
+            // $products = $this->getSelectedProducts();
 
-            //get state
+            // get state
             $states = availableStates();
             $state = (is_numeric($stateId) && $stateId>=0 && $states && $stateId<count($states)) ? $states[$stateId] : null;
 
-            //find ip address
+            // find ip address
             $ipAddress = retrieveIPAddress();
 
-            //get current answers
-            $answers = Session::get('answers');
-            $answersJSON = null;
-            if ($answers) {
+            // get current answers
+            // $answers = Session::get('answers');
+            // $answersJSON = null;
+            // if ($answers) {
 
-                //get questions
-                $questions = Question::select('id')
-                                ->orderBy('order')
-                                ->orderBy('id')
-                                ->get();
+            //     //get questions
+            //     $questions = Question::select('id')
+            //                     ->orderBy('order')
+            //                     ->orderBy('id')
+            //                    ->get();
+            //
+            //     //compile array (reference questions by Id)
+            //     $referencedArray = [];
+            //     for ($i=0; $i<count($questions) && $i<=count($answers); ++$i) {
+            //
+            //         $qId = safeObjectValue('id', $questions[$i], -1);
+            //         $referencedArray[$qId] = $answers[$i+1];
+            //
+            //     } //end for()
+            //
+            //     try {
+            //         $answersJSON = json_encode($referencedArray);
+            //     }
+            //     catch (Exception $ex) {
+            //         //error processing JSON
+            //     }
+            // }
 
-                //compile array (reference questions by Id)
-                $referencedArray = [];
-                for ($i=0; $i<count($questions) && $i<=count($answers); ++$i) {
-
-                    $qId = safeObjectValue('id', $questions[$i], -1);
-                    $referencedArray[$qId] = $answers[$i+1];
-
-                } //end for()
-
-                try {
-                    $answersJSON = json_encode($referencedArray);
-                }
-                catch (Exception $ex) {
-                    //error processing JSON
-                }
-            }
-
-            //form validation
+            // form validation
             $valid = true;
-            //email exists
-            if (!$name || strlen(trim($name))<=0) {
+
+            // valid name
+            if (!$name || strlen(trim($name)) <= 0) {
                 $errors = 'Please specify your name.';
                 $valid = false;
             }
 
-            //valid address
+            // valid address
             //if ($valid && (!$address1 || !$address2 || strlen(trim($address1))<=0 || strlen(trim($address2))<=0)) {
-            if ($valid && (!$address1 || strlen(trim($address1))<=0)) {
+            if ($valid && (!$address1 || strlen(trim($address1)) <= 0)) {
                 $errors = 'Please specify your full address.';
                 $valid = false;
             }
+
             //valid city
-            if ($valid && (!$city || strlen(trim($city))<=0)) {
+            if ($valid && (!$city || strlen(trim($city)) <= 0)) {
                 $errors = 'Please specify your city.';
                 $valid = false;
             }
 
             //valid state
-            if ($valid && (!$state || strlen(trim($state))<=0)) {
+            if ($valid && (!$state || strlen(trim($state)) <= 0)) {
                 $errors = 'Please specify your state.';
                 $valid = false;
             }
 
             //valid zip code
-            if ($valid && (!$zipCode || strlen(trim($zipCode))<=0)) {
+            if ($valid && (!$zipCode || strlen(trim($zipCode)) <= 0)) {
                 $errors = 'Please specify your zip code.';
                 $valid = false;
             }
-            else if ($valid && (strlen(trim($zipCode))!=5 || intval($zipCode)<=0)) {
-                $errors = 'Please specify a vaild zip code.';
+            else if ($valid && (strlen(trim($zipCode)) != 5 || intval($zipCode) <= 0)) {
+                $errors = 'Please specify a valid zip code.';
                 $valid = false;
             }
-            //check for existing addresses
+
+            // check for existing addresses
             if ($valid) {
 
-                //check for existing addresses
+                // check for existing addresses
                 $addressUsers = User::where('email_verified', '=', true)
                         ->where('state', '=', $state)
                         ->where('zip_code', '=', $zipCode)
@@ -355,57 +358,55 @@ class MainController extends BaseController implements CMSTrigger {
                         ->where('address_1', 'like', $address1)
                         ->count();
 
-                //address used too many times
-                if ($addressUsers>=4) {
+                // address used too many times
+                if ($addressUsers >= 4) {
                     $errors = 'This address has already claimed samples. Please use a valid address.';
                     $valid = false;
                 }
 
             }
 
-            //valid form
+            // valid form
             if ($valid) {
 
-                //ensure user doesn't already exist
+                // ensure user doesn't already exist
                 $user = User::where('email', $email)->first();
                 if ($user) {
 
                     //user already verified
                     if ($user->email_verified) {
 
-                        //TODO: show separate error page
-
-                        //show error
+                        // show error
                         $errors = 'Sorry, it looks like your email address has already been used to register';
 
-                        //indicate error
+                        // indicate error
                         return Redirect::back()
                             ->withInput()
                             ->withErrors($errors);
                     }
                 }
-                //new user
+                // new user
                 else {
 
-                    //create user
+                    // create user
                     $user = new User();
 
                 }
 
-                //valid user
+                // valid user
                 if ($user) {
 
-                    //get products
-                    $product1 = null;
-                    $product2 = null;
-                    if ($products && count($products)>0) {
-                        $product1 = $products[0];
-                        if (count($products)>1) {
-                            $product2 = $products[1];
-                        }
-                    }
+                    // get products
+                    // $product1 = null;
+                    // $product2 = null;
+                    // if ($products && count($products)>0) {
+                    //     $product1 = $products[0];
+                    //     if (count($products)>1) {
+                    //         $product2 = $products[1];
+                    //     }
+                    // }
 
-                    //update user details
+                    // update user details
                     $user->name = $name;
                     $user->email = $email;
                     $user->address_1 = $address1;
@@ -414,14 +415,14 @@ class MainController extends BaseController implements CMSTrigger {
                     $user->state = $state;
                     $user->zip_code = $zipCode;
                     $user->ip_address = $ipAddress;
-                    $user->product_1 = $product1;
-                    $user->product_2 = $product2;
-                    $user->answers = $answersJSON;
+                    // $user->product_1 = $product1;
+                    // $user->product_2 = $product2;
+                    // $user->answers = $answersJSON;
 
-                    //save user details
+                    // save user details
                     if (!$user->save()) {
 
-                        //show error
+                        // show error
                         $errors = 'Sorry, it looks like we had a problem processing your details';
 
                         //indicate error
@@ -429,58 +430,54 @@ class MainController extends BaseController implements CMSTrigger {
                             ->withInput()
                             ->withErrors($errors);
                     }
-
-                    //saved details
+                    // saved details
                     else {
-                        //send verification email
+                        // send verification email
                         $this->sendVerifyEmail($user);
                     }
 
                 }
 
-                //show verify page
+                // show verify page
                 return Redirect::route('belif.verify');
 
             }
-            //invalid form
+            // invalid form
             else {
                 return Redirect::back()
                             ->withInput()
                             ->withErrors($errors);
             }
 
-        } //end if (valid question id)
+        } // end if (valid question id)
 
 
-        //no email specified
+        // no email specified
         return Redirect::route('belif.home');
-
 
     } //end postAddress()
 
     public function getVerify() {
 
-        //get page data
+        // get page data
         $pageData = $this->dataForPage(self::FORM_VERIFY);
 
-        //get background image
+        // get background image
         $backgroundImage = safeArrayValue('background_image', $pageData);
 
-        //render view
+        // render view
         return View::make('belif::pages.verify')->with(Array (
             'pageName' => 'verify',
             'pageData' => $pageData,
             'backgroundImage' => $backgroundImage,
-            'headerLogoUrl' => $this->header_logo_url_white,
-            //'backURL' => route('belif.verify'),
-            //'buttonURL' => route('belif.share')
+            'headerLogoUrl' => $this->header_logo_url_white
         ));
 
     } //end getVerify()
 
     public function getReverify() {
 
-        //get session email
+        // get session email
         $email = Session::get('email');
         if ($email && strlen($email) > 0) {
             //get user details
@@ -488,69 +485,66 @@ class MainController extends BaseController implements CMSTrigger {
             $this->sendVerifyEmail($user);
         }
 
-        //get page data
+        // get page data
         $pageData = $this->dataForPage(self::FORM_VERIFY);
 
-        //get background image
+        // get background image
         $backgroundImage = safeArrayValue('background_image', $pageData);
 
-        //render view
+        // render view
         return View::make('belif::pages.verify')->with(Array (
             'pageName' => 'reverify',
             'pageData' => $pageData,
             'backgroundImage' => $backgroundImage,
             'headerLogoUrl' => $this->header_logo_url_white,
-            //'backURL' => route('belif.verify'),
-            //'buttonURL' => route('belif.share'),
             'verifyEmail' => $user->email
         ));
 
-    } //end getReverify()
+    } // end getReverify()
 
     public function getConfirm() {
 
-        //get verification code
+        // get verification code
         $code = safeArrayValue('code', $_GET, null);
 
-        //valid code
+        // valid code
         if ($code && strlen($code)>0) {
 
-            //validate code
+            // validate code
             $user = User::where('verify_code', '=', $code)->first();
             if ($user) {
 
-                //store user
+                // store user
                 Session::set('userId', $user->id);
 
 
-                //user already shared
+                // user already shared
                 if ($user->shared_email && strlen($user->shared_email)>0) {
 
-                    //ensure email is considered verified
+                    // ensure email is considered verified
                     if (!$user->email_verified) {
                         $user->email_verified = true;
                         $user->save();
                     }
 
-                    //jump to thanks page
+                    // jump to thanks page
                     return Redirect::route('belif.share', ['code' => $code]);
 
                 }
-
-                //verify code
+                // verify code
                 else {
 
-                    //indicate email is verified
+                    // indicate email is verified
                     $user->email_verified = true;
                     $user->save();
 
-                    //get page data
+                    // get page data
                     $pageData = $this->dataForPage(self::FORM_CONFIRM);
 
-                    //get background image
+                    // get background image
                     $backgroundImage = safeArrayValue('background_image', $pageData);
 
-                    //render view
+                    // render view
                     return View::make('belif::pages.confirm')->with(Array (
                         'pageName' => 'share',
                         'pageData' => $pageData,
@@ -572,34 +566,33 @@ class MainController extends BaseController implements CMSTrigger {
 
     public function getShare() {
 
-        //get verification code
+        // get verification code
         $code = safeArrayValue('code', $_GET, null);
 
-        //valid code
+        // valid code
         if ($code && strlen($code)>0) {
 
-            //validate code
+            // validate code
             $user = User::where('verify_code', '=', $code)->first();
             if ($user) {
 
-                //store user
+                // store user
                 Session::set('userId', $user->id);
 
-                //user already shared
+                // user already shared
                 if ($user->shared_email && strlen($user->shared_email)>0) {
 
-                    //ensure email is considered verified
+                    // ensure email is considered verified
                     if (!$user->email_verified) {
                         $user->email_verified = true;
                         $user->save();
                     }
 
-                    //jump to thanks page
+                    // jump to thanks page
                     return Redirect::route('belif.thanks');
 
                 }
-
-                //verify code
+                // verify code
                 else {
 
                     if (!$user->email_verified) {
@@ -609,33 +602,32 @@ class MainController extends BaseController implements CMSTrigger {
 
                         $finalAnswer = $user->answers;
 
-                        switch ($finalAnswer) {
-                            case 'A':
-                                $this->sendPlaylistEmail($user, 'twenty');
-                                break;
-                            case 'B':
-                                $this->sendPlaylistEmail($user, 'throwback');
-                                break;
-                            case 'C':
-                                $this->sendPlaylistEmail($user, 'vintage');
-                                break;
-                        }
+//                        switch ($finalAnswer) {
+//                            case 'A':
+//                                $this->sendPlaylistEmail($user, 'twenty');
+//                                break;
+//                            case 'B':
+//                                $this->sendPlaylistEmail($user, 'throwback');
+//                                break;
+//                            case 'C':
+//                                $this->sendPlaylistEmail($user, 'vintage');
+//                                break;
+//                        }
                     }
 
-                    //get page data
+                    // get page data
                     $pageData = $this->dataForPage(self::FORM_SHARE);
 
-                    //get background image
+                    // get background image
                     $backgroundImage = safeArrayValue('background_image', $pageData);
 
-                    //render view
+                    // render view
                     return View::make('belif::pages.share')->with(Array (
                         'pageName' => 'share',
                         'pageData' => $pageData,
                         'backgroundImage' => $backgroundImage,
                         'headerLogoUrl' => $this->header_logo_url_white,
-//                        'backURL' => route('belif.confirm', ['code' => $code]),
-                        'formURL' => route('belif.share.submit'),
+                        'formURL' => route('belif.share.submit')
                     ));
 
                 }
@@ -661,16 +653,16 @@ class MainController extends BaseController implements CMSTrigger {
             $valid = true;
             $errors = null;
 
-            //get form values
+            // get form values
             $email = safeArrayValue('email', $_POST);
 
-            //email exists
+            // email exists
             if (!$email || strlen(trim($email))<=0) {
                 $errors = 'Please specify an email address.';
                 $valid = false;
             }
 
-            //valid email
+            // valid email
             else if (!validEmail($email)) {
                 $errors = 'Please specify a valid email address.';
                 $valid = false;
@@ -679,37 +671,37 @@ class MainController extends BaseController implements CMSTrigger {
             //valid form
             if ($valid) {
 
-                //if user hasn't already sent share email
-                if (!$user->shared_email || strlen($user->shared_email)==0) {
+                // if user hasn't already sent share email
+                if (!$user->shared_email || strlen($user->shared_email) == 0) {
 
-                    //determine if email should be sent
+                    // determine if email should be sent
                     $sendMail = true;
 
-                    //check if shared email is already a user (avoid sending emails to unsubscribed users)
+                    //c heck if shared email is already a user (avoid sending emails to unsubscribed users)
                     $sharedUser = User::where('email', '=', $email)->first();
                     if ($sharedUser) {
 
-                        //user has unsubscribed - do not send them an email
+                        // user has unsubscribed - do not send them an email
                         if ($sharedUser->unsubscribed) {
                             $sendMail = false;
                         }
                     }
-                    //new user
+                    // new user
                     else {
 
-                        //create user
+                        // create user
                         $sharedUser = new User();
                         $sharedUser->email = $email;
                         $sharedUser->save();
 
                     }
 
-                    //send email
+                    // send email
                     if ($sendMail) {
                         $this->sendShareEmail($user, $sharedUser);
                     }
 
-                    //store friends email
+                    // store friends email
                     $user->shared_email = $email;
                     $user->save();
 

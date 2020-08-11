@@ -69,14 +69,14 @@ Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['
 					Route::post('/product', ['as' => 'belif.product.submit', 'uses' => 'ProductController@postProduct']);
 
 
-					//ensure product samples have been selected
-					Route::group(array('middleware' => 'ProductRequired'), function() {
+					// ensure product samples have been selected
+					// Route::group(array('middleware' => 'ProductRequired'), function() {
 
 						//address
 						Route::get('/address', ['as' => 'belif.address', 'uses' => 'MainController@getAddress']);
 						Route::post('/address', ['as' => 'belif.address', 'uses' => 'MainController@postAddress']);
 
-					});
+					// });
 
 					//verfication
 					Route::get('/verify', ['as' => 'belif.verify', 'uses' => 'MainController@getVerify']);

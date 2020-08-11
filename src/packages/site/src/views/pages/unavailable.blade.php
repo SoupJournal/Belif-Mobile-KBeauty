@@ -42,7 +42,7 @@
 
 		{{-- image --}}
 		@if ($image && strlen($image)>0) 
-			<div>
+			<div	>
 				<img src="{{ $image }}" class="page-image" load-style="fade" load-group="page">
 			</div>
 		@endif

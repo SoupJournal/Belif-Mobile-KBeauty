@@ -39,16 +39,16 @@
 
 {{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
 
-	<div class="page-padding-small">
+	<div class="page-padding-tiny">
 	
-		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
 		{{-- title --}}
-		<div class="no-margins size-6 color-2 font-3">{!! $title !!}</div>
+		<div class="no-margins size-7 color-2 font-3 stroke">{!! $title !!}</div>
 	
 		<div class="spacer-small"></div>
 
-		<div class="no-margins size-4 color-2 font-9">{!! $subtitle !!}</div>
+		<div class="no-margins size-4 color-14 font-9">{!! $subtitle !!}</div>
 		
 		<div class="spacer-small"></div>
 
@@ -62,7 +62,7 @@
 		{{-- enter email --}}
 		<div class="form-group page-padding-small"> 
 		
-			{{ Form::email('email', null, Array ('placeholder' => 'Yourfriend@email.com', 'class' => 'page-input-text color-2', 'tabindex' => '1')) }}
+			{{ Form::email('email', null, Array ('placeholder' => 'Yourfriend@email.com', 'class' => 'page-input-text color-1', 'tabindex' => '1')) }}
 			
 		</div>
 	
@@ -72,18 +72,16 @@
 	            <div class='bg-danger alert'>{{ $error }}</div>
 	        @endforeach
 	    @else
-	   	 	<div class="spacer-small-2"></div>
+			<div class="spacer-small"></div>
 	    @endif
 
-		<div class="spacer-small"></div>
-
 		{{-- submit button --}}
-		<button class="button-page bg-color-2 color-13 font-3" label="{{ $button }}">
+		<button class="button-page bg-color-14 color-2 font-3" label="{{ $button }}">
 			{{ $button }}
 		</button>
 
 		{{-- Re-verify button --}}
-		<a href="{{ route('belif.thanks') }}" class="button-page color-2">
+		<a href="{{ route('belif.thanks') }}" class="color-14">
 			<h4 class="button-link">{{ $buttonNo }}</h4>
 		</a>
 		

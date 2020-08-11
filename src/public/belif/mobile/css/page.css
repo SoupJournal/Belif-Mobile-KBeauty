@@ -588,7 +588,7 @@ a.no-underline-highlight:hover {
 	width: 100%;
 	text-align: left;
 	background-color: transparent;
-	border: 0.5vw solid #fff;
+	border: 0.5vw solid #86dbe4;
 /*	border-radius: 5px; */
 	/*-webkit-appearance: none;*/
 /*	border-color: transparent; */
@@ -596,21 +596,21 @@ a.no-underline-highlight:hover {
 
 /* adjust input placeholder text */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-   color: #ffffff !important;
+   color: #000000 !important;
 }
 :-moz-placeholder {  /* Mozilla Firefox 4 to 18 */
-   color: #ffffff !important;
+   color: #000000 !important;
    opacity: 1;
 }
 ::-moz-placeholder {  /* Mozilla Firefox 19+ */
-   color: #ffffff !important;
+   color: #000000 !important;
    opacity: 1;
 }
 :-ms-input-placeholder {  /* Internet Explorer 10-11 */
-   color: #ffffff !important;
+   color: #000000 !important;
 }
 ::-ms-input-placeholder {  /* Microsoft Edge */
-   color: #ffffff !important;
+   color: #000000 !important;
    opacity: 1;
 }
 

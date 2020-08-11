@@ -54,7 +54,7 @@
 
 		@else
 
-		<a href="/verify" class="button-page button-next bg-color-14 color-2 font-3" innerclass="color-2" label="{{ $button }}">
+		<a href="/address" class="button-page button-next bg-color-14 color-2 font-3" innerclass="color-2" label="{{ $button }}">
 			{{ $button }}
 		</a>
 

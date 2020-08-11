@@ -39,7 +39,7 @@
 	
 			<div class="spacer-medium"></div>
 			
-			<div class="no-margins size-9 color-2 font-3 stroke">{!! $title !!}</div>
+			<div class="no-margins size-7 color-2 font-3 stroke">{!! $title !!}</div>
 
 			<div class="guide-block-image">
 				<img src="{!! $image !!}" class="page-image" />

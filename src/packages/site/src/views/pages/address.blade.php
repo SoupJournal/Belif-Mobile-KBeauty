@@ -34,16 +34,13 @@
 <div class="text-center page-padding">
 	
 	{{ Form::open(Array('role' => 'form', 'name' => 'addressForm', 'url' => $formURL)) }}
-	
+
 	<div class="page-padding-tiny">
 
-		<div class="spacer-large"></div>
-	
-		{{-- title --}}
-		<h2 class="no-margins title-bold medium color-1">{!! $title !!}</h2>
-	
-		<div class="spacer-large"></div>
+		<div class="spacer-medium"></div>
 
+		<div class="no-margins size-6 color-2 font-3 stroke">{!! $title !!}</div>
+	
 		<div class="page-padding-medium">
 
 			{{-- name --}}
@@ -89,11 +86,11 @@
 		        @endforeach
 		        
 		    @else
-		        <div class="spacer-large">
+				<div class="spacer-small"></div>
 		    @endif
 			
 			{{-- submit button --}}
-			<button class="button-page button-next bg-color-1 color-2 font-3" label="{{ $button }}">
+			<button class="button-page button-next bg-color-14 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</button>
 
