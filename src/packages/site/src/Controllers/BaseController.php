@@ -305,31 +305,31 @@ class BaseController extends Controller
                 switch ($user->answers) {
                     case 'A,A,A':  // aqua bomb, aqua bomb makeup removing, aqua bomb aloe vera
                         $answers = 1;
-                        $answerText = 'You will be receiving FREE samples of our Aqua<br/>Bomb Makeup Removing Cleansing Balm, Aqua<br/>Bomb, and Aqua Bomb Aloe Vera!';
+                        $answersText = 'You will be receiving FREE samples of our Aqua<br/>Bomb Makeup Removing Cleansing Balm, Aqua<br/>Bomb, and Aqua Bomb Aloe Vera!';
                         break;
                     case 'F,A,F': // aqua bomb makeup removing
                         $answers = 2;
-                        $answerText = 'You will be receiving a FREE sample of our NEW<br/>Aqua Bomb Makeup Removing Cleansing Balm!';
+                        $answersText = 'You will be receiving a FREE sample of our NEW<br/>Aqua Bomb Makeup Removing Cleansing Balm!';
                         break;
                     case 'A,A,F': // aqua bomb, aqua bomb makeup removing
                         $answers = 3;
-                        $answerText = 'You will be receiving FREE samples of Aqua<br/>Bomb Makeup Removing Cleansing Balm,<br/>and Aqua Bomb moisturizer!';
+                        $answersText = 'You will be receiving FREE samples of Aqua<br/>Bomb Makeup Removing Cleansing Balm,<br/>and Aqua Bomb moisturizer!';
                         break;
                     case 'F,A,A': // aqua bomb makeup removing, aqua bomb aloe vera
                         $answers = 4;
-                        $answerText = 'You will be receiving FREE samples of our NEW<br/>Aqua Bomb Makeup Removing Cleansing Balm,<br/>and Aqua Bomb Aloe Vera!';
+                        $answersText = 'You will be receiving FREE samples of our NEW<br/>Aqua Bomb Makeup Removing Cleansing Balm,<br/>and Aqua Bomb Aloe Vera!';
                         break;
                     case 'A,F,A':  // aqua bomb, aqua bomb aloe vera
                         $answers = 5;
-                        $answerText = 'You will be receiving FREE samples of Aqua<br/>Bomb and Aqua Bomb Aloe Vera!';
+                        $answersText = 'You will be receiving FREE samples of Aqua<br/>Bomb and Aqua Bomb Aloe Vera!';
                         break;
                     case 'A,F,F': // aqua bomb
                         $answers = 6;
-                        $answerText = 'You will be receiving a FREE sample of our<br/>bestselling Aqua Bomb moisturizer!';
+                        $answersText = 'You will be receiving a FREE sample of our<br/>bestselling Aqua Bomb moisturizer!';
                         break;
                     case 'F,F,A': // aqua bomb aloe vera
                         $answers = 7;
-                        $answerText = 'You will be receiving a FREE sample of our<br/>Aqua Bomb Aloe Vera moisturizer!';
+                        $answersText = 'You will be receiving a FREE sample of our<br/>Aqua Bomb Aloe Vera moisturizer!';
                         break;
                 }
 
