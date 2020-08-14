@@ -44,7 +44,7 @@
 
 	<div class="no-margins size-4 color-14 font-7">{!! $subtitle !!}</div>
 
-	<div class="no-margins"><img src="{!! $image !!}" class="page-image" /></div>
+	<div class="no-margins"><img src="{!! $image !!}" class="page-image-email" /></div>
 
 	<div class="spacer-small"></div>
 

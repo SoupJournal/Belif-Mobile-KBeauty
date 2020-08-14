@@ -12,6 +12,14 @@
 	top: 10px;
 }
 
+.page-image-email {
+	display: inline-block;
+	position: relative;
+	width: 90%;
+	height: auto;
+	top: 10px;
+}
+
 .question-image {
 	display: inline-block;
 	position: relative;
