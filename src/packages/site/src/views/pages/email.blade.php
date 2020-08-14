@@ -43,15 +43,15 @@
 	{{-- title --}}
 	<div class="no-margins size-9 color-2 font-3 stroke">{!! $title !!}</div>
 
-	<div class="spacer-small"></div>
+{{--	<div class="spacer-small"></div>--}}
 
 	<div class="no-margins size-4 color-14 font-5">{!! $subtitle !!}</div>
 
-	<div class="spacer-small"></div>
+{{--	<div class="spacer-small"></div>--}}
 
 	<div class="no-margins size-4 color-2 font-5"><img src="{!! $image !!}" class="page-image" /></div>
 
-	<div class="spacer-small"></div>
+{{--	<div class="spacer-small"></div>--}}
 
 	<div class="no-margins size-4 color-2 font-5">{!! $html !!}</div>
 
