@@ -52,18 +52,12 @@
 			</div>
 
 			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
-			<div class="spacer-large"></div>
-
-			<div class="spacer-small"></div>
 
 			{{-- next button --}}
 			<a href="{{ $buttonURL }}" class="button-page bg-color-14 color-2 font-3" label="{{ $button }}">
 				{{ $button }}
 			</a>
 
-			<div class="spacer-medium"></div>
-					
 		</div>
 
 	</div>
