@@ -211,7 +211,7 @@
 													<td bgcolor="#ff76a7" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:12px; line-height:18px; font-weight: bold; letter-spacing:-0.4px; word-spacing: -0.2px;">We'll send you an email once<br/>the sample has been shipped!</td>
 												</tr>
 												<tr>
-													<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqualand_products.png" width="150px" /></td>
+													<td align="center"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqualand_products.png" width="200" /></td>
 												</tr>
 												</tbody>
 											</table>
@@ -232,11 +232,11 @@
 									</tr>
 									<tr>
 										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; text-align: right; font-family:{{ $fontDefinitions }};">
-											<a href="https://belifusa.com" style="color: #fff; font-style: italic;">belifusa.com</a>
+											<a href="https://belifusa.com" style="color: #fff; font-style: italic; text-decoration: none;">belifusa.com</a>
 										</td>
 										<td style="width: 10%;">&nbsp;</td>
 										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; text-align: left; font-family:{{ $fontDefinitions }};">
-											<a href="#" style="color: #fff; font-style: italic;">belif at sephora</a>
+											<a href="#" style="color: #fff; font-style: italic; text-decoration: none;">belif at sephora</a>
 										</td>
 									</tr>
 									<tr>
