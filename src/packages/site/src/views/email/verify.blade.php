@@ -71,7 +71,7 @@
 										</tr>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-												<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_confirm_bg.png') no-repeat left 80px;">
+												<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/squirt-right.png') no-repeat left 80px;">
 													<tr>
 														<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="30"></td>
 													</tr>
