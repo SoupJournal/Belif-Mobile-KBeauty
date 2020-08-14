@@ -210,6 +210,9 @@
 												<tr>
 													<td bgcolor="#ff76a7" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:12px; line-height:18px; font-weight: bold; letter-spacing:-0.4px; word-spacing: -0.2px;">We'll send you an email once<br/>the sample has been shipped!</td>
 												</tr>
+												<tr>
+													<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqualand_products.png" width="150px" /></td>
+												</tr>
 												</tbody>
 											</table>
 										</td>
