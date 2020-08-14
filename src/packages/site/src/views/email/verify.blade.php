@@ -138,7 +138,7 @@
 														<tbody>
 															<tr>
 																<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-																<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:36px; font-weight:bold;">{!! $button !!}</td>
+																<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:24px; line-height:36px; font-weight:bold;">{!! $button !!}</td>
 																<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 															</tr>
 														</tbody>
@@ -147,14 +147,14 @@
 											</tr>
 											<tr>
 												<td height="367" style="border: 0; margin:0; padding: 0;">
-													<img src="{{ $productImage }}" width="100%" />
+													<img src="{{ $productImage }}" width="50%" />
 												</td>
 											</tr>
 											<tr>
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:18px;">{!! $text !!}</td>
 											</tr>
 											<tr>
-												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
+												<td height="300" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 										</tbody>
 									</table>
