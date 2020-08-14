@@ -63,7 +63,9 @@
 			</div>
 
 			<div class="question-text">
-			
+
+				<div class="spacer-tiny"></div>
+
 				<div class="no-margins font-3 size-4 color-2">{!! $question !!}</div>
 
 				<div class="spacer-small"></div>
