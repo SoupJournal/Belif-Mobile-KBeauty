@@ -127,7 +127,7 @@
 						<tr>
 							<td style="border: 0; margin: 0 ; padding: 0; text-align: center;" valign="top">
 								<div>
-									<table width="570" border="0" cellspacing="0" cellpadding="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/backgrounds/soothe_default.png') no-repeat top center;">
+									<table width="570" border="0" cellspacing="0" cellpadding="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/belif_Aqualand-Quiz_backgrounds_Page-1.jpg') no-repeat top center;">
 										<tbody>
 											<tr>
 												<td height="54" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
@@ -155,39 +155,6 @@
 											</tr>
 											<tr>
 												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
-											</tr>
-											<tr>
-												<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-													<table border="0" cellspacing="0" cellpadding="0" width="570px">
-														<tbody>
-														<tr>
-															<td>
-																<table border="0" cellspacing="0" cellpadding="0">
-																	<tbody>
-																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																	</tbody>
-																</table>
-															</td>
-															<td bgcolor="#1d5c58" style="border:0; margin:0; padding:10px 5px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:20px; font-weight:bold;"><a href="https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514" target="_blank" style="text-decoration: none; color:#ffffff;">Available at Sephora NOW!</a></td>
-															<td>
-																<table border="0" cellspacing="0" cellpadding="0">
-																	<tbody>
-																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																	<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																	</tbody>
-																</table>
-															</td>
-														</tr>
-														</tbody>
-													</table>
-												</td>
-											</tr>
-											<tr>
-												<td height="30" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
-											</tr>
-											<tr>
-												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:18px;">{!! $buttonCancel !!}</td>
 											</tr>
 										</tbody>
 									</table>
