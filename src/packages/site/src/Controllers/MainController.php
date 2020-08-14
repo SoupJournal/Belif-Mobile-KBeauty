@@ -325,7 +325,12 @@ class MainController extends BaseController implements CMSTrigger {
                 $valid = false;
             }
 
-            if ($valid && (preg_match('/^(?!.*(?:(.*((p|post)[-.\s]*(o|off|office)[-.\s]*(box|bin)[-.\s]*)|.*((p |post)[-.\s]*(box|bin)[-.\s]*)))).*$/i', $address1) !== FALSE)) {
+            // po box check
+            $poBoxPattern = '/^(?!.*(?:(.*((p|post)[-.\s]*(o|off|office)[-.\s]*(box|bin)[-.\s]*)|.*((p |post)[-.\s]*(box|bin)[-.\s]*)))).*$/i';
+            if (
+                (preg_match($poBoxPattern, $address1) === FALSE) ||
+                (preg_match($poBoxPattern, $address1) === 0)
+            ){
                 $errors = 'We cannot ship to PO Boxes';
                 $valid = false;
             }
