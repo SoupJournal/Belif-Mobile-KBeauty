@@ -100,7 +100,7 @@
 																			</tbody>
 																		</table>
 																	</td>
-																	<td style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:21px; line-height:21px; font-weight:bold; background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/confirm_button_bg.png') repeat-x center center;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
+																	<td style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; background: #ff76a7; font-size:21px; line-height:21px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
 																	<td>
 																		<table border="0" cellspacing="0" cellpadding="0">
 																			<tbody>
@@ -118,7 +118,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background: url('https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_verify_prize_bg.png') no-repeat bottom center #1d5c58; background-size: contain;">{!! $html !!}</td>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background: #01b9ff;">{!! $html !!}</td>
 										</tr>
 									</tbody>
 								</table>
@@ -210,7 +210,7 @@
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ff76a7" style="border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address1 }}</td>
+													<td bgcolor="#ffffff" style="border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address1 }}</td>
 												</tr>
 												</tbody>
 											</table>
@@ -224,7 +224,7 @@
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ff76a7" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address2 }}</td>
+													<td bgcolor="#ffffff" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address2 }}</td>
 												</tr>
 												</tbody>
 											</table>
@@ -238,7 +238,7 @@
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ff76a7" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
+													<td bgcolor="#ffffff" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
 												</tr>
 												</tbody>
 											</table>
@@ -252,7 +252,7 @@
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ff76a7" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">We'll send you an email once<br/>the sample have been shipped!</td>
+													<td bgcolor="#ff76a7" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">We'll send you an email once<br/>the sample has been shipped!</td>
 												</tr>
 												</tbody>
 											</table>
