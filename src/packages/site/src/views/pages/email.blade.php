@@ -46,7 +46,7 @@
 
 	<div class="no-margins"><img src="{!! $image !!}" class="page-image-email" /></div>
 
-	<div class="spacer-small"></div>
+	<div class="spacer-large"></div>
 
 	<div class="no-margins size-4 color-2 font-7">{!! $html !!}</div>
 
@@ -62,8 +62,6 @@
 		@foreach ($errors->all() as $error)
 			<div class='bg-danger alert'>{{ $error }}</div>
 		@endforeach
-	@else
-		<div class="spacer-small"></div>
 	@endif
 
 	{{-- submit button --}}
@@ -71,11 +69,7 @@
 		{{ $button }}
 	</button>
 
-	<div class="spacer-small"></div>
-
 	<div class="color-2 size-4"><a href="{{ route('belif.unsubscribe') }}" class="color-2">I want to unregister myself.</a></div>
-
-	<div class="spacer-tiny"></div>
 
 	{{-- Terms & Conditions --}}
 	<div class="terms">
