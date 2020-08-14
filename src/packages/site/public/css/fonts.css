@@ -3,35 +3,35 @@
 /* 			FONT FACES			*/
 /********************************/
 
-/*@font-face {*/
-/*    font-family: SansaPro-Black;*/
-/*    src: url(../fonts/SansaPro-Black.otf);*/
-/*}*/
+@font-face {
+    font-family: SansaPro-Black;
+    src: url(../fonts/SansaPro-Black.otf);
+}
 
-/*@font-face {*/
-/*    font-family: SansaPro-BlackItalic;*/
-/*    src: url(../fonts/SansaPro-BlackItalic.otf);*/
-/*}*/
+@font-face {
+    font-family: SansaPro-BlackItalic;
+    src: url(../fonts/SansaPro-BlackItalic.otf);
+}
 
 @font-face {
     font-family: SansaPro-Bold;
     src: url(../fonts/SansaPro-Bold.otf);
 }
 
-/*@font-face {*/
-/*    font-family: SansaPro-BoldItalic;*/
-/*    src: url(../fonts/SansaPro-BoldItalic.otf);*/
-/*}*/
+@font-face {
+    font-family: SansaPro-BoldItalic;
+    src: url(../fonts/SansaPro-BoldItalic.otf);
+}
 
-/*@font-face {*/
-/*    font-family: SansaPro-Light;*/
-/*    src: url(../fonts/SansaPro-Light.otf);*/
-/*}*/
+@font-face {
+    font-family: SansaPro-Light;
+    src: url(../fonts/SansaPro-Light.otf);
+}
 
-/*@font-face {*/
-/*    font-family: SansaPro-LightItalic;*/
-/*    src: url(../fonts/SansaPro-LightItalic.otf);*/
-/*}*/
+@font-face {
+    font-family: SansaPro-LightItalic;
+    src: url(../fonts/SansaPro-LightItalic.otf);
+}
 
 @font-face {
     font-family: SansaPro-Normal;
@@ -48,10 +48,10 @@
     src: url(../fonts/SansaPro-SemiBold.otf);
 }
 
-/*@font-face {*/
-/*    font-family: SansaPro-SemiBoldItalic;*/
-/*    src: url(../fonts/SansaPro-SemiBoldItalic.otf);*/
-/*}*/
+@font-face {
+    font-family: SansaPro-SemiBoldItalic;
+    src: url(../fonts/SansaPro-SemiBoldItalic.otf);
+}
 
 /********************************/
 /* 			FONT SIZING			*/
@@ -61,29 +61,29 @@ body {
 	font-family: SansaPro-Normal, sans-serif;	
 }
 
-/*.font-1 {*/
-/*	font-family: SansaPro-Black !important;*/
-/*}*/
+.font-1 {
+	font-family: SansaPro-Black !important;
+}
 
-/*.font-2 {*/
-/*	font-family: SansaPro-BlackItalic !important;*/
-/*}*/
+.font-2 {
+	font-family: SansaPro-BlackItalic !important;
+}
 
 .font-3 {
 	font-family: SansaPro-Bold !important;
 }
 
-/*.font-4 {*/
-/*	font-family: SansaPro-BoldItalic !important;*/
-/*}*/
+.font-4 {
+	font-family: SansaPro-BoldItalic !important;
+}
 
-/*.font-5 {*/
-/*	font-family: SansaPro-Light !important;*/
-/*}*/
+.font-5 {
+	font-family: SansaPro-Light !important;
+}
 
-/*.font-6 {*/
-/*	font-family: SansaPro-LightItalic !important;*/
-/*}*/
+.font-6 {
+	font-family: SansaPro-LightItalic !important;
+}
 
 .font-7 {
 	font-family: SansaPro-Normal !important;
@@ -97,9 +97,9 @@ body {
 	font-family: SansaPro-SemiBold !important;
 }
 
-/*.font-10 {*/
-/*	font-family: SansaPro-SemiBoldItalic !important;*/
-/*}*/
+.font-10 {
+	font-family: SansaPro-SemiBoldItalic !important;
+}
 
 .size-1 {
 	font-size: 1vw !important;

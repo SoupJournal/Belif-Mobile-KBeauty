@@ -59,16 +59,14 @@
 			<div class="no-margins size-9 color-2 font-3 stroke">Search {!! $questionNumber !!}:</div>
 
 			<div>
-				<img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/question-{{ $questionNumber }}.png" class="question-image" />
+				<img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/question-{{ $questionNumber }}.png" class="question-image" style="width: 250px;" />
 			</div>
 
 			<div class="question-text">
 			
-				<div class="spacer-large"></div>
-			
 				<div class="no-margins font-3 size-4 color-2">{!! $question !!}</div>
 
-				<div class="spacer-medium"></div>
+				<div class="spacer-small"></div>
 
 				<div class="no-margins font-5 size-4 color-2">{!! $text !!}</div>
 
