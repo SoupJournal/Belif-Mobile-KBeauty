@@ -4,7 +4,7 @@
 if (!isset($pageData)) $pageData = null;
 if (!isset($unsubscribeLink)) $unsubscribeLink = "";
 if (!isset($answers)) $answers = '';
-if (!isset($answerText)) $answerText = '';
+if (!isset($answersText)) $answersText = '';
 
 //get page variables
 $title = safeArrayValue('title', $pageData, "");
@@ -78,7 +78,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 											<tbody>
 											<tr>
 												<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-												<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:14px; font-weight:bold;">{!! $answerText !!}</td>
+												<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:14px; font-weight:bold;">{!! $answersText !!}</td>
 												<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 											</tr>
 											</tbody>

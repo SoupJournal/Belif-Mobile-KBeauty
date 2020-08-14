@@ -346,9 +346,7 @@ class BaseController extends Controller
                         'pageData' => $pageData,
                         'productImage' => $productImage,
                         'answers' => $answers,
-                        'answersText' => $answerText,
-                        'productColour' => '#125a7d',
-                        'multipleSamples' => $multipleSamples,
+                        'answersText' => $answersText,
                         'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
                     ]
                 ]);
