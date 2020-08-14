@@ -51,7 +51,7 @@
 	{{ Form::open(Array('role' => 'form', 'name' => 'answer-form', 'id' => 'answer-form', 'url' => $formURL)) }}
 
 	<div>
-		<img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/countdown-GIF.gif" class="countdown-image" />
+		<img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/countdown-GIF-{{ $questionNumber }}.gif" class="countdown-image" />
 	</div>
 
 	<button class="answer-box answer-location-{{ $questionNumber }}"></button>
