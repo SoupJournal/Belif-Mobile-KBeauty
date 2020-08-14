@@ -3,6 +3,8 @@
 //validate properties
 if (!isset($pageData)) $pageData = null;
 if (!isset($unsubscribeLink)) $unsubscribeLink = "";
+if (!isset($answers)) $answers = '';
+if (!isset($answerText)) $answerText = '';
 
 //get page variables
 $title = safeArrayValue('title', $pageData, "");
@@ -76,7 +78,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 											<tbody>
 											<tr>
 												<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-												<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:14px; font-weight:bold;">{!! $subtitle !!}</td>
+												<td align="center" valign="middle"  style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:14px; font-weight:bold;">{!! $answerText !!}</td>
 												<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 											</tr>
 											</tbody>
@@ -91,7 +93,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 								</tr>
 								<tr>
 									<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-										<table width="350px" border="0" cellspacing="0" cellpadding="0">
+										<table width="400" border="0" cellspacing="0" cellpadding="0">
 											<tbody>
 											<tr>
 												<td style="border:0; margin:0; padding: 7px 15px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px;">{!! $html !!}</td>
@@ -102,10 +104,6 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 								</tr>
 								<tr>
 									<td height="2" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/space.gif" width="1" height="1" alt=""/></td>
-								</tr>
-
-								<tr>
-									<td height="31" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
 								</tr>
 								<tr>
 									<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
