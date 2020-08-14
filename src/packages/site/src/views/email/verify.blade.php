@@ -100,7 +100,7 @@
 																			</tbody>
 																		</table>
 																	</td>
-																	<td style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; background: #ff76a7; font-size:21px; line-height:21px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
+																	<td style="position: relative; top:30px; border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; background: #ff76a7; font-size:21px; line-height:21px; font-weight:bold;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
 																	<td>
 																		<table border="0" cellspacing="0" cellpadding="0">
 																			<tbody>
@@ -200,22 +200,6 @@
 											</table>
 										</td>
 									</tr>
-									@if (!empty($address3))
-									<tr>
-										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
-									</tr>
-									<tr>
-										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
-												<tbody>
-												<tr>
-													<td bgcolor="#ffffff" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
-												</tr>
-												</tbody>
-											</table>
-										</td>
-									</tr>
-									@endif
 									<tr>
 										<td height="10" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
