@@ -154,7 +154,7 @@
 												<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:14px; line-height:18px;">{!! $text !!}</td>
 											</tr>
 											<tr>
-												<td height="200" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
+												<td height="175" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 											</tr>
 										</tbody>
 									</table>
@@ -194,7 +194,7 @@
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ffffff" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address2 }}</td>
+													<td bgcolor="#ffffff" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
 												</tr>
 												</tbody>
 											</table>
