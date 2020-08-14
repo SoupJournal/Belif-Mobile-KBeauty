@@ -195,6 +195,69 @@
 							</td>
 						</tr>
 
+						<tr>
+							<td height="20" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; font-size: 0; line-height:0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
+									<tbody>
+									<tr>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">Once you confirm your email we'll be posting<br/>your sample to the following address:</td>
+									</tr>
+									<tr>
+										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
+									</tr>
+									<tr>
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF;">
+
+												<tbody>
+												<tr>
+													<td bgcolor="#FFFFFF" style="border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address1 }}</td>
+												</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
+									</tr>
+									<tr>
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF;">
+												<tbody>
+												<tr>
+													<td bgcolor="#FFFFFF" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address2 }}</td>
+												</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0; font-size:0; line-height:0;"></td>
+									</tr>
+									<tr>
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF;">
+												<tbody>
+												<tr>
+													<td bgcolor="#FFFFFF" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
+												</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td height="10" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
+									</tr>
+									<tr>
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0" style="background-color: #FFFFFF;">
+												<tbody>
+												<tr>
+													<td bgcolor="#FFFFFF" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif; color:#000000; font-size:24px; line-height:24px; font-style:italic; letter-spacing:-0.4px; word-spacing: -0.2px;">We'll send you an email once<br/>the sample have been shipped!</td>
+												</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									</tbody>
+								</table></td>
+						</tr>
+
 						{{-- Social Links Below --}}
 						<tr>
 							<td align="center" valign="top" bgcolor="#000000" style="border: 0; margin: 0; padding: 0;"><table width="570" border="0" cellspacing="0" cellpadding="0">
@@ -204,11 +267,11 @@
 									</tr>
 									<tr>
 										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: right; font-family:{{ $fontDefinitions }};">
-											<a href="https://belifusa.com" style="color: #8ad6cf; font-style: italic;">belifusa.com</a>
+											<a href="https://belifusa.com" style="color: #fff; font-style: italic;">belifusa.com</a>
 										</td>
 										<td style="width: 10%;">&nbsp;</td>
 										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: left; font-family:{{ $fontDefinitions }};">
-											<a href="#" style="color: #8ad6cf; font-style: italic;">belif at sephora</a>
+											<a href="#" style="color: #fff; font-style: italic;">belif at sephora</a>
 										</td>
 									</tr>
 									<tr>
@@ -224,7 +287,7 @@
 										<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;"><a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-instagram.gif" width="27" height="27" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/belifUSA/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-facebook.gif" width="27" height="27" alt="Belif Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/belifusa" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-twitter.gif" width="27" height="27" alt="Belif Twitter" style="border: 0; margin: 0; padding: 0;"/></a></td>
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;"><a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-instagram.gif" width="27" height="27" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/belifUSA/" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-facebook.gif" width="27" height="27" alt="Belif Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/belifusa" target="_blank"><img src="https://s3.amazonaws.com/soup-journal-app-storage/belif/mobile/images/email/icon-twitter.gif" width="27" height="27" alt="Belif Twitter" style="border: 0; margin: 0; padding: 0;"/></a></td>
 									</tr>
 									<tr>
 										<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #000000; font-size:0; line-height: 0;"></td>
