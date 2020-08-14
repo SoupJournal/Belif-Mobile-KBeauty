@@ -325,6 +325,11 @@ class MainController extends BaseController implements CMSTrigger {
                 $valid = false;
             }
 
+            if ($valid && (preg_match('/^(?!.*(?:(.*((p|post)[-.\s]*(o|off|office)[-.\s]*(box|bin)[-.\s]*)|.*((p |post)[-.\s]*(box|bin)[-.\s]*)))).*$/i', $address1) !== FALSE)) {
+                $errors = 'We cannot ship to PO Boxes';
+                $valid = false;
+            }
+
             //valid city
             if ($valid && (!$city || strlen(trim($city)) <= 0)) {
                 $errors = 'Please specify your city.';
