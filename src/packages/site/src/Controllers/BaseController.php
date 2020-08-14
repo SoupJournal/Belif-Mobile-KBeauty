@@ -333,6 +333,9 @@ class BaseController extends Controller
                         break;
                 }
 
+                $pageData['answers'] = $answers;
+                $pageData['answersText'] = $answersText;
+
                 //send product sent email (sent via queue to avoid delay loading next page)
                 $emailJob = new SendEmailJob([
                     "recipient" => $user->email,
@@ -345,8 +348,6 @@ class BaseController extends Controller
                     "view_properties" => [
                         'pageData' => $pageData,
                         'productImage' => $productImage,
-                        'answers' => $answers,
-                        'answersText' => $answersText,
                         'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
                     ]
                 ]);

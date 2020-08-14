@@ -3,19 +3,19 @@
 //validate properties
 if (!isset($pageData)) $pageData = null;
 if (!isset($unsubscribeLink)) $unsubscribeLink = "";
-if (!isset($answers)) $answers = '';
-if (!isset($answersText)) $answersText = '';
 
 //get page variables
 $title = safeArrayValue('title', $pageData, "");
 $subtitle = safeArrayValue('subtitle', $pageData, "");
 $html = safeArrayValue('html', $pageData, "");
 $image = safeArrayValue('image', $pageData, "");
+$answers = safeArrayValue('answers', $pageData, "");
+$answersText = safeArrayValue('answersText', $pageData, "");
 $backgroundImage = safeArrayValue('background_image', $pageData, "");
 $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif";
 
 ?>
-		<!doctype html>
+<!doctype html>
 <html>
 <head>
 	<meta charset="UTF-8">
