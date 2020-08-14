@@ -58,6 +58,8 @@
 					</div>
 				@endif
 
+				<div class="spacer-large"></div>
+
 				{{ Form::email('email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text large color-1', 'tabindex' => '1')) }}
 
 				<div class="spacer-small"></div>
