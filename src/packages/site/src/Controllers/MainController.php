@@ -907,7 +907,6 @@ class MainController extends BaseController implements CMSTrigger {
                             $productImage = safeObjectValue('image', $imageData, null);
                         }
 
-
                         //determine if multiple samples sent
                         $multipleSamples = isset($user->product_1) && isset($user->product_2);
 

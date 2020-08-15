@@ -86,7 +86,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 									</td>
 								</tr>
 								<tr>
-									<td height="440" style="border: 0; margin:0; padding: 0; width: 100%; max-width: 100%;"><img src="{{ $image }}" border="0" width="570" /></td>
+									<td height="440" style="border: 0; margin:0; padding: 0; width: 100%; max-width: 100%;"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/email_answers_{{ $answers }}.png" border="0" width="570" /></td>
 								</tr>
 								<tr>
 									<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="50"></td>
