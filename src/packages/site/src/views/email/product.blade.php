@@ -59,7 +59,8 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 									<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="40"></td>
 								</tr>
 								<tr>
-									<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><table border="0" cellspacing="0" cellpadding="0">
+									<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
+										<table border="0" cellspacing="0" cellpadding="0">
 											<tbody>
 											<tr>
 												<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
@@ -67,7 +68,8 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 												<td width="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 											</tr>
 											</tbody>
-										</table></td>
+										</table>
+									</td>
 								</tr>
 								<tr>
 									<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="10"></td>
@@ -116,6 +118,9 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 										</table>
 										<br/><br/>
 									</td>
+								</tr>
+								<tr>
+									<td style="border: 0; margin: 0; padding: 0; font-size:0; line-height:0;" height="150"></td>
 								</tr>
 								</tbody>
 							</table>
