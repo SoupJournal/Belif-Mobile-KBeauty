@@ -266,6 +266,7 @@ class MainController extends BaseController implements CMSTrigger {
             $city = safeArrayValue('city', $_POST, null);
             $stateId = safeArrayValue('state', $_POST, null);
             $zipCode = safeArrayValue('zip_code', $_POST, null);
+            $sephoraMember = safeArrayValue('sephora', $_POST, null);
 
             // trim strings
             $address1 = $address1 ? trim($address1) : null;
@@ -424,6 +425,7 @@ class MainController extends BaseController implements CMSTrigger {
                     $user->city = $city;
                     $user->state = $state;
                     $user->zip_code = $zipCode;
+                    $user->sephora = $sephoraMember;
                     $user->ip_address = $ipAddress;
                     // $user->product_1 = $product1;
                     // $user->product_2 = $product2;

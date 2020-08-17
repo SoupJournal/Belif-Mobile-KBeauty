@@ -23,6 +23,11 @@
 	//ensure page properties are set
 	$formURL = isset($formURL) ? $formURL : "";
 	$states = isset($states) ? $states : null;
+	$sephoraOptions = [
+		'Insider' => 'Insider',
+		'VIB' => 'VIB',
+		'Rouge' => 'Rouge'
+	];
 
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
@@ -74,9 +79,16 @@
 				{{-- state --}}
 				<span class="input-city-right">
 					<select-button class="page-input-text color-1 page-input-place-holder input-padding-zero" label-class="page-input-select-overlay stretch-to-fit">
-					{{ Form::select('state', $states, 'State', Array ('placeholder' => 'State', 'class' => 'page-input-text color-1 page-input-select input-padding-very-large', 'ng-model' => 'state', 'ng-change' => '$parent.valueUpdated(state, this);', 'auto-next-focus' => '')) }}
+					{{ Form::select('state', $states, 'State', Array ('placeholder' => 'State', 'class' => 'page-input-text color-1 page-input-select input-padding-very-large', 'auto-next-focus' => '')) }}
 					</select-button>
 				</span>
+			</div>
+
+			{{-- sephora question --}}
+			<div class="form-group">
+				<select-button class="page-input-text color-1" label-class="page-input-select-overlay stretch-to-fit">
+					{{ Form::select('sephora', $sephoraOptions, 'What Sephora member are you?', Array ('placeholder' => 'What Sephora member are you?', 'class' => 'page-input-text color-1 page-input-select', 'auto-next-focus' => '')) }}
+				</select-button>
 			</div>
 
 			{{-- display form errors --}}
