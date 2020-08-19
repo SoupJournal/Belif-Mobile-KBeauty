@@ -6,6 +6,7 @@ use Soup\CMS\Lib\CMSTrigger;
 
 use Belif\Mobile\Models\User;
 use Belif\Mobile\Models\Question;
+use Belif\Mobile\Models\Product;
 use Belif\Mobile\Models\ProductImage;
 use Belif\Mobile\Jobs\SendEmailJob;
 
@@ -282,34 +283,6 @@ class MainController extends BaseController implements CMSTrigger {
             // find ip address
             $ipAddress = retrieveIPAddress();
 
-            // get current answers
-            // $answers = Session::get('answers');
-            // $answersJSON = null;
-            // if ($answers) {
-
-            //     //get questions
-            //     $questions = Question::select('id')
-            //                     ->orderBy('order')
-            //                     ->orderBy('id')
-            //                    ->get();
-            //
-            //     //compile array (reference questions by Id)
-            //     $referencedArray = [];
-            //     for ($i=0; $i<count($questions) && $i<=count($answers); ++$i) {
-            //
-            //         $qId = safeObjectValue('id', $questions[$i], -1);
-            //         $referencedArray[$qId] = $answers[$i+1];
-            //
-            //     } //end for()
-            //
-            //     try {
-            //         $answersJSON = json_encode($referencedArray);
-            //     }
-            //     catch (Exception $ex) {
-            //         //error processing JSON
-            //     }
-            // }
-
             // form validation
             $valid = true;
 
@@ -407,16 +380,6 @@ class MainController extends BaseController implements CMSTrigger {
                 // valid user
                 if ($user) {
 
-                    // get products
-                    // $product1 = null;
-                    // $product2 = null;
-                    // if ($products && count($products)>0) {
-                    //     $product1 = $products[0];
-                    //     if (count($products)>1) {
-                    //         $product2 = $products[1];
-                    //     }
-                    // }
-
                     // update user details
                     $user->name = $name;
                     $user->email = $email;
@@ -444,6 +407,64 @@ class MainController extends BaseController implements CMSTrigger {
                     }
                     // saved details
                     else {
+
+                        // get current answers
+                        $answers = Session::get('answers');
+                        $wereSamplesCounted = Session::get('samples_counted');
+
+                        if (!$wereSamplesCounted) {
+                            $sampleCount = 0;
+                            foreach ($answers as $answer) {
+                                if ($answer == 'A') {
+                                    $sampleCount++;
+                                }
+                            }
+
+                            $products = Product::all();
+
+                            if ($sampleCount == 3) { // 3
+                                foreach ($products as $product) {
+                                    $product->available_quantity = $product->available_quantity - 1;
+                                    $product->save();
+                                }
+                            } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'F') { // 1
+                                $product = $products[0];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                            } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'F') { // 1
+                                $product = $products[1];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                            } elseif ($answers[1] == 'F' && $answers[2] == 'F' && $answers[3] == 'A') { // 1
+                                $product = $products[2];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                            } elseif ($answers[1] == 'A' && $answers[2] == 'A' && $answers[3] == 'F') { // 2
+                                $product = $products[0];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                                $product = $products[1];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                            } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'A') { // 2
+                                $product = $products[0];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                                $product = $products[2];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                            } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'A') { // 2
+                                $product = $products[1];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                                $product = $products[2];
+                                $product->available_quantity = $product->available_quantity - 1;
+                                $product->save();
+                            }
+
+                            Session::set('samples_counted', true);
+                        }
+
                         // send verification email
                         $this->sendVerifyEmail($user);
                     }

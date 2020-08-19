@@ -185,25 +185,40 @@
 		
 		public function getResults()
         {
+            $products = Product::all();
+
             $answers = Session::get('answers');
 
             $sampleCount = 0;
+            $availableSamples = [];
+            $unavailableSamples = [];
+            $productCount = 0;
             foreach($answers as $answer) {
+                $product = $products[$productCount];
                 if ($answer == 'A') {
                     $sampleCount++;
+
+                    // is this sample available
+                    if ($product->available_quantity < 1 || $product->available == 0) {
+                        $unavailableSamples[] = $product->name;
+                        $answers[($productCount + 1)] = 'F';
+                    } else {
+                        $availableSamples[] = $product->name;
+                    }
                 }
+                $productCount++;
             }
 
             $sampleResult = self::FORM_RESULTS_A;
             $resultImage = 'results_a';
 
-            if ($sampleCount == 0) { // 0
+            if ($sampleCount == 0 || count($unavailableSamples) == 3) { // 0
                 $sampleResult = self::FORM_RESULTS_A;
                 $resultImage = 'results_a';
-            } elseif ($sampleCount == 3) { // 3
+            } elseif ($sampleCount == 3 && count($unavailableSamples) == 0) { // 3
                 $sampleResult = self::FORM_RESULTS_B;
                 $resultImage = 'results_b';
-            } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == '') { // 1
+            } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'F') { // 1
                 $sampleResult = self::FORM_RESULTS_C;
                 $resultImage = 'results_c';
             } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'F') { // 1
@@ -223,6 +238,25 @@
                 $resultImage = 'results_h';
             }
 
+            $alternativeTitle = '';
+            if (count($unavailableSamples) > 0) {
+                $alternativeTitle = 'You’ve found ';
+                if ($sampleCount == 3) {
+                    $alternativeTitle .= 'three products and will be receiving FREE samples of ';
+                    $alternativeTitle .= implode(' and ', $availableSamples);
+                    $alternativeTitle .= ' but we have unfortunately run out of ';
+                    $alternativeTitle .= implode(' and ', $unavailableSamples);
+                } elseif ($sampleCount == 2) {
+                    $alternativeTitle .= 'two products and will be receiving FREE samples of ';
+                    $alternativeTitle .= implode(' and ', $availableSamples);
+                    $alternativeTitle .= ' but we have unfortunately run out of ';
+                    $alternativeTitle .= implode(' and ', $unavailableSamples);
+                } elseif ($sampleCount == 1) {
+                    $alternativeTitle .= 'one product but we have unfortunately run out of ';
+                    $alternativeTitle .= implode(' and ', $unavailableSamples);
+                }
+            }
+
             // store email
             $email = Session::get('email');
 
@@ -240,9 +274,6 @@
             //get background image
             $backgroundImage = safeArrayValue('background_image', $pageData);
 
-            //get products
-            $products = Product::where('available', true)->get();
-
             return View::make('belif::pages.results')->with(Array (
                 'pageName' => 'results',
                 'pageData' => $pageData,
@@ -250,7 +281,8 @@
                 'headerLogoUrl' => $this->header_logo_url_white,
                 'restartURL' => route('belif.tryagain'),
                 'sampleResult' => $sampleResult,
-                'resultImage' => $resultImage
+                'resultImage' => $resultImage,
+                'alternativeTitle' => $alternativeTitle
             ));
 
 		} //end getResults()

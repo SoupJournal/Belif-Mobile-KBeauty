@@ -26,6 +26,11 @@
 	$restartURL = isset($restartURL) ? $restartURL : null;
 	$sampleResult = isset($sampleResult) ? $sampleResult : null;
 	$resultImage = isset($resultImage) ? $resultImage : null;
+	$alternativeTitle = isset($alternativeTitle) ? $alternativeTitle : null;
+
+	if (!empty($alternativeTitle)) {
+		$subtitle = $alternativeTitle;
+	}
 ?>
 
 <div class="text-center page-padding">
