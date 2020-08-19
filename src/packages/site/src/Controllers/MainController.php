@@ -390,9 +390,6 @@ class MainController extends BaseController implements CMSTrigger {
                     $user->zip_code = $zipCode;
                     $user->sephora = $sephoraMember;
                     $user->ip_address = $ipAddress;
-                    // $user->product_1 = $product1;
-                    // $user->product_2 = $product2;
-                    // $user->answers = $answersJSON;
 
                     // save user details
                     if (!$user->save()) {
@@ -430,35 +427,44 @@ class MainController extends BaseController implements CMSTrigger {
                             } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'F') { // 1
                                 $product = $products[0];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                             } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'F') { // 1
                                 $product = $products[1];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                             } elseif ($answers[1] == 'F' && $answers[2] == 'F' && $answers[3] == 'A') { // 1
                                 $product = $products[2];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                             } elseif ($answers[1] == 'A' && $answers[2] == 'A' && $answers[3] == 'F') { // 2
                                 $product = $products[0];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                                 $product = $products[1];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                             } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'A') { // 2
                                 $product = $products[0];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                                 $product = $products[2];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                             } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'A') { // 2
                                 $product = $products[1];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                                 $product = $products[2];
                                 $product->available_quantity = $product->available_quantity - 1;
+                                if ($product->available_quantity < 1) { $product->available = 0; }
                                 $product->save();
                             }
 
