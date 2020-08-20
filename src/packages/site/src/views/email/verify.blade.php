@@ -53,9 +53,9 @@
 														</tr>
 														<tr>
 															<td style="border: 0; margin: 0; padding: 0;" height="107">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" valign="middle" align="center"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
+															<td style="border: 0; margin: 0; padding: 0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
 															<td style="border: 0; margin: 0; padding: 0;" align="center" valign="middle"><img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO.png" width="150" alt="Belif"/></td>
-															<td style="border: 0; margin: 0; padding: 0;" valign="middle" align="center"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqua_confirm_header.png" width="100" alt=""/></td>
+															<td style="border: 0; margin: 0; padding: 0;" valign="middle" align="right"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqua_confirm_header.png" width="100" alt=""/></td>
 															<td style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
 														</tr>
 														<tr>
@@ -100,7 +100,7 @@
 																			</tbody>
 																		</table>
 																	</td>
-																	<td style="border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; background-color: #ff76a7; font-size:21px; line-height:21px; font-weight:bold; white-space: nowrap;">
+																	<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; background-color: #ff76a7; font-size:21px; line-height:21px; font-weight:bold; white-space: nowrap;">
 																		<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a>
 																	</td>
 																	<td>
