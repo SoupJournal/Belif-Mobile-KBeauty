@@ -41,8 +41,8 @@
 								<table width="570" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#ffffff">
 									<tbody>
 										<tr>
-											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-												<table width="100%" border="0" cellpadding="0" cellspacing="0">
+											<td style="border: 0; margin: 0; padding: 0;" align="center" valign="top">
+												<table width="570" border="0" cellpadding="0" cellspacing="0">
 													<tbody>
 														<tr>
 															<td style="border: 0; margin: 0; padding: 0;" width="19" height="22">&nbsp;</td>
@@ -52,18 +52,18 @@
 															<td style="border: 0; margin: 0; padding: 0;" width="19">&nbsp;</td>
 														</tr>
 														<tr>
-															<td style="border: 0; margin: 0; padding: 0;" height="107">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
+															<td style="border: 0; margin: 0; padding: 0;" width="19" height="107">&nbsp;</td>
+															<td style="border: 0; margin: 0; padding: 0;" width="102" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
 															<td style="border: 0; margin: 0; padding: 0;" align="center" valign="middle"><img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO.png" width="150" alt="Belif"/></td>
-															<td style="border: 0; margin: 0; padding: 0;" valign="middle" align="right"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqua_confirm_header.png" width="100" alt=""/></td>
-															<td style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
+															<td style="border: 0; margin: 0; padding: 0;" width="102" valign="middle" align="right"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqua_confirm_header.png" width="100" alt=""/></td>
+															<td style="border: 0; margin: 0; padding: 0;" width="19" height="107">&nbsp;</td>
 														</tr>
 														<tr>
-															<td style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
+															<td style="border: 0; margin: 0; padding: 0;" width="19" height="22">&nbsp;</td>
+															<td style="border: 0; margin: 0; padding: 0;" width="102">&nbsp;</td>
 															<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
+															<td style="border: 0; margin: 0; padding: 0;" width="102">&nbsp;</td>
+															<td style="border: 0; margin: 0; padding: 0;" width="19">&nbsp;</td>
 														</tr>
 													</tbody>
 												</table>
