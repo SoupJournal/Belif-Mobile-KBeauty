@@ -50,19 +50,19 @@ class BaseController extends Controller
     //const EMAIL_PRODUCT_IMAGES = 'email_images';
 
     //verify email details
-    const EMAIL_SENDER_VERIFY = 'team@aloeaquabomb.com';
-    const EMAIL_SUBJECT_VERIFY = 'Verify your email and get ready to Set to Soothe';
+    const EMAIL_SENDER_VERIFY = 'team@belif-always-aqua.com ';
+    const EMAIL_SUBJECT_VERIFY = 'Verify your email and to claim your belif products';
 
     //share email details
-    const EMAIL_SENDER_SHARE = 'team@aloeaquabomb.com';
-    const EMAIL_SUBJECT_SHARE = 'A friend wants to give you the gift of belif.';
+    const EMAIL_SENDER_SHARE = 'team@belif-always-aqua.com';
+    const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of belif!';
 
     //product email details
-    const EMAIL_SENDER_PRODUCT = 'team@aloeaquabomb.com';
-    const EMAIL_SUBJECT_PRODUCT = "Your sample is on its way!";
+    const EMAIL_SENDER_PRODUCT = 'team@belif-always-aqua.com';
+    const EMAIL_SUBJECT_PRODUCT = "Your belif samples are on their way! ";
 
     //playlist email details
-    const EMAIL_SENDER_PLAYLIST = 'team@aloeaquabomb.com';
+    const EMAIL_SENDER_PLAYLIST = 'team@belif-always-aqua.com';
     const EMAIL_SUBJECT_PLAYLIST = "A gift from us!";
 
     //number of questions
