@@ -27,6 +27,7 @@
 <title>Belif</title>
 </head>
 <body style="border:0; margin:0; padding:0; background:#ffffff;">
+<div style="width: 100%; height: 100%; background: #ffffff;">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background:#ffffff">
 	<tbody>
 		<tr>
@@ -286,5 +287,6 @@
 		</tr>
 	</tbody>
 </table>
+</div>
 </body>
 </html>
