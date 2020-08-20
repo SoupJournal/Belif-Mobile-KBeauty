@@ -27,10 +27,10 @@
 <title>Belif</title>
 </head>
 <body style="border:0; margin:0; padding:0; background:#ffffff;">
-<div style="background: red; width: 100%; height: 50px;">Test Div</div>
+<div style="background: #ffffff; width: 100%; height: 50px;">Test Div</div>
 
 
-
+<div style="background: #ffffff; width: 100%; height: 100%;">
 <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background:#ffffff">
 	<tbody>
 		<tr>
@@ -290,5 +290,6 @@
 		</tr>
 	</tbody>
 </table>
+</div>
 </body>
 </html>
