@@ -220,10 +220,10 @@
                 $resultImage = 'results_b';
             } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'F') { // 1
                 $sampleResult = self::FORM_RESULTS_C;
-                $resultImage = 'results_c';
+                $resultImage = 'results_d';
             } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'F') { // 1
                 $sampleResult = self::FORM_RESULTS_D;
-                $resultImage = 'results_d';
+                $resultImage = 'results_c';
             } elseif ($answers[1] == 'F' && $answers[2] == 'F' && $answers[3] == 'A') { // 1
                 $sampleResult = self::FORM_RESULTS_E;
                 $resultImage = 'results_e';
@@ -232,10 +232,10 @@
                 $resultImage = 'results_f';
             } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'A') { // 2
                 $sampleResult = self::FORM_RESULTS_G;
-                $resultImage = 'results_g';
+                $resultImage = 'results_h';
             } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'A') { // 2
                 $sampleResult = self::FORM_RESULTS_H;
-                $resultImage = 'results_h';
+                $resultImage = 'results_g';
             }
 
             $alternativeTitle = '';
