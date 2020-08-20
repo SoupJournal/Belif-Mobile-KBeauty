@@ -27,7 +27,22 @@
 <title>Belif</title>
 </head>
 <body style="border:0; margin:0; padding:0; background:#ffffff;">
-<div style="background: #ffffff; width: 100%; height: 50px;">Test Div</div>
+
+<div style="background: #ffffff; width: 100%; height: 100%">
+	<div style="margin: 0 auto; width: 570px; height: 100px;">
+		<div style="height: 100px; width: 100px; float: left;"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" /></div>
+		<div style="margin: 0 auto; height: 100px; width: 370px; text-align: center; float: left;">
+			<img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO.png" width="150" alt="Belif" style="padding: 10px 0 0 0;" />
+		</div>
+		<div style="height: 100px; width: 100px; float: right;"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqua_confirm_header.png" width="100"/></div>
+	</div>
+	<div>
+		<div style="margin: 0 auto; width: 570px; border: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; word-spacing:-0.2px; text-align: center;">{!! $title !!}</div>
+	</div>
+	<div>
+		<div style="margin: 0 auto; width: 570px; border: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px; text-align: center;">{!! $subtitle !!}</div>
+	</div>
+</div>
 
 
 <div style="background: #ffffff; width: 100%; height: 100%;">
