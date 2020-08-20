@@ -169,7 +169,9 @@
 										<td height="23" align="center" valign="top" style="background-color: #ff76a7;border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="background-color: #ff76a7;border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color: #ffffff; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">Once you confirm your email we'll be posting<br/>your sample to the following address:</td>
+										<td align="center" valign="middle" style="background-color: #ff76a7;border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color: #ffffff; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">
+											Once you confirm your email we'll be posting<br/>your sample to the following address:
+										</td>
 									</tr>
 									<tr>
 										<td height="23" align="center" valign="top" style="background-color: #ff76a7;border: 0; margin:0; padding: 0;"></td>
@@ -179,21 +181,25 @@
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ffffff" style="background-color: #ffffff;border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address1 }}</td>
+													<td bgcolor="#ffffff" style="background-color: #ffffff;border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">
+														<div style="background-color: #ffffff;">{{ $address1 }}</div>
+													</td>
 												</tr>
 												</tbody>
 											</table>
 										</td>
 									</tr>
 									<tr>
-										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0;  "></td>
+										<td height="14" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ffffff" style="background-color: #ffffff;border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
+													<td bgcolor="#ffffff" style="background-color: #ffffff;border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">
+														{{ $address3 }}
+													</td>
 												</tr>
 												</tbody>
 											</table>
@@ -226,7 +232,7 @@
 								<table width="570" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 									<tr>
-										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff;  line-height: 0;"></td>
+										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff; line-height: 0;">...</td>
 									</tr>
 									<tr>
 										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; text-align: right; font-family:{{ $fontDefinitions }};">
@@ -238,7 +244,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff;  line-height: 0;"></td>
+										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff; line-height: 0;">...</td>
 									</tr>
 									</tbody>
 								</table>
@@ -255,7 +261,7 @@
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;"><a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/instagram-logo-transparent.png" width="27" height="27" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/belifUSA/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/facebook-logo-transparent.png" width="27" height="27" alt="Belif Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/belifusa" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/twitter-logo-transparent.png" width="27" height="27" alt="Belif Twitter" style="border: 0; margin: 0; padding: 0;"/></a></td>
 										</tr>
 										<tr>
-											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff;  line-height: 0;"></td>
+											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff; line-height: 0;">&nbsp;</td>
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; belif cosmetics</td>
