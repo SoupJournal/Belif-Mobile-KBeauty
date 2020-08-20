@@ -69,7 +69,7 @@
 		{{-- display form errors --}}
 	    @if ($errors->has())
 	        @foreach ($errors->all() as $error)
-	            <div class='bg-danger alert'>{{ $error }}</div>
+	            <div class='bg-danger alert'>{!! $error !!}</div>
 	        @endforeach
 	    @else
 			<div class="spacer-small"></div>
@@ -77,12 +77,12 @@
 
 		{{-- submit button --}}
 		<button class="button-page bg-color-14 color-2 font-3" label="{{ $button }}">
-			{{ $button }}
+			{!! $button !!}
 		</button>
 
 		{{-- Re-verify button --}}
 		<a href="{{ route('belif.thanks') }}" class="color-14">
-			<h4 class="button-link">{{ $buttonNo }}</h4>
+			<h4 class="button-link">{!! $buttonNo  !!}</h4>
 		</a>
 		
 {{ Form::close() }}
