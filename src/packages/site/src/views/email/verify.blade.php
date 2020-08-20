@@ -27,12 +27,11 @@
 <title>Belif</title>
 </head>
 <body style="border:0; margin:0; padding:0; background:#ffffff;">
-<div style="width: 100%; height: 100%; background: #ffffff;">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background:#ffffff">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background:#ffffff">
 	<tbody>
 		<tr>
-			<td align="center" valign="top" style="border: 0; margin: 0; padding: 0; background: #ffffff;">
-				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" style="border:0; margin:0; padding:0; background:#ffffff">
+			<td align="center" valign="top" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; background: #ffffff;">
+				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background:#ffffff">
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;" height="14">&nbsp;</td>
@@ -287,6 +286,5 @@
 		</tr>
 	</tbody>
 </table>
-</div>
 </body>
 </html>
