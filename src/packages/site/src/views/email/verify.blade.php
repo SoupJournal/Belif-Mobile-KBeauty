@@ -128,8 +128,8 @@
 						</tr>
 						<tr>
 							<td style="border: 0; margin: 0 ; padding: 0; text-align: center;" valign="top">
-								<div style="height: 750px;background: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/belif_Aqualand-Quiz_backgrounds_Verify_Email.jpg') no-repeat bottom center; background-size: cover;">
-									<table width="570" height="750" border="0" cellspacing="0" cellpadding="0">
+								<div style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/belif_Aqualand-Quiz_backgrounds_Verify_Email.jpg') no-repeat bottom center; background-size: cover;">
+									<table width="570" border="0" cellspacing="0" cellpadding="0">
 										<tbody>
 											<tr>
 												<td height="40" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
