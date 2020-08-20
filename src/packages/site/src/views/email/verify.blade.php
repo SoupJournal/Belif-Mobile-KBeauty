@@ -20,18 +20,25 @@
 	$fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif";
 
 ?>
-<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background:#ffffff">
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Belif</title>
+</head>
+<body style="border:0; margin:0; padding:0; background-color:#ffffff;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background-color:#ffffff">
 	<tbody>
 		<tr>
-			<td align="center" valign="top" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; background: #ffffff;">
-				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background:#ffffff">
+			<td align="center" valign="top" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; background-color: #ffffff;">
+				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background-color:#ffffff">
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;" height="14">&nbsp;</td>
 						</tr>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
-								<table width="570" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background:#ffffff">
+								<table width="570" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#ffffff">
 									<tbody>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
@@ -64,7 +71,7 @@
 										</tr>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-												<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/squirt-right.png') no-repeat left 80px;">
+												<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/squirt-right.png') no-repeat left 80px;">
 													<tr>
 														<td style="border: 0; margin: 0; padding: 0;" height="30"></td>
 													</tr>
@@ -93,7 +100,7 @@
 																			</tbody>
 																		</table>
 																	</td>
-																	<td style="position: relative; top:30px; border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; background: #ff76a7; font-size:21px; line-height:21px; font-weight:bold; white-space: nowrap;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
+																	<td style="position: relative; top:30px; border:0; margin:0; padding:21px 5px; width:430px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; background-color: #ff76a7; font-size:21px; line-height:21px; font-weight:bold; white-space: nowrap;"><a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a></td>
 																	<td>
 																		<table border="0" cellspacing="0" cellpadding="0">
 																			<tbody>
@@ -111,7 +118,7 @@
 											</td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background: #01b9ff;">{!! $html !!}</td>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family: {{ $fontDefinitions }}; color:#ffffff; font-size:12px; background-color: #01b9ff;">{!! $html !!}</td>
 										</tr>
 									</tbody>
 								</table>
@@ -120,7 +127,7 @@
 						<tr>
 							<td style="border: 0; margin: 0 ; padding: 0; text-align: center;" valign="top">
 								<div>
-									<table width="570" border="0" cellspacing="0" cellpadding="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/belif_Aqualand-Quiz_backgrounds_Page-1.jpg') no-repeat bottom center; background-size: cover;">
+									<table width="570" border="0" cellspacing="0" cellpadding="0" style="background-color: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/belif_Aqualand-Quiz_backgrounds_Page-1.jpg') no-repeat bottom center; background-size: cover;">
 										<tbody>
 											<tr>
 												<td height="40" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
@@ -159,20 +166,20 @@
 								<table width="570" border="0" cellspacing="0" cellpadding="0" align="center">
 									<tbody>
 									<tr>
-										<td height="23" align="center" valign="top" style="background: #ff76a7;border: 0; margin:0; padding: 0;"></td>
+										<td height="23" align="center" valign="top" style="background-color: #ff76a7;border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="background: #ff76a7;border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color: #ffffff; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">Once you confirm your email we'll be posting<br/>your sample to the following address:</td>
+										<td align="center" valign="middle" style="background-color: #ff76a7;border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color: #ffffff; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">Once you confirm your email we'll be posting<br/>your sample to the following address:</td>
 									</tr>
 									<tr>
-										<td height="23" align="center" valign="top" style="background: #ff76a7;border: 0; margin:0; padding: 0;"></td>
+										<td height="23" align="center" valign="top" style="background-color: #ff76a7;border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="top" style="background: #ff76a7;border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" style="background: #ff76a7;">
+										<td align="center" valign="top" style="background-color: #ff76a7;border: 0; margin:0; padding: 0;">
+											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ffffff" style="background: #ffffff;border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address1 }}</td>
+													<td bgcolor="#ffffff" style="background-color: #ffffff;border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address1 }}</td>
 												</tr>
 												</tbody>
 											</table>
@@ -183,10 +190,10 @@
 									</tr>
 									<tr>
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" style="background: #ff76a7;">
+											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ffffff" style="background: #ffffff;border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
+													<td bgcolor="#ffffff" style="background-color: #ffffff;border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">{{ $address3 }}</td>
 												</tr>
 												</tbody>
 											</table>
@@ -197,7 +204,7 @@
 									</tr>
 									<tr>
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" style="background: #ff76a7;">
+											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
 													<td bgcolor="#ff76a7" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:12px; line-height:18px; font-weight: bold; letter-spacing:-0.4px; word-spacing: -0.2px;">We'll send you an email once<br/>the sample has been shipped!</td>
@@ -215,23 +222,23 @@
 						</tr>
 						{{-- Social Links Below --}}
 						<tr>
-							<td align="center" valign="top" bgcolor="#01b9ff" style="background: #01b9ff; border: 0; margin: 0; padding: 0;">
+							<td align="center" valign="top" bgcolor="#01b9ff" style="background-color: #01b9ff; border: 0; margin: 0; padding: 0;">
 								<table width="570" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 									<tr>
-										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background: #01b9ff;  line-height: 0;"></td>
+										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff;  line-height: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background: #01b9ff; color: #fff; text-align: right; font-family:{{ $fontDefinitions }};">
+										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; text-align: right; font-family:{{ $fontDefinitions }};">
 											<a href="https://belifusa.com" style="color: #fff; font-style: italic; text-decoration: none;">belifusa.com</a>
 										</td>
 										<td style="width: 10%;">&nbsp;</td>
-										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background: #01b9ff; color: #fff; text-align: left; font-family:{{ $fontDefinitions }};">
+										<td align="center" valign="middle" style="width: 45%; border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; text-align: left; font-family:{{ $fontDefinitions }};">
 											<a href="#" style="color: #fff; font-style: italic; text-decoration: none; white-space: nowrap;">belif at sephora</a>
 										</td>
 									</tr>
 									<tr>
-										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background: #01b9ff;  line-height: 0;"></td>
+										<td colspan="3" height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff;  line-height: 0;"></td>
 									</tr>
 									</tbody>
 								</table>
@@ -242,19 +249,19 @@
 								<table width="570" border="0" cellspacing="0" cellpadding="0">
 									<tbody>
 										<tr>
-											<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background: #01b9ff;">&nbsp;</td>
+											<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff;">&nbsp;</td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background: #01b9ff; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;"><a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/instagram-logo-transparent.png" width="27" height="27" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/belifUSA/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/facebook-logo-transparent.png" width="27" height="27" alt="Belif Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/belifusa" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/twitter-logo-transparent.png" width="27" height="27" alt="Belif Twitter" style="border: 0; margin: 0; padding: 0;"/></a></td>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;"><a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/instagram-logo-transparent.png" width="27" height="27" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://www.facebook.com/belifUSA/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/facebook-logo-transparent.png" width="27" height="27" alt="Belif Facebook" style="border: 0; margin: 0; padding: 0;"/></a> &nbsp; &nbsp; &nbsp; <a href="https://twitter.com/belifusa" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/twitter-logo-transparent.png" width="27" height="27" alt="Belif Twitter" style="border: 0; margin: 0; padding: 0;"/></a></td>
 										</tr>
 										<tr>
-											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background: #01b9ff;  line-height: 0;"></td>
+											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff;  line-height: 0;"></td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background: #01b9ff; color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; belif cosmetics</td>
+											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff; color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; belif cosmetics</td>
 										</tr>
 										<tr>
-											<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background: #01b9ff;">&nbsp;</td>
+											<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; background-color: #01b9ff;">&nbsp;</td>
 										</tr>
 									</tbody>
 								</table>
@@ -279,3 +286,5 @@
 		</tr>
 	</tbody>
 </table>
+</body>
+</html>
