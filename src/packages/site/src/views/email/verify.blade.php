@@ -148,7 +148,7 @@
 												</td>
 											</tr>
 											<tr>
-												<td height="367" style="border: 0; margin:0; padding: 0;">
+												<td height="300" style="border: 0; margin:0; padding: 0;">
 													<img src="{{ $productImage }}" width="50%" />
 												</td>
 											</tr>
