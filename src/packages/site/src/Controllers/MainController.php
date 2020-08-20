@@ -343,7 +343,7 @@ class MainController extends BaseController implements CMSTrigger {
                         ->count();
 
                 // address used too many times
-                if ($addressUsers >= 4) {
+                if ($addressUsers >= 1) {
                     $errors = 'This address has already claimed samples. Please use a valid address.';
                     $valid = false;
                 }
