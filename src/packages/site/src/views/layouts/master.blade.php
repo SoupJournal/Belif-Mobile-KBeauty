@@ -33,7 +33,7 @@
     <body ng-app="belif">
    
 		<div class="{{ ($fullScreen) ? 'main-page-full' : 'main-page' }} page-text stretch-to-fit"
-			 style="background: url({{ $backgroundImage }}) no-repeat center center; background-size:cover;">
+			 style="background: url({{ $backgroundImage }}) no-repeat center 25px; background-size:cover; height:1000px;">
 			
 			<div class="main-page-container fill-height color-2">
 	

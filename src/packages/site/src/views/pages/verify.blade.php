@@ -35,27 +35,24 @@
 	
 		<div class="spacer-medium"></div>
 
-		<div class="no-margins size-7 color-2 font-3 stroke">{!! $title !!}</div>
+		<div class="no-margins size-3 color-2 font-3">{!! $title !!}</div>
 
-		<div class="spacer-small"></div>
+		<div class="spacer-large"></div>
 
-		<div class="no-margins size-4 color-14 font-9">{!! $subtitle !!}</div>
+		<div class="no-margins size-7 color-2 font-9">{!! $subtitle !!}</div>
 
-		<div class="spacer-small"></div>
+		<div class="spacer-large"></div>
 	
-		{{-- info --}}
-		<div class="no-margins size-5 color-2 font-3 stroke">{!! $text !!}</div>
-
-		<div class="spacer-small"></div>
-
 		{{-- Re-verify button --}}
-		<a href="{{ route('belif.reverify') }}" class="color-14">
+		<a href="{{ route('belif.reverify') }}" class="color-2">
 			<h4 class="button-link">{!! $buttonNo !!}</h4>
 		</a>
 		
 	</div>
 
-	<div class="spacer-larger"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	@include('belif::layouts.footer')
 
 </div>
 

@@ -45,13 +45,11 @@
 
 .main-page-container {
 	overflow-y: auto;
-	/*overflow: hidden;*/
+	/*position: fixed;*/
 }
 
 
 .page-header {
-/*	display: table-row;
-	height: 0;	*/
 }
 
 
@@ -79,7 +77,7 @@
 
 .page-footer {
 	position: absolute;
-	bottom: 0;
+	bottom: 20px;
 	left: 0;
 	right: 0;	
 }
@@ -516,7 +514,7 @@
 }
 
 .fill-height {
-	height: 100%;	
+	height: 1000px;
 }
 
 .fill-height-or-more {
@@ -685,5 +683,176 @@ button.question:active {
 }
 
 a.button-next {
-	border: 3px solid #ff76a7;
+	border: 3px solid #fff;
+}
+
+.button-page a,
+.button-page a:hover {
+	color: #fff;
+}
+
+.landing-button {
+	position: absolute;
+	left: 0;
+	color: transparent;
+	width: 100%;
+	height: 50%;
+}
+
+.landing-letitglow {
+	width: 100px;
+	text-align: left;
+	margin-top: 30px;
+	margin-left: 65%;
+}
+
+.landing-letitglow a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.email-letitglow {
+	margin: 0 20px 20px 20px;
+	background: #231916 !important;
+	width: 330px;
+}
+
+.green-x {
+	background: #009900;
+	width: 40px;
+	font-size: 5vw;
+	padding: 10px;
+	margin-left: 84%;
+}
+
+.green-x a,
+.green-x a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.email-letitglow .form-text {
+	padding: 20px 23px;
+}
+
+.email-letitglow .prize-text {
+	width: 75%;
+	margin: 0 auto;
+}
+
+.letitglow-small,
+.letitglow-medium,
+.letitglow-large,
+.letitglow-full {
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.address .letitglow-small,
+.address .letitglow-medium,
+.address .letitglow-large,
+.address .letitglow-full,
+.share .letitglow-small,
+.share .letitglow-medium,
+.share .letitglow-large,
+.share .letitglow-full {
+	background: #fff;
+}
+
+.email-button {
+	margin-top: 55%;
+	position: absolute;
+	left: 30%;
+}
+
+.share-button {
+	margin-top: 32%;
+	position: absolute;
+	left: 30%;
+}
+
+.claim-button {
+	margin-top: 38%;
+	position: absolute;
+	left: 25%;
+	width: 50% !important;
+}
+
+.claim-button a,
+.claim-button a:hover {
+	color: #fff;
+}
+
+.email-letitglow .letitglow-small {
+	width: 30%;
+}
+
+.email-letitglow .letitglow-large {
+	width: 55%;
+}
+
+.email-letitglow .letitglow-full {
+	width: 100%;
+}
+
+.result-intro p {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.result-message p {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.result-message-form {
+	position: absolute; top:45%;
+}
+
+.page-footer .email {
+	color: #fff;
+	font-size: 4vw;
+	margin-bottom: 10px;
+}
+
+.page-footer .copyright {
+	color: #fff;
+	font-size: 3vw;
+}
+
+.page-footer .email a,
+.page-footer .email a:hover,
+.page-footer .copyright a,
+.page-footer .copyright a:hover {
+	color: #fff;
+}
+
+@media only screen and (min-width: 414px) {
+
+	.email-letitglow {
+		margin: 0 20px 20px 20px;
+		background: #231916 !important;
+		width: 370px;
+	}
+
+	.email-button {
+		margin-top: 49%;
+		position: absolute;
+		left: 30%;
+	}
+	.share-button {
+		margin-top: 30%;
+		position: absolute;
+		left: 30%;
+	}
+	.claim-button {
+		margin-top: 39%;
+		position: absolute;
+		left: 25%;
+		width: 50% !important;
+	}
+	.result-message-form {
+		position: absolute; top:50%;
+	}
+
 }

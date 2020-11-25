@@ -19,35 +19,40 @@
 
 <?php
 
+	//ensure page properties are set
+	$formURL = isset($formURL) ? $formURL : '';
+	$termsURL = isset($termsURL) ? $termsURL : '';
+
 	//get page variables
 	$title = safeArrayValue('title', $pageData, "");
 	$subtitle = safeArrayValue('subtitle', $pageData, "");
 	$text = safeArrayValue('text', $pageData, "");
+	$html = safeArrayValue('html', $pageData, "");
+	$image = safeArrayValue('image', $pageData, "");
 	$button = safeArrayValue('button', $pageData, "");
 	$buttonNo = safeArrayValue('button_cancel', $pageData, "");
-	$image = safeArrayValue('image', $pageData, "");
 	
 ?>
 
-<div class="text-center page-padding">
-	
+<div class="text-center">
 
+	<a href="/email" class="landing-button"></a>
+
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
 	<div class="spacer-medium"></div>
 
-	{{-- title --}}
-	<div class="no-margins size-7 color-2 font-3">{!! $title !!}</div>
+	<div class="no-margins size-4 color-2 font-7 landing-letitglow">{!! $html !!}</div>
 
-	<div class="spacer-medium"></div>
+	<button class="button-page bg-color-15 color-2 font-3" label="{{ $button }}">
+		<a href="{!! $text !!}">{{ $button }}</a>
+	</button>
 
-	{{-- info --}}
-	<div class="no-margins size-6 color-2 font-3">{!! $text !!}</div>
-
-	<div class="spacer-medium"></div>
-
-	<a href="{{ $buttonNo }}" class="button-page button-next bg-color-16 color-2 font-3" innerclass="color-2" label="{{ $button }}" image="{{ $assetPath }}/images/logo-instagram.png" target="_blank" style="width: 60% !important;">
-		{{ $button }} <div class="button-instagram-icon"><img src="{{ $assetPath }}/images/logo-instagram.png" width="16" /></div>
-	</a>
-
+	@include('belif::layouts.footer')
 
 </div>
 

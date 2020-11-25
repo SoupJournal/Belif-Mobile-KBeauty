@@ -37,24 +37,32 @@
 <div class="text-center">
 	
 	{{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL)) }}
-	
-	<div class="spacer-tiny"></div>
-
-	<div class="no-margins size-9 color-2 font-3 stroke">{!! $title !!}</div>
-
-	<div class="no-margins size-4 color-14 font-7">{!! $subtitle !!}</div>
-
-	<div class="no-margins"><img src="{!! $image !!}" class="page-image-email" style="width: 300px;" /></div>
 
 	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-small"></div>
+	<div class="spacer-small"></div>
+	<div class="spacer-tiny"></div>
 
-	<div class="no-margins size-4 color-2 font-7">{!! $html !!}</div>
+	<div class="green-x"><a href="/">X</a></div>
+	<button class="email-button button-page bg-color-15 color-2 font-3" label="{{ $button }}">
+		{{ $button }}
+	</button>
+	<div class="email-letitglow form-group page-padding-small bg-color-1">
 
-	{{-- enter email --}}
-	<div class="form-group page-padding-small">
+		<div class="form-text size-3 color-2 font-7">{!! $text !!}</div>
+		<div class="form-group">
+			{{ Form::text('firstname', null, Array ('placeholder' => 'FIRST NAME', 'class' => 'letitglow-small color-1', 'tabindex' => '1')) }}
+			{{ Form::text('lastname', null, Array ('placeholder' => 'LAST NAME', 'class' => 'letitglow-large color-1', 'tabindex' => '2')) }}
+		</div>
+		<div class="form-group">
+			{{ Form::email('email', null, Array ('placeholder' => 'EMAIL ADDRESS', 'class' => 'letitglow-large color-1', 'tabindex' => '3')) }}
+			{{ Form::text('zipcode', null, Array ('placeholder' => 'ZIP CODE', 'class' => 'letitglow-small color-1', 'tabindex' => '4')) }}
+		</div>
 
-		{{ Form::email('email', null, Array ('placeholder' => 'your@email.com', 'class' => 'page-input-text large color-2', 'tabindex' => '1')) }}
-
+		<div class="spacer-medium"></div>
 	</div>
 
 	{{-- display form errors --}}
@@ -64,19 +72,11 @@
 		@endforeach
 	@endif
 
-	{{-- submit button --}}
-	<button class="button-page bg-color-14 color-2 font-3" label="{{ $button }}">
-		{{ $button }}
-	</button>
-
-	<div class="color-2 size-4"><a href="{{ route('belif.unsubscribe') }}" class="color-2">I want to unregister myself.</a></div>
-
-	{{-- Terms & Conditions --}}
-	<div class="terms">
-		<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-2 small" target="_blank">{{ $buttonNo }}</a>
-	</div>
-
 	{{ Form::close() }}
+
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	@include('belif::layouts.footer')
 
 </div>
 

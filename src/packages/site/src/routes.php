@@ -40,11 +40,11 @@ Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['
 			// product is available
 			Route::group(array('middleware' => 'ProductAvailable'), function() {
 
-				// welcome
-				//Route::get('/', ['as' => 'belif.welcome', 'uses' => 'MainController@getIndex']);
+				// landing
+				Route::get('/', ['as' => 'belif.landing', 'uses' => 'MainController@getLanding']);
 
 				// email
-				Route::get('/', ['as' => 'belif.home', 'uses' => 'MainController@getEmail']);
+				Route::get('/email', ['as' => 'belif.home', 'uses' => 'MainController@getEmail']);
 				// Route::get('/email', ['as' => 'belif.email', 'uses' => 'MainController@getEmail']);
 				Route::post('/email', ['as' => 'belif.email', 'uses' => 'MainController@postEmail']);
 

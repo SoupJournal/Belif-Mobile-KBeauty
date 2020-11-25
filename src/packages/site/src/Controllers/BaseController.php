@@ -15,6 +15,7 @@ class BaseController extends Controller
 {
 
     //page constants
+    const FORM_LANDING = 'page_landing';
     const FORM_EMAIL = 'page_email';
     const FORM_GUIDE = 'page_guide';
     const FORM_QUESTION = 'page_question';
@@ -38,32 +39,25 @@ class BaseController extends Controller
     const FORM_UNSUBSCRIBE = 'page_unsubscribe';
     const FORM_DESKTOP = 'page_desktop';
 
-    //emails
+    // emails
     const EMAIL_VERIFY = 'email_verify';
     const EMAIL_PRODUCT = 'email_product';
     const EMAIL_SHARE = 'email_share';
-    const EMAIL_PLAYLIST_VINTAGE = 'email_vintage';
-    const EMAIL_PLAYLIST_THROWBACK = 'email_throwback';
-    const EMAIL_PLAYLIST_TWENTY = 'email_twenty';
 
-    //product email images
-    //const EMAIL_PRODUCT_IMAGES = 'email_images';
-
-    //verify email details
-    const EMAIL_SENDER_VERIFY = 'team@belif-always-aqua.com ';
+    // verify email details
+    const EMAIL_SENDER_VERIFY = 'team@belif-let-it-glow-aqua.com ';
     const EMAIL_SUBJECT_VERIFY = 'Verify your email and to claim your belif products';
 
-    //share email details
-    const EMAIL_SENDER_SHARE = 'team@belif-always-aqua.com';
-    const EMAIL_SUBJECT_SHARE = ' wants to give you the gift of belif!';
+    // share email details
+    const EMAIL_SENDER_SHARE = 'team@belif-let-it-glow-aqua.com ';
+    const EMAIL_SUBJECT_SHARE = 'Your friend wants to share some holiday cheer with you';
 
-    //product email details
-    const EMAIL_SENDER_PRODUCT = 'team@belif-always-aqua.com';
+    // product email details
+    const EMAIL_SENDER_PRODUCT = 'team@belif-let-it-glow-aqua.com ';
     const EMAIL_SUBJECT_PRODUCT = "Your belif samples are on their way! ";
 
-    //playlist email details
-    const EMAIL_SENDER_PLAYLIST = 'team@belif-always-aqua.com';
-    const EMAIL_SUBJECT_PLAYLIST = "A gift from us!";
+    const EMAIL_SUBJECT_PRIZE = 'Your belif prize';
+    const EMAIL_SUBJECT_MESSAGE = 'Some holiday cheer from us to you';
 
     //number of questions
     private $numberOfQuestions = 3;
@@ -354,51 +348,6 @@ class BaseController extends Controller
         } //end if (valid user)
 
     } //end generateVerifyCode()
-
-    public function sendPlaylistEmail($user, $template) {
-
-        $result = false;
-
-        //valid user
-        if ($user && $user->email && strlen($user->email)>0) {
-
-            //get page data
-            switch ($template) {
-                case 'vintage':
-                    $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_VINTAGE);
-                    break;
-                case 'throwback':
-                    $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_THROWBACK);
-                    break;
-                case 'twenty':
-                    $pageData = $this->dataForPage(self::EMAIL_PLAYLIST_TWENTY);
-                    break;
-            }
-
-            //send confirm email (sent via queue to avoid delay loading next page)
-            $emailJob = new SendEmailJob([
-                "recipient" => $user->email,
-                "sender" => [
-                    'email' => self::EMAIL_SENDER_PLAYLIST,
-                    'name' => 'belif'
-                ],
-                "subject" => self::EMAIL_SUBJECT_PLAYLIST,
-                "view" => "belif::email." . $template,
-                "view_properties" => [
-                    'name' => $user->name,
-                    'pageData' => $pageData,
-                    'verifyLink' => route('belif.share', ['code' => 'none']),
-                    'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])
-                ]
-            ]);
-            $this->dispatch($emailJob);
-            $result = true;
-
-        } //end if (valid user)
-
-        return $result;
-
-    } //end sendVerifyEmail()
 
 } //end class BaseController
 

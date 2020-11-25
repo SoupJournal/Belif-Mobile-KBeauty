@@ -16,48 +16,23 @@ use Redirect;
 use Session;
 use Illuminate\Support\Facades\Auth;
 
-class MainController extends BaseController implements CMSTrigger {
+class MainController extends BaseController implements CMSTrigger
+{
 
     //==========================================================//
     //====					PAGE METHODS					====//
     //==========================================================//
 
     //catch all undefined request and route to home
-    public function missingMethod($parameters = array()) {
+    public function missingMethod($parameters = array())
+    {
 
         return Redirect::to('/');
 
     } //end missingMethod()
 
-    public function getSephora()
+    public function getDesktop()
     {
-
-//        $campaign = safeArrayValue('campaign', $_GET, null);
-//
-//        $redirectUrls = [
-//            1 => 'http://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514',
-//            2 => 'https://www.sephora.com/product/aqua-bomb-jelly-cleanser-P444057?icid2=products%20grid:p444057',
-//            3 => 'https://www.sephora.com/product/aqua-bomb-sleeping-mask-P433443?icid2=products%20grid:p433443',
-//            4 => 'https://www.sephora.com/product/belif-aqua-bomb-deep-hydration-set-P457857',
-//            5 => 'https://www.sephora.com/product/moisturizing-eye-bomb-P422905?icid2=products%20grid:p422905',
-//            6 => 'https://www.sephora.com/product/the-true-cream-aqua-bomb-P394639?icid2=products%20grid:p394639',
-//            7 => 'https://www.sephora.com/product/the-true-cream-moisturizing-bomb-deco-P425444?icid2=products%20grid:p425444',
-//            8 => 'https://www.sephora.com/product/the-true-cream-moisturizing-bomb-P394624?icid2=products%20grid:p394624'
-//        ];
-
-        $redirectUrl = 'https://www.sephora.com/product/belif-the-true-cream-aqua-bomb-aloe-vera-P457514';
-//        if (isset($campaign)) {
-//            if (isset($redirectUrls[trim($campaign)])) {
-//                $redirectUrl = $redirectUrls[trim($campaign)];
-//            }
-//        }
-
-        return View::make('belif::pages.sephora')->with([
-            'redirectUrl' => $redirectUrl
-        ]);
-    }
-
-    public function getDesktop() {
 
         //non-mobile device
         if (!isMobileDevice()) {
@@ -69,7 +44,7 @@ class MainController extends BaseController implements CMSTrigger {
             $backgroundImage = safeArrayValue('background_image', $pageData);
 
             //render view
-            return View::make('belif::pages.desktop')->with(Array (
+            return View::make('belif::pages.desktop')->with(Array(
                 'fullScreen' => true,
                 'pageName' => 'home',
                 'pageData' => $pageData,
@@ -84,12 +59,30 @@ class MainController extends BaseController implements CMSTrigger {
 
     } //end getDesktop()
 
-    public function getEmail() {
+    public function getLanding()
+    {
+        // get page data
+        $pageData = $this->dataForPage(self::FORM_LANDING);
 
-        //get page data
+        // get background image
+        $backgroundImage = safeArrayValue('background_image', $pageData);
+
+        //render view
+        return View::make('belif::pages.landing')->with(Array (
+            'pageName' => 'landing',
+            'pageData' => $pageData,
+            'backgroundImage' => $backgroundImage,
+            'headerLogoUrl' => $this->header_logo_url_white,
+            'termsURL' => $this->terms_and_conditions_url
+        ));
+    }
+
+    public function getEmail()
+    {
+        // get page data
         $pageData = $this->dataForPage(self::FORM_EMAIL);
 
-        //get background image
+        // get background image
         $backgroundImage = safeArrayValue('background_image', $pageData);
 
         //render view
@@ -109,31 +102,45 @@ class MainController extends BaseController implements CMSTrigger {
         $valid = true;
 
         //get form values
+        $firstname = safeArrayValue('firstname', $_POST);
+        $lastname = safeArrayValue('lastname', $_POST);
         $email = safeArrayValue('email', $_POST);
-        $agree = safeArrayValue('agree', $_POST);
+        $zipcode = safeArrayValue('zipcode', $_POST);
 
-        //email exists
-        if (!$email || strlen(trim($email))<=0) {
+        // firstname
+        if (!$firstname) {
+            $errors = 'Please specify a first name';
+            $valid = false;
+        }
+
+        // lastname
+        else if (!$lastname) {
+            $errors = 'Please specify a last name';
+            $valid = false;
+        }
+
+        // email exists
+        else if (!$email || strlen(trim($email))<=0) {
             $errors = 'Please specify an email address.';
             $valid = false;
         }
 
-        //valid email
+        // valid email
         else if (!validEmail($email)) {
             $errors = 'Please specify a valid email address.';
             $valid = false;
         }
 
-        // valid terms
-        else if (!$agree) {
-            $errors = 'Please agree to the T&Cs';
+        // zipcode
+        else if (!$zipcode) {
+            $errors = 'Please specify a zip code';
             $valid = false;
         }
 
         //check if email used already
         $user = User::where('email', '=', $email)->where('email_verified', '=', true)->first();
         if ($user) {
-            $errors = 'Sorry, looks like you\'ve already registered with that email';
+            $errors = 'Sorry, looks like you\'ve already registered';
             $valid = false;
         }
 
@@ -152,15 +159,21 @@ class MainController extends BaseController implements CMSTrigger {
             // no user exists so create new user to store email
             if (!$user) {
                 $user = new User();
+                $user->name = $firstname . ' ' . $lastname;
                 $user->email = $email;
+                $user->zip_code = $zipcode;
                 $user->email_registration_attempts = 1;
                 $user->save();
             }
             // user already exists
             else {
+                $user->name = $firstname . ' ' . $lastname;
+                $user->zip_code = $zipcode;
                 $user->email_registration_attempts += 1;
                 $user->save();
             }
+
+            Session::set('userId', $user->id);
 
             //clear any existing answers
             $this->clearAnswers();
@@ -170,7 +183,7 @@ class MainController extends BaseController implements CMSTrigger {
             if ($available) {
 
                 // move to guide
-                return Redirect::route('belif.guide');
+                return Redirect::route('belif.results');
 
             }
             else {
@@ -189,29 +202,6 @@ class MainController extends BaseController implements CMSTrigger {
         }
 
     } //end postEmail()
-
-    public function getGuide() {
-
-        //get page data
-        $pageData = parent::dataForPage(self::FORM_GUIDE);
-
-        //get background image
-        $backgroundImage = safeArrayValue('background_image', $pageData);
-
-        //clear quiz answers
-        $this->clearAnswers(0);
-
-        //render view
-        return View::make('belif::pages.guide')->with(Array (
-            'pageName' => 'guide',
-            'pageData' => $pageData,
-            'backgroundImage' => $backgroundImage,
-            'headerLogoUrl' => $this->header_logo_url_white,
-            'buttonURL' => route('belif.question'),
-            'backURL' => route('belif.home'),
-        ));
-
-    } //end getGuide()
 
     public function getUnavailable()
     {
@@ -247,7 +237,8 @@ class MainController extends BaseController implements CMSTrigger {
             'backgroundImage' => $backgroundImage,
             'headerLogoUrl' => $this->header_logo_url_white,
             'formURL' => route('belif.address'),
-            'backURL' => route('belif.results')
+            'backURL' => route('belif.results'),
+            'termsURL' => $this->terms_and_conditions_url
         ));
 
     } //end getAddress()
@@ -261,13 +252,11 @@ class MainController extends BaseController implements CMSTrigger {
         if ($email && strlen($email) > 0 && validEmail($email)) {
 
             // get form values
-            $name = safeArrayValue('name', $_POST, null);
             $address1 = safeArrayValue('address_1', $_POST, null);
             $address2 = safeArrayValue('address_2', $_POST, null);
             $city = safeArrayValue('city', $_POST, null);
             $stateId = safeArrayValue('state', $_POST, null);
             $zipCode = safeArrayValue('zip_code', $_POST, null);
-            $sephoraMember = safeArrayValue('sephora', $_POST, null);
 
             // trim strings
             $address1 = $address1 ? trim($address1) : null;
@@ -282,12 +271,6 @@ class MainController extends BaseController implements CMSTrigger {
 
             // form validation
             $valid = true;
-
-            // valid name
-            if (!$name || strlen(trim($name)) <= 0) {
-                $errors = 'Please specify your name.';
-                $valid = false;
-            }
 
             // valid address
             //if ($valid && (!$address1 || !$address2 || strlen(trim($address1))<=0 || strlen(trim($address2))<=0)) {
@@ -378,14 +361,12 @@ class MainController extends BaseController implements CMSTrigger {
                 if ($user) {
 
                     // update user details
-                    $user->name = $name;
                     $user->email = $email;
                     $user->address_1 = $address1;
                     $user->address_2 = $address2;
                     $user->city = $city;
                     $user->state = $state;
                     $user->zip_code = $zipCode;
-                    $user->sephora = $sephoraMember;
                     $user->ip_address = $ipAddress;
 
                     // save user details
@@ -401,73 +382,6 @@ class MainController extends BaseController implements CMSTrigger {
                     }
                     // saved details
                     else {
-
-                        // get current answers
-                        $answers = Session::get('answers');
-                        $wereSamplesCounted = Session::get('samples_counted');
-
-                        if (!$wereSamplesCounted) {
-
-                            $sampleCount = 0;
-                            foreach ($answers as $answer) {
-                                if ($answer == 'A') {
-                                    $sampleCount++;
-                                }
-                            }
-
-                            $products = Product::all();
-
-                            if ($sampleCount == 3) { // 3
-                                foreach ($products as $product) {
-                                    $product->available_quantity = $product->available_quantity - 1;
-                                    $product->save();
-                                }
-                            } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'F') { // 1
-                                $product = $products[0];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                            } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'F') { // 1
-                                $product = $products[1];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                            } elseif ($answers[1] == 'F' && $answers[2] == 'F' && $answers[3] == 'A') { // 1
-                                $product = $products[2];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                            } elseif ($answers[1] == 'A' && $answers[2] == 'A' && $answers[3] == 'F') { // 2
-                                $product = $products[0];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                                $product = $products[1];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                            } elseif ($answers[1] == 'A' && $answers[2] == 'F' && $answers[3] == 'A') { // 2
-                                $product = $products[0];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                                $product = $products[2];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                            } elseif ($answers[1] == 'F' && $answers[2] == 'A' && $answers[3] == 'A') { // 2
-                                $product = $products[1];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                                $product = $products[2];
-                                $product->available_quantity = $product->available_quantity - 1;
-                                if ($product->available_quantity < 1) { $product->available = 0; $product->available_quantity = 0; }
-                                $product->save();
-                            }
-
-                            Session::set('samples_counted', true);
-                        }
 
                         // send verification email
                         $this->sendVerifyEmail($user);
@@ -507,7 +421,8 @@ class MainController extends BaseController implements CMSTrigger {
             'pageName' => 'verify',
             'pageData' => $pageData,
             'backgroundImage' => $backgroundImage,
-            'headerLogoUrl' => $this->header_logo_url_white
+            'headerLogoUrl' => $this->header_logo_url_white,
+            'termsURL' => $this->terms_and_conditions_url
         ));
 
     } //end getVerify()
@@ -534,7 +449,8 @@ class MainController extends BaseController implements CMSTrigger {
             'pageData' => $pageData,
             'backgroundImage' => $backgroundImage,
             'headerLogoUrl' => $this->header_logo_url_white,
-            'verifyEmail' => $user->email
+            'verifyEmail' => $user->email,
+            'termsURL' => $this->terms_and_conditions_url
         ));
 
     } // end getReverify()
@@ -553,7 +469,6 @@ class MainController extends BaseController implements CMSTrigger {
 
                 // store user
                 Session::set('userId', $user->id);
-
 
                 // user already shared
                 if ($user->shared_email && strlen($user->shared_email)>0) {
@@ -616,6 +531,13 @@ class MainController extends BaseController implements CMSTrigger {
                 // store user
                 Session::set('userId', $user->id);
 
+                // if they won prize, decrement available inventory
+                if ($user->answers = 'prize' && !$user->email_verified) {
+                    $product = Product::find((int) $user->all_answers);
+                    $product->qty_available = ($product->qty_available-1);
+                    $product->save();
+                }
+
                 // user already shared
                 if ($user->shared_email && strlen($user->shared_email)>0) {
 
@@ -650,7 +572,8 @@ class MainController extends BaseController implements CMSTrigger {
                         'pageData' => $pageData,
                         'backgroundImage' => $backgroundImage,
                         'headerLogoUrl' => $this->header_logo_url_white,
-                        'formURL' => route('belif.share.submit')
+                        'formURL' => route('belif.share.submit'),
+                        'termsURL' => $this->terms_and_conditions_url
                     ));
 
                 }
@@ -664,8 +587,8 @@ class MainController extends BaseController implements CMSTrigger {
 
     } //end getShare()
 
-    public function postShare() {
-
+    public function postShare()
+    {
         //get user id
         $userId = Session::get('userId');
 
@@ -748,7 +671,8 @@ class MainController extends BaseController implements CMSTrigger {
 
     } //end postShare()
 
-    public function getThanks() {
+    public function getThanks()
+    {
 
         $userId = Session::get('userId');
 
@@ -769,7 +693,7 @@ class MainController extends BaseController implements CMSTrigger {
             'backgroundImage' => $backgroundImage,
             'headerLogoUrl' => $this->header_logo_url_white,
             'buttonURL' => 'http://www.sephora.com/belif',
-            //'backURL' => route('belif.share', ['code' => $code])
+            'termsURL' => $this->terms_and_conditions_url
         ));
 
     } //end getThanks()

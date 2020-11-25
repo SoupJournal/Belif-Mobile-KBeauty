@@ -21,59 +21,97 @@
 	$button = safeArrayValue('button', $pageData, "");
 	$buttonNo = safeArrayValue('button_cancel', $pageData, "");
 
-	$products = isset($products) ? $products : null;
-	$productIdx = isset($productIdx) ? $productIdx : 0;
-	$restartURL = isset($restartURL) ? $restartURL : null;
-	$sampleResult = isset($sampleResult) ? $sampleResult : null;
-	$resultImage = isset($resultImage) ? $resultImage : null;
-	$alternativeTitle = isset($alternativeTitle) ? $alternativeTitle : null;
+	$firstname = isset($firstname) ? $firstname : null;
+	$result = isset($result) ? $result : null;
+	$resultType = isset($resultType) ? $resultType : null;
 
-	if (!empty($alternativeTitle)) {
-		$subtitle = $alternativeTitle;
-	}
+	$formURL = isset($formURL) ? $formURL : null;
+
+//	$productIdx = isset($productIdx) ? $productIdx : 0;
+//	$restartURL = isset($restartURL) ? $restartURL : null;
+//	$sampleResult = isset($sampleResult) ? $sampleResult : null;
+//	$resultImage = isset($resultImage) ? $resultImage : null;
+//	$alternativeTitle = isset($alternativeTitle) ? $alternativeTitle : null;
+//
+//	if (!empty($alternativeTitle)) {
+//		$subtitle = $alternativeTitle;
+//	}
 ?>
 
 <div class="text-center page-padding">
 	
-	<div class="page-padding-tiny">
+	@if ($resultType == 'message')
 
+		{{ Form::open(Array('role' => 'form', 'name' => 'shareForm', 'url' => $formURL)) }}
+
+		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
 		<div class="spacer-small"></div>
-	
-		<div class="no-margins size-7 color-2 font-3 stroke">{!! $title !!}</div>
+
+		<div class="no-margins size-4 color-1 result-intro">
+			<p><strong>{!! $firstname !!},</strong><br/>{!! $title !!}</p>
+		</div>
 
 		<div class="spacer-tiny"></div>
 
-		<div class="no-margins font-7 color-14 size-4">{!! $subtitle !!}</div>
-		
-		<img class="page-image" src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/{{ $resultImage }}.png" load-style="fade">
+		<div class="no-margins font-7 color-1 size-7 result-message"><p>{!! $result !!}</p></div>
 
-		<div class="page-padding-small font-7 color-2 size-4">{!! $text !!}</div>
+		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
 
-		<div class="spacer-small">
+		<div class="result-message-form">
+			<div class="green-x"><a href="/">X</a></div>
+			<button class="share-button button-page bg-color-15 color-2 font-3" label="{{ $button }}">
+				{{ $button }}
+			</button>
+			<div class="email-letitglow form-group page-padding-small bg-color-1">
 
-		@if ($sampleResult == 'page_results_a')
+				<div class="form-text size-3 color-2 font-7">{!! $subtitle !!}</div>
+				<div class="form-group">
+					{{ Form::email('email', null, Array ('placeholder' => 'YOUR FRIEND\'S EMAIL ADDRESS', 'class' => 'letitglow-full color-1', 'tabindex' => '3')) }}
+				</div>
 
-		<a href="{{ $restartURL }}" class="button-page button-next bg-color-14 color-2 font-3" innerclass="color-2" label="{{ $buttonNo }}">
-			{{ $buttonNo }}
-		</a>
+				<div class="spacer-medium"></div>
+			</div>
+		</div>
 
-		@else
-
-		<a href="/address" class="button-page button-next bg-color-14 color-2 font-3" innerclass="color-2" label="{{ $button }}">
-			{{ $button }}
-		</a>
-
-		<div class="spacer-tiny"></div>
-
-		<a href="{{ $restartURL }}" class="button-page button-next bg-color-clear color-15 font-3" innerclass="color-2" label="{{ $buttonNo }}">
-			{{ $buttonNo }}
-		</a>
-
+		{{-- display form errors --}}
+		@if ($errors->has())
+			@foreach ($errors->all() as $error)
+				<div class='bg-danger alert'>{{ $error }}</div>
+			@endforeach
 		@endif
 
+		{{ Form::close() }}
+
+	@else
+
+		<div class="spacer-large"></div>
+		<div class="spacer-large"></div>
 		<div class="spacer-small"></div>
 
-	</div>	
+
+		<div class="result-message-form">
+			<div class="green-x"><a href="/">X</a></div>
+			<button class="claim-button button-page bg-color-15 color-2 font-3" label="{{ $buttonNo }}">
+				<a href="/address">{{ $buttonNo }}</a>
+			</button>
+			<div class="email-letitglow form-group page-padding-small bg-color-1">
+
+				<div class="form-text size-3 color-2 font-7">YOU WON!</div>
+				<div class="prize-text size-6 color-2 font-7"><p>{!! $result !!}</p></div>
+
+				<div class="spacer-medium"></div>
+				<div class="spacer-small"></div>
+
+			</div>
+		</div>
+
+	@endif
+
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	@include('belif::layouts.footer')
 
 </div>
 

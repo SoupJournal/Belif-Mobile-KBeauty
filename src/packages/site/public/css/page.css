@@ -1,5 +1,7 @@
 
-
+body {
+	background-color: #5bafe1;
+}
 /********************************/
 /* 			IMAGES	 			*/
 /********************************/
@@ -452,11 +454,12 @@
 
 .button-page {
 	display: inline-block;
-	width: 75%;
+	width: 40%;
 	padding-top: 3.2vw;	
 	padding-bottom: 3.2vw;
 	border: none;
 	text-transform: uppercase;
+	border-radius: 30px;
 }
 
 .button-page-cancel {

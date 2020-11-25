@@ -1,5 +1,7 @@
 
-
+body {
+	background-color: #5bafe1;
+}
 /********************************/
 /* 			IMAGES	 			*/
 /********************************/
@@ -12,10 +14,18 @@
 	top: 10px;
 }
 
+.page-image-email {
+	display: inline-block;
+	position: relative;
+	width: 300px;
+	height: auto;
+	top: 10px;
+}
+
 .question-image {
 	display: inline-block;
 	position: relative;
-	width: 90%;
+	width: 250px;
 	height: auto;
 	top: 10px;
 }
@@ -152,8 +162,8 @@
 
 .answer-location-1 {
 	position: absolute;
-	top: 80%;
-	right: 0;
+	top: 57%;
+	left: 7%;
 	width: 100px;
 	height: 100px;
 }
@@ -161,14 +171,14 @@
 .answer-location-2 {
 	position: absolute;
 	top: 15%;
-	left: 25%;
+	left: 40%;
 	width: 100px;
 	height: 100px;
 }
 
 .answer-location-3 {
 	position: absolute;
-	top: 35%;
+	top: 30%;
 	left: 30%;
 	width: 100px;
 	height: 100px;
@@ -444,11 +454,12 @@
 
 .button-page {
 	display: inline-block;
-	width: 75%;
+	width: 40%;
 	padding-top: 3.2vw;	
 	padding-bottom: 3.2vw;
 	border: none;
 	text-transform: uppercase;
+	border-radius: 30px;
 }
 
 .button-page-cancel {
