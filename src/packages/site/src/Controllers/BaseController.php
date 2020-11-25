@@ -45,15 +45,15 @@ class BaseController extends Controller
     const EMAIL_SHARE = 'email_share';
 
     // verify email details
-    const EMAIL_SENDER_VERIFY = 'team@belif-let-it-glow-aqua.com ';
+    const EMAIL_SENDER_VERIFY = 'team@belif-let-it-glow.com ';
     const EMAIL_SUBJECT_VERIFY = 'Verify your email and to claim your belif products';
 
     // share email details
-    const EMAIL_SENDER_SHARE = 'team@belif-let-it-glow-aqua.com ';
+    const EMAIL_SENDER_SHARE = 'team@belif-let-it-glow.com ';
     const EMAIL_SUBJECT_SHARE = 'Your friend wants to share some holiday cheer with you';
 
     // product email details
-    const EMAIL_SENDER_PRODUCT = 'team@belif-let-it-glow-aqua.com ';
+    const EMAIL_SENDER_PRODUCT = 'team@belif-let-it-glow.com ';
     const EMAIL_SUBJECT_PRODUCT = "Your belif samples are on their way! ";
 
     const EMAIL_SUBJECT_PRIZE = 'Your belif prize';
