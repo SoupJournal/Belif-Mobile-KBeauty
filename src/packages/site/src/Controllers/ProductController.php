@@ -58,8 +58,6 @@ class ProductController extends BaseController {
         $phrases = [];
         $prizes = [];
 
-        $resultType = 'prize';
-
         if ($resultType == 'message') {
             // get random message
             foreach ($questions as $question) {
