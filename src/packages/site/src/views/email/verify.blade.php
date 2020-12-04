@@ -37,10 +37,10 @@
 							<td style="border: 0; margin: 0; padding: 0;">
 								<table width="570" height="249" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_top.jpg) no-repeat center center;">
 									<tr>
-										<td style="border: 0; margin: 0; padding: 0; height: 40px;">&nbsp;</td>
+										<td style="border: 0; margin: 0; padding: 0; height: 125px;">&nbsp;</td>
 									</tr>
 									<tr>
-										<td style="margin: 0px auto;text-align: center;color: #fff;padding: 65px;">{!! $title !!}</td>
+										<td style="margin: 0px auto;text-align: center;color: #fff;font-size: 32px;">{!! $title !!}</td>
 									</tr>
 								</table>
 							</td>
@@ -56,10 +56,10 @@
 														<td style="border: 0; margin: 0; padding: 0;" height="130"></td>
 													</tr>
 													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:24px; line-height:30px; font-weight:bold; word-spacing:-0.2px;">{!! $html !!}</td>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><p style="margin: 0 120px;font-size: 42px;color: #231f20;line-height: 48px;">{!! $html !!}</p></td>
 													</tr>
 													<tr>
-														<td height="30" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+														<td height="100" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 													</tr>
 													<tr>
 														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px;">{!! $subtitle !!}</td>
