@@ -85,18 +85,19 @@
 									<tbody>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-												<table width="100%" border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td style="border: 0; margin: 0; padding: 0;" height="130"></td>
-													</tr>
+												<table width="100%" border="0" cellpadding="0" cellspacing="0">z
 													<tr>
 														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
 															<p>You won!</p>
 															<p>Your glowing prize is:</p>
-															<p>The True Cream Aqua Bomb Deco</p>
-															<p>Your prize will be shipping in the next 4-6 weeks</p>
+															<p style="font-size:24px; margin: 0 170px;">The True Cream Aqua Bomb Deco</p>
+															<p style="font-size:10px;">Your prize will be shipping in the next 4-6 weeks</p>
 															<p>Share with your friends:</p>
 															<a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_fb_icon.jpg" /></a>
+															&nbsp;
+															&nbsp;
+															&nbsp;
+															&nbsp;
 															<a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_tw_icon.jpg" /></a>
 														</td>
 													</tr>
@@ -147,7 +148,10 @@
 														</td>
 													</tr>
 													<tr>
-														<td height="50" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+														<td height="50" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
+															<p style="font-size:10px;">You are receiving this email because you subscribed<br/>
+																to hear from us regarding products, sweepstakes and events.</p>
+														</td>
 													</tr>
 													<tr>
 														<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
