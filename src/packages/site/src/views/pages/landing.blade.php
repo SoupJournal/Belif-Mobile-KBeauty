@@ -54,7 +54,8 @@
 
 	<div class="spacer-large"></div>
 	<div class="spacer-large"></div>
-	
+	<div class="spacer-large"></div>
+
 	@include('belif::layouts.footer')
 
 </div>
