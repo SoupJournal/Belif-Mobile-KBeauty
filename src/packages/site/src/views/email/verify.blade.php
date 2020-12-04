@@ -34,13 +34,13 @@
 				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center"  style="border:0; margin:0; padding:0;">
 					<tbody>
 						<tr>
-							<td style="border: 0; margin: 0; padding: 0; height: 40px;">&nbsp;</td>
-						</tr>
-						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
 								<table width="570" height="249" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_top.jpg) no-repeat center center;">
 									<tr>
-										<td style="margin: 0px auto;text-align: center;color: #fff;padding: 65px;">{!! $title !!}}</td>
+										<td style="border: 0; margin: 0; padding: 0; height: 40px;">&nbsp;</td>
+									</tr>
+									<tr>
+										<td style="margin: 0px auto;text-align: center;color: #fff;padding: 65px;">{!! $title !!}</td>
 									</tr>
 								</table>
 							</td>
