@@ -59,13 +59,7 @@
 														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><p style="margin: 0 120px;font-size: 42px;color: #231f20;line-height: 48px;">{!! $html !!}</p></td>
 													</tr>
 													<tr>
-														<td height="100" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-													</tr>
-													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color:#1d5c58; font-size:14px; line-height:20px;">{!! $subtitle !!}</td>
-													</tr>
-													<tr>
-														<td height="18" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
+														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 													</tr>
 													<tr>
 														<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
@@ -80,8 +74,10 @@
 																			</tbody>
 																		</table>
 																	</td>
-																	<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; background-color: #ff76a7; font-size:21px; line-height:21px; font-weight:bold; white-space: nowrap;">
-																		<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a>
+																	<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; color:#ffffff; background-color: #009900; font-size:24px; font-weight:bold; white-space: nowrap;">
+																		<div style="background: #009900;border-radius: 25px; display: block;height: 50px;line-height: 50px;">
+																			<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a>
+																		</div>
 																	</td>
 																	<td>
 																		<table border="0" cellspacing="0" cellpadding="0">
