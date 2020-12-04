@@ -39,40 +39,11 @@
 						</tr>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
-								<table width="570" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0; background-color:#ffffff">
+								<table width="570" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;">
 									<tbody>
 										<tr>
-											<td style="border: 0; margin: 0; padding: 0;" align="center" valign="top">
-												<table width="570" border="0" cellpadding="0" cellspacing="0">
-													<tbody>
-														<tr>
-															<td style="border: 0; margin: 0; padding: 0;" width="19" height="22">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" width="102">&nbsp;</td>
-															<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" width="102">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" width="19">&nbsp;</td>
-														</tr>
-														<tr>
-															<td style="border: 0; margin: 0; padding: 0;" width="19" height="107">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" width="102" valign="middle" align="left"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aloeaquabomb/belif_stamp.png" width="100" alt=""/></td>
-															<td style="border: 0; margin: 0; padding: 0;" align="center" valign="middle"><img src="https://soup-journal-app-storage.s3.amazonaws.com/belif/Surfsup/BELIF_LOGO.png" width="150" alt="Belif"/></td>
-															<td style="border: 0; margin: 0; padding: 0;" width="102" valign="middle" align="right"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/aqua_confirm_header.png" width="100" alt=""/></td>
-															<td style="border: 0; margin: 0; padding: 0;" width="19" height="107">&nbsp;</td>
-														</tr>
-														<tr>
-															<td style="border: 0; margin: 0; padding: 0;" width="19" height="22">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" width="102">&nbsp;</td>
-															<td align="center" valign="bottom" style="border: 0; margin: 0; padding: 0;">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" width="102">&nbsp;</td>
-															<td style="border: 0; margin: 0; padding: 0;" width="19">&nbsp;</td>
-														</tr>
-													</tbody>
-												</table>
-											</td>
-										</tr>
-										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-												<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background: url('https://soup-journal-app-storage.s3.amazonaws.com/aqualand/squirt-right.png') no-repeat left 80px;">
+												<table width="100%" border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td style="border: 0; margin: 0; padding: 0;" height="30"></td>
 													</tr>
@@ -169,19 +140,19 @@
 								<table width="570" border="0" cellspacing="0" cellpadding="0" align="center">
 									<tbody>
 									<tr>
-										<td height="23" align="center" valign="top" style="background-color: #ff76a7;border: 0; margin:0; padding: 0;"></td>
+										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="middle" style="background-color: #ff76a7;border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color: #ffffff; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">
+										<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; font-family:{{ $fontDefinitions }}; color: #ffffff; font-size:20px; line-height:28px; font-weight:bold; letter-spacing:-0.4px;">
 											Once you confirm your email we'll be posting<br/>your sample to the following address:
 										</td>
 									</tr>
 									<tr>
-										<td height="23" align="center" valign="top" style="background-color: #ff76a7;border: 0; margin:0; padding: 0;"></td>
+										<td height="23" align="center" valign="top" style="border: 0; margin:0; padding: 0;"></td>
 									</tr>
 									<tr>
-										<td align="center" valign="top" style="background-color: #ff76a7;border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
+											<table border="0" cellspacing="0" cellpadding="0" style="">
 												<tbody>
 												<tr>
 													<td  style="border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">
@@ -197,7 +168,7 @@
 									</tr>
 									<tr>
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
+											<table border="0" cellspacing="0" cellpadding="0" style="">
 												<tbody>
 												<tr>
 													<td  style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">
@@ -213,7 +184,7 @@
 									</tr>
 									<tr>
 										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
+											<table border="0" cellspacing="0" cellpadding="0">
 												<tbody>
 												<tr>
 													<td bgcolor="#ff76a7" style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#ffffff; font-size:12px; line-height:18px; font-weight: bold; letter-spacing:-0.4px; word-spacing: -0.2px;">We'll send you an email once<br/>the sample has been shipped!</td>
