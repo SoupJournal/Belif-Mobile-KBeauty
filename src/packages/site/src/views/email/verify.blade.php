@@ -93,6 +93,9 @@
 														</td>
 													</tr>
 													<tr>
+														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+													</tr>
+													<tr>
 														<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
 															<a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_instagram_logo.jpg" width="60" height="60" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a>
 															&nbsp; &nbsp; &nbsp;
