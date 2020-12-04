@@ -164,7 +164,10 @@
 											</td>
 										</tr>
 										<tr>
-											<td height="200" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  line-height: 0;">
+											<td height="200" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; line-height: 0;">&nbsp;</td>
+										</tr>
+										<tr>
+											<td height="100" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; line-height: 0;">
 												<p style="color: #ffffff;">1234 Street Name, City Name, XX 45678</p>
 											</td>
 										</tr>
