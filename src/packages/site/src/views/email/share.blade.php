@@ -40,7 +40,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 								<td style="border: 0; margin: 0; padding: 0; height: 125px;">&nbsp;</td>
 							</tr>
 							<tr>
-								<td style="margin: 0px auto;text-align: center;color: #fff;font-size: 32px;">{!! $title !!}</td>
+								<td style="margin: 0px auto;text-align: center;color: #fff;font-size: 24px;">{!! $title !!}</td>
 							</tr>
 						</table>
 					</td>

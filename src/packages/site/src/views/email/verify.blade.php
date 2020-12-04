@@ -40,7 +40,7 @@
 										<td style="border: 0; margin: 0; padding: 0; height: 125px;">&nbsp;</td>
 									</tr>
 									<tr>
-										<td style="margin: 0px auto;text-align: center;color: #fff;font-size: 32px;">{!! $title !!}</td>
+										<td style="margin: 0px auto;text-align: center;color: #fff;font-size: 24px;">{!! $title !!}</td>
 									</tr>
 								</table>
 							</td>
@@ -56,7 +56,7 @@
 														<td style="border: 0; margin: 0; padding: 0;" height="130"></td>
 													</tr>
 													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><p style="margin: 0 120px;font-size: 42px;color: #231f20;line-height: 48px;">{!! $html !!}</p></td>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><p style="margin: 0 120px;font-size: 42px;color: #231f20;line-height: 48px;">{!! $subtitle !!}</p></td>
 													</tr>
 													<tr>
 														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
