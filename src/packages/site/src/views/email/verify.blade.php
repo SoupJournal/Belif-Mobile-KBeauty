@@ -17,7 +17,6 @@
 	$text = safeArrayValue('text', $pageData, "");
 	$buttonCancel = safeArrayValue('button_cancel', $pageData, "");
 	$productImage = safeArrayValue('image', $pageData, "");
-	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	$fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif";
 
 ?>
@@ -32,14 +31,25 @@
 	<tbody>
 		<tr>
 			<td align="center" valign="top"  style="border: 0; margin: 0; padding: 0; ">
-				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center"  style="border:0; margin:0; padding:0; background: url({!! $backgroundImage !!}) no-repeat center center;">
+				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center"  style="border:0; margin:0; padding:0;">
 					<tbody>
+					<tr>
+						<td style="border: 0; margin: 0; padding: 0;" height="14">&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="border: 0; margin: 0; padding: 0;">
+							<table width="570" height="249" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_middle.jpg) no-repeat center center;">
+								<tr>
+									<td>content here</td>
+								</tr>
+							</table>
+						</td>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;" height="14">&nbsp;</td>
 						</tr>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
-								<table width="570" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;">
+								<table width="570" height="947" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_middle.jpg) no-repeat center center;">
 									<tbody>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
@@ -203,7 +213,7 @@
 						{{-- Social Links Below --}}
 						<tr>
 							<td align="center" valign="top" style=" border: 0; margin: 0; padding: 0;">
-								<table width="570" border="0" cellspacing="0" cellpadding="0">
+								<table width="570" height="407" border="0" cellspacing="0" cellpadding="0" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_bottom.jpg) no-repeat center center;">
 									<tbody>
 										<tr>
 											<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; ">&nbsp;</td>
