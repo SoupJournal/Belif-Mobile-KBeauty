@@ -27,12 +27,12 @@
 <meta charset="UTF-8">
 <title>Belif</title>
 </head>
-<body style="border:0; margin:0; padding:0; background-color:#ffffff;">
-<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background-color:#ffffff">
+<body style="border:0; margin:0; padding:0;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"  style="border:0; margin:0; padding:0;">
 	<tbody>
 		<tr>
-			<td align="center" valign="top" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; background-color: #ffffff;">
-				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background: url({!! $backgroundImage !!}) no-repeat center center;">
+			<td align="center" valign="top"  style="border: 0; margin: 0; padding: 0; ">
+				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center"  style="border:0; margin:0; padding:0; background: url({!! $backgroundImage !!}) no-repeat center center;">
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;" height="14">&nbsp;</td>
@@ -184,8 +184,8 @@
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ffffff" style="background-color: #ffffff;border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">
-														<div style="background-color: #ffffff;">{{ $address1 }}</div>
+													<td  style="border:0; margin:0; padding:5px 10px 8px 10px;; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">
+														<div style="">{{ $address1 }}</div>
 													</td>
 												</tr>
 												</tbody>
@@ -200,7 +200,7 @@
 											<table border="0" cellspacing="0" cellpadding="0" style="background-color: #ff76a7;">
 												<tbody>
 												<tr>
-													<td bgcolor="#ffffff" style="background-color: #ffffff;border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">
+													<td  style="border:0; margin:0; padding: 5px 10px 8px 10px; text-align:center; font-family:{{ $fontDefinitions }}; color:#01b9ff; font-size:18px; line-height:24px; letter-spacing:-0.4px; word-spacing: -0.2px;">
 														{{ $address3 }}
 													</td>
 												</tr>
