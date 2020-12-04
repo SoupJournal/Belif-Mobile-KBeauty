@@ -134,7 +134,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 							</tr>
 							<tr>
 								<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">
-									<p style="width: 200px; font-size: 10px; margin: 0 auto;">&copy; 2017 LG Household & Health Care, LTD.<br/>All Rights Reserved.<br/>View our <a href="#" style="color: #fff;text-decoration:none;">Terms of Use</a> & <a href="#" style="color: #fff;text-decoration:none;">Privacy Policy</a></p>
+									<p style="width: 200px; font-size: 10px; margin: 0 auto;">&copy; 2017 LG Household & Health Care, LTD.<br/>All Rights Reserved.<br/>View our <a href="#" style="color: #fff;text-decoration:underline;">Terms of Use</a> & <a href="#" style="color: #fff;text-decoration:underline;">Privacy Policy</a></p>
 								</td>
 							</tr>
 							</tbody>
