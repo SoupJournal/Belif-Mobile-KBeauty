@@ -35,19 +35,50 @@
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
-								<table width="570" height="249" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_top.jpg) no-repeat top center;">
+								<table width="570" height="803" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_1.jpg) no-repeat top center;">
 									<tr>
 										<td style="border: 0; margin: 0; padding: 0; height: 125px;">&nbsp;</td>
 									</tr>
 									<tr>
 										<td style="margin: 0px auto;text-align: center;color: #fff;font-size: 24px;">{!! $title !!}</td>
 									</tr>
+									<tr>
+										<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
+											<table border="0" cellspacing="0" cellpadding="0" width="570px">
+												<tbody>
+												<tr>
+													<td>
+														<table border="0" cellspacing="0" cellpadding="0">
+															<tbody>
+															<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+															<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+															</tbody>
+														</table>
+													</td>
+													<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; color:#ffffff; font-size:24px; font-weight:bold; white-space: nowrap;">
+														<div style="background: #009900;border-radius: 25px; display: block;height: 50px;line-height: 50px;">
+															<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">VERIFY EMAIL ADDRESS</a>
+														</div>
+													</td>
+													<td>
+														<table border="0" cellspacing="0" cellpadding="0">
+															<tbody>
+															<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+															<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
 								</table>
 							</td>
 						</tr>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
-								<table width="570" height="947" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_middle.jpg) no-repeat top center;">
+								<table width="570" height="377" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_2.jpg) no-repeat top center;">
 									<tbody>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
@@ -56,45 +87,42 @@
 														<td style="border: 0; margin: 0; padding: 0;" height="130"></td>
 													</tr>
 													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><p style="margin: 0 120px;font-size: 42px;color: #231f20;line-height: 48px;">{!! $html !!}</p></td>
-													</tr>
-													<tr>
 														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
 													</tr>
-													<tr>
-														<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
-															<table border="0" cellspacing="0" cellpadding="0" width="570px">
-																<tbody>
-																	<tr>
-																		<td>
-																			<table border="0" cellspacing="0" cellpadding="0">
-																				<tbody>
-																					<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																					<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																				</tbody>
-																			</table>
-																		</td>
-																		<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; color:#ffffff; font-size:24px; font-weight:bold; white-space: nowrap;">
-																			<div style="background: #009900;border-radius: 25px; display: block;height: 50px;line-height: 50px;">
-																				<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a>
-																			</div>
-																		</td>
-																		<td>
-																			<table border="0" cellspacing="0" cellpadding="0">
-																				<tbody>
-																					<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																					<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																				</tbody>
-																			</table>
-																		</td>
-																	</tr>
-																</tbody>
-															</table>
-														</td>
-													</tr>
-													<tr>
-														<td height="200" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
-													</tr>
+												</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="border: 0; margin: 0; padding: 0;">
+								<table width="570" height="377" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;">
+									<tbody>
+										<tr>
+											<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_3.jpg" width="570" height="345" /></td>
+										</tr>
+										<tr>
+											<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_4.jpg" width="570" height="240" /></td>
+										</tr>
+										<tr>
+											<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_5.jpg" width="570" height="276" /></td>
+										</tr>
+										<tr>
+											<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_6.jpg" width="570" height="297" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style="border: 0; margin: 0; padding: 0;">
+								<table width="570" height="794" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_7.jpg) no-repeat top center;">
+									<tbody>
+										<tr>
+											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
+												<table width="100%" border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
 															<a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_instagram_logo.jpg" width="60" height="60" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a>
@@ -124,7 +152,6 @@
 								</table>
 							</td>
 						</tr>
-						{{-- Social Links Below --}}
 						<tr>
 							<td align="center" valign="top" style=" border: 0; margin: 0; padding: 0;">
 								<table width="570" height="407" border="0" cellspacing="0" cellpadding="0" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_bottom.jpg) no-repeat top center;">

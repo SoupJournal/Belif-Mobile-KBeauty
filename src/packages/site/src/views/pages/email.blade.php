@@ -76,6 +76,8 @@
 
 	<div class="spacer-large"></div>
 	<div class="spacer-large"></div>
+	<div class="spacer-medium"></div>
+
 	@include('belif::layouts.footer')
 
 </div>
