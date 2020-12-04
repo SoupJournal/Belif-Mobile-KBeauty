@@ -52,12 +52,13 @@
 	
 	{{-- Google Analytics --}}
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91272304-4"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4B0M9ZL0V7"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', 'UA-91272304-4');
+
+		gtag('config', 'G-4B0M9ZL0V7');
 	</script>
 
 	{{-- Facebook Pixel Code --}}
@@ -80,4 +81,3 @@
 	</noscript>
 	{{-- DO NOT MODIFY --}}
 	{{-- End Facebook Pixel Code --}}
-	

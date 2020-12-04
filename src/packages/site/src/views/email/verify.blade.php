@@ -17,6 +17,7 @@
 	$text = safeArrayValue('text', $pageData, "");
 	$buttonCancel = safeArrayValue('button_cancel', $pageData, "");
 	$productImage = safeArrayValue('image', $pageData, "");
+	$backgroundImage = safeArrayValue('background_image', $pageData, "");
 	$fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, sans-serif";
 
 ?>
@@ -31,7 +32,7 @@
 	<tbody>
 		<tr>
 			<td align="center" valign="top" bgcolor="#ffffff" style="border: 0; margin: 0; padding: 0; background-color: #ffffff;">
-				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background-color:#ffffff">
+				<table width="570" border="0" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff" style="border:0; margin:0; padding:0; background: url({!! $backgroundImage !!}) no-repeat center center;">
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;" height="14">&nbsp;</td>
