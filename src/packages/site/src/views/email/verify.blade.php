@@ -65,31 +65,40 @@
 														<td align="center" valign="top" style="border: 0; margin:0; padding: 0;">
 															<table border="0" cellspacing="0" cellpadding="0" width="570px">
 																<tbody>
-																<tr>
-																	<td>
-																		<table border="0" cellspacing="0" cellpadding="0">
-																			<tbody>
-																			<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																			<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																			</tbody>
-																		</table>
-																	</td>
-																	<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; color:#ffffff; background-color: #009900; font-size:24px; font-weight:bold; white-space: nowrap;">
-																		<div style="background: #009900;border-radius: 25px; display: block;height: 50px;line-height: 50px;">
-																			<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a>
-																		</div>
-																	</td>
-																	<td>
-																		<table border="0" cellspacing="0" cellpadding="0">
-																			<tbody>
-																			<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																			<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
-																			</tbody>
-																		</table>
-																	</td>
-																</tr>
+																	<tr>
+																		<td>
+																			<table border="0" cellspacing="0" cellpadding="0">
+																				<tbody>
+																					<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+																					<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+																				</tbody>
+																			</table>
+																		</td>
+																		<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; color:#ffffff; font-size:24px; font-weight:bold; white-space: nowrap;">
+																			<div style="background: #009900;border-radius: 25px; display: block;height: 50px;line-height: 50px;">
+																				<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a>
+																			</div>
+																		</td>
+																		<td>
+																			<table border="0" cellspacing="0" cellpadding="0">
+																				<tbody>
+																					<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+																					<tr><td style="border:0; margin:0; padding:16px 70px;"></tr>
+																				</tbody>
+																			</table>
+																		</td>
+																	</tr>
 																</tbody>
 															</table>
+														</td>
+													</tr>
+													<tr>
+														<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
+															<a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_instagram_logo.jpg" width="60" height="60" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a>
+															&nbsp; &nbsp; &nbsp;
+															<a href="https://www.facebook.com/belifUSA/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_facebook_logo.jpg" width="60" height="60" alt="Belif Facebook" style="border: 0; margin: 0; padding: 0;"/></a>
+															&nbsp; &nbsp; &nbsp;
+															<a href="https://twitter.com/belifusa" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_twitter_logo.jpg" width="60" height="60" alt="Belif Twitter" style="border: 0; margin: 0; padding: 0;"/></a>
 														</td>
 													</tr>
 												</table>
@@ -108,25 +117,10 @@
 								<table width="570" height="407" border="0" cellspacing="0" cellpadding="0" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_bottom.jpg) no-repeat center center;">
 									<tbody>
 										<tr>
-											<td height="19" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; ">&nbsp;</td>
-										</tr>
-										<tr>
-											<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
-												<a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/instagram-logo-transparent.png" width="27" height="27" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a>
-												&nbsp; &nbsp; &nbsp;
-												<a href="https://www.facebook.com/belifUSA/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/facebook-logo-transparent.png" width="27" height="27" alt="Belif Facebook" style="border: 0; margin: 0; padding: 0;"/></a>
-												&nbsp; &nbsp; &nbsp;
-												<a href="https://twitter.com/belifusa" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/aqualand/twitter-logo-transparent.png" width="27" height="27" alt="Belif Twitter" style="border: 0; margin: 0; padding: 0;"/></a>
-											</td>
-										</tr>
-										<tr>
 											<td height="14" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  line-height: 0;">&nbsp;</td>
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">&copy; 2017 LG Household & Health Care, LTD. All Rights Reserved.</td>
-										</tr>
-										<tr>
-											<td height="9" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; ">&nbsp;</td>
 										</tr>
 									</tbody>
 								</table>
