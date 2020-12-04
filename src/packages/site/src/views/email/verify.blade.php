@@ -105,10 +105,13 @@
 														</td>
 													</tr>
 													<tr>
+														<td height="50" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+													</tr>
+													<tr>
 														<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
-															<a href="#" style="color:009900;">Unsubscribe</a>
+															<a href="#" style="color:#009900;">Unsubscribe</a>
 															&nbsp; &nbsp; &nbsp;
-															<a href="#" style="color:009900;">Send to a Friend</a>
+															<a href="#" style="color:#009900;">Send to a Friend</a>
 														</td>
 													</tr>
 												</table>
