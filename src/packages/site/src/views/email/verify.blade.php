@@ -85,7 +85,7 @@
 									<tbody>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
-												<table width="100%" border="0" cellpadding="0" cellspacing="0">z
+												<table width="100%" border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
 															<p>You won!</p>
@@ -168,12 +168,12 @@
 										</tr>
 										<tr>
 											<td height="100" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; line-height: 0;">
-												<p style="color: #ffffff;">1234 Street Name, City Name, XX 45678</p>
+												<p style="color: #ffffff;">{!! $address1 !!}, {!! $address3 !!}</p>
 											</td>
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">
-												<p style="width: 250px; font-size: 10px; margin: 0 auto; color: #ffffff;">&copy; 2017 LG Household & Health Care, LTD.<br/>All Rights Reserved.<br/>View our <a href="#" style="color: #fff;text-decoration:underline;">Terms of Use</a> & <a href="#" style="color: #fff;text-decoration:underline;">Privacy Policy</a></p>
+												<p style="width: 250px; font-size: 10px; margin: 0 auto; color: #ffffff;">&copy; <?php echo date('Y') ?> LG Household & Health Care, LTD.<br/>All Rights Reserved.<br/>View our <a href="#" style="color: #fff;text-decoration:underline;">Terms of Use</a> & <a href="#" style="color: #fff;text-decoration:underline;">Privacy Policy</a></p>
 											</td>
 										</tr>
 									</tbody>
