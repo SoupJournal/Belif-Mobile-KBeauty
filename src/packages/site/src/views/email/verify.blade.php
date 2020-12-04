@@ -90,7 +90,15 @@
 														<td style="border: 0; margin: 0; padding: 0;" height="130"></td>
 													</tr>
 													<tr>
-														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
+															<p>You won!</p>
+															<p>Your glowing prize is:</p>
+															<p>The True Cream Aqua Bomb Deco</p>
+															<p>Your prize will be shipping in the next 4-6 weeks</p>
+															<p>Share with your friends:</p>
+															<a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_fb_icon.jpg" /></a>
+															<a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_tw_icon.jpg" /></a>
+														</td>
 													</tr>
 												</table>
 											</td>
