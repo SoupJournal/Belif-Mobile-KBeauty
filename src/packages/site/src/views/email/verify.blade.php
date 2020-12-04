@@ -101,16 +101,16 @@
 								<table width="570" height="377" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;">
 									<tbody>
 										<tr>
-											<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_3.jpg" width="570" height="345" /></td>
+											<td><a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_3.jpg" width="570" height="345" /></a></td>
 										</tr>
 										<tr>
-											<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_4.jpg" width="570" height="240" /></td>
+											<td><a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_4.jpg" width="570" height="240" /></a></td>
 										</tr>
 										<tr>
-											<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_5.jpg" width="570" height="276" /></td>
+											<td><a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_5.jpg" width="570" height="276" /></a></td>
 										</tr>
 										<tr>
-											<td><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_6.jpg" width="570" height="297" /></td>
+											<td><a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_6.jpg" width="570" height="297" /></a></td>
 										</tr>
 									</tbody>
 								</table>
@@ -123,6 +123,9 @@
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
 												<table width="100%" border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td height="200" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
+													</tr>
 													<tr>
 														<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
 															<a href="https://www.instagram.com/belifusa/" target="_blank"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_instagram_logo.jpg" width="60" height="60" alt="Belif Instagram" style="border: 0; margin: 0; padding: 0;"/></a>
@@ -148,20 +151,12 @@
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; color:#ffffff; font-size:12px; ">{!! $html !!}</td>
 										</tr>
-									</tbody>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td align="center" valign="top" style=" border: 0; margin: 0; padding: 0;">
-								<table width="570" height="407" border="0" cellspacing="0" cellpadding="0" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_bottom.jpg) no-repeat top center;">
-									<tbody>
 										<tr>
 											<td height="200" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  line-height: 0;">&nbsp;</td>
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">
-												<p style="width: 200px; font-size: 10px; margin: 0 auto;">&copy; 2017 LG Household & Health Care, LTD.<br/>All Rights Reserved.<br/>View our <a href="#" style="color: #fff;text-decoration:underline;">Terms of Use</a> & <a href="#" style="color: #fff;text-decoration:underline;">Privacy Policy</a></p>
+												<p style="width: 250px; font-size: 10px; margin: 0 auto; color: #ffffff;">&copy; 2017 LG Household & Health Care, LTD.<br/>All Rights Reserved.<br/>View our <a href="#" style="color: #fff;text-decoration:underline;">Terms of Use</a> & <a href="#" style="color: #fff;text-decoration:underline;">Privacy Policy</a></p>
 											</td>
 										</tr>
 									</tbody>
