@@ -56,7 +56,7 @@
 														<td style="border: 0; margin: 0; padding: 0;" height="130"></td>
 													</tr>
 													<tr>
-														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><p style="margin: 0 120px;font-size: 42px;color: #231f20;line-height: 48px;">{!! $subtitle !!}</p></td>
+														<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"><p style="margin: 0 120px;font-size: 42px;color: #231f20;line-height: 48px;">{!! $html !!}</p></td>
 													</tr>
 													<tr>
 														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;"></td>
