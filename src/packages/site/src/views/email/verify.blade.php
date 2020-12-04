@@ -35,7 +35,7 @@
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
-								<table width="570" height="249" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_top.jpg) no-repeat center center;">
+								<table width="570" height="249" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_top.jpg) no-repeat top center;">
 									<tr>
 										<td style="border: 0; margin: 0; padding: 0; height: 125px;">&nbsp;</td>
 									</tr>
@@ -47,7 +47,7 @@
 						</tr>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
-								<table width="570" height="947" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_middle.jpg) no-repeat center center;">
+								<table width="570" height="947" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_middle.jpg) no-repeat top center;">
 									<tbody>
 										<tr>
 											<td style="border: 0; margin: 0; padding: 0;" align="left" valign="top">
@@ -127,14 +127,14 @@
 						{{-- Social Links Below --}}
 						<tr>
 							<td align="center" valign="top" style=" border: 0; margin: 0; padding: 0;">
-								<table width="570" height="407" border="0" cellspacing="0" cellpadding="0" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_bottom.jpg) no-repeat center center;">
+								<table width="570" height="407" border="0" cellspacing="0" cellpadding="0" style="background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_bottom.jpg) no-repeat top center;">
 									<tbody>
 										<tr>
-											<td height="140" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  line-height: 0;">&nbsp;</td>
+											<td height="200" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  line-height: 0;">&nbsp;</td>
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">
-												<p>&copy; 2017 LG Household & Health Care, LTD. All Rights Reserved.</p>
+												<p style="width: 200px; font-size: 10px; margin: 0 auto;">&copy; 2017 LG Household & Health Care, LTD. All Rights Reserved.</p>
 											</td>
 										</tr>
 									</tbody>
