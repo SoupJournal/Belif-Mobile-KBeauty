@@ -50,7 +50,7 @@ class BaseController extends Controller
 
     // share email details
     const EMAIL_SENDER_SHARE = 'team@belif-let-it-glow.com ';
-    const EMAIL_SUBJECT_SHARE = 'Your friend wants to share some holiday cheer with you';
+    const EMAIL_SUBJECT_SHARE = ' your friend wants to share some holiday cheer with you';
 
     // product email details
     const EMAIL_SENDER_PRODUCT = 'team@belif-let-it-glow.com ';

@@ -76,7 +76,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 														</td>
 														<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; color:#ffffff; font-size:24px; font-weight:bold; white-space: nowrap;">
 															<div style="background: #009900;border-radius: 25px; display: block;height: 50px;line-height: 50px;">
-																<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">Confirm email</a>
+																<a href="https://belif-let-it-glow.com/" target="_blank" style="text-decoration: none; color:#ffffff;">ENTER TO WIN</a>
 															</div>
 														</td>
 														<td>
@@ -134,7 +134,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 							</tr>
 							<tr>
 								<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">
-									<p style="width: 200px; font-size: 10px; margin: 0 auto;">&copy; 2017 LG Household & Health Care, LTD. All Rights Reserved.</p>
+									<p style="width: 200px; font-size: 10px; margin: 0 auto;">&copy; 2017 LG Household & Health Care, LTD.<br/>All Rights Reserved.<br/>View our <a href="#" style="color: #fff;text-decoration:none;">Terms of Use</a> & <a href="#" style="color: #fff;text-decoration:none;">Privacy Policy</a></p>
 								</td>
 							</tr>
 							</tbody>
