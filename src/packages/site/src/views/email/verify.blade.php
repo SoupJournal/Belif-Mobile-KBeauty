@@ -55,7 +55,7 @@
 															</tbody>
 														</table>
 													</td>
-													<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; color:#ffffff; font-size:24px; font-weight:bold; white-space: nowrap;">
+													<td style="border:0; margin:0; padding:21px 5px; width:80%; text-align:center; color:#ffffff; font-size:14px; font-weight:bold; white-space: nowrap;">
 														<div style="background: #009900;border-radius: 25px; display: block;height: 50px;line-height: 50px;">
 															<a href="{{ $verifyLink }}" target="_blank" style="text-decoration: none; color:#ffffff;">VERIFY EMAIL ADDRESS</a>
 														</div>
@@ -72,6 +72,9 @@
 												</tbody>
 											</table>
 										</td>
+									</tr>
+									<tr>
+										<td style="border: 0; margin: 0; padding: 0; height: 400px;">&nbsp;</td>
 									</tr>
 								</table>
 							</td>
@@ -149,10 +152,9 @@
 											</td>
 										</tr>
 										<tr>
-											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0; color:#ffffff; font-size:12px; ">{!! $html !!}</td>
-										</tr>
-										<tr>
-											<td height="200" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  line-height: 0;">&nbsp;</td>
+											<td height="200" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  line-height: 0;">
+												<p style="color: #ffffff;">1234 Street Name, City Name, XX 45678</p>
+											</td>
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">
