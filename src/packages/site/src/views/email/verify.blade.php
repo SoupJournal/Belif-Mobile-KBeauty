@@ -156,13 +156,13 @@ image goes here.
 																to hear from us regarding products, sweepstakes and events.</p>
 														</td>
 													</tr>
-													<tr>
-														<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">
-															<a href="#" style="color:#009900;">Unsubscribe</a>
-															&nbsp; &nbsp; &nbsp;
-															<a href="#" style="color:#009900;">Send to a Friend</a>
-														</td>
-													</tr>
+{{--													<tr>--}}
+{{--														<td width="570" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; text-align: center; font-family:{{ $fontDefinitions }}; text-align: center;">--}}
+{{--															<a href="#" style="color:#009900;">Unsubscribe</a>--}}
+{{--															&nbsp; &nbsp; &nbsp;--}}
+{{--															<a href="#" style="color:#009900;">Send to a Friend</a>--}}
+{{--														</td>--}}
+{{--													</tr>--}}
 												</table>
 											</td>
 										</tr>
@@ -178,7 +178,12 @@ image goes here.
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">
-												<p style="width: 250px; font-size: 10px; margin: 0 auto; color: #ffffff;">&copy; belif cosmetics<br/>Need to change your address or report spam?<br/>Contact us at <a href="mailto:contact@belifinhydration.com" style="color: #fff;text-decoration:underline;">contact@belifinhydration.com</a></p>
+												<p style="width: 250px; font-size: 10px; margin: 0 auto; color: #ffffff;">
+													&copy; belif cosmetics<br/>
+													Need to change your address or report spam?<br/>
+													Contact us at <a href="mailto:contact@belifinhydration.com" style="color: #fff;text-decoration:underline;">contact@belifinhydration.com</a><br/>
+													<a href="#">unsubscribe</a>
+												</p>
 											</td>
 										</tr>
 									</tbody>
