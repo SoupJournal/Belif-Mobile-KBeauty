@@ -262,6 +262,9 @@ class BaseController extends Controller
     {
         $result = false;
 
+        // we aren't sending this for this campaign
+        return false;
+
         //valid user
         if ($user && $user->email && strlen($user->email)>0) {
 
