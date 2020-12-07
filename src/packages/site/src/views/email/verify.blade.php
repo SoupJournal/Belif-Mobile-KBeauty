@@ -101,13 +101,6 @@
 															<p style="font-size:24px; margin: 0 170px;">{!! $emailMessage !!}</p>
 															<p style="font-size:10px;">Your prize will be shipping in the next 4-6 weeks</p>
 															@endif
-															<p>Share with your friends:</p>
-															<a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_fb_icon.jpg" /></a>
-															&nbsp;
-															&nbsp;
-															&nbsp;
-															&nbsp;
-															<a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_tw_icon.jpg" /></a>
 														</td>
 													</tr>
 												</table>
