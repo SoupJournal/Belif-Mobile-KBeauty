@@ -160,10 +160,10 @@ class BaseController extends Controller
                 //compile last address line
                 $address3 = $user->city;
                 if ($user->state && strlen($user->state)>0) {
-                    $address3 .= strlen($address3)>0 ? ', ' . $user->state : $user.state;
+                    $address3 .= strlen($address3)>0 ? ', ' . $user->state : $user->state;
                 }
                 if ($user->zip_code && strlen($user->zip_code)>0) {
-                    $address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
+                    $address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user->zip_code;
                 }
 
                 if ($user->answers == 'message') {
