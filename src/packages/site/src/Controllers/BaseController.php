@@ -172,6 +172,9 @@ class BaseController extends Controller
                 } else {
                     $emailType = 'prize';
                     $emailMessage = $user->all_answers;
+
+                    $product = Product::find($user->all_answers);
+                    $emailImage = $product->email_image;
                 }
 
                 //send confirm email (sent via queue to avoid delay loading next page)
@@ -190,6 +193,7 @@ class BaseController extends Controller
                         'address3' => $address3,
                         'emailType' => $emailType,
                         'emailMessage' => $emailMessage,
+                        'emailImage' => $emailImage,
                         'pageData' => $pageData,
                         'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
                         'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])

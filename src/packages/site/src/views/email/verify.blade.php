@@ -8,6 +8,7 @@
 	if (!isset($address3)) $address3 = "";
 	if (!isset($emailType)) $emailType = "";
 	if (!isset($emailMessage)) $emailMessage = "";
+	if (!isset($emailImage)) $emailImage = "";
 	if (!isset($verifyLink)) $verifyLink = "";
 	if (!isset($unsubscribeLink)) $unsubscribeLink = "";
 	
@@ -80,7 +81,7 @@
 											@if ($emailType == 'message')
 												<p style="font-size:36px; margin: 0 170px;padding-bottom:150px;text-align:center;">{!! $emailMessage !!}</p>
 											@else
-image goes here.
+												<img src="{!! $emailImage !!}" />
 											@endif
 										</td>
 									</tr>
