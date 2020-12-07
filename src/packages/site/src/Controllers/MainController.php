@@ -532,7 +532,7 @@ class MainController extends BaseController implements CMSTrigger
                 Session::set('userId', $user->id);
 
                 // if they won prize, decrement available inventory
-                if ($user->answers = 'prize' && !$user->email_verified) {
+                if ($user->answers == 'prize' && !$user->email_verified) {
                     $product = Product::find((int) $user->all_answers);
                     $product->qty_available = ($product->qty_available-1);
                     $product->save();
