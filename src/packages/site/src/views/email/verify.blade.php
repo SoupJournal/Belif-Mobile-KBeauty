@@ -80,13 +80,14 @@
 											@if ($emailType == 'message')
 												<p style="font-size:36px; margin: 0 170px;padding-bottom:150px;text-align:center;">{!! $emailMessage !!}</p>
 											@else
-
+image goes here.
 											@endif
 										</td>
 									</tr>
 								</table>
 							</td>
 						</tr>
+						@if ($emailType == 'prize')
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
 								<table width="570" height="377" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_2.jpg) no-repeat top center;">
@@ -96,17 +97,10 @@
 												<table width="100%" border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
-															@if ($emailType == 'message')
-															<p>&nbsp;</p>
-															<p>&nbsp;</p>
-															<p style="font-size:24px; margin: 0 170px;">{!! $emailMessage !!}</p>
-															<p style="font-size:10px;">&nbsp;</p>
-															@else
 															<p>You won!</p>
 															<p>Your glowing prize is:</p>
 															<p style="font-size:24px; margin: 0 170px;">{!! $emailMessage !!}</p>
 															<p style="font-size:10px;">Your prize will be shipping in the next 4-6 weeks</p>
-															@endif
 														</td>
 													</tr>
 												</table>
@@ -116,6 +110,7 @@
 								</table>
 							</td>
 						</tr>
+						@endif
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
 								<table width="570" height="377" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;">
