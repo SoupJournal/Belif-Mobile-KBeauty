@@ -68,6 +68,8 @@ class ProductController extends BaseController {
             $result = $phrases[array_rand($phrases, 1)];
             $user->all_answers = $result;
 
+            $this->sendVerifyEmail($user);
+
         } else {
 
             // get random prize
