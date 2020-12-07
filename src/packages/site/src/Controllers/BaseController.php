@@ -166,6 +166,14 @@ class BaseController extends Controller
                     $address3 .= strlen($address3)>0 ? ', ' . $user->zip_code : $user.zip_code;
                 }
 
+                if ($user->answers == 'message') {
+                    $emailType = 'message';
+                    $emailMessage = $user->all_answers;
+                } else {
+                    $emailType = 'prize';
+                    $emailMessage = $user->all_answers;
+                }
+
                 //send confirm email (sent via queue to avoid delay loading next page)
                 $emailJob = new SendEmailJob([
                     "recipient" => $user->email,
@@ -180,6 +188,8 @@ class BaseController extends Controller
                         'address1' => $user->address_1,
                         'address2' => $user->address_2,
                         'address3' => $address3,
+                        'emailType' => $emailType,
+                        'emailMessage' => $emailMessage,
                         'pageData' => $pageData,
                         'verifyLink' => route('belif.share', ['code' => $user->verify_code]),
                         'unsubscribeLink' => route('belif.unsubscribe', ['code' => $user->verify_code])

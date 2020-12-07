@@ -6,6 +6,8 @@
 	if (!isset($address1)) $address1 = "";
 	if (!isset($address2)) $address2 = "";
 	if (!isset($address3)) $address3 = "";
+	if (!isset($emailType)) $emailType = "";
+	if (!isset($emailMessage)) $emailMessage = "";
 	if (!isset($verifyLink)) $verifyLink = "";
 	if (!isset($unsubscribeLink)) $unsubscribeLink = "";
 	
@@ -88,10 +90,17 @@
 												<table width="100%" border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td height="220" align="center" valign="middle" style="border: 0; margin: 0; padding: 0;">
+															@if ($emailType == 'message')
+															<p>&nbsp;</p>
+															<p>&nbsp;</p>
+															<p style="font-size:24px; margin: 0 170px;">{!! $emailMessage !!}</p>
+															<p style="font-size:10px;">&nbsp;</p>
+															@else
 															<p>You won!</p>
 															<p>Your glowing prize is:</p>
-															<p style="font-size:24px; margin: 0 170px;">The True Cream Aqua Bomb Deco</p>
+															<p style="font-size:24px; margin: 0 170px;">{!! $emailMessage !!}</p>
 															<p style="font-size:10px;">Your prize will be shipping in the next 4-6 weeks</p>
+															@endif
 															<p>Share with your friends:</p>
 															<a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/verify_fb_icon.jpg" /></a>
 															&nbsp;
