@@ -177,7 +177,9 @@
 										</tr>
 										<tr>
 											<td height="100" align="center" valign="middle" style="border: 0; margin: 0; padding: 0; line-height: 0;">
+												@if ($emailType == 'prize')
 												<p style="color: #ffffff;">{!! $address1 !!}, {!! $address3 !!}</p>
+												@endif
 											</td>
 										</tr>
 										<tr>
