@@ -38,7 +38,7 @@
 			<div class="spacer-medium"></div>
 			
 			@if ($unsubscribed == true)
-				<div class="no-margins size-7 color-2 font-3 stroke">You've successfully<br/>been unsubscribed.</div>
+				<div class="no-margins size-7 color-2 font-3">You've successfully<br/>been unsubscribed.</div>
 
 				{{-- image --}}
 				@if ($image && strlen($image)>0)
@@ -49,7 +49,7 @@
 			@else
 			{{ Form::open(Array('role' => 'form', 'name' => 'emailForm', 'url' => $formURL, 'method' => 'get')) }}
 
-				<div class="no-margins size-7 color-2 font-3 stroke">{!! $title !!}</div>
+				<div class="no-margins size-7 color-2 font-3">{!! $title !!}</div>
 
 				{{-- image --}}
 				@if ($image && strlen($image)>0)
@@ -64,7 +64,7 @@
 
 				<div class="spacer-small"></div>
 
-				<button class="button-page bg-color-14 color-2 font-3" label="Unsubscribe">Unsubscribe</button>
+				<button class="button-page bg-color-15 color-2 font-3" label="Unsubscribe">Unsubscribe</button>
 
 			{{ Form::close() }}
 			@endif
