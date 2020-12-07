@@ -37,7 +37,7 @@
 					<tbody>
 						<tr>
 							<td style="border: 0; margin: 0; padding: 0;">
-								<table width="570" height="803" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_1.jpg) no-repeat top center;">
+								<table width="570" height="803" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;background: url(https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_1-1.jpg) no-repeat top center;">
 									<tr>
 										<td style="border: 0; margin: 0; padding: 0; height: 125px;">&nbsp;</td>
 									</tr>
