@@ -122,16 +122,16 @@
 								<table width="570" height="377" border="0" cellspacing="0" cellpadding="0" style="border:0; margin:0; padding:0;">
 									<tbody>
 										<tr>
-											<td><a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_3.jpg" width="570" height="345" /></a></td>
+											<td><a href="https://artisancouncil.com/Ulta/let-it-glow-set/redirect.php?fbclid=IwAR0-e13cP2YwUZPjiXnl4hIW6HGufJZ8vkGOgBTDl4MWUC3vcUiugJfyn0w"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_3.jpg" width="570" height="345" /></a></td>
 										</tr>
 										<tr>
-											<td><a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_4.jpg" width="570" height="240" /></a></td>
+											<td><a href="https://www.ulta.com/bestselling-hydrators-on-go-kit?productId=pimprod2013182"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_4.jpg" width="570" height="240" /></a></td>
 										</tr>
 										<tr>
-											<td><a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_5.jpg" width="570" height="276" /></a></td>
+											<td><a href="https://www.ulta.com/true-cream-aqua-bomb?productId=pimprod2013170"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_5.jpg" width="570" height="276" /></a></td>
 										</tr>
 										<tr>
-											<td><a href="#"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_6.jpg" width="570" height="297" /></a></td>
+											<td><a href="https://www.ulta.com/moisturizing-eye-bomb?productId=pimprod2013176"><img src="https://soup-journal-app-storage.s3.amazonaws.com/letitglow/email_verify_6.jpg" width="570" height="297" /></a></td>
 										</tr>
 									</tbody>
 								</table>
@@ -184,7 +184,7 @@
 										</tr>
 										<tr>
 											<td align="center" valign="middle" style="border: 0; margin: 0; padding: 0;  color: #fff; font-family:{{ $fontDefinitions }}; font-size:14px; line-height: 20px; font-style:italic; text-align: center;">
-												<p style="width: 250px; font-size: 10px; margin: 0 auto; color: #ffffff;">&copy; <?php echo date('Y') ?> LG Household & Health Care, LTD.<br/>All Rights Reserved.<br/>View our <a href="#" style="color: #fff;text-decoration:underline;">Terms of Use</a> & <a href="#" style="color: #fff;text-decoration:underline;">Privacy Policy</a></p>
+												<p style="width: 250px; font-size: 10px; margin: 0 auto; color: #ffffff;">&copy; belif cosmetics<br/>Need to change your address or report spam?<br/>Contact us at <a href="mailto:contact@belifinhydration.com" style="color: #fff;text-decoration:underline;">contact@belifinhydration.com</a></p>
 											</td>
 										</tr>
 									</tbody>
