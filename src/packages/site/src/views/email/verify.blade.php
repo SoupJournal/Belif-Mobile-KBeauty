@@ -76,7 +76,13 @@
 										</td>
 									</tr>
 									<tr>
-										<td style="border: 0; margin: 0; padding: 0; height: 450px;">&nbsp;</td>
+										<td style="border: 0; margin: 0; padding: 0; height: 450px;">
+											@if ($emailType == 'message')
+												<p style="font-size:36px; margin: 0 170px;padding-bottom:150px;text-align:center;">{!! $emailMessage !!}</p>
+											@else
+
+											@endif
+										</td>
 									</tr>
 								</table>
 							</td>
