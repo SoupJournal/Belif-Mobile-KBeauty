@@ -77,11 +77,11 @@
 										</td>
 									</tr>
 									<tr>
-										<td style="border: 0; margin: 0; padding: 0; height: 450px;">
+										<td style="border: 0; margin: 0; padding: 0; height: 450px; @if ($emailType == 'prize') vertical-align: top; @endif">
 											@if ($emailType == 'message')
 												<p style="font-size:36px; margin: 0 170px;padding-bottom:150px;text-align:center;">{!! $emailMessage !!}</p>
 											@else
-												<img src="{!! $emailImage !!}" />
+												<p style="text-align: center;"><img src="{!! $emailImage !!}" style="width:65%;margin-top:25px;"/></p>
 											@endif
 										</td>
 									</tr>

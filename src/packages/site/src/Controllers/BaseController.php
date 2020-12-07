@@ -169,11 +169,13 @@ class BaseController extends Controller
                 if ($user->answers == 'message') {
                     $emailType = 'message';
                     $emailMessage = $user->all_answers;
+                    $emailImage = '';
                 } else {
                     $emailType = 'prize';
-                    $emailMessage = $user->all_answers;
 
                     $product = Product::find($user->all_answers);
+
+                    $emailMessage = $product->name;
                     $emailImage = $product->email_image;
                 }
 
