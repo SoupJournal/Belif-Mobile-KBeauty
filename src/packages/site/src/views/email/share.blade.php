@@ -138,7 +138,7 @@ $fontDefinitions = "'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Deja
 										&copy; belif cosmetics<br/>
 										Need to change your address or report spam?<br/>
 										Contact us at <a href="mailto:contact@belifinhydration.com" style="color: #fff;text-decoration:underline;">contact@belifinhydration.com</a><br/>
-										<a href="#">unsubscribe</a>
+										<a href="{!! $unsubscribeLink !!}" style="color:#fff;text-decoration:none;">unsubscribe</a>
 									</p>
 								</td>
 							</tr>
