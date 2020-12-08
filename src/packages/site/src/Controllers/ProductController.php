@@ -67,6 +67,8 @@ class ProductController extends BaseController {
             shuffle($phrases);
             $result = $phrases[array_rand($phrases, 1)];
             $user->all_answers = $result;
+            $user->answers = $resultType; // message || prize
+            $user->save();
 
             $this->sendVerifyEmail($user);
 
@@ -86,11 +88,10 @@ class ProductController extends BaseController {
             $result = $winner->name;
             $user->all_answers = $winner->id;
             $resultImage = $winner->sample_image;
+            $user->answers = $resultType; // message || prize
+            $user->save();
         }
 
-        // save result for later
-        $user->answers = $resultType; // message || prize
-        $user->save();
 
         $backgroundImage = ($resultType == 'message')? $backgroundImageMessage : $backgroundImagePrize;
 
