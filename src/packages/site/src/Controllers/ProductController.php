@@ -51,6 +51,7 @@ class ProductController extends BaseController {
         $firstname = explode(' ', $user->name)[0];
 
         $resultType = 'message';
+        $resultImage = '';
         if( ($user->id % 5) == 0) {
             $resultType = 'prize';
         }
