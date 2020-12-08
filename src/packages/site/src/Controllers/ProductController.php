@@ -85,6 +85,7 @@ class ProductController extends BaseController {
             $winner = Product::find($prizes[$productId]);
             $result = $winner->name;
             $user->all_answers = $winner->id;
+            $resultImage = $winner->sample_image;
         }
 
         // save result for later
@@ -100,6 +101,7 @@ class ProductController extends BaseController {
             'firstname' => $firstname,
             'result' => $result,
             'resultType' => $resultType,
+            'resultImage' => $resultImage,
             'headerLogoUrl' => $this->header_logo_url_white,
             'backgroundImage' => $backgroundImage,
             'formURL' => route('belif.share.submit'),

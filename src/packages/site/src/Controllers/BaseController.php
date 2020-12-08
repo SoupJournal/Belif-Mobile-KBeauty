@@ -16,6 +16,7 @@ class BaseController extends Controller
 
     //page constants
     const FORM_LANDING = 'page_landing';
+    const FORM_GLOBE = 'page_globe';
     const FORM_EMAIL = 'page_email';
     const FORM_GUIDE = 'page_guide';
     const FORM_QUESTION = 'page_question';

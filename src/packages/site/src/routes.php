@@ -52,7 +52,7 @@ Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['
 				Route::group(array('middleware' => 'EmailRequired'), function() {
 
                     // globe
-                    Route::get('/', ['as' => 'belif.globe', 'uses' => 'MainController@getGlobe']);
+                    Route::get('/globe', ['as' => 'belif.globe', 'uses' => 'MainController@getGlobe']);
 
 					// question
 					Route::get('/question', ['as' => 'belif.question', 'uses' => 'ProductController@getQuestion']);

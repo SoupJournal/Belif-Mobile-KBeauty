@@ -201,7 +201,7 @@ class MainController extends BaseController implements CMSTrigger
             if ($available) {
 
                 // move to guide
-                return Redirect::route('belif.results');
+                return Redirect::route('belif.globe');
 
             }
             else {

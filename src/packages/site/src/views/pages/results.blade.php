@@ -24,18 +24,10 @@
 	$firstname = isset($firstname) ? $firstname : null;
 	$result = isset($result) ? $result : null;
 	$resultType = isset($resultType) ? $resultType : null;
+	$resultImage = isset($resultImage) ? $resultImage : null;
 
 	$formURL = isset($formURL) ? $formURL : null;
 
-//	$productIdx = isset($productIdx) ? $productIdx : 0;
-//	$restartURL = isset($restartURL) ? $restartURL : null;
-//	$sampleResult = isset($sampleResult) ? $sampleResult : null;
-//	$resultImage = isset($resultImage) ? $resultImage : null;
-//	$alternativeTitle = isset($alternativeTitle) ? $alternativeTitle : null;
-//
-//	if (!empty($alternativeTitle)) {
-//		$subtitle = $alternativeTitle;
-//	}
 ?>
 
 <div class="text-center page-padding">
@@ -90,7 +82,7 @@
 		<div class="spacer-large"></div>
 		<div class="spacer-small"></div>
 
-
+		<div><img src="{!! $resultImage !!}" style="width:80%;" /></div>
 		<div class="result-message-form">
 			<div class="green-x"><a href="/">X</a></div>
 			<button class="claim-button button-page bg-color-15 color-2 font-3" label="{{ $buttonNo }}">
