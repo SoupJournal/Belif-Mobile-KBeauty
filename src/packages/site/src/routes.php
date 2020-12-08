@@ -40,8 +40,8 @@ Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['
 			// product is available
 			Route::group(array('middleware' => 'ProductAvailable'), function() {
 
-				// landing
-				Route::get('/', ['as' => 'belif.landing', 'uses' => 'MainController@getLanding']);
+                // landing
+                Route::get('/', ['as' => 'belif.landing', 'uses' => 'MainController@getLanding']);
 
 				// email
 				Route::get('/email', ['as' => 'belif.home', 'uses' => 'MainController@getEmail']);
@@ -51,8 +51,8 @@ Route::group(array('namespace' => 'Belif\Mobile\Controllers', 'middleware' => ['
 				// email required
 				Route::group(array('middleware' => 'EmailRequired'), function() {
 
-					// guide
-					Route::get('/guide', ['as' => 'belif.guide', 'uses' => 'MainController@getGuide']);
+                    // globe
+                    Route::get('/', ['as' => 'belif.globe', 'uses' => 'MainController@getGlobe']);
 
 					// question
 					Route::get('/question', ['as' => 'belif.question', 'uses' => 'ProductController@getQuestion']);

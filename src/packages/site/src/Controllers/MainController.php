@@ -77,6 +77,24 @@ class MainController extends BaseController implements CMSTrigger
         ));
     }
 
+    public function getGlobe()
+    {
+        // get page data
+        $pageData = $this->dataForPage(self::FORM_GLOBE);
+
+        // get background image
+        $backgroundImage = safeArrayValue('background_image', $pageData);
+
+        //render view
+        return View::make('belif::pages.globe')->with(Array (
+            'pageName' => 'landing',
+            'pageData' => $pageData,
+            'backgroundImage' => $backgroundImage,
+            'headerLogoUrl' => $this->header_logo_url_white,
+            'termsURL' => $this->terms_and_conditions_url
+        ));
+    }
+
     public function getEmail()
     {
         // get page data
