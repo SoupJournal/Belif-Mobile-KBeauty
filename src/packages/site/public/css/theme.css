@@ -614,6 +614,7 @@ button:hover {
 }
 
 .terms {
+	padding-top: 5px;
 	font-size: 3.5vw;
 	font-family: BrandonGrotesqueLightItalic, sans-serif;
 	line-height: 30px;

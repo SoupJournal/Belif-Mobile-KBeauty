@@ -65,8 +65,9 @@
 		<div class="spacer-medium"></div>
 	</div>
 
-	<div><p><br/><a href="{!! $termsURL !!}" style="color:#000000;text-decoration:none;">Terms and Conditions</a></p></div>
-	
+	<div class="terms">
+		<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1 small" target="_blank">Agree to Terms and Conditions</a>
+	</div>
 	{{-- display form errors --}}
 	@if ($errors->has())
 		@foreach ($errors->all() as $error)

@@ -120,6 +120,7 @@ class MainController extends BaseController implements CMSTrigger
         $valid = true;
 
         //get form values
+        $agree = safeArrayValue('agree', $_POST);
         $firstname = safeArrayValue('firstname', $_POST);
         $lastname = safeArrayValue('lastname', $_POST);
         $email = safeArrayValue('email', $_POST);
@@ -152,6 +153,12 @@ class MainController extends BaseController implements CMSTrigger
         // zipcode
         else if (!$zipcode) {
             $errors = 'Please specify a zip code';
+            $valid = false;
+        }
+
+        // terms
+        else if (!$agree) {
+            $errors = 'Please agree to the T&Cs';
             $valid = false;
         }
 
