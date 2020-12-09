@@ -52,11 +52,12 @@
 		<a href="{!! $text !!}">{{ $button }}</a>
 	</button>
 
-	<div class="spacer-large"></div>
-	<div class="spacer-large"></div>
-	<div class="spacer-large"></div>
+	<div><p><br/><a href="{!! $termsURL !!}" style="color:#000000;text-decoration:none;">Terms and Conditions</a></p></div>
 
-	<div><p><a href="{!! $termsURL !!}" style="color:#ffffff;text-decoration:none;">Terms and Conditions</a></p></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-large"></div>
+	<div class="spacer-medium"></div>
+
 
 	@include('belif::layouts.footer')
 

@@ -65,6 +65,8 @@
 		<div class="spacer-medium"></div>
 	</div>
 
+	<div><p><br/><a href="{!! $termsURL !!}" style="color:#000000;text-decoration:none;">Terms and Conditions</a></p></div>
+	
 	{{-- display form errors --}}
 	@if ($errors->has())
 		@foreach ($errors->all() as $error)
