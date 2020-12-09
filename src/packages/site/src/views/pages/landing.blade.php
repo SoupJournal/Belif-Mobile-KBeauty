@@ -54,7 +54,9 @@
 
 	<div class="spacer-large"></div>
 	<div class="spacer-large"></div>
-	<div class="spacer-medium"></div>
+	<div class="spacer-large"></div>
+
+	<div><p><a href="{!! $termsURL !!}" style="color:#ffffff;text-decoration:none;">Terms and Conditions</a></p></div>
 
 	@include('belif::layouts.footer')
 
