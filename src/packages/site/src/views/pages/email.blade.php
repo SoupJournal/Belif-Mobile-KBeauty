@@ -65,6 +65,7 @@
 		<div class="spacer-medium"></div>
 	</div>
 
+	<div class="spacer-small"></div>
 	<div class="terms">
 		<input type="checkbox" name="agree" value="1" /> <a href="{{ $termsURL }}" class="color-1 small" target="_blank">Agree to Terms and Conditions</a>
 	</div>
